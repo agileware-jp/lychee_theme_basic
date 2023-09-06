@@ -1,0 +1,188 @@
+@layer components {
+  .controller-issues {
+    #content > h2 {
+      @apply mb-0
+    }
+
+    #content .contextual {
+      @apply mb-2
+    }
+
+    div.issue {
+      @apply clear-both bg-background-secondary/30 border border-border-divider rounded-md mt-2 p-6
+    }
+
+    div.issue .next-prev-links {
+      @apply float-right
+    }
+
+    div.issue p.author {
+      @apply text-text-caption text-xs m-0
+    }
+
+    div.issue hr {
+      @apply hidden
+    }
+
+    div.issue .attributes .attribute {
+      @apply flex items-center mb-2 pl-0
+    }
+
+    div.issue .attributes .attribute .label {
+      @apply float-none block w-auto text-sm text-text-default text-left m-0
+    }
+
+    div.issue .attribute .value {
+      @apply max-w-none text-sm text-text-default ml-2
+    }
+
+    div.issue .attribute .value a {
+      @apply text-sm
+    }
+
+    div.issue .attribute.progress .value {
+      @apply flex items-center
+    }
+
+    div.issue .description {
+      // ファイルの見出しが.attachmentsと兄弟要素になっているため、.attachments側でmt-4を指定できない。そのためこちらでmb-4で対応
+      @apply mt-4 mb-4
+    }
+
+    div.issue .description .contextual + p {
+      @apply text-sm
+    }
+
+    div.issue .description .wiki {
+      @apply text-sm text-text-default py-2 px-3
+    }
+
+    div.issue .attachments table {
+      @apply mt-2
+    }
+
+    div.issue #issue_tree {
+      @apply overflow-hidden mt-4
+    }
+
+    div.issue #relations {
+      @apply overflow-hidden mt-6
+    }
+
+    .issues-stat {
+      @apply text-xs
+    }
+
+    .issues-stat .badge {
+      @apply mr-2
+    }
+
+    .issues-stat .open {
+      @apply ml-0.5
+    }
+
+    .issues-stat .closed {
+      @apply text-xs text-text-caption mx-0.5
+    }
+
+
+    // issue edit
+    #update {
+      @apply mt-6
+    }
+
+    #issue-form {
+      @apply block mt-2
+    }
+
+    .edit_issue .box {
+      @apply border-none p-0
+    }
+
+    .new_issue .box {
+      @apply w-3/4
+    }
+
+    #issue_is_private_wrap {
+      @apply flex items-center
+    }
+
+    #issue_is_private_wrap input[type="checkbox"] {
+      @apply mt-1
+    }
+
+    #issue-form .box fieldset {
+      @apply p-4
+    }
+
+    #attributes .splitcontent {
+      @apply mt-4
+    }
+
+    // editフォームのレイアウト変更
+    #issue-form #all_attributes .splitcontent {
+      @apply flex-col
+    }
+
+    #issue-form #all_attributes .splitcontentleft {
+      @apply mr-0
+    }
+
+    #issue-form #all_attributes .splitcontentright {
+      @apply mt-4 ml-0
+    }
+
+    #issue-form #all_attributes .splitcontent:first-child .splitcontentright {
+      @apply flex flex-wrap
+    }
+
+    #issue-form #parent_issue {
+      @apply w-full
+    }
+
+    #actual_dates_area {
+      @apply flex w-full
+    }
+
+    #actual_due_date_area {
+      @apply mt-0
+    }
+
+    #due_date_area,
+    #actual_due_date_area,
+    #remaining_estimate_area,
+    #remaining_estimate_area + p {
+      @apply pl-[5.5rem]
+    }
+
+    #due_date_area label,
+    #actual_due_date_area label,
+    #remaining_estimate_area label,
+    #remaining_estimate_area + p label {
+      @apply w-[4.5rem] -ml-[5.5rem]
+    }
+
+
+    #due_date_area,
+    #actual_due_date_area {
+      background-image: url(images/double_arrow_right_dark.svg);
+      @apply bg-no-repeat bg-[left_center]
+    }
+
+    #log_time .splitcontent {
+      @apply mb-4
+    }
+
+    #issue-form #attachments_form {
+      @apply border-t border-border-divider mt-4 pt-4
+    }
+
+    #issue-form #watchers_form_container {
+      @apply border-t border-border-divider mt-4 pt-4
+    }
+
+    #watchers_inputs {
+      @apply -mt-2
+    }
+  }
+}

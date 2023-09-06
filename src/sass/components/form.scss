@@ -1,0 +1,171 @@
+@layer components {
+  .TEXT_FIELD {
+    @apply border border-border-default text-text-default text-sm my-[1px] py-2 px-3 rounded-md
+  }
+
+  input, select, textarea {
+    @apply bg-background-primary
+  }
+
+  label.block input[type="radio"],
+  .tabular label.block input[type="radio"],
+  label.block input[type="checkbox"],
+  .tabular label.block input[type="checkbox"] {
+    @apply m-0 mr-1
+  }
+
+  input:not([type="checkbox"]), select, button {
+    @apply h-auto
+  }
+
+  input[type="checkbox"] {
+    @apply h-auto align-baseline
+  }
+
+  input:not([type="checkbox"], [type="radio"], [type="submit"]) {
+    @extend .TEXT_FIELD;
+  }
+
+  textarea {
+    @extend .TEXT_FIELD;
+  }
+
+  select {
+    background-image: url(images/expand_more_dark.svg);
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+
+    @extend .TEXT_FIELD;
+    @apply cursor-pointer h-auto pr-8
+  }
+
+  fieldset#filters td.values select[multiple] {
+    @apply p-1
+  }
+
+  select[multiple] {
+    @apply p-1
+  }
+
+  select[multiple] option {
+    @apply py-1 px-2 rounded
+  }
+
+  select[multiple] option:not(:first-child) {
+    @apply mt-0.5
+  }
+
+  select[multiple] option:checked,
+  select[multiple]:focus option:checked {
+    @apply bg-background-tertiary
+  }
+
+  #quick-search #q {
+    @extend .TEXT_FIELD;
+    @apply h-auto
+  }
+
+  .quick-search #projects-quick-search {
+    @extend .TEXT_FIELD;
+    @apply h-auto pl-8
+  }
+
+  input.autocomplete {
+    background: url(images/search_default.svg) no-repeat left 8px center;
+    padding-left: 2rem !important;
+  }
+
+  #project-jump .drdn-trigger {
+    background: url(images/expand_more_dark.svg) no-repeat right 8px center;
+
+    @extend .TEXT_FIELD;
+    @apply h-auto bg-background-primary
+  }
+
+  .jstBlock .wiki-preview {
+    @extend .TEXT_FIELD;
+  }
+
+  #login-form input[type="text"],
+  #login-form input[type="password"] {
+    @apply h-auto
+  }
+
+
+  input#months {
+    @apply w-auto
+  }
+
+
+  input#principal_search,
+  input#user_search {
+    @apply w-full
+  }
+
+  #user_login,
+  #user_firstname,
+  #user_lastname,
+  #user_mail,
+  #my_account_form select,
+  #user_form select {
+    @apply w-full
+  }
+
+  // 個別系
+  // ファイル添付・コメント投稿系
+  input[type="file"] {
+    @apply block w-full bg-background-secondary text-sm text-text-default p-2 rounded-md
+  }
+
+  .box > p > .attachments_form {
+    @apply mt-0
+  }
+
+  .attachments_fields .description {
+    @apply mb-2
+  }
+
+  .attachments_fields .remove-upload {
+    @apply ml-1
+  }
+
+  .tabular input.file_selector {
+    @apply mt-0
+  }
+
+  span.search_for_watchers,
+  span.add_attachment {
+    @apply text-xs text-text-caption
+  }
+
+  #issue_estimated_hours,
+  #issue_remaining_estimate {
+    @apply w-20
+  }
+
+  // 個人設定
+  #user_mail_notification {
+    @apply mb-2
+  }
+
+  // 詳細度を高めて上書きが必要
+  .theme-Lychee {
+    .select2-container--default .select2-selection--single {
+      background-image: url(images/expand_more_dark.svg);
+      background-repeat: no-repeat;
+      background-position: right 8px center;
+
+      @extend .TEXT_FIELD;
+      @apply h-[38px] pr-8
+    }
+
+    .select2-container--default .select2-selection--single .select2-selection__arrow {
+      @apply hidden
+    }
+
+    .select2-container--default .select2-selection--single .select2-selection__rendered {
+      line-height: normal; // tailwindに無いため直接指定
+      @apply text-text-default px-0
+    }
+  }
+}

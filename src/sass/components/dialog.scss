@@ -1,0 +1,51 @@
+@layer components {
+  div.modal.ui-widget.ui-widget-content {
+    @apply border-border-divider p-6 rounded-lg
+  }
+
+  div.modal .ui-widget-header {
+    font-weight: bold;
+
+    @apply bg-transparent border-none text-sm p-0
+  }
+
+  .ui-dialog .ui-dialog-title {
+    float: none;
+
+    @apply m-0
+  }
+
+  .ui-dialog .ui-dialog-titlebar-close {
+    top: 0;
+    right: 0;
+    width: 24px;
+    height: 24px;
+
+    @apply border-none m-0 p-0
+  }
+
+  .ui-button .ui-icon.ui-icon-closethick {
+    background-image: url(images/close_dark.svg);
+    background-position: center center;
+    background-size: 24px;
+  }
+
+  .ui-dialog .ui-dialog-content {
+    @apply mt-4 p-0
+  }
+
+
+  // ウォッチャー追加ダイアログ
+  div.modal #users_for_watcher {
+    @apply mt-4
+  }
+
+  div.modal #users_for_watcher label + label {
+    @apply mt-2
+  }
+
+  div.modal #users_for_watcher label input[type="checkbox"],
+  div.modal #users_for_watcher label .gravatar {
+    @apply mr-1
+  }
+}

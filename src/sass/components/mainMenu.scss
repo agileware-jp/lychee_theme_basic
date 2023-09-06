@@ -1,0 +1,36 @@
+@layer components {
+  .has-main-menu #main-menu {
+    height: calc(100vh - 144px);
+    @apply overflow-y-auto absolute left-0 bottom-auto w-52 mr-0 pt-6 pr-3 pl-6 pb-20
+  }
+
+  .has-main-menu #main-menu.aw_fixed_header {
+    height: calc(100vh - 37px);
+    @apply fixed
+  }
+
+  #main-menu ul {
+    @apply flex flex-col
+  }
+
+  #main-menu li:not(:first-child) {
+    @apply mt-2
+  }
+
+  #main-menu li a {
+    @apply whitespace-normal text-text-default text-sm font-normal px-3 py-2 rounded
+  }
+
+  #main-menu li a:hover {
+    @apply bg-background-secondary text-text-default
+  }
+
+  #main-menu li a.selected,
+  #main-menu li a.selected:hover {
+    @apply bg-background-tertiary text-text-default
+  }
+
+  #main-menu .tabs-buttons {
+    @apply opacity-0
+  }
+}

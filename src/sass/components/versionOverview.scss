@@ -1,0 +1,13 @@
+@layer components {
+  .version-overview table.progress {
+    @apply mt-0.5 mr-1
+  }
+
+  p.percent {
+    @apply text-sm text-text-default
+  }
+
+  p.progress-info {
+    @apply text-xs text-text-caption mt-1
+  }
+}

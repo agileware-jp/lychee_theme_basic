@@ -1,0 +1,47 @@
+@layer components {
+  .controller-boards {
+    img.gravatar {  
+      @apply m-0 mr-1
+    }
+
+    // TODO: 「返答」ボタンを非表示にして、返信フォームを常時表示にしたいのでテーマjsで調整する
+    .pagination + p {
+      // display: none;
+      display: block;
+
+      @apply my-4
+    }
+
+    #reply .box p:not(:first-child) {
+      @apply mt-4
+    }
+
+    #reply .box label {
+      font-weight: bold;
+
+      @apply text-sm text-text-default
+    }
+
+    #reply .box #message_subject {
+      width: 100%;
+
+      @apply mt-2
+    }
+
+    #reply .box #message_content {
+      @apply w-full
+    }
+
+    #replies .comments + .reply {
+      @apply mt-2
+    }
+
+    #replies .message.reply {
+      @apply border border-border-divider py-4 pr-4 pl-12 rounded-md
+    }
+
+    #replies .message.reply + .reply {
+      @apply mt-4
+    }
+  }
+}

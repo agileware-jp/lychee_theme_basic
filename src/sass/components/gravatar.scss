@@ -1,0 +1,19 @@
+@layer components {
+  .theme-Lychee {
+    img.gravatar {
+      @apply inline-block rounded-full
+    }
+
+    .gravatar, .gravatar-child {
+      @apply rounded-full
+    }
+
+    div.gravatar-with-child > img.gravatar:nth-child(2) {
+      @apply rounded-full
+    }
+
+    td.username .gravatar {
+      @apply align-middle
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@layer components {
+  div#roadmap .version-article {
+    @apply bg-background-primary border border-border-divider p-6 rounded-md
+  }
+
+  div#roadmap .version-article + .version-article {
+    @apply mt-4
+  }
+
+  div#roadmap table caption {
+    @apply text-sm text-text-default font-bold mt-4
+  }
+}

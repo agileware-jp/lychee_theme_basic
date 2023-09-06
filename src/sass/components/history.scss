@@ -1,0 +1,13 @@
+@layer components {
+  #history {
+    @apply mt-6
+  }
+
+  #history .tabs {
+    @apply mb-4
+  }
+
+  #history .tab-content {
+    @apply border-none p-2 rounded-md
+  }
+}

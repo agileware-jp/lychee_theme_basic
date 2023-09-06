@@ -1,0 +1,37 @@
+@layer components {
+  .badge.badge-status-open {
+    font-weight: normal;
+
+    @apply bg-background-primary border-border-default text-text-default text-xs px-1.5 py-0.5 rounded-full
+  }
+
+  .badge.badge-status-locked {
+    font-weight: normal;
+
+    @apply bg-background-secondary border-none text-text-default text-xs px-1.5 py-0.5 rounded-full
+  }
+
+  .badge.badge-status-closed {
+    font-weight: normal;
+
+    @apply bg-status-success border-none text-text-onFill text-xs px-1.5 py-0.5 rounded-full
+  }
+
+  .badge.badge-private {
+    font-weight: normal;
+
+    @apply bg-status-danger border-none text-text-onFill text-xs px-1.5 py-0.5 rounded-full
+  }
+
+  .badge.badge-count {
+    font-weight: normal;
+
+    @apply bg-background-secondary border-none text-text-default text-xs px-1.5 py-0.5 rounded-full
+  }
+
+  .badge.badge-issues-count {
+    font-weight: normal;
+
+    @apply bg-background-secondary border-none text-text-default text-xs px-1.5 py-0.5 rounded-full
+  }
+}

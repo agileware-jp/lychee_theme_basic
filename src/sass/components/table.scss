@@ -1,0 +1,142 @@
+@layer components {
+  table.list:not(.odd-even) tbody tr:nth-child(odd),
+  .odd,
+  #issue-changesets div.changeset:nth-child(odd) {
+    @apply bg-background-primary
+  }
+
+  table.list:not(.odd-even) tbody tr:nth-child(even),
+  .even,
+  #issue-changesets div.changeset:nth-child(even) {
+    @apply bg-background-secondary/30
+  }
+
+  table.list:not(.odd-even) tbody tr:nth-child(odd):hover,
+  .odd:hover,
+  #issue-changesets div.changeset:nth-child(odd):hover,
+  table.list:not(.odd-even) tbody tr:nth-child(even):hover,
+  .even:hover,
+  #issue-changesets div.changeset:nth-child(even):hover {
+    @apply bg-background-secondary/50
+  }
+
+  table.list,
+  .table-list {
+    @apply bg-background-primary border-border-divider m-0 rounded-none
+  }
+
+  table.list th,
+  .table-list-header {
+    @apply bg-background-secondary border-y border-border-divider text-text-default text-xs p-2
+  }
+
+  table.list th a,
+  .table-list-header a {
+    @apply text-text-default
+  }
+
+  table td {
+    @apply text-text-default text-sm p-2
+  }
+
+  table.list td {
+    @apply border-y border-border-divider text-text-default text-sm p-2
+  }
+
+  table.list td.checkbox {
+    @apply w-[29px] p-0
+  }
+
+  table.list td.buttons {
+    @apply text-center
+  }
+
+  #issue_tree td.buttons,
+  #relations td.buttons {
+    @apply w-[82px] p-2
+  }
+
+  #issue_tree td.buttons a:last-child,
+  #relations td.buttons a:last-child {
+    @apply ml-2
+  }
+
+  #issue_tree .subject a,
+  #relations .subject a {
+    @apply text-sm
+  }
+
+
+  #issue_tree tr:first-child td,
+  #relations tr:first-child td {
+    @apply border-t border-border-divider
+  }
+
+  tr span.expander,
+  .gantt_subjects div > span.expander {
+    @apply pl-4
+  }
+
+  table.boards a.board {
+    background-image: url(images/chat_bubble_default.svg);
+    background-size: 14px 14px;
+  }
+
+  table.boards td.last-message {
+    @apply text-sm
+  }
+
+  tr.message.sticky td.subject.icon {
+    background-position: 0.5rem 50%;
+
+    @apply pl-7
+  }
+
+  table.custom_fields .icon-sort-handle {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    background-position: center center;
+    vertical-align: middle;
+
+    @apply bg-background-secondary p-0 rounded-md
+  }
+
+  .attachments table td {
+    @apply border-none p-1
+  }
+
+  table.permissions td.role {
+    @apply text-xs text-text-caption
+  }
+
+
+  // filecontent
+  table.filecontent {
+    @apply mt-2
+  }
+
+
+  // transitions
+  table.transitions td.enabled {
+    @apply bg-status-successLight
+  }
+
+
+  // enumerations
+  table.list.enumerations {
+    @apply mb-10
+  }
+
+
+  tr.idnt td.subject, tr.idnt td.name {background: url(images/chevron_right_default.svg) no-repeat 2px 50%;}
+  tr.idnt-1 td.subject, tr.idnt-1 td.name {padding-left: 24px; background-position: 8px 50%;}
+  tr.idnt-2 td.subject, tr.idnt-2 td.name {padding-left: 40px; background-position: 24px 50%;}
+  tr.idnt-3 td.subject, tr.idnt-3 td.name {padding-left: 56px; background-position: 40px 50%;}
+  tr.idnt-4 td.subject, tr.idnt-4 td.name {padding-left: 72px; background-position: 56px 50%;}
+  tr.idnt-5 td.subject, tr.idnt-5 td.name {padding-left: 88px; background-position: 72px 50%;}
+  tr.idnt-6 td.subject, tr.idnt-6 td.name {padding-left: 104px; background-position: 88px 50%;}
+  tr.idnt-7 td.subject, tr.idnt-7 td.name {padding-left: 120px; background-position: 104px 50%;}
+  tr.idnt-8 td.subject, tr.idnt-8 td.name {padding-left: 136px; background-position: 120px 50%;}
+  tr.idnt-9 td.subject, tr.idnt-9 td.name {padding-left: 152px; background-position: 136px 50%;}
+}

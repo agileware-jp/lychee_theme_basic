@@ -1,0 +1,113 @@
+@layer components {
+  div#activity, #search-results {
+    @apply relative pl-4
+  }
+
+  div#activity::before, #search-results::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 3px;
+    width: 1px;
+    height: calc(100% - 8px);
+
+    @apply bg-border-divider
+  }
+
+  div#activity h3,
+  #search-results h3 {
+    @apply relative bg-transparent text-sm font-bold mb-2 p-0
+  }
+
+  div#activity h3::before,
+  #search-results h3::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -16px;
+    display: block;
+    width: 7px;
+    height: 7px;
+    transform: translateY(-50%);
+
+    @apply bg-product-default rounded-full
+  }
+
+  div#activity dl + h3,
+  #search-resulets + h3 {
+    @apply mt-8
+  }
+
+  div#activity dl,
+  #search-results {
+    @apply ml-0
+  }
+
+  div#activity dt {
+    @apply border-none pt-0
+  }
+
+  div#activity dt:not(:first-child),
+  #search-results dt:not(:first-child) {
+    @apply mt-2
+  }
+
+  div#activity dt.grouped,
+  div#activity dd.grouped {
+    @apply ml-4
+  }
+
+  div#activity dt.icon {
+    background-position: 0 3px !important;
+  }
+
+  #activity dt .gravatar {
+    @apply float-none m-0 ml-1
+  }
+
+  div#activity dt .time {
+    @apply text-sm text-text-caption mx-1
+  }
+
+  div#activity dt.me .time {
+    @apply border-none
+  }
+
+  div#activity dt .project {
+    @apply text-sm text-text-default
+  }
+
+  div#activity span.project:after,
+  #search-results span.project:after {
+    content: '-';
+
+    @apply py-1
+  }
+
+  div#activity dt a {
+    @apply text-sm
+  }
+
+  div#activity dd span.description.aw_has_description,
+  #search-results dd span.description.aw_has_description {
+    @apply bg-background-secondary text-xs text-text-caption px-4 py-2 rounded-lg
+  }
+
+  div#activity .author {
+    background-image: url(images/person_default.svg);
+    background-repeat: no-repeat;
+    background-size: 16px;
+    background-position: left center;
+
+    @apply flex mt-2 pl-5
+  }
+
+  div#activity .author a {
+    @apply text-sm
+  }
+
+  div#activity dd,
+  #search-results dd {
+    @apply mt-2 mb-0 pb-4
+  }
+}

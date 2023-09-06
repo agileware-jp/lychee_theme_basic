@@ -1,0 +1,96 @@
+@layer components {
+  #top-menu {
+    display: flex;
+    height: auto;
+
+    @apply bg-background-primary border-b border-border-divider text-sm px-6 py-4
+  }
+
+  #top-menu ul {
+    display: flex;
+  }
+
+  #top-menu li {
+    float: none;
+  }
+
+  #top-menu li:not(:first-child) {
+    @apply ml-4
+  }
+
+  #top-menu a {
+    font-weight: normal;
+
+    @apply text-text-default m-0
+  }
+
+  #top-menu a:hover {
+    text-decoration: none;
+    opacity: 60;
+    transition: opacity 0.3s;
+  }
+
+  #account {
+    order: 3;
+    float: none;
+
+    @apply ml-6
+  }
+
+  .action-login #top-menu,
+  .action-register #top-menu {
+    @apply justify-end
+  }
+
+  .action-login #account 
+  .action-register #account {
+    @apply ml-0
+  }
+
+  #account ul li:first-child {
+    @apply ml-0
+  }
+
+  #account ul li:not(:first-child) {
+    @apply ml-2
+  }
+
+  #top-menu .my-account, #top-menu .logout {
+    @apply bg-no-repeat pl-4
+  }
+
+  #top-menu .my-account {
+    background-image: url(images/chevron_right_default.svg);
+  }
+
+  #top-menu .logout {
+    background-image: url(images/chevron_right_default.svg);
+  }
+
+  #top-menu .register {
+    order: 2;
+    background-image: url(images/person_add_default.svg);
+    background-repeat: no-repeat;
+
+    @apply pl-5
+  }
+
+  #top-menu .login {
+    order: 1;
+    background-image: url(images/login_default.svg);
+    background-repeat: no-repeat;
+
+    @apply pl-5
+  }
+
+  #top-menu #loggedas {
+    order: 2;
+    float: none;
+    @apply mr-0 ml-auto
+  }
+
+  #top-menu > ul {
+    order: 1;
+    margin-right: auto;
+  }
+}

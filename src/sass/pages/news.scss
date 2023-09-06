@@ -1,0 +1,120 @@
+@layer components {
+  // index
+  .news-article ~ .news-article {
+    @apply border-t border-border-divider mt-6 pt-6
+  }
+
+  .news-article header h3 {
+    @apply text-sm text-text-default
+  }
+
+  .news-article header h3 a {
+    @apply text-base
+  }
+
+  .news-article .author {
+    @apply text-xs text-text-caption mb-2
+  }
+
+  .avatars-on .news-article .author {
+    @apply ml-8
+  }
+
+  // mypage news index
+  #block-news p ~ p {
+    @apply border-t border-border-divider mt-6 pt-6
+  }
+
+  #block-news .summary {
+    @apply inline-block mt-2
+  }
+
+  #block-news .author {
+    @apply inline-block mt-2
+  }
+
+
+  // show
+  .controller-news #content .contextual + h2 {
+    @apply mb-0
+  }
+
+  #edit-news + p {
+    @apply text-text-caption text-sm mt-4 mb-4
+  }
+
+  #edit-news + p .author {
+    @apply mt-2
+  }
+
+  // show > comment
+  #comments {
+    @apply border-t border-border-divider mt-4 pt-6
+  }
+
+  .comments {
+    @apply font-bold mb-2
+  }
+
+  #comments .wiki {
+    @apply mt-1 mb-6 pl-7
+  }
+
+  #add_comment_form .box {
+    @apply border-none mt-4 p-0
+  }
+
+  #add_comment_form textarea {
+    @apply w-full
+  }
+
+  // Box news TODO: プロジェクト名とNews名にjsで動的にClassをつける
+  .box.news p + p {
+    @apply mt-6
+  }
+
+  .box.news p > a:nth-child(1):not(:last-child) {
+    @apply inline-block bg-background-secondary text-xs px-2 py-1 rounded-md mr-1 mb-2
+  }
+
+  .box.news p > a:nth-child(1):hover {
+    @apply no-underline
+  }
+
+  .box.news p > a:nth-child(1)::after {
+    content: '\A';
+    @apply whitespace-pre
+  }
+
+  .box.news p > a:nth-child(1) + br {
+    @apply hidden
+  }
+
+  .box.news p > a:nth-child(2) {
+    @apply inline-block text-sm text-text-default font-bold
+  }
+
+  .box.news .comments {
+    @apply ml-2
+  }
+
+  .box.news .summary {
+    @apply block text-sm text-text-caption mb-2
+  }
+
+  .box.news .summary + br {
+    @apply hidden
+  }
+
+  .box.news .author {
+    @apply block text-xs text-text-caption
+  }
+
+  .box.news .author abbr {
+    @apply ml-1
+  }
+
+  .box.news p + a {
+    @apply inline-block text-xs mt-4
+  }
+}

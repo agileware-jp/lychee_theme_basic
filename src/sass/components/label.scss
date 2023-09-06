@@ -1,0 +1,47 @@
+@layer components {
+  // tabularのlabelはtabular側で管理
+  label.block,
+  .tabular label.block,
+  #notified_events label,
+  #message_box_notified_events label {
+    @apply flex items-center
+  }
+
+  label.block ~ label.block {
+    @apply mt-2
+  }
+
+  label.inline {
+    margin-left: 0 !important;
+
+    @apply inline-flex items-center w-auto text-sm text-text-default text-left mr-4 mb-0
+  }
+
+  .tabular label.inline {
+    @apply w-auto
+  }
+
+  label.floating {
+    @apply inline-block text-sm text-text-default text-left mt-2 mx-0 mb-0 pr-4
+  }
+
+  #notified_events label,
+  #message_box_notified_events label {
+    @apply mb-2
+  }
+
+  label.floating input,
+  label.inline input,
+  #notified_events label input {
+    @apply mr-1
+  }
+
+
+  .query-columns + p .inline:first-of-type {
+    background-color: #f00;
+  }
+
+  .query-columns + p .inline:first-of-type {
+    margin-left: 16px !important;
+  }
+}

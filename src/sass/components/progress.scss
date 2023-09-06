@@ -1,0 +1,42 @@
+@layer components {
+  table.progress {
+    overflow: hidden;
+    height: 13px;
+
+    @apply bg-primitive-gray-200 rounded
+  }
+
+  table.progress td.todo {
+    height: 13px;
+
+    @apply bg-primitive-gray-200 border-none
+  }
+
+  table.progress td.closed {
+    height: 13px;
+
+    @apply bg-status-success border-none rounded
+  }
+
+  table.progress td.done {
+    height: 13px;
+
+    @apply bg-status-success border-none rounded
+  }
+
+  div.issue .next-prev-links {
+    @apply text-xs text-text-caption
+  }
+
+  div.issue .next-prev-links .position {
+    @apply mx-1
+  }
+
+  div.issue .next-prev-links a:first-child {
+    @apply mr-1
+  }
+
+  div.issue .next-prev-links a:last-child {
+    @apply ml-1
+  }
+}

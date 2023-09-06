@@ -1,0 +1,78 @@
+@use './redmine_default.css';
+
+@use 'tailwindcss/base';
+@use 'tailwindcss/components';
+@use 'tailwindcss/utilities';
+
+/*
+* applyはstyleguideの基本要素（Colors〜Shadowまで）のみに利用する
+* →flexboxみたいなレイアウトとかまで全部Tailwindcssで指定すると後々大変な気がするから
+*/
+
+@use './base/base.scss' as *;
+
+// Layout
+@use './layout/layout.scss' as *;
+
+// Components
+@use './components/sidebar.scss' as *;
+@use './components/activity.scss' as *;
+@use './components/header.scss' as *;
+@use './components/badge.scss' as *;
+@use './components/breadcrumb.scss' as *;
+@use './components/box.scss' as *;
+@use './components/boards.scss' as *;
+@use './components/buttons.scss' as *;
+@use './components/calendar.scss' as *;
+@use './components/context_menu.scss' as *;
+@use './components/contextual.scss' as *;
+@use './components/dialog.scss' as *;
+@use './components/drdnContent.scss' as *;
+@use './components/errorExplanation.scss' as *;
+@use './components/filter.scss' as *;
+@use './components/flash.scss' as *;
+@use './components/gravatar.scss' as *;
+@use './components/history.scss' as *;
+@use './components/icons.scss' as *;
+@use './components/issue.scss' as *;
+@use './components/journal.scss' as *;
+@use './components/table.scss' as *;
+@use './components/mainMenu.scss' as *;
+@use './components/nodata.scss' as *;
+@use './components/otherFormats.scss' as *;
+@use './components/progress.scss' as *;
+@use './components/topMenu.scss' as *;
+@use './components/tabs.scss' as *;
+@use './components/tabular.scss' as *;
+@use './components/thumbnails.scss' as *;
+@use './components/versionOverview.scss' as *;
+@use './components/wikiEdit.scss' as *;
+@use './components/wiki.scss' as *;
+@use './components/pagination.scss' as *;
+@use './components/form.scss' as *;
+@use './components/label.scss' as *;
+@use './components/fieldset.scss' as *;
+@use './components/query.scss' as *;
+
+// Pages
+@use './pages/login.scss' as *;
+@use './pages/activities.scss' as *;
+@use './pages/customfield.scss' as *;
+@use './pages/documents.scss' as *;
+@use './pages/file.scss' as *;
+@use './pages/issues.scss' as *;
+@use './pages/members.scss' as *;
+@use './pages/mypage.scss' as *;
+@use './pages/news.scss' as *;
+@use './pages/projects.scss' as *;
+@use './pages/repositories.scss' as *;
+@use './pages/roles.scss' as *;
+@use './pages/settings.scss' as *;
+@use './pages/timelog.scss' as *;
+@use './pages/tracker.scss' as *;
+@use './pages/users.scss' as *;
+@use './pages/versions.scss' as *;
+@use './pages/workflows.scss' as *;
+
+// Plugins
+@use './plugins/lychee.scss' as *;

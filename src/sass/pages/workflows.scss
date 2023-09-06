@@ -1,0 +1,15 @@
+@layer components {
+  .controller-workflows {
+    #content form {
+      @apply block mt-2
+    }
+
+    table.workflows {
+      @apply mb-6
+    }
+
+    table.workflows + fieldset {
+      @apply mb-6
+    }
+  }
+}

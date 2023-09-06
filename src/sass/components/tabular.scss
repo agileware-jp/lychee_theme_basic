@@ -1,0 +1,39 @@
+@layer components {
+  html > body .tabular p {
+    @apply overflow-visible
+  }
+
+  html > body .tabular p::after {
+    content: '';
+    display: block;
+    @apply clear-both
+  }
+
+  .tabular p {
+    @apply min-h-0 py-0 pl-[10rem]
+  }
+
+  .tabular.settings p {
+    @apply pl-[18rem]
+  }
+
+  .tabular p ~ p {
+    @apply mt-4
+  }
+
+  .tabular.settings p ~ p {
+    @apply border-t border-border-divider mt-4 pt-4
+  }
+
+  .tabular label {
+    @apply w-[9rem] text-xs text-text-default -ml-[10rem] translate-y-1
+  }
+
+  .tabular.settings label {
+    @apply w-[17rem] text-xs text-text-default text-left -ml-[18rem] translate-y-1
+  }
+
+  .tabular textarea {
+    @apply w-full
+  }
+}

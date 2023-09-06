@@ -1,0 +1,17 @@
+@layer components {
+  form fieldset {
+    @apply w-full
+  }
+
+  fieldset legend {
+    @apply text-sm text-text-default
+  }
+
+  fieldset.box.tabular.settings {
+    @apply border-border-divider p-4
+  }
+
+  fieldset.box legend {
+    @apply font-bold
+  }
+}

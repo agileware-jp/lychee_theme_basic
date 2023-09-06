@@ -1,0 +1,17 @@
+@layer components {
+  #activity_scope_form p {
+    @apply mt-4
+  }
+
+  #activity_scope_form ul {
+    @apply mt-4
+  }
+
+  #activity_scope_form ul li:not(:first-child) {
+    @apply mt-2
+  }
+
+  #activity_scope_form ul label {
+    @apply text-text-link text-sm
+  }
+}

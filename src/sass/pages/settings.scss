@@ -1,0 +1,40 @@
+@layer components {
+  .controller-settings {
+    .box {
+      @apply bg-background-secondary/50
+    }
+
+    .query-columns {
+      @apply mb-4
+    }
+
+    #setting_project_list_display_type_board {
+      @apply -mt-1 ml-2
+    }
+
+    #setting_project_list_display_type_list {
+      @apply -mt-1 ml-0
+    }
+
+    #notified_events br,
+    #message_box_notified_events br {
+      @apply hidden
+    }
+
+    #commit-keywords {
+      @apply mb-4
+    }
+  }
+
+  .controller-custom_field_categories {
+    .nodata {
+      @apply clear-both mt-4
+    }
+  }
+
+  .controller-enumerations {
+    .nodata {
+      @apply mt-4
+    }
+  }
+}

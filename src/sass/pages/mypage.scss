@@ -1,0 +1,17 @@
+@layer components {
+  #my-page {
+    @apply w-full
+  }
+
+  #list-top {
+    @apply pt-0
+  }
+
+  .mypage-box h3 {
+    @apply mb-2
+  }
+
+  #block-issuequery__2 .box {
+    @apply border-none p-0
+  }
+}

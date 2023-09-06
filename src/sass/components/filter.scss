@@ -1,0 +1,145 @@
+@layer components {
+  #query_form {
+    @apply bg-background-secondary mb-4 p-4 rounded-md
+  }
+
+  fieldset#filters > legend + div {
+    @apply flex items-start w-full
+  }
+
+  .add-filter {
+    @apply float-none flex items-center w-auto text-left
+  }
+
+  fieldset#filters table {
+    @apply block grow w-auto
+  }
+
+  fieldset#filters table tr {
+    @apply flex items-start pb-2
+  }
+
+  fieldset#filters table td,
+  fieldset#filters table th {
+    @apply block border-none
+  }
+
+  fieldset#filters table tr.filter {
+    @apply h-auto
+  }
+
+  fieldset#filters table td.field {
+    @apply flex items-center w-60 h-[38px]
+  }
+
+  fieldset#filters table td.field input {
+    @apply mr-1
+  }
+
+  fieldset#filters table td.operator {
+    @apply w-36 pl-2
+  }
+
+  fieldset#filters table td.operator select {
+    @apply max-w-none w-full
+  }
+
+  fieldset#filters table td.values {
+    @apply pl-2
+  }
+
+  .add-filter label {
+    @apply text-xs text-text-caption mr-2
+  }
+
+  .add-filter select {
+    @apply w-32
+  }
+
+  fieldset.collapsible {
+    @apply border-none
+  }
+
+  fieldset.collapsible > legend {
+    @apply bg-[0px_center] text-sm text-text-default
+  }
+
+  fieldset#options {
+    @apply mt-2
+  }
+
+  #query_form_content + .buttons {
+    @apply mb-0
+  }
+
+  .query-columns {
+    @apply flex items-center
+  }
+
+  p + .query-columns {
+    @apply mt-4
+  }
+
+  .query-columns span + span {
+    @apply ml-2
+  }
+
+  .query-columns label {
+    @apply font-bold
+  }
+
+  .query-columns select {
+    @apply mt-2
+  }
+
+  .query-columns .buttons {
+    @apply flex-col
+  }
+
+  .query-columns .buttons input + input {
+    @apply mt-1
+  }
+
+  .query-columns + p {
+    @apply mt-4
+  }
+
+
+  // 設定 > プロジェクト
+  .action-projects {
+    h2 + form fieldset {
+      @apply border-none
+    }
+
+    fieldset label {
+      @apply text-xs
+    }
+
+    fieldset label ~ label {
+      @apply ml-4
+    }
+
+    input[type="submit"] {
+      @apply inline-block ml-2
+    }
+  }
+
+  // 設定 > ユーザー
+  .controller-users {
+    #users_form fieldset {
+      @apply border-none
+    }
+
+    fieldset label {
+      @apply text-xs
+    }
+
+    fieldset label ~ label {
+      @apply ml-4
+    }
+
+    input[type="submit"] {
+      @apply inline-block ml-2
+    }
+  }
+}

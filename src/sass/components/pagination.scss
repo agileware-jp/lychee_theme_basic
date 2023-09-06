@@ -1,0 +1,43 @@
+@layer components {
+  span.pagination {
+    display: flex;
+    align-items: center;
+
+    @apply text-text-caption mt-4
+  }
+
+  .pagination ul.pages {
+    display: flex;
+
+    @apply m-0
+  }
+
+  .pagination ul.pages li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @apply border-none text-xs mb-0 rounded-md
+  }
+
+  .pagination ul.pages li:last-child {
+    @apply rounded-md
+  }
+
+  .pagination ul.pages li:not(:first-child) {
+    @apply ml-1
+  }
+
+  .pagination ul.pages li.current {
+    @apply bg-product-default text-text-onFill
+  }
+
+  .pagination ul.pages li a,
+  .pagination ul.pages li span {
+    @apply px-3 py-2
+  }
+
+  .pagination .pages + span {
+    @apply text-text-caption text-xs ml-2
+  }
+}

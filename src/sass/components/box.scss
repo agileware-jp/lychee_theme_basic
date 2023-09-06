@@ -1,0 +1,51 @@
+@layer components {
+  .box, .mypage-box {
+    @apply bg-background-primary border-border-divider mb-6 p-4 rounded-md
+  }
+
+  // .box.tabular,
+  // .box.tabular.settings {
+  //   @apply border-transparent px-0
+  // }
+
+  .box h3 {
+    font-weight: bold;
+
+    @apply text-sm text-text-default mt-0 mb-2
+  }
+
+  // Issues
+  .edit_issue fieldset {
+    @apply bg-background-primary border-border-divider mb-6 p-4 rounded-md
+  }
+
+  .box.issues table.list + p {
+    @apply text-xs mt-2
+  }
+
+  // Members
+  .box.members p + p {
+    @apply mt-2
+  }
+
+  .box.members .label {
+    @apply text-text-default
+  }
+
+  .box.members .label + a ~ a {
+    @apply ml-1
+  }
+
+  // Spent Time
+  .box.spent_time ul {
+    @apply text-sm text-text-default
+  }
+
+  .box.spent_time ul li:not(:first-child) {
+    @apply mt-1
+  }
+
+  .box.spent_time ul + p {
+    @apply text-xs mt-2
+  }
+}

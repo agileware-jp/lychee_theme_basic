@@ -1,0 +1,18 @@
+@layer components {
+  #principals_for_new_member {
+    @apply mt-4
+  }
+
+  .objects-selection > div,
+  #user_group_ids {
+    column-rule: none;
+  }
+
+  #principals label {
+    @apply text-sm text-text-default
+  }
+
+  #principals label img {
+    @apply inline-block mx-1
+  }
+}

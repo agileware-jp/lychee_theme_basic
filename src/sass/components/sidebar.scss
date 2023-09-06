@@ -1,0 +1,216 @@
+#sidebar {
+  flex-shrink: 0;
+  padding-left: 20px;
+  padding-right: 8px;
+  background: #EEEEEE;
+  border-left: 1px solid #ddd
+}
+
+@media screen and (min-width: 0px) and (max-width: 1089px) {
+  #sidebar {
+    width: 22%;
+  }
+}
+
+@media screen and (min-width: 1090px) and (max-width: 1279px) {
+  #sidebar {
+    width: 240px;
+  }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1599px) {
+  #sidebar {
+    width: 280px;
+  }
+}
+
+@media screen and (min-width: 1600px) and (max-width: 1919px) {
+  #sidebar {
+    width: 320px;
+  }
+}
+
+@media screen and (min-width: 1920px) and (max-width: 2559px) {
+  #sidebar {
+    width: 360px;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  #sidebar {
+    width: 380px;
+  }
+}
+
+#sidebar h3 {
+  font-size: 14px;
+  margin-top: 14px;
+  color: #666;
+}
+
+#sidebar hr {
+  width: 100%;
+  margin: 0 auto;
+  height: 1px;
+  background: #ccc;
+  border: 0;
+}
+
+* html #sidebar hr {
+  width: 95%;
+  position: relative;
+  left: -6px;
+  color: #ccc;
+}
+
+#sidebar .contextual {
+  margin-right: 1em;
+}
+
+#sidebar ul,
+ul.flat {
+  margin: 0;
+  padding: 0;
+}
+
+#sidebar ul li,
+ul.flat li {
+  list-style-type: none;
+  margin: 0px 2px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+
+#sidebar div.wiki ul {
+  margin: inherit;
+  padding-left: 40px;
+}
+
+#sidebar div.wiki ul li {
+  list-style-type: inherit;
+}
+
+#sidebar a.icon-only {
+  opacity: 0.4;
+  margin-left: 5px;
+}
+
+#sidebar a.icon-only:hover {
+  opacity: 1;
+}
+
+#sidebar span.icon-warning {
+  margin-left: 5px;
+}
+
+#sidebar li input[type=checkbox] {
+  height: 20px;
+}
+
+#main.nosidebar #sidebar {
+  display: none;
+}
+
+#sidebar a.selected {
+  line-height: 1.7em;
+  padding: 1px 3px 2px 2px;
+  margin-left: -2px;
+  background-color: #9DB9D5;
+  color: #fff;
+  border-radius: 2px;
+}
+
+#sidebar a.selected:hover {
+  text-decoration: none;
+}
+
+#sidebar .query.default {
+  font-weight: bold;
+}
+
+
+#admin-menu ul {
+  margin: 0;
+  padding: 0;
+}
+
+#admin-menu li {
+  margin: 0;
+  padding: 0 0 6px 0;
+  list-style-type: none;
+}
+
+#admin-menu a {
+  line-height: 1.7em;
+}
+
+#admin-menu a.selected {
+  padding-left: 20px !important;
+  background-position: 2px 40%;
+}
+
+@layer components {
+  // sidebar
+  #sidebar h3:nth-child(n+3) {
+    @apply mt-4
+  }
+
+  #sidebar ul li {
+    @apply flex items-center m-0 p-0
+  }
+
+  #sidebar ul li:not(:first-child) {
+    @apply mt-1
+  }
+
+  #sidebar ul li a {
+    @apply block grow text-sm m-0 px-2 py-1.5 rounded
+  }
+
+  #sidebar ul li a:hover {
+    @apply bg-background-secondary
+  }
+
+  #sidebar ul li a.selected {
+    padding-left: 1.75rem;
+    @apply bg-background-tertiary text-text-default text-sm m-0 pr-2 py-1.5 rounded
+  }
+
+  #sidebar ul li a.icon-only {
+    @apply flex grow-0 overflow-hidden indent-[100%] whitespace-nowrap w-4 h-4 bg-no-repeat opacity-100 bg-[length:16px_16px] ml-1
+  }
+
+  #sidebar ul li a.query.selected {
+    padding-left: 0.5rem;
+    @apply px-2
+  }
+
+  // adminMenu
+  #admin-index {
+    @apply max-w-xs mt-4
+  }
+
+  #admin-menu ul li {
+    @apply m-0 p-0
+  }
+
+  #admin-menu ul li a {
+    @apply block text-sm m-0 pl-7 pr-2 py-1.5 rounded
+  }
+
+  #admin-menu ul li a,
+  #admin-menu ul li a.lychee-icon {
+    @apply bg-[left_8px_center]
+  }
+
+  #admin-menu ul li a:hover {
+    @apply bg-background-secondary
+  }
+
+  #admin-menu ul li a.selected {
+    @apply bg-background-tertiary bg-[left_8px_center] text-text-default text-sm m-0 pr-7 py-1.5 rounded
+  }
+
+  #admin-menu#admin-menu a.redmine-logs {
+    background-image: url(images/overview_default.svg);
+  }
+}

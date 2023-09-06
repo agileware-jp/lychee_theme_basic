@@ -1,0 +1,33 @@
+@layer components {
+  #content .tabs {
+    @apply w-full h-[43px]
+  }
+
+  #content .tabs ul {
+    @apply flex items-center border-0 border-b border-border-divider pl-0
+  }
+
+  #content .tabs ul li {
+    @apply float-none mr-0 mb-0 rounded-tl-md rounded-tr-md
+  }
+
+  #content .tabs ul li a {
+    @apply border-0 text-sm text-text-default border-b-2 border-transparent font-normal rounded-tl-md rounded-tr-md px-3 py-2
+  }
+
+  #content .tabs ul li a:hover {
+    @apply text-text-default bg-background-secondary
+  }
+
+  #content .tabs ul li a.selected {
+    @apply border-0 border-b-2 border-product-default
+  }
+
+  div.tabs-buttons {
+    @apply border-0
+  }
+
+  button.tab-left, button.tab-right {
+    @apply bottom-0
+  }
+}

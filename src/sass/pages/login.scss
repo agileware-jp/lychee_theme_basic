@@ -1,0 +1,70 @@
+@layer components {
+  .action-login {
+    #login-form {
+      @apply bg-background-secondary border-none p-6 rounded-xl
+    }
+
+    #login-form label {
+      @apply text-sm text-text-default
+    }
+
+    .lost_password {
+      @apply text-sm text-text-link
+    }
+
+    #login-form label[for="password"] {
+      @apply mt-6
+    }
+
+    #login-form label[for="autologin"] {
+      @apply cursor-pointer flex items-center text-sm text-text-default
+    }
+
+    #login-form label[for="autologin"] input {
+      @apply mr-1
+    }
+  }
+
+  .action-lost_password {
+    h2 {
+      @apply text-lg text-text-default font-bold text-center
+    }
+
+    h2 + form {
+      display: block;
+      max-width: 380px;
+
+      @apply bg-background-secondary border-none text-text-default mt-8 mx-auto p-6 rounded-xl
+    }
+
+    form .box {
+      @apply bg-transparent border-none m-0 p-0
+    }
+
+    form .tabular input {
+      max-width: none;
+    }
+
+    form .tabular input[type="submit"] {
+      @apply mt-4
+    }
+  }
+
+  .action-register {
+    h2 {
+      @apply text-lg text-text-default font-bold text-center
+    }
+
+    h2 + form {
+      @apply block max-w-2xl text-text-default mt-8 mx-auto
+    }
+
+    form .box {
+      @apply bg-background-secondary/50 mb-4
+    }
+
+    form input[type="submit"] {
+      @apply block w-24 mx-auto
+    }
+  }
+}

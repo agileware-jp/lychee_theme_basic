@@ -1,0 +1,25 @@
+@layer components {
+  .controller-roles .edit_role h3 {
+    @apply mt-6
+  }
+
+  #permissions.box {
+    @apply border-none p-0
+  }
+
+  #permissions fieldset {
+    @apply bg-background-primary border-border-divider pb-4 px-4 rounded-md
+  }
+
+  #permissions fieldset + fieldset {
+    @apply mt-4
+  }
+
+  .manage_members_shown > label:first-of-type {
+    @apply mb-2
+  }
+
+  #permissions_form input[name="commit"] {
+    @apply mt-4
+  }
+}

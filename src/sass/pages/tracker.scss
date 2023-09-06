@@ -1,0 +1,9 @@
+@layer components {
+  .controller-trackers .projects li {
+    @apply mt-2
+  }
+
+  .controller-trackers .projects.root > li:first-child {
+    @apply mt-0
+  }
+}

@@ -1,0 +1,89 @@
+table, tbody, thead, tr, th, td {
+  box-sizing: content-box;
+}
+
+body {
+  font-family:
+    "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    "游ゴシック体",
+    YuGothic,
+    "游ゴシック",
+    "Yu Gothic",
+    Meiryo,
+    sans-serif;
+}
+
+@layer components {
+  body {
+    @apply text-sm
+  }
+
+  p {
+    @apply my-1
+  }
+
+  img, svg, video, canvas, audio, iframe, embed, object {
+    @apply inline-block
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply p-0
+  }
+
+  #content {
+    h1, h2, h3, h4, h5, h6 {
+      @apply text-text-default
+    }
+  }
+
+  #content > h2 {
+    @apply text-base text-text-default font-bold mt-3 mb-2 p-0
+  }
+
+  p.subtitle {
+    @apply text-sm text-text-caption not-italic mt-0 mb-4
+  }
+
+  h2 + p.subtitle {
+    @apply -mt-3
+  }
+
+  h3 {
+    @apply text-text-default font-bold mb-2
+  }
+
+  #sidebar h3 {
+    @apply text-sm mt-0
+  }
+
+  div.issue div.subject h3 {
+    @apply text-lg
+  }
+
+  h4 {
+    @apply border-none
+  }
+
+  .required {
+    @apply text-text-danger
+  }
+
+  em.info {
+    @apply text-xs text-text-caption mt-2
+  }
+
+  blockquote {
+    @apply border-border-divider border-l-2
+  }
+
+  blockquote blockquote {
+    @apply mt-2
+  }
+
+  .syntaxhl {
+    @apply bg-background-secondary
+  }
+}

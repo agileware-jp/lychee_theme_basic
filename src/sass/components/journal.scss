@@ -1,0 +1,28 @@
+@layer components {
+  .journal + .journal {
+    @apply mt-6
+  }
+
+  .journal .note-header {
+    @apply flex items-center
+  }
+
+  .journal .note-header .gravatar {
+    @apply mr-1
+  }
+
+  div.journal ul.details,
+  ul.revision-info {
+    @apply list-disc bg-background-secondary text-text-default text-sm mt-2 p-2 pl-7 rounded-md
+  }
+
+  div.journal ul.details li:not(:first-child),
+  ul.revision-info li:not(:first-child) {
+    @apply mt-1
+  }
+
+  .journal-actions .icon-only,
+  .journal-actions .drdn {
+    @apply m-0 ml-2
+  }
+}

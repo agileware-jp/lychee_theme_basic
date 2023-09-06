@@ -1,0 +1,59 @@
+@layer components {
+  .controller-custom_fields {
+    #content .box p + p {
+      @apply mt-2
+    }
+
+    #content .box p label:not(:first-child) {
+      @apply mt-2
+    }
+
+    #content .box.tabular p + p {
+      @apply mt-6
+    }
+
+    #content .box p label {
+      display: flex;
+    }
+
+    #content .box p label input[type=radio] {
+      @apply mt-2
+    }
+
+    #custom_field_project_ids .projects li {
+      @apply mt-2
+    }
+
+    #custom_field_project_ids .projects label {
+      display: flex;
+    }
+
+    #custom_field_project_ids .projects label input {
+      @apply mr-1
+    }
+
+    #custom_field_is_for_all {
+      @apply ml-1
+    }
+
+    #custom_field_tracker_ids input[type="checkbox"]:not(:first-of-type) {
+      @apply ml-2
+    }
+
+    /*
+    * カスタムフィールド >> 新しいカスタムフィールド の【追加するオブジェクトの選択】のlabel
+    * htmlにstyleを直接指定されており汎用的な上書きができないため、個別で上書き指定する
+    */
+    #content .box p + p label input[type="radio"] {
+      @apply -mt-1 mr-1
+    }
+
+    /*
+    * カスタムフィールド新規作成時の「全プロジェクト向け」のチェックUI
+    * label と input が、親子ではなく兄弟要素になっており、汎用的な上書きができないため、個別で指定している
+    */
+    #content .box p label[for="custom_field_is_for_all"] {
+      @apply inline-block font-bold
+    }
+  }
+}

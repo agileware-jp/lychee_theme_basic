@@ -1,0 +1,11 @@
+@layer components {
+  .contextual {
+    @apply flex items-center text-sm
+  }
+
+  .contextual > *:not(:first-child),
+  .buttons > .icon:not(:first-child),
+  .contextual .journal-actions > *:not(:first-child) {
+    @apply ml-2
+  }
+}

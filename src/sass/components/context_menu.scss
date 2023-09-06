@@ -1,0 +1,49 @@
+// context_menu.cssを用意することで置き換えが可能になるが、tailwindを分離する方法がわからないため一旦このままapplication.css内で進める
+// かわりにID二重指定で詳細度を高めて上書きする
+@layer components {
+  #context-menu#context-menu > ul {
+    width: 170px;
+    @apply bg-background-primary border-border-default rounded-md shadow-lg p-1
+  }
+
+  #context-menu#context-menu li {
+    @apply border-none p-0 rounded
+  }
+
+  #context-menu#context-menu li:hover {
+    @apply bg-background-secondary
+  }
+
+  #context-menu#context-menu li:not(:first-child) {
+    @apply mt-0.5
+  }
+
+  #context-menu#context-menu li > a {
+    @apply text-sm text-text-default py-2 pl-8 pr-3
+  }
+
+  #context-menu#context-menu li > a.icon {
+    background-position: 12px 50%;
+  }
+
+  #context-menu#context-menu li > a.submenu {
+    @apply pr-8
+  }
+
+  #context-menu#context-menu li a.submenu {
+    background-image: url(images/chevron_right_default.svg);
+    background-position: right 12px center;
+    background-size: 16px;
+    background-repeat: no-repeat;
+  }
+
+  .context-menu-selection.context-menu-selection,
+  .context-menu-selection.context-menu-selection:hover {
+    background-color: #DDE9EE !important;
+  }
+
+  .context-menu-selection.context-menu-selection a,
+  .context-menu-selection.context-menu-selection a:hover {
+    color: #116699 !important;
+  }
+}

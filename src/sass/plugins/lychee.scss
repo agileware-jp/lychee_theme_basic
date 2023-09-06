@@ -1,0 +1,102 @@
+@layer components {
+  .theme-Lychee {
+    // Profile Icon
+    #attachments_form.lychee_profile_icon .preview-avatar {
+      @apply mr-2
+    }
+
+    #attachments_form.lychee_profile_icon .add_attachment {
+      @apply inline-flex flex-col
+    }
+
+    #attachments_form.lychee_profile_icon .add_attachment input[type="file"] {
+      @apply w-full
+    }
+
+
+    // Cost
+    .lychee-cost-cash-forecast__unit-description {
+      @apply top-4 right-4
+    }
+
+
+    // Message Box
+    #top-menu .lychee-message-box-icon {
+      background-image: url(images/mail_dark.svg);
+      @apply block w-5 h-5 bg-[length:20px]
+    }
+
+    #top-menu .lychee-message-box-icon.unread {
+      background-image: url(images/mail_unread_dark.svg);
+    }
+
+    #top-menu .lychee-message-box-icon::before {
+      content: none;
+      @apply m-0
+    }
+
+
+    // Lychee Project View?
+    .favorite-project-container {
+      @apply w-full
+    }
+
+
+    // Lychee Actual Date
+    #actual_dates_area {
+      @apply mt-4
+    }
+  }
+
+
+  // LRM
+  .theme-Lychee.controller-resource_management {
+    #main {
+      @apply ml-0
+    }
+  }
+
+
+  // LPR
+  .theme-Lychee.controller-project_report_overview {
+    #main {
+      @apply ml-0
+    }
+  }
+
+
+  // Lychee Work Plan
+  .theme-Lychee.controller-lychee_work_plan {
+    #main {
+      @apply ml-0
+    }
+  }
+
+
+  // Lychee Time Management
+  .theme-Lychee.controller-time_management {
+    #main {
+      @apply ml-0
+    }
+  }
+
+
+  // Lychee ステータスカラー
+  .theme-Lychee.controller-issue_statuses.action-index td.name {
+    display: revert;
+  }
+
+  // Lychee Kanban
+  .theme-Lychee.controller-kanban {
+    select, input {
+      @apply h-auto
+    }
+  }
+
+  // Lychee Backlog
+  .theme-Lychee.controller-backlog {
+    select, input {
+      @apply h-auto
+    }
+  }
+}

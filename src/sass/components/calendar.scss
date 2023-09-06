@@ -1,0 +1,39 @@
+@layer components {
+  table.cal {
+    @apply border-border-divider mb-2 rounded-none
+  }
+
+  table.cal thead th {
+    font-weight: normal;
+
+    @apply bg-background-secondary text-xs text-text-default px-2 py-1
+  }
+
+  table.cal td {
+    @apply border-border-divider
+  }
+
+  table.cal td.week-number {
+    @apply bg-background-secondary text-xs text-text-default px-2 py-1
+  }
+
+  table.cal td.nwday:not(.odd) {
+    @apply bg-background-secondary text-text-default text-xs
+  }
+
+  table.cal td.odd p.day-num {
+    @apply text-text-caption
+  }
+
+  div.tooltip:hover span.tip {
+    @apply bg-background-primary border border-border-divider text-sm text-text-default leading-6 p-4 rounded-md shadow-xl
+  }
+
+  div.tooltip:hover span.tip .issue {
+    @apply text-sm
+  }
+
+  div.tooltip:hover span.tip a {
+    @apply text-sm
+  }
+}

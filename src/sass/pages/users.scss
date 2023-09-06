@@ -1,0 +1,13 @@
+@layer components {
+  #password_fields {
+    @apply mb-6
+  }
+
+  .controller-users .splitcontentleft > ul {
+    @apply bg-background-secondary mb-6 p-4 rounded-md
+  }
+
+  .controller-users .splitcontentleft .list {
+    @apply mb-6
+  }
+}

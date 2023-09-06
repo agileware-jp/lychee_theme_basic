@@ -1,0 +1,49 @@
+@layer components {
+  .controller-documents {
+    .document-group {
+      @apply clear-both bg-background-primary border border-border-divider mb-8 p-4 rounded-md
+    }
+
+    .document-group:first-child {
+      @apply mt-2
+    }
+
+    .document-item + .document-item {
+      @apply border-t border-border-divider mt-6 pt-6
+    }
+
+    #document-list .document-group {
+      @apply mb-6
+    }
+
+    #document-list h1 {
+      @apply mb-2
+    }
+
+    .group-name {
+      @apply inline-flex bg-background-secondary text-text-default text-xs font-normal mb-2 px-2 py-1 rounded-md
+    }
+
+    .title {
+      @apply text-text-link text-sm font-bold mb-2 p-0
+    }
+
+    .updated_on {
+      @apply text-text-caption text-sm mb-2 p-0
+    }
+  }
+
+  .controller-my {
+    .document-item + .document-item {
+      @apply border-t border-border-divider mt-6 pt-6
+    }
+
+    .title {
+      @apply text-text-link text-sm font-bold mb-2 p-0
+    }
+
+    .updated_on {
+      @apply text-text-caption text-sm mb-2 p-0
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@layer components {
+  #main {
+    @apply flex-row
+  }
+
+  .has-main-menu #main {
+    @apply ml-52
+  }
+
+  #main.nosidebar {
+    @apply ml-0
+  }
+
+  .has-main-menu #main.nosidebar {
+    @apply ml-52
+  }
+
+  #sidebar {
+    @apply order-2 w-60 bg-background-primary border-r-0 border-l border-border-divider p-4
+  }
+
+  #content {
+    @apply bg-background-primary p-6 order-1
+  }
+
+  .has-main-menu #content {
+    @apply pl-3
+  }
+
+  #footer {
+    @apply w-full bg-background-primary border-t border-border-divider text-text-caption p-2
+  }
+
+  // 見出しとcontextualのfloatによっておかしくなる箇所の調整
+  #query_form {
+    @apply clear-both block
+  }
+
+  #edit-news + p {
+    @apply clear-both
+  }
+
+  .splitcontent {
+    @apply clear-both
+  }
+
+  .splitcontentleft {
+    @apply mr-3
+  }
+
+  .splitcontentright {
+    @apply ml-3
+  }
+}

@@ -1,0 +1,5 @@
+@layer components {
+  .breadcrumb, .breadcrumb a {
+    @apply text-sm text-text-default
+  }
+}

@@ -1,0 +1,11 @@
+@layer components {
+  .controller-files {
+    .filedroplistner p label {
+      @apply mb-2
+    }
+
+    h2 + .autoscroll {
+      @apply clear-both
+    }
+  }
+}

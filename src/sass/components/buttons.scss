@@ -1,0 +1,208 @@
+@layer components {
+  .BTN_PRIMARY {
+    @apply cursor-pointer inline-block h-auto bg-product-default border border-product-default text-text-onFill text-sm py-2 px-3 rounded-md shadow hover:bg-product-hover hover:shadow-none active:bg-product-active active:shadow-none
+  }
+
+  .BTN_SECONDARY {
+    @apply cursor-pointer inline-block h-auto bg-background-primary border border-border-default text-text-default text-sm py-2 px-3 rounded-md shadow hover:no-underline hover:bg-background-primary hover:border-border-dark hover:shadow-none active:bg-background-secondary active:shadow-none
+  }
+
+  .BTN_SECONDARY_ICON_LEFT {
+    @apply cursor-pointer inline-block h-auto bg-background-primary bg-[0.75rem_center] border border-border-default text-text-default text-sm py-2 pl-7 pr-3 rounded-md shadow hover:no-underline hover:bg-background-primary hover:border-border-dark hover:shadow-none active:bg-background-secondary active:shadow-none
+  }
+
+  .BTN_TERTIARY {
+    @apply cursor-pointer inline-block h-auto bg-background-secondary border border-background-secondary text-text-default text-sm py-2 px-3 rounded-md hover:border-border-divider hover:no-underline hover:text-text-default active:bg-background-tertiary
+  }
+
+  .BTN_TERTIARY_ICON_ONLY {
+    @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap w-7 h-7 bg-center align-middle bg-background-secondary border border-background-secondary text-sm p-0 rounded-md hover:border-border-divider active:bg-background-tertiary
+  }
+
+  .BTN_TERTIARY_ICON_RIGHT {
+    @apply cursor-pointer inline-block h-auto bg-[right_0.75rem_center] bg-background-secondary border border-background-secondary text-text-default text-sm py-2 pr-7 pl-3 rounded-md hover:border-border-divider hover:no-underline hover:text-text-default active:bg-background-tertiary
+  }
+
+  .BTN_TERTIARY_ICON_LEFT {
+    @apply cursor-pointer inline-block h-auto bg-[0.75rem_center] bg-background-secondary border border-background-secondary text-text-default text-sm py-2 pr-3 pl-7 rounded-md hover:border-border-divider hover:no-underline hover:text-text-default active:bg-background-tertiary
+  }
+
+  .BTN_LINK {
+    @apply cursor-pointer inline-block h-auto bg-transparent border border-transparent text-text-link text-sm py-2 px-3
+  }
+
+  .buttons {
+    @apply text-sm
+  }
+
+  .buttons * {
+    margin: 0;
+  }
+
+  .aw_cancelBtn {
+    @extend .BTN_LINK;
+  }
+
+  .aw_secondaryBtn {
+    @extend .BTN_SECONDARY;
+  }
+
+  // tableタグ要素にも使われており、flexにすることでtableが崩れてしまうのでそれは除外
+  .buttons:not(th, td) {
+    @apply flex items-center gap-2
+  }
+
+  // ロール設定ページ
+  .controller-roles table.list td.buttons {
+    @apply text-right
+  }
+
+  table.list td.buttons a, div.buttons a {
+    @apply mr-0
+  }
+
+  table.list td.buttons a,
+  table.list td.buttons .icon-only {
+    @extend .BTN_TERTIARY_ICON_ONLY
+  }
+
+  table.list td.buttons:after {
+    content: none;
+  }
+
+  input[type=submit],
+  button[type=submit] {
+    @extend .BTN_PRIMARY;
+  }
+
+  #login-form #login-submit {
+    @extend .BTN_PRIMARY;
+  }
+
+  #content > .contextual > a,
+  p.buttons a {
+    @extend .BTN_SECONDARY;
+    @apply inline-block
+  }
+
+  #content > .contextual .drdn:not(.icon) .drdn-trigger {
+    background-image: url(images/more_dark.svg);
+
+    @extend .BTN_TERTIARY_ICON_ONLY;
+    @apply bg-no-repeat w-[38px] h-[38px]
+  }
+
+  // チケット詳細>添付ファイルでのicon-onlyをtertialy buttonに
+  .attachments .contextual .icon-only {
+    @extend .BTN_TERTIARY_ICON_ONLY;
+    @apply w-6 h-6
+  }
+
+  // journalのcontextualをtertialy buttonに
+  .contextual .journal-actions .icon-only {
+    @extend .BTN_TERTIARY_ICON_ONLY;
+    @apply w-6 h-6
+  }
+
+  // contextual(ページタイトル右のボタン群を個別にカスタマイズする:特定のものだけPrimaryにする)
+  #content > .contextual > a.icon-add {
+    background-image: url(images/add_circle_onFill.svg);
+
+    @apply bg-product-default border-product-default text-text-onFill hover:bg-product-hover active:bg-product-active
+  }
+
+  #content > .contextual > a.icon,
+  #content > .contextual .drdn.icon,
+  p.buttons a.icon {
+    @apply h-auto bg-[8px_center] pr-3 pl-7 py-2
+  }
+
+  #content > .contextual > a ~ a {
+    @apply ml-2
+  }
+
+  .controller-enumerations #content h3 + p .icon-add {
+    @extend .BTN_SECONDARY;
+    @apply inline-block bg-[8px_center] mt-2 pr-3 pl-7
+  }
+
+  input[name="follow"] {
+    @extend .BTN_SECONDARY;
+    @apply ml-2
+  }
+
+  input[name="continue"] {
+    @extend .BTN_SECONDARY;
+    @apply ml-2
+  }
+
+  // APIキー表示から戻るときのボタン（ただのaタグなので個別で指定）
+  .action-show_api_key #content .box + p a[href="#"] {
+    @extend .BTN_SECONDARY;
+  }
+
+
+  .pagination + p a:not(.atom, .csv, .pdf) {
+    @extend .BTN_TERTIARY;
+  }
+
+
+  #comments + p a {
+    @extend .BTN_TERTIARY;
+  }
+
+
+  // 利用できる項目＋選択された項目
+  .query-columns .buttons input[type="button"] {
+    @apply cursor-pointer w-8 h-8 bg-background-primary border-border-default rounded-md hover:border-border-dark active:bg-background-secondary
+  }
+
+
+  // 設定 > プロジェクト
+  // 設定 > ユーザー
+  .action-projects,
+  .controller-users {
+    input[type="submit"] + .icon-reload {
+      @extend .BTN_SECONDARY_ICON_LEFT;
+      @apply ml-2
+    }
+  }
+
+
+  // tabs-buttons
+  div.tabs-buttons {
+    @apply top-1/2 flex items-center w-auto h-auto -translate-y-1/2
+  }
+
+  button.tab-left, button.tab-right {
+    @extend .BTN_TERTIARY_ICON_ONLY;
+    @apply static;
+  }
+
+  button.tab-left.disabled, button.tab-right.disabled {
+    @apply opacity-50 bg-background-secondary
+  }
+
+  button.tab-right {
+    @apply ml-1
+  }
+
+
+  #main-menu li a.new-object {
+    @extend .BTN_TERTIARY_ICON_ONLY;
+
+    background-image: url(images/add_dark.svg);
+
+    @apply bg-no-repeat bg-[length:16px_16px] bg-center
+  }
+
+  #main-menu li a.new-object:hover,
+  #main-menu li a.new-object:active {
+    background-image: url(images/add_dark.svg);
+  }
+
+  .search_for_watchers a {
+    @extend .BTN_TERTIARY_ICON_LEFT;
+    @apply mt-4
+  }
+}

@@ -1,0 +1,92 @@
+@layer components {
+  .drdn-content {
+    @apply border-border-default rounded-md shadow-lg
+  }
+
+  div + .drdn-items {
+    @apply border-border-divider
+  }
+
+  .contextual .drdn-items {
+    @apply p-0
+  }
+
+  .drdn-content .quick-search {
+    @apply m-2
+  }
+
+  .drdn-items > strong {
+    @apply border-0 border-t border-border-divider text-text-caption text-xs font-normal px-3 pt-2 pb-1
+  }
+
+  .drdn-items.selection>strong::before {
+    content: none;
+  }
+
+  div+.drdn-items > strong:first-of-type {
+    @apply border-none
+  }
+
+  .drdn-items > a + strong {
+    @apply mt-1
+  }
+
+  .drdn-items > a,
+  .contextual .drdn-items > a.icon {
+    @apply text-sm text-text-default mx-1 py-2 px-3 rounded
+  }
+
+  .drdn-items > a:first-child {
+    @apply mt-1
+  }
+
+  .drdn-items > a:not(:first-child),
+  .contextual .drdn-items > a.icon:not(:first-child) {
+    @apply mt-0.5
+  }
+
+  .contextual .drdn-items > a.icon {
+    @apply pl-6
+  }
+
+  .drdn-items > a:hover,
+  #project-jump .drdn-items > a:hover,
+  .contextual .drdn-items > a.icon:hover {
+    @apply bg-background-secondary border-background-secondary
+  }
+
+  #project-jump .drdn-items > a:hover {
+    color: #002E40 !important;
+  }
+
+  .drdn-items > a:last-of-type {
+    @apply mb-1
+  }
+
+  .drdn-items.all-projects a {
+    @apply mt-1
+  }
+
+  .drdn-items.selection > *.selected::before {
+    content: url(images/done_dark.svg);
+    @apply w-4 h-4 translate-y-[3px]
+  }
+
+
+  // main-menu > new-object
+  #main-menu .menu-children {
+    @apply border border-border-default p-1 rounded-md shadow-lg
+  }
+
+  #main-menu .menu-children li a {
+    @apply bg-background-primary rounded
+  }
+
+  #main-menu .menu-children li a:hover {
+    @apply bg-background-secondary text-text-default
+  }
+
+  #main-menu .menu-children li a:active {
+    @apply bg-background-tertiary text-text-default
+  }
+}

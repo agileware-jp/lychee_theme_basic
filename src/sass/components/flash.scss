@@ -1,0 +1,19 @@
+@layer components {
+  div.flash.notice {
+    background: url(images/done_success.svg) 8px 50% no-repeat;
+
+    @apply border border-status-success bg-background-primary text-text-default text-sm pr-3 pl-8 py-2 rounded-md
+  }
+
+  div.flash {
+    @apply border border-transparent bg-background-secondary text-text-caption text-sm px-3 py-2 rounded-md
+  }
+
+  div.flash.warning {
+    @apply border border-status-warningLight bg-status-warningLight bg-none text-text-default text-sm pr-3 px-2 rounded-md
+  }
+
+  .conflict {
+    @apply border border-status-warningLight bg-status-warningLight bg-none text-text-default text-sm pr-3 px-2 rounded-md
+  }
+}

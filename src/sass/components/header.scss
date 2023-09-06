@@ -1,0 +1,30 @@
+@layer components {
+  #header {
+    @apply flex items-center min-h-0 bg-background-secondary text-text-default py-2 px-4
+  }
+
+  #header a {
+    @apply text-text-default
+  }
+
+  // Quick Search
+  #quick-search {
+    @apply order-2 flex float-none ml-auto
+  }
+
+  #quick-search form {
+    @apply float-none mr-0 mr-2
+  }
+
+  #quick-search form label {
+    @apply text-text-default
+  }
+
+  #quick-search form label a {
+    @apply text-text-default
+  }
+
+  #quick-search #q {
+    @apply w-[200px]
+  }
+}

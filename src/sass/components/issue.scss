@@ -1,0 +1,9 @@
+@layer components {
+  div.issue {
+    @apply bg-status-warningLight border-status-warningLight text-xs text-text-default mb-1 p-2 rounded-md
+  }
+
+  div.issue a {
+    @apply text-xs
+  }
+}
