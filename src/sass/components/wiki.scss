@@ -1,3 +1,92 @@
+div.wiki-page .contextual a {opacity: 0.4}
+div.wiki-page .contextual a:hover {opacity: 1}
+
+div.wiki a:target + h1, div.wiki a:target + h2, div.wiki a:target + h3, div.wiki a:target + h4, div.wiki a:target + h5, div.wiki a:target + h6 {
+  background-color:#DDEEFF;
+}
+
+/***** Wiki *****/
+div.wiki table {
+  border-collapse: collapse;
+  margin-bottom: 1em;
+}
+
+div.wiki table, div.wiki td, div.wiki th {
+  border: 1px solid #bbb;
+  padding: 4px;
+}
+
+div.wiki .wiki-class-noborder, div.wiki .wiki-class-noborder td, div.wiki .wiki-class-noborder th {border:0;}
+
+div.wiki .external {
+  background-position: 0% 60%;
+  background-repeat: no-repeat;
+  padding-left: 12px;
+  background-image: url(../images/external.png);
+}
+
+div.wiki a {word-wrap: break-word;}
+div.wiki a.new {color: #b73535;}
+
+div.wiki ul, div.wiki ol {margin-bottom:1em;}
+div.wiki li>ul, div.wiki li>ol {margin-bottom: 0;}
+
+div.wiki pre {
+  margin: 1em 1em 1em 1.6em;
+  padding: 8px;
+  background-color: #fafafa;
+  border: 1px solid #e2e2e2;
+  border-radius: 3px;
+  width:auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+div.wiki *:not(pre)>code, div.wiki>code {
+  background: rgba(62, 91, 118, 0.08);
+  padding: 0.1em 0.1em;
+  border-radius: 0.1em;
+}
+
+div.wiki ul.toc {
+  background-color: #ffffdd;
+  border: 1px solid #e4e4e4;
+  padding: 4px;
+  line-height: 1.2em;
+  margin-bottom: 12px;
+  margin-right: 12px;
+  margin-left: 0;
+  display: table
+}
+* html div.wiki ul.toc { width: 50%; } /* IE6 doesn't autosize div */
+
+div.wiki ul.toc.right { float: right; margin-left: 12px; margin-right: 0; width: auto; }
+div.wiki ul.toc.left  { float: left; margin-right: 12px; margin-left: 0; width: auto; }
+div.wiki ul.toc ul { margin: 0; padding: 0; }
+div.wiki ul.toc li {list-style-type:none; margin: 0; font-size:12px;}
+div.wiki ul.toc>li:first-child {margin-bottom: .5em; color: #777;}
+div.wiki ul.toc li li {margin-left: 1.5em; font-size:10px;}
+div.wiki ul.toc a {
+  font-size: 0.9em;
+  font-weight: normal;
+  text-decoration: none;
+  color: #606060;
+}
+div.wiki ul.toc a:hover { color: #c61a1a; text-decoration: underline;}
+
+a.wiki-anchor { display: none; margin-left: 6px; text-decoration: none; }
+a.wiki-anchor:hover { color: #aaa !important; text-decoration: none; }
+h1:hover a.wiki-anchor, h2:hover a.wiki-anchor, h3:hover a.wiki-anchor, h4:hover a.wiki-anchor, h5:hover a.wiki-anchor, h6:hover a.wiki-anchor { display: inline; color: #ddd; }
+
+div.wiki img {vertical-align:middle; max-width:100%;}
+div.wiki .task-list {
+  list-style-type: none;
+  padding-left: 0px;
+}
+div.wiki .task-list input.task-list-item-checkbox {
+  height: initial;
+}
+
 @layer components {
   .splitcontent .wiki {
     @apply mb-4
@@ -13,6 +102,18 @@
 
   .wiki h3 {
     @apply text-text-default text-xl mb-2
+  }
+
+  .wiki h4 {
+    @apply text-text-default text-lg font-bold
+  }
+
+  .wiki h5 {
+    @apply text-sm font-bold
+  }
+
+  .wiki h6 {
+    @apply text-text-caption text-sm font-bold
   }
 
   .wiki p {
@@ -132,5 +233,11 @@
 
   .wiki-page-version .buttons a:not([class]) {
     @apply whitespace-normal w-auto h-auto bg-transparent border-none indent-0
+  }
+
+
+  // 索引
+  .pages-hierarchy {
+
   }
 }
