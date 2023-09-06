@@ -1,3 +1,46 @@
+/***** Icons *****/
+.icon {
+  background-position: 0% 50%;
+  background-repeat: no-repeat;
+  padding-left: 20px;
+}
+
+.icon-only {
+  background-position: 0% 50%;
+  background-repeat: no-repeat;
+  padding-left: 16px;
+  display: inline-block;
+  width: 0;
+  height: 16px;
+  overflow: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 8px;
+  vertical-align: middle;
+}
+
+.icon-only::after {
+  content: "\a0";
+}
+
+.icon-multiple { background-image: url(../images/table_multiple.png); }
+.icon-file.text-x-c { background-image: url(../images/files/c.png); }
+.icon-file.text-x-csharp { background-image: url(../images/files/csharp.png); }
+.icon-file.text-x-java { background-image: url(../images/files/java.png); }
+.icon-file.application-javascript { background-image: url(../images/files/js.png); }
+.icon-file.text-x-php { background-image: url(../images/files/php.png); }
+.icon-file.text-x-ruby { background-image: url(../images/files/ruby.png); }
+.icon-file.text-xml { background-image: url(../images/files/xml.png); }
+.icon-file.text-css { background-image: url(../images/files/css.png); }
+.icon-file.text-html { background-image: url(../images/files/html.png); }
+.icon-file.image-gif { background-image: url(../images/files/image.png); }
+.icon-file.image-jpeg { background-image: url(../images/files/image.png); }
+.icon-file.image-png { background-image: url(../images/files/image.png); }
+.icon-file.image-tiff { background-image: url(../images/files/image.png); }
+.icon-file.application-pdf { background-image: url(../images/files/pdf.png); }
+
+
+
 .icon-add {
   background-image: url(images/add_circle_default.svg);
 }
@@ -46,7 +89,7 @@
   background-image: url(images/folder_default.svg);
 }
 
-.icon-folder.open {
+.open .icon-folder {
   background-image: url(images/folder_open_default.svg);
 }
 
@@ -104,10 +147,6 @@
 
 .icon-error {
   background-image: url(images/error_danger.svg);
-}
-
-.icon-fav {
-  background-image: url(images/star_fill_watching.svg);
 }
 
 .icon-fav {
@@ -227,6 +266,10 @@
 }
 
 .icon-close {
+  background-image: url(images/close_dark.svg);
+}
+
+.icon-close:hover {
   background-image: url(images/close_dark.svg);
 }
 
