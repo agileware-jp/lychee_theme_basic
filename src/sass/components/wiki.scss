@@ -237,7 +237,11 @@ div.wiki .task-list input.task-list-item-checkbox {
 
 
   // 索引
-  .pages-hierarchy {
+  .pages-hierarchy li:not(:first-child) {
+    @apply mt-2
+  }
 
+  .controller-wiki.action-date_index #content h3 + ul li:not(:first-child) {
+    @apply mt-2
   }
 }
