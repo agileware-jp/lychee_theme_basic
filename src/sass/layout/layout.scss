@@ -15,10 +15,6 @@
     @apply ml-52
   }
 
-  #sidebar {
-    @apply order-2 w-60 bg-background-primary border-r-0 border-l border-border-divider p-4
-  }
-
   #content {
     @apply bg-background-primary p-6 order-1
   }
