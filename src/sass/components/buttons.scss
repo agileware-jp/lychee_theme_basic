@@ -12,19 +12,19 @@
   }
 
   .BTN_TERTIARY {
-    @apply cursor-pointer inline-block h-auto bg-background-secondary border border-background-secondary text-text-default text-sm py-2 px-3 rounded-md hover:border-border-divider hover:no-underline hover:text-text-default active:bg-background-tertiary
+    @apply cursor-pointer inline-block h-auto bg-background-secondary border border-background-secondary text-text-default text-sm py-2 px-3 rounded-md hover:border-border-default hover:no-underline hover:text-text-default active:bg-background-tertiary
   }
 
   .BTN_TERTIARY_ICON_ONLY {
-    @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap w-7 h-7 bg-center align-middle bg-background-secondary border border-background-secondary text-sm p-0 rounded-md hover:border-border-divider active:bg-background-tertiary
+    @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap w-7 h-7 bg-center align-middle bg-background-secondary border border-background-secondary text-sm p-0 rounded-md hover:border-border-default active:bg-background-tertiary
   }
 
   .BTN_TERTIARY_ICON_RIGHT {
-    @apply cursor-pointer inline-block h-auto bg-[right_0.75rem_center] bg-background-secondary border border-background-secondary text-text-default text-sm py-2 pr-7 pl-3 rounded-md hover:border-border-divider hover:no-underline hover:text-text-default active:bg-background-tertiary
+    @apply cursor-pointer inline-block h-auto bg-[right_0.75rem_center] bg-background-secondary border border-background-secondary text-text-default text-sm py-2 pr-7 pl-3 rounded-md hover:border-border-default hover:no-underline hover:text-text-default active:bg-background-tertiary
   }
 
   .BTN_TERTIARY_ICON_LEFT {
-    @apply cursor-pointer inline-block h-auto bg-[0.75rem_center] bg-background-secondary border border-background-secondary text-text-default text-sm py-2 pr-3 pl-7 rounded-md hover:border-border-divider hover:no-underline hover:text-text-default active:bg-background-tertiary
+    @apply cursor-pointer inline-block h-auto bg-[0.75rem_center] bg-background-secondary border border-background-secondary text-text-default text-sm py-2 pr-3 pl-7 rounded-md hover:border-border-default hover:no-underline hover:text-text-default active:bg-background-tertiary
   }
 
   .BTN_LINK {
@@ -48,7 +48,7 @@
   }
 
   // tableタグ要素にも使われており、flexにすることでtableが崩れてしまうのでそれは除外
-  .buttons:not(th, td) {
+  .buttons:not(th, td, .table-list-cell) {
     @apply flex items-center gap-2
   }
 
@@ -79,7 +79,7 @@
     @extend .BTN_PRIMARY;
   }
 
-  #content > .contextual > a,
+  #content > .contextual > a:not(.task-kanban-icon),
   p.buttons a {
     @extend .BTN_SECONDARY;
     @apply inline-block
@@ -121,11 +121,6 @@
     @apply ml-2
   }
 
-  .controller-enumerations #content h3 + p .icon-add {
-    @extend .BTN_SECONDARY;
-    @apply inline-block bg-[8px_center] mt-2 pr-3 pl-7
-  }
-
   input[name="follow"] {
     @extend .BTN_SECONDARY;
     @apply ml-2
@@ -141,15 +136,6 @@
     @extend .BTN_SECONDARY;
   }
 
-
-  .pagination + p a:not(.atom, .csv, .pdf) {
-    @extend .BTN_TERTIARY;
-  }
-
-
-  #comments + p a {
-    @extend .BTN_TERTIARY;
-  }
 
 
   // 利用できる項目＋選択された項目
@@ -204,5 +190,23 @@
   .search_for_watchers a {
     @extend .BTN_TERTIARY_ICON_LEFT;
     @apply mt-4
+  }
+
+
+  .controller-messages #replies .message.reply .contextual a {
+    @extend .BTN_TERTIARY_ICON_ONLY;
+    @apply w-6 h-6
+  }
+
+
+  // Lychee Cost
+  #lychee_cost_expenses #x_months ~ a {
+    @extend .BTN_SECONDARY_ICON_LEFT;
+    @apply ml-2
+  }
+
+  .lychee_cost_expenses .icon.icon-edit,
+  .lychee_cost_expenses .icon.icon-del {
+    @extend .BTN_TERTIARY_ICON_ONLY;
   }
 }

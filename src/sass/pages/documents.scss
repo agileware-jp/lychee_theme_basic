@@ -1,5 +1,9 @@
 @layer components {
   .controller-documents {
+    #new_document {
+      @apply mt-4 mb-8
+    }
+
     .document-group {
       @apply clear-both bg-background-primary border border-border-divider mb-8 p-4 rounded-md
     }
@@ -30,6 +34,26 @@
 
     .updated_on {
       @apply text-text-caption text-sm mb-2 p-0
+    }
+  }
+
+  .controller-documents.action-show {
+    #content .wiki {
+      @apply border border-border-divider mt-4 mb-8 p-4 rounded-md
+    }
+
+    h3 + .attachments {
+      @apply border border-border-divider mb-2 p-4 rounded-md
+    }
+
+    h3 + .attachments + p {
+      @apply mb-4
+    }
+
+    h3 + .attachments + p a {
+      background-image: url(images/add_circle_default.svg);
+      background-position: left top 1px;
+      @apply bg-no-repeat pl-5
     }
   }
 

@@ -6,6 +6,11 @@
     @apply bg-primitive-gray-200 rounded
   }
 
+  table.progress th,
+  table.progress td {
+    @apply p-0
+  }
+
   table.progress td.todo {
     height: 13px;
 

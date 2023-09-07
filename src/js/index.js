@@ -61,30 +61,37 @@ window.addEventListener('DOMContentLoaded', () => {
    * キャンセルボタンをリンクボタン化する
    * 取得する要素数を減らすため、commit/continueに隣接するaタグがキャンセルボタン化どうかを判別する
    */
-  const commitBtns = document.querySelectorAll('input[name="commit"]')
-  const continueBtns = document.querySelectorAll('input[name="continue"]')
-  if(commitBtns) {
-    for (const commitBtn of commitBtns) {
-      if(commitBtn.nextElementSibling.textContent === 'キャンセル') {
-        commitBtn.nextElementSibling.classList.add('aw_cancelBtn')
+  if(document.querySelectorAll('input[name="commit"]') !== null || document.querySelectorAll('input[name="continue"]') !== null) {
+    const commitBtns = document.querySelectorAll('input[name="commit"]')
+    const continueBtns = document.querySelectorAll('input[name="continue"]')
+    if(commitBtns) {
+      for (const commitBtn of commitBtns) {
+        if(commitBtn.nextElementSibling?.textContent === 'キャンセル') {
+          commitBtn.nextElementSibling?.classList.add('aw_cancelBtn')
+        }
+      }
+    }
+
+    if(continueBtns) {
+      for (const continueBtn of continueBtns) {
+        if(continueBtn.nextElementSibling?.textContent === 'キャンセル') {
+          continueBtn.nextElementSibling?.classList.add('aw_cancelBtn')
+        }
       }
     }
   }
 
-  if(continueBtns) {
-    for (const continueBtn of continueBtns) {
-      if(continueBtn.nextElementSibling.textContent === 'キャンセル') {
-        continueBtn.nextElementSibling.classList.add('aw_cancelBtn')
-      }
-    }
-  }
+  /**
+   * コメント追加・XXX・XXXなどのフォーム展開UIをわかりやすくする
+   */
+  // ニュースページの場合
+  if(document.querySelector('.controller-news') !== null) {}
 
 
   /**
    * レポート（Issue > Summary > 虫眼鏡アイコン）ページの戻るボタン
    */
-  const reportPage = document.querySelector('.controller-reports')
-  if(reportPage) {
+  if(document.querySelector('.controller-reports') !== null) {
     const btns = document.querySelectorAll('a')
     for (const btn of btns) {
       if(btn.textContent === '戻る') {

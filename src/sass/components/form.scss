@@ -3,6 +3,10 @@
     @apply border border-border-default text-text-default text-sm my-[1px] py-2 px-3 rounded-md
   }
 
+  form {
+    @apply block
+  }
+
   input, select, textarea {
     @apply bg-background-primary
   }

@@ -2,4 +2,20 @@
   .breadcrumb, .breadcrumb a {
     @apply text-sm text-text-default
   }
+
+  .breadcrumb a {
+    @apply mr-1
+  }
+
+  .breadcrumb a:first-child {
+    @apply ml-0
+  }
+
+  .breadcrumb a:not(:first-child) {
+    @apply ml-1
+  }
+
+  .breadcrumb a:last-child {
+    @apply mr-0
+  }
 }

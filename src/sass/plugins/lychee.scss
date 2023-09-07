@@ -57,10 +57,25 @@
   }
 
 
-  // LPR
+  // LPR 共通
   .theme-Lychee.controller-project_report_overview {
     #main {
       @apply ml-0
+    }
+  }
+
+  // LPR 固有
+  .theme-Lychee.controller-project_reports {
+    #project-report a.icon-settings,
+    #project-report a.icon-del,
+    #project-report a.icon-copy,
+    #project-report a.icon-add {
+      @apply ml-3
+    }
+
+    // 各パネルの編集／セッティング／閉じるアイコン用（パネル内の別要素への影響がないかチェック）
+    #content span span {
+      @apply ml-1
     }
   }
 
@@ -91,12 +106,58 @@
     select, input {
       @apply h-auto
     }
+
+    #content .tabs {
+      @apply mb-1
+    }
+  }
+
+  .task-kanban-is-fullscreen #main {
+    @apply ml-0
   }
 
   // Lychee Backlog
   .theme-Lychee.controller-backlog {
     select, input {
       @apply h-auto
+    }
+  }
+
+  // Lychee Cost
+  .theme-Lychee.controller-lychee_cost_expenses {
+    #month {
+      @apply mr-1
+    }
+
+    #x_months {
+      @apply w-[4.5rem] my-1
+    }
+
+    #content .total_amount {
+      @apply text-sm text-left mt-2 mb-2
+    }
+
+    #content .total_amount .value {
+      @apply text-xl
+    }
+
+    #lychee_cost_expense_amount {
+      @apply mr-1
+    }
+  }
+
+  // Lychee Issue Sets
+  .theme-Lychee.theme-Lychee.controller-lychee_issue_sets {
+    .issue-sets thead .checkbox + th {
+      @apply text-left
+    }
+
+    .issue-sets .num-issue-templates {
+      @apply w-28
+    }
+
+    .issue-sets .buttons {
+      @apply w-8
     }
   }
 }

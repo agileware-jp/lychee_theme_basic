@@ -22,7 +22,7 @@ div.wiki .external {
   background-position: 0% 60%;
   background-repeat: no-repeat;
   padding-left: 12px;
-  background-image: url(../images/external.png);
+  background-image: url(../default/external.png);
 }
 
 div.wiki a {word-wrap: break-word;}
@@ -88,159 +88,174 @@ div.wiki .task-list input.task-list-item-checkbox {
 }
 
 @layer components {
-  .splitcontent .wiki {
-    @apply mb-4
+  .controller-wiki {
+    .wiki-page {
+      @apply clear-both bg-background-primary border border-border-divider mt-4 mb-6 p-8 rounded-md
+    }
+
+    .wiki-page + fieldset legend + div {
+      @apply bg-background-secondary/50 mt-2 p-4 rounded-md
+    }
+
+    .wiki-page + fieldset legend + div .box {
+      @apply mb-4
+    }
+
+    .splitcontent .wiki {
+      @apply mb-4
+    }
+
+    .wiki h1 {
+      @apply text-text-default text-3xl mb-4
+    }
+
+    .wiki h2 {
+      @apply text-text-default text-2xl mb-4
+    }
+
+    .wiki h3 {
+      @apply text-text-default text-xl mb-2
+    }
+
+    .wiki h4 {
+      @apply text-text-default text-lg font-bold
+    }
+
+    .wiki h5 {
+      @apply text-sm font-bold
+    }
+
+    .wiki h6 {
+      @apply text-text-caption text-sm font-bold
+    }
+
+    .wiki p {
+      @apply text-text-default text-sm
+    }
+
+    .wiki ul {
+      @apply list-disc ml-4
+    }
+
+    .wiki ul li:not(:first-child) {
+      @apply mt-2
+    }
+
+    .wiki ol {
+      @apply list-decimal ml-4
+    }
+
+    .wiki ol li:not(:first-child) {
+      @apply mt-2
+    }
+
+
+    div.wiki table {
+      @apply border-0 p-2
+    }
+
+    div.wiki th {
+      @apply border-0 border-b border-border-default text-text-default text-xs font-bold p-2
+    }
+
+    div.wiki td {
+      @apply border-0 border-b border-border-divider text-text-default text-sm p-2
+    }
+
+
+    div.wiki pre {
+      @apply bg-background-secondary border-none my-2 mr-2 ml-4 p-4 rounded-md
+    }
+
+    div.wiki *:not(pre) > code,
+    div.wiki > code {
+      @apply rounded py-0.5 px-1
+    }
+
+    div.wiki blockquote pre {
+      @apply ml-1.5
+    }
+
+
+    div.wiki .task-list {
+      @apply ml-0
+    }
+
+    div.wiki .task-list .task-list {
+      @apply mt-2 ml-4
+    }
+
+
+    div.wiki ul.toc {
+      @apply float-right max-w-[240px] min-w-[160px] bg-background-secondary border-none ml-4 p-4 rounded-md
+    }
+
+    div.wiki ul.toc.right {
+      @apply ml-4
+    }
+
+    div.wiki ul.toc li {
+      @apply text-sm
+    }
+
+    div.wiki ul.toc > li:first-child {
+      @apply text-text-caption mb-2
+    }
+
+    div.wiki ul.toc li li {
+      @apply text-xs mt-2 ml-4
+    }
+
+    div.wiki ul.toc a {
+      @apply text-xs
+    }
+
+
+    // diff
+    .text-diff {
+      @apply bg-background-secondary border-none text-xs mt-2 rounded-md
+    }
+
+    #wiki_form .box {
+      @apply border-none p-0
+    }
+
+    #wiki_form textarea {
+      @apply mt-0
+    }
+
+    #wiki_form p, #wiki_form fieldset {
+      @apply mt-6
+    }
+
+    #wiki_form fieldset {
+      @apply border-none
+    }
+
+    #wiki_form fieldset legend {
+      @apply font-bold mb-2
+    }
+
+    #wiki_form .new-attachments {
+      @apply w-full
+    }
+
+    #wiki_form .box + p {
+      @apply flex items-center
+    }
+
+    .wiki-page-version .buttons a:not([class]) {
+      @apply whitespace-normal w-auto h-auto bg-transparent border-none indent-0
+    }
+
+
+    // 索引（名前順）
+    .pages-hierarchy li:not(:first-child) {
+      @apply mt-2
+    }
   }
 
-  .wiki h1 {
-    @apply text-text-default text-3xl mb-4
-  }
-
-  .wiki h2 {
-    @apply text-text-default text-2xl mb-4
-  }
-
-  .wiki h3 {
-    @apply text-text-default text-xl mb-2
-  }
-
-  .wiki h4 {
-    @apply text-text-default text-lg font-bold
-  }
-
-  .wiki h5 {
-    @apply text-sm font-bold
-  }
-
-  .wiki h6 {
-    @apply text-text-caption text-sm font-bold
-  }
-
-  .wiki p {
-    @apply text-text-default text-sm
-  }
-
-  .wiki ul {
-    @apply list-disc ml-4
-  }
-
-  .wiki ul li:not(:first-child) {
-    @apply mt-2
-  }
-
-  .wiki ol {
-    @apply list-decimal ml-4
-  }
-
-  .wiki ol li:not(:first-child) {
-    @apply mt-2
-  }
-
-
-  div.wiki table {
-    @apply border-0 p-2
-  }
-
-  div.wiki th {
-    @apply border-0 border-b border-border-default text-text-default text-xs font-bold p-2
-  }
-
-  div.wiki td {
-    @apply border-0 border-b border-border-divider text-text-default text-sm p-2
-  }
-
-
-  div.wiki pre {
-    @apply bg-background-secondary border-none my-2 mr-2 ml-4 p-4 rounded-md
-  }
-
-  div.wiki *:not(pre) > code,
-  div.wiki > code {
-    @apply rounded py-0.5 px-1
-  }
-
-  div.wiki blockquote pre {
-    @apply ml-1.5
-  }
-
-
-  div.wiki .task-list {
-    @apply ml-0
-  }
-
-  div.wiki .task-list .task-list {
-    @apply mt-2 ml-4
-  }
-
-
-  div.wiki ul.toc {
-    @apply float-right max-w-[240px] min-w-[160px] bg-background-secondary border-none ml-4 p-4 rounded-md
-  }
-
-  div.wiki ul.toc.right {
-    @apply ml-4
-  }
-
-  div.wiki ul.toc li {
-    @apply text-sm
-  }
-
-  div.wiki ul.toc > li:first-child {
-    @apply text-text-caption mb-2
-  }
-
-  div.wiki ul.toc li li {
-    @apply text-xs mt-2 ml-4
-  }
-
-  div.wiki ul.toc a {
-    @apply text-xs
-  }
-
-
-  // diff
-  .text-diff {
-    @apply bg-background-secondary border-none text-xs mt-2 rounded-md
-  }
-
-  #wiki_form .box {
-    @apply border-none p-0
-  }
-
-  #wiki_form textarea {
-    @apply mt-0
-  }
-
-  #wiki_form p, #wiki_form fieldset {
-    @apply mt-6
-  }
-
-  #wiki_form fieldset {
-    @apply border-none
-  }
-
-  #wiki_form fieldset legend {
-    @apply font-bold mb-2
-  }
-
-  #wiki_form .new-attachments {
-    @apply w-full
-  }
-
-  #wiki_form .box + p {
-    @apply flex items-center
-  }
-
-  .wiki-page-version .buttons a:not([class]) {
-    @apply whitespace-normal w-auto h-auto bg-transparent border-none indent-0
-  }
-
-
-  // 索引
-  .pages-hierarchy li:not(:first-child) {
-    @apply mt-2
-  }
-
+  // 索引（日付順）
   .controller-wiki.action-date_index #content h3 + ul li:not(:first-child) {
     @apply mt-2
   }

@@ -42,10 +42,6 @@
   margin-left: 5px;
 }
 
-#sidebar li input[type=checkbox] {
-  height: 20px;
-}
-
 #main.nosidebar #sidebar {
   display: none;
 }
@@ -65,10 +61,14 @@
   }
 
   #sidebar h3 {
-    @apply text-text-default text-sm mt-0
+    @apply text-text-default text-sm mt-4
   }
 
-  #sidebar h3:nth-child(n+3) {
+  #sidebar input[type="submit"] {
+    @apply mt-2
+  }
+
+  #sidebar #watchers {
     @apply mt-4
   }
 
@@ -112,7 +112,7 @@
   }
 
   #sidebar ul li:not(:first-child) {
-    @apply mt-1
+    @apply mt-2
   }
 
   #sidebar ul li a {
@@ -124,11 +124,7 @@
   }
 
   #sidebar a.selected {
-    @apply bg-background-tertiary text-text-default pl-7
-  }
-
-  #sidebar a.query.selected {
-    @apply pl-2
+    @apply bg-background-tertiary text-text-default
   }
 
   #sidebar a.icon-only {
@@ -144,8 +140,16 @@
     @apply p-0
   }
 
+  #admin-menu ul li:not(:first-child) {
+    @apply mt-1
+  }
+
   #admin-menu ul li a {
-    @apply pl-7 pr-2
+    @apply block grow text-sm m-0 pr-2 py-1.5 pl-7 rounded
+  }
+
+  #admin-menu ul li a:hover {
+    @apply bg-background-secondary
   }
 
   #admin-menu ul li a,
@@ -154,7 +158,7 @@
   }
 
   #admin-menu ul li a.selected {
-    @apply bg-[left_8px_center]
+    @apply bg-background-tertiary bg-[left_8px_center]
   }
 
   #admin-menu#admin-menu a.redmine-logs {

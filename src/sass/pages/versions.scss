@@ -1,4 +1,8 @@
 @layer components {
+  div#roadmap {
+    @apply mt-4
+  }
+
   div#roadmap .version-article {
     @apply bg-background-primary border border-border-divider p-6 rounded-md
   }
@@ -7,7 +11,19 @@
     @apply mt-4
   }
 
+  div#roadmap table.list {
+    @apply mb-0
+  }
+
   div#roadmap table caption {
     @apply text-sm text-text-default font-bold mt-4
+  }
+
+  div#roadmap .related-issues td.assigned_to {
+    @apply pl-2
+  }
+
+  div#roadmap .related-issues td.buttons {
+    @apply text-right
   }
 }

@@ -1,7 +1,29 @@
 @layer components {
+  .controller-projects {
+    .table-list {
+      @apply mt-2
+    }
+
+    .table-list-row .table-list-cell {
+      @apply p-2
+    }
+
+    .table-list-row {
+      @apply border-t border-border-divider
+    }
+  
+    .table-list-cell.name a {
+      @apply pl-2
+    }
+  }
+
   .controller-boards {
-    img.gravatar {  
+    img.gravatar {
       @apply m-0 mr-1
+    }
+
+    .board .description {
+      @apply ml-5
     }
 
     // TODO: 「返答」ボタンを非表示にして、返信フォームを常時表示にしたいのでテーマjsで調整する
@@ -32,15 +54,88 @@
       @apply w-full
     }
 
+    // 新規メッセージ
+    #add-message {
+      @apply mb-8
+    }
+
+    #message-form .box {
+      @apply clear-both mt-4
+    }
+
+    #message-form #message_subject {
+      @apply w-full mb-4
+    }
+
+    #message-form #message_locked {
+      @apply ml-2
+    }
+
+    #message-form p ~ p {
+      @apply mt-4
+    }
+  }
+
+  // メッセージ編集／リプライ
+  .controller-messages {
+    .message:not(.reply) .wiki {
+      @apply clear-both bg-background-primary border border-border-divider mt-4 mb-6 p-8 rounded-md
+    }
+
+    .message.reply {
+
+    }
+
+    #message-form #message_subject {
+      @apply w-full mb-4
+    }
+
+    #message-form #message_locked {
+      @apply ml-2
+    }
+
+    #message-form p ~ p {
+      @apply mt-4
+    }
+
+    #reply {
+      @apply mt-2
+    }
+
+    #reply #message_subject {
+      @apply w-full
+    }
+
     #replies .comments + .reply {
       @apply mt-2
     }
 
     #replies .message.reply {
-      @apply border border-border-divider py-4 pr-4 pl-12 rounded-md
+      @apply bg-background-secondary/50 mt-4 p-6 rounded-md
     }
 
     #replies .message.reply + .reply {
+      @apply mt-8
+    }
+
+    #replies .message.reply .reply-header {
+      @apply pl-8
+    }
+
+    #replies .message.reply .reply-header .gravatar {
+      @apply -ml-8
+    }
+
+    #replies .message.reply .wiki,
+    #replies .message.reply .attachments {
+      @apply pl-8
+    }
+
+    #replies .message.reply .attachments {
+      @apply mt-4
+    }
+
+    #replies + .pagination + p {
       @apply mt-4
     }
   }

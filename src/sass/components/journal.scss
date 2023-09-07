@@ -1,6 +1,6 @@
 @layer components {
   .journal + .journal {
-    @apply mt-6
+    @apply mt-8
   }
 
   .journal .note-header {
@@ -24,5 +24,9 @@
   .journal-actions .icon-only,
   .journal-actions .drdn {
     @apply m-0 ml-2
+  }
+
+  .journal .wiki {
+    @apply mt-2
   }
 }

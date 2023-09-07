@@ -1,5 +1,25 @@
 @layer components {
+  #edit-news,
+  .new_news {
+    @apply mt-4 mb-8
+  }
+
+  #comments .comments + p a,
+  #comments + p a {
+    background-image: url(images/chat_bubble_default.svg);
+    background-position: left top 1px;
+    @apply bg-no-repeat pl-5
+  }
+
+  #comments .comments + p {
+    @apply mb-4
+  }
+
   // index
+  .news-article:first-of-type {
+    @apply mt-4
+  }
+
   .news-article ~ .news-article {
     @apply border-t border-border-divider mt-6 pt-6
   }
@@ -36,7 +56,7 @@
 
   // show
   .controller-news #content .contextual + h2 {
-    @apply mb-0
+    // @apply mb-0
   }
 
   #edit-news + p {
@@ -49,7 +69,7 @@
 
   // show > comment
   #comments {
-    @apply border-t border-border-divider mt-4 pt-6
+    @apply bg-background-secondary/50 mt-4 p-6 rounded-md
   }
 
   .comments {
@@ -57,11 +77,15 @@
   }
 
   #comments .wiki {
-    @apply mt-1 mb-6 pl-7
+    @apply mt-1 mb-8 pl-7
+  }
+
+  #comments .wiki:last-of-type {
+    @apply mb-0
   }
 
   #add_comment_form .box {
-    @apply border-none mt-4 p-0
+    @apply border-none my-4 p-0
   }
 
   #add_comment_form textarea {
