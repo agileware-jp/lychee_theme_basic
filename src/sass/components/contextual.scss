@@ -4,8 +4,12 @@
   }
 
   .contextual > *:not(:first-child),
-  .buttons > .icon:not(:first-child),
   .contextual .journal-actions > *:not(:first-child) {
     @apply ml-2
+  }
+
+
+  .buttons > .icon:not(:first-child) {
+    @apply ml-0
   }
 }

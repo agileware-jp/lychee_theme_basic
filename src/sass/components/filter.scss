@@ -1,6 +1,17 @@
 @layer components {
   #query_form {
-    @apply bg-background-secondary mb-4 p-4 rounded-md
+    select,
+    input:not([type="checkbox"], [type="radio"], [type="submit"]) {
+      @apply text-xs py-1 px-2
+    }
+  }
+
+  #query_form_with_buttons p.buttons a.icon {
+    @apply text-xs py-1 pr-2
+  }
+
+  #query_form_with_buttons .buttons {
+    @apply gap-1
   }
 
   fieldset#filters > legend + div {
@@ -57,11 +68,11 @@
   }
 
   fieldset.collapsible {
-    @apply border-0
+    // @apply border-0
   }
 
   fieldset.collapsible > legend {
-    @apply bg-[0px_center] text-sm text-text-default
+    @apply bg-[0px_center] text-xs text-text-default
   }
 
   fieldset#options {

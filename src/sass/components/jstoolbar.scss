@@ -1,0 +1,83 @@
+.jstBlock .jstTabs, .jstBlock .wiki-preview { width: 99%; }
+
+.jstBlock .jstTabs { padding-right: 6px; }
+.jstBlock .wiki-preview { padding: 2px; }
+.jstBlock .wiki-preview p:first-child { padding-top: 0 !important; margin-top: 0 !important;}
+.jstBlock .wiki-preview p:last-child { padding-bottom: 0 !important; margin-bottom: 0 !important;}
+
+@layer components {
+  // iconを上書き
+  .theme-Lychee {
+    .jstb_strong {
+      background-image: url(images/bold_dark.svg);
+    }
+
+    .jstb_em {
+      background-image: url(images/italic_dark.svg);
+    }
+
+    .jstb_del {
+      background-image: url(images/strikethrough_s_dark.svg);
+    }
+
+    .jstb_code {
+      background-image: url(images/code_2_dark.svg);
+    }
+
+    .jstb_h1 {
+      background-image: url(images/format_h1_dark.svg);
+    }
+
+    .jstb_h2 {
+      background-image: url(images/format_h2_dark.svg);
+    }
+
+    .jstb_h3 {
+      background-image: url(images/format_h3_dark.svg);
+    }
+
+    .jstb_ul {
+      background-image: url(images/format_list_bulleted_dark.svg);
+    }
+
+    .jstb_ol {
+      background-image: url(images/format_list_numbered_dark.svg);
+    }
+
+    .jstb_tl {
+      background-image: url(images/task_alt_dark.svg);
+    }
+
+    .jstb_bq {
+      background-image: url(images/format_indent_decrease_dark.svg);
+    }
+
+    .jstb_unbq {
+      background-image: url(images/format_indent_increase_dark.svg);
+    }
+
+    .jstb_table {
+      background-image: url(images/table_dark.svg);
+    }
+
+    .jstb_pre {
+      background-image: url(images/code_dark.svg);
+    }
+
+    .jstb_precode {
+      background-image: url(images/integration_instructions_dark.svg);
+    }
+
+    .jstb_link {
+      background-image: url(images/article_dark.svg);
+    }
+
+    .jstb_img {
+      background-image: url(images/image_dark.svg);
+    }
+
+    .jstb_help {
+      background-image: url(images/help_dark.svg);
+    }
+  }
+}

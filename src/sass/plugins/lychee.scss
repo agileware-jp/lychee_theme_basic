@@ -37,8 +37,16 @@
 
 
     // Lychee Project View?
+    #favorite-project-wrapper > h3 {
+      @apply mt-4
+    }
+
     .favorite-project-container {
       @apply w-full
+    }
+
+    h3 .tree-expander-expanded, table.favorite-projects tr.project td.name .tree-expander-expanded {
+      background-image: url(images/expand_more_default.svg);
     }
 
 
@@ -61,6 +69,34 @@
   .theme-Lychee.controller-project_report_overview {
     #main {
       @apply ml-0
+    }
+
+    #setting_buttons a ~ a {
+      @apply ml-2
+    }
+
+    #project_report_windowed_buttons span ~ span {
+      @apply ml-2
+    }
+
+    #project_report_full_screen_buttons span ~ span {
+      @apply ml-2
+    }
+
+    #icon-full-screen {
+      @apply text-text-link
+    }
+
+    .icon-setting {
+      background-image: url(images/settings_default.svg);
+    }
+
+    .icon-full-screen-start {
+      background-image: url(images/fullscreen_success.svg);
+    }
+
+    .icon-full-screen-exit {
+      background-image: url(images/close_fullscreen_default.svg);
     }
   }
 
@@ -110,6 +146,18 @@
     #content .tabs {
       @apply mb-1
     }
+
+    .task-kanban-icon-fullscreen__start {
+      background-image: url(images/fullscreen_success.svg);
+    }
+
+    .task-kanban-icon-fullscreen__exit {
+      background-image: url(images/close_fullscreen_default.svg);
+    }
+
+    #burn_down_type_wrap {
+      @apply static mt-2
+    }
   }
 
   .task-kanban-is-fullscreen #main {
@@ -120,6 +168,29 @@
   .theme-Lychee.controller-backlog {
     select, input {
       @apply h-auto
+    }
+
+    .velocity__container > div {
+      @apply mt-4
+    }
+
+    .velocity__container > div input[type="number"] {
+      @apply mt-2
+    }
+
+    .task-kanban-icon-fullscreen__start {
+      background-image: url(images/fullscreen_success.svg);
+    }
+
+    .task-kanban-icon-fullscreen__exit {
+      background-image: url(images/close_fullscreen_default.svg);
+    }
+  }
+
+  // Lychee Gantt Chart
+  .theme-Lychee.controller-lgc {
+    .lgc-issueDetail-header {
+      @apply h-auto py-2
     }
   }
 
@@ -158,6 +229,13 @@
 
     .issue-sets .buttons {
       @apply w-8
+    }
+  }
+
+  // Lychee Project Term
+  .theme-Lychee.controller-projects {
+    #lychee_project_term_controls {
+      @apply mt-4
     }
   }
 }

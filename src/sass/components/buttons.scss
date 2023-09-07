@@ -209,4 +209,17 @@
   .lychee_cost_expenses .icon.icon-del {
     @extend .BTN_TERTIARY_ICON_ONLY;
   }
+
+  // Lychee Gantt Chart
+  .theme-Lychee.controller-lgc {
+    .lgc-form-cancelButton {
+      @extend .BTN_SECONDARY;
+      @apply text-xs
+    }
+
+    .lgc-issueDetail-submit button.lgc-form-button {
+      @extend .BTN_PRIMARY;
+      @apply text-xs
+    }
+  }
 }

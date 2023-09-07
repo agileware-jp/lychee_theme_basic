@@ -229,11 +229,15 @@ div.wiki .task-list input.task-list-item-checkbox {
     }
 
     #wiki_form fieldset {
-      @apply border-none
+      @apply bg-background-primary border-border-divider mb-6 p-4 rounded-md
     }
 
     #wiki_form fieldset legend {
-      @apply font-bold mb-2
+      @apply font-bold
+    }
+
+    #wiki_form #existing-attachments {
+      @apply border-b border-border-divider mb-4 pb-4
     }
 
     #wiki_form .new-attachments {
