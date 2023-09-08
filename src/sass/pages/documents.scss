@@ -5,15 +5,23 @@
     }
 
     .document-group {
-      @apply clear-both bg-background-primary border border-border-divider mb-8 p-4 rounded-md
+      @apply clear-both bg-background-primary border border-border-divider mb-8 rounded-md
     }
 
     .document-group:first-child {
       @apply mt-2
     }
 
+    .document-item {
+      @apply p-6
+    }
+
+    .document-item:first-of-type {
+      @apply pt-4
+    }
+
     .document-item + .document-item {
-      @apply border-t border-border-divider mt-6 pt-6
+      @apply border-t border-border-divider
     }
 
     #document-list .document-group {
@@ -25,7 +33,7 @@
     }
 
     .group-name {
-      @apply inline-flex bg-background-secondary text-text-default text-xs font-normal mb-2 px-2 py-1 rounded-md
+      @apply inline-flex bg-background-secondary text-text-default text-xs font-normal mt-6 ml-4 px-2 py-1 rounded-md
     }
 
     .title {
@@ -39,11 +47,11 @@
 
   .controller-documents.action-show {
     #content .wiki {
-      @apply border border-border-divider mt-4 mb-8 p-4 rounded-md
+      @apply bg-background-primary border border-border-divider mt-4 mb-8 p-6 rounded-md
     }
 
     h3 + .attachments {
-      @apply border border-border-divider mb-2 p-4 rounded-md
+      @apply bg-background-primary border border-border-divider mb-2 p-4 rounded-md
     }
 
     h3 + .attachments + p {

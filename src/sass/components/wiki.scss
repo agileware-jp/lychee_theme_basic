@@ -216,10 +216,6 @@ div.wiki .task-list input.task-list-item-checkbox {
       @apply bg-background-secondary border-none text-xs mt-2 rounded-md
     }
 
-    #wiki_form .box {
-      @apply border-none p-0
-    }
-
     #wiki_form textarea {
       @apply mt-0
     }
@@ -229,7 +225,7 @@ div.wiki .task-list input.task-list-item-checkbox {
     }
 
     #wiki_form fieldset {
-      @apply bg-background-primary border-border-divider mb-6 p-4 rounded-md
+      @apply bg-background-primary border-border-divider p-4 rounded-md
     }
 
     #wiki_form fieldset legend {
@@ -255,6 +251,10 @@ div.wiki .task-list input.task-list-item-checkbox {
 
     // 索引（名前順）
     .pages-hierarchy li:not(:first-child) {
+      @apply mt-2
+    }
+
+    .pages-hierarchy .pages-hierarchy {
       @apply mt-2
     }
   }

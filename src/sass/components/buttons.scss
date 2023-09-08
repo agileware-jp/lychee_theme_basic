@@ -136,7 +136,11 @@
     @extend .BTN_SECONDARY;
   }
 
-
+  // journal編集時のキャンセルボタン
+  .journal input[type="submit"] + a {
+    @extend .BTN_LINK;
+    @apply mt-2 ml-2
+  }
 
   // 利用できる項目＋選択された項目
   .query-columns .buttons input[type="button"] {
@@ -196,6 +200,13 @@
   .controller-messages #replies .message.reply .contextual a {
     @extend .BTN_TERTIARY_ICON_ONLY;
     @apply w-6 h-6
+  }
+
+
+  // Filter
+  #query_form_with_buttons p.buttons a.icon {
+    @extend .BTN_LINK;
+    @apply bg-[left_center] text-xs pl-4 py-1 shadow-none
   }
 
 

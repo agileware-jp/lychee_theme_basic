@@ -111,11 +111,11 @@
     }
 
     #replies .message.reply {
-      @apply bg-background-secondary/50 mt-4 p-6 rounded-md
+      @apply bg-background-primary border border-border-divider mt-4 p-6 rounded-md
     }
 
     #replies .message.reply + .reply {
-      @apply mt-8
+      @apply -scroll-mt-48
     }
 
     #replies .message.reply .reply-header {

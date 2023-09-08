@@ -1,19 +1,26 @@
 @layer components {
+  .journal {
+    @apply bg-background-primary border border-border-divider p-6 rounded-md
+  }
+
   .journal + .journal {
-    @apply mt-8
+    @apply mt-4
   }
 
   .journal .note-header {
-    @apply flex items-center
+    @apply flex items-center ml-6
   }
 
   .journal .note-header .gravatar {
     @apply mr-1
   }
 
-  div.journal ul.details,
+  div.journal ul.details {
+    @apply list-disc bg-background-secondary text-text-default text-sm mt-4 ml-5 mb-0 p-2 pl-7 rounded-md
+  }
+
   ul.revision-info {
-    @apply list-disc bg-background-secondary text-text-default text-sm mt-2 p-2 pl-7 rounded-md
+    @apply list-disc bg-background-secondary text-text-default text-sm mt-4 ml-5 p-2 mb-0 pl-7 rounded-md
   }
 
   div.journal ul.details li:not(:first-child),
@@ -27,6 +34,18 @@
   }
 
   .journal .wiki {
-    @apply mt-2
+    @apply clear-both mt-2
+  }
+
+  .journal .details + .wiki {
+    @apply mt-4
+  }
+
+  body.avatars-off .journal .wiki {
+    @apply pl-4
+  }
+
+  .journal .jstEditor textarea {
+    @apply mb-2
   }
 }

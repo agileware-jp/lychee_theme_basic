@@ -194,6 +194,10 @@
     }
   }
 
+  .lgc-is-fullscreen #main {
+    @apply ml-0
+  }
+
   // Lychee Cost
   .theme-Lychee.controller-lychee_cost_expenses {
     #month {

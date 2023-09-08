@@ -1,99 +1,97 @@
 @layer components {
-  .controller-activities {
-    #activity {
-      @apply relative pl-4
-    }
+  #activity {
+    @apply relative pl-4
+  }
 
-    #activity::before {
-      content: '';
-      position: absolute;
-      top: 8px;
-      left: 3px;
-      width: 1px;
-      height: calc(100% - 8px);
+  #activity::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 3px;
+    width: 1px;
+    height: calc(100% - 8px);
 
-      @apply bg-border-divider
-    }
+    @apply bg-border-divider
+  }
 
-    #activity h3 {
-      @apply relative text-sm font-bold mb-2
-    }
+  #activity h3 {
+    @apply relative text-sm font-bold mb-2
+  }
 
-    #activity h3::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: -16px;
-      display: block;
-      width: 7px;
-      height: 7px;
-      transform: translateY(-50%);
+  #activity h3::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -16px;
+    display: block;
+    width: 7px;
+    height: 7px;
+    transform: translateY(-50%);
 
-      @apply bg-product-default rounded-full
-    }
+    @apply bg-product-default rounded-full
+  }
 
-    #activity dl + h3 {
-      @apply mt-8
-    }
+  #activity dl + h3 {
+    @apply mt-8
+  }
 
-    #activity dt {
-      @apply clear-left border-t border-dotted border-border-divider mt-4 pt-4
-    }
+  #activity dt {
+    @apply clear-left border-t border-dotted border-border-divider mt-4 pt-4
+  }
 
-    #activity dt:first-child {
-      @apply border-t-0 mt-0
-    }
+  #activity dt:first-child {
+    @apply border-t-0 mt-0
+  }
 
-    #activity dt.grouped,
-    #activity dd.grouped {
-      @apply ml-5
-    }
+  #activity dt.grouped,
+  #activity dd.grouped {
+    @apply ml-5
+  }
 
-    #activity dt.icon {
-      background-position: 0 1.2rem;
-    }
+  #activity dt.icon {
+    background-position: 0 1.2rem;
+  }
 
-    #activity dt .gravatar {
-      @apply ml-1
-    }
+  #activity dt .gravatar {
+    @apply ml-1
+  }
 
-    #activity dt .time {
-      @apply text-sm text-text-caption mx-1
-    }
+  #activity dt .time {
+    @apply text-sm text-text-caption mx-1
+  }
 
-    #activity dt .project {
-      @apply text-sm text-text-default
-    }
+  #activity dt .project {
+    @apply text-sm text-text-default
+  }
 
-    #activity span.project:after {
-      content: '-';
+  #activity span.project:after {
+    content: '-';
 
-      @apply py-1
-    }
+    @apply py-1
+  }
 
-    #activity dt a {
-      @apply text-sm
-    }
+  #activity dt a {
+    @apply text-sm
+  }
 
-    #activity dd {
-      @apply text-xs mt-2 pl-4
-    }
+  #activity dd {
+    @apply text-xs mt-2 pl-4
+  }
 
-    #activity dd span.description.aw_has_description {
-      @apply block bg-background-secondary text-xs text-text-caption px-4 py-2 rounded-lg
-    }
+  #activity dd span.description.aw_has_description {
+    @apply block bg-background-secondary text-xs text-text-caption px-4 py-2 rounded-lg
+  }
 
-    #activity .author {
-      background-image: url(images/person_default.svg);
-      background-repeat: no-repeat;
-      background-size: 16px;
-      background-position: left center;
+  #activity .author {
+    background-image: url(images/person_default.svg);
+    background-repeat: no-repeat;
+    background-size: 16px;
+    background-position: left center;
 
-      @apply flex mt-2 pl-5
-    }
+    @apply flex mt-2 pl-5
+  }
 
-    #activity .author a {
-      @apply text-sm
-    }
+  #activity .author a {
+    @apply text-sm
   }
 }

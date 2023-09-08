@@ -63,41 +63,43 @@
 
 
   // show
-  .controller-news #content .contextual + h2 {
-    // @apply mb-0
-  }
+  .controller-news.action-show {
+    #edit-news + p {
+      @apply text-text-caption text-sm mt-4 mb-4
+    }
 
-  #edit-news + p {
-    @apply text-text-caption text-sm mt-4 mb-4
-  }
+    #edit-news + p .author {
+      @apply mt-2
+    }
 
-  #edit-news + p .author {
-    @apply mt-2
-  }
+    #edit-news + p + .wiki {
+      @apply bg-background-primary border border-border-divider p-6 rounded-md
+    }
 
-  // show > comment
-  #comments {
-    @apply bg-background-secondary/50 mt-4 p-6 rounded-md
-  }
+    // show > comment
+    #comments {
+      @apply mt-4
+    }
 
-  .comments {
-    @apply font-bold mb-2
-  }
+    .comments {
+      @apply font-bold mb-2
+    }
 
-  #comments .wiki {
-    @apply mt-1 mb-8 pl-7
-  }
+    #comments .wiki {
+      @apply mt-1 mb-8 pl-7
+    }
 
-  #comments .wiki:last-of-type {
-    @apply mb-0
-  }
+    #comments .wiki:last-of-type {
+      @apply mb-0
+    }
 
-  #add_comment_form .box {
-    @apply border-none my-4 p-0
-  }
+    #add_comment_form .box {
+      @apply border-none my-4 p-0
+    }
 
-  #add_comment_form textarea {
-    @apply w-full
+    #add_comment_form textarea {
+      @apply w-full
+    }
   }
 
   // Box news TODO: プロジェクト名とNews名にjsで動的にClassをつける
