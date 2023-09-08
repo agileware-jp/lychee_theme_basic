@@ -1,6 +1,7 @@
 // .tabs-buttons(main menuが見切れる時のページ送りUI)を非表示にする(HTMLのstyle属性でして押されておりテーマcssで上書きできないため)
 function hiddenTabsButtons() {
-  return document.querySelector('#main-menu .tabs-buttons').classList.remove('tabs-buttons')
+  const tabsButton = document.querySelector('#main-menu .tabs-buttons')
+  if(tabsButton) tabsButton.classList.remove('tabs-buttons')
 }
 
 function setMainMenuTop() {
@@ -80,12 +81,6 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     }
   }
-
-  /**
-   * コメント追加・XXX・XXXなどのフォーム展開UIをわかりやすくする
-   */
-  // ニュースページの場合
-  if(document.querySelector('.controller-news') !== null) {}
 
 
   /**
