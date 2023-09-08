@@ -593,34 +593,6 @@ div.journal span.update-info {color: #666; font-size: 0.9em;}
 #history div:target h4.note-header {background-color:#DDEEFF;}
 #history p.nodata {display: none;}
 
-div#activity dl, #search-results { margin-left: 2em; }
-div#activity dd, #search-results dd { margin-bottom: 1em; padding-left: 18px; font-size: 0.9em; }
-div#activity dt.me .time { border-bottom: 1px solid #999; }
-div#activity dt .time { color: #777; font-size: 80%; }
-div#activity dd .description, #search-results dd .description { font-style: italic; }
-div#activity span.project:after, #search-results span.project:after { content: " -"; }
-div#activity dd span.description, #search-results dd span.description { display:block; color: #808080; }
-div#activity dt.grouped {margin-left:5em;}
-div#activity dd.grouped {margin-left:9em;}
-div#activity dt.icon {background-position: 0 10px !important;}
-div#activity h3 {
-  padding: 5px;
-  background-color: #eeeeee;
-}
-div#activity dt {
-  padding-top: 10px;
-  border-top: 1px solid #eeeeee;
-}
-div#activity dl dt:first-child {
-  border: 0px;
-}
-
-#search-results dd { margin-bottom: 1em; padding-left: 20px; margin-left:0px; }
-
-div#search-results-counts {float:right;}
-div#search-results-counts ul { margin-top: 0.5em; }
-div#search-results-counts  li { list-style-type:none; float: left; margin-left: 1em; }
-
 div#roadmap .related-issues { margin-bottom: 1em; }
 div#roadmap .related-issues td.checkbox { display: none; }
 div#roadmap .related-issues td.assigned_to { width:1px; white-space:nowrap; padding: 0; }
@@ -1302,11 +1274,10 @@ div.gravatar-with-child > img.gravatar:nth-child(2) {
 h2 img.gravatar, h3 img.gravatar {margin-right: 4px;}
 h4 img.gravatar {margin: -2px 4px -4px 0;}
 td.username img.gravatar {margin: 0 0.5em 0 0; vertical-align: top;}
-#activity dt img.gravatar {float: left; margin: 0 1em 1em 0;}
 /* Used on 12px Gravatar img tags without the icon background */
 .icon-gravatar {float: left; margin-right: 4px;}
 
-#activity dt, .journal {clear: left;}
+.journal {clear: left;}
 
 h2 img { vertical-align:middle; }
 
