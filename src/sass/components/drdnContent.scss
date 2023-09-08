@@ -71,22 +71,4 @@
     content: url(images/done_dark.svg);
     @apply w-4 h-4 translate-y-[3px]
   }
-
-
-  // main-menu > new-object
-  #main-menu .menu-children {
-    @apply border border-border-default p-1 rounded-md shadow-lg
-  }
-
-  #main-menu .menu-children li a {
-    @apply bg-background-primary rounded
-  }
-
-  #main-menu .menu-children li a:hover {
-    @apply bg-background-secondary text-text-default
-  }
-
-  #main-menu .menu-children li a:active {
-    @apply bg-background-tertiary text-text-default
-  }
 }

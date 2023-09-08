@@ -5,7 +5,7 @@
   }
 
   #main {
-    @apply flex-row
+    @apply flex grow-[2] flex-row
   }
 
   .has-main-menu #main {
@@ -21,7 +21,7 @@
   }
 
   #content {
-    @apply bg-transparent p-6 order-1
+    @apply overflow-x-auto grow p-6 order-1
   }
 
   .has-main-menu #content {
