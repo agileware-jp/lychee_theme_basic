@@ -1,4 +1,8 @@
 @layer components {
+  #main-menu {
+    @apply bg-background-secondary/30
+  }
+
   .has-main-menu #main-menu {
     height: calc(100vh - 144px);
     @apply overflow-y-auto absolute left-0 bottom-auto w-52 mr-0 pt-6 pr-3 pl-6 pb-20
