@@ -2,7 +2,8 @@
   table.list:not(.odd-even) tbody tr:nth-child(odd),
   .odd,
   #issue-changesets div.changeset:nth-child(odd) {
-    @apply bg-background-secondary/30
+    // @apply bg-background-secondary/30
+    @apply bg-background-primary
   }
 
   table.list:not(.odd-even) tbody tr:nth-child(even),

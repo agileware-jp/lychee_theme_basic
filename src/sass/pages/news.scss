@@ -16,12 +16,20 @@
   }
 
   // index
+  .news-article {
+    @apply bg-background-primary border border-border-divider p-6
+  }
+
   .news-article:first-of-type {
-    @apply mt-4
+    @apply mt-4 rounded-tl-md rounded-tr-md
+  }
+
+  .news-article:last-of-type {
+    @apply rounded-bl-md rounded-br-md
   }
 
   .news-article ~ .news-article {
-    @apply border-t border-border-divider mt-6 pt-6
+    @apply border-t-0
   }
 
   .news-article header h3 {

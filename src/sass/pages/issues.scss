@@ -8,8 +8,12 @@
       @apply mb-2
     }
 
+    .autoscroll {
+      @apply mt-2
+    }
+
     div.issue {
-      @apply clear-both bg-background-secondary/30 border border-border-divider rounded-md mt-2 p-6
+      @apply clear-both bg-background-primary border border-border-divider rounded-md mt-2 p-6
     }
 
     div.issue .next-prev-links {
