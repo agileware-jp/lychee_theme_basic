@@ -2,7 +2,7 @@
   #query_form {
     select,
     input:not([type="checkbox"], [type="radio"], [type="submit"]) {
-      @apply text-xs py-1 px-2
+      @apply text-xs px-2
     }
   }
 
@@ -11,7 +11,7 @@
   }
 
   fieldset#filters > legend + div {
-    @apply flex items-start w-full
+    @apply flex items-start w-full px-2
   }
 
   .add-filter {
@@ -101,6 +101,10 @@
 
   .query-columns .buttons {
     @apply flex-col
+  }
+
+  #query_form .query-columns .buttons input[type="button"] {
+    line-height: 0;
   }
 
   .query-columns .buttons input + input {
