@@ -1,4 +1,9 @@
 @layer components {
+  #wrapper {
+    min-height: inherit;
+    @apply overflow-hidden flex flex-col bg-transparent
+  }
+
   #main {
     @apply flex-row
   }
@@ -16,7 +21,7 @@
   }
 
   #content {
-    @apply bg-background-secondary/30 p-6 order-1
+    @apply bg-transparent p-6 order-1
   }
 
   .has-main-menu #content {

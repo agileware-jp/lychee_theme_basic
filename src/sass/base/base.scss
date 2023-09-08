@@ -18,7 +18,7 @@ body {
 
 @layer components {
   body {
-    @apply text-sm
+    @apply text-sm bg-background-secondary/30
   }
 
   p {

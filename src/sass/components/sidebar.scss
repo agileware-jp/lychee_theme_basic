@@ -57,7 +57,7 @@
 @layer components {
   // sidebar
   #sidebar {
-    @apply flex-shrink-0 order-2 w-60 bg-background-secondary/30 border-l border-border-divider p-4
+    @apply flex-shrink-0 order-2 w-60 bg-transparent border-l border-border-divider p-4
   }
 
   #sidebar h3 {
