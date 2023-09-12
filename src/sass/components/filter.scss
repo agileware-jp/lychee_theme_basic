@@ -1,156 +1,204 @@
 @layer components {
   #query_form {
-    select,
+    select {
+      @apply text-xs py-1 pr-6 pl-2 my-0
+    }
+
+    select[multiple] {
+      @apply px-1
+    }
+
     input:not([type="checkbox"], [type="radio"], [type="submit"]) {
-      @apply text-xs px-2
+      @apply text-xs py-1 px-2 my-0
     }
   }
 
-  #query_form_with_buttons .buttons {
-    @apply gap-1
-  }
-
-  fieldset#filters > legend + div {
-    @apply flex items-start w-full px-2
+  #filters-table {
+    // float: left;
+    // width: 60%;
+    @apply w-full
   }
 
   .add-filter {
-    @apply float-none flex items-center w-auto text-left
+    // width:35%;
+    // float:right;
+    // text-align:right;
+    // vertical-align: top;
+    @apply flex items-center w-full mt-2 mb-2
   }
 
-  fieldset#filters table {
-    @apply block grow w-auto
+  fieldset#filters, fieldset#options {
+    @apply text-xs
   }
 
-  fieldset#filters table tr {
-    @apply flex items-start pb-2
+  fieldset#filters fieldset,
+  fieldset#options fieldset {
+    @apply pt-2 px-3 pb-3 rounded-md
   }
 
-  fieldset#filters table td,
-  fieldset#filters table th {
-    @apply block border-none
+  fieldset#filters legend,
+  fieldset#options legend {
+    @apply text-xs font-bold
   }
 
-  fieldset#filters table tr.filter {
-    @apply h-auto
+  fieldset#filters legend.icon,
+  fieldset#options legend.icon {
+    @apply bg-[left_center] bg-[length:12px_12px] text-text-caption mb-2
   }
 
-  fieldset#filters table td.field {
-    @apply flex items-center w-60 h-[38px]
+  fieldset#filters legend.icon-expanded,
+  fieldset#filters legend.icon-collapsed {
+    background-image: url(images/filter_alt_default.svg);
   }
 
-  fieldset#filters table td.field input {
-    @apply mr-1
+  fieldset#options legend.icon-expanded,
+  fieldset#options legend.icon-collapsed {
+    background-image: url(images/arrow_split_default.svg);
   }
 
-  fieldset#filters table td.operator {
-    @apply w-36 pl-2
+  fieldset#filters td,
+  fieldset#options td {
+    @apply pb-2
   }
 
-  fieldset#filters table td.operator select {
+  fieldset#filters td.field {
+    @apply w-[160px] align-middle
+  }
+
+  fieldset#filters td.field input[type="checkbox"] {
+    @apply translate-y-0.5
+  }
+
+  fieldset#filters td.field label {
+    @apply text-xs
+  }
+
+  fieldset#filters td.operator {
+    @apply w-[130px]
+  }
+
+  fieldset#filters td.operator select {
     @apply max-w-none w-full
   }
 
-  fieldset#filters table td.values {
+  fieldset#filters td.values {
+    width: calc(100% - 290px);
     @apply pl-2
   }
 
-  .add-filter label {
-    @apply text-xs text-text-caption mr-2
-  }
-
-  .add-filter select {
-    @apply w-32
-  }
-
-  fieldset.collapsible {
-    // @apply border-0
-  }
-
-  fieldset.collapsible > legend {
-    @apply bg-[0px_center] text-xs text-text-default
+  fieldset#filters td.values select {
+    @apply min-w-[130px]
   }
 
   fieldset#options {
     @apply mt-2
   }
 
-  #query_form_content + .buttons {
-    @apply mb-0
+  .add-filter label {
+    @apply inline-block w-[160px] text-xs text-text-caption text-right mr-0.5 mr-1.5
   }
+
+  fieldset#filters legend + div {
+    @apply px-4
+  }
+
+  #query_form_with_buttons .buttons {
+    @apply gap-1 mb-2
+  }
+
+  // #query_form_with_buttons > p.contextual {
+  //   @apply mt-[22px]
+  // }
 
   .query-columns {
-    @apply flex items-center
-  }
-
-  p + .query-columns {
-    @apply mt-4
-  }
-
-  .query-columns span + span {
-    @apply ml-2
+    @apply flex items-center gap-1
   }
 
   .query-columns label {
-    @apply font-bold
-  }
-
-  .query-columns select {
-    @apply mt-2
+    @apply text-xs mb-1
   }
 
   .query-columns .buttons {
     @apply flex-col
   }
 
-  #query_form .query-columns .buttons input[type="button"] {
-    line-height: 0;
+  // 利用できる項目＋選択された項目
+  .query-columns .buttons input[type="button"] {
+    // line-height: 0;
+    // @apply cursor-pointer flex items-center justify-center bg-background-primary border-border-default rounded-md hover:border-border-dark active:bg-background-secondary
+    font-family: serif;
+    @apply cursor-pointer bg-background-primary w-7 h-7 border-border-default text-transparent rounded-md hover:border-border-dark active:bg-background-secondary
   }
 
-  .query-columns .buttons input + input {
-    @apply mt-1
+  // フィルター内部の細かい調整
+  label[for="draw_selected_columns"] {
+    @apply mb-2
   }
 
-  .query-columns + p {
-    @apply mt-4
-  }
+  // p + .query-columns {
+  //   @apply mt-4
+  // }
+
+  // .query-columns span + span {
+  //   @apply ml-2
+  // }
+
+  // .query-columns label {
+  //   @apply text-xs font-bold
+  // }
+
+  // .query-columns select {
+  //   @apply mt-2
+  // }
+
+  // .query-columns .buttons {
+  //   @apply flex-col
+  // }
+
+  // .query-columns .buttons input + input {
+  //   @apply mt-1
+  // }
+
+  // .query-columns + p {
+  //   @apply mt-4
+  // }
 
 
-  // 設定 > プロジェクト
-  .action-projects {
-    h2 + form fieldset {
-      @apply border-none
-    }
+  // // 設定 > プロジェクト
+  // .action-projects {
+  //   h2 + form fieldset {
+  //     @apply border-none
+  //   }
 
-    fieldset label {
-      @apply text-xs
-    }
+  //   fieldset label {
+  //     @apply text-xs
+  //   }
 
-    fieldset label ~ label {
-      @apply ml-4
-    }
+  //   fieldset label ~ label {
+  //     @apply ml-4
+  //   }
 
-    input[type="submit"] {
-      @apply inline-block ml-2
-    }
-  }
+  //   input[type="submit"] {
+  //     @apply inline-block ml-2
+  //   }
+  // }
 
-  // 設定 > ユーザー
-  .controller-users {
-    #users_form fieldset {
-      @apply border-none
-    }
+  // // 設定 > ユーザー
+  // .controller-users {
+  //   #users_form fieldset {
+  //     @apply border-none
+  //   }
 
-    fieldset label {
-      @apply text-xs
-    }
+  //   fieldset label {
+  //     @apply text-xs
+  //   }
 
-    fieldset label ~ label {
-      @apply ml-4
-    }
+  //   fieldset label ~ label {
+  //     @apply ml-4
+  //   }
 
-    input[type="submit"] {
-      @apply inline-block ml-2
-    }
-  }
+  //   input[type="submit"] {
+  //     @apply inline-block ml-2
+  //   }
+  // }
 }

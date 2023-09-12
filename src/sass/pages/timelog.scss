@@ -1,3 +1,11 @@
 @layer components {
+  .controller-timelog {
+    #query_form .tabs {
+      @apply mb-2
+    }
 
+    .total-for-hours .value {
+      @apply text-xl
+    }
+  }
 }

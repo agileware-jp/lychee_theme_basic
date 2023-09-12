@@ -49,6 +49,14 @@
       background-image: url(images/expand_more_default.svg);
     }
 
+    h3 .tree-expander-collapsed, table.favorite-projects tr.project td.name .tree-expander-collapsed {
+      background-image: url(images/chevron_right_default.svg);
+    }
+
+    #favorite-project-wrapper + #query_form h2 {
+      @apply text-base text-text-default font-bold mt-3 mb-2 p-0
+    }
+
 
     // Lychee Actual Date
     #actual_dates_area {
@@ -61,6 +69,20 @@
   .theme-Lychee.controller-resource_management {
     #main {
       @apply ml-0
+    }
+
+    .lrm-table .header-row th,
+    .lrm-table tbody th {
+      border-top: 1px solid gray;
+    }
+
+    .lrm-table .header-row th:not(:first-child) {
+      border-right: 1px solid gray;
+    }
+
+    .lrm-table tbody td {
+      border-top: 1px solid gray;
+      border-right: 1px solid gray;
     }
   }
 
@@ -160,6 +182,40 @@
     }
   }
 
+  .theme-Lychee.controller-projects {
+    #kanban.collapsible {
+      @apply mb-6
+    }
+
+    #kanban.collapsible > legend, #backlog > legend {
+      @apply mb-4
+    }
+
+    #kanban.collapsible input[type="checkbox"] {
+      @apply mr-1
+    }
+
+    #kanban.collapsible input[type="checkbox"] + label {
+      @apply mr-2
+    }
+
+    #backlog.collapsible table td {
+      @apply pt-3
+    }
+
+    #backlog.collapsible table tr:first-child td {
+      @apply pt-0
+    }
+
+    #backlog.collapsible input[type="checkbox"] {
+      @apply mr-1
+    }
+
+    #backlog.collapsible input[type="checkbox"] + label {
+      @apply mr-2
+    }
+  }
+
   .task-kanban-is-fullscreen #main {
     @apply ml-0
   }
@@ -240,6 +296,14 @@
   .theme-Lychee.controller-projects {
     #lychee_project_term_controls {
       @apply mt-4
+    }
+  }
+
+
+  // その他
+  .theme-Lychee.theme-Lychee.controller-projects {
+    table.list:not(.odd-even) tbody tr:nth-child(odd) td {
+      @apply bg-background-primary
     }
   }
 }

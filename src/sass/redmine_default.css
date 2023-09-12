@@ -319,9 +319,6 @@ table.boards td.last-message {text-align:left;font-size:80%;}
 
 div.table-list.boards .table-list-cell.name {width: 30%;}
 
-#query_form_content {font-size:90%;}
-#query_form_with_buttons > p.contextual {font-size:12px; margin:12px 0px;}
-
 .query_sort_criteria_count {
   display: inline-block;
   min-width: 1em;
@@ -504,21 +501,15 @@ fieldset.collapsible {border-width: 1px 0 0 0;}
 fieldset.collapsible>legend { cursor:pointer; padding-left: 18px; background-position: 4px;}
 
 fieldset#date-range p { margin: 2px 0 2px 0; }
-fieldset#filters table { border-collapse: collapse; }
-fieldset#filters table td { padding: 0; vertical-align: middle; }
-fieldset#filters tr.filter { height: 2.1em; }
-fieldset#filters td.field { width:230px; }
-fieldset#filters td.operator { width:130px; }
-fieldset#filters td.operator select {max-width:120px;}
-fieldset#filters td.values { white-space:nowrap; }
-fieldset#filters td.values select {min-width:130px;}
 
-#filters-table {width:60%; float:left;}
-.add-filter {width:35%; float:right; text-align: right; vertical-align: top;}
 
 #issue_is_private_wrap {float:right; margin-right:1em;}
 .toggle-multiselect { margin-right:5px; cursor:pointer;}
-.buttons { font-size: 0.9em; margin-bottom: 1.4em; margin-top: 1em; }
+.buttons {
+  /* font-size: 0.9em; */
+  /* margin-bottom: 1.4em; */
+  /* margin-top: 1em; */
+}
 .buttons .icon {padding-bottom:3px; padding-top:1px;}
 
 div#issue-changesets {float:right; width:45%; margin-left: 1em; margin-bottom: 1em; background: #fff; padding-left: 1em; font-size: 90%;}

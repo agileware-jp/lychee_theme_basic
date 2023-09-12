@@ -13,7 +13,7 @@
     }
 
     div.issue {
-      @apply clear-both bg-background-primary border border-border-divider rounded-md mt-2 p-6
+      @apply clear-both bg-background-secondary/20 border border-border-divider rounded-md mt-2 p-6
     }
 
     div.issue .next-prev-links {
@@ -26,6 +26,10 @@
 
     div.issue hr {
       @apply hidden
+    }
+
+    div.issue .attributes {
+      @apply mb-6
     }
 
     div.issue .attributes .attribute {

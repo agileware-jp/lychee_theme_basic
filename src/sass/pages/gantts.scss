@@ -115,5 +115,17 @@ td.gantt_selected_column .gantt_hdr,.gantt_selected_column_container {
     .gantt-table + .pagination {
       @apply mt-0
     }
+
+    label[for="draw_selected_columns"],
+    label[for="draw_relations"],
+    label[for="draw_progress_line"] {
+      @apply flex items-center
+    }
+
+    label[for="draw_selected_columns"] input[type="checkbox"],
+    label[for="draw_relations"] input[type="checkbox"],
+    label[for="draw_progress_line"] input[type="checkbox"] {
+      @apply mr-1
+    }
   }
 }

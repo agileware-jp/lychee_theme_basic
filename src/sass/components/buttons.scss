@@ -16,7 +16,7 @@
   }
 
   .BTN_TERTIARY_ICON_ONLY {
-    @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap w-7 h-7 bg-center align-middle bg-background-secondary border border-background-secondary text-sm p-0 rounded-md hover:border-border-default active:bg-background-tertiary
+    @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap w-6 h-6 bg-center align-middle bg-background-secondary border border-background-secondary text-sm p-0 rounded-md hover:border-border-default active:bg-background-tertiary
   }
 
   .BTN_TERTIARY_ICON_RIGHT {
@@ -142,11 +142,6 @@
     @apply mt-2 ml-2
   }
 
-  // 利用できる項目＋選択された項目
-  .query-columns .buttons input[type="button"] {
-    @apply cursor-pointer w-8 h-8 bg-background-primary border-border-default rounded-md hover:border-border-dark active:bg-background-secondary
-  }
-
 
   // 設定 > プロジェクト
   // 設定 > ユーザー
@@ -206,7 +201,7 @@
   // Filter
   #query_form_with_buttons p.buttons a.icon {
     @extend .BTN_LINK;
-    @apply bg-[left_center] text-xs pl-4 py-1 shadow-none
+    @apply bg-[left_center] text-xs pr-2 pl-4 py-1 shadow-none
   }
 
 

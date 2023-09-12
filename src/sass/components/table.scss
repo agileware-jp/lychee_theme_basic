@@ -39,9 +39,10 @@
     @apply text-text-default
   }
 
-  table td {
-    @apply text-text-default text-sm p-2
-  }
+  // LRMの表に影響が出ているのでいったん非適用
+  // table td {
+  //   @apply text-text-default text-sm p-2
+  // }
 
   table.list td {
     @apply border-y border-border-divider text-text-default text-sm p-2
