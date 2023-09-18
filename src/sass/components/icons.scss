@@ -57,6 +57,10 @@
   background-image: url(images/edit_dark.svg);
 }
 
+.controller-projects .boards .buttons .icon-edit {
+  background-image: url(images/edit_dark.svg);
+}
+
 .icon-copy {
   background-image: url(images/content_copy_default.svg);
 }
@@ -459,5 +463,13 @@ button.tab-right {
 
   .icon-association-chart {
     background-image: url(images/lan_default.svg);
+  }
+
+  .lgc-icon-baseline {
+    background-image: url(images/baseline_default.svg);
+  }
+
+  .icon-issue-form-exclude {
+    padding-left: 2rem !important;
   }
 }

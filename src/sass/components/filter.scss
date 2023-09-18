@@ -1,5 +1,7 @@
 @layer components {
-  #query_form {
+  #query_form,
+  body:not(.controller-queries) #query-form,
+  #levm_query_form {
     select {
       @apply text-xs py-1 pr-6 pl-2 my-0
     }
@@ -14,16 +16,10 @@
   }
 
   #filters-table {
-    // float: left;
-    // width: 60%;
     @apply w-full
   }
 
   .add-filter {
-    // width:35%;
-    // float:right;
-    // text-align:right;
-    // vertical-align: top;
     @apply flex items-center w-full mt-2 mb-2
   }
 
@@ -37,16 +33,19 @@
   }
 
   fieldset#filters legend,
-  fieldset#options legend {
+  fieldset#options legend,
+  .controller-lgc fieldset#filters ~ fieldset legend {
     @apply text-xs font-bold
   }
 
   fieldset#filters legend.icon,
-  fieldset#options legend.icon {
+  fieldset#options legend.icon,
+  .controller-lgc fieldset#filters ~ fieldset legend.icon {
     @apply bg-[left_center] bg-[length:12px_12px] text-text-caption mb-2
   }
 
   fieldset#filters legend.icon-expanded,
+  fieldset#filters legend.icon-expended,
   fieldset#filters legend.icon-collapsed {
     background-image: url(images/filter_alt_default.svg);
   }
@@ -62,7 +61,7 @@
   }
 
   fieldset#filters td.field {
-    @apply w-[160px] align-middle
+    @apply w-[160px] min-w-[160px] align-middle
   }
 
   fieldset#filters td.field input[type="checkbox"] {
@@ -74,7 +73,7 @@
   }
 
   fieldset#filters td.operator {
-    @apply w-[130px]
+    @apply w-[130px] min-w-[130px]
   }
 
   fieldset#filters td.operator select {
@@ -95,7 +94,7 @@
   }
 
   .add-filter label {
-    @apply inline-block w-[160px] text-xs text-text-caption text-right mr-0.5 mr-1.5
+    @apply inline-block w-[160px] text-xs text-text-caption text-right mr-1.5
   }
 
   fieldset#filters legend + div {
@@ -106,10 +105,6 @@
     @apply gap-1 mb-2
   }
 
-  // #query_form_with_buttons > p.contextual {
-  //   @apply mt-[22px]
-  // }
-
   .query-columns {
     @apply flex items-center gap-1
   }
@@ -119,15 +114,13 @@
   }
 
   .query-columns .buttons {
-    @apply flex-col
+    @apply flex-col gap-1
   }
 
   // 利用できる項目＋選択された項目
   .query-columns .buttons input[type="button"] {
-    // line-height: 0;
-    // @apply cursor-pointer flex items-center justify-center bg-background-primary border-border-default rounded-md hover:border-border-dark active:bg-background-secondary
     font-family: serif;
-    @apply cursor-pointer bg-background-primary w-7 h-7 border-border-default text-transparent rounded-md hover:border-border-dark active:bg-background-secondary
+    @apply cursor-pointer bg-background-primary w-7 h-7 border-border-default p-1 rounded-md hover:border-border-dark active:bg-background-secondary
   }
 
   // フィルター内部の細かい調整
@@ -135,70 +128,584 @@
     @apply mb-2
   }
 
-  // p + .query-columns {
-  //   @apply mt-4
-  // }
+  // LGC
+  .controller-lgc {
+    fieldset#filters + fieldset legend.icon-collapsed,
+    fieldset#filters + fieldset legend.icon-expanded {
+      background-image: url(images/arrow_split_default.svg);
+    }
 
-  // .query-columns span + span {
-  //   @apply ml-2
-  // }
+    fieldset#filters + fieldset + fieldset legend.icon-collapsed,
+    fieldset#filters + fieldset + fieldset legend.icon-expanded {
+      background-image: url(images/preview_default.svg);
+    }
 
-  // .query-columns label {
-  //   @apply text-xs font-bold
-  // }
+    fieldset#filters + fieldset + fieldset + fieldset legend.icon-collapsed,
+    fieldset#filters + fieldset + fieldset + fieldset legend.icon-expanded {
+      background-image: url(images/sort_default.svg);
+    }
 
-  // .query-columns select {
-  //   @apply mt-2
-  // }
+    fieldset#filters ~ fieldset {
+      @apply mt-2
+    }
 
-  // .query-columns .buttons {
-  //   @apply flex-col
-  // }
+    fieldset#filters ~ fieldset legend + div {
+      @apply px-4
+    }
 
-  // .query-columns .buttons input + input {
-  //   @apply mt-1
-  // }
+    .lgc-sort-criteria:not(:first-child) {
+      @apply mt-2
+    }
 
-  // .query-columns + p {
-  //   @apply mt-4
-  // }
+    .lgc-sort-criteria ~ label {
+      @apply inline-flex items-center mt-2 gap-1
+    }
+  }
 
+  // EVM
+  .controller-project_evms {
+    #levm_query_form fieldset {
+      @apply text-xs
+    }
 
-  // // 設定 > プロジェクト
-  // .action-projects {
-  //   h2 + form fieldset {
-  //     @apply border-none
-  //   }
+    #levm_query_form > fieldset + fieldset {
+      @apply mt-2
+    }
 
-  //   fieldset label {
-  //     @apply text-xs
-  //   }
+    #levm_query_form fieldset fieldset,
+    #levm-unit,
+    #levm-y-axis-unit,
+    #levm-eac_method,
+    #levm-value_unit,
+    #levm-show_title {
+      @apply pt-2 px-3 pb-3 rounded-md
+    }
 
-  //   fieldset label ~ label {
-  //     @apply ml-4
-  //   }
+    #levm_query_form fieldset legend {
+      @apply text-text-caption text-xs font-bold mb-2
+    }
 
-  //   input[type="submit"] {
-  //     @apply inline-block ml-2
-  //   }
-  // }
+    #levm_query_form #levm-unit legend,
+    #levm_query_form #levm-y-axis-unit legend,
+    #levm_query_form #levm-eac_method legend,
+    #levm_query_form #levm-value_unit legend,
+    #levm_query_form #levm-show_title legend {
+      @apply mb-0
+    }
 
-  // // 設定 > ユーザー
-  // .controller-users {
-  //   #users_form fieldset {
-  //     @apply border-none
-  //   }
+    #levm_query_form fieldset + fieldset {
+      @apply mt-2
+    }
 
-  //   fieldset label {
-  //     @apply text-xs
-  //   }
+    #levm_query_form fieldset legend + div {
+      @apply px-4
+    }
 
-  //   fieldset label ~ label {
-  //     @apply ml-4
-  //   }
+    .condition ~ .condition {
+      @apply mt-2
+    }
 
-  //   input[type="submit"] {
-  //     @apply inline-block ml-2
-  //   }
-  // }
+    .select2-container-multi .select2-choices {
+      @apply border-border-default rounded-md
+    }
+
+    #s2id_evm_targets {
+      @apply mb-2
+    }
+
+    #latter-date {
+      @apply ml-2
+    }
+
+    #levm-unit,
+    #levm-y-axis-unit,
+    #levm-eac_method,
+    #levm-value_unit,
+    #levm-show_title {
+      @apply mr-1
+    }
+
+    #levm-unit,
+    #levm-y-axis-unit,
+    #levm-eac_method,
+    #levm-value_unit,
+    #levm-show_title {
+      label {
+        @apply inline-flex items-center gap-1
+      }
+
+      label + label {
+        @apply ml-2
+      }
+    }
+  }
+
+  // LRM
+  .controller-resource_management {
+    h2 + fieldset {
+      @apply clear-both
+    }
+
+    h2 + fieldset,
+    fieldset#filters + fieldset {
+      @apply text-xs
+    }
+
+    fieldset#filters, fieldset#filters + fieldset {
+      @apply mt-2
+    }
+
+    h2 + fieldset legend,
+    fieldset#filters + fieldset legend {
+      @apply text-xs text-text-caption font-bold mb-2
+    }
+
+    h2 + fieldset legend.icon,
+    fieldset#filters + fieldset legend.icon {
+      @apply bg-[left_center] bg-[length:12px_12px]
+    }
+
+    h2 + fieldset legend.icon {
+      background-image: url(images/filter_alt_default.svg);
+    }
+
+    fieldset#filters + fieldset legend.icon {
+      background-image: url(images/sort_default.svg);
+    }
+
+    h2 + fieldset legend + div,
+    fieldset#filters + fieldset legend + div {
+      @apply px-4 pt-1 pb-2
+    }
+
+    #saved-queries {
+      @apply bg-background-secondary mt-2 p-1 rounded-md
+    }
+
+    #saved-queries {
+      caption {
+        @apply py-1 px-1
+      }
+
+      .list th, .list td {
+        @apply text-xs py-1
+      }
+
+      .list .buttons {
+        @apply text-right
+      }
+
+      .list .buttons a {
+        @apply w-[22px] h-[22px]
+      }
+    }
+
+    .search-condition-left-area,
+    .search-condition-apply-button-area {
+      @apply block
+    }
+
+    .search-condition-apply-button-area {
+      @apply mt-2
+    }
+
+    .search-condition-left-area {
+      label[for="period"],
+      .apply-buttons-time-series label {
+        @apply font-bold mr-2
+      }
+
+      .apply-buttons-time-series {
+        @apply mt-2
+      }
+
+      .checkbox-include-indirect-works {
+        @apply flex items-center gap-1 mt-2
+      }
+    }
+  }
+
+  // LRM カスタムクエリ作成画面でのfilter
+  .controller-lrm_queries {
+    fieldset#filters {
+      @apply mt-4 py-2 px-4 rounded-md
+    }
+  }
+
+  // LPR共通レポート
+  .controller-project_report_overview {
+    fieldset legend {
+      @apply bg-[left_center] bg-[length:12px_12px] text-xs text-text-caption font-bold mb-2
+    }
+
+    fieldset legend.icon {
+      background-image: url(images/filter_alt_default.svg);
+    }
+
+    #query_form_content fieldset:nth-child(2) legend.icon {
+      background-image: url(images/sort_default.svg);
+    }
+
+    fieldset legend + div {
+      @apply px-4 pt-1 pb-2
+    }
+
+    fieldset legend + div {
+      select {
+        @apply text-xs py-1 pr-6 pl-2 my-0
+      }
+
+      select[multiple] {
+        @apply px-1
+      }
+
+      input:not([type="checkbox"], [type="radio"], [type="submit"]) {
+        @apply text-xs py-1 px-2 my-0
+      }
+    }
+
+    #filters-table .field {
+      @apply w-[200px] min-w-[200px] text-xs align-middle
+    }
+
+    #filters-table .operator {
+      @apply w-[130px] min-w-[130px]
+    }
+
+    #filters-table td.operator select {
+      @apply max-w-none w-full
+    }
+
+    #filters-table td.values {
+      width: calc(100% - 330px);
+      @apply pl-2
+    }
+
+    #filters-table td.values select {
+      @apply min-w-[130px]
+    }
+
+    .add-filter label {
+      @apply w-[200px]
+    }
+
+    #query_form_content table {
+      @apply mb-2
+    }
+
+    .query-columns {
+      @apply table
+    }
+
+    .query-columns tr {
+      @apply flex items-stretch
+    }
+
+    .query-columns label[for="available_columns"] + br,
+    .query-columns label[for="selected_columns"] + br {
+      @apply hidden
+    }
+
+    .query-columns td {
+      @apply flex flex-col justify-start
+    }
+
+    .query-columns td.buttons {
+      @apply justify-center
+    }
+
+    .query-columns .buttons br {
+      @apply hidden
+    }
+  }
+
+  // LPR カスタムクエリ作成画面でのfilter
+  .controller-project_report_queries {
+    #project_report_query_form {
+      @apply clear-both
+    }
+
+    fieldset {
+      @apply mt-4 py-2 px-4 rounded-md
+    }
+
+    fieldset + fieldset,
+    fieldset#filters,
+    fieldset#options {
+      @apply mt-6
+    }
+
+    #filters-table.project_over_view .field {
+      @apply w-[180px] min-w-[180px] text-xs align-middle
+    }
+
+    #filters-table.project_over_view .operator {
+      @apply w-[130px] min-w-[130px]
+    }
+
+    #filters-table.project_over_view td.operator select {
+      @apply max-w-none w-full
+    }
+
+    #filters-table.project_over_view td.values {
+      width: calc(100% - 310px);
+      @apply pl-2
+    }
+
+    #filters-table.project_over_view td.values select {
+      @apply w-auto min-w-[130px]
+    }
+
+    .add-filter label {
+      @apply w-[180px]
+    }
+
+    fieldset legend {
+      @apply text-xs font-bold
+    }
+
+    .query-columns {
+      @apply table
+    }
+
+    .query-columns tr {
+      @apply flex items-stretch
+    }
+
+    .query-columns label[for="available_columns"] + br,
+    .query-columns label[for="selected_columns"] + br {
+      @apply hidden
+    }
+
+    .query-columns td {
+      @apply flex flex-col justify-start
+    }
+
+    .query-columns td.buttons {
+      @apply justify-center
+    }
+
+    .query-columns .buttons br {
+      @apply hidden
+    }
+
+    fieldset#options p + p {
+      @apply mt-2
+    }
+  }
+
+  // Time Management
+  .controller-time_management {
+    #queries,
+    #filters {
+      @apply text-xs mt-2
+    }
+
+    #queries legend,
+    #filters legend {
+      @apply text-xs text-text-caption font-bold mb-2
+    }
+
+    #queries legend {
+      @apply pl-0
+    }
+
+    #filters legend.icon {
+      background-image: url(images/filter_alt_default.svg);
+      @apply bg-[left_center] bg-[length:12px_12px]
+    }
+
+    #queries legend + select {
+      @apply mt-1 mb-2
+    }
+
+    #filters legend + div {
+      @apply px-4 pt-1 pb-2
+    }
+
+    #queries, #filters {
+      select {
+        @apply text-xs py-1 pr-6 pl-2 my-0
+      }
+
+      select[multiple] {
+        @apply px-1
+      }
+
+      input:not([type="checkbox"], [type="radio"], [type="submit"]) {
+        @apply text-xs py-1 px-2 my-0
+      }
+    }
+
+    #filters-table .field {
+      @apply w-[200px] min-w-[200px] text-xs align-middle
+    }
+
+    #filters-table .field input[type="checkbox"] {
+      @apply mr-1
+    }
+
+    #filters-table .operator {
+      @apply w-[130px] min-w-[130px]
+    }
+
+    #filters-table td.operator select {
+      @apply max-w-none w-full
+    }
+
+    #filters-table td.values {
+      width: calc(100% - 330px);
+      @apply pl-2
+    }
+
+    #filters-table td.values select {
+      @apply min-w-[130px]
+    }
+
+    .add-filter label {
+      @apply w-[200px] mr-0.5
+    }
+  }
+
+  // Cost(buttons.scssも参照)
+  .controller-lychee_cost_expenses {
+    #lychee_cost_expenses {
+      #month, #x_months {
+        @apply text-xs py-1 pr-6 pl-2 my-0
+      }
+    }
+  }
+
+  // カスタムクエリの作成
+  .controller-queries {
+    #options,
+    #filters,
+    #sort,
+    #columns {
+      @apply mt-4 pt-2 px-3 pb-3 rounded-md
+    }
+
+    #options legend,
+    #filters legend,
+    #sort legend,
+    #columns legend {
+      @apply text-xs font-bold
+    }
+
+    #sort br {
+      @apply content-[''] block h-2
+    }
+  }
+
+  // 管理→設定→フィルタ(buttons.scssも参照)
+  .controller-admin {
+    h2 + form {
+      @apply clear-both text-xs
+    }
+
+    h2 + form fieldset {
+      @apply pt-2 px-3 pb-3 rounded-md
+    }
+
+    h2 + form fieldset legend {
+      @apply text-text-caption text-xs font-bold
+    }
+
+    h2 + form fieldset {
+      select {
+        @apply text-xs py-1 pr-6 pl-2 my-0
+      }
+
+      input:not([type="submit"]) {
+        @apply text-xs py-1 px-2 my-0
+      }
+    }
+
+    fieldset #status {
+      @apply mr-2
+    }
+  }
+
+  // 管理→設定→ユーザー(buttons.scssも参照)
+  .controller-users {
+    #users_form {
+      @apply clear-both text-xs
+    }
+
+    #users_form fieldset {
+      @apply pt-2 px-3 pb-3 rounded-md
+    }
+
+    #users_form fieldset legend {
+      @apply text-text-caption text-xs font-bold
+    }
+
+    #users_form fieldset {
+      select {
+        @apply text-xs py-1 pr-6 pl-2 my-0
+      }
+
+      input:not([type="subtmi"]) {
+        @apply text-xs py-1 px-2 my-0
+      }
+    }
+
+    fieldset #status,
+    fieldset #group_id,
+    fieldset #twofa {
+      @apply mr-2
+    }
+  }
+
+  // 管理→設定→グループ(buttons.scssも参照)
+  .controller-groups {
+    h2 + form {
+      @apply clear-both text-xs
+    }
+
+    h2 + form fieldset {
+      @apply pt-2 px-3 pb-3 rounded-md
+    }
+
+    h2 + form fieldset legend {
+      @apply text-text-caption text-xs font-bold
+    }
+
+    h2 + form fieldset {
+      select {
+        @apply text-xs py-1 pr-6 pl-2 my-0
+      }
+
+      input:not([type="submit"]) {
+        @apply text-xs py-1 px-2 my-0
+      }
+    }
+  }
+
+  // プロジェクト設定→バージョンのフィルタ
+  .controller-projects {
+    #tab-content-versions {
+      form {
+        @apply clear-both text-xs
+      }
+
+      form fieldset {
+        @apply pt-2 px-3 pb-3 rounded-md
+      }
+  
+      form fieldset legend {
+        @apply text-text-caption text-xs font-bold
+      }
+  
+      form fieldset {
+        select {
+          @apply text-xs py-1 pr-6 pl-2 my-0
+        }
+  
+        input:not([type="submit"]) {
+          @apply text-xs py-1 px-2 my-0
+        }
+      }
+    }
+  }
 }

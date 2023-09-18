@@ -25,7 +25,11 @@
     @apply bg-background-secondary
   }
 
-  #main-menu #new-object:hover + ul.menu-children,
+  #main-menu li.aw_newObjectList {
+    @apply w-6
+  }
+
+  #main-menu li:hover ul.menu-children,
   #main-menu li ul.menu-children.visible {
     @apply block
   }
@@ -41,7 +45,6 @@
 
   // main-menu > new-object
   #main-menu .menu-children {
-    width: inherit;
-    @apply hidden absolute bg-background-primary border border-border-default p-1 rounded-md shadow-lg z-[45]
+    @apply hidden absolute w-auto bg-background-primary border border-border-default p-1 rounded-md shadow-lg z-[45]
   }
 }

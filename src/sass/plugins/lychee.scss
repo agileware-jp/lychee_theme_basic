@@ -36,7 +36,7 @@
     }
 
 
-    // Lychee Project View?
+    // Lychee Project View
     #favorite-project-wrapper > h3 {
       @apply mt-4
     }
@@ -119,6 +119,13 @@
 
     .icon-full-screen-exit {
       background-image: url(images/close_fullscreen_default.svg);
+    }
+  }
+
+  // LPR 共通 カスタムクエリの作成
+  .theme-Lychee.controller-project_report_queries {
+    #content > h3 {
+      @apply mt-4
     }
   }
 
@@ -248,6 +255,55 @@
     .lgc-issueDetail-header {
       @apply h-auto py-2
     }
+
+    .lgc-form-fieldset__inlineBlock {
+      @apply mb-1 pt-2 px-3 pb-3 rounded-md
+    }
+
+    .lgc-form-fieldset__inlineBlock ~ .lgc-form-fieldset__inlineBlock {
+      @apply mr-1
+    }
+
+    .lgc-form-fieldset__inlineBlock label {
+      @apply inline-flex items-center
+    }
+
+    .lgc-form-fieldset__inlineBlock label input[type="checkbox"] {
+      @apply mr-1
+    }
+
+    .lgc-queryForm-dateRange {
+      @apply text-xs
+    }
+
+    .lgc-queryForm-zoom-selection {
+      @apply mt-4
+    }
+
+    .lgc-queryForm-zoom-selection li {
+      @apply text-xs
+    }
+
+    .lgc-queryForm-zoom-selection li:not(:first-child) {
+      @apply ml-0
+    }
+
+    .lgc-queryForm-zoom-selection li::before {
+      @apply mr-1.5
+    }
+
+    .contextual .lgc-popover {
+      @apply ml-0
+    }
+
+    .contextual .lgc-icon-fullscreen__start,
+    .contextual .lgc-icon-fullscreen__exit {
+      @apply ml-0
+    }
+
+    .lgc-separator__vertical {
+      @apply mx-2
+    }
   }
 
   .lgc-is-fullscreen #main {
@@ -277,6 +333,13 @@
     }
   }
 
+  // Cost Group
+  .controller-cost_groups {
+    h2 + .autoscroll {
+      @apply clear-both
+    }
+  }
+
   // Lychee Issue Sets
   .theme-Lychee.theme-Lychee.controller-lychee_issue_sets {
     .issue-sets thead .checkbox + th {
@@ -295,6 +358,133 @@
   // Lychee Project Term
   .theme-Lychee.controller-projects {
     #lychee_project_term_controls {
+      @apply mt-4
+    }
+  }
+
+  // Lychee Custom Field
+  .issue .attributes fieldset {
+    @apply mt-4
+  }
+
+  .issue .attributes fieldset legend + div {
+    @apply mt-2
+  }
+
+  // Lychee Issue Sets
+  .controller-lychee_issue_sets {
+    .issue-set {
+      @apply clear-both bg-status-warningLight border-border-divider mt-4 mb-2 p-4 rounded-md
+    }
+
+    .contextual + h3 {
+      @apply mt-6
+    }
+
+    .issue-templates {
+      @apply mt-2
+    }
+
+    // 新規作成・編集
+    .new_lychee_issue_set,
+    .edit_lychee_issue_set {
+      .tabular p,
+      #projects_issue_sets_attributes {
+        @apply pl-[11rem]
+      }
+
+      .tabular label {
+        @apply w-[10rem] -ml-[11rem]
+      }
+
+      #projects_issue_sets_attributes {
+        ul {
+          @apply mt-2
+        }
+
+        ul li {
+          @apply mt-2
+        }
+
+        ul li label {
+          @apply text-sm
+        }
+      }
+    }
+  }
+
+  .controller-lychee_issue_templates {
+    div.issue-template {
+      @apply clear-both bg-background-secondary/20 border border-border-divider rounded-md mt-4 p-6
+    }
+
+    div.issue-template .subject {
+      @apply text-lg font-bold
+    }
+
+    div.issue-template .splitcontent .attribute {
+      @apply overflow-hidden min-h-0 mb-2
+    }
+
+    div.issue-template .description {
+      @apply mb-2
+    }
+
+    div.issue-template .issue_template_tree {
+      @apply mb-2
+    }
+
+    #attributes {
+      @apply mt-4
+    }
+
+    #attributes + .splitcontent {
+      @apply mt-4
+    }
+  }
+
+  .controller-issue_forms {
+    #content h2 + p + p {
+      @apply mt-4 mb-2
+    }
+
+    .issue-set {
+      @apply bg-status-warningLight border-border-divider mb-2 p-4 rounded-md
+    }
+
+    .issue-form-table td {
+      @apply text-xs
+    }
+
+    .issue-form-table {
+      select {
+        @apply text-xs py-1 pr-6 pl-2 my-0
+      }
+
+      select[multiple] {
+        @apply px-1
+      }
+
+      input:not([type="checkbox"], [type="radio"], [type="submit"]),
+      textarea {
+        @apply text-xs py-1 px-2 my-0
+      }
+    }
+
+    .issue-form-table + p {
+      @apply mt-4
+    }
+
+    .issue-form-table + p + p {
+      @apply my-2
+    }
+
+    label[for="fixed_version_id"],
+    label[for="title"] {
+      @apply inline-block w-28 font-bold
+    }
+
+    #content input[name="commit"] {
       @apply mt-4
     }
   }

@@ -143,17 +143,6 @@
   }
 
 
-  // 設定 > プロジェクト
-  // 設定 > ユーザー
-  .action-projects,
-  .controller-users {
-    input[type="submit"] + .icon-reload {
-      @extend .BTN_SECONDARY_ICON_LEFT;
-      @apply ml-2
-    }
-  }
-
-
   // tabs-buttons
   div.tabs-buttons {
     @apply top-1/2 flex items-center w-auto h-auto -translate-y-1/2
@@ -199,16 +188,67 @@
 
 
   // Filter
-  #query_form_with_buttons p.buttons a.icon {
+  #query_form p.buttons a.icon,
+  #levm_query_form .buttons a.icon {
     @extend .BTN_LINK;
     @apply bg-[left_center] text-xs pr-2 pl-4 py-1 shadow-none
   }
 
+  // 管理→設定のフィルタ(filter.scssも参照)
+  // 設定 > プロジェクト
+  // 設定 > ユーザー
+  .controller-admin,
+  .controller-users,
+  .controller-groups {
+    h2 + form input[type="submit"] {
+      @extend .BTN_PRIMARY;
+      @apply text-xs py-1 px-2 ml-1
+    }
+
+    input[type="submit"] + .icon-reload {
+      @extend .BTN_SECONDARY_ICON_LEFT;
+      @apply bg-[0.5rem_center] bg-[length:14px_14px] text-xs py-1 pr-2 pl-6 ml-1
+    }
+  }
+
+  .controller-projects {
+    #tab-content-versions {
+      form input[type="submit"] {
+        @extend .BTN_PRIMARY;
+        @apply text-xs py-1 px-2 ml-1
+      }
+  
+      input[type="submit"] + .icon-reload {
+        @extend .BTN_SECONDARY_ICON_LEFT;
+        @apply bg-[0.5rem_center] bg-[length:14px_14px] text-xs py-1 pr-2 pl-6 ml-1
+      }
+    }
+
+    .boards {
+      .buttons .icon-only,
+      .buttons .icon-edit,
+      .buttons .icon-del {
+        @extend .BTN_TERTIARY_ICON_ONLY
+      }
+    }
+  }
+
+  // Time Management
+  .controller-time_management {
+    #filters + .buttons .icon-checked {
+      @extend .BTN_LINK;
+      @apply bg-[left_center] text-xs pr-2 pl-4 py-1 shadow-none
+    }
+  }
 
   // Lychee Cost
+  #lychee_cost_expenses {
+    @apply mt-4
+  }
+
   #lychee_cost_expenses #x_months ~ a {
     @extend .BTN_SECONDARY_ICON_LEFT;
-    @apply ml-2
+    @apply bg-[0.5rem_center] bg-[length:14px_14px] text-xs py-1 pr-2 pl-6 ml-1
   }
 
   .lychee_cost_expenses .icon.icon-edit,

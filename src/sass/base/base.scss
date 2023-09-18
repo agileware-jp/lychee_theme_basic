@@ -41,7 +41,8 @@ body {
 
   #content > h2,
   #add-news > h2,
-  #add-document > h2 {
+  #add-document > h2,
+  #lgc-queryForm h2 {
     @apply text-base text-text-default font-bold mt-3 mb-2 p-0
   }
 

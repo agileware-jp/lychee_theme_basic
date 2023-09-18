@@ -94,4 +94,14 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     }
   }
+
+
+  /**
+   * main-menuの新規作成系展開ボタンのクリック領域を調整
+   */
+  const newObjectBtn = document.querySelector('.new-object')
+  if(newObjectBtn) {
+    console.log(newObjectBtn)
+    newObjectBtn.closest('li').classList.add('aw_newObjectList')
+  }
 })

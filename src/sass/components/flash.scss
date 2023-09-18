@@ -16,4 +16,10 @@
   .conflict {
     @apply border border-status-warningLight bg-status-warningLight bg-none text-text-default text-sm pr-3 px-2 rounded-md
   }
+
+  div.flash.error {
+    background: url(images/error_danger.svg) 8px 50% no-repeat;
+
+    @apply border border-status-danger bg-background-primary text-text-danger text-sm pr-3 pl-8 py-2 rounded-md
+  }
 }

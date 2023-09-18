@@ -2,7 +2,7 @@
 // かわりにID二重指定で詳細度を高めて上書きする
 @layer components {
   #context-menu#context-menu > ul {
-    width: 170px;
+    width: 180px;
     @apply bg-background-primary border-border-default rounded-md shadow-lg p-1
   }
 
