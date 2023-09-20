@@ -1,7 +1,7 @@
 @layer components {
   #main-menu {
     height: calc(100vh - 144px);
-    @apply overflow-auto absolute left-0 w-52 bg-transparent pt-4 p-3 pb-20
+    @apply overflow-auto absolute left-0 w-52 bg-transparent pt-3 px-3 pb-20
   }
 
   #main-menu.aw_fixed_header {

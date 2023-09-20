@@ -24,11 +24,11 @@
       background-image: url(images/mail_unread_dark.svg);
     }
 
-    #top-menu .lychee-message-box-icon::before {
+    #top-menu .lychee-message-box-icon::before,
+    #top-menu .lychee-message-box-icon.unread::before {
       content: none;
       @apply m-0
     }
-
 
     // Lychee Project View
     #favorite-project-wrapper > h3 {
@@ -516,6 +516,20 @@
   .controller-projects {
     #issue-set-setting-form input[name="commit"] {
       @apply my-2
+    }
+  }
+
+
+  // Lychee Message Box
+  .theme-Lychee.controller-lychee_message_box_informations,
+  .theme-Lychee.controller-lychee_message_box_my_boxes,
+  .theme-Lychee.controller-lychee_message_box_system_errors {
+    #main.nosidebar {
+      @apply ml-0
+    }
+
+    .lychee-message-box-types > li.mark_as_read a {
+      font-size: 12px;
     }
   }
 
