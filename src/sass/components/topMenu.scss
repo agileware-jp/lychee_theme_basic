@@ -1,40 +1,71 @@
 @layer components {
   #top-menu {
-    display: flex;
-    height: auto;
-
-    @apply bg-background-primary border-b border-border-divider text-sm px-6 py-4
+    @apply flex bg-background-primary border-b border-border-divider text-sm px-6 py-3
   }
 
   #top-menu ul {
-    display: flex;
+    // margin: 0;
+    // padding: 0;
+    @apply flex
   }
 
   #top-menu li {
-    float: none;
+    // float:left;
+    // list-style-type:none;
+    // margin: 0px 0px 0px 0px;
+    // padding: 0px 0px 0px 0px;
+    // white-space:nowrap;
+    @apply order-4 mr-4
   }
 
-  #top-menu li:not(:first-child) {
-    @apply ml-4
+  #top-menu li.aw-topMenuHome {
+    @apply order-1 mr-2
+  }
+
+  #top-menu li.aw-topMenuHelp {
+    @apply order-2 relative mr-4 pr-4
+  }
+
+  #top-menu li.aw-topMenuAdministration {
+    @apply order-3 mr-6
+  }
+
+  #top-menu .aw-topMenuHelp::after {
+    content: "";
+    @apply absolute top-0 right-0 bottom-0 w-[1px] h-[60%] bg-border-divider m-auto
   }
 
   #top-menu a {
-    font-weight: normal;
-
-    @apply text-text-default m-0
+    @apply text-text-default
   }
 
   #top-menu a:hover {
-    text-decoration: none;
-    opacity: 60;
-    transition: opacity 0.3s;
+    @apply no-underline opacity-60 transition-opacity
+  }
+
+  #top-menu .home {
+    background-image: url(images/home_dark.svg);
+    background-repeat: no-repeat;
+    background-size: 22px;
+    @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap w-6 h-6 bg-center align-middle
+  }
+
+  #top-menu .help,
+  #top-menu .lychee-help {
+    background-image: url(images/help_dark.svg);
+    background-repeat: no-repeat;
+    background-size: 22px;
+    @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap w-6 h-6 bg-center align-middle
+  }
+
+  .theme-Lychee {
+    #top-menu .lychee-icon.lychee-help::before {
+      @apply content-none
+    }
   }
 
   #account {
-    order: 3;
-    float: none;
-
-    @apply ml-6
+    @apply order-3 float-none ml-6
   }
 
   .action-login #top-menu,
@@ -68,29 +99,24 @@
   }
 
   #top-menu .register {
-    order: 2;
     background-image: url(images/person_add_default.svg);
     background-repeat: no-repeat;
 
-    @apply pl-5
+    @apply order-2 pl-5
   }
 
   #top-menu .login {
-    order: 1;
     background-image: url(images/login_default.svg);
     background-repeat: no-repeat;
 
-    @apply pl-5
+    @apply order-1 pl-5
   }
 
   #top-menu #loggedas {
-    order: 2;
-    float: none;
-    @apply mr-0 ml-auto
+    @apply order-2 ml-auto
   }
 
   #top-menu > ul {
-    order: 1;
-    margin-right: auto;
+    @apply order-1 mr-auto
   }
 }

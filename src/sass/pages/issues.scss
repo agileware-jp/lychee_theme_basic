@@ -69,12 +69,24 @@
       @apply mt-2
     }
 
+    div.issue .create-subtasks-from-issue-set {
+      @apply overflow-hidden mt-6
+    }
+
     div.issue #issue_tree {
-      @apply overflow-hidden mt-4
+      @apply overflow-hidden mt-6
     }
 
     div.issue #relations {
       @apply overflow-hidden mt-6
+    }
+
+    div.issue #relations select {
+      @apply mr-2
+    }
+
+    div.issue #relations #relation_issue_to_id {
+      @apply mx-2
     }
 
     .issues-stat {

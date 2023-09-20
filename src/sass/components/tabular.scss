@@ -36,4 +36,8 @@
   .tabular textarea {
     @apply w-full
   }
+
+  .tabular input[type="checkbox"] {
+    @apply mt-1.5
+  }
 }

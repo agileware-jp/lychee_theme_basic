@@ -8,7 +8,7 @@
   }
 
   .BTN_SECONDARY_ICON_LEFT {
-    @apply cursor-pointer inline-block h-auto bg-background-primary bg-[0.75rem_center] border border-border-default text-text-default text-sm py-2 pl-7 pr-3 rounded-md shadow hover:no-underline hover:bg-background-primary hover:border-border-dark hover:shadow-none active:bg-background-secondary active:shadow-none
+    @apply cursor-pointer inline-block h-auto bg-background-primary bg-[0.75rem_center] bg-no-repeat border border-border-default text-text-default text-sm py-2 pl-7 pr-3 rounded-md shadow hover:no-underline hover:bg-background-primary hover:border-border-dark hover:shadow-none active:bg-background-secondary active:shadow-none
   }
 
   .BTN_TERTIARY {
@@ -20,11 +20,11 @@
   }
 
   .BTN_TERTIARY_ICON_RIGHT {
-    @apply cursor-pointer inline-block h-auto bg-[right_0.75rem_center] bg-background-secondary border border-background-secondary text-text-default text-sm py-2 pr-7 pl-3 rounded-md hover:border-border-default hover:no-underline hover:text-text-default active:bg-background-tertiary
+    @apply cursor-pointer inline-block h-auto bg-[right_0.75rem_center] bg-background-secondary border border-background-secondary bg-no-repeat text-text-default text-sm py-2 pr-7 pl-3 rounded-md hover:border-border-default hover:no-underline hover:text-text-default active:bg-background-tertiary
   }
 
   .BTN_TERTIARY_ICON_LEFT {
-    @apply cursor-pointer inline-block h-auto bg-[0.75rem_center] bg-background-secondary border border-background-secondary text-text-default text-sm py-2 pr-3 pl-7 rounded-md hover:border-border-default hover:no-underline hover:text-text-default active:bg-background-tertiary
+    @apply cursor-pointer inline-block h-auto bg-[0.75rem_center] bg-background-secondary bg-no-repeat border border-background-secondary text-text-default text-sm py-2 pr-3 pl-7 rounded-md hover:border-border-default hover:no-underline hover:text-text-default active:bg-background-tertiary
   }
 
   .BTN_LINK {
@@ -186,6 +186,15 @@
     @apply w-6 h-6
   }
 
+  // Issue詳細の子チケット追加など
+  .controller-issues {
+    .create-subtasks-from-issue-set .contextual a,
+    #issue_tree .contextual a,
+    #relations .contextual a {
+      @extend .BTN_TERTIARY;
+      @apply text-xs py-1 px-2
+    }
+  }
 
   // Filter
   #query_form p.buttons a.icon,
@@ -228,8 +237,16 @@
       .buttons .icon-only,
       .buttons .icon-edit,
       .buttons .icon-del {
-        @extend .BTN_TERTIARY_ICON_ONLY
+        @extend .BTN_TERTIARY_ICON_ONLY;
       }
+    }
+  }
+
+  // ライセンス管理の戻るボタン
+  .controller-lychee_licenses {
+    input[name="commit"] + a {
+      @extend .BTN_LINK;
+      @apply ml-1
     }
   }
 
@@ -266,6 +283,15 @@
     .lgc-issueDetail-submit button.lgc-form-button {
       @extend .BTN_PRIMARY;
       @apply text-xs
+    }
+  }
+
+  // Lychee CCPM
+  .theme-Lychee.controller-projects {
+    .reflect_critical_path {
+      background-image: url(images/refresh_default.svg);
+      @extend .BTN_SECONDARY_ICON_LEFT;
+      @apply mt-2
     }
   }
 }

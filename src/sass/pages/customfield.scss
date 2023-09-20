@@ -4,32 +4,16 @@
       @apply mt-2
     }
 
-    #content .box p label:not(:first-child) {
-      @apply mt-2
-    }
-
     #content .box.tabular p + p {
       @apply mt-6
     }
 
     #content .box p label {
-      display: flex;
+      // display: flex;
     }
 
     #content .box p label input[type=radio] {
       @apply mt-2
-    }
-
-    #custom_field_project_ids .projects li {
-      @apply mt-2
-    }
-
-    #custom_field_project_ids .projects label {
-      display: flex;
-    }
-
-    #custom_field_project_ids .projects label input {
-      @apply mr-1
     }
 
     #custom_field_is_for_all {

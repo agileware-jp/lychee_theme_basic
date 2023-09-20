@@ -5,7 +5,7 @@
   }
 
   #main {
-    @apply flex grow-[2] flex-row
+    @apply flex grow-[2] flex-row border-l border-border-divider
   }
 
   .has-main-menu #main {
@@ -25,7 +25,7 @@
   }
 
   .has-main-menu #content {
-    @apply pl-3
+    @apply border-0 pl-6
   }
 
   #footer {

@@ -3,16 +3,57 @@
     @apply mt-4
   }
 
-  .objects-selection > div,
-  #user_group_ids {
-    column-rule: none;
+  .objects-selection > .projects-selection {
+    column-width: auto;
+  }
+
+  #principals {
+    @apply mt-4
   }
 
   #principals label {
-    @apply text-sm text-text-default
+    @apply flex items-center gap-0.5 text-sm text-text-default px-2
   }
 
-  #principals label img {
+  #principals label img,
+  #principals label .gravatar {
     @apply inline-block mx-1
+  }
+
+
+  // プロジェクト追加UI
+  ul.projects ul.projects {
+    @apply ml-2
+  }
+
+  ul.projects.root {
+    @apply -mt-4 mx-2
+  }
+
+  ul.projects li.root div.archived,
+  ul.projects li.child div.archived {
+    @apply text-text-caption
+  }
+
+  ul.projects li {
+    @apply mt-4
+  }
+
+  ul.projects label {
+    @apply flex items-start break-all
+  }
+
+  ul.projects label input[type="checkbox"] {
+    @apply mt-1 mr-1
+  }
+
+
+  // ロール追加
+  .roles-selection {
+    @apply -mt-2
+  }
+
+  .roles-selection label {
+    @apply mt-2
   }
 }

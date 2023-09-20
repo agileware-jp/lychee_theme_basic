@@ -147,6 +147,23 @@
     @apply w-20
   }
 
+  .check_box_group {
+    @extend .TEXT_FIELD;
+    @apply pb-3
+  }
+
+  .check_box_group label {
+    @apply w-auto
+  }
+
+  .check_box_group label + label {
+    @apply mt-2
+  }
+
+  .check_box_group label input[type="checkbox"] {
+    @apply mr-1
+  }
+
   // 個人設定
   #user_mail_notification {
     @apply mb-2

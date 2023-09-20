@@ -14,12 +14,6 @@
     }
 
 
-    // Cost
-    .lychee-cost-cash-forecast__unit-description {
-      @apply top-4 right-4
-    }
-
-
     // Message Box
     #top-menu .lychee-message-box-icon {
       background-image: url(images/mail_dark.svg);
@@ -206,6 +200,14 @@
       @apply mr-2
     }
 
+    #kanban.collapsible .box ~ .box fieldset {
+      @apply mt-4
+    }
+
+    #kanban.collapsible .box ~ .box fieldset legend + div {
+      @apply pl-[14px]
+    }
+
     #backlog.collapsible table td {
       @apply pt-3
     }
@@ -220,6 +222,14 @@
 
     #backlog.collapsible input[type="checkbox"] + label {
       @apply mr-2
+    }
+
+    #backlog.collapsible .box ~ .box fieldset {
+      @apply mt-4
+    }
+
+    #backlog.collapsible .box ~ .box fieldset legend + div {
+      @apply pl-[14px]
     }
   }
 
@@ -311,6 +321,10 @@
   }
 
   // Lychee Cost
+  .lychee-cost-cash-forecast__unit-description {
+    @apply top-4 right-4
+  }
+
   .theme-Lychee.controller-lychee_cost_expenses {
     #month {
       @apply mr-1
@@ -336,7 +350,11 @@
   // Cost Group
   .controller-cost_groups {
     h2 + .autoscroll {
-      @apply clear-both
+      @apply clear-both mt-4
+    }
+
+    h2 + .nodata {
+      @apply clear-both mt-4
     }
   }
 
@@ -369,6 +387,12 @@
 
   .issue .attributes fieldset legend + div {
     @apply mt-2
+  }
+
+  .theme-Lychee.controller-custom_field_categories {
+    .custom-field-categories {
+      @apply mt-4
+    }
   }
 
   // Lychee Issue Sets
@@ -486,6 +510,102 @@
 
     #content input[name="commit"] {
       @apply mt-4
+    }
+  }
+
+  .controller-projects {
+    #issue-set-setting-form input[name="commit"] {
+      @apply my-2
+    }
+  }
+
+
+  // Lychee ライセンス管理
+  .theme-Lychee.controller-lychee_licenses {
+    #new_registration + hr + a {
+      @apply inline-block mt-2
+    }
+
+    #new_registration table td {
+      @apply p-2
+    }
+  }
+
+  .theme-Lychee.controller-lychee_modules {
+    .lychee-modules__projects {
+      @apply ml-3
+    }
+
+    .lychee-modules__projects li {
+      @apply mt-2
+    }
+  }
+
+
+  // Lychee Log
+  .theme-Lychee.controller-logs {
+    .list td {
+      @apply text-xs
+    }
+
+    .list td form {
+      @apply inline
+    }
+  }
+
+
+  // Lychee Rest Days 会社休日設定
+  .theme-Lychee.controller-rest_days {
+    .new_rest_day_csv {
+      @apply mb-4
+    }
+
+    .new_rest_day_csv input[type="file"] {
+      @apply max-w-none
+    }
+
+    .new_rest_day_csv input[name="commit"] {
+      @apply mt-2
+    }
+
+    h4 {
+      @apply mb-2
+    }
+
+    .new_rest_day_csv + div .box {
+      @apply mb-0
+    }
+
+    #lychee_rest_day_day {
+      @apply mr-4
+    }
+  }
+
+
+  // Lychee SAML
+  .theme-Lychee.controller-auth_source_saml {
+    .tabular p {
+      @apply pl-[10rem]
+    }
+
+    .tabular label {
+      @apply w-[9rem] -ml-[10rem]
+    }
+  }
+
+
+  // Lychee CCPM
+  .theme-Lychee.controller-projects {
+    #ccpm_version_settings p {
+      @apply border-solid border-b border-border-divider mt-0 mb-6 pb-6
+    }
+
+    #ccpm_version_settings legend + p {
+      @apply border-0 mt-0 mb-4 pb-0
+    }
+
+    #ccpm_version_settings p:last-child {
+      @apply border-0 mb-0 pb-0
     }
   }
 
