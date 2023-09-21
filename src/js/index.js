@@ -51,6 +51,35 @@ function stickyMainMenu() {
   }
 }
 
+// main menuの折りたたみ
+function toggleMainMenu() {
+  // Cookieとか使って開閉の状態を記録したい
+  // main menuがあるページかどうか
+  const mainMenu = document.querySelector('#main-menu')
+  if(!mainMenu) return
+
+  // 開閉ボタン追加
+  const btn = document.createElement('button')
+  btn.textContent = 'メニューの開閉'
+  btn.classList.add('aw-toggleMainMenu')
+  const mainContent = document.querySelector('#main')
+  mainContent.appendChild(btn)
+
+  // 切り替え管理
+  const toggleTrigger = document.querySelector('.aw-toggleMainMenu')
+  toggleTrigger.addEventListener('click', () => {
+    if(mainMenu.classList.contains('isClose')) {
+      mainMenu.classList.remove('isClose')
+      mainContent.classList.remove('isClose')
+      toggleTrigger.classList.remove('isClose')
+    } else {
+      mainMenu.classList.add('isClose')
+      mainContent.classList.add('isClose')
+      toggleTrigger.classList.add('isClose')
+    }
+  })
+}
+
 window.addEventListener('scroll', stickyMainMenu)
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -70,6 +99,13 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     })
   }
+
+
+  /**
+   * Main Menuの開閉機能
+   */
+  toggleMainMenu()
+
 
 
   /**

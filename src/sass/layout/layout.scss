@@ -5,7 +5,10 @@
   }
 
   #main {
-    @apply flex grow-[2] flex-row border-l border-border-divider
+    transition-property: margin-left;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    @apply relative flex grow-[2] flex-row border-l border-border-divider
   }
 
   .has-main-menu #main {
@@ -18,6 +21,15 @@
 
   .has-main-menu #main.nosidebar {
     @apply ml-52
+  }
+
+  // 開閉時の設定
+  #main.isClose,
+  .has-main-menu #main.nosidebar.isClose {
+    transition-property: margin-left;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    @apply ml-4
   }
 
   #content {

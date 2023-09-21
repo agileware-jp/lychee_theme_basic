@@ -1,12 +1,16 @@
 @layer components {
   #main-menu {
     height: calc(100vh - 144px);
-    @apply overflow-auto absolute left-0 w-52 bg-transparent pt-3 px-3 pb-20
+    @apply overflow-auto absolute left-0 w-52 bg-transparent pt-3 pr-5 pl-3 pb-20 transition-transform
   }
 
   #main-menu.aw_fixed_header {
     height: calc(100vh - 37px);
     @apply fixed
+  }
+
+  #main-menu.isClose {
+    @apply -translate-x-[13rem] transition-transform
   }
 
   #main-menu ul {
