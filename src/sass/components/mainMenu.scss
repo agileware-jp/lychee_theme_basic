@@ -9,7 +9,7 @@
     @apply fixed
   }
 
-  #main-menu.isClose {
+  #main-menu.isMainMenuClose {
     @apply -translate-x-[13rem] transition-transform
   }
 

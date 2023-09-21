@@ -1,67 +1,82 @@
-@media screen and (min-width: 0px) and (max-width: 1089px) {
-  #sidebar {
-    width: 22%;
-  }
-}
+// @media screen and (min-width: 0px) and (max-width: 1089px) {
+//   #sidebar {
+//     width: 22%;
+//   }
+// }
 
-@media screen and (min-width: 1090px) and (max-width: 1279px) {
-  #sidebar {
-    width: 240px;
-  }
-}
+// @media screen and (min-width: 1090px) and (max-width: 1279px) {
+//   #sidebar {
+//     width: 240px;
+//   }
+// }
 
-@media screen and (min-width: 1280px) and (max-width: 1599px) {
-  #sidebar {
-    width: 280px;
-  }
-}
+// @media screen and (min-width: 1280px) and (max-width: 1599px) {
+//   #sidebar {
+//     width: 280px;
+//   }
+// }
 
-@media screen and (min-width: 1600px) and (max-width: 1919px) {
-  #sidebar {
-    width: 320px;
-  }
-}
+// @media screen and (min-width: 1600px) and (max-width: 1919px) {
+//   #sidebar {
+//     width: 320px;
+//   }
+// }
 
-@media screen and (min-width: 1920px) and (max-width: 2559px) {
-  #sidebar {
-    width: 360px;
-  }
-}
+// @media screen and (min-width: 1920px) and (max-width: 2559px) {
+//   #sidebar {
+//     width: 360px;
+//   }
+// }
 
-@media screen and (min-width: 2560px) {
-  #sidebar {
-    width: 380px;
-  }
-}
-
-#sidebar div.wiki ul li {
-  list-style-type: inherit;
-}
-
-#sidebar span.icon-warning {
-  margin-left: 5px;
-}
-
-#main.nosidebar #sidebar {
-  display: none;
-}
-
-#sidebar .query.default {
-  font-weight: bold;
-}
-
-#admin-menu a {
-  line-height: 1.7em;
-}
+// @media screen and (min-width: 2560px) {
+//   #sidebar {
+//     width: 380px;
+//   }
+// }
 
 @layer components {
   // sidebar
   #sidebar {
-    @apply flex-shrink-0 order-2 w-60 bg-transparent border-l border-border-divider p-3
+    transition-property: width;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    @apply relative flex-shrink-0 order-2 w-[15rem] bg-transparent border-l border-border-divider py-3 pr-3 pl-5 transition-transform
+  }
+
+  #sidebar.isSidebarClose {
+    transition-property: width;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    @apply w-0 pr-0 pl-4
+  }
+
+  #sidebar.isSidebarClose *:not(.aw-toggleSidebar) {
+    @apply hidden
   }
 
   #sidebar h3 {
     @apply text-text-default text-sm mt-4
+  }
+
+
+  #sidebar div.wiki ul li {
+    list-style-type: inherit;
+  }
+
+  #sidebar span.icon-warning {
+    @apply ml-1
+  }
+
+  #main.nosidebar #sidebar {
+    @apply hidden
+  }
+
+  #sidebar .query.default {
+    @apply font-bold
+  }
+
+  #admin-menu a {
+    @apply text-sm
   }
 
   #sidebar input[type="submit"] {

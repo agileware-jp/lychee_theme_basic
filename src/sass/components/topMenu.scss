@@ -117,7 +117,11 @@
   }
 
   #top-menu #loggedas {
-    @apply order-2 ml-auto
+    @apply order-2 text-text-onFill ml-auto
+  }
+
+  #top-menu #loggedas a {
+    @apply text-text-default
   }
 
   #top-menu > ul {

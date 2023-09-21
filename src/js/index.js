@@ -53,7 +53,6 @@ function stickyMainMenu() {
 
 // main menuの折りたたみ
 function toggleMainMenu() {
-  // Cookieとか使って開閉の状態を記録したい
   // main menuがあるページかどうか
   const mainMenu = document.querySelector('#main-menu')
   if(!mainMenu) return
@@ -68,21 +67,58 @@ function toggleMainMenu() {
   // 切り替え管理
   const toggleTrigger = document.querySelector('.aw-toggleMainMenu')
   toggleTrigger.addEventListener('click', () => {
-    if(mainMenu.classList.contains('isClose')) {
-      mainMenu.classList.remove('isClose')
-      mainContent.classList.remove('isClose')
-      toggleTrigger.classList.remove('isClose')
+    if(mainMenu.classList.contains('isMainMenuClose')) {
+      mainMenu.classList.remove('isMainMenuClose')
+      mainContent.classList.remove('isMainMenuClose')
+      toggleTrigger.classList.remove('isMainMenuClose')
     } else {
-      mainMenu.classList.add('isClose')
-      mainContent.classList.add('isClose')
-      toggleTrigger.classList.add('isClose')
+      mainMenu.classList.add('isMainMenuClose')
+      mainContent.classList.add('isMainMenuClose')
+      toggleTrigger.classList.add('isMainMenuClose')
     }
   })
+}
+
+// sidebarの折りたたみ
+function toggleSidebar() {
+  // サイドバーがある"かつ"nosidebarではない
+  const sidebar = document.querySelector('#sidebar')
+  if(!sidebar || sidebar.closest('#main').classList.contains('nosidebar')) return
+
+  // 開閉ボタン追加
+  const btn = document.createElement('button')
+  btn.textContent = 'サイドバーの開閉'
+  btn.classList.add('aw-toggleSidebar')
+  const mainContent = document.querySelector('#main')
+  mainContent.appendChild(btn)
+
+  // 切り替え処理
+  const toggleTrigger = document.querySelector('.aw-toggleSidebar')
+  toggleTrigger.addEventListener('click', () => {
+    if(sidebar.classList.contains('isSidebarClose')) {
+      sidebar.classList.remove('isSidebarClose')
+      mainContent.classList.remove('isSidebarClose')
+      toggleTrigger.classList.remove('isSidebarClose')
+    } else {
+      sidebar.classList.add('isSidebarClose')
+      mainContent.classList.add('isSidebarClose')
+      toggleTrigger.classList.add('isSidebarClose')
+    }
+  })
+}
+
+// 「ログイン中:」の文字を削除
+function removeLoggedasText() {
+  const loggedas = document.querySelector('#loggedas')
+  if(!loggedas) return
+
+  loggedas.childNodes[0].textContent = ''
 }
 
 window.addEventListener('scroll', stickyMainMenu)
 
 window.addEventListener('DOMContentLoaded', () => {
+  removeLoggedasText()
   hiddenTabsButtons()
   repositionTopMenu()
 
@@ -102,10 +138,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
   /**
-   * Main Menuの開閉機能
+   * Main Menu / Sidebarの開閉機能
    */
   toggleMainMenu()
-
+  toggleSidebar()
 
 
   /**
@@ -151,7 +187,6 @@ window.addEventListener('DOMContentLoaded', () => {
    */
   const newObjectBtn = document.querySelector('.new-object')
   if(newObjectBtn) {
-    console.log(newObjectBtn)
     newObjectBtn.closest('li').classList.add('aw_newObjectList')
   }
 })

@@ -55,15 +55,46 @@
   .aw-toggleMainMenu {
     @extend .BTN_SECONDARY_ICON_ONLY;
     background-image: url(images/move_left_default.svg);
-    @apply absolute top-[1.15rem] -left-3
+    @apply absolute top-[1.15rem] -left-3 z-10
   }
 
-  .aw-toggleMainMenu.isClose {
+  .aw-toggleMainMenu.isMainMenuClose {
     background-image: url(images/menu_default.svg);
   }
 
   .lgc-is-fullscreen .aw-toggleMainMenu,
-  .task-kanban-is-fullscreen .aw-toggleMainMenu {
+  .task-kanban-is-fullscreen .aw-toggleMainMenu,
+  .controller-resource_management .aw-toggleMainMenu,
+  .controller-lychee_message_box_my_boxes .aw-toggleMainMenu,
+  .controller-lychee_message_box_informations .aw-toggleMainMenu,
+  .controller-lychee_message_box_system_errors .aw-toggleMainMenu,
+  .controller-time_management .aw-toggleMainMenu,
+  .controller-project_report_overview .aw-toggleMainMenu,
+  .controller-lychee_work_plan .aw-toggleMainMenu {
+    @apply hidden
+  }
+
+  // Sidebarの開閉ボタン
+  .aw-toggleSidebar {
+    @extend .BTN_SECONDARY_ICON_ONLY;
+    background-image: url(images/move_right_default.svg);
+    transition-property: right;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    @apply absolute top-[1.15rem] right-[14.25rem] z-10
+  }
+
+  .aw-toggleSidebar.isSidebarClose {
+    background-image: url(images/menu_default.svg);
+    transition-property: right;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    @apply right-[0.25rem]
+  }
+
+  .lgc-is-fullscreen .aw-toggleSidebar,
+  .task-kanban-is-fullscreen .aw-toggleSidebar,
+  .controller-resource_management .aw-toggleSidebar {
     @apply hidden
   }
 

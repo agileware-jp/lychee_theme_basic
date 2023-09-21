@@ -24,16 +24,20 @@
   }
 
   // 開閉時の設定
-  #main.isClose,
-  .has-main-menu #main.nosidebar.isClose {
+  #main.isMainMenuClose,
+  .has-main-menu #main.nosidebar.isMainMenuClose {
     transition-property: margin-left;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
     @apply ml-4
   }
 
+  #main.isSidebarClose {
+    // @apply border-r border-border-divider mr-4
+  }
+
   #content {
-    @apply overflow-x-auto grow p-6 order-1
+    @apply relative overflow-x-auto grow p-6 order-1
   }
 
   .has-main-menu #content {
