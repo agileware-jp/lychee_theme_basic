@@ -17,7 +17,7 @@
     // Message Box
     #top-menu .lychee-message-box-icon {
       background-image: url(images/mail_dark.svg);
-      @apply block w-5 h-5 bg-[length:20px]
+      @apply block w-5 h-5 bg-[length:20px] bg-center mt-[1px]
     }
 
     #top-menu .lychee-message-box-icon.unread {

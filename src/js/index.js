@@ -115,6 +115,11 @@ function removeLoggedasText() {
   loggedas.childNodes[0].textContent = ''
 }
 
+// FBリンク追加
+function addFeedbackLink() {
+  // TODO
+}
+
 window.addEventListener('scroll', stickyMainMenu)
 
 window.addEventListener('DOMContentLoaded', () => {
