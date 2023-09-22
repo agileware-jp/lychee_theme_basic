@@ -26,4 +26,33 @@
   div#roadmap .related-issues td.buttons {
     @apply text-right
   }
+
+
+  div#version-summary {
+    @apply float-right w-[28%] bg-background-primary mb-4 pl-4
+  }
+
+  div#version-summary fieldset {
+    @apply border-border-divider mb-4 p-4 rounded-md
+  }
+
+  div#version-summary fieldset legend {
+    @apply font-bold
+  }
+
+  div#version-summary fieldset.time-tracking table {
+    @apply w-full
+  }
+
+  div#version-summary fieldset.time-tracking table td {
+    @apply align-middle
+  }
+
+  div#version-summary th, div#version-summary td.total-hours {
+    @apply text-right
+  }
+
+  div#version-summary div#status_by #status_by_select {
+    @apply mr-1
+  }
 }
