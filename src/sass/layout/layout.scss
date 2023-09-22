@@ -32,12 +32,8 @@
     @apply ml-4
   }
 
-  #main.isSidebarClose {
-    // @apply border-r border-border-divider mr-4
-  }
-
   #content {
-    @apply relative overflow-x-auto grow p-6 order-1
+    @apply relative overflow-x-auto grow bg-background-primary p-6 order-1
   }
 
   .has-main-menu #content {
