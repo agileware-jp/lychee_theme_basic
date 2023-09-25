@@ -3,3 +3,5 @@ node_modules
 stylesheets/application.css
 javascripts/theme.js
 lychee-theme_Basic.zip
+stylesheets/context_menu.css
+stylesheets/responsive.css

@@ -9,6 +9,8 @@ module.exports = {
   entry: {
     // keyにはスラッシュ区切りで名前を指定することで、ディレクトリ階層を指定できる（`ディレクトリ名/ファイル名`）
     'stylesheets/application': './src/sass/application.scss',
+    'stylesheets/responsive': './src/sass/responsive.scss',
+    'stylesheets/context_menu': './src/sass/context_menu.scss',
     'javascripts/theme': './src/js/index.js'
   },
   output: {
