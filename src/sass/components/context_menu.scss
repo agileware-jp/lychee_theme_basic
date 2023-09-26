@@ -1,36 +1,106 @@
-// context_menu.cssを用意することで置き換えが可能になるが、tailwindを分離する方法がわからないため一旦このままapplication.css内で進める
-// かわりにID二重指定で詳細度を高めて上書きする
+#context-menu { position: absolute; z-index: 40; font-size: 0.9em;}
+
+#context-menu ul, #context-menu li, #context-menu a {
+  // display:block;
+  // margin:0;
+  // padding:0;
+  // border:0;
+}
+
+#context-menu ul {
+  // width: 150px;
+}
+
+#context-menu li {
+  position:relative;
+  padding:1px;
+  z-index:39;
+  border:1px solid white;
+}
+// #context-menu li.folder ul { position:absolute; left:168px; /* IE6 */ top:-2px; max-height:300px; overflow:hidden; overflow-y: auto; }
+// #context-menu li.folder>ul { left:148px; }
+
+#context-menu.reverse-y li.folder>ul, #context-menu li.folder.up>ul { top:auto; bottom:0; }
+#context-menu.reverse-x li.folder ul { left:auto; right:168px; /* IE6 */ }
+// #context-menu.reverse-x li.folder>ul { right:148px; }
+
+#context-menu.reverse-y li.folder.down>ul {
+  position:absolute; top:-2px; bottom: auto; max-height:300px; overflow:hidden; overflow-y: auto;
+}
+
+#context-menu a {
+  text-decoration:none;
+  padding: 2px 0px 2px 20px;
+  width:100%; /* IE */
+}
+#context-menu li>a { width:auto; } /* others */
+#context-menu a.disabled, #context-menu a.disabled:hover {color: #aaa;}
+#context-menu li a.submenu { padding-right:16px; background:url("../images/arrow_right.png") right no-repeat; }
+// #context-menu li:hover { border:1px solid #628db6; background-color:#eef5fd; border-radius:3px; }
+// #context-menu a:hover {color:#2A5685;}
+#context-menu li.folder:hover { z-index:40; }
+#context-menu ul ul, #context-menu  li:hover ul ul { display:none; }
+#context-menu li:hover ul, #context-menu li:hover li:hover ul { display:block; }
+#context-menu a.icon-checked {background-position: 3px 40%;}
+
+/* selected element */
+.context-menu-selection { background-color:#507AAA; color:#f8f8f8; }
+.context-menu-selection a, .context-menu-selection a:hover { color:#f8f8f8; }
+.context-menu-selection:hover { background-color:#507AAA; color:#f8f8f8 ; }
+div#gantt_area .context-menu-selection { background-color: rgba(80, 122, 170, 0.48); }
+div#gantt_area .context-menu-selection:hover { background-color: rgba(80, 122, 170, 0.48); }
+div#gantt_area .context-menu-selection a { color: #169; }
+
 @layer components {
-  #context-menu#context-menu > ul {
-    width: 180px;
-    @apply bg-background-primary border-border-default rounded-md shadow-lg p-1
+  #context-menu ul {
+    // width: 180px;
+    @apply w-[180px] bg-background-primary border border-solid border-border-default rounded-md shadow-lg m-0 p-1
   }
 
-  #context-menu#context-menu li {
+  #context-menu li {
     @apply border-none p-0 rounded
   }
 
-  #context-menu#context-menu li:hover {
+  #context-menu li:hover {
     @apply bg-background-secondary
   }
 
-  #context-menu#context-menu li:not(:first-child) {
+  #context-menu li:not(:first-child) {
     @apply mt-0.5
   }
 
-  #context-menu#context-menu li > a {
-    @apply text-sm text-text-default py-2 pl-8 pr-3
+  #context-menu li.folder ul {
+    position:absolute;
+    // left:168px;
+    top:-2px;
+    max-height:300px;
+    overflow:hidden;
+    overflow-y: auto;
+
+    @apply left-[172px]
   }
 
-  #context-menu#context-menu li > a.icon {
+  #context-menu li.folder > ul {
+    @apply left-[172px]
+  }
+
+  #context-menu.reverse-x li.folder > ul {
+    @apply right-[172px]
+  }
+
+  #context-menu li > a {
+    @apply block text-xs text-text-default py-1 pl-8 pr-2
+  }
+
+  #context-menu li > a.icon {
     background-position: 12px 50%;
   }
 
-  #context-menu#context-menu li > a.submenu {
+  #context-menu li > a.submenu {
     @apply pr-8
   }
 
-  #context-menu#context-menu li a.submenu {
+  #context-menu li a.submenu {
     background-image: url(images/chevron_right_default.svg);
     background-position: right 12px center;
     background-size: 16px;
@@ -39,12 +109,11 @@
 
   .context-menu-selection.context-menu-selection,
   .context-menu-selection.context-menu-selection:hover {
-    background-color: #DDE9EE !important;
-    color: #002E40 !important;
+    @apply bg-background-primary text-text-default
   }
 
   .context-menu-selection.context-menu-selection a,
   .context-menu-selection.context-menu-selection a:hover {
-    color: #116699 !important;
+    @apply text-text-link;
   }
 }
