@@ -36,7 +36,7 @@
 @use './components/icons.scss' as *;
 @use './components/issue.scss' as *;
 @use './components/journal.scss' as *;
-@use './components/jstoolbar.scss' as *;
+// @use './components/jstoolbar.scss' as *;
 @use './components/table.scss' as *;
 @use './components/mainMenu.scss' as *;
 @use './components/nodata.scss' as *;
@@ -79,3 +79,6 @@
 
 // Plugins
 @use './plugins/lychee.scss' as *;
+
+// Responsive
+@use './responsives.scss/responsive.scss' as *;

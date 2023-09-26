@@ -8,7 +8,7 @@
     transition-property: margin-left;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
-    @apply relative flex grow-[2] flex-row border-l border-border-divider
+    @apply flex grow-[2] flex-row border-l border-border-divider
   }
 
   .has-main-menu #main {
@@ -29,11 +29,11 @@
     transition-property: margin-left;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
-    @apply ml-4
+    @apply ml-[1.25rem]
   }
 
   #content {
-    @apply relative overflow-x-auto grow bg-background-primary p-6 order-1
+    @apply overflow-x-auto grow bg-background-primary p-6 order-1
   }
 
   .has-main-menu #content {

@@ -391,12 +391,12 @@
 }
 
 .icon-bookmark-off,
-.theme-Lychee .favorite-project-button {
+.favorite-project-button.favorite-project-button {
   background-image: url(images/bookmark_outliine_default.svg);
 }
 
 .icon-bookmarked-project,
-.theme-Lychee .favorite-project-button.favorited {
+.favorite-project-button.favorite-project-button.favorited {
   background-image: url(images/bookmark_fill_bookmarked.svg);
 }
 
@@ -456,20 +456,18 @@ button.tab-right {
 /*
 * Plugins
 */
-.theme-Lychee {
-  .icon-lychee-cost-cash-forecast {
-    background-image: url(images/account_balance_default.svg);
-  }
+.icon-lychee-cost-cash-forecast.icon-lychee-cost-cash-forecast {
+  background-image: url(images/account_balance_default.svg);
+}
 
-  .icon-association-chart {
-    background-image: url(images/lan_default.svg);
-  }
+.icon-association-chart.icon-association-chart {
+  background-image: url(images/lan_default.svg);
+}
 
-  .lgc-icon-baseline {
-    background-image: url(images/baseline_default.svg);
-  }
+.lgc-icon-baseline.lgc-icon-baseline {
+  background-image: url(images/baseline_default.svg);
+}
 
-  .icon-issue-form-exclude {
-    padding-left: 2rem !important;
-  }
+.icon-issue-form-exclude.icon-issue-form-exclude {
+  padding-left: 2rem !important;
 }

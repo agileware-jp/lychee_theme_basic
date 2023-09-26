@@ -1,34 +1,33 @@
 @layer components {
-  .theme-Lychee {
     // Profile Icon
-    #attachments_form.lychee_profile_icon .preview-avatar {
+    #attachments_form.lychee_profile_icon.lychee_profile_icon .preview-avatar {
       @apply mr-2
     }
 
-    #attachments_form.lychee_profile_icon .add_attachment {
+    #attachments_form.lychee_profile_icon.lychee_profile_icon .add_attachment {
       @apply inline-flex flex-col
     }
 
-    #attachments_form.lychee_profile_icon .add_attachment input[type="file"] {
+    #attachments_form.lychee_profile_icon.lychee_profile_icon .add_attachment input[type="file"] {
       @apply w-full
     }
-
-
     // Message Box
-    #top-menu .lychee-message-box-icon {
+    #top-menu .lychee-message-box-icon.lychee-message-box-icon {
       background-image: url(images/mail_dark.svg);
       @apply block w-5 h-5 bg-[length:20px] bg-center mt-[1px]
     }
 
-    #top-menu .lychee-message-box-icon.unread {
+    #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread {
       background-image: url(images/mail_unread_dark.svg);
     }
 
-    #top-menu .lychee-message-box-icon::before,
-    #top-menu .lychee-message-box-icon.unread::before {
+    #top-menu .lychee-message-box-icon.lychee-message-box-icon::before,
+    #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread::before {
       content: none;
       @apply m-0
     }
+
+
 
     // Lychee Project View
     #favorite-project-wrapper > h3 {
@@ -51,17 +50,15 @@
       @apply text-base text-text-default font-bold mt-3 mb-2 p-0
     }
 
-
     // Lychee Actual Date
     #actual_dates_area {
       @apply mt-4
     }
-  }
 
 
   // LRM
-  .theme-Lychee.controller-resource_management {
-    #main {
+  .controller-resource_management {
+    #main.nosidebar {
       @apply ml-0
     }
 
@@ -82,8 +79,8 @@
 
 
   // LPR 共通
-  .theme-Lychee.controller-project_report_overview {
-    #main {
+  .controller-project_report_overview {
+    #main.nosidebar {
       @apply ml-0
     }
 
@@ -117,14 +114,14 @@
   }
 
   // LPR 共通 カスタムクエリの作成
-  .theme-Lychee.controller-project_report_queries {
+  .controller-project_report_queries {
     #content > h3 {
       @apply mt-4
     }
   }
 
   // LPR 固有
-  .theme-Lychee.controller-project_reports {
+  .controller-project_reports {
     #project-report a.icon-settings,
     #project-report a.icon-del,
     #project-report a.icon-copy,
@@ -140,16 +137,16 @@
 
 
   // Lychee Work Plan
-  .theme-Lychee.controller-lychee_work_plan {
-    #main {
+  .controller-lychee_work_plan {
+    #main.nosidebar {
       @apply ml-0
     }
   }
 
 
   // Lychee Time Management
-  .theme-Lychee.controller-time_management {
-    #main {
+  .controller-time_management {
+    #main.nosidebar {
       @apply ml-0
     }
 
@@ -160,12 +157,12 @@
 
 
   // Lychee ステータスカラー
-  .theme-Lychee.controller-issue_statuses.action-index td.name {
+  .controller-issue_statuses.controller-issue_statuses.action-index td.name {
     display: revert;
   }
 
   // Lychee Kanban
-  .theme-Lychee.controller-kanban {
+  .controller-kanban.controller-kanban {
     select, input {
       @apply h-auto
     }
@@ -187,7 +184,7 @@
     }
   }
 
-  .theme-Lychee.controller-projects {
+  .controller-projects.controller-projects {
     #kanban.collapsible {
       @apply mb-6
     }
@@ -242,7 +239,7 @@
   }
 
   // Lychee Backlog
-  .theme-Lychee.controller-backlog {
+  .controller-backlog.controller-backlog {
     select, input {
       @apply h-auto
     }
@@ -265,7 +262,7 @@
   }
 
   // Lychee Gantt Chart
-  .theme-Lychee.controller-lgc {
+  .controller-lgc.controller-lgc {
     .lgc-issueDetail-header {
       @apply h-auto py-2
     }
@@ -329,7 +326,7 @@
     @apply top-4 right-4
   }
 
-  .theme-Lychee.controller-lychee_cost_expenses {
+  .controller-lychee_cost_expenses.controller-lychee_cost_expenses {
     #month {
       @apply mr-1
     }
@@ -363,7 +360,7 @@
   }
 
   // Lychee Issue Sets
-  .theme-Lychee.theme-Lychee.controller-lychee_issue_sets {
+  .controller-lychee_issue_sets.controller-lychee_issue_sets {
     .issue-sets thead .checkbox + th {
       @apply text-left
     }
@@ -378,7 +375,7 @@
   }
 
   // Lychee Project Term
-  .theme-Lychee.controller-projects {
+  .controller-projects.controller-projects {
     #lychee_project_term_controls {
       @apply mt-4
     }
@@ -393,7 +390,7 @@
     @apply mt-2
   }
 
-  .theme-Lychee.controller-custom_field_categories {
+  .controller-custom_field_categories.controller-custom_field_categories {
     .custom-field-categories {
       @apply mt-4
     }
@@ -525,9 +522,9 @@
 
 
   // Lychee Message Box
-  .theme-Lychee.controller-lychee_message_box_informations,
-  .theme-Lychee.controller-lychee_message_box_my_boxes,
-  .theme-Lychee.controller-lychee_message_box_system_errors {
+  .controller-lychee_message_box_informations.controller-lychee_message_box_informations,
+  .controller-lychee_message_box_my_boxes.controller-lychee_message_box_my_boxes,
+  .controller-lychee_message_box_system_errors.controller-lychee_message_box_system_errors {
     #main.nosidebar {
       @apply ml-0
     }
@@ -539,7 +536,7 @@
 
 
   // Lychee ライセンス管理
-  .theme-Lychee.controller-lychee_licenses {
+  .controller-lychee_licenses.controller-lychee_licenses {
     #new_registration + hr + a {
       @apply inline-block mt-2
     }
@@ -549,7 +546,7 @@
     }
   }
 
-  .theme-Lychee.controller-lychee_modules {
+  .controller-lychee_modules.controller-lychee_modules {
     .lychee-modules__projects {
       @apply ml-3
     }
@@ -561,7 +558,7 @@
 
 
   // Lychee Log
-  .theme-Lychee.controller-logs {
+  .controller-logs.controller-logs {
     .list td {
       @apply text-xs
     }
@@ -573,7 +570,7 @@
 
 
   // Lychee Rest Days 会社休日設定
-  .theme-Lychee.controller-rest_days {
+  .controller-rest_days.controller-rest_days {
     .new_rest_day_csv {
       @apply mb-4
     }
@@ -601,7 +598,7 @@
 
 
   // Lychee SAML
-  .theme-Lychee.controller-auth_source_saml {
+  .controller-auth_source_saml.controller-auth_source_saml {
     .tabular p {
       @apply pl-[10rem]
     }
@@ -613,7 +610,7 @@
 
 
   // Lychee CCPM
-  .theme-Lychee.controller-projects {
+  .controller-projects.controller-projects {
     #ccpm_version_settings p {
       @apply border-solid border-b border-border-divider mt-0 mb-6 pb-6
     }
@@ -629,7 +626,7 @@
 
 
   // その他
-  .theme-Lychee.theme-Lychee.controller-projects {
+  .controller-projects.controller-projects {
     table.list:not(.odd-even) tbody tr:nth-child(odd) td {
       @apply bg-background-primary
     }

@@ -55,11 +55,12 @@
   .aw-toggleMainMenu {
     @extend .BTN_SECONDARY_ICON_ONLY;
     background-image: url(images/move_left_default.svg);
-    @apply absolute top-[1.15rem] -left-3 z-10
+    @apply absolute top-[0.75rem] right-[0.75rem] z-10
   }
 
   .aw-toggleMainMenu.isMainMenuClose {
     background-image: url(images/menu_default.svg);
+    @apply right-0
   }
 
   .lgc-is-fullscreen .aw-toggleMainMenu,
@@ -325,7 +326,7 @@
   }
 
   // Lychee Gantt Chart
-  .theme-Lychee.controller-lgc {
+  .controller-lgc.controller-lgc {
     .lgc-form-cancelButton {
       @extend .BTN_SECONDARY;
       @apply text-xs
@@ -338,7 +339,7 @@
   }
 
   // Lychee CCPM
-  .theme-Lychee.controller-projects {
+  .controller-projects.controller-projects {
     .reflect_critical_path {
       background-image: url(images/refresh_default.svg);
       @extend .BTN_SECONDARY_ICON_LEFT;

@@ -58,10 +58,8 @@
     @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap w-6 h-6 bg-center align-middle
   }
 
-  .theme-Lychee {
-    #top-menu .lychee-icon.lychee-help::before {
-      @apply content-none
-    }
+  #top-menu .lychee-icon.lychee-help.lychee-help::before {
+    @apply content-none
   }
 
   #account {

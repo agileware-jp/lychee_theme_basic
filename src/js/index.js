@@ -62,7 +62,7 @@ function toggleMainMenu() {
   btn.textContent = 'メニューの開閉'
   btn.classList.add('aw-toggleMainMenu')
   const mainContent = document.querySelector('#main')
-  mainContent.appendChild(btn)
+  mainMenu.appendChild(btn)
 
   // 切り替え管理
   const toggleTrigger = document.querySelector('.aw-toggleMainMenu')
@@ -90,7 +90,7 @@ function toggleSidebar() {
   btn.textContent = 'サイドバーの開閉'
   btn.classList.add('aw-toggleSidebar')
   const mainContent = document.querySelector('#main')
-  mainContent.appendChild(btn)
+  sidebar.appendChild(btn)
 
   // 切り替え処理
   const toggleTrigger = document.querySelector('.aw-toggleSidebar')

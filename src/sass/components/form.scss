@@ -170,23 +170,21 @@
   }
 
   // 詳細度を高めて上書きが必要
-  .theme-Lychee {
-    .select2-container--default .select2-selection--single {
-      background-image: url(images/expand_more_dark.svg);
-      background-repeat: no-repeat;
-      background-position: right 8px center;
+  .select2-container--default.select2-container--default .select2-selection--single {
+    background-image: url(images/expand_more_dark.svg);
+    background-repeat: no-repeat;
+    background-position: right 8px center;
 
-      @extend .TEXT_FIELD;
-      @apply h-[38px] pr-8
-    }
+    @extend .TEXT_FIELD;
+    @apply h-[38px] pr-8
+  }
 
-    .select2-container--default .select2-selection--single .select2-selection__arrow {
-      @apply hidden
-    }
+  .select2-container--default.select2-container--default .select2-selection--single .select2-selection__arrow {
+    @apply hidden
+  }
 
-    .select2-container--default .select2-selection--single .select2-selection__rendered {
-      line-height: normal; // tailwindに無いため直接指定
-      @apply text-text-default px-0
-    }
+  .select2-container--default.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: normal; // tailwindに無いため直接指定
+    @apply text-text-default px-0
   }
 }
