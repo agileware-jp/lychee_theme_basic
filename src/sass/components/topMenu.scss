@@ -26,10 +26,6 @@
     @apply order-2 relative mr-4 pr-4
   }
 
-  #top-menu li.aw-topMenuAdministration {
-    @apply order-3 mr-6
-  }
-
   #top-menu .aw-topMenuHelp::after {
     content: "";
     @apply absolute top-0 right-0 bottom-0 w-[1px] h-[60%] bg-border-divider m-auto
@@ -50,7 +46,6 @@
     @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap w-6 h-6 bg-center align-middle
   }
 
-  #top-menu .help,
   #top-menu .lychee-help {
     background-image: url(images/help_dark.svg);
     background-repeat: no-repeat;

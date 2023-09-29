@@ -89,6 +89,10 @@
       @apply mx-2
     }
 
+    div.issue #relations #errorExplanation {
+      @apply clear-both
+    }
+
     .issues-stat {
       @apply text-xs
     }

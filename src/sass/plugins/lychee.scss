@@ -1,59 +1,59 @@
 @layer components {
-    // Profile Icon
-    #attachments_form.lychee_profile_icon.lychee_profile_icon .preview-avatar {
-      @apply mr-2
-    }
+  // Profile Icon
+  #attachments_form.lychee_profile_icon.lychee_profile_icon .preview-avatar {
+    @apply mr-2
+  }
 
-    #attachments_form.lychee_profile_icon.lychee_profile_icon .add_attachment {
-      @apply inline-flex flex-col
-    }
+  #attachments_form.lychee_profile_icon.lychee_profile_icon .add_attachment {
+    @apply inline-flex flex-col
+  }
 
-    #attachments_form.lychee_profile_icon.lychee_profile_icon .add_attachment input[type="file"] {
-      @apply w-full
-    }
-    // Message Box
-    #top-menu .lychee-message-box-icon.lychee-message-box-icon {
-      background-image: url(images/mail_dark.svg);
-      @apply block w-5 h-5 bg-[length:20px] bg-center mt-[1px]
-    }
+  #attachments_form.lychee_profile_icon.lychee_profile_icon .add_attachment input[type="file"] {
+    @apply w-full
+  }
+  // Message Box
+  #top-menu .lychee-message-box-icon.lychee-message-box-icon {
+    background-image: url(images/mail_dark.svg);
+    @apply block w-5 h-5 bg-[length:20px] bg-center mt-[1px]
+  }
 
-    #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread {
-      background-image: url(images/mail_unread_dark.svg);
-    }
+  #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread {
+    background-image: url(images/mail_unread_dark.svg);
+  }
 
-    #top-menu .lychee-message-box-icon.lychee-message-box-icon::before,
-    #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread::before {
-      content: none;
-      @apply m-0
-    }
+  #top-menu .lychee-message-box-icon.lychee-message-box-icon::before,
+  #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread::before {
+    content: none;
+    @apply m-0
+  }
 
 
 
-    // Lychee Project View
-    #favorite-project-wrapper > h3 {
-      @apply mt-4
-    }
+  // Lychee Project View
+  #favorite-project-wrapper > h3 {
+    @apply mt-4
+  }
 
-    .favorite-project-container {
-      @apply w-full
-    }
+  .favorite-project-container {
+    @apply w-full
+  }
 
-    h3 .tree-expander-expanded, table.favorite-projects tr.project td.name .tree-expander-expanded {
-      background-image: url(images/expand_more_default.svg);
-    }
+  h3 .tree-expander-expanded, table.favorite-projects tr.project td.name .tree-expander-expanded {
+    background-image: url(images/expand_more_default.svg);
+  }
 
-    h3 .tree-expander-collapsed, table.favorite-projects tr.project td.name .tree-expander-collapsed {
-      background-image: url(images/chevron_right_default.svg);
-    }
+  h3 .tree-expander-collapsed, table.favorite-projects tr.project td.name .tree-expander-collapsed {
+    background-image: url(images/chevron_right_default.svg);
+  }
 
-    #favorite-project-wrapper + #query_form h2 {
-      @apply text-base text-text-default font-bold mt-3 mb-2 p-0
-    }
+  #favorite-project-wrapper + #query_form h2 {
+    @apply text-base text-text-default font-bold mt-3 mb-2 p-0
+  }
 
-    // Lychee Actual Date
-    #actual_dates_area {
-      @apply mt-4
-    }
+  // Lychee Actual Date
+  #actual_dates_area {
+    @apply mt-4
+  }
 
 
   // LRM
@@ -622,6 +622,23 @@
     #ccpm_version_settings p:last-child {
       @apply border-0 mb-0 pb-0
     }
+  }
+
+
+  // Lychee Checklist
+  .controller-issues.action-new {
+    #checklist_for_new {
+      @apply flex-col
+    }
+
+    #checklist_for_new > label {
+      @apply justify-start  mt-0 my-0 mb-2 pl-0
+    }
+
+    #checklist_for_new > #checklist_wrapper {
+      @apply ml-0
+    }
+
   }
 
 

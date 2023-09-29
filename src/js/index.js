@@ -16,14 +16,12 @@ function setMainMenuTop() {
 // top menuの位置入れ替えのためにclassを付与
 function repositionTopMenu() {
   const home = document.querySelector('#top-menu ul li .home')
-  const help = document.querySelector('#top-menu ul li .help')
+  // const help = document.querySelector('#top-menu ul li .help')
   const lycheeHelp = document.querySelector('#top-menu ul li .lychee-help')
-  const administration = document.querySelector('#top-menu ul li .administration')
 
   if(home) home.closest('li').classList.add('aw-topMenuHome')
-  if(help) help.closest('li').classList.add('aw-topMenuHelp')
+  // if(help) help.closest('li').classList.add('aw-topMenuHelp')
   if(lycheeHelp) lycheeHelp.closest('li').classList.add('aw-topMenuHelp')
-  if(administration) administration.closest('li').classList.add('aw-topMenuAdministration')
 }
 
 /** 活動や検索結果で、各ブロックがdescriptionを持っているかどうか判定 */
@@ -32,10 +30,12 @@ function hasDescription(el) {
   return el.textContent.length > 0
 }
 
+/**
+ * MainMenuのサイドバー化
+ */
 function stickyMainMenu() {
   const mainMenu = document.querySelector('#main-menu')
   const header = document.querySelector('#header')
-
   if(mainMenu) {
     const headerHeightRectBottom = header.getBoundingClientRect().bottom
 
@@ -120,8 +120,14 @@ function addFeedbackLink() {
   // TODO
 }
 
+/**
+ * Sticky MainMenu
+ */
 window.addEventListener('scroll', stickyMainMenu)
 
+/**
+ * その他一般的な処理
+ */
 window.addEventListener('DOMContentLoaded', () => {
   removeLoggedasText()
   hiddenTabsButtons()
