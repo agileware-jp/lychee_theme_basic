@@ -43,6 +43,11 @@
     @apply relative flex-shrink-0 order-2 w-[15rem] bg-transparent border-l border-border-divider py-3 pr-3 pl-5 transition-transform
   }
 
+  .controller-kanban #sidebar,
+  .controller-backlog #sidebar {
+    position: relative !important
+  }
+
   #sidebar.isSidebarClose {
     transition-property: width;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
