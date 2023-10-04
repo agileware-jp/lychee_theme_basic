@@ -29,7 +29,7 @@ function hasDescription(el) {
 }
 
 /**
- * MainMenuのサイドバー化
+ * Header・MainMenuのSticky Sidebar化
  */
 function stickyMainMenu() {
   const mainMenu = document.querySelector('#main-menu')
@@ -48,6 +48,22 @@ function stickyMainMenu() {
     }
   }
 }
+
+// SidebarのToggleボタンのSticky化
+// function stickySidebar() {
+//   const sidebar = document.querySelector('.aw_toggleSidebar')
+//   if(!sidebar) return
+
+//   const header = document.querySelector('#header')
+//   const headerHeightRectBottom = header.getBoundingClientRect().bottom
+//   if(headerHeightRectBottom <= 0) {
+//     sidebar.classList.add('aw_fixed_sidebar')
+//   }
+
+//   if(headerHeightRectBottom > 0) {
+//     sidebar.classList.remove('aw_fixed_sidebar')
+//   }
+// }
 
 // main menuの折りたたみ
 function toggleMainMenu() {
@@ -127,6 +143,7 @@ function addFeedbackLink() {
  * Sticky MainMenu
  */
 window.addEventListener('scroll', stickyMainMenu)
+// window.addEventListener('scroll', stickySidebar)
 
 /**
  * その他一般的な処理
