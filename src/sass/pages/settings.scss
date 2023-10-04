@@ -37,4 +37,19 @@
       @apply mt-4
     }
   }
+
+  .controller-auth_sources.controller-auth_sources {
+    td.buttons a {
+      @apply indent-0 w-auto h-auto bg-transparent bg-[left_center] border-0 py-0 pl-5
+    }
+
+    td.buttons a:hover,
+    td.buttons a:active {
+      @apply bg-transparent border-0
+    }
+
+    td.buttons .icon-del {
+      @apply ml-2
+    }
+  }
 }

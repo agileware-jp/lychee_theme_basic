@@ -70,12 +70,12 @@
 @use './pages/repositories.scss' as *;
 @use './pages/roles.scss' as *;
 @use './pages/search.scss' as *;
-@use './pages/settings.scss' as *;
 @use './pages/timelog.scss' as *;
 @use './pages/tracker.scss' as *;
 @use './pages/users.scss' as *;
 @use './pages/versions.scss' as *;
 @use './pages/workflows.scss' as *;
+@use './pages/settings.scss' as *;
 
 // Plugins
 @use './plugins/lychee.scss' as *;
