@@ -443,7 +443,7 @@
       @apply clear-both bg-background-secondary/20 border border-border-divider rounded-md mt-4 p-6
     }
 
-    div.issue-template .subject {
+    div.issue-template .subject:not(td) {
       @apply text-lg font-bold
     }
 
@@ -638,7 +638,12 @@
     #checklist_for_new > #checklist_wrapper {
       @apply ml-0
     }
+  }
 
+
+  // Lychee SAML
+  #redirect_to_auth_request_box {
+    @apply mt-4
   }
 
 
