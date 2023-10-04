@@ -173,10 +173,12 @@
 
     .task-kanban-icon-fullscreen__start {
       background-image: url(images/fullscreen_success.svg);
+      @apply mr-4
     }
 
     .task-kanban-icon-fullscreen__exit {
       background-image: url(images/close_fullscreen_default.svg);
+      @apply mr-4
     }
 
     #burn_down_type_wrap {
@@ -254,10 +256,12 @@
 
     .task-kanban-icon-fullscreen__start {
       background-image: url(images/fullscreen_success.svg);
+      @apply mr-4
     }
 
     .task-kanban-icon-fullscreen__exit {
       background-image: url(images/close_fullscreen_default.svg);
+      @apply mr-4
     }
   }
 
