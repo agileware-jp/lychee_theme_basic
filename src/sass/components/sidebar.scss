@@ -50,7 +50,7 @@
     @apply w-0 pr-0 pl-4
   }
 
-  #sidebar.isSidebarClose *:not(.aw-toggleSidebar) {
+  #sidebar.isSidebarClose *:not(.aw_toggleSidebar) {
     @apply hidden
   }
 

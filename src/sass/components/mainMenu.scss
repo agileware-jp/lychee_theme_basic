@@ -1,7 +1,7 @@
 @layer components {
   #main-menu {
-    height: calc(100vh - 144px);
-    @apply overflow-auto absolute left-0 w-52 bg-transparent pt-3 px-3 pb-20 transition-transform
+    height: calc(100vh - 88px);
+    @apply overflow-auto absolute left-0 w-52 bg-background-primary pt-3 px-3 pb-20 transition-transform
   }
 
   #main-menu.aw_fixed_header {
@@ -10,11 +10,15 @@
   }
 
   #main-menu.isMainMenuClose {
-    @apply pr-12 -translate-x-[11rem] transition-transform
+    @apply bg-transparent pr-12 -translate-x-[10.75rem] transition-transform
   }
 
   #main-menu ul {
     @apply flex flex-col w-full whitespace-nowrap m-0 p-0
+  }
+
+  #main-menu ul:not(.menu-children) {
+    @apply mt-9
   }
 
   #main-menu li:not(:first-child) {
@@ -29,13 +33,17 @@
     @apply bg-background-secondary
   }
 
-  #main-menu li.aw_newObjectList {
-    @apply w-6
+  .aw_newObjectList {
+    @apply absolute top-[1rem] right-[0.75rem] w-6
+  }
+
+  .isMainMenuClose .aw_newObjectList {
+    @apply hidden
   }
 
   #main-menu li:hover ul.menu-children,
   #main-menu li ul.menu-children.visible {
-    @apply block
+    @apply right-0 block w-[11rem]
   }
 
   #main-menu li a.selected,

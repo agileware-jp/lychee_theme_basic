@@ -6,22 +6,20 @@ function hiddenTabsButtons() {
 
 function setMainMenuTop() {
   const mainMenu = document.querySelector('#main-menu')
-  const header = document.querySelector('#header')
+  const topMenu = document.querySelector('#top-menu')
 
   if(mainMenu) {
-    mainMenu.style.top = `${header.offsetHeight}px`
+    mainMenu.style.top = `${topMenu.offsetHeight}px`
   }
 }
 
 // top menuの位置入れ替えのためにclassを付与
 function repositionTopMenu() {
   const home = document.querySelector('#top-menu ul li .home')
-  // const help = document.querySelector('#top-menu ul li .help')
   const lycheeHelp = document.querySelector('#top-menu ul li .lychee-help')
 
-  if(home) home.closest('li').classList.add('aw-topMenuHome')
-  // if(help) help.closest('li').classList.add('aw-topMenuHelp')
-  if(lycheeHelp) lycheeHelp.closest('li').classList.add('aw-topMenuHelp')
+  if(home) home.closest('li').classList.add('aw_topMenuHome')
+  if(lycheeHelp) lycheeHelp.closest('li').classList.add('aw_topMenuHelp')
 }
 
 /** 活動や検索結果で、各ブロックがdescriptionを持っているかどうか判定 */
@@ -35,18 +33,18 @@ function hasDescription(el) {
  */
 function stickyMainMenu() {
   const mainMenu = document.querySelector('#main-menu')
-  const header = document.querySelector('#header')
+  const topMenu = document.querySelector('#top-menu')
   if(mainMenu) {
-    const headerHeightRectBottom = header.getBoundingClientRect().bottom
+    const topMenuHeightRectBottom = topMenu.getBoundingClientRect().bottom
 
-    if(headerHeightRectBottom <= 0) {
+    if(topMenuHeightRectBottom <= 0) {
       mainMenu.classList.add('aw_fixed_header')
       mainMenu.style.top = '0px'
     }
 
-    if(headerHeightRectBottom > 0) {
+    if(topMenuHeightRectBottom > 0) {
       mainMenu.classList.remove('aw_fixed_header')
-      mainMenu.style.top = `${header.offsetHeight}px`
+      mainMenu.style.top = `${topMenu.offsetHeight}px`
     }
   }
 }
@@ -60,21 +58,26 @@ function toggleMainMenu() {
   // 開閉ボタン追加
   const btn = document.createElement('button')
   btn.textContent = 'メニューの開閉'
-  btn.classList.add('aw-toggleMainMenu')
+  btn.classList.add('aw_toggleMainMenu')
+
   const mainContent = document.querySelector('#main')
   mainMenu.appendChild(btn)
 
+  const header = document.querySelector('#header')
+
   // 切り替え管理
-  const toggleTrigger = document.querySelector('.aw-toggleMainMenu')
+  const toggleTrigger = document.querySelector('.aw_toggleMainMenu')
   toggleTrigger.addEventListener('click', () => {
     if(mainMenu.classList.contains('isMainMenuClose')) {
       mainMenu.classList.remove('isMainMenuClose')
       mainContent.classList.remove('isMainMenuClose')
       toggleTrigger.classList.remove('isMainMenuClose')
+      header.classList.remove('isMainMenuClose')
     } else {
       mainMenu.classList.add('isMainMenuClose')
       mainContent.classList.add('isMainMenuClose')
       toggleTrigger.classList.add('isMainMenuClose')
+      header.classList.add('isMainMenuClose')
     }
   })
 }
@@ -88,12 +91,12 @@ function toggleSidebar() {
   // 開閉ボタン追加
   const btn = document.createElement('button')
   btn.textContent = 'サイドバーの開閉'
-  btn.classList.add('aw-toggleSidebar')
+  btn.classList.add('aw_toggleSidebar')
   const mainContent = document.querySelector('#main')
   sidebar.appendChild(btn)
 
   // 切り替え処理
-  const toggleTrigger = document.querySelector('.aw-toggleSidebar')
+  const toggleTrigger = document.querySelector('.aw_toggleSidebar')
   toggleTrigger.addEventListener('click', () => {
     if(sidebar.classList.contains('isSidebarClose')) {
       sidebar.classList.remove('isSidebarClose')
@@ -132,6 +135,11 @@ window.addEventListener('DOMContentLoaded', () => {
   removeLoggedasText()
   hiddenTabsButtons()
   repositionTopMenu()
+
+  // mainMenuがない場合headerはfull width表示
+  if(document.querySelector('#main-menu') !== null) {
+    document.querySelector('#header').classList.add('aw_hasMainMenu')
+  }
 
   // mainMenuのtopプロパティを指定
   setMainMenuTop()

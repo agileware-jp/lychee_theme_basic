@@ -6,16 +6,6 @@ div.wiki a:target + h1, div.wiki a:target + h2, div.wiki a:target + h3, div.wiki
 }
 
 /***** Wiki *****/
-div.wiki table {
-  border-collapse: collapse;
-  margin-bottom: 1em;
-}
-
-div.wiki table, div.wiki td, div.wiki th {
-  border: 1px solid #bbb;
-  padding: 4px;
-}
-
 div.wiki .wiki-class-noborder, div.wiki .wiki-class-noborder td, div.wiki .wiki-class-noborder th {border:0;}
 
 div.wiki .external {
@@ -23,23 +13,6 @@ div.wiki .external {
   background-repeat: no-repeat;
   padding-left: 12px;
   background-image: url(../default/external.png);
-}
-
-div.wiki a {word-wrap: break-word;}
-div.wiki a.new {color: #b73535;}
-
-div.wiki ul, div.wiki ol {margin-bottom:1em;}
-div.wiki li>ul, div.wiki li>ol {margin-bottom: 0;}
-
-div.wiki pre {
-  margin: 1em 1em 1em 1.6em;
-  padding: 8px;
-  background-color: #fafafa;
-  border: 1px solid #e2e2e2;
-  border-radius: 3px;
-  width:auto;
-  overflow-x: auto;
-  overflow-y: hidden;
 }
 
 div.wiki *:not(pre)>code, div.wiki>code {
@@ -104,24 +77,32 @@ div.wiki .task-list input.task-list-item-checkbox {
     @apply mb-4
   }
 
+  .wiki a {
+    word-wrap: break-word;
+  }
+
+  .wiki a.new {
+    @apply text-text-danger
+  }
+
   .wiki h1 {
     @apply text-text-default text-3xl mb-4
   }
 
   .wiki h2 {
-    @apply text-text-default text-2xl mb-4
+    @apply text-text-default text-2xl mt-6 mb-2
   }
 
   .wiki h3 {
-    @apply text-text-default text-xl mb-2
+    @apply text-text-default text-xl mt-6 mb-2
   }
 
   .wiki h4 {
-    @apply text-text-default text-lg font-bold
+    @apply text-text-default text-lg font-bold mt-4 mb-2
   }
 
   .wiki h5 {
-    @apply text-sm font-bold
+    @apply text-sm font-bold mt-4 mb-2
   }
 
   .wiki h6 {
@@ -129,11 +110,11 @@ div.wiki .task-list input.task-list-item-checkbox {
   }
 
   .wiki p {
-    @apply text-text-default text-sm
+    @apply text-text-default text-sm mt-2 mb-4
   }
 
   .wiki ul {
-    @apply list-disc ml-4
+    @apply list-disc mt-2 ml-4 mb-4
   }
 
   .wiki ul li:not(:first-child) {
@@ -141,24 +122,28 @@ div.wiki .task-list input.task-list-item-checkbox {
   }
 
   .wiki ol {
-    @apply list-decimal ml-4
+    @apply list-decimal mt-2 ml-4 mb-4
   }
 
   .wiki ol li:not(:first-child) {
     @apply mt-2
   }
 
-
-  div.wiki table {
-    @apply border-0 p-2
+  .wiki li > ul, .wiki li > ol {
+    @apply mb-0
   }
 
-  div.wiki th {
-    @apply border-0 border-b border-border-default text-text-default text-xs font-bold p-2
+
+  .wiki table {
+    @apply border border-border-divider mt-2 mb-4 p-2
   }
 
-  div.wiki td {
-    @apply border-0 border-b border-border-divider text-text-default text-sm p-2
+  .wiki th {
+    @apply bg-background-secondary border border-border-divider text-text-default text-xs font-bold p-2
+  }
+
+  .wiki td {
+    @apply border border-border-divider text-text-default text-sm p-2
   }
 
 
@@ -167,50 +152,50 @@ div.wiki .task-list input.task-list-item-checkbox {
   }
 
 
-  div.wiki pre {
-    @apply bg-background-secondary border-none my-2 mr-2 ml-4 p-4 rounded-md
+  .wiki pre {
+    @apply bg-background-secondary border border-border-divider my-2 mr-2 ml-4 p-4 rounded-md overflow-x-auto overflow-y-hidden
   }
 
-  div.wiki *:not(pre) > code,
-  div.wiki > code {
+  .wiki *:not(pre) > code,
+  .wiki > code {
     @apply rounded py-0.5 px-1
   }
 
-  div.wiki blockquote pre {
+  .wiki blockquote pre {
     @apply ml-1.5
   }
 
 
-  div.wiki .task-list {
-    @apply ml-0
+  .wiki .task-list {
+    @apply mt-2 ml-0 mb-4
   }
 
-  div.wiki .task-list .task-list {
+  .wiki .task-list .task-list {
     @apply mt-2 ml-4
   }
 
 
-  div.wiki ul.toc {
+  .wiki ul.toc {
     @apply float-right max-w-[240px] min-w-[160px] bg-background-secondary border-none ml-4 p-4 rounded-md
   }
 
-  div.wiki ul.toc.right {
+  .wiki ul.toc.right {
     @apply ml-4
   }
 
-  div.wiki ul.toc li {
+  .wiki ul.toc li {
     @apply text-sm
   }
 
-  div.wiki ul.toc > li:first-child {
+  .wiki ul.toc > li:first-child {
     @apply text-text-caption mb-2
   }
 
-  div.wiki ul.toc li li {
+  .wiki ul.toc li li {
     @apply text-xs mt-2 ml-4
   }
 
-  div.wiki ul.toc a {
+  .wiki ul.toc a {
     @apply text-xs
   }
 

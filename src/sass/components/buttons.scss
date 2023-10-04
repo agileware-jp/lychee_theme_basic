@@ -52,31 +52,31 @@
   }
 
   // Main Menuの開閉ボタン
-  .aw-toggleMainMenu {
+  .aw_toggleMainMenu {
     @extend .BTN_SECONDARY_ICON_ONLY;
     background-image: url(images/move_left_default.svg);
-    @apply absolute top-[0.75rem] right-[0.75rem] z-10
+    @apply absolute top-[1rem] left-[0.75rem] z-10
   }
 
-  .aw-toggleMainMenu.isMainMenuClose {
+  .aw_toggleMainMenu.isMainMenuClose {
     background-image: url(images/menu_default.svg);
-    @apply right-0
+    @apply right-0 left-auto
   }
 
-  .lgc-is-fullscreen .aw-toggleMainMenu,
-  .task-kanban-is-fullscreen .aw-toggleMainMenu,
-  .controller-resource_management .aw-toggleMainMenu,
-  .controller-lychee_message_box_my_boxes .aw-toggleMainMenu,
-  .controller-lychee_message_box_informations .aw-toggleMainMenu,
-  .controller-lychee_message_box_system_errors .aw-toggleMainMenu,
-  .controller-time_management .aw-toggleMainMenu,
-  .controller-project_report_overview .aw-toggleMainMenu,
-  .controller-lychee_work_plan .aw-toggleMainMenu {
+  .lgc-is-fullscreen .aw_toggleMainMenu,
+  .task-kanban-is-fullscreen .aw_toggleMainMenu,
+  .controller-resource_management .aw_toggleMainMenu,
+  .controller-lychee_message_box_my_boxes .aw_toggleMainMenu,
+  .controller-lychee_message_box_informations .aw_toggleMainMenu,
+  .controller-lychee_message_box_system_errors .aw_toggleMainMenu,
+  .controller-time_management .aw_toggleMainMenu,
+  .controller-project_report_overview .aw_toggleMainMenu,
+  .controller-lychee_work_plan .aw_toggleMainMenu {
     @apply hidden
   }
 
   // Sidebarの開閉ボタン
-  .aw-toggleSidebar {
+  .aw_toggleSidebar {
     @extend .BTN_SECONDARY_ICON_ONLY;
     background-image: url(images/move_right_default.svg);
     transition-property: right;
@@ -85,7 +85,7 @@
     @apply absolute top-[1.15rem] right-[14.25rem] z-10
   }
 
-  .aw-toggleSidebar.isSidebarClose {
+  .aw_toggleSidebar.isSidebarClose {
     background-image: url(images/menu_default.svg);
     transition-property: right;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -93,9 +93,9 @@
     @apply right-[0.25rem]
   }
 
-  .lgc-is-fullscreen .aw-toggleSidebar,
-  .task-kanban-is-fullscreen .aw-toggleSidebar,
-  .controller-resource_management .aw-toggleSidebar {
+  .lgc-is-fullscreen .aw_toggleSidebar,
+  .task-kanban-is-fullscreen .aw_toggleSidebar,
+  .controller-resource_management .aw_toggleSidebar {
     @apply hidden
   }
 

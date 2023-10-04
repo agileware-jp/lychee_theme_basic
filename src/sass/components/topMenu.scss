@@ -1,6 +1,6 @@
 @layer components {
   #top-menu {
-    @apply flex bg-background-primary border-b border-border-divider text-sm px-6 py-3
+    @apply flex bg-background-primary border-b border-border-divider text-sm px-4 py-3
   }
 
   #top-menu ul {
@@ -18,15 +18,15 @@
     @apply order-4 mr-4
   }
 
-  #top-menu li.aw-topMenuHome {
+  #top-menu li.aw_topMenuHome {
     @apply order-1 mr-2
   }
 
-  #top-menu li.aw-topMenuHelp {
+  #top-menu li.aw_topMenuHelp {
     @apply order-2 relative mr-4 pr-4
   }
 
-  #top-menu .aw-topMenuHelp::after {
+  #top-menu .aw_topMenuHelp::after {
     content: "";
     @apply absolute top-0 right-0 bottom-0 w-[1px] h-[60%] bg-border-divider m-auto
   }
