@@ -2,7 +2,6 @@
   table.list:not(.odd-even) tbody tr:nth-child(odd),
   .odd,
   #issue-changesets div.changeset:nth-child(odd) {
-    // @apply bg-background-secondary/30
     @apply bg-background-primary
   }
 
@@ -19,6 +18,11 @@
   .even:hover,
   #issue-changesets div.changeset:nth-child(even):hover {
     @apply bg-background-secondary/50
+  }
+
+  table.list.issues tbody tr.closed th,
+  table.list.issues tbody tr.closed td {
+    @apply bg-background-secondary/50 opacity-50
   }
 
   table.list,
@@ -38,11 +42,6 @@
   .table-list-header a {
     @apply text-text-default
   }
-
-  // LRMの表に影響が出ているのでいったん非適用
-  // table td {
-  //   @apply text-text-default text-sm p-2
-  // }
 
   table.list td {
     @apply border-y border-border-divider text-text-default text-sm p-2
