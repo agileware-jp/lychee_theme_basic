@@ -4,17 +4,10 @@
   }
 
   #top-menu ul {
-    // margin: 0;
-    // padding: 0;
     @apply flex
   }
 
   #top-menu li {
-    // float:left;
-    // list-style-type:none;
-    // margin: 0px 0px 0px 0px;
-    // padding: 0px 0px 0px 0px;
-    // white-space:nowrap;
     @apply order-4 mr-4
   }
 
@@ -41,20 +34,25 @@
 
   #top-menu .home {
     background-image: url(images/home_dark.svg);
-    background-repeat: no-repeat;
-    background-size: 22px;
-    @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap w-6 h-6 bg-center align-middle
+    @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap bg-no-repeat bg-[length:22px_22px] w-6 h-6 bg-center align-middle
   }
 
   #top-menu .lychee-help {
     background-image: url(images/help_dark.svg);
-    background-repeat: no-repeat;
-    background-size: 22px;
-    @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap w-6 h-6 bg-center align-middle
+    @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap bg-no-repeat bg-[length:22px_22px] w-6 h-6 bg-center align-middle
   }
 
   #top-menu .lychee-icon.lychee-help.lychee-help::before {
     @apply content-none
+  }
+
+  #top-menu .aw_fbLink {
+    background-image: url(images/open_in_new_link.svg);
+    @apply bg-no-repeat bg-[length:16px_16px] bg-[right_center] text-text-link pr-5
+  }
+
+  #top-menu .aw_fbLink:hover {
+    @apply underline
   }
 
   #account {

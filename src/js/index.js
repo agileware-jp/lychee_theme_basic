@@ -22,7 +22,7 @@ function repositionTopMenu() {
   if(lycheeHelp) lycheeHelp.closest('li').classList.add('aw_topMenuHelp')
 }
 
-/** 活動や検索結果で、各ブロックがdescriptionを持っているかどうか判定 */
+// 活動や検索結果で、各ブロックがdescriptionを持っているかどうか判定
 function hasDescription(el) {
   // 文字列があるかどうかでチェック
   return el.textContent.length > 0
@@ -48,22 +48,6 @@ function stickyMainMenu() {
     }
   }
 }
-
-// SidebarのToggleボタンのSticky化
-// function stickySidebar() {
-//   const sidebar = document.querySelector('.aw_toggleSidebar')
-//   if(!sidebar) return
-
-//   const header = document.querySelector('#header')
-//   const headerHeightRectBottom = header.getBoundingClientRect().bottom
-//   if(headerHeightRectBottom <= 0) {
-//     sidebar.classList.add('aw_fixed_sidebar')
-//   }
-
-//   if(headerHeightRectBottom > 0) {
-//     sidebar.classList.remove('aw_fixed_sidebar')
-//   }
-// }
 
 // main menuの折りたたみ
 function toggleMainMenu() {
@@ -136,14 +120,21 @@ function removeLoggedasText() {
 
 // FBリンク追加
 function addFeedbackLink() {
-  // TODO
+  const topMenuNav = document.querySelector('#top-menu > ul')
+  const li = document.createElement('li')
+  const a = document.createElement('a')
+  a.classList.add('aw_fbLink')
+  a.setAttribute('href', 'https://agileware.jp/')
+  a.setAttribute('target', '_blank')
+  a.textContent = 'フィードバックを送る'
+  li.appendChild(a)
+  topMenuNav.appendChild(li)
 }
 
 /**
  * Sticky MainMenu
  */
 window.addEventListener('scroll', stickyMainMenu)
-// window.addEventListener('scroll', stickySidebar)
 
 /**
  * その他一般的な処理
@@ -152,6 +143,7 @@ window.addEventListener('DOMContentLoaded', () => {
   removeLoggedasText()
   hiddenTabsButtons()
   repositionTopMenu()
+  addFeedbackLink()
 
   // mainMenuがない場合headerはfull width表示
   if(document.querySelector('#main-menu') !== null) {
