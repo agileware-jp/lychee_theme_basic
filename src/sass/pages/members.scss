@@ -3,6 +3,10 @@
     @apply mt-4
   }
 
+  #principals_for_new_member input[type="checkbox"] {
+    @apply align-middle my-1 mr-2
+  }
+
   .objects-selection > .projects-selection {
     column-width: auto;
   }

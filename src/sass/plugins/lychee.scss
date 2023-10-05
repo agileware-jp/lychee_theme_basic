@@ -661,6 +661,17 @@
     }
   }
 
+  // Lychee Project Template
+  .controller-projects {
+    #new_project .label_base_date_start_date {
+      @apply mr-2
+    }
+
+    #new_project #project_start_date {
+      @apply mt-2
+    }
+  }
+
 
   // その他
   .controller-projects.controller-projects {

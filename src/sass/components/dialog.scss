@@ -1,18 +1,26 @@
 @layer components {
-  div.modal.ui-widget.ui-widget-content {
-    @apply border-border-divider p-6 rounded-lg
+  div.modal {
+    @apply bg-background-primary border-border-divider p-6 rounded-lg z-50
+  }
+
+  div.modal h3.title {
+    @apply hidden
+  }
+
+  div.modal p.buttons {
+    @apply text-right mb-0
+  }
+
+  div.modal .box p {
+    @apply my-1.5 mx-0
   }
 
   div.modal .ui-widget-header {
-    font-weight: bold;
-
-    @apply bg-transparent border-none text-sm p-0
+    @apply bg-transparent border-none text-sm font-bold p-0
   }
 
   .ui-dialog .ui-dialog-title {
-    float: none;
-
-    @apply m-0
+    @apply float-none m-0
   }
 
   .ui-dialog .ui-dialog-titlebar-close {
