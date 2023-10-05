@@ -1,16 +1,4 @@
 @layer components {
-  #header h1 {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  #header h1 .breadcrumbs {
-    display:block;
-    font-size: .5em;
-    font-weight: normal;
-  }
-
   #header {
     transition-property: padding-left;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -30,17 +18,25 @@
     @apply pl-11
   }
 
+  #header h1 {
+    @apply overflow-hidden text-ellipsis whitespace-nowrap mb-0
+  }
+
+  #header h1 .breadcrumbs {
+    @apply block text-[11px]
+  }
+
   #header a {
     @apply text-text-default
   }
 
   // Quick Search
   #quick-search {
-    @apply order-2 flex float-none ml-auto
+    @apply order-2 flex items-center ml-auto
   }
 
   #quick-search form {
-    @apply float-none mr-0 mr-2
+    @apply mr-2
   }
 
   #quick-search form label {
@@ -49,6 +45,10 @@
 
   #quick-search form label a {
     @apply text-text-default
+  }
+
+  #quick-search form input {
+    @apply my-0
   }
 
   #quick-search #q {
