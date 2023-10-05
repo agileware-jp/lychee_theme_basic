@@ -35,11 +35,19 @@
     }
 
     h2 + form {
-      @apply block max-w-[380px] bg-background-secondary border-none text-text-default mt-8 mx-auto p-6 rounded-xl
+      @apply block max-w-xs bg-background-secondary border-none text-text-default mt-8 mx-auto p-6 rounded-xl
     }
 
     form .box {
       @apply bg-transparent border-none m-0 p-0
+    }
+
+    form .tabular p {
+      @apply flex flex-col pl-0
+    }
+
+    form .tabular label {
+      @apply w-auto text-sm text-left mb-2 ml-0
     }
 
     form .tabular input {
