@@ -162,7 +162,8 @@
   }
 
   // contextual(ページタイトル右のボタン群を個別にカスタマイズする:特定のものだけPrimaryにする)
-  #content > .contextual > a.icon-add {
+  #content > .contextual > a.icon-add,
+  #content > .contextual > a.icon-time-add {
     background-image: url(images/add_circle_onFill.svg);
 
     @apply bg-product-default border-product-default text-text-onFill hover:bg-product-hover active:bg-product-active

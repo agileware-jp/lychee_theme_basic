@@ -68,9 +68,9 @@
     @extend .TEXT_FIELD;
   }
 
-  .quick-search #projects-quick-search {
+  .drdn-content .autocomplete {
     @extend .TEXT_FIELD;
-    @apply h-auto pl-8
+    @apply w-full h-auto pl-8
   }
 
   input.autocomplete {
@@ -80,9 +80,12 @@
 
   #project-jump .drdn-trigger {
     background: url(images/expand_more_dark.svg) no-repeat right 8px center;
-
     @extend .TEXT_FIELD;
-    @apply h-auto bg-background-primary
+    @apply inline-block w-full bg-background-primary align-middle m-0 pr-7
+  }
+
+  #project-jump .drdn.expanded .drdn-trigger {
+    background-image: url(images/expand_less_dark.svg);
   }
 
   .jstBlock .wiki-preview {

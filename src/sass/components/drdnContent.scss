@@ -1,10 +1,34 @@
 @layer components {
+  .drdn {
+    @apply relative
+  }
+
+  .drdn-trigger {
+    @apply cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap select-none
+  }
+
   .drdn-content {
-    @apply border-border-default rounded-md shadow-lg
+    @apply hidden absolute top-[25px] right-0 min-w-[100px] bg-background-primary border border-border-default text-text-default rounded-md shadow-lg z-[100]
+  }
+
+  .drdn.expanded .drdn-content {
+    @apply block
+  }
+
+  .drdn-items {
+    @apply overflow-auto max-h-[400px]
   }
 
   div + .drdn-items {
-    @apply border-border-divider
+    @apply border-t border-border-divider
+  }
+
+  .drdn-items > * {
+    @apply overflow-hidden block border border-white text-ellipsis whitespace-nowrap py-1 px-2
+  }
+
+  .drdn-items span {
+    @apply text-text-caption
   }
 
   .contextual .drdn-items {
@@ -49,14 +73,21 @@
     @apply pl-6
   }
 
+  #project-jump .drdn {
+    @apply inline-block w-[200px]
+  }
+
+  #project-jump .drdn-content {
+    @apply w-[280px]
+  }
+
+  #project-jump .drdn-items > * {
+    @apply text-text-default
+  }
   .drdn-items > a:hover,
   #project-jump .drdn-items > a:hover,
   .contextual .drdn-items > a.icon:hover {
-    @apply bg-background-secondary border-background-secondary
-  }
-
-  #project-jump .drdn-items > a:hover {
-    color: #002E40 !important;
+    @apply bg-background-secondary border-background-secondary no-underline
   }
 
   .drdn-items > a:last-of-type {
@@ -65,6 +96,20 @@
 
   .drdn-items.all-projects a {
     @apply mt-1
+  }
+
+  .drdn-items.selection>*:before {
+    content:' ';
+    display:inline-block;
+    line-height:1em;
+    width:1em;
+    height:1em;
+    margin-right:4px;
+    font-weight:bold;
+  }
+
+  .drdn-items.selection:empty {
+    @apply border-0
   }
 
   .drdn-items.selection > *.selected::before {

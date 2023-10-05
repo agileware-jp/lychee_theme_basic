@@ -135,6 +135,10 @@
       @apply mt-1
     }
 
+    #issue_is_private_wrap + p {
+      @apply clear-both
+    }
+
     #issue-form .box fieldset {
       @apply p-4
     }
