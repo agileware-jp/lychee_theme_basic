@@ -41,7 +41,7 @@
   }
 
   #footer {
-    @apply w-full bg-background-primary border-t border-border-divider text-text-caption p-2
+    @apply clear-both w-full bg-background-primary border-t border-border-divider text-text-caption text-xs text-center p-2
   }
 
   // 見出しとcontextualのfloatによっておかしくなる箇所の調整

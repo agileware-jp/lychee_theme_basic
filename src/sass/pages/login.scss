@@ -1,15 +1,19 @@
 @layer components {
   .action-login {
     #login-form {
-      @apply bg-background-secondary border-none p-6 rounded-xl
+      @apply w-80 bg-background-secondary mt-16 mx-auto mb-8 p-6 rounded-xl
+    }
+
+    #login-form h3 {
+      @apply text-center
     }
 
     #login-form label {
-      @apply text-sm text-text-default
+      @apply block text-sm text-text-default font-bold mb-2
     }
 
     .lost_password {
-      @apply text-sm text-text-link
+      @apply float-right text-sm text-text-link font-normal
     }
 
     #login-form label[for="password"] {
@@ -17,7 +21,7 @@
     }
 
     #login-form label[for="autologin"] {
-      @apply cursor-pointer flex items-center text-sm text-text-default
+      @apply cursor-pointer flex items-center text-sm text-text-default font-normal
     }
 
     #login-form label[for="autologin"] input {
@@ -31,10 +35,7 @@
     }
 
     h2 + form {
-      display: block;
-      max-width: 380px;
-
-      @apply bg-background-secondary border-none text-text-default mt-8 mx-auto p-6 rounded-xl
+      @apply block max-w-[380px] bg-background-secondary border-none text-text-default mt-8 mx-auto p-6 rounded-xl
     }
 
     form .box {
@@ -42,7 +43,7 @@
     }
 
     form .tabular input {
-      max-width: none;
+      @apply max-w-none
     }
 
     form .tabular input[type="submit"] {

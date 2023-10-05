@@ -89,9 +89,14 @@
     @extend .TEXT_FIELD;
   }
 
-  #login-form input[type="text"],
-  #login-form input[type="password"] {
-    @apply h-auto
+  #login-form input[type=text],
+  #login-form input[type=password] {
+    @apply block w-full
+  }
+
+  #login-form input[type=text],
+  #login-form input[type=password] {
+    @apply mb-4
   }
 
 

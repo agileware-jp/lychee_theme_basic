@@ -133,6 +133,7 @@
 
   #login-form #login-submit {
     @extend .BTN_PRIMARY;
+    @apply w-full
   }
 
   #content > .contextual > a:not(.task-kanban-icon),
