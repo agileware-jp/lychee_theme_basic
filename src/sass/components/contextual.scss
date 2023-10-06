@@ -1,16 +1,3 @@
 @layer components {
-  .contextual {
-    @apply flex items-center text-sm
-  }
 
-  // gap指定したので必要なくなった
-  // .contextual > *:not(:first-child),
-  // .contextual .journal-actions > *:not(:first-child) {
-  //   @apply ml-2
-  // }
-
-
-  // .buttons > .icon:not(:first-child) {
-  //   @apply ml-0
-  // }
 }

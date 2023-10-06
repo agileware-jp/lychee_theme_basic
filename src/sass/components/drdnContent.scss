@@ -116,4 +116,10 @@
     content: url(images/done_dark.svg);
     @apply w-4 h-4 translate-y-[3px]
   }
+
+
+  /* Contextual */
+  .contextual {
+    @apply flex items-center text-sm
+  }
 }
