@@ -11,16 +11,16 @@
     @apply cursor-pointer inline-block h-auto bg-background-primary bg-[0.75rem_center] bg-no-repeat border border-border-default text-text-default text-sm py-2 pl-7 pr-3 rounded-md shadow hover:no-underline hover:bg-background-primary hover:border-border-dark hover:shadow-none active:bg-background-secondary active:shadow-none
   }
 
-  .BTN_SECONDARY_ICON_ONLY {
-    @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap w-6 h-6 bg-center bg-no-repeat align-middle bg-background-primary border border-border-default text-sm p-0 rounded-md hover:bg-background-primary hover:border-border-dark hover:shadow-none active:bg-background-secondary active:shadow-none
-  }
-
   .BTN_TERTIARY {
     @apply cursor-pointer inline-block h-auto bg-background-secondary border border-background-secondary text-text-default text-sm py-2 px-3 rounded-md hover:border-border-default hover:no-underline hover:text-text-default active:bg-background-tertiary
   }
 
   .BTN_TERTIARY_ICON_ONLY {
     @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap w-6 h-6 bg-center align-middle bg-background-secondary border border-background-secondary text-sm p-0 rounded-md hover:border-border-default active:bg-background-tertiary
+  }
+
+  .BTN_TERTIARY_ICON_ONLY_OUTLINED {
+    @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap w-6 h-6 bg-center bg-no-repeat align-middle bg-background-primary border border-border-default text-sm p-0 rounded-md hover:bg-background-secondary hover:border-border-default active:bg-background-tertiary
   }
 
   .BTN_TERTIARY_ICON_RIGHT {
@@ -53,7 +53,7 @@
 
   // Main Menuの開閉ボタン
   .aw_toggleMainMenu {
-    @extend .BTN_SECONDARY_ICON_ONLY;
+    @extend .BTN_TERTIARY_ICON_ONLY_OUTLINED;
     background-image: url(images/move_left_default.svg);
     @apply absolute top-[1rem] left-[0.75rem] z-10
   }
@@ -77,7 +77,7 @@
 
   // Sidebarの開閉ボタン
   .aw_toggleSidebar {
-    @extend .BTN_SECONDARY_ICON_ONLY;
+    @extend .BTN_TERTIARY_ICON_ONLY_OUTLINED;
     background-image: url(images/move_right_default.svg);
     transition-property: right;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);

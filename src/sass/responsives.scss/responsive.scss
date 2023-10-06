@@ -1,4 +1,4 @@
-
+@layer components {
 /*
   CONTENTS
 
@@ -20,6 +20,12 @@
   redmine's body is set to min-width: 900px
   add first breakpoint here and start adding responsiveness
 */
+
+@media screen and (max-width: 1250px) {
+  #top-menu {
+    @apply text-xs
+  }
+}
 
 @media screen and (max-width: 899px)
 {
@@ -56,13 +62,13 @@
     -webkit-overflow-scrolling: touch;
   }
 
-  body,
-  input,
-  select,
-  textarea,
-  button {
-    font-size: 14px;  /* Set font-size for standard elements to 14px */
-  }
+  // body,
+  // input,
+  // select,
+  // textarea,
+  // button {
+  //   font-size: 14px;  /* Set font-size for standard elements to 14px */
+  // }
 
   select {
     max-width: 100%;  /* prevent long names within select menues from breaking content */
@@ -89,6 +95,7 @@
     // background-color: #628db6;
     position: fixed;
     z-index: 9999;
+    @apply block
   }
 
   /* Hide project name on mobile (project name is still visible in select menu) */
@@ -132,16 +139,16 @@
     padding-left: 20px;
   }
   #project-jump .drdn-trigger {
-    font-size:1.5em;
     font-weight:bold;
     display:block;
     width:100%;
-    color:#fff;
     padding-left:24px;
     background:transparent;
     height:50px;
     line-height:40px;
     border:0;
+
+    @apply text-text-default text-base
   }
   #project-jump .drdn-trigger:before {
     /* set a font-size in order to achive same result in different themes */
@@ -825,4 +832,5 @@
   .pagination ul.pages li.next {display:inline-block; width:32%; overflow:hidden;}
 
   #login-form {width:100%; margin-top:2em;}
+}
 }
