@@ -93,10 +93,6 @@
     @apply right-[0.25rem]
   }
 
-  // .aw_toggleSidebar.aw_fixed_sidebarToggleBtn {
-  //   @apply fixed
-  // }
-
   .lgc-is-fullscreen .aw_toggleSidebar,
   .task-kanban-is-fullscreen .aw_toggleSidebar,
   .controller-resource_management .aw_toggleSidebar {
@@ -117,9 +113,13 @@
     @apply mr-0
   }
 
-  table.list td.buttons a,
+  table.list td.buttons a {
+    @apply mx-2
+  }
+
   table.list td.buttons .icon-only {
     @extend .BTN_TERTIARY_ICON_ONLY;
+    @apply mx-2
   }
 
   table.list td.buttons:after {
@@ -265,8 +265,19 @@
   // 設定 > プロジェクト
   // 設定 > ユーザー
   .controller-admin,
-  .controller-users,
   .controller-groups {
+    h2 + form input[type="submit"] {
+      @extend .BTN_PRIMARY;
+      @apply text-xs py-1 px-2 ml-1
+    }
+
+    input[type="submit"] + .icon-reload {
+      @extend .BTN_SECONDARY_ICON_LEFT;
+      @apply bg-[0.5rem_center] bg-[length:14px_14px] text-xs py-1 pr-2 pl-6 ml-1
+    }
+  }
+
+  .controller-users.action-index {
     h2 + form input[type="submit"] {
       @extend .BTN_PRIMARY;
       @apply text-xs py-1 px-2 ml-1
@@ -352,4 +363,17 @@
       @apply mt-2
     }
   }
+
+  // 管理設定系のtableはICON ONLYボタンにすると分かりづらいので調整
+  // .controller-auth_source_saml.controller-auth_source_saml,
+  // .controller-admin.action-projects,
+  // .controller-users.action-index {
+  //   td.buttons a {
+  //     @apply indent-0 w-auto h-auto bg-transparent bg-[left_center] border-0 py-0 pl-5
+  //   }
+
+  //   td.buttons a:not(:first-child) {
+  //     @apply ml-2
+  //   }
+  // }
 }
