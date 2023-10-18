@@ -86,32 +86,59 @@
     @apply bg-no-repeat pl-4
   }
 
-  #top-menu .my-account {
+  #top-menu .my-account,
+  .flyout-menu .my-account {
     background-image: url(images/settings_dark.svg);
-    @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap w-7 h-7 bg-center bg-no-repeat align-middle bg-background-primary border border-border-default text-sm p-0 rounded-md hover:bg-background-primary hover:border-border-dark hover:shadow-none hover:opacity-100 active:bg-background-secondary active:shadow-none
+    @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap bg-center bg-no-repeat align-middle bg-background-primary border border-border-default text-sm p-0 hover:bg-background-primary hover:border-border-dark hover:shadow-none hover:opacity-100 active:bg-background-secondary active:shadow-none
   }
 
-  #top-menu .logout {
+  #top-menu .logout,
+  .flyout-menu .logout {
     background-image: url(images/logout_dark.svg);
-    @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap w-7 h-7 bg-center bg-no-repeat align-middle bg-background-primary border border-border-default text-sm p-0 rounded-md hover:bg-background-primary hover:border-border-dark hover:shadow-none hover:opacity-100 active:bg-background-secondary active:shadow-none
+    @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap bg-center bg-no-repeat align-middle bg-background-primary border border-border-default text-sm p-0 hover:bg-background-primary hover:border-border-dark hover:shadow-none hover:opacity-100 active:bg-background-secondary active:shadow-none
+  }
+
+  #top-menu .my-account,
+  #top-menu .logout {
+    @apply w-7 h-7 rounded-md
+  }
+
+  .flyout-menu .my-account,
+  .flyout-menu .logout {
+    @apply w-10 h-10 bg-[length:24px_24px] rounded-lg
   }
 
   // Message Box
-  #top-menu .lychee-message-box-icon.lychee-message-box-icon {
+  #top-menu .lychee-message-box-icon.lychee-message-box-icon,
+  .flyout-menu .lychee-message-box-icon {
     background-image: url(images/mail_dark.svg);
-    @apply relative cursor-pointer inline-block overflow-visible indent-[100%] whitespace-nowrap w-7 h-7 bg-center bg-no-repeat align-middle bg-background-primary border border-border-default text-sm p-0 rounded-md hover:bg-background-primary hover:border-border-dark hover:shadow-none hover:opacity-100 active:bg-background-secondary active:shadow-none
+    @apply relative cursor-pointer inline-block overflow-visible indent-[100%] whitespace-nowrap bg-center bg-no-repeat align-middle bg-background-primary border border-border-default text-sm p-0 hover:bg-background-primary hover:border-border-dark hover:shadow-none hover:opacity-100 active:bg-background-secondary active:shadow-none
   }
 
-  #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread::after {
-    // background-image: url(images/mail_unread_dark.svg);
+  #top-menu .lychee-message-box-icon.lychee-message-box-icon {
+    @apply w-7 h-7 rounded-md
+  }
+
+  .flyout-menu .lychee-message-box-icon {
+    @apply w-10 h-10 bg-[length:24px_24px] rounded-lg
+  }
+
+  #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread::after,
+  .flyout-menu .lychee-message-box-icon.unread::after {
     @apply content-[''] absolute -top-[5px] -right-[5px] block w-3 h-3 bg-status-danger rounded-full z-10
   }
 
   #top-menu .lychee-message-box-icon.lychee-message-box-icon::before,
   #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread::before {
-    content: none;
-    @apply m-0
+    @apply content-none m-0
   }
+
+  .flyout-menu .lychee-message-box-icon.lychee-message-box-icon::before,
+  .flyout-menu .lychee-message-box-icon.lychee-message-box-icon.unread::before {
+    @apply content-['']
+  }
+
+
 
   #top-menu .register {
     background-image: url(images/person_add_default.svg);

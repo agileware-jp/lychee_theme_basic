@@ -120,6 +120,6 @@
 
   /* Contextual */
   .contextual {
-    @apply flex items-center text-sm
+    @apply flex items-center flex-wrap text-sm gap-2
   }
 }

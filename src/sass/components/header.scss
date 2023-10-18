@@ -23,7 +23,11 @@
   }
 
   #header h1 .breadcrumbs {
-    @apply block text-[11px]
+    @apply block text-xs
+  }
+
+  #header h1 .current-project {
+    @apply text-sm
   }
 
   #header a {

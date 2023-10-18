@@ -81,6 +81,11 @@
     margin: 0;
   }
 
+  .has-main-menu #main.nosidebar,
+  .has-main-menu #main {
+    @apply border-l-0 ml-0
+  }
+
   /*----------------------------------------*\
     B) HEADER & TOP MENUS
   \*----------------------------------------*/
@@ -145,34 +150,19 @@
     padding-left:24px;
     background:transparent;
     height:50px;
-    line-height:40px;
     border:0;
 
-    @apply text-text-default text-base
+    @apply text-text-default text-base leading-[40px]
   }
+
   #project-jump .drdn-trigger:before {
-    /* set a font-size in order to achive same result in different themes */
-    font-family: Verdana, sans-serif;
-    font-size: 1.5em;
-
     position: absolute;
-    left: 0;
-    padding: 0 8px;
-    /* achieve dropdwon arrow by scaling a caret character */
-    content: '^';
-    -webkit-transform: scale(1,-.8);
-        -ms-transform: scale(1,-.8);
-            transform: scale(1,-.8);
-    text-align: right;
     pointer-events: none;
-
-    opacity: .6;
+    background-image: url(images/expand_more_default.svg);
+    @apply content-[''] cursor-pointer left-3 top-1/2 block overflow-hidden indent-[100%] whitespace-nowrap w-6 h-6 bg-no-repeat bg-center bg-[length:24px_24px] align-middle -translate-y-1/2 transition-transform
   }
   #project-jump.expanded .drdn-trigger:before {
-    -webkit-transform: scale(1,.8);
-        -ms-transform: scale(1,.8);
-            transform: scale(1,.8);
-    padding-top:8px;
+    @apply -rotate-180 transition-transform
   }
 
   #project-jump .drdn-content {
@@ -226,6 +216,9 @@
   /*----------------------------------------*\
     D) TOGGLE BUTTON & FLYOUT MENU
   \*----------------------------------------*/
+  .aw_toggleSidebar {
+    @apply hidden
+  }
 
   .mobile-toggle-button {
     font-size: 42px;
@@ -243,7 +236,7 @@
 
     text-align: center;
 
-    border-left: 1px solid #ddd;
+    @apply border-l border-border-default
   }
 
   .mobile-toggle-button:hover,
@@ -252,30 +245,29 @@
   }
 
   .mobile-toggle-button:after {
-    font-family: Verdana, sans-serif;
-    display: block;
-    margin-top: -3px;
-    content: '\2261';
+    // font-family: Verdana, sans-serif;
+    // display: block;
+    // margin-top: -3px;
+
+    background-image: url(images/menu_dark.svg);
+    @apply content-['メニュー'] cursor-pointer block overflow-hidden indent-[100%] whitespace-nowrap w-full h-full bg-no-repeat bg-center bg-[length:24px_24px] align-middle
   }
 
   /* search magnifier icon */
   .search-magnifier {
-    font-family: Verdana, sans-serif;
-    color: #bbb;
+    // font-family: Verdana, sans-serif;
+    // color: #bbb;
 
-    cursor: pointer;
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
+    // cursor: pointer;
+    // -webkit-transform: rotate(-45deg);
+    // -moz-transform: rotate(45deg);
+    // -o-transform: rotate(45deg);
+    background: url(images/search_default.svg);
+    @apply inline-block overflow-hidden indent-[100%] whitespace-nowrap w-6 h-6 bg-center bg-no-repeat align-middle
   }
 
   .search-magnifier--flyout {
-    font-size: 25px;
-    line-height: 54px;
-
-    position: absolute;
-    z-index: 1;
-    left: 12px;
+    @apply absolute top-4 left-3 z-[1]
   }
 
   /* Flyout Menu */
@@ -284,7 +276,7 @@
     position: absolute;
     right: -250px;
 
-    display: block; /* remove display: none; of non-mobile version */
+    // display: block; /* remove display: none; of non-mobile version */
     overflow-x: hidden;
 
     width: 250px;
@@ -292,30 +284,30 @@
     margin: 0; /* reset margin for themes that define it */
     padding: 0; /* reset padding for themes that define it */
 
-    color: white;
-    background-color: #3e5b76;
+    @apply block bg-background-primary border-l border-border-divider text-text-default shadow-xl
   }
 
   /* avoid zoom on search input focus for ios devices */
   .flyout-menu input[type='text'] {
-    font-size: 16px;
+    @apply text-base
   }
 
   .flyout-menu h3 {
-    font-size: 11px;
-    line-height: 19px;
+    // font-size: 11px;
+    // line-height: 19px;
 
-    height: 20px;
-    margin: 0;
-    padding: 0;
+    // height: 20px;
+    // margin: 0;
+    // padding: 0;
 
-    letter-spacing: .1em;
-    text-transform: uppercase;
+    // letter-spacing: .1em;
+    // text-transform: uppercase;
 
-    color: white;
-    border-top: 1px solid #506a83;
-    border-bottom: 1px solid #506a83;
-    background-color: #628db6;
+    // color: white;
+    // border-top: 1px solid #506a83;
+    // border-bottom: 1px solid #506a83;
+    // background-color: #628db6;
+    @apply uppercase border-t border-border-divider text-text-default text-xs mt-2 pt-4 px-3 pb-1
   }
 
   .flyout-menu h4 {
@@ -327,19 +319,26 @@
   .flyout-menu > p,
   .flyout-menu > a,
   .flyout-menu ul li a,
-  .flyout-menu__search,
+  // .flyout-menu__search,
   .flyout-menu__sidebar > div,
   .flyout-menu__sidebar > p,
   .flyout-menu__sidebar > a,
   .flyout-menu__sidebar > form,
-  .flyout-menu > div,
+  .flyout-menu > div:not(.flyout-menu__search),
   .flyout-menu > form {
-    padding-left: 8px;
+    // @apply pl-4
   }
 
   .flyout-menu .flyout-menu__avatar {
     margin-top: -1px; /* move avatar up 1px */
     padding-left: 0;
+  }
+
+  .js-project-menu,
+  .js-general-menu,
+  .js-sidebar,
+  .js-profile-menu {
+    @apply block px-2
   }
 
   .flyout-menu__sidebar > form {
@@ -351,8 +350,7 @@
   }
 
   .flyout-menu__sidebar > form label {
-    display: inline-block;
-    margin: 8px 0;
+    @apply block w-full px-3
   }
 
   .flyout-menu__sidebar > form br  br {
@@ -434,65 +432,63 @@
     align-items: center;
   }
 
+  .flyout-menu ul li:not(:first-child) {
+    @apply mt-1
+  }
+
   .flyout-menu ul li a {
-    line-height: 40px;
     display: block;
     overflow: hidden;
-    height: 40px;
     white-space: nowrap;
     text-overflow: ellipsis;
-    border-top: 1px solid rgba(255,255,255,.1);
+    // border-top: 1px solid rgba(255,255,255,.1);
+    @apply rounded-md
   }
 
-  .flyout-menu ul li:first-child a {
-    line-height: 39px;
-    height: 39px;
-    border-top: none;
-  }
-
-  .flyout-menu a {
-    color: white;
+  .flyout-menu ul li:last-child a {
+    // @apply border-b border-border-onFill/30
   }
 
   .flyout-menu ul li a:hover {
-    text-decoration: none;
+    @apply bg-background-secondary
+  }
+
+  .flyout-menu a {
+    @apply text-text-default py-2 px-3
+  }
+
+  .flyout-menu ul li a:hover {
+    @apply no-underline
   }
 
   .flyout-menu ul li a.new-object,
   .new-object ~ .menu-children {
-    display: none;
+    @apply hidden
+  }
+
+  .flyout-menu .js-profile-menu {
+    @apply block my-4 px-3
+  }
+
+  .flyout-menu .js-profile-menu ul {
+    @apply flex items-center gap-3
+  }
+
+  .flyout-menu .js-profile-menu ul li:not(:first-child) {
+    @apply mt-0
   }
 
   /* Left flyout search container */
   .flyout-menu__search {
-    line-height: 54px;
-    height: 64px;
-    padding-top: 3px;
-    padding-right: 8px;
+    @apply p-2
   }
 
   .flyout-menu__search input[type='text'] {
-    line-height: 2;
-
-    width: 100%;
-    height: 38px;
-    padding-left: 27px;
-
-    vertical-align: middle;
-
-    border: none;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    background-color: #fff;
+    @apply w-full pl-7
   }
 
   .flyout-menu__avatar {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    width: 100%;
-    border-top: 1px solid rgba(255,255,255,.1);
+    @apply flex mx-2
   }
 
   .flyout-menu__avatar img.gravatar {
@@ -504,35 +500,36 @@
   }
 
   .flyout-menu__avatar a {
-    line-height: 40px;
-    height: auto;
-    height: 40px;
-    text-decoration: none;
-    color: white;
+    @apply no-underline
   }
 
   /* avatar */
-  .flyout-menu__avatar a:first-child {
-    line-height: 0;
-    width: 40px;
-    padding: 0;
-  }
+  // .flyout-menu__avatar a:first-child {
+  //   line-height: 0;
+  //   width: 40px;
+  //   padding: 0;
+  // }
 
   .flyout-menu__avatar .user {
-    padding-left: 15px;
-    padding-right: 15px;
+    // padding-left: 15px;
+    // padding-right: 15px;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
     -webkit-flex-grow: 1;
         -ms-flex-grow: 1;
             flex-grow: 1;
+    @apply pt-2 px-3 rounded-md
   }
 
   /* user link when no avatar is present */
   .flyout-menu__avatar--no-avatar a.user {
-    line-height: 40px;
-    padding-left: 8px;
+    // line-height: 40px;
+    // padding-left: 8px;
+  }
+
+  .flyout-menu__avatar--no-avatar a.user:hover {
+    @apply bg-background-secondary
   }
 
   .flyout-is-active body {
@@ -553,7 +550,7 @@
   }
 
   .flyout-is-active .mobile-toggle-button:after {
-    content: '\00D7'; /* close glyph */
+    background-image: url(images/close_dark.svg);
   }
 
   .flyout-is-active #main {
@@ -591,25 +588,30 @@
 
   #content>.contextual {
     width: 100%;
-    margin-bottom: .5em;
     padding-left: 0; /* reset left padding in order to use whole space */
     white-space: normal;
+
+    @apply float-none mb-4
+  }
+
+  .controller-issues #content .contextual {
+    @apply mb-4
   }
 
   #content>.contextual>a,
   #content>.contextual .drdn,
   p.buttons a {
-    font-weight: bold;
+    // font-weight: bold;
 
-    display: inline-block;
+    // display: inline-block;
 
-    margin: 5px 0;
-    margin-right: 2px;
-    padding: 9px 9px 9px 9px;
+    // margin: 5px 0;
+    // margin-right: 2px;
+    // padding: 9px 9px 9px 9px;
 
-    border: 1px solid #ddd;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
+    // border: 1px solid #ddd;
+    // -webkit-border-radius: 3px;
+    // border-radius: 3px;
   }
   #content>.contextual .drdn-content {
 	right:initial;
@@ -648,12 +650,16 @@
     padding-right: 0;
   }
 
-  #filters-table {width:100%; float:none;}
-  .add-filter {width:100%; float:none; text-align: left; margin-top: 8px;}
+  // #filters-table {width:100%; float:none;}
+  // .add-filter {width:100%; float:none; text-align: left; margin-top: 8px;}
 
   /*----------------------------------------*\
     F) PAGE SPECIFIC STYLES
   \*----------------------------------------*/
+  #content h2,
+  .controller-issues #content>h2 {
+    @apply mb-4
+  }
 
   /* some themes add a margin to login page, remove it on mobile */
   .action-login #main {
@@ -724,6 +730,8 @@
     width: 100%;
     margin-left: 0;
     text-align: left;
+
+    @apply mb-2
   }
 
   .tabular input, .tabular select, .tabular textarea {

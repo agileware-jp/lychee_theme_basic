@@ -39,6 +39,7 @@ module.exports = {
           primary: '#FFFFFF',
           secondary: '#F0F2F3',
           tertiary: '#DDE9EE',
+          dark: '#002E40',
         },
         icon: {
           default: '#66828C',

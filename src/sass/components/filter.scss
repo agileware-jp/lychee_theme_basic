@@ -85,6 +85,10 @@
     @apply pl-2
   }
 
+  fieldset#filters td.values > span {
+    @apply flex items-center
+  }
+
   fieldset#filters td.values select {
     @apply min-w-[130px]
   }
@@ -706,6 +710,38 @@
           @apply text-xs py-1 px-2 my-0
         }
       }
+    }
+  }
+
+  @media screen and (max-width: 899px) {
+    #filters-table {
+      thead, tbody, th, td {
+        @apply block
+      }
+    }
+
+    #filters-table {
+      @apply flex flex-col
+    }
+
+    #filters-table .filter {
+      @apply flex flex-wrap
+    }
+
+    #filters-table .filter:not(:first-child) {
+      @apply mt-2
+    }
+
+    fieldset#filters #filters-table .field {
+      @apply w-full
+    }
+
+    fieldset#filters #filters-table .values {
+      @apply flex-grow
+    }
+
+    .add-filter label {
+      @apply w-auto
     }
   }
 }

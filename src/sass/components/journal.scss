@@ -28,9 +28,13 @@
     @apply mt-1
   }
 
+  .contextual .journal-actions {
+    @apply flex items-center flex-wrap gap-2
+  }
+
   .journal-actions .icon-only,
   .journal-actions .drdn {
-    @apply m-0 ml-2
+    @apply m-0
   }
 
   .journal .wiki {
