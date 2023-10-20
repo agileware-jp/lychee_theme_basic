@@ -26,6 +26,10 @@ table, tbody, thead, tr, th, td {
     @apply my-1
   }
 
+  a {
+    @apply text-text-link
+  }
+
   img, svg, video, canvas, audio, iframe, embed, object {
     @apply inline-block
   }

@@ -1,83 +1,226 @@
-.jstBlock .jstTabs, .jstBlock .wiki-preview { width: 99%; }
-
-.jstBlock .jstTabs { padding-right: 6px; }
-.jstBlock .wiki-preview { padding: 2px; }
-.jstBlock .wiki-preview p:first-child { padding-top: 0 !important; margin-top: 0 !important;}
-.jstBlock .wiki-preview p:last-child { padding-bottom: 0 !important; margin-bottom: 0 !important;}
-
 @layer components {
-  // iconを上書き
-  .theme-Lychee {
-    .jstb_strong {
-      background-image: url(images/bold_dark.svg);
-    }
+  .jstBlock .hidden {
+    display: none;
+  }
+  .jstEditor {
+    padding-left: 0px;
+  }
+  .jstEditor textarea, .jstEditor iframe {
+    margin: 0;
+  }
+  .jstHandle {
+    height: 10px;
+    font-size: 0.1em;
+    cursor: s-resize;
+    /*background: transparent url(img/resizer.png) no-repeat 45% 50%;*/
+  }
 
-    .jstb_em {
-      background-image: url(images/italic_dark.svg);
-    }
+  #content .jstTabs.tabs {
+    // margin-bottom: -1px;
+    @apply h-auto mb-2
+  }
 
-    .jstb_del {
-      background-image: url(images/strikethrough_s_dark.svg);
-    }
+  #content .jstTabs.tabs ul {
+    border-bottom:0;
+    @apply static min-w-0 flex-wrap items-end pl-0
+  }
 
-    .jstb_code {
-      background-image: url(images/code_2_dark.svg);
-    }
+  #content .jstTabs.tabs li {
+    @apply h-auto
+  }
 
-    .jstb_h1 {
-      background-image: url(images/format_h1_dark.svg);
-    }
+  #content .jstTabs.tabs li:before{
+    // content: '';
+    // display: inline-block;
+    // vertical-align: middle;
+    // height: 100%;
+  }
 
-    .jstb_h2 {
-      background-image: url(images/format_h2_dark.svg);
-    }
+  #content .jstTabs.tabs li a {
+    display: inline-block;
+    vertical-align: bottom;
+    line-height: 19px;
+    border-bottom: 1px solid transparent;
+  }
 
-    .jstb_h3 {
-      background-image: url(images/format_h3_dark.svg);
-    }
+  #content .jstTabs.tabs ul li:nth-child(1),
+  #content .jstTabs.tabs ul li:nth-child(2) {
+    @apply bg-background-secondary p-[3px]
+  }
 
-    .jstb_ul {
-      background-image: url(images/format_list_bulleted_dark.svg);
-    }
+  #content .jstTabs.tabs ul li:nth-child(1) {
+    @apply rounded-tl-lg rounded-bl-lg rounded-tr-none rounded-br-none
+  }
 
-    .jstb_ol {
-      background-image: url(images/format_list_numbered_dark.svg);
-    }
+  #content .jstTabs.tabs ul li:nth-child(2) {
+    @apply rounded-tr-lg rounded-br-lg rounded-tl-none rounded-bl-none mr-2 pl-0
+  }
 
-    .jstb_tl {
-      background-image: url(images/task_alt_dark.svg);
-    }
+  #content .jstTabs.tabs ul li:nth-child(1) a,
+  #content .jstTabs.tabs ul li:nth-child(2) a {
+    @apply px-3 py-1 rounded-md
+  }
 
-    .jstb_bq {
-      background-image: url(images/format_indent_decrease_dark.svg);
-    }
+  #content .jstTabs.tabs ul li a.selected {
+    @apply bg-background-primary border-transparent shadow
+  }
 
-    .jstb_unbq {
-      background-image: url(images/format_indent_increase_dark.svg);
-    }
+  #content .jstTabs.tabs .tab-elements {
+    @apply mt-1
+  }
 
-    .jstb_table {
-      background-image: url(images/table_dark.svg);
-    }
+  .jstElements {
+    // display: inline-block;
+    // vertical-align: bottom;
+    // padding-left: 6px;
+    // padding-bottom:2px;
+    // height: 26px;
+    @apply flex flex-wrap items-center gap-0.5
+  }
+  .wiki-preview {
+    background-color: #ffffff;
+    border: 1px solid #bbbbbb;
+  }
+  .wiki-preview p.empty-preview {color:#999; font-style:italic; margin-top:1em; text-align:center;}
 
-    .jstb_pre {
-      background-image: url(images/code_dark.svg);
-    }
+  .jstElements button {
+    margin-right: 2px;
+    width : 24px;
+    height: 24px;
+    padding: 4px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ddd;
+    background-color : #f7f7f7;
+    background-position : 50% 50%;
+    background-repeat: no-repeat;
+    cursor:pointer;
+    opacity:0.7;
+  }
+  .jstElements button:hover {
+    border-color: #bbb;
+    background-color: #e5e5e5;
+    opacity:1;
+  }
+  .jstElements button span {
+    display : none;
+  }
+  .jstElements span {
+    display : inline;
+  }
 
-    .jstb_precode {
-      background-image: url(images/integration_instructions_dark.svg);
-    }
+  .jstSpacer {
+    width : 0px;
+    font-size: 1px;
+    margin-right: 6px;
+  }
 
-    .jstb_link {
-      background-image: url(images/article_dark.svg);
-    }
+  .jstElements .help { float: right; margin-right: 0.5em; padding-top: 8px; font-size: 0.9em; }
+  .jstElements .help a {padding: 2px 0 2px 20px; background: url(../images/help.png) no-repeat 0 50%;}
 
-    .jstb_img {
-      background-image: url(images/image_dark.svg);
-    }
+  .table-generator td {
+    border: 2px solid #ccc;
+    background-color: white;
+    padding: 10px;
+    cursor: pointer;
+  }
 
-    .jstb_help {
-      background-image: url(images/help_dark.svg);
-    }
+  .table-generator td.selected-cell, .table-generator td:hover {
+    background-color: #759FCF;
+  }
+
+  .table-generator {
+    position: absolute;
+    border-collapse: collapse;
+  }
+
+  /* Buttons
+  -------------------------------------------------------- */
+  .jstb_ins {
+    background-image: url(../images/jstoolbar/bt_ins.png);
+  }
+  .jstb_table {
+    background-image: url(../images/jstoolbar/bt_table.png);
+  }
+
+
+  /* 上書き */
+  .jstBlock .jstTabs, .jstBlock .wiki-preview { width: 99%; }
+
+  .jstBlock .jstTabs { padding-right: 6px; }
+  .jstBlock .wiki-preview { padding: 2px; }
+  .jstBlock .wiki-preview p:first-child { padding-top: 0 !important; margin-top: 0 !important;}
+  .jstBlock .wiki-preview p:last-child { padding-bottom: 0 !important; margin-bottom: 0 !important;}
+
+  .jstb_strong {
+    background-image: url(images/bold_dark.svg);
+  }
+
+  .jstb_em {
+    background-image: url(images/italic_dark.svg);
+  }
+
+  .jstb_del {
+    background-image: url(images/strikethrough_s_dark.svg);
+  }
+
+  .jstb_code {
+    background-image: url(images/code_2_dark.svg);
+  }
+
+  .jstb_h1 {
+    background-image: url(images/format_h1_dark.svg);
+  }
+
+  .jstb_h2 {
+    background-image: url(images/format_h2_dark.svg);
+  }
+
+  .jstb_h3 {
+    background-image: url(images/format_h3_dark.svg);
+  }
+
+  .jstb_ul {
+    background-image: url(images/format_list_bulleted_dark.svg);
+  }
+
+  .jstb_ol {
+    background-image: url(images/format_list_numbered_dark.svg);
+  }
+
+  .jstb_tl {
+    background-image: url(images/task_alt_dark.svg);
+  }
+
+  .jstb_bq {
+    background-image: url(images/format_indent_increase_dark.svg);
+  }
+
+  .jstb_unbq {
+    background-image: url(images/format_indent_decrease_dark.svg);
+  }
+
+  .jstb_table {
+    background-image: url(images/table_dark.svg);
+  }
+
+  .jstb_pre {
+    background-image: url(images/code_dark.svg);
+  }
+
+  .jstb_precode {
+    background-image: url(images/integration_instructions_dark.svg);
+  }
+
+  .jstb_link {
+    background-image: url(images/article_dark.svg);
+  }
+
+  .jstb_img {
+    background-image: url(images/image_dark.svg);
+  }
+
+  .jstb_help {
+    background-image: url(images/help_dark.svg);
   }
 }

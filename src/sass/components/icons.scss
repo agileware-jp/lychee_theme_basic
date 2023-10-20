@@ -471,3 +471,21 @@ button.tab-right {
 .icon-issue-form-exclude.icon-issue-form-exclude {
   padding-left: 2rem !important;
 }
+
+// Lychee Cost
+table.lychee-cost-cash-forecast__table tbody tr th > .tree-expander-collapsed.tree-expander-collapsed {
+  background-image: url(images/chevron_right_default.svg);
+}
+
+table.lychee-cost-cash-forecast__table tbody tr th > .tree-expander-expanded.tree-expander-expanded {
+  background-image: url(images/expand_more_default.svg);
+}
+
+// Lychee Project View
+#favorite-project-wrapper h3 .tree-expander-expanded {
+  background-image: url(images/expand_more_default.svg);
+}
+
+#favorite-project-wrapper h3 .tree-expander-collapsed {
+  background-image: url(images/chevron_right_default.svg);
+}

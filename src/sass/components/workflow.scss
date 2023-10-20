@@ -1,0 +1,14 @@
+@layer components {
+  #workflow_form table td.name {
+    @apply min-w-[100px]
+  }
+  #workflow_form table tbody td.name,
+  #workflow_form table tbody td.name ~ td {
+    @apply align-top
+  }
+
+  // #workflow_form table select {font-size:90%; max-width:100px;}
+  #workflow_form table select {
+    @apply max-w-[120px] text-xs py-1 pl-2 pr-8 my-0
+  }
+}

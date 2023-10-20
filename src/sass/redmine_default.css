@@ -496,7 +496,6 @@ ul.properties li span {font-style:italic;}
 
 #workflow_copy_form select { width: 200px; }
 table.transitions td.enabled {background: #bfb;}
-#workflow_form table select {font-size:90%; max-width:100px;}
 table.fields_permissions td.readonly {background:#ddd;}
 table.fields_permissions td.required {background:#d88;}
 
@@ -879,9 +878,6 @@ table.progress td.done { background: #D3EDD3 none repeat scroll 0%; }
 table.progress td.todo { background: #eee none repeat scroll 0%; }
 p.percent {font-size: 80%; margin:0;}
 p.progress-info {clear: left; font-size: 80%; margin-top:-4px; color:#777;}
-
-.version-overview table.progress {width:40em;}
-.version-overview table.progress td { height: 1.2em; }
 
 /***** Tabs *****/
 #content .tabs {height: 2.6em; margin-bottom:1.2em; position:relative; overflow:hidden;}

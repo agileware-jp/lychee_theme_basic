@@ -25,6 +25,75 @@
   #top-menu {
     @apply text-xs
   }
+
+  #header.aw_hasMainMenu {
+    @apply pl-48
+  }
+
+  .has-main-menu #main {
+    @apply ml-44
+  }
+
+  #main.nosidebar {
+    @apply ml-0
+  }
+
+  .has-main-menu #main.nosidebar {
+    @apply ml-44
+  }
+
+  #main.isMainMenuClose,
+  .has-main-menu #main.nosidebar.isMainMenuClose {
+    @apply ml-6
+  }
+
+  .controller-resource_management,
+  .controller-project_report_overview,
+  .controller-lychee_work_plan,
+  .controller-time_management,
+  .controller-lychee_message_box_informations.controller-lychee_message_box_informations,
+  .controller-lychee_message_box_my_boxes.controller-lychee_message_box_my_boxes,
+  .controller-lychee_message_box_system_errors.controller-lychee_message_box_system_errors {
+    #main.nosidebar {
+      @apply ml-0
+    }
+  }
+
+  #main-menu {
+    @apply w-44
+  }
+
+  #main-menu li:not(:first-child) {
+    @apply mt-1
+  }
+
+  #main-menu li a {
+    @apply text-xs
+  }
+
+  #main-menu.isMainMenuClose {
+    @apply -translate-x-[8.75rem]
+  }
+
+  #sidebar {
+    @apply w-48
+  }
+
+  #sidebar h3 {
+    @apply text-xs
+  }
+
+  #sidebar ul li:not(:first-child) {
+    @apply mt-1
+  }
+
+  #sidebar ul li a {
+    @apply text-xs
+  }
+
+  .aw_toggleSidebar {
+    @apply right-[11.25rem]
+  }
 }
 
 @media screen and (max-width: 899px)
@@ -595,7 +664,7 @@
   }
 
   .controller-issues #content .contextual {
-    @apply mb-4
+    @apply mb-2
   }
 
   #content>.contextual>a,
@@ -685,6 +754,11 @@
     padding-top: 1em;
   }
 
+  /* New Issue */
+  #issue_is_private_wrap {
+    @apply float-none
+  }
+
   /* Gantt charts */
   /*
    * [1] override inline styles with important
@@ -720,6 +794,10 @@
     max-width: 100%;
   }
 
+  #query_form_with_buttons .buttons {
+    // @apply 
+  }
+
   /* tabular forms resets for mobile */
   .tabular p, .tabular.settings p {
     padding-left: 0;
@@ -742,6 +820,33 @@
   .tabular input[type="checkbox"], .tabular input.date {
     width: auto;
     max-width: 95%;
+  }
+
+  .controller-issues {
+    #due_date_area,
+    #actual_due_date_area,
+    #remaining_estimate_area,
+    #remaining_estimate_area + p {
+      @apply pl-0
+    }
+
+    #due_date_area label,
+    #actual_due_date_area label,
+    #remaining_estimate_area label,
+    #remaining_estimate_area + p label {
+      @apply w-full ml-0
+    }
+
+    #start_date_area,
+    #actual_start_date_area {
+      @apply w-[9rem]
+    }
+
+    #due_date_area,
+    #actual_due_date_area {
+      width: calc(100% - 9rem);
+      @apply pl-6 bg-[left_bottom_14px]
+    }
   }
 
   /* new issue form */
@@ -772,45 +877,68 @@
     text-align: left;
   }
 
-  /* subtasks and related issues list on issue show */
-  #issue_tree .issues, #relations .issues {
-    border-collapse: separate;
-    border-spacing: 0 1em; /* vertical space between tasks */
+  #issue_tree table,
+  #relations table {
+    @apply bg-transparent
+  }
+
+  #issue_tree tr.issue,
+  #relations tr.issue {
+    @apply overflow-hidden box-border flex flex-wrap bg-background-primary border border-border-divider rounded-md
+  }
+
+  #issue_tree tr.issue ~ tr.issue,
+  #relations tr.issue ~ tr.issue {
+    @apply mt-2
+  }
+
+  #issue_tree tr.issue td,
+  #relations tr.issue td {
+    @apply box-border border-none
   }
 
   #issue_tree .issue > td:not(.checkbox), #relations .issue > td:not(.checkbox) {
-    display: block;
-    float: left;
-    text-align: left;
-    padding-right: 5px;
+    @apply block text-left
   }
 
-  #issue_tree .issue > td.subject, #relations .issue > td.subject {
-    width: 100%; /* let subject have one full width column */
+  #issue_tree .issue > td.subject,
+  #relations .issue > td.subject {
+    @apply order-1 w-4/5 pt-2 pb-0 pl-2
   }
 
-  #issue_tree .issue > td:not(.subject), #relations .issue > td:not(.subject) {
-    width: 20%; /* three columns for all cells that are not subject */
-  }
-
-  #issue_tree .issues, #issue_tree .issue,
-  #relations .issues, #relations .issue {
-    position: relative; /* needed for .buttons positioning */
-  }
-
-  /* positioniong of unline button */
   #issue_tree .issue > td.buttons,
   #relations .issue > td.buttons {
-    text-align: right;
-    position: absolute;
-    right: 0;
-    margin: 0;
-    padding-right: 0;
+    @apply order-2 w-1/5 text-right pt-2 pr-2 pb-0
+  }
+
+  #issue_tree .issue > td:not(.subject, .buttons),
+  #relations .issue > td:not(.subject, .buttons) {
+    @apply order-3 w-1/5 pt-0.5 pb-2
+  }
+
+  #issue_tree .issue > td.status,
+  #relations .issue > td.status {
+    @apply pl-2
+  }
+
+  #issue_tree .issue > td.done_ratio,
+  #relations .issue > td.done_ratio {
+    @apply flex items-center pr-2
+  }
+
+  #issue_tree .issue > td.done_ratio .progress,
+  #relations .issue > td.done_ratio .progress {
+    @apply w-full
   }
 
   #issue_tree .issue .buttons a,
   #relations .issue .buttons a {
-    vertical-align: middle;
+    @apply mx-0
+  }
+
+  #issue_tree .issue .buttons a:not(:first-child),
+  #relations .issue .buttons a:not(:first-child) {
+    @apply ml-2
   }
 
   /* attachment upload form */
@@ -830,6 +958,19 @@
     margin-left: 0;
     width: 100%;
   }
+
+  /*----------------------------------------*\
+    H) PLUGINS
+  \*----------------------------------------*/
+  .controller-association_chart {
+    #association_chart_query_form #filters table {
+      @apply -ml-5
+    }
+
+    #association_chart_query_form #filters table tr {
+      @apply flex flex-col
+    }
+  }
 }
 
 @media all and (max-width: 599px) {
@@ -840,5 +981,19 @@
   .pagination ul.pages li.next {display:inline-block; width:32%; overflow:hidden;}
 
   #login-form {width:100%; margin-top:2em;}
+
+  tr.issue td.subject,
+  tr.issue td.parent-subject,
+  tr.issue td.category,
+  td.assigned_to,
+  td.last_updated_by,
+  tr.issue td.string,
+  tr.issue td.text,
+  tr.issue td.list,
+  tr.issue td.relations,
+  tr.issue td.parent {
+    @apply whitespace-nowrap
+  }
 }
+
 }

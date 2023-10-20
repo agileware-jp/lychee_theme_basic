@@ -513,12 +513,44 @@
   .controller-lychee_message_box_informations.controller-lychee_message_box_informations,
   .controller-lychee_message_box_my_boxes.controller-lychee_message_box_my_boxes,
   .controller-lychee_message_box_system_errors.controller-lychee_message_box_system_errors {
+    #content {
+      @apply pt-[10px] px-0 pb-0
+    }
+
     #main.nosidebar {
       @apply ml-0
     }
 
     .lychee-message-box-types > li.mark_as_read a {
       font-size: 12px;
+    }
+
+    .lychee-message-box-root {
+      @apply border-x-0
+    }
+
+    .lychee-message-box-root.issue_update .balloon {
+      @apply py-2 rounded-xl
+    }
+
+    .lychee-message-box-root.issue_update .balloon .details {
+      @apply text-xs
+    }
+
+    .lychee-message-box-root.issue_update .note-all .details {
+      @apply p-4 rounded-lg
+    }
+
+    .lychee-message-box-root.issue_update .note-details .details {
+      @apply pl-0
+    }
+
+    .lychee-message-box-root.issue_update .details textarea {
+      @apply h-[38px] border-border-default text-sm py-2 px-3 rounded-md
+    }
+
+    .lychee-message-box-root.issue_update .details input[type="submit"] {
+      @apply h-[38px] text-sm py-2 px-3 rounded-md shadow hover:bg-product-hover hover:shadow-none active:bg-product-active active:shadow-none
     }
   }
 
@@ -541,6 +573,23 @@
 
     .lychee-modules__projects li {
       @apply mt-2
+    }
+
+    table.list.lychee-modules .name {
+      @apply pl-4
+    }
+
+    .lychee-modules details {
+      @apply cursor-pointer
+    }
+
+    .lychee-modules details summary {
+      background-image: url(images/chevron_right_default.svg);
+      @apply bg-[left_center] bg-no-repeat list-none pl-4
+    }
+
+    .lychee-modules details[open] summary {
+      background-image: url(images/expand_more_default.svg);
     }
   }
 

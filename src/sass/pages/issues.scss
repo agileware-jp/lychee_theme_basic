@@ -73,6 +73,11 @@
       @apply overflow-hidden mt-6
     }
 
+    div.issue #issue_tree > .contextual + p,
+    div.issue #relations > .contextual + p {
+      @apply mt-3
+    }
+
     div.issue #issue_tree {
       @apply overflow-hidden mt-6
     }
@@ -91,6 +96,10 @@
 
     div.issue #relations #errorExplanation {
       @apply clear-both
+    }
+
+    div.issue #checklist_for_show {
+      @apply mt-6
     }
 
     .issues-stat {
@@ -121,10 +130,6 @@
 
     .edit_issue .box {
       @apply border-none p-0
-    }
-
-    .new_issue .box {
-      @apply w-3/4
     }
 
     #issue_is_private_wrap {

@@ -44,6 +44,7 @@
   }
 
   table.list td {
+    // white-space: normal;
     @apply border-y border-border-divider text-text-default text-sm p-2
   }
 

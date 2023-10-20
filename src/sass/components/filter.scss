@@ -106,7 +106,7 @@
   }
 
   #query_form_with_buttons .buttons {
-    @apply gap-1 mb-2
+    @apply flex-wrap gap-1 mb-2
   }
 
   .query-columns {
@@ -710,6 +710,14 @@
           @apply text-xs py-1 px-2 my-0
         }
       }
+    }
+  }
+
+  // Association Chart(チケット関連図)
+  .controller-association_chart {
+    fieldset#filters legend {
+      background-image: url(images/filter_alt_default.svg);
+      @apply bg-[left_center] bg-[length:12px_12px] bg-no-repeat text-text-caption mb-2
     }
   }
 

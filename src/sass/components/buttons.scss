@@ -101,7 +101,7 @@
 
   // tableタグ要素にも使われており、flexにすることでtableが崩れてしまうのでそれは除外
   .buttons:not(th, td, .table-list-cell) {
-    @apply flex items-center gap-2
+    @apply flex flex-wrap items-center gap-2
   }
 
   // ロール設定ページ
@@ -114,12 +114,12 @@
   }
 
   table.list td.buttons a {
-    @apply mx-2
+    @apply mx-0 ml-1
   }
 
   table.list td.buttons .icon-only {
     @extend .BTN_TERTIARY_ICON_ONLY;
-    @apply mx-2
+    @apply mx-0 ml-1
   }
 
   table.list td.buttons:after {

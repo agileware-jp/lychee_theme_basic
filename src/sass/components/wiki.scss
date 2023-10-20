@@ -89,6 +89,10 @@ div.wiki .task-list input.task-list-item-checkbox {
     @apply text-text-default text-3xl font-bold mb-4
   }
 
+  .wiki h1 ~ h1 {
+    @apply mt-10
+  }
+
   .wiki h2 {
     @apply text-text-default text-2xl font-bold mt-6 mb-2
   }
@@ -114,7 +118,7 @@ div.wiki .task-list input.task-list-item-checkbox {
   }
 
   .wiki ul {
-    @apply list-disc mt-2 ml-8 mb-4
+    @apply list-disc mt-2 ml-6 mb-4
   }
 
   .wiki ul li:not(:first-child) {
@@ -122,7 +126,7 @@ div.wiki .task-list input.task-list-item-checkbox {
   }
 
   .wiki ol {
-    @apply list-decimal mt-2 ml-8 mb-4
+    @apply list-decimal mt-2 ml-6 mb-4
   }
 
   .wiki ol li:not(:first-child) {
@@ -131,6 +135,11 @@ div.wiki .task-list input.task-list-item-checkbox {
 
   .wiki li > ul, .wiki li > ol {
     @apply mb-0
+  }
+
+  .wiki li ul,
+  .wiki li ol {
+    @apply ml-4
   }
 
 
