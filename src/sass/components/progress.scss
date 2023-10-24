@@ -20,13 +20,13 @@
   table.progress td.closed {
     height: 13px;
 
-    @apply bg-status-success border-none rounded
+    @apply bg-status-success border-none
   }
 
   table.progress td.done {
     height: 13px;
 
-    @apply bg-status-success border-none rounded
+    @apply bg-status-success/60 border-none
   }
 
   div.issue .next-prev-links {

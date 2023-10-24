@@ -20,11 +20,11 @@
   }
 
   #content .tabs ul li a.selected {
-    @apply bg-transparent border-0 border-b-2 border-product-default font-bold
+    @apply bg-background-primary border-0 border-b-2 border-product-default font-bold
   }
 
   #content .tabs ul li a.selected:hover {
-    @apply bg-transparent
+    @apply bg-background-primary
   }
 
   div.tabs-buttons {

@@ -8,6 +8,10 @@
       @apply mb-2
     }
 
+    .new_issue > .box {
+      @apply bg-background-secondary/50
+    }
+
     .autoscroll {
       @apply mt-2
     }

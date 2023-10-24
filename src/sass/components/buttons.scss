@@ -59,7 +59,7 @@
   }
 
   .aw_toggleMainMenu.isMainMenuClose {
-    background-image: url(images/menu_default.svg);
+    background-image: url(images/move_right_default.svg);
     @apply right-0 left-auto
   }
 
@@ -86,7 +86,7 @@
   }
 
   .aw_toggleSidebar.isSidebarClose {
-    background-image: url(images/menu_default.svg);
+    background-image: url(images/move_left_default.svg);
     transition-property: right;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;

@@ -124,7 +124,7 @@ function addFeedbackLink() {
   const li = document.createElement('li')
   const a = document.createElement('a')
   a.classList.add('aw_fbLink')
-  a.setAttribute('href', 'https://agileware.jp/')
+  a.setAttribute('href', 'https://support.lychee-redmine.jp/feedback/')
   a.setAttribute('target', '_blank')
   a.textContent = 'フィードバックを送る'
   li.appendChild(a)

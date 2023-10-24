@@ -94,31 +94,31 @@ div.wiki .task-list input.task-list-item-checkbox {
   }
 
   .wiki h2 {
-    @apply text-text-default text-2xl font-bold mt-6 mb-2
+    @apply text-text-default text-2xl font-bold mb-4
   }
 
   .wiki h3 {
-    @apply text-text-default text-xl font-bold mt-6 mb-2
+    @apply text-text-default text-lg font-bold mb-2
   }
 
   .wiki h4 {
-    @apply text-text-default text-lg font-bold mt-4 mb-2
+    @apply text-text-default text-base font-bold mb-2
   }
 
   .wiki h5 {
-    @apply text-sm font-bold mt-4 mb-2
+    @apply text-sm font-bold text-sm mb-2
   }
 
   .wiki h6 {
-    @apply text-text-caption text-sm font-bold
+    @apply text-text-caption text-sm font-bold mb-2
   }
 
   .wiki p {
-    @apply text-text-default text-sm mt-2 mb-4
+    @apply text-text-default text-sm mb-6
   }
 
   .wiki ul {
-    @apply list-disc mt-2 ml-6 mb-4
+    @apply list-disc ml-6 mb-4
   }
 
   .wiki ul li:not(:first-child) {
@@ -126,7 +126,7 @@ div.wiki .task-list input.task-list-item-checkbox {
   }
 
   .wiki ol {
-    @apply list-decimal mt-2 ml-6 mb-4
+    @apply list-decimal ml-6 mb-4
   }
 
   .wiki ol li:not(:first-child) {
@@ -134,7 +134,7 @@ div.wiki .task-list input.task-list-item-checkbox {
   }
 
   .wiki li > ul, .wiki li > ol {
-    @apply mb-0
+    @apply mt-2 mb-0
   }
 
   .wiki li ul,
@@ -144,7 +144,7 @@ div.wiki .task-list input.task-list-item-checkbox {
 
 
   .wiki table {
-    @apply border border-border-divider mt-2 mb-4 p-2
+    @apply border border-border-divider mb-4 p-2
   }
 
   .wiki th {
@@ -162,7 +162,7 @@ div.wiki .task-list input.task-list-item-checkbox {
 
 
   .wiki pre {
-    @apply bg-background-secondary border border-border-divider my-2 mr-2 ml-4 p-4 rounded-md overflow-x-auto overflow-y-hidden
+    @apply bg-background-secondary/50 border border-border-divider text-xs mr-2 mb-4 ml-4 p-4 rounded-lg overflow-x-auto overflow-y-hidden
   }
 
   .wiki *:not(pre) > code,
@@ -176,7 +176,7 @@ div.wiki .task-list input.task-list-item-checkbox {
 
 
   .wiki .task-list {
-    @apply mt-2 ml-0 mb-4
+    @apply ml-0 mb-4
   }
 
   .wiki .task-list .task-list {

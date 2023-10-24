@@ -90,6 +90,7 @@
 
   .jstBlock .wiki-preview {
     @extend .TEXT_FIELD;
+    @apply p-6
   }
 
   #login-form input[type=text],
