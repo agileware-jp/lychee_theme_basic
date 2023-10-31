@@ -311,6 +311,17 @@
     }
   }
 
+  .controller-roles {
+    #filters form input[type="submit"] {
+      @apply text-xs py-1 px-2
+    }
+
+    #filters form .icon-reload {
+      @extend .BTN_SECONDARY_ICON_LEFT;
+      @apply bg-[0.5rem_center] bg-[length:14px_14px] text-xs py-1 pr-2 pl-6 ml-1
+    }
+  }
+
   // ライセンス管理の戻るボタン
   .controller-lychee_licenses {
     input[name="commit"] + a {
@@ -364,16 +375,10 @@
     }
   }
 
-  // 管理設定系のtableはICON ONLYボタンにすると分かりづらいので調整
-  // .controller-auth_source_saml.controller-auth_source_saml,
-  // .controller-admin.action-projects,
-  // .controller-users.action-index {
-  //   td.buttons a {
-  //     @apply indent-0 w-auto h-auto bg-transparent bg-[left_center] border-0 py-0 pl-5
-  //   }
-
-  //   td.buttons a:not(:first-child) {
-  //     @apply ml-2
-  //   }
-  // }
+  // Lychee Project Report
+  .controller-indice_settings {
+    #content h3 + .contextual a:not([class]) {
+      @extend .BTN_PRIMARY;
+    }
+  }
 }

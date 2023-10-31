@@ -701,6 +701,25 @@
     }
   }
 
+  // Lychee Project Report
+  .controller-project_report_settings,
+  .controller-indice_settings,
+  .controller-enabled_report_indice_settings {
+    table.list:not(.odd-even) tbody tr:nth-child(odd) td {
+      @apply bg-background-primary
+    }
+
+    table.list tbody tr:hover > td {
+      background-color: #f6f7f8 !important;
+    }
+  }
+
+  .controller-indice_settings {
+    .contextual + h3 + .contextual {
+      @apply float-none mb-2
+    }
+  }
+
 
   // その他
   .controller-projects.controller-projects {

@@ -134,6 +134,12 @@
   }
 
 
+  // groups
+  #list_organizations#list_organizations tr.organization.idnt td.name {
+    background-image: url(images/subproject_default.svg);
+  }
+
+
   table.messages td.subject.icon-locked {
     @apply pl-7 bg-[left_0.5rem_center]
   }

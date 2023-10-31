@@ -489,3 +489,18 @@ table.lychee-cost-cash-forecast__table tbody tr th > .tree-expander-expanded.tre
 #favorite-project-wrapper h3 .tree-expander-collapsed {
   background-image: url(images/chevron_right_default.svg);
 }
+
+// Lychee Project Report
+.controller-project_report_settings,
+.controller-indice_settings,
+.controller-enabled_report_indice_settings {
+  .icon-setting {
+    background-image: url(images/settings_default.svg);
+  }
+}
+
+.controller-enabled_report_indice_settings {
+  .sort-handle {
+    background-image: url(images/drag_pan_default.svg);
+  }
+}

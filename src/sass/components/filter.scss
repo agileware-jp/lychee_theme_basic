@@ -113,8 +113,12 @@
     @apply flex items-center gap-1
   }
 
+  .query-columns > span {
+    @apply inline-block h-full align-middle
+  }
+
   .query-columns label {
-    @apply text-xs mb-1
+    @apply block text-xs mb-1
   }
 
   .query-columns .buttons {
@@ -124,12 +128,27 @@
   // 利用できる項目＋選択された項目
   .query-columns .buttons input[type="button"] {
     font-family: serif;
-    @apply cursor-pointer bg-background-primary w-7 h-7 border-border-default p-1 rounded-md hover:border-border-dark active:bg-background-secondary
+    @apply cursor-pointer block bg-background-primary w-7 h-7 border-border-default p-1 rounded-md hover:border-border-dark active:bg-background-secondary
+  }
+
+  .query-columns select {
+    @apply min-w-[150px]
   }
 
   // フィルター内部の細かい調整
   label[for="draw_selected_columns"] {
     @apply mb-2
+  }
+
+  // 管理→ロール→権限レポート
+  .controller-roles {
+    #filters {
+      @apply mb-2
+    }
+
+    #filters form fieldset label + label {
+      @apply ml-2
+    }
   }
 
   // LGC
@@ -740,10 +759,13 @@
       @apply mt-2
     }
 
-    fieldset#filters #filters-table .field {
+    #rilters-table .field,
+    fieldset#filters #filters-table .field,
+    .controller-project_report_overview #filters-table .field {
       @apply w-full
     }
 
+    #filters-table .values,
     fieldset#filters #filters-table .values {
       @apply flex-grow
     }

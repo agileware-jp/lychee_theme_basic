@@ -280,6 +280,8 @@
     flex: auto;
     margin-right: 0;
     margin-left: 0;
+
+    @apply mb-4
   }
 
   /*----------------------------------------*\
@@ -692,11 +694,11 @@
     padding-bottom: 9px;
   }
 
-  #content>.contextual a.icon,
-  p.buttons a.icon {
-    background-position-x: 4px;
-    padding-left: 25px;
-  }
+  // #content>.contextual a.icon,
+  // p.buttons a.icon {
+  //   background-position-x: 4px;
+  //   padding-left: 25px;
+  // }
 
   .flyout-menu .contextual {
     float: none;
@@ -718,9 +720,6 @@
     padding-left: 0;
     padding-right: 0;
   }
-
-  // #filters-table {width:100%; float:none;}
-  // .add-filter {width:100%; float:none; text-align: left; margin-top: 8px;}
 
   /*----------------------------------------*\
     F) PAGE SPECIFIC STYLES
@@ -759,6 +758,11 @@
     @apply float-none
   }
 
+  /* Tracker */
+  .controller-trackers #tracker_project_ids {
+    @apply mt-4
+  }
+
   /* Gantt charts */
   /*
    * [1] override inline styles with important
@@ -784,69 +788,6 @@
   #gantt_area {
     left: -2px; /* [3] */
     margin-right: -2px; /* [4] */
-  }
-
-  /*----------------------------------------*\
-    G) FORMS
-  \*----------------------------------------*/
-
-  input, select, textarea {
-    max-width: 100%;
-  }
-
-  #query_form_with_buttons .buttons {
-    // @apply 
-  }
-
-  /* tabular forms resets for mobile */
-  .tabular p, .tabular.settings p {
-    padding-left: 0;
-  }
-
-  .tabular label, .tabular.settings label {
-    display: block;
-    width: 100%;
-    margin-left: 0;
-    text-align: left;
-
-    @apply mb-2
-  }
-
-  .tabular input, .tabular select, .tabular textarea {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .tabular input[type="checkbox"], .tabular input.date {
-    width: auto;
-    max-width: 95%;
-  }
-
-  .controller-issues {
-    #due_date_area,
-    #actual_due_date_area,
-    #remaining_estimate_area,
-    #remaining_estimate_area + p {
-      @apply pl-0
-    }
-
-    #due_date_area label,
-    #actual_due_date_area label,
-    #remaining_estimate_area label,
-    #remaining_estimate_area + p label {
-      @apply w-full ml-0
-    }
-
-    #start_date_area,
-    #actual_start_date_area {
-      @apply w-[9rem]
-    }
-
-    #due_date_area,
-    #actual_due_date_area {
-      width: calc(100% - 9rem);
-      @apply pl-6 bg-[left_bottom_14px]
-    }
   }
 
   /* new issue form */
@@ -879,7 +820,14 @@
 
   #issue_tree table,
   #relations table {
-    @apply bg-transparent
+    @apply block bg-transparent
+  }
+
+  #issue_tree thead,
+  #issue_tree tbody,
+  #relations thead,
+  #relations tbody {
+    @apply block
   }
 
   #issue_tree tr.issue,
@@ -903,7 +851,7 @@
 
   #issue_tree .issue > td.subject,
   #relations .issue > td.subject {
-    @apply order-1 w-4/5 pt-2 pb-0 pl-2
+    @apply order-1 w-4/5 pt-2 pb-0
   }
 
   #issue_tree .issue > td.buttons,
@@ -939,6 +887,85 @@
   #issue_tree .issue .buttons a:not(:first-child),
   #relations .issue .buttons a:not(:first-child) {
     @apply ml-2
+  }
+
+  #issue_tree,
+  #relations {
+    tr.idnt
+    tr.idnt td.subject, tr.idnt td.name { padding-left: 24px}
+
+    tr.idnt-1 { margin-left: 8px}
+    tr.idnt-2 {margin-left: 16px;}
+    tr.idnt-3 {margin-left: 24px;}
+    tr.idnt-4 {margin-left: 32px;}
+    tr.idnt-5 {margin-left: 40px;}
+    tr.idnt-6 {margin-left: 48px;}
+    tr.idnt-7 {margin-left: 56px;}
+    tr.idnt-8 {margin-left: 64px;}
+    tr.idnt-9 {margin-left: 72px;}
+  }
+
+  /*----------------------------------------*\
+    G) FORMS
+  \*----------------------------------------*/
+
+  input, select, textarea {
+    max-width: 100%;
+  }
+
+  /* tabular forms resets for mobile */
+  .tabular p, .tabular.settings p {
+    padding-left: 0;
+  }
+
+  .tabular label, .tabular.settings label {
+    display: block;
+    width: 100%;
+    margin-left: 0;
+    text-align: left;
+
+    @apply mb-2
+  }
+
+  .tabular input, .tabular select, .tabular textarea {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .tabular input[type="checkbox"], .tabular input.date {
+    width: auto;
+    max-width: 95%;
+  }
+
+  .query-columns {
+    @apply flex-wrap
+  }
+
+  .controller-issues {
+    #due_date_area,
+    #actual_due_date_area,
+    #remaining_estimate_area,
+    #remaining_estimate_area + p {
+      @apply pl-0
+    }
+
+    #due_date_area label,
+    #actual_due_date_area label,
+    #remaining_estimate_area label,
+    #remaining_estimate_area + p label {
+      @apply w-full ml-0
+    }
+
+    #start_date_area,
+    #actual_start_date_area {
+      @apply w-[9rem]
+    }
+
+    #due_date_area,
+    #actual_due_date_area {
+      width: calc(100% - 9rem);
+      @apply pl-6 bg-[left_bottom_14px]
+    }
   }
 
   /* attachment upload form */

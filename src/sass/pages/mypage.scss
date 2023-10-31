@@ -11,6 +11,10 @@
     @apply mb-2
   }
 
+  .mypage-box .contextual + .contextual {
+    @apply mr-2
+  }
+
   #block-issuequery__2 .box {
     @apply border-none p-0
   }

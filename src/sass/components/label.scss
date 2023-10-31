@@ -1,7 +1,7 @@
 @layer components {
   // tabularのlabelはtabular側で管理
-  label.block,
-  .tabular label.block,
+  // label.block,
+  // .tabular label.block,
   #notified_events label,
   #message_box_notified_events label {
     @apply flex items-center

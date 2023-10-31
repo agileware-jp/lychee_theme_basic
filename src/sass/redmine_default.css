@@ -76,17 +76,6 @@ table.issues td.block_column {color:#777; font-size:90%; padding:4px 4px 4px 24p
 table.issues td.block_column span {font-weight: bold; display: block; margin-bottom: 4px;}
 table.issues td.block_column pre {white-space:normal;}
 
-tr.idnt td.subject, tr.idnt td.name {background: url(./default/arrow_right.png) no-repeat 2px 50%;}
-tr.idnt-1 td.subject, tr.idnt-1 td.name {padding-left: 24px; background-position: 8px 50%;}
-tr.idnt-2 td.subject, tr.idnt-2 td.name {padding-left: 40px; background-position: 24px 50%;}
-tr.idnt-3 td.subject, tr.idnt-3 td.name {padding-left: 56px; background-position: 40px 50%;}
-tr.idnt-4 td.subject, tr.idnt-4 td.name {padding-left: 72px; background-position: 56px 50%;}
-tr.idnt-5 td.subject, tr.idnt-5 td.name {padding-left: 88px; background-position: 72px 50%;}
-tr.idnt-6 td.subject, tr.idnt-6 td.name {padding-left: 104px; background-position: 88px 50%;}
-tr.idnt-7 td.subject, tr.idnt-7 td.name {padding-left: 120px; background-position: 104px 50%;}
-tr.idnt-8 td.subject, tr.idnt-8 td.name {padding-left: 136px; background-position: 120px 50%;}
-tr.idnt-9 td.subject, tr.idnt-9 td.name {padding-left: 152px; background-position: 136px 50%;}
-
 table.issue-report {table-layout:fixed;}
 .issue-report-graph {width: 75%; margin: 2em 0;}
 
@@ -191,22 +180,6 @@ div.table-list.boards .table-list-cell.name {width: 30%;}
   min-width: 1em;
 }
 
-.query-columns>span {
-  display:inline-block;
-  height:100%;
-  vertical-align: middle;
-}
-.query-columns label {
-  display:block;
-}
-.query-columns .buttons input[type=button] {
-  width:35px;
-  display:block;
-}
-.query-columns select {
-  min-width:150px;
-}
-
 .query-totals {text-align:right; margin-top:-2.3em;}
 .query-totals>span:not(:first-child) {margin-left:0.6em;}
 .query-totals .value {font-weight:bold;}
@@ -263,7 +236,7 @@ div.square {
 .splitcontentright {flex: 1; margin-left: 5px;}
 .splitcontenttop {flex: 2; flex-basis: 100%;}
 
-form {display: inline;}
+/* form {display: inline;} */
 input, select, button {vertical-align: middle; margin-top: 1px; margin-bottom: 1px; height: 24px; padding: 0 7px;}
 input, select, textarea, button { color: #333; background-color: #fff; border:1px solid #ccc; border-radius:3px; box-sizing: border-box;}
 select {

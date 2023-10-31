@@ -26,12 +26,16 @@
 
 
   // プロジェクト追加UI
+  legend + .projects {
+    @apply mt-2
+  }
+
   ul.projects ul.projects {
     @apply ml-2
   }
 
   ul.projects.root {
-    @apply -mt-4 mx-2
+    @apply -mt-2 mx-2
   }
 
   ul.projects li.root div.archived,
