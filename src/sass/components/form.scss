@@ -1,6 +1,6 @@
 @layer components {
   .TEXT_FIELD {
-    @apply border border-border-default text-text-default text-sm my-[1px] py-2 px-3 rounded-md
+    @apply border border-border-default text-text-default text-sm my-[1px] py-2 px-3 rounded-md hover:border-border-dark
   }
 
   form {

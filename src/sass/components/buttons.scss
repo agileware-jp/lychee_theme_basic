@@ -175,10 +175,6 @@
     @apply h-auto bg-[8px_center] pr-3 pl-7 py-2
   }
 
-  #content > .contextual > a ~ a {
-    // @apply ml-2
-  }
-
   input[name="follow"] {
     @extend .BTN_SECONDARY;
     @apply ml-2
@@ -379,6 +375,58 @@
   .controller-indice_settings {
     #content h3 + .contextual a:not([class]) {
       @extend .BTN_PRIMARY;
+    }
+  }
+
+  // Lychee Issue Form
+  .lychee-issue-form__container_full,
+  .lychee-issue-form__container_half {
+    button.watch, button.context,
+    button.mini-context {
+      @apply cursor-pointer inline-block w-6 h-6 bg-center align-middle bg-background-secondary border border-background-secondary text-sm p-0 rounded-md hover:border-border-default active:bg-background-tertiary
+    }
+
+    button.watch svg,
+    button.context svg,
+    button.mini-context svg {
+      @apply -mt-0.5 mr-0 p-0
+    }
+
+    .tab-content #tab-content-comments_and_journals .comment-properties .add,
+    .tab-content #tab-content-comments_and_journals .comment-edit-properties .add,
+    .tab-content #tab-content-comments_and_journals .comment-properties .cancel,
+    .tab-content #tab-content-comments_and_journals .comment-edit-properties .cancel,
+    .attachment_files .buttons-area button.cancel,
+    .attachment_files .buttons-area button.update {
+      @apply py-2 px-3
+    }
+
+
+    #dialog-footer #create-issue,
+    #dialog-footer #sequential-create-issue {
+      @apply px-3
+    }
+
+    #dialog-footer #create-issue {
+      @apply m-0
+    }
+
+    #dialog-footer #sequential-create-issue {
+      @apply ml-1
+    }
+
+    #tab-buttons button,
+    #tab-buttons button:hover {
+      @apply mx-[1px] py-1.5 px-3 rounded-md
+    }
+
+    .popup-ticket-context ul li button,
+    .popup-journal-context ul li button {
+      @apply items-center
+    }
+
+    #tab-content-time_entries .item .context-menus > form {
+      @apply inline
     }
   }
 }

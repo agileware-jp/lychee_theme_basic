@@ -721,6 +721,176 @@
   }
 
 
+  // Lychee Issue Form
+  .lychee-issue-form__container_full,
+  .lychee-issue-form__container_half {
+    #dialog-content-column-single {
+      @apply p-3
+    }
+
+    #tab-buttons {
+      @apply pb-4
+    }
+
+    .required {
+      @apply pl-1
+    }
+
+    #dialog-content-header {
+      @apply h-[102px]
+    }
+
+    #dialog-content-header h4 .show,
+    #lif-issue_subject,
+    .fields .attribute dd .show,
+    .description .text .show,
+    .date-fields dl dd .issue-item .show {
+      @apply border border-transparent text-sm my-[1px] py-1.5 px-3 rounded-md
+    }
+
+    #tab-property .show {
+      @apply min-h-[34px]
+    }
+
+    #tab-property .estimated-hours .show,
+    #tab-property .remaining-estimate .show,
+    #tab-property .done-ratio .show {
+      @apply min-h-0
+    }
+
+    #dialog-content-header h4 {
+      @apply mb-1
+    }
+
+    #dialog-content-header h4 .issue-item {
+      @apply ml-1
+    }
+
+    #dialog-content-header h4 .show:hover,
+    #dialog-content-header h3 .show:hover {
+      @apply bg-background-secondary
+    }
+
+    #dialog-content-header h3 {
+      @apply mb-0
+    }
+
+    .description .header .left H5 {
+      @apply font-bold
+    }
+
+    .fields {
+      @apply mt-4
+    }
+
+    .fields dl dt {
+      @apply pr-2
+    }
+
+    .fields .attribute,
+    .tab-content-time_entries-form .attribute {
+      @apply mt-1
+    }
+
+    .fields .attribute dd .edit > select,
+    .fields .attribute dd .edit > input {
+      @apply my-0
+    }
+
+    .date-fields {
+      @apply border-border-divider mt-4 pb-4
+    }
+
+    .date-fields .edit input {
+      @apply w-[140px] text-sm py-1.5 px-3 rounded-md
+    }
+
+    .horizon-fields {
+      @apply flex flex-wrap gap-4 border-border-divider mt-4 pb-4
+    }
+
+    .horizon-fields .edit input {
+      @apply text-sm py-1.5 px-3 rounded-md
+    }
+
+    .fields.attachment_files {
+      @apply border-border-divider mt-4 pb-4
+    }
+
+    .fields.attachment_files #file-input {
+      @apply hidden
+    }
+
+    .tab-content .add-file,
+    .attachment_files .add-file {
+      @apply border border-background-secondary my-1 hover:border-border-default active:border-border-divider active:bg-background-tertiary
+    }
+
+    .tab-content .add-file .label,
+    .attachment_files .add-file .label {
+      @apply h-auto py-2 px-3 rounded-md
+    }
+
+    .tab-content .item .avatar {
+      @apply mr-2
+    }
+
+    .tab-content #tab-content-comments_and_journals .notify .label {
+      @apply h-auto border border-background-secondary py-2 px-3 rounded-md hover:border-border-default active:border-border-divider active:bg-background-secondary
+    }
+
+    .tab-content #tab-content-comments_and_journals .controls {
+      @apply mt-4
+    }
+
+    .tab-content-time_entries-form .time-entry-form-spent-on {
+      @apply mt-0
+    }
+
+    .tab-content .item .meta,
+    .tab-content .item .details,
+    #tab-content-time_entries .notes > *,
+    .tab-content .item .private-notes .wiki {
+      width: calc(100% - 32px);
+    }
+
+    .tab-content .item .meta .context-menus {
+      @apply mr-1
+    }
+
+    .tab-content .item .item-date {
+      @apply text-text-caption text-xs mt-1
+    }
+
+    .tab-content .total .value {
+      @apply mr-2
+    }
+
+    // context menu
+    #popup ul,
+    .popup-ticket-context ul,
+    .popup-journal-context ul {
+      @apply p-1
+    }
+
+    #popup ul li,
+    .popup-ticket-context ul li,
+    .popup-journal-context ul li {
+      @apply p-0
+    }
+
+    .popup-ticket-context ul li:not(:first-child),
+    .popup-journal-context ul li:not(:first-child) {
+      @apply mt-0.5
+    }
+
+    #popup ul li button,
+    .popup-ticket-context ul li button,
+    .popup-journal-context ul li button {
+      @apply items-center text-sm mx-0 py-2 px-3 rounded hover:bg-background-secondary hover:font-normal active:bg-background-tertiary
+    }
+  }
+
   // その他
   .controller-projects.controller-projects {
     table.list:not(.odd-even) tbody tr:nth-child(odd) td {
