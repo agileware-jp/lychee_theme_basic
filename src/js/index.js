@@ -49,65 +49,101 @@ function stickyMainMenu() {
   }
 }
 
-// main menuの折りたたみ
-function toggleMainMenu() {
-  // main menuがあるページかどうか
+function addBtnToToggleMainMenu() {
   const mainMenu = document.querySelector('#main-menu')
-  if(!mainMenu) return
-
-  // 開閉ボタン追加
   const btn = document.createElement('button')
   btn.textContent = 'メニューの開閉'
   btn.classList.add('aw_toggleMainMenu')
 
-  const mainContent = document.querySelector('#main')
   mainMenu.appendChild(btn)
+}
 
+function openMainMenu(mainMenu, mainContent, toggleTrigger, header) {
+  mainMenu.classList.remove('isMainMenuClose')
+  mainContent.classList.remove('isMainMenuClose')
+  toggleTrigger.classList.remove('isMainMenuClose')
+  header.classList.remove('isMainMenuClose')
+}
+
+function closeMainMenu(mainMenu, mainContent, toggleTrigger, header) {
+  mainMenu.classList.add('isMainMenuClose')
+  mainContent.classList.add('isMainMenuClose')
+  toggleTrigger.classList.add('isMainMenuClose')
+  header.classList.add('isMainMenuClose')
+}
+
+function toggleMainMenu() {
+  const mainMenu = document.querySelector('#main-menu')
+  const mainContent = document.querySelector('#main')
+  const toggleTrigger = document.querySelector('.aw_toggleMainMenu')
   const header = document.querySelector('#header')
 
-  // 切り替え管理
+  if(mainMenu.classList.contains('isMainMenuClose')) {
+    openMainMenu(mainMenu, mainContent, toggleTrigger, header)
+  } else {
+    closeMainMenu(mainMenu, mainContent, toggleTrigger, header)
+  }
+}
+
+function initToggleMainMenu() {
+  const mainMenu = document.querySelector('#main-menu')
+  if(!mainMenu) return
+
+  // toggle btnの追加
+  addBtnToToggleMainMenu()
+
+  // 開閉処理
   const toggleTrigger = document.querySelector('.aw_toggleMainMenu')
-  toggleTrigger.addEventListener('click', () => {
-    if(mainMenu.classList.contains('isMainMenuClose')) {
-      mainMenu.classList.remove('isMainMenuClose')
-      mainContent.classList.remove('isMainMenuClose')
-      toggleTrigger.classList.remove('isMainMenuClose')
-      header.classList.remove('isMainMenuClose')
-    } else {
-      mainMenu.classList.add('isMainMenuClose')
-      mainContent.classList.add('isMainMenuClose')
-      toggleTrigger.classList.add('isMainMenuClose')
-      header.classList.add('isMainMenuClose')
-    }
-  })
+  toggleTrigger.addEventListener('click', toggleMainMenu)
+}
+
+// Sidebarの折りたたみ
+function addBtnToToggleSidebar() {
+  const sidebar = document.querySelector('#sidebar')
+  const btn = document.createElement('button')
+  btn.textContent = 'サイドバーの開閉'
+  btn.classList.add('aw_toggleSidebar')
+
+  sidebar.appendChild(btn)
+}
+
+function openSidebar(sidebar, mainContent, toggleTrigger) {
+  sidebar.classList.remove('isSidebarClose')
+  mainContent.classList.remove('isSidebarClose')
+  toggleTrigger.classList.remove('isSidebarClose')
+}
+
+function closeSidebar(sidebar, mainContent, toggleTrigger) {
+  sidebar.classList.add('isSidebarClose')
+  mainContent.classList.add('isSidebarClose')
+  toggleTrigger.classList.add('isSidebarClose')
 }
 
 // sidebarの折りたたみ
 function toggleSidebar() {
+  const sidebar = document.querySelector('#sidebar')
+  const mainContent = document.querySelector('#main')
+  const toggleTrigger = document.querySelector('.aw_toggleSidebar')
+
+  // 切り替え処理
+  if(sidebar.classList.contains('isSidebarClose')) {
+    openSidebar(sidebar, mainContent, toggleTrigger)
+  } else {
+    closeSidebar(sidebar, mainContent, toggleTrigger)
+  }
+}
+
+function initToggleSidebar() {
   // サイドバーがある"かつ"nosidebarではない
   const sidebar = document.querySelector('#sidebar')
   if(!sidebar || sidebar.closest('#main').classList.contains('nosidebar')) return
 
-  // 開閉ボタン追加
-  const btn = document.createElement('button')
-  btn.textContent = 'サイドバーの開閉'
-  btn.classList.add('aw_toggleSidebar')
-  const mainContent = document.querySelector('#main')
-  sidebar.appendChild(btn)
+  // toggle btnの追加
+  addBtnToToggleSidebar()
 
-  // 切り替え処理
+  // 開閉処理
   const toggleTrigger = document.querySelector('.aw_toggleSidebar')
-  toggleTrigger.addEventListener('click', () => {
-    if(sidebar.classList.contains('isSidebarClose')) {
-      sidebar.classList.remove('isSidebarClose')
-      mainContent.classList.remove('isSidebarClose')
-      toggleTrigger.classList.remove('isSidebarClose')
-    } else {
-      sidebar.classList.add('isSidebarClose')
-      mainContent.classList.add('isSidebarClose')
-      toggleTrigger.classList.add('isSidebarClose')
-    }
-  })
+  toggleTrigger.addEventListener('click', toggleSidebar)
 }
 
 // 「ログイン中:」の文字を削除
@@ -130,6 +166,34 @@ function addFeedbackLink() {
   li.appendChild(a)
   topMenuNav.appendChild(li)
 }
+
+// IssueFormが開いたときにMainMenuとSidebarを閉じる
+window.addEventListener('DOMContentLoaded', () => {
+  const lycheeBody = document.querySelector('body')
+
+  const observer = new MutationObserver((mutations) => {
+    const mainMenu = document.querySelector('#main-menu')
+    const sidebar = document.querySelector('#sidebar')
+    const mainContent = document.querySelector('#main')
+    const toggleTriggerMainMneu = document.querySelector('.aw_toggleMainMenu')
+    const toggleTriggerSidebar = document.querySelector('.aw_toggleSidebar')
+    const header = document.querySelector('#header')
+
+    if(lycheeBody.classList.contains('lychee-issue-form__body_half')) {
+      closeMainMenu(mainMenu, mainContent, toggleTriggerMainMneu, header)
+      closeSidebar(sidebar, mainContent, toggleTriggerSidebar)
+    } else {
+      openMainMenu(mainMenu, mainContent, toggleTriggerMainMneu, header)
+      openSidebar(sidebar, mainContent, toggleTriggerSidebar)
+    }
+  })
+
+
+  observer.observe(lycheeBody, {
+    attributes: true,
+    attributeFilter: ['class']
+  })
+})
 
 /**
  * Sticky MainMenu
@@ -168,8 +232,8 @@ window.addEventListener('DOMContentLoaded', () => {
   /**
    * Main Menu / Sidebarの開閉機能
    */
-  toggleMainMenu()
-  toggleSidebar()
+  initToggleMainMenu()
+  initToggleSidebar()
 
 
   /**
