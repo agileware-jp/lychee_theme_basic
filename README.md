@@ -4,14 +4,15 @@
 
 # リリース用ファイルの生成
 1. `npm run build`
-2. `javascripts` と `stylesheets` をzipで圧縮
-3. zipファイル名を`lychee-theme_Basic` に変更
-4. githubのReleasesに追加
+2. `lychee-theme_Basic` ディレクトリを作成
+3. `javascripts` と `stylesheets` を `lychee-theme_Basic` にコピー
+4. `zip -r lychee-theme_Basic.zip lychee-theme_Basic/` でzipファイルを作成
+5. githubのReleasesに追加
 
 ## リリース用ファイル生成についてメモ
 - このテーマに必要なものは `stylesheets` と `javascripts` だけなので、その2つをzipで圧縮
-- ディレクトリ名がそのままテーマ名になるので、圧縮後にディレクトリ名を変更する
-- このリポジトリはテーマ"開発用"なので、リリース物は別で生成する
+- リポジトリ名とテーマディレクトリ名が少し違うので注意（lycheeテーマに並んだときに目立つように、あえてlycheeとthemeの区切りをハイフンにしています）
+- このリポジトリはテーマ"開発用"なので、リリース物は別で生成し、Releasesに登録する
 
 ## cssの構成についての注意
 すべてのcss（context_menuやresponsive、jstoolbar等）は `application.css` に集約している。  
