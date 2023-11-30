@@ -743,7 +743,7 @@
     #dialog-content-header h4 .show,
     #lif-issue_subject,
     .fields .attribute dd .show,
-    .description .text .show,
+    .lif-description .text .show,
     .date-fields dl dd .issue-item .show {
       @apply border border-transparent text-sm my-[1px] py-1.5 px-3 rounded-md
     }
@@ -775,7 +775,7 @@
       @apply mb-0
     }
 
-    .description .header .left H5 {
+    .lif-description .header .left H5 {
       @apply font-bold
     }
 
