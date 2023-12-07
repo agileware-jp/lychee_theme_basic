@@ -16,6 +16,14 @@
       @apply -mt-1 ml-0
     }
 
+    #message_box_notified_events > legend {
+      @apply float-left
+    }
+
+    #message_box_notified_events > legend ~ label:first-child {
+      @apply clear-both
+    }
+
     #notified_events br,
     #message_box_notified_events br {
       @apply hidden
