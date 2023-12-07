@@ -142,6 +142,11 @@ div.wiki .task-list input.task-list-item-checkbox {
     @apply ml-4
   }
 
+  .wiki p + ul,
+  .wiki p + ol {
+    @apply -m-2
+  }
+
 
   .wiki table {
     @apply border border-border-divider mb-4 p-2
