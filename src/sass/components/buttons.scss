@@ -383,14 +383,14 @@
   .lychee-issue-form__container_half {
     button.context,
     button.mini-context {
-      @apply cursor-pointer inline-block w-6 h-6 bg-center align-middle bg-background-secondary border border-background-secondary text-sm p-0 rounded-md hover:border-border-default active:bg-background-tertiary
+      @apply cursor-pointer inline-block w-6 h-6 bg-center align-middle bg-background-secondary border border-background-secondary text-xs p-0 rounded-md hover:border-border-default active:bg-background-tertiary
     }
 
     button.watch {
-      @apply cursor-pointer inline-block h-auto bg-background-secondary border border-background-secondary text-sm py-2 px-3 rounded-md hover:border-border-default hover:no-underline hover:text-text-default active:bg-background-tertiary
+      @apply cursor-pointer inline-block h-auto bg-background-secondary border border-background-secondary text-xs py-1 px-2 rounded-md hover:border-border-default hover:no-underline hover:text-text-default active:bg-background-tertiary
     }
 
-    button.context svg,
+    #dialog-footer button.context svg,
     button.mini-context svg {
       @apply -mt-0.5 mr-0 p-0
     }
