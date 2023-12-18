@@ -1,6 +1,10 @@
-# 環境の立ち上げ
+# 開発
 1. `npm install`
 2. `npm run watch`
+
+# ビルド
+1. `npm install`
+2. `npm run build`
 
 # リリース用ファイルの生成
 1. `npm run build`
