@@ -136,14 +136,6 @@
 
   /* Buttons
   -------------------------------------------------------- */
-  .jstb_ins {
-    background-image: url(../images/jstoolbar/bt_ins.png);
-  }
-  .jstb_table {
-    background-image: url(../images/jstoolbar/bt_table.png);
-  }
-
-
   /* 上書き */
   .jstBlock .jstTabs, .jstBlock .wiki-preview { width: 99%; }
 
@@ -151,6 +143,10 @@
   .jstBlock .wiki-preview { padding: 2px; }
   .jstBlock .wiki-preview p:first-child { padding-top: 0 !important; margin-top: 0 !important;}
   .jstBlock .wiki-preview p:last-child { padding-bottom: 0 !important; margin-bottom: 0 !important;}
+
+  .jstb_ins {
+    background-image: url(images/underline_dark.svg);
+  }
 
   .jstb_strong {
     background-image: url(images/bold_dark.svg);
