@@ -381,7 +381,7 @@
   // Lychee Issue Form
   .lychee-issue-form__container_full,
   .lychee-issue-form__container_half {
-    button.context,
+    button.watch, button.context,
     button.mini-context {
       @apply cursor-pointer inline-block w-6 h-6 bg-center align-middle bg-background-secondary border border-background-secondary text-xs p-0 rounded-md hover:border-border-default active:bg-background-tertiary
     }
