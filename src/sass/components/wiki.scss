@@ -161,7 +161,8 @@ div.wiki .task-list input.task-list-item-checkbox {
   }
 
 
-  .wiki hr {
+  .wiki hr,
+  .controller-issues div.issue .wiki hr {
     @apply block h-[1px] my-4
   }
 
