@@ -1002,6 +1002,8 @@
 
   ul.cal .calbody {
     min-height: calc(1.2em * 3);
+
+    @apply border-l-0 p-1
   }
 
   ul.cal .calbody .abbr-day {
@@ -1009,10 +1011,10 @@
   }
 
   ul.cal .week-number {
-    border: 1px solid #c0c0c0;
     text-align: left;
     font-weight: bold;
-    background-color: #def;
+
+    @apply bg-background-dark/90 text-text-onFill py-2
   }
 
   ul.cal .week-number .label-week {
@@ -1022,6 +1024,10 @@
   ul.cal .calbody p.day-num {
     font-size: 1.1em;
     text-align: left;
+  }
+
+  p.legend.cal {
+    @apply flex flex-col gap-1
   }
 
   /*----------------------------------------*\
