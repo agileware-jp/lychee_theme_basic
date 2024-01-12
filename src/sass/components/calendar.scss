@@ -92,6 +92,10 @@
     @apply pl-4
   }
 
+  p.legend.cal {
+    @apply flex flex-col gap-1
+  }
+
   div.tooltip:hover span.tip {
     @apply bg-background-primary border border-border-divider text-sm text-text-default leading-6 p-4 rounded-md shadow-xl
   }
