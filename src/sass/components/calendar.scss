@@ -1,4 +1,5 @@
-/***** Calendar *****/
+/***** Calendar Before 5.0 *****/
+table.cal {width: 100%; margin: 0 0 6px 0; border: 1px solid #c0c0c0; border-spacing: 0; border-radius: 3px;}
 table.cal thead th {width: 14%; background-color:#EEEEEE; padding: 4px; }
 table.cal thead th.week-number {width: auto;}
 table.cal tbody tr {height: 100px;}
@@ -10,59 +11,110 @@ table.cal td.odd p.day-num {color: #bbb;}
 table.cal td.today {background:#ffffdd;}
 table.cal td.today p.day-num {font-weight: bold;}
 table.cal td.nwday:not(.odd) {background-color:#f1f1f1;}
-p.cal.legend span {display:block;}
+
+/***** Calendar After 5.1 *****/
+ul.cal {
+  list-style: none;
+  width: 100%;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 2rem repeat(7, 1fr);
+  margin: 0;
+  border: 1px solid #c0c0c0;
+  border-spacing: 0;
+  border-radius: 3px;
+}
+
+ul.cal .calhead {
+  background-color:#eee;
+  text-align: center;
+  font-weight: bold;
+  padding: 4px
+}
+
+ul.cal .week-number {
+  background-color:#eee;
+  border:none;
+  font-size: 1em;
+  padding: 4px;
+  text-align: center;
+}
+
+ul.cal .week-number .label-week {
+  display: none;
+}
+
+ul.cal .calbody {
+  border: 1px solid #d7d7d7;
+  vertical-align: top;
+  font-size: 0.9em;
+  border-bottom: 0;
+  border-right: 0;
+  line-height: 1.2;
+  min-height: calc(1.2em * 6);
+  padding: 2px;
+}
+
+ul.cal .calbody p.day-num {font-size: 1.1em; text-align:right;}
+ul.cal .calbody .abbr-day {display:none}
+ul.cal .calbody.odd p.day-num {color: #bbb;}
+ul.cal .calbody.today {background:#ffd;}
+ul.cal .calbody.today p.day-num {font-weight: bold;}
+
+ul.cal .calbody .icon {padding-top: 2px; padding-bottom: 3px;}
+ul.cal .calbody.nwday:not(.odd) {background-color:#f1f1f1;}
 
 @layer components {
-  table.cal {
-    @apply w-full border border-border-divider mt-0 mx-0 mb-2 rounded-none
-  }
+  // .cal {
+  //   @apply w-full border border-border-divider mt- 0 mx-0 mb-2 rounded-none
+  // }
 
-  table.cal thead th {
-    font-weight: normal;
+  // .cal thead th {
+  //   font-weight: normal;
 
-    @apply bg-background-secondary text-xs text-text-default px-2 py-1
-  }
+  //   @apply bg-background-secondary text-xs text-text-default px-2 py-1
+  // }
 
-  table.cal td {
-    @apply border-border-divider
-  }
+  // .cal td {
+  //   @apply border-border-divider
+  // }
 
-  table.cal td.week-number {
-    @apply bg-background-secondary text-xs text-text-default px-2 py-1
-  }
+  // .cal td.week-number {
+  //   @apply bg-background-secondary text-xs text-text-default px-2 py-1
+  // }
 
-  table.cal td.nwday:not(.odd) {
-    @apply bg-background-secondary text-text-default text-xs
-  }
+  // .cal td.nwday:not(.odd) {
+  //   @apply bg-background-secondary text-text-default text-xs
+  // }
 
-  table.cal td.odd p.day-num {
-    @apply text-text-caption
-  }
+  // .cal td.odd p.day-num {
+  //   @apply text-text-caption
+  // }
 
-  table.cal .starting a.issue, p.cal.legend .starting {
+  .cal .starting a.issue, p.cal.legend .starting {
     background: url(images/arrow_right_success.svg) no-repeat -1px center;
     @apply pl-4
   }
 
-  table.cal .ending a.issue, p.cal.legend .ending {
+  .cal .ending a.issue, p.cal.legend .ending {
     background: url(images/arrow_left_danger.svg) no-repeat -1px center;
     @apply pl-4
   }
 
-  table.cal .starting.ending a.issue, p.cal.legend .starting.ending {
+  .cal .starting.ending a.issue, p.cal.legend .starting.ending {
     background: url(images/bullet_diamond_danger.svg) no-repeat -1px center;
     @apply pl-4
   }
 
-  div.tooltip:hover span.tip {
-    @apply bg-background-primary border border-border-divider text-sm text-text-default leading-6 p-4 rounded-md shadow-xl
-  }
+  // div.tooltip:hover span.tip {
+  //   @apply bg-background-primary border border-border-divider text-sm text-text-default leading-6 p-4 rounded-md shadow-xl
+  // }
 
-  div.tooltip:hover span.tip .issue {
-    @apply text-sm
-  }
+  // div.tooltip:hover span.tip .issue {
+  //   @apply text-sm
+  // }
 
-  div.tooltip:hover span.tip a {
-    @apply text-sm
-  }
+  // div.tooltip:hover span.tip a {
+  //   @apply text-sm
+  // }
 }
