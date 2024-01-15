@@ -326,6 +326,12 @@
     }
   }
 
+  // リポジトリのキャンセルボタン
+  // - theme.jsでaw_cancelBtnを適用しているが、バージョン管理システム毎にViewを再レンダリングしているようで、切り替えるとcssが適用されなくなるためこちらで適用する
+  #repository-form  input[type="submit"] + a {
+    @extend .BTN_LINK;
+  }
+
   // Time Management
   .controller-time_management {
     #filters + .buttons .icon-checked {
