@@ -637,6 +637,19 @@
     cursor: pointer;
   }
 
+  /* Custom Query */
+  .flyout-menu .queries li {
+    @apply flex items-center
+  }
+
+  .flyout-menu .queries li .selected + .icon-only {
+    @apply flex indent-[100%] ml-1
+  }
+
+  .flyout-menu .queries li .selected + .icon-only:hover {
+    @apply bg-transparent
+  }
+
   #admin-menu {
     padding-left: 0;
   }
