@@ -991,6 +991,41 @@
     width: 100%;
   }
 
+  /* Calendar */
+  ul.cal {
+    display: block
+  }
+
+  ul.cal .calhead {
+    display: none
+  }
+
+  ul.cal .calbody {
+    min-height: calc(1.2em * 3);
+
+    @apply border-l-0 p-1
+  }
+
+  ul.cal .calbody .abbr-day {
+    display: inline;
+  }
+
+  ul.cal .week-number {
+    text-align: left;
+    font-weight: bold;
+
+    @apply bg-background-dark/90 text-text-onFill py-2
+  }
+
+  ul.cal .week-number .label-week {
+    display: inline;
+  }
+
+  ul.cal .calbody p.day-num {
+    font-size: 1.1em;
+    text-align: left;
+  }
+
   /*----------------------------------------*\
     H) PLUGINS
   \*----------------------------------------*/
@@ -1027,6 +1062,7 @@
     @apply whitespace-nowrap
   }
 }
+
 
 // @container wrapper (max-width: 1250px) {
 //   #top-menu {

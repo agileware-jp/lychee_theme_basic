@@ -1,57 +1,99 @@
-/***** Calendar *****/
-table.cal thead th {width: 14%; background-color:#EEEEEE; padding: 4px; }
-table.cal thead th.week-number {width: auto;}
-table.cal tbody tr {height: 100px;}
-table.cal td .icon {padding-top: 2px; padding-bottom: 3px;}
-table.cal td {border: 1px solid #d7d7d7; vertical-align: top; font-size: 0.9em; border-bottom: 0; border-right: 0;}
-table.cal td.week-number { background-color:#EEEEEE; padding: 4px; border:none; font-size: 1em;}
-table.cal td p.day-num {font-size: 1.1em; text-align:right;}
-table.cal td.odd p.day-num {color: #bbb;}
-table.cal td.today {background:#ffffdd;}
-table.cal td.today p.day-num {font-weight: bold;}
-table.cal td.nwday:not(.odd) {background-color:#f1f1f1;}
-p.cal.legend span {display:block;}
-
 @layer components {
-  table.cal {
+  /***** Calendar Before 5.0 *****/
+  table.cal { border-spacing: 0;}
+  table.cal thead th {width: 14%; }
+  table.cal thead th.week-number {width: auto;}
+  table.cal tbody tr {height: 100px;}
+  table.cal td .icon {padding-top: 2px; padding-bottom: 3px;}
+  table.cal td { vertical-align: top; }
+  table.cal td.week-number { border:none; }
+  table.cal td p.day-num {font-size: 1.1em; text-align:right;}
+  table.cal td.today {background:#ffffdd;}
+  table.cal td.today p.day-num {font-weight: bold;}
+
+  /***** Calendar After 5.1 *****/
+  ul.cal {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 2rem repeat(7, 1fr);
+    border-spacing: 0;
+  }
+
+  ul.cal .calhead {
+    text-align: center;
+  }
+
+  ul.cal .week-number {
+    border:none;
+    text-align: center;
+  }
+
+  ul.cal .week-number .label-week {
+    display: none;
+  }
+
+  ul.cal .calbody {
+    vertical-align: top;
+    min-height: calc(1.2em * 6);
+    padding: 2px;
+  }
+
+  ul.cal .calbody p.day-num {font-size: 1.1em; text-align:right;}
+  ul.cal .calbody .abbr-day {display:none}
+  ul.cal .calbody.today {background:#ffd;}
+  ul.cal .calbody.today p.day-num {font-weight: bold;}
+
+  ul.cal .calbody .icon {padding-top: 2px; padding-bottom: 3px;}
+
+  /***** Original *****/
+  table.cal,
+  ul.cal {
     @apply w-full border border-border-divider mt-0 mx-0 mb-2 rounded-none
   }
 
-  table.cal thead th {
-    font-weight: normal;
+  table.cal thead th,
+  ul.cal .calhead {
+    @apply bg-background-secondary text-xs text-text-default font-normal px-2 py-1
+  }
 
+  table.cal td,
+  ul.cal .calbody {
+    @apply border-t border-l border-border-divider text-xs
+  }
+
+  table.cal td.week-number,
+  ul.cal .week-number {
     @apply bg-background-secondary text-xs text-text-default px-2 py-1
   }
 
-  table.cal td {
-    @apply border-border-divider
-  }
-
-  table.cal td.week-number {
-    @apply bg-background-secondary text-xs text-text-default px-2 py-1
-  }
-
-  table.cal td.nwday:not(.odd) {
+  table.cal td.nwday:not(.odd),
+  ul.cal .calbody.nwday:not(.odd) {
     @apply bg-background-secondary text-text-default text-xs
   }
 
-  table.cal td.odd p.day-num {
+  table.cal td.odd p.day-num,
+  ul.cal .calbody.odd p.day-num {
     @apply text-text-caption
   }
 
-  table.cal .starting a.issue, p.cal.legend .starting {
+  .cal .starting a.issue, p.cal.legend .starting {
     background: url(images/arrow_right_success.svg) no-repeat -1px center;
     @apply pl-4
   }
 
-  table.cal .ending a.issue, p.cal.legend .ending {
+  .cal .ending a.issue, p.cal.legend .ending {
     background: url(images/arrow_left_danger.svg) no-repeat -1px center;
     @apply pl-4
   }
 
-  table.cal .starting.ending a.issue, p.cal.legend .starting.ending {
+  .cal .starting.ending a.issue, p.cal.legend .starting.ending {
     background: url(images/bullet_diamond_danger.svg) no-repeat -1px center;
     @apply pl-4
+  }
+
+  p.legend.cal {
+    @apply flex flex-col gap-1
   }
 
   div.tooltip:hover span.tip {
