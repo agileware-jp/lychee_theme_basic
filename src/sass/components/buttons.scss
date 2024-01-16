@@ -373,8 +373,30 @@
 
   // Lychee Project Report
   .controller-indice_settings {
+    #content > .contextual a {
+      @apply border-none text-text-link p-0 shadow-none
+    }
+
+    #content > .contextual a.icon {
+      @apply pl-6
+    }
+
     #content h3 + .contextual a:not([class]) {
+      background-image: url(images/add_circle_onFill.svg);
       @extend .BTN_PRIMARY;
+      @apply bg-no-repeat pl-7 bg-[0.7rem_center]
+    }
+  }
+
+  .controller-project_report_settings,
+  .controller-project_report_active_shared_layouts,
+  .controller-enabled_report_indice_settings {
+    #content > .contextual a {
+      @apply border-none text-text-link p-0 shadow-none
+    }
+
+    #content > .contextual a.icon {
+      @apply pl-6
     }
   }
 
