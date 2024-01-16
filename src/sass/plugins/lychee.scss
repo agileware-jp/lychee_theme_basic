@@ -251,6 +251,10 @@
 
   // Lychee Gantt Chart
   .controller-lgc.controller-lgc {
+    .lgc-tree {
+      @apply pb-6
+    }
+
     .lgc-issueDetail-header {
       @apply h-auto py-2
     }
