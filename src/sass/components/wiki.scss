@@ -1,66 +1,67 @@
-div.wiki-page .contextual a {opacity: 0.4}
-div.wiki-page .contextual a:hover {opacity: 1}
-
-div.wiki a:target + h1, div.wiki a:target + h2, div.wiki a:target + h3, div.wiki a:target + h4, div.wiki a:target + h5, div.wiki a:target + h6 {
-  background-color:#DDEEFF;
-}
-
-/***** Wiki *****/
-div.wiki .wiki-class-noborder, div.wiki .wiki-class-noborder td, div.wiki .wiki-class-noborder th {border:0;}
-
-div.wiki .external {
-  background-position: 0% 60%;
-  background-repeat: no-repeat;
-  padding-left: 12px;
-  background-image: url(../default/external.png);
-}
-
-div.wiki *:not(pre)>code, div.wiki>code {
-  background: rgba(62, 91, 118, 0.08);
-  padding: 0.1em 0.1em;
-  border-radius: 0.1em;
-}
-
-div.wiki ul.toc {
-  background-color: #ffffdd;
-  border: 1px solid #e4e4e4;
-  padding: 4px;
-  line-height: 1.2em;
-  margin-bottom: 12px;
-  margin-right: 12px;
-  margin-left: 0;
-  display: table
-}
-* html div.wiki ul.toc { width: 50%; } /* IE6 doesn't autosize div */
-
-div.wiki ul.toc.right { float: right; margin-left: 12px; margin-right: 0; width: auto; }
-div.wiki ul.toc.left  { float: left; margin-right: 12px; margin-left: 0; width: auto; }
-div.wiki ul.toc ul { margin: 0; padding: 0; }
-div.wiki ul.toc li {list-style-type:none; margin: 0; font-size:12px;}
-div.wiki ul.toc>li:first-child {margin-bottom: .5em; color: #777;}
-div.wiki ul.toc li li {margin-left: 1.5em; font-size:10px;}
-div.wiki ul.toc a {
-  font-size: 0.9em;
-  font-weight: normal;
-  text-decoration: none;
-  color: #606060;
-}
-div.wiki ul.toc a:hover { color: #c61a1a; text-decoration: underline;}
-
-a.wiki-anchor { display: none; margin-left: 6px; text-decoration: none; }
-a.wiki-anchor:hover { color: #aaa !important; text-decoration: none; }
-h1:hover a.wiki-anchor, h2:hover a.wiki-anchor, h3:hover a.wiki-anchor, h4:hover a.wiki-anchor, h5:hover a.wiki-anchor, h6:hover a.wiki-anchor { display: inline; color: #ddd; }
-
-div.wiki img {vertical-align:middle; max-width:100%;}
-div.wiki .task-list {
-  list-style-type: none;
-  padding-left: 0px;
-}
-div.wiki .task-list input.task-list-item-checkbox {
-  height: initial;
-}
-
 @layer components {
+  div.wiki-page .contextual a {opacity: 0.4}
+  div.wiki-page .contextual a:hover {opacity: 1}
+
+  div.wiki a:target + h1, div.wiki a:target + h2, div.wiki a:target + h3, div.wiki a:target + h4, div.wiki a:target + h5, div.wiki a:target + h6 {
+    background-color:#DDEEFF;
+  }
+
+  /***** Wiki *****/
+  div.wiki .wiki-class-noborder, div.wiki .wiki-class-noborder td, div.wiki .wiki-class-noborder th {border:0;}
+
+  div.wiki .external {
+    background-position: 0% 60%;
+    background-repeat: no-repeat;
+    padding-left: 12px;
+    background-image: url(../default/external.png);
+  }
+
+  div.wiki *:not(pre)>code, div.wiki>code {
+    background: rgba(62, 91, 118, 0.08);
+    padding: 0.1em 0.1em;
+    border-radius: 0.1em;
+  }
+
+  div.wiki ul.toc {
+    background-color: #ffffdd;
+    border: 1px solid #e4e4e4;
+    padding: 4px;
+    line-height: 1.2em;
+    margin-bottom: 12px;
+    margin-right: 12px;
+    margin-left: 0;
+    display: table
+  }
+  * html div.wiki ul.toc { width: 50%; } /* IE6 doesn't autosize div */
+
+  div.wiki ul.toc.right { float: right; margin-left: 12px; margin-right: 0; width: auto; }
+  div.wiki ul.toc.left  { float: left; margin-right: 12px; margin-left: 0; width: auto; }
+  div.wiki ul.toc ul { margin: 0; padding: 0; }
+  div.wiki ul.toc li {list-style-type:none; margin: 0; font-size:12px;}
+  div.wiki ul.toc>li:first-child {margin-bottom: .5em; color: #777;}
+  div.wiki ul.toc li li {margin-left: 1.5em; font-size:10px;}
+  div.wiki ul.toc a {
+    font-size: 0.9em;
+    font-weight: normal;
+    text-decoration: none;
+    color: #606060;
+  }
+  div.wiki ul.toc a:hover { color: #c61a1a; text-decoration: underline;}
+
+  a.wiki-anchor { display: none; margin-left: 6px; text-decoration: none; }
+  a.wiki-anchor:hover { color: #aaa !important; text-decoration: none; }
+  h1:hover a.wiki-anchor, h2:hover a.wiki-anchor, h3:hover a.wiki-anchor, h4:hover a.wiki-anchor, h5:hover a.wiki-anchor, h6:hover a.wiki-anchor { display: inline; color: #ddd; }
+
+  div.wiki img {vertical-align:middle; max-width:100%;}
+  div.wiki .task-list {
+    list-style-type: none;
+    padding-left: 0px;
+  }
+  div.wiki .task-list input.task-list-item-checkbox {
+    height: initial;
+  }
+
+
   .wiki.wiki-page {
     @apply clear-both bg-background-primary border border-border-divider mt-4 mb-6 p-8 rounded-md
   }
