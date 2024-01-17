@@ -219,4 +219,8 @@
   .jstb_help {
     background-image: url(images/help_dark.svg);
   }
+
+  .wiki-preview img {
+    @apply border-2 border-border-divider my-2
+  }
 }

@@ -214,6 +214,10 @@ div.wiki .task-list input.task-list-item-checkbox {
     @apply text-xs
   }
 
+  .wiki img {
+    @apply border-2 border-border-divider my-2
+  }
+
 
   // diff
   .text-diff {

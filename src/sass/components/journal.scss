@@ -45,6 +45,10 @@
     @apply mt-4
   }
 
+  .journal .wiki img {
+    @apply border-2 border-border-divider my-2
+  }
+
   body.avatars-off .journal .wiki {
     @apply pl-4
   }
