@@ -13,7 +13,13 @@
     background-position: 0% 60%;
     background-repeat: no-repeat;
     padding-left: 12px;
-    background-image: url(../default/external.png);
+    background-image: url(../../../images/external.png);
+  }
+
+  div.wiki *:not(pre)>code, div.wiki>code {
+    background: rgba(62, 91, 118, 0.08);
+    padding: 0.1em 0.1em;
+    border-radius: 0.1em;
   }
 
   div.wiki ul.toc {
@@ -54,7 +60,6 @@
   div.wiki .task-list input.task-list-item-checkbox {
     height: initial;
   }
-
 
   .wiki.wiki-page {
     @apply clear-both bg-background-primary border border-border-divider mt-4 mb-6 p-8 rounded-md
