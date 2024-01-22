@@ -11,6 +11,7 @@ module.exports = {
     'stylesheets/application': './src/sass/application.scss',
     'stylesheets/responsive': './src/sass/responsive.scss',
     'stylesheets/context_menu': './src/sass/context_menu.scss',
+    'stylesheets/scm': './src/sass/scm.scss',
     'stylesheets/jstoolbar': './src/sass/jstoolbar.scss',
     'javascripts/theme': './src/js/index.js'
   },
