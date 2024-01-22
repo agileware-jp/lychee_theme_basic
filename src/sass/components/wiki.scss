@@ -168,12 +168,11 @@
 
 
   .wiki pre {
-    @apply bg-background-secondary/50 border border-border-divider text-xs mr-2 mb-4 ml-4 p-4 rounded-lg overflow-x-auto overflow-y-hidden
+    @apply bg-background-secondary border border-border-default text-xs mr-2 mb-4 ml-4 p-4 rounded-lg overflow-x-auto overflow-y-hidden
   }
 
-  .wiki *:not(pre) > code,
-  .wiki > code {
-    @apply rounded py-0.5 px-1
+  div.wiki *:not(pre)>code, div.wiki>code {
+    @apply bg-background-secondary border border-border-default text-text-danger mx-0.5 py-0.5 px-1.5 rounded
   }
 
   .wiki blockquote pre {
