@@ -125,6 +125,18 @@
   }
 
   // 個別系
+  // チケット作成・編集
+  .controller-issues {
+    .new_issue input:not([type="submit"]),
+    .new_issue select,
+    .new_issue textarea,
+    .edit_issue input:not([type="submit"]),
+    .edit_issue select,
+    .edit_issue textarea {
+      @apply text-xs py-1.5 pl-2
+    }
+  }
+
   // ファイル添付・コメント投稿系
   input[type="file"] {
     @apply block w-full bg-background-secondary text-sm text-text-default p-2 rounded-md
