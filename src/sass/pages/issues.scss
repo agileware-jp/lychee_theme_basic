@@ -37,15 +37,15 @@
     }
 
     div.issue .attributes .attribute {
-      @apply flex items-center mb-2 pl-0
+      @apply flex items-center mb-1 pl-0
     }
 
     div.issue .attributes .attribute .label {
-      @apply float-none block w-auto text-sm text-text-default text-left m-0
+      @apply float-none block w-auto text-sm text-text-default text-left my-0 mr-2 ml-0
     }
 
     div.issue .attribute .value {
-      @apply max-w-none text-sm text-text-default ml-2
+      @apply max-w-none text-sm text-text-default
     }
 
     div.issue .attribute .value a {
@@ -153,7 +153,7 @@
     }
 
     #attributes .splitcontent {
-      @apply mt-4
+      @apply my-4
     }
 
     // editフォームのレイアウト変更
