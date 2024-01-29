@@ -40,4 +40,12 @@
   .tabular input[type="checkbox"] {
     @apply mt-1.5
   }
+
+  // 個別対応
+  // チケット作成・編集
+  .controller-issues {
+    .tabular p ~ p {
+      @apply mt-2
+    }
+  }
 }
