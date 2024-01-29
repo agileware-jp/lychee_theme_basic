@@ -58,17 +58,19 @@ function addBtnToToggleMainMenu() {
   mainMenu.appendChild(btn)
 }
 
-function openMainMenu(mainMenu, mainContent, toggleTrigger, header) {
+function openMainMenu(mainMenu, mainContent, toggleTrigger, wrapper, header) {
   mainMenu.classList.remove('isMainMenuClose')
   mainContent.classList.remove('isMainMenuClose')
   toggleTrigger.classList.remove('isMainMenuClose')
+  wrapper.classList.remove('isMainMenuClose')
   header.classList.remove('isMainMenuClose')
 }
 
-function closeMainMenu(mainMenu, mainContent, toggleTrigger, header) {
+function closeMainMenu(mainMenu, mainContent, toggleTrigger, wrapper, header) {
   mainMenu.classList.add('isMainMenuClose')
   mainContent.classList.add('isMainMenuClose')
   toggleTrigger.classList.add('isMainMenuClose')
+  wrapper.classList.add('isMainMenuClose')
   header.classList.add('isMainMenuClose')
 }
 
@@ -76,12 +78,13 @@ function toggleMainMenu() {
   const mainMenu = document.querySelector('#main-menu')
   const mainContent = document.querySelector('#main')
   const toggleTrigger = document.querySelector('.aw_toggleMainMenu')
+  const wrapper = document.querySelector('#wrapper')
   const header = document.querySelector('#header')
 
   if(mainMenu.classList.contains('isMainMenuClose')) {
-    openMainMenu(mainMenu, mainContent, toggleTrigger, header)
+    openMainMenu(mainMenu, mainContent, toggleTrigger, wrapper, header)
   } else {
-    closeMainMenu(mainMenu, mainContent, toggleTrigger, header)
+    closeMainMenu(mainMenu, mainContent, toggleTrigger, wrapper, header)
   }
 }
 
@@ -177,13 +180,14 @@ window.addEventListener('DOMContentLoaded', () => {
     const mainContent = document.querySelector('#main')
     const toggleTriggerMainMneu = document.querySelector('.aw_toggleMainMenu')
     const toggleTriggerSidebar = document.querySelector('.aw_toggleSidebar')
+    const wrapper = document.querySelector('#wrapper')
     const header = document.querySelector('#header')
 
     if(lycheeBody.classList.contains('lychee-issue-form__body_half')) {
-      closeMainMenu(mainMenu, mainContent, toggleTriggerMainMneu, header)
+      closeMainMenu(mainMenu, mainContent, toggleTriggerMainMneu, wrapper, header)
       closeSidebar(sidebar, mainContent, toggleTriggerSidebar)
     } else {
-      openMainMenu(mainMenu, mainContent, toggleTriggerMainMneu, header)
+      openMainMenu(mainMenu, mainContent, toggleTriggerMainMneu, wrapper, header)
       openSidebar(sidebar, mainContent, toggleTriggerSidebar)
     }
   })
