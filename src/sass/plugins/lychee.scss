@@ -907,25 +907,25 @@
   // NOTE: メインメニューのサイドバー化の影響で、bannerがメインメニューと重なってしまう
   //       メインメニューのあり／なしでスタイルを変える
   //       プロレポや全画面表示など、見かけ上ではメインメニューが存在しないが、非表示になっているだけのページが存在するので注意
-  .has-main-menu #wrapper .banner_area {
+  .has-main-menu #wrapper .global_banner {
     @apply ml-52
   }
 
   // メインメニューを閉じたときの対応
-  #wrapper.isMainMenuClose .banner_area {
+  #wrapper.isMainMenuClose .global_banner {
     @apply ml-20
   }
 
   // メインメニューを非表示にしているLycheeプラグインの画面対応
-  .controller-resource_management #wrapper .banner_area,
-  .controller-project_report_overview #wrapper .banner_area,
-  .controller-lychee_work_plan,
-  .controller-time_management,
-  .controller-lychee_message_box_informations #wrapper .banner_area,
-  .controller-lychee_message_box_my_boxes #wrapper .banner_area,
-  .controller-lychee_message_box_system_errors #wrapper .banner_area,
-  .lgc-is-fullscreen #wrapper .banner_area,
-  .task-kanban-is-fullscreen #wrapper .banner_area {
+  .controller-resource_management #wrapper .global_banner,
+  .controller-project_report_overview #wrapper .global_banner,
+  .controller-lychee_work_plan #wrapper .global_banner,
+  .controller-time_management #wrapper .global_banner,
+  .controller-lychee_message_box_informations #wrapper .global_banner,
+  .controller-lychee_message_box_my_boxes #wrapper .global_banner,
+  .controller-lychee_message_box_system_errors #wrapper .global_banner,
+  .lgc-is-fullscreen #wrapper .global_banner,
+  .task-kanban-is-fullscreen #wrapper .global_banner {
     @apply ml-0
   }
 }
