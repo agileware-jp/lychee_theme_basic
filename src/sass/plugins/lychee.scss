@@ -928,4 +928,26 @@
   .task-kanban-is-fullscreen #wrapper .global_banner {
     @apply ml-0
   }
+
+
+  // View Customize
+  .controller-view_customizes {
+    table.view_customize.box th {
+      @apply pl-3
+    }
+
+    table.view_customize.box td {
+      @apply pr-3
+    }
+
+    table.view_customize.box tr:first-child th,
+    table.view_customize.box tr:first-child td {
+      @apply pt-4
+    }
+
+    table.view_customize.box tr:last-child th,
+    table.view_customize.box tr:last-child td {
+      @apply pb-4
+    }
+  }
 }
