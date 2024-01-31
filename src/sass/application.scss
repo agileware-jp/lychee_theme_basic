@@ -80,6 +80,7 @@
 
 // Plugins
 @use './plugins/lychee.scss' as *;
+@use './plugins/oss.scss' as *;
 
 // Responsive
 @use './responsives/responsive.scss' as *;
