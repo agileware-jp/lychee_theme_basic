@@ -166,27 +166,6 @@ function addFeedbackLink() {
   topMenuNav.appendChild(li)
 }
 
-// IssueFormが開いたときにMainMenuとSidebarを閉じる
-window.addEventListener('DOMContentLoaded', () => {
-  const lycheeBody = document.querySelector('body')
-
-  const observer = new MutationObserver((mutations) => {
-    if(lycheeBody.classList.contains('lychee-issue-form__body_half')) {
-      closeMainMenu()
-      closeSidebar()
-    } else {
-      openMainMenu()
-      openSidebar()
-    }
-  })
-
-
-  observer.observe(lycheeBody, {
-    attributes: true,
-    attributeFilter: ['class']
-  })
-})
-
 /**
  * Sticky MainMenu
  */
