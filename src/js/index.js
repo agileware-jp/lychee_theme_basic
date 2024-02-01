@@ -58,33 +58,31 @@ function addBtnToToggleMainMenu() {
   mainMenu.appendChild(btn)
 }
 
-function openMainMenu(mainMenu, mainContent, toggleTrigger, wrapper, header) {
-  mainMenu.classList.remove('isMainMenuClose')
-  mainContent.classList.remove('isMainMenuClose')
-  toggleTrigger.classList.remove('isMainMenuClose')
-  wrapper.classList.remove('isMainMenuClose')
-  header.classList.remove('isMainMenuClose')
+function openMainMenu() {
+  document.querySelector('#main-menu').classList.remove('isMainMenuClose')
+  document.querySelector('#main').classList.remove('isMainMenuClose')
+  document.querySelector('.aw_toggleMainMenu').classList.remove('isMainMenuClose')
+  document.querySelector('#wrapper').classList.remove('isMainMenuClose')
+  document.querySelector('#header').classList.remove('isMainMenuClose')
 }
 
-function closeMainMenu(mainMenu, mainContent, toggleTrigger, wrapper, header) {
-  mainMenu.classList.add('isMainMenuClose')
-  mainContent.classList.add('isMainMenuClose')
-  toggleTrigger.classList.add('isMainMenuClose')
-  wrapper.classList.add('isMainMenuClose')
-  header.classList.add('isMainMenuClose')
+function closeMainMenu() {
+  document.querySelector('#main-menu').classList.add('isMainMenuClose')
+  document.querySelector('#main').classList.add('isMainMenuClose')
+  document.querySelector('.aw_toggleMainMenu').classList.add('isMainMenuClose')
+  document.querySelector('#wrapper').classList.add('isMainMenuClose')
+  document.querySelector('#header').classList.add('isMainMenuClose')
 }
 
 function toggleMainMenu() {
   const mainMenu = document.querySelector('#main-menu')
-  const mainContent = document.querySelector('#main')
-  const toggleTrigger = document.querySelector('.aw_toggleMainMenu')
-  const wrapper = document.querySelector('#wrapper')
-  const header = document.querySelector('#header')
 
   if(mainMenu.classList.contains('isMainMenuClose')) {
-    openMainMenu(mainMenu, mainContent, toggleTrigger, wrapper, header)
+    openMainMenu()
+    localStorage.setItem('isMainMenuClose', false)
   } else {
-    closeMainMenu(mainMenu, mainContent, toggleTrigger, wrapper, header)
+    closeMainMenu()
+    localStorage.setItem('isMainMenuClose', true)
   }
 }
 
@@ -110,29 +108,27 @@ function addBtnToToggleSidebar() {
   sidebar.appendChild(btn)
 }
 
-function openSidebar(sidebar, mainContent, toggleTrigger) {
-  sidebar.classList.remove('isSidebarClose')
-  mainContent.classList.remove('isSidebarClose')
-  toggleTrigger.classList.remove('isSidebarClose')
+function openSidebar() {
+  document.querySelector('#sidebar').classList.remove('isSidebarClose')
+  document.querySelector('#main').classList.remove('isSidebarClose')
+  document.querySelector('.aw_toggleSidebar').classList.remove('isSidebarClose')
 }
 
-function closeSidebar(sidebar, mainContent, toggleTrigger) {
-  sidebar.classList.add('isSidebarClose')
-  mainContent.classList.add('isSidebarClose')
-  toggleTrigger.classList.add('isSidebarClose')
+function closeSidebar() {
+  document.querySelector('#sidebar').classList.add('isSidebarClose')
+  document.querySelector('#main').classList.add('isSidebarClose')
+  document.querySelector('.aw_toggleSidebar').classList.add('isSidebarClose')
 }
 
 // sidebarの折りたたみ
 function toggleSidebar() {
   const sidebar = document.querySelector('#sidebar')
-  const mainContent = document.querySelector('#main')
-  const toggleTrigger = document.querySelector('.aw_toggleSidebar')
 
   // 切り替え処理
   if(sidebar.classList.contains('isSidebarClose')) {
-    openSidebar(sidebar, mainContent, toggleTrigger)
+    openSidebar()
   } else {
-    closeSidebar(sidebar, mainContent, toggleTrigger)
+    closeSidebar()
   }
 }
 
@@ -175,20 +171,12 @@ window.addEventListener('DOMContentLoaded', () => {
   const lycheeBody = document.querySelector('body')
 
   const observer = new MutationObserver((mutations) => {
-    const mainMenu = document.querySelector('#main-menu')
-    const sidebar = document.querySelector('#sidebar')
-    const mainContent = document.querySelector('#main')
-    const toggleTriggerMainMneu = document.querySelector('.aw_toggleMainMenu')
-    const toggleTriggerSidebar = document.querySelector('.aw_toggleSidebar')
-    const wrapper = document.querySelector('#wrapper')
-    const header = document.querySelector('#header')
-
     if(lycheeBody.classList.contains('lychee-issue-form__body_half')) {
-      closeMainMenu(mainMenu, mainContent, toggleTriggerMainMneu, wrapper, header)
-      closeSidebar(sidebar, mainContent, toggleTriggerSidebar)
+      closeMainMenu()
+      closeSidebar()
     } else {
-      openMainMenu(mainMenu, mainContent, toggleTriggerMainMneu, wrapper, header)
-      openSidebar(sidebar, mainContent, toggleTriggerSidebar)
+      openMainMenu()
+      openSidebar()
     }
   })
 
@@ -213,9 +201,24 @@ window.addEventListener('DOMContentLoaded', () => {
   repositionTopMenu()
   addFeedbackLink()
 
-  // mainMenuがない場合headerはfull width表示
+  /**
+   * Main Menu / Sidebarの開閉機能
+   */
+  initToggleMainMenu()
+  initToggleSidebar()
+
+  // mainMenuがあるかどうか
   if(document.querySelector('#main-menu') !== null) {
+    // mainMenuがない場合headerはfull width表示にするため、区別用classを付与しておく
     document.querySelector('#header').classList.add('aw_hasMainMenu')
+
+    // ローカルストレージから開閉状態を復元
+    const isMainMenuClose = localStorage.getItem('isMainMenuClose') === 'true'
+    if(isMainMenuClose) {
+      closeMainMenu()
+    } else {
+      openMainMenu()
+    }
   }
 
   // mainMenuのtopプロパティを指定
@@ -231,13 +234,6 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     })
   }
-
-
-  /**
-   * Main Menu / Sidebarの開閉機能
-   */
-  initToggleMainMenu()
-  initToggleSidebar()
 
 
   /**

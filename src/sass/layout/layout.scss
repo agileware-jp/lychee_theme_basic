@@ -32,6 +32,20 @@
     @apply ml-[5rem]
   }
 
+  .controller-resource_management #main.nosidebar.isMainMenuClose,
+  .controller-project_report_overview #main.nosidebar.isMainMenuClose,
+  .controller-lychee_work_plan #main.nosidebar.isMainMenuClose,
+  .controller-time_management #main.nosidebar.isMainMenuClose,
+  .controller-lychee_message_box_informations #main.nosidebar.isMainMenuClose,
+  .controller-lychee_message_box_my_boxes #main.nosidebar.isMainMenuClose,
+  .controller-lychee_message_box_system_errors #main.nosidebar.isMainMenuClose
+  // .lgc-is-fullscreen #main.nosidebar.isMainMenuClose,
+  // .task-kanban-is-fullscreen #main.nosidebar.isMainMenuClose
+  {
+    transition: none;
+    @apply ml-0
+  }
+
   #content {
     @apply overflow-x-auto grow bg-background-primary p-6 order-1
   }
