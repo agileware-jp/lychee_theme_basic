@@ -64,6 +64,7 @@ function openMainMenu() {
   document.querySelector('.aw_toggleMainMenu').classList.remove('isMainMenuClose')
   document.querySelector('#wrapper').classList.remove('isMainMenuClose')
   document.querySelector('#header').classList.remove('isMainMenuClose')
+  localStorage.setItem('isMainMenuClose', false)
 }
 
 function closeMainMenu() {
@@ -72,6 +73,7 @@ function closeMainMenu() {
   document.querySelector('.aw_toggleMainMenu').classList.add('isMainMenuClose')
   document.querySelector('#wrapper').classList.add('isMainMenuClose')
   document.querySelector('#header').classList.add('isMainMenuClose')
+  localStorage.setItem('isMainMenuClose', true)
 }
 
 function toggleMainMenu() {
@@ -79,10 +81,8 @@ function toggleMainMenu() {
 
   if(mainMenu.classList.contains('isMainMenuClose')) {
     openMainMenu()
-    localStorage.setItem('isMainMenuClose', false)
   } else {
     closeMainMenu()
-    localStorage.setItem('isMainMenuClose', true)
   }
 }
 
@@ -213,8 +213,7 @@ window.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#header').classList.add('aw_hasMainMenu')
 
     // ローカルストレージから開閉状態を復元
-    const isMainMenuClose = localStorage.getItem('isMainMenuClose') === 'true'
-    if(isMainMenuClose) {
+    if(localStorage.getItem('isMainMenuClose') === 'true') {
       closeMainMenu()
     } else {
       openMainMenu()
