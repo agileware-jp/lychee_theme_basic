@@ -49,7 +49,7 @@
 
   #main.isMainMenuClose,
   .has-main-menu #main.nosidebar.isMainMenuClose {
-    @apply ml-6
+    @apply ml-[5rem]
   }
 
   .controller-resource_management,
@@ -74,10 +74,6 @@
 
   #main-menu li a {
     @apply text-xs
-  }
-
-  #main-menu.isMainMenuClose {
-    @apply -translate-x-[8.75rem]
   }
 
   #sidebar {
