@@ -26,6 +26,54 @@
     @apply ml-0
   }
 
+  @media screen and (max-width: 1250px) {
+    .has-main-menu #wrapper .global_banner {
+      @apply ml-44
+    }
+
+    // メインメニューを閉じたときの対応
+    #wrapper.isMainMenuClose .global_banner {
+      @apply ml-20
+    }
+
+    // メインメニューを非表示にしているLycheeプラグインの画面対応
+    .controller-resource_management #wrapper .global_banner,
+    .controller-project_report_overview #wrapper .global_banner,
+    .controller-lychee_work_plan #wrapper .global_banner,
+    .controller-time_management #wrapper .global_banner,
+    .controller-lychee_message_box_informations #wrapper .global_banner,
+    .controller-lychee_message_box_my_boxes #wrapper .global_banner,
+    .controller-lychee_message_box_system_errors #wrapper .global_banner,
+    .lgc-is-fullscreen #wrapper .global_banner,
+    .task-kanban-is-fullscreen #wrapper .global_banner {
+      @apply ml-0
+    }
+  }
+
+  @media screen and (max-width: 899px) {
+    .has-main-menu #wrapper .global_banner {
+      @apply ml-0
+    }
+
+    // メインメニューを閉じたときの対応
+    #wrapper.isMainMenuClose .global_banner {
+      @apply ml-0
+    }
+
+    // メインメニューを非表示にしているLycheeプラグインの画面対応
+    .controller-resource_management #wrapper .global_banner,
+    .controller-project_report_overview #wrapper .global_banner,
+    .controller-lychee_work_plan #wrapper .global_banner,
+    .controller-time_management #wrapper .global_banner,
+    .controller-lychee_message_box_informations #wrapper .global_banner,
+    .controller-lychee_message_box_my_boxes #wrapper .global_banner,
+    .controller-lychee_message_box_system_errors #wrapper .global_banner,
+    .lgc-is-fullscreen #wrapper .global_banner,
+    .task-kanban-is-fullscreen #wrapper .global_banner {
+      @apply ml-0
+    }
+  }
+
 
   // View Customize
   .controller-view_customizes {
