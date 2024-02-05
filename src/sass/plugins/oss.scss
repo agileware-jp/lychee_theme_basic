@@ -10,7 +10,7 @@
 
   // メインメニューを閉じたときの対応
   #wrapper.isMainMenuClose .global_banner {
-    @apply ml-20
+    @apply ml-[4rem]
   }
 
   // メインメニューを非表示にしているLycheeプラグインの画面対応
