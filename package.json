@@ -1,15 +1,11 @@
 {
-  "name": "agile-theme",
+  "name": "lychee_theme_basic",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": "true",
   "scripts": {
     "build": "npx webpack",
     "watch": "npx webpack --watch"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.4.14",
     "css-loader": "^6.7.3",
