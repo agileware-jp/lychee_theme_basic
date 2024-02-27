@@ -170,7 +170,7 @@ tr.builtin td.name {font-style:italic;}
 
 a.sort { padding-right: 16px; background-position: 100% 50%; background-repeat: no-repeat; }
 
-table.boards a.board { background: url(./default/comment.png) no-repeat 0% 50%; padding-left: 20px; }
+table.boards a.board { background: url(../../../images/comment.png) no-repeat 0% 50%; padding-left: 20px; }
 table.boards td.last-message {text-align:left;font-size:80%;}
 
 div.table-list.boards .table-list-cell.name {width: 30%;}
@@ -194,7 +194,7 @@ td.center {text-align:center;}
 span#watchers_inputs {overflow:auto; display:block;}
 span.search_for_watchers {display:block;}
 span.search_for_watchers, span.add_attachment {font-size:80%; line-height:2.5em;}
-span.add_attachment a {padding-left:16px; background: url(./default/bullet_add.png) no-repeat 0 50%; }
+span.add_attachment a {padding-left:16px; background: url(../../../images/bullet_add.png) no-repeat 0 50%; }
 
 input:disabled, select:disabled, textarea:disabled {
   cursor: not-allowed;
@@ -246,7 +246,7 @@ select {
   -o-appearance: none;
   appearance: none;
   background-color: #fff;
-  background-image: url(./default/arrow_down.png);
+  background-image: url(../../../images/arrow_down.png);
   background-repeat: no-repeat;
   background-position: calc(100% - 7px) 50%;
   padding-right: 20px;
@@ -443,7 +443,7 @@ select#issue_done_ratio { width: 95px; }
 }
 #projects-index a.icon-user, a.icon-bookmarked-project {padding-left:0; padding-right:20px; background-position:98% 50%;}
 #projects-index a.icon-user.icon-bookmarked-project {
-  background-image: url(./default/tag_blue.png), url(./default/user.png);
+  background-image: url(../../../images/tag_blue.png), url(../../../images/user.png);
   background-position: bottom 0px right 0px, bottom 0px right 20px;
   padding-right: 40px;
   padding-top: 4px;
@@ -656,8 +656,8 @@ span.required {color: #bb0000;}
 .attachments_fields input.filename, #existing-attachments .filename {border:0; width:250px; color:#555; background-color:inherit; }
 .tabular input.filename {max-width:75% !important;}
 .attachments_fields input.filename {height:1.8em;}
-.attachments_fields .ajax-waiting input.filename {background:url(./default/hourglass.png) no-repeat 0px 50%;}
-.attachments_fields .ajax-loading input.filename {background:url(./default/loading.gif) no-repeat 0px 50%;}
+.attachments_fields .ajax-waiting input.filename {background:url(../../../images/hourglass.png) no-repeat 0px 50%;}
+.attachments_fields .ajax-loading input.filename {background:url(../../../images/loading.gif) no-repeat 0px 50%;}
 .attachments_fields div.ui-progressbar { width: 100px; height:14px; margin: 2px 0 -5px 8px; display: inline-block; }
 
 a.remove-upload:hover {text-decoration:none !important;}
@@ -677,10 +677,10 @@ div.thumbnails img {margin: 3px; vertical-align: middle;}
 p.other-formats { text-align: right; font-size:0.9em; color: #666; }
 .other-formats span + span:before { content: "| "; }
 
-a.atom { background: url(./default/feed.png) no-repeat 1px 50%; padding: 2px 0px 3px 16px; }
+a.atom { background: url(../../../images/feed.png) no-repeat 1px 50%; padding: 2px 0px 3px 16px; }
 
 em.info {font-style:normal;display:block;font-size:90%;color:#888;}
-em.info.error {padding-left:20px; background:url(./default/exclamation.png) no-repeat 0 50%;}
+em.info.error {padding-left:20px; background:url(../../../images/exclamation.png) no-repeat 0 50%;}
 
 textarea.text_cf {width:95%; resize:vertical;}
 input.string_cf, input.link_cf {width:95%;}
@@ -695,10 +695,10 @@ input#principal_search, input#user_search {width:90%}
 .roles-selection label {display:inline-block; width:210px;}
 
 input.autocomplete {
-  background: #fff url(./default/magnifier.png) no-repeat 2px 50%; padding-left:20px !important;
+  background: #fff url(../../../images/magnifier.png) no-repeat 2px 50%; padding-left:20px !important;
 }
 input.autocomplete.ajax-loading {
-  background-image: url(./default/loading.gif);
+  background-image: url(../../../images/loading.gif);
 }
 
 .role-visibility {padding-left:2em;}
@@ -738,21 +738,21 @@ input.autocomplete.ajax-loading {
 div.flash {margin-top: 8px;}
 
 div.flash.error, #errorExplanation {
-  background: url(./default/exclamation.png) 8px 50% no-repeat;
+  background: url(../../../images/exclamation.png) 8px 50% no-repeat;
   background-color: #ffe3e3;
   border-color: #d88;
   color: #880000;
 }
 
 div.flash.notice {
-  background: url(./default/true.png) 8px 5px no-repeat;
+  background: url(../../../images/true.png) 8px 5px no-repeat;
   background-color: #dfffdf;
   border-color: #9fcf9f;
   color: #005f00;
 }
 
 div.flash.warning, .conflict {
-  background: url(./default/warning.png) 8px 5px no-repeat;
+  background: url(../../../images/warning.png) 8px 5px no-repeat;
   background-color: #F3EDD1;
   border-color: #eadbbc;
   color: #A6750C;
@@ -791,7 +791,7 @@ html>body #ajax-indicator { position: fixed; }
 #ajax-indicator span {
 background-position: 0% 40%;
 background-repeat: no-repeat;
-background-image: url(./default/loading.gif);
+background-image: url(../../../images/loading.gif);
 padding-left: 26px;
 vertical-align: bottom;
 }
@@ -913,13 +913,13 @@ button.tab-left:focus, button.tab-right:focus {
 
 button.tab-left {
   right: 28px;
-  background: #eeeeee url(./default/arrow_left.png) no-repeat 50% 50%;
+  background: #eeeeee url(../../../images/arrow_left.png) no-repeat 50% 50%;
   border-top-left-radius:3px;
 }
 
 button.tab-right {
   right: 4px;
-  background: #eeeeee url(./default/arrow_right.png) no-repeat 50% 50%;
+  background: #eeeeee url(../../../images/arrow_right.png) no-repeat 50% 50%;
   border-top-right-radius:3px;
 }
 
@@ -1018,7 +1018,7 @@ button.tab-left.disabled, button.tab-right.disabled {
 
 
 
-.sort-handle.ajax-loading { background-image: url(./default/loading.gif); }
+.sort-handle.ajax-loading { background-image: url(../../../images/loading.gif); }
 tr.ui-sortable-helper { border:1px solid #e4e4e4; }
 
 /* .contextual>*:not(:first-child), .buttons>.icon:not(:first-child), .contextual .journal-actions>*:not(:first-child) { margin-left: 5px; } */
@@ -1070,7 +1070,7 @@ color: #555; text-shadow: 1px 1px 0 #fff;
 
 .repository-graph {width:75%; margin-bottom:2em;}
 
-img.filecontent.image {background-image: url(./default/transparent.png);}
+img.filecontent.image {background-image: url(../../../images/transparent.png);}
 
 /* Custom JQuery styles */
 .ui-autocomplete, .ui-menu {
