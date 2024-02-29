@@ -1,6 +1,6 @@
 @layer components {
   #top-menu {
-    @apply flex items-center bg-background-primary border-b border-border-divider text-sm px-4 py-3
+    @apply flex items-center bg-primitive-darkGray-500 text-sm px-4 py-3
   }
 
   #top-menu ul {
@@ -25,7 +25,7 @@
   }
 
   #top-menu a {
-    @apply text-text-default
+    @apply text-text-onFill
   }
 
   #top-menu a:hover {
@@ -33,12 +33,12 @@
   }
 
   #top-menu .home {
-    background-image: url(images/home_dark.svg);
+    background-image: url(images/home_onFill.svg);
     @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap bg-no-repeat bg-[length:22px_22px] w-6 h-6 bg-center align-middle
   }
 
   #top-menu .lychee-help {
-    background-image: url(images/help_dark.svg);
+    background-image: url(images/help_onFill.svg);
     @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap bg-no-repeat bg-[length:22px_22px] w-6 h-6 bg-center align-middle
   }
 
@@ -47,8 +47,8 @@
   }
 
   #top-menu .aw_fbLink {
-    background-image: url(images/open_in_new_link.svg);
-    @apply bg-no-repeat bg-[length:16px_16px] bg-[right_center] text-text-link pr-5
+    background-image: url(images/open_in_new_onFill.svg);
+    @apply bg-no-repeat bg-[length:16px_16px] bg-[right_center] pr-5
   }
 
   #top-menu .aw_fbLink:hover {
@@ -141,14 +141,14 @@
 
 
   #top-menu .register {
-    background-image: url(images/person_add_default.svg);
+    background-image: url(images/person_add_onFill.svg);
     background-repeat: no-repeat;
 
     @apply order-2 pl-5
   }
 
   #top-menu .login {
-    background-image: url(images/login_default.svg);
+    background-image: url(images/login_onFill.svg);
     background-repeat: no-repeat;
 
     @apply order-1 pl-5
@@ -159,8 +159,8 @@
   }
 
   #top-menu #loggedas a {
-    background-image: url(images/person_default.svg);
-    @apply bg-no-repeat bg-[left_center] text-text-default mt-0.5 pl-5
+    background-image: url(images/person_onFill.svg);
+    @apply bg-no-repeat bg-[left_center] text-text-onFill mt-0.5 pl-5
   }
 
   #top-menu > ul {

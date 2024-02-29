@@ -3,7 +3,7 @@
     transition-property: padding-left;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
-    @apply flex items-center bg-background-secondary text-text-default py-2 px-4
+    @apply flex items-center bg-background-secondary border-b border-border-default text-text-default py-2 px-4
   }
 
   #header.aw_hasMainMenu {
@@ -19,15 +19,15 @@
   }
 
   #header h1 {
-    @apply overflow-hidden text-ellipsis whitespace-nowrap mb-0
+    @apply overflow-hidden text-ellipsis whitespace-nowrap text-text-default mb-0
   }
 
   #header h1 .breadcrumbs {
-    @apply block text-xs
+    @apply block text-xs text-text-default
   }
 
   #header h1 .current-project {
-    @apply text-sm
+    @apply text-sm text-text-default
   }
 
   #header a {
