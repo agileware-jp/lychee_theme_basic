@@ -32,7 +32,8 @@
   .controller-time_management #main.nosidebar.isMainMenuClose,
   .controller-lychee_message_box_informations #main.nosidebar.isMainMenuClose,
   .controller-lychee_message_box_my_boxes #main.nosidebar.isMainMenuClose,
-  .controller-lychee_message_box_system_errors #main.nosidebar.isMainMenuClose
+  .controller-lychee_message_box_system_errors #main.nosidebar.isMainMenuClose,
+  .controller-lychee_billing #main.nosidebar.isMainMenuClose
   {
     @apply ml-0
   }

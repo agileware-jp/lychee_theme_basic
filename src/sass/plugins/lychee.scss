@@ -598,6 +598,18 @@
   }
 
 
+  // Lychee Billing
+  .controller-lychee_billing {
+    #main.nosidebar {
+      @apply ml-0
+    }
+
+    #header.aw_hasMainMenu {
+      @apply pl-4
+    }
+  }
+
+
   // Lychee Log
   .controller-logs.controller-logs {
     .list td {
