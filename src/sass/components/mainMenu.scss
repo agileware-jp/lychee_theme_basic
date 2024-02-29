@@ -1,9 +1,6 @@
 @layer components {
   #main-menu {
     height: calc(100vh - 88px);
-    transition-property: width;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
     @apply overflow-auto absolute left-0 w-52 bg-background-primary pt-3 px-3 pb-20 transition-transform
   }
 
@@ -13,10 +10,11 @@
   }
 
   #main-menu.isMainMenuClose {
-    transition-property: width, padding;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-    @apply w-[5rem] px-1.5
+    @apply w-[4rem] px-1
+  }
+
+  #main-menu.isMainMenuClose::-webkit-scrollbar {
+    @apply hidden
   }
 
   #main-menu ul {
@@ -31,18 +29,28 @@
     @apply mt-2
   }
 
+  #main-menu.isMainMenuClose li:not(:first-child) {
+    @apply mt-1
+  }
+
   #main-menu li a {
-    transition-property: font-size, padding;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
     @apply block whitespace-normal text-text-default text-sm no-underline px-3 py-2 rounded
   }
 
   #main-menu.isMainMenuClose > ul > li > a {
-    transition-property: font-size, padding;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-    @apply whitespace-nowrap overflow-hidden text-ellipsis text-xs px-1.5
+    @apply relative text-[11px] leading-[1.4] py-2.5 px-1
+  }
+
+  // メインメニューを閉じているときはlycheeアイコンを調整する
+  #main-menu.isMainMenuClose > ul > li > a.lychee-icon {
+    @apply relative pl-2
+  }
+
+  #main-menu.isMainMenuClose .lychee-icon.lychee-icon:before,
+  #main-menu.isMainMenuClose .lychee-icon.lychee-icon.selected:before {
+    content: '';
+    background-image: url(images/lychee_default.svg);
+    @apply absolute top-0.5 left-0.5 inline-block w-2 h-2 bg-no-repeat bg-contain
   }
 
   #main-menu li a:hover {
