@@ -154,7 +154,11 @@
 
   // adminMenu
   #admin-index {
-    @apply max-w-xs mt-4
+    @apply mt-4
+  }
+
+  #admin-index #admin-menu {
+    @apply max-w-xs
   }
 
   #admin-menu ul {
