@@ -1,11 +1,9 @@
 @layer components {
   #main-menu {
-    height: calc(100vh - 88px);
-    @apply overflow-auto absolute left-0 w-52 bg-background-primary pt-3 px-3 pb-20 transition-transform
+    @apply overflow-auto absolute left-0 w-52 h-full bg-primitive-darkGray-600 pt-3 px-3 pb-20 transition-transform
   }
 
   #main-menu.aw_fixed_header {
-    height: calc(100vh - 37px);
     @apply fixed
   }
 
@@ -37,6 +35,10 @@
     @apply block whitespace-normal text-text-default text-sm no-underline px-3 py-2 rounded
   }
 
+  #main-menu > ul > li > a {
+    @apply cursor-pointer text-text-onFill
+  }
+
   #main-menu.isMainMenuClose > ul > li > a {
     @apply relative text-[11px] leading-[1.4] py-2.5 px-1
   }
@@ -57,6 +59,10 @@
     @apply bg-background-secondary
   }
 
+  #main-menu > ul > li:not(.aw_newObjectList) > a:hover {
+    @apply bg-primitive-darkGray-700
+  }
+
   .aw_newObjectList {
     @apply absolute top-[1rem] right-[0.75rem] w-6
   }
@@ -72,7 +78,7 @@
 
   #main-menu li a.selected,
   #main-menu li a.selected:hover {
-    @apply bg-background-tertiary
+    @apply bg-primitive-darkGray-900
   }
 
   #main-menu .tabs-buttons {
