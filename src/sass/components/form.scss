@@ -218,7 +218,7 @@
 
     // searchable selectboxを上書き
     .select2-container--default.select2-container--default .select2-selection--single {
-      @apply h-auto text-xs py-1.5 pl-2 pr-8
+      @apply h-[30px] text-xs py-1.5 pl-2 pr-8
     }
 
     .select2-container--default.select2-container--default .select2-selection--single .select2-selection__arrow {
