@@ -155,7 +155,7 @@
   }
 
   #top-menu #loggedas {
-    @apply order-2 text-text-onFill ml-auto pt-[1px]
+    @apply order-2 text-text-onFill pt-[1px]
   }
 
   #top-menu #loggedas a {
@@ -165,5 +165,10 @@
 
   #top-menu > ul {
     @apply order-1 mr-auto
+  }
+
+  // Lychee Billing
+  #top-menu #lychee-billng-global-message#lychee-billng-global-message {
+    @apply order-1 text-inherit
   }
 }
