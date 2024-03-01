@@ -1,6 +1,6 @@
 @layer components {
   #main-menu {
-    @apply overflow-auto absolute left-0 w-52 h-full bg-primitive-darkGray-600 pt-3 px-3 pb-20 transition-transform
+    @apply overflow-auto absolute left-0 w-52 h-full bg-primitive-darkGray-600 pt-3 px-2 pb-20 transition-transform
   }
 
   #main-menu.aw_fixed_header {
@@ -23,16 +23,12 @@
     @apply mt-9
   }
 
-  #main-menu li:not(:first-child) {
-    @apply mt-2
-  }
-
   #main-menu.isMainMenuClose li:not(:first-child) {
     @apply mt-1
   }
 
   #main-menu li a {
-    @apply block whitespace-normal text-text-default text-sm no-underline px-3 py-2 rounded
+    @apply block whitespace-normal text-text-default text-xs no-underline px-3 py-2.5 rounded
   }
 
   #main-menu > ul > li > a {
