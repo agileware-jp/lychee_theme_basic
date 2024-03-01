@@ -1,6 +1,6 @@
 @layer components {
   #main-menu {
-    @apply overflow-auto absolute left-0 w-52 h-full bg-primitive-darkGray-500 pt-3 px-3 pb-20 transition-transform
+    @apply overflow-auto absolute left-0 w-52 h-full bg-primitive-darkGray-600 pt-3 px-3 pb-20 transition-transform
   }
 
   #main-menu.aw_fixed_header {
@@ -60,7 +60,7 @@
   }
 
   #main-menu > ul > li:not(.aw_newObjectList) > a:hover {
-    @apply bg-primitive-darkGray-600
+    @apply bg-primitive-darkGray-700
   }
 
   .aw_newObjectList {
