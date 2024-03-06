@@ -37,10 +37,7 @@
 @layer components {
   // sidebar
   #sidebar {
-    transition-property: width;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-    @apply relative flex-shrink-0 order-2 w-[15rem] bg-background-secondary/50 border-l border-border-divider py-3 pr-3 pl-5 transition-transform
+    @apply relative flex-shrink-0 order-2 w-[15rem] bg-background-secondary/50 border-l border-border-divider py-3 pr-3 pl-5
   }
 
   .controller-kanban #sidebar,
@@ -50,9 +47,6 @@
   }
 
   #sidebar.isSidebarClose {
-    transition-property: width;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
     @apply w-0 pr-0 pl-4
   }
 
