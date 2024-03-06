@@ -109,15 +109,17 @@ function addBtnToToggleSidebar() {
 }
 
 function openSidebar() {
-  document.querySelector('#sidebar').classList.remove('isSidebarClose')
-  document.querySelector('#main').classList.remove('isSidebarClose')
-  document.querySelector('.aw_toggleSidebar').classList.remove('isSidebarClose')
+  document.querySelector('#sidebar')?.classList.remove('isSidebarClose')
+  document.querySelector('#main')?.classList.remove('isSidebarClose')
+  document.querySelector('.aw_toggleSidebar')?.classList.remove('isSidebarClose')
+  localStorage.setItem('isSidebarClose', false)
 }
 
 function closeSidebar() {
-  document.querySelector('#sidebar').classList.add('isSidebarClose')
-  document.querySelector('#main').classList.add('isSidebarClose')
-  document.querySelector('.aw_toggleSidebar').classList.add('isSidebarClose')
+  document.querySelector('#sidebar')?.classList.add('isSidebarClose')
+  document.querySelector('#main')?.classList.add('isSidebarClose')
+  document.querySelector('.aw_toggleSidebar')?.classList.add('isSidebarClose')
+  localStorage.setItem('isSidebarClose', true)
 }
 
 // sidebarの折りたたみ
@@ -196,6 +198,16 @@ window.addEventListener('DOMContentLoaded', () => {
       closeMainMenu()
     } else {
       openMainMenu()
+    }
+  }
+
+  // Sidebarがあるかどうか
+  if(document.querySelector('#sidebar') !== null) {
+    // ローカルストレージから開閉状態を復元
+    if(localStorage.getItem('isSidebarClose') === 'true') {
+      closeSidebar()
+    } else {
+      openSidebar()
     }
   }
 
