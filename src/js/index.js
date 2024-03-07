@@ -177,12 +177,6 @@ window.addEventListener('scroll', stickyMainMenu)
  * その他一般的な処理
  */
 window.addEventListener('DOMContentLoaded', () => {
-  removeLoggedasText()
-  repositionTopMenu()
-
-  // mainMenuのtopプロパティを指定
-  setMainMenuTop()
-
   /**
    * Main Menu / Sidebarの開閉機能
    */
@@ -211,6 +205,12 @@ window.addEventListener('DOMContentLoaded', () => {
       openSidebar()
     }
   }
+
+  removeLoggedasText()
+  repositionTopMenu()
+
+  // mainMenuのtopプロパティを指定
+  setMainMenuTop()
 
   hiddenTabsButtons()
   addFeedbackLink()
