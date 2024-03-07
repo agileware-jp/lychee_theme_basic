@@ -32,8 +32,8 @@ function hasDescription(el) {
  * Header・MainMenuのSticky Sidebar化
  */
 function stickyMainMenu() {
-  const mainMenu = document.querySelector('#main-menu')
-  const topMenu = document.querySelector('#top-menu')
+  const mainMenu = document.getElementById('main-menu')
+  const topMenu = document.getElementById('top-menu')
   if(mainMenu) {
     const topMenuHeightRectBottom = topMenu.getBoundingClientRect().bottom
 
@@ -50,7 +50,7 @@ function stickyMainMenu() {
 }
 
 function addBtnToToggleMainMenu() {
-  const mainMenu = document.querySelector('#main-menu')
+  const mainMenu = document.getElementById('main-menu')
   const btn = document.createElement('button')
   btn.textContent = 'メニューの開閉'
   btn.classList.add('aw_toggleMainMenu')
@@ -59,25 +59,25 @@ function addBtnToToggleMainMenu() {
 }
 
 function openMainMenu() {
-  document.querySelector('#main-menu').classList.remove('isMainMenuClose')
-  document.querySelector('#main').classList.remove('isMainMenuClose')
+  document.getElementById('main-menu').classList.remove('isMainMenuClose')
+  document.getElementById('main').classList.remove('isMainMenuClose')
   document.querySelector('.aw_toggleMainMenu').classList.remove('isMainMenuClose')
-  document.querySelector('#wrapper').classList.remove('isMainMenuClose')
-  document.querySelector('#header').classList.remove('isMainMenuClose')
+  document.getElementById('wrapper').classList.remove('isMainMenuClose')
+  document.getElementById('header').classList.remove('isMainMenuClose')
   localStorage.setItem('isMainMenuClose', false)
 }
 
 function closeMainMenu() {
-  document.querySelector('#main-menu').classList.add('isMainMenuClose')
-  document.querySelector('#main').classList.add('isMainMenuClose')
+  document.getElementById('main-menu').classList.add('isMainMenuClose')
+  document.getElementById('main').classList.add('isMainMenuClose')
   document.querySelector('.aw_toggleMainMenu').classList.add('isMainMenuClose')
-  document.querySelector('#wrapper').classList.add('isMainMenuClose')
-  document.querySelector('#header').classList.add('isMainMenuClose')
+  document.getElementById('wrapper').classList.add('isMainMenuClose')
+  document.getElementById('header').classList.add('isMainMenuClose')
   localStorage.setItem('isMainMenuClose', true)
 }
 
 function toggleMainMenu() {
-  const mainMenu = document.querySelector('#main-menu')
+  const mainMenu = document.getElementById('main-menu')
 
   if(mainMenu.classList.contains('isMainMenuClose')) {
     openMainMenu()
@@ -87,7 +87,7 @@ function toggleMainMenu() {
 }
 
 function initToggleMainMenu() {
-  const mainMenu = document.querySelector('#main-menu')
+  const mainMenu = document.getElementById('main-menu')
   if(!mainMenu) return
 
   // toggle btnの追加
@@ -100,7 +100,7 @@ function initToggleMainMenu() {
 
 // Sidebarの折りたたみ
 function addBtnToToggleSidebar() {
-  const sidebar = document.querySelector('#sidebar')
+  const sidebar = document.getElementById('sidebar')
   const btn = document.createElement('button')
   btn.textContent = 'サイドバーの開閉'
   btn.classList.add('aw_toggleSidebar')
@@ -109,22 +109,22 @@ function addBtnToToggleSidebar() {
 }
 
 function openSidebar() {
-  document.querySelector('#sidebar')?.classList.remove('isSidebarClose')
-  document.querySelector('#main')?.classList.remove('isSidebarClose')
+  document.getElementById('sidebar')?.classList.remove('isSidebarClose')
+  document.getElementById('main')?.classList.remove('isSidebarClose')
   document.querySelector('.aw_toggleSidebar')?.classList.remove('isSidebarClose')
   localStorage.setItem('isSidebarClose', false)
 }
 
 function closeSidebar() {
-  document.querySelector('#sidebar')?.classList.add('isSidebarClose')
-  document.querySelector('#main')?.classList.add('isSidebarClose')
+  document.getElementById('sidebar')?.classList.add('isSidebarClose')
+  document.getElementById('main')?.classList.add('isSidebarClose')
   document.querySelector('.aw_toggleSidebar')?.classList.add('isSidebarClose')
   localStorage.setItem('isSidebarClose', true)
 }
 
 // sidebarの折りたたみ
 function toggleSidebar() {
-  const sidebar = document.querySelector('#sidebar')
+  const sidebar = document.getElementById('sidebar')
 
   // 切り替え処理
   if(sidebar.classList.contains('isSidebarClose')) {
@@ -136,7 +136,7 @@ function toggleSidebar() {
 
 function initToggleSidebar() {
   // サイドバーがある"かつ"nosidebarではない
-  const sidebar = document.querySelector('#sidebar')
+  const sidebar = document.getElementById('sidebar')
   if(!sidebar || sidebar.closest('#main').classList.contains('nosidebar')) return
 
   // toggle btnの追加
@@ -149,7 +149,7 @@ function initToggleSidebar() {
 
 // 「ログイン中:」の文字を削除
 function removeLoggedasText() {
-  const loggedas = document.querySelector('#loggedas')
+  const loggedas = document.getElementById('loggedas')
   if(!loggedas) return
 
   loggedas.childNodes[0].textContent = ''
@@ -184,9 +184,9 @@ window.addEventListener('DOMContentLoaded', () => {
   initToggleSidebar()
 
   // mainMenuがあるかどうか
-  if(document.querySelector('#main-menu') !== null) {
+  if(document.getElementById('main-menu') !== null) {
     // mainMenuがない場合headerはfull width表示にするため、区別用classを付与しておく
-    document.querySelector('#header').classList.add('aw_hasMainMenu')
+    document.getElementById('header').classList.add('aw_hasMainMenu')
 
     // ローカルストレージから開閉状態を復元
     if(localStorage.getItem('isMainMenuClose') === 'true') {
@@ -197,7 +197,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   // Sidebarがあるかどうか
-  if(document.querySelector('#sidebar') !== null) {
+  if(document.getElementById('sidebar') !== null) {
     // ローカルストレージから開閉状態を復元
     if(localStorage.getItem('isSidebarClose') === 'true') {
       closeSidebar()
@@ -218,7 +218,7 @@ window.addEventListener('DOMContentLoaded', () => {
   /**
    * 活動・検索結果ページ
    */
-  if(document.querySelector('#activity') !== null || document.querySelector('#search-results') !== null) {
+  if(document.getElementById('activity') !== null || document.getElementById('search-results') !== null) {
     document.querySelectorAll('.description').forEach(el => {
       if(hasDescription(el)) {
         el.classList.add('aw_has_description')
