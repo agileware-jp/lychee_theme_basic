@@ -1,6 +1,7 @@
 @layer components {
   #main-menu {
-    @apply overflow-auto absolute left-0 w-52 h-full bg-primitive-darkGray-600 pt-3 px-2 pb-20
+    height: calc(100vh - 1px);
+    @apply overflow-auto absolute left-0 w-52 bg-primitive-darkGray-600 pt-3 px-2 pb-20
   }
 
   #main-menu.aw_fixed_header {
