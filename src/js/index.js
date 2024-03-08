@@ -64,7 +64,6 @@ function openMainMenu() {
   document.querySelector('.aw_toggleMainMenu').classList.remove('isMainMenuClose')
   document.querySelector('#wrapper').classList.remove('isMainMenuClose')
   document.querySelector('#header').classList.remove('isMainMenuClose')
-  localStorage.setItem('isMainMenuClose', false)
 }
 
 function closeMainMenu() {
@@ -73,7 +72,6 @@ function closeMainMenu() {
   document.querySelector('.aw_toggleMainMenu').classList.add('isMainMenuClose')
   document.querySelector('#wrapper').classList.add('isMainMenuClose')
   document.querySelector('#header').classList.add('isMainMenuClose')
-  localStorage.setItem('isMainMenuClose', true)
 }
 
 function toggleMainMenu() {
@@ -112,14 +110,12 @@ function openSidebar() {
   document.querySelector('#sidebar')?.classList.remove('isSidebarClose')
   document.querySelector('#main')?.classList.remove('isSidebarClose')
   document.querySelector('.aw_toggleSidebar')?.classList.remove('isSidebarClose')
-  localStorage.setItem('isSidebarClose', false)
 }
 
 function closeSidebar() {
   document.querySelector('#sidebar')?.classList.add('isSidebarClose')
   document.querySelector('#main')?.classList.add('isSidebarClose')
   document.querySelector('.aw_toggleSidebar')?.classList.add('isSidebarClose')
-  localStorage.setItem('isSidebarClose', true)
 }
 
 // sidebarの折りたたみ
@@ -192,23 +188,6 @@ window.addEventListener('DOMContentLoaded', () => {
   if(document.querySelector('#main-menu') !== null) {
     // mainMenuがない場合headerはfull width表示にするため、区別用classを付与しておく
     document.querySelector('#header').classList.add('aw_hasMainMenu')
-
-    // ローカルストレージから開閉状態を復元
-    if(localStorage.getItem('isMainMenuClose') === 'true') {
-      closeMainMenu()
-    } else {
-      openMainMenu()
-    }
-  }
-
-  // Sidebarがあるかどうか
-  if(document.querySelector('#sidebar') !== null) {
-    // ローカルストレージから開閉状態を復元
-    if(localStorage.getItem('isSidebarClose') === 'true') {
-      closeSidebar()
-    } else {
-      openSidebar()
-    }
   }
 
   // mainMenuのtopプロパティを指定
