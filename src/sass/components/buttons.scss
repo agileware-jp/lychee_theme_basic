@@ -78,17 +78,11 @@
   .aw_toggleSidebar {
     @extend .BTN_TERTIARY_ICON_ONLY_OUTLINED;
     background-image: url(images/move_right_default.svg);
-    transition-property: right;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
     @apply absolute top-[1.15rem] right-[14.25rem] z-10
   }
 
   .aw_toggleSidebar.isSidebarClose {
     background-image: url(images/move_left_default.svg);
-    transition-property: right;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
     @apply right-[0.25rem]
   }
 
