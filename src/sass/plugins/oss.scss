@@ -5,12 +5,7 @@
   //       メインメニューのあり／なしでスタイルを変える
   //       プロレポや全画面表示など、見かけ上ではメインメニューが存在しないが、非表示になっているだけのページが存在するので注意
   .has-main-menu #wrapper .global_banner {
-    @apply ml-52
-  }
-
-  // メインメニューを閉じたときの対応
-  #wrapper.isMainMenuClose .global_banner {
-    @apply ml-[4rem]
+    @apply ml-[4.5rem]
   }
 
   // メインメニューを非表示にしているLycheeプラグインの画面対応
@@ -28,12 +23,7 @@
 
   @media screen and (max-width: 1250px) {
     .has-main-menu #wrapper .global_banner {
-      @apply ml-44
-    }
-
-    // メインメニューを閉じたときの対応
-    #wrapper.isMainMenuClose .global_banner {
-      @apply ml-20
+      @apply ml-[4.5rem]
     }
 
     // メインメニューを非表示にしているLycheeプラグインの画面対応
@@ -52,11 +42,6 @@
 
   @media screen and (max-width: 899px) {
     .has-main-menu #wrapper .global_banner {
-      @apply ml-0
-    }
-
-    // メインメニューを閉じたときの対応
-    #wrapper.isMainMenuClose .global_banner {
       @apply ml-0
     }
 

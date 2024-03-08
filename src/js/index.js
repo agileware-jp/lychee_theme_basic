@@ -49,55 +49,6 @@ function stickyMainMenu() {
   }
 }
 
-function addBtnToToggleMainMenu() {
-  const mainMenu = document.getElementById('main-menu')
-  const btn = document.createElement('button')
-  btn.textContent = 'メニューの開閉'
-  btn.classList.add('aw_toggleMainMenu')
-
-  mainMenu.appendChild(btn)
-}
-
-function openMainMenu() {
-  document.getElementById('main-menu').classList.remove('isMainMenuClose')
-  document.getElementById('main').classList.remove('isMainMenuClose')
-  document.querySelector('.aw_toggleMainMenu').classList.remove('isMainMenuClose')
-  document.getElementById('wrapper').classList.remove('isMainMenuClose')
-  document.getElementById('header').classList.remove('isMainMenuClose')
-  localStorage.setItem('isMainMenuClose', false)
-}
-
-function closeMainMenu() {
-  document.getElementById('main-menu').classList.add('isMainMenuClose')
-  document.getElementById('main').classList.add('isMainMenuClose')
-  document.querySelector('.aw_toggleMainMenu').classList.add('isMainMenuClose')
-  document.getElementById('wrapper').classList.add('isMainMenuClose')
-  document.getElementById('header').classList.add('isMainMenuClose')
-  localStorage.setItem('isMainMenuClose', true)
-}
-
-function toggleMainMenu() {
-  const mainMenu = document.getElementById('main-menu')
-
-  if(mainMenu.classList.contains('isMainMenuClose')) {
-    openMainMenu()
-  } else {
-    closeMainMenu()
-  }
-}
-
-function initToggleMainMenu() {
-  const mainMenu = document.getElementById('main-menu')
-  if(!mainMenu) return
-
-  // toggle btnの追加
-  addBtnToToggleMainMenu()
-
-  // 開閉処理
-  const toggleTrigger = document.querySelector('.aw_toggleMainMenu')
-  toggleTrigger.addEventListener('click', toggleMainMenu)
-}
-
 // Sidebarの折りたたみ
 function addBtnToToggleSidebar() {
   const sidebar = document.getElementById('sidebar')
@@ -178,22 +129,14 @@ window.addEventListener('scroll', stickyMainMenu)
  */
 window.addEventListener('DOMContentLoaded', () => {
   /**
-   * Main Menu / Sidebarの開閉機能
+   * Sidebarの開閉機能
    */
-  initToggleMainMenu()
   initToggleSidebar()
 
   // mainMenuがあるかどうか
   if(document.getElementById('main-menu') !== null) {
     // mainMenuがない場合headerはfull width表示にするため、区別用classを付与しておく
     document.getElementById('header').classList.add('aw_hasMainMenu')
-
-    // ローカルストレージから開閉状態を復元
-    if(localStorage.getItem('isMainMenuClose') === 'true') {
-      closeMainMenu()
-    } else {
-      openMainMenu()
-    }
   }
 
   // Sidebarがあるかどうか

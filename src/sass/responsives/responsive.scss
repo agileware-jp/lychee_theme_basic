@@ -27,55 +27,6 @@
 */
 
 @media screen and (max-width: 1250px) {
-  #top-menu {
-    @apply text-xs
-  }
-
-  #header.aw_hasMainMenu {
-    @apply pl-48
-  }
-
-  .has-main-menu #main {
-    @apply ml-44
-  }
-
-  #main.nosidebar {
-    @apply ml-0
-  }
-
-  .has-main-menu #main.nosidebar {
-    @apply ml-44
-  }
-
-  #main.isMainMenuClose,
-  .has-main-menu #main.nosidebar.isMainMenuClose {
-    @apply ml-[5rem]
-  }
-
-  .controller-resource_management,
-  .controller-project_report_overview,
-  .controller-lychee_work_plan,
-  .controller-time_management,
-  .controller-lychee_message_box_informations.controller-lychee_message_box_informations,
-  .controller-lychee_message_box_my_boxes.controller-lychee_message_box_my_boxes,
-  .controller-lychee_message_box_system_errors.controller-lychee_message_box_system_errors {
-    #main.nosidebar {
-      @apply ml-0
-    }
-  }
-
-  #main-menu {
-    @apply w-44
-  }
-
-  #main-menu li:not(:first-child) {
-    @apply mt-1
-  }
-
-  #main-menu li a {
-    @apply text-xs
-  }
-
   #sidebar {
     @apply w-48
   }
