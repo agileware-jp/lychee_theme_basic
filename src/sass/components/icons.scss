@@ -405,11 +405,11 @@
 }
 
 .icon-toggle-plus {
-  background-image: url(images/unfold_more_default.svg);
+  background-image: url(images/unfold_more_dark.svg);
 }
 
 .icon-toggle-minus {
-  background-image: url(images/unfold_less_default.svg);
+  background-image: url(images/unfold_less_dark.svg);
 }
 
 .icon-clear-query {
@@ -451,6 +451,12 @@ button.tab-left {
 
 button.tab-right {
   background-image: url(images/chevron_right_dark.svg);
+}
+
+// filter toggle icon
+.toggle-multiselect.icon-toggle-plus,
+.toggle-multiselect.icon-toggle-minus {
+  background-size: 20px;
 }
 
 /*
