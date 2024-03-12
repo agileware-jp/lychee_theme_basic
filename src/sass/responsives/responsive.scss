@@ -960,33 +960,6 @@
     @apply flex-wrap
   }
 
-  .controller-issues {
-    #due_date_area,
-    #actual_due_date_area,
-    #remaining_estimate_area,
-    #remaining_estimate_area + p {
-      @apply pl-0
-    }
-
-    #due_date_area label,
-    #actual_due_date_area label,
-    #remaining_estimate_area label,
-    #remaining_estimate_area + p label {
-      @apply w-full ml-0
-    }
-
-    #start_date_area,
-    #actual_start_date_area {
-      @apply w-[9rem]
-    }
-
-    #due_date_area,
-    #actual_due_date_area {
-      width: calc(100% - 9rem);
-      @apply pl-6 bg-[left_bottom_14px]
-    }
-  }
-
   /* attachment upload form */
   .attachments_fields span {
     position: relative;
