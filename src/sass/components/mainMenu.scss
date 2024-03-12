@@ -36,6 +36,10 @@
     @apply cursor-pointer text-text-onFill
   }
 
+  #main-menu .lychee-icon.lychee-icon:before, #main-menu .lychee-icon.lychee-icon.selected:before {
+    content: url(images/lychee_onFill.svg);
+  }
+
   #main-menu.isMainMenuClose > ul > li > a {
     @apply relative text-[11px] leading-[1.4] py-2.5 px-1
   }
@@ -48,7 +52,7 @@
   #main-menu.isMainMenuClose .lychee-icon.lychee-icon:before,
   #main-menu.isMainMenuClose .lychee-icon.lychee-icon.selected:before {
     content: '';
-    background-image: url(images/lychee_default.svg);
+    background-image: url(images/lychee_onFill.svg);
     @apply absolute top-0.5 left-0.5 inline-block w-2 h-2 bg-no-repeat bg-contain
   }
 
