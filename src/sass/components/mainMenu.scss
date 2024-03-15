@@ -24,7 +24,7 @@
   }
 
   #main-menu li a {
-    @apply block whitespace-normal break-all text-text-default text-xs no-underline px-3 py-2.5 rounded
+    @apply block overflow-hidden whitespace-nowrap text-ellipsis break-all text-text-default text-xs no-underline px-3 py-2.5 rounded
   }
 
   #main-menu > ul > li > a {
@@ -48,7 +48,7 @@
   }
 
   #main-menu > ul > li:not(.aw_newObjectList) > a:hover {
-    @apply bg-primitive-darkGray-700
+    @apply bg-primitive-darkGray-600
   }
 
   #main-menu li a.selected,
