@@ -13,46 +13,6 @@ function setMainMenuTop() {
   }
 }
 
-// mainMenuをマウスオーバーでズームする
-function zoomMainMenuItem() {
-  if(document.getElementById('main-menu') !== null) {
-    document.querySelectorAll('#main-menu > ul > li > a:not(.new-object)').forEach(el => {
-      const div = document.createElement('div')
-      div.classList.add('aw_toolTip')
-      div.textContent = el.textContent
-      div.style.cssText = `
-        position: fixed;
-        left: 4px;
-        display: none;
-        min-width: 4.5rem;
-        font-size: 12px;
-        line-height: 16px;
-        background-color: #333;
-        padding: 8px;
-        border-radius: 4px;
-      `
-      el.appendChild(div)
-
-      el.addEventListener('mouseover', (e) => {
-        const mainMenuItemPosition = el.getBoundingClientRect()
-        const toolTip = e.target.querySelector('.aw_toolTip')
-        // メニューの中央に合わせるための微調整として-1している
-        toolTip.style.top = `${mainMenuItemPosition.top - 1}px`
-        toolTip.style.display = 'block'
-
-        window.addEventListener('scroll', () => {
-          toolTip.style.display = 'none'
-        })
-      })
-
-      el.addEventListener('mouseleave', (e) => {
-        const toolTip = e.target.querySelector('.aw_toolTip')
-        toolTip.style.display = 'none'
-      })
-    })
-  }
-}
-
 // top menuの位置入れ替えのためにclassを付与
 function repositionTopMenu() {
   const home = document.querySelector('#top-menu ul li .home')
@@ -178,9 +138,6 @@ window.addEventListener('DOMContentLoaded', () => {
     // mainMenuがない場合headerはfull width表示にするため、区別用classを付与しておく
     document.getElementById('header').classList.add('aw_hasMainMenu')
   }
-
-  // mainMenuにzoom機能を付与
-  zoomMainMenuItem()
 
   // Sidebarがあるかどうか
   if(document.getElementById('sidebar') !== null) {
