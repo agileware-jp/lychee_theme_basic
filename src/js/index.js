@@ -28,7 +28,10 @@ function zoomMainMenuItem() {
         font-size: 12px;
         line-height: 16px;
         background-color: #333;
-        padding: 8px;
+        padding-top: 8px;
+        padding-right: 18px;
+        padding-bottom: 8px;
+        padding-left: 8px;
         border-radius: 4px;
       `
       el.appendChild(div)
