@@ -36,6 +36,10 @@
     background-image: url(images/home_onFill.svg);
     @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap bg-no-repeat bg-[length:22px_22px] w-6 h-6 bg-center align-middle
   }
+  
+  #top-menu .lychee-icon.lychee-icon:before {
+    content: url(images/lychee_onFill.svg);
+  }
 
   #top-menu .lychee-help {
     background-image: url(images/help_onFill.svg);
