@@ -156,54 +156,12 @@
       @apply my-4
     }
 
-    // editフォームのレイアウト変更
-    #issue-form #all_attributes .splitcontent {
-      @apply flex-col
-    }
-
     #issue-form #all_attributes .splitcontentleft {
-      @apply mr-0
+      @apply mr-0 mb-2
     }
 
     #issue-form #all_attributes .splitcontentright {
-      @apply mt-4 ml-0
-    }
-
-    #issue-form #all_attributes .splitcontent:first-child .splitcontentright {
-      @apply flex flex-wrap
-    }
-
-    #issue-form #parent_issue {
-      @apply w-full
-    }
-
-    #actual_dates_area {
-      @apply flex w-full
-    }
-
-    #actual_due_date_area {
-      @apply mt-0
-    }
-
-    #due_date_area,
-    #actual_due_date_area,
-    #remaining_estimate_area,
-    #remaining_estimate_area + p {
-      @apply pl-[5.5rem]
-    }
-
-    #due_date_area label,
-    #actual_due_date_area label,
-    #remaining_estimate_area label,
-    #remaining_estimate_area + p label {
-      @apply w-[4.5rem] -ml-[5.5rem]
-    }
-
-
-    #due_date_area,
-    #actual_due_date_area {
-      background-image: url(images/double_arrow_right_dark.svg);
-      @apply bg-no-repeat bg-[left_center]
+      @apply ml-0
     }
 
     #log_time .splitcontent {
