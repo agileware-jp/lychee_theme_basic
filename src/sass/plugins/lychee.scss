@@ -168,6 +168,14 @@
     #burn_down_type_wrap {
       @apply static mt-2
     }
+
+    input[name="spent_on"] {
+      @apply w-[7rem]
+    }
+
+    input[name="hours"] {
+      @apply w-[3rem]
+    }
   }
 
   .controller-projects.controller-projects {
