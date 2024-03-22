@@ -4,7 +4,14 @@
   }
 
   #main-menu:hover {
-    @apply w-auto shadow-lg
+    animation: delay-open 0.25s forwards;
+    @apply shadow-lg
+  }
+
+  @keyframes delay-open {
+    to {
+      width: auto;
+    }
   }
 
   #main-menu.aw_fixed_header {
@@ -32,7 +39,13 @@
   }
 
   #main-menu:hover li a {
-    @apply whitespace-normal
+    animation: delay-open2 0.25s forwards;
+  }
+
+  @keyframes delay-open2 {
+    to {
+      white-space: normal;
+    }
   }
 
   #main-menu > ul > li > a {
