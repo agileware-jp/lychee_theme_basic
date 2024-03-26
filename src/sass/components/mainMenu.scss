@@ -4,11 +4,15 @@
   }
 
   #main-menu:hover {
-    animation: delay-open 0.25s forwards;
+    animation: delay-open 0s forwards;
+    animation-delay: 0.25s;
     @apply shadow-lg
   }
 
   @keyframes delay-open {
+    from {
+      width: 3.75rem;
+    }
     to {
       width: auto;
     }
@@ -35,33 +39,45 @@
   }
 
   #main-menu li a {
-    @apply block overflow-hidden whitespace-nowrap text-ellipsis break-all text-text-default text-xs no-underline px-2.5 rounded
+    @apply relative block overflow-hidden whitespace-nowrap text-ellipsis break-all text-text-onFill no-underline text-[11px] leading-[1.4] py-2 px-1.5 rounded
   }
 
-  #main-menu:hover li a {
-    animation: delay-open2 0.25s forwards;
+  #main-menu .menu-children li a {
+    @apply text-text-default text-xs px-3 py-2.5 rounded
+  }
+
+  #main-menu:hover > ul > li > a:not(.new-object) {
+    animation: delay-open2 0s forwards;
+    animation-delay: 0.25s;
   }
 
   @keyframes delay-open2 {
+    from {
+      white-space: nowrap;
+      padding-right: 0.375rem;
+    }
     to {
       white-space: normal;
+      padding-right: 1.125rem;
     }
-  }
-
-  #main-menu > ul > li > a {
-    @apply cursor-pointer relative text-text-onFill text-xs py-2 px-1.5
   }
 
   // メインメニューを閉じているときはlycheeアイコンを調整する
   #main-menu > ul > li > a.lychee-icon {
-    @apply relative pl-2
+    @apply relative
   }
 
   #main-menu .lychee-icon.lychee-icon:before,
   #main-menu .lychee-icon.lychee-icon.selected:before {
     content: '';
     background-image: url(images/lychee_default.svg);
-    @apply absolute top-0.5 left-0.5 inline-block w-2 h-2 bg-no-repeat bg-contain
+    @apply absolute top-1 -right-0.5 inline-block w-3 h-3 bg-no-repeat bg-contain
+  }
+
+  #main-menu:hover .lychee-icon.lychee-icon:before {
+    content: '';
+    background-image: url(images/lychee_default.svg);
+    @apply absolute top-1 -right-0.5 inline-block w-3 h-3 bg-no-repeat bg-contain
   }
 
   #main-menu li a:hover {
@@ -86,8 +102,8 @@
     @apply hidden fixed w-auto bg-background-primary border border-border-default p-1 rounded-md shadow-lg z-[1]
   }
 
-  #main-menu li:hover ul.menu-children,
+  #main-menu .new-object:hover + ul.menu-children,
   #main-menu li ul.menu-children.visible {
-    @apply left-2 block w-[11rem]
+    @apply left-2 block w-[11rem] -mt-3
   }
 }
