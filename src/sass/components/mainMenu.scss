@@ -1,6 +1,6 @@
 @layer components {
   #main-menu {
-    @apply overflow-scroll absolute top-[44px] left-0 w-[4.5rem] h-full bg-primitive-darkGray-600 pt-3 px-1 pb-20 z-[400]
+    @apply overflow-scroll absolute top-[44px] left-0 w-[3.75rem] h-full bg-primitive-darkGray-600 pt-3 pr-1.5 pb-20 pl-1 z-[400]
   }
 
   #main-menu.aw_fixed_header {
@@ -24,11 +24,11 @@
   }
 
   #main-menu li a {
-    @apply block overflow-hidden whitespace-nowrap text-ellipsis break-all text-text-default text-xs no-underline px-3 py-2.5 rounded
+    @apply relative block overflow-hidden whitespace-nowrap text-ellipsis break-all text-text-onFill no-underline text-[11px] leading-[1.4] py-2 px-1.5 rounded
   }
 
-  #main-menu > ul > li > a {
-    @apply cursor-pointer relative text-text-onFill text-[11px] leading-[1.4] py-2 px-1.5
+  #main-menu .menu-children li a {
+    @apply text-text-default text-xs px-3 py-2.5 rounded
   }
 
   // メインメニューを閉じているときはlycheeアイコンを調整する
@@ -71,8 +71,8 @@
     @apply hidden fixed w-auto bg-background-primary border border-border-default p-1 rounded-md shadow-lg z-[1]
   }
 
-  #main-menu li:hover ul.menu-children,
+  #main-menu .new-object:hover + ul.menu-children,
   #main-menu li ul.menu-children.visible {
-    @apply left-2 block w-[11rem]
+    @apply left-2 block w-[11rem] -mt-3
   }
 }
