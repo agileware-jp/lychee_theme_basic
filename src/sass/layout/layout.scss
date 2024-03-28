@@ -9,7 +9,7 @@
   }
 
   .has-main-menu #main {
-    @apply ml-52
+    @apply ml-[4.5rem]
   }
 
   #main.nosidebar {
@@ -17,25 +17,7 @@
   }
 
   .has-main-menu #main.nosidebar {
-    @apply ml-52
-  }
-
-  // 開閉時の設定
-  #main.isMainMenuClose,
-  .has-main-menu #main.nosidebar.isMainMenuClose {
-    @apply ml-[4rem]
-  }
-
-  .controller-resource_management #main.nosidebar.isMainMenuClose,
-  .controller-project_report_overview #main.nosidebar.isMainMenuClose,
-  .controller-lychee_work_plan #main.nosidebar.isMainMenuClose,
-  .controller-time_management #main.nosidebar.isMainMenuClose,
-  .controller-lychee_message_box_informations #main.nosidebar.isMainMenuClose,
-  .controller-lychee_message_box_my_boxes #main.nosidebar.isMainMenuClose,
-  .controller-lychee_message_box_system_errors #main.nosidebar.isMainMenuClose,
-  .controller-lychee_billing #main.nosidebar.isMainMenuClose
-  {
-    @apply ml-0
+    @apply ml-[4.5rem]
   }
 
   #content {
