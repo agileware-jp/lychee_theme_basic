@@ -4,6 +4,21 @@
     @apply overflow-scroll absolute top-[44px] left-0 w-[3.75rem] bg-primitive-darkGray-600 pt-3 px-1 pb-20 z-[400]
   }
 
+  #main-menu:hover {
+    animation: delay-open 0s forwards;
+    animation-delay: 0.25s;
+    @apply shadow-lg
+  }
+
+  @keyframes delay-open {
+    from {
+      width: 3.75rem;
+    }
+    to {
+      width: auto;
+    }
+  }
+
   #main-menu.aw_fixed_header {
     @apply fixed
   }
@@ -29,23 +44,34 @@
   }
 
   #main-menu > ul > li > a {
-    @apply cursor-pointer relative text-text-onFill text-[11px] leading-[1.4] py-2 px-1.5
+    @apply cursor-pointer relative overflow-hidden whitespace-nowrap text-ellipsis text-text-onFill text-[11px] leading-[1.4] py-2 px-1.5
   }
 
-  #main-menu .lychee-icon.lychee-icon:before, #main-menu .lychee-icon.lychee-icon.selected:before {
-    content: url(images/lychee_onFill.svg);
+  #main-menu:hover > ul > li > a:not(.new-object) {
+    animation: delay-open2 0s forwards;
+    animation-delay: 0.25s;
+  }
+
+  @keyframes delay-open2 {
+    from {
+      padding-right: 0.375rem;
+    }
+    to {
+      white-space: normal;
+      padding-right: 1.125rem;
+    }
   }
 
   // メインメニューを閉じているときはlycheeアイコンを調整する
   #main-menu > ul > li > a.lychee-icon {
-    @apply relative pl-2
+    @apply relative
   }
 
   #main-menu .lychee-icon.lychee-icon:before,
   #main-menu .lychee-icon.lychee-icon.selected:before {
     content: '';
     background-image: url(images/lychee_onFill.svg);
-    @apply absolute top-0.5 left-0.5 inline-block w-2 h-2 bg-no-repeat bg-contain
+    @apply absolute top-[2px] -right-[2px] inline-block w-3 h-3 bg-no-repeat bg-contain
   }
 
   #main-menu li a:hover {
