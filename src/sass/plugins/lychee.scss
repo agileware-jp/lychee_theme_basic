@@ -755,8 +755,8 @@
 
 
   // Lychee Issue Form
-  .lychee-issue-form__container_full,
-  .lychee-issue-form__container_half {
+  .lychee-issue-form__container_full.lychee-issue-form__container_full,
+  .lychee-issue-form__container_half.lychee-issue-form__container_half {
     #dialog-content-column-single {
       @apply p-3
     }
@@ -770,11 +770,14 @@
     }
 
     #dialog-content-header {
-      @apply h-[102px]
+      @apply box-content h-[102px]
+    }
+
+    #lif-issue_subject {
+      @apply border border-transparent text-sm pt-1.5 px-3 rounded-md
     }
 
     #dialog-content-header h4 .show,
-    #lif-issue_subject,
     .fields .attribute dd .show,
     .lif-description .text .show,
     .date-fields dl dd .issue-item .show {
