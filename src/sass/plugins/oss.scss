@@ -5,7 +5,7 @@
   //       メインメニューのあり／なしでスタイルを変える
   //       プロレポや全画面表示など、見かけ上ではメインメニューが存在しないが、非表示になっているだけのページが存在するので注意
   .has-main-menu .global_banner {
-    @apply ml-[4.5rem]
+    @apply ml-[3.75rem]
   }
 
   // メインメニューを非表示にしているLycheeプラグインの画面対応
@@ -23,7 +23,7 @@
 
   @media screen and (max-width: 1250px) {
     .has-main-menu .global_banner {
-      @apply ml-[4.5rem]
+      @apply ml-[3.75rem]
     }
 
     // メインメニューを非表示にしているLycheeプラグインの画面対応

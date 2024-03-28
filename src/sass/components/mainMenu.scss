@@ -1,7 +1,7 @@
 @layer components {
   #main-menu {
     height: calc(100vh - 1px);
-    @apply overflow-scroll absolute left-0 w-[4.5rem] bg-primitive-darkGray-600 pt-3 px-1 pb-20 z-[400]
+    @apply overflow-scroll absolute top-[44px] left-0 w-[3.75rem] bg-primitive-darkGray-600 pt-3 px-1 pb-20 z-[400]
   }
 
   #main-menu.aw_fixed_header {
@@ -70,8 +70,8 @@
     @apply hidden fixed w-auto bg-background-primary border border-border-default p-1 rounded-md shadow-lg z-[1]
   }
 
-  #main-menu li:hover ul.menu-children,
+  #main-menu .new-object:hover + ul.menu-children,
   #main-menu li ul.menu-children.visible {
-    @apply left-2 block w-[11rem]
+    @apply left-2 block w-[11rem] -mt-3
   }
 }
