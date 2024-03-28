@@ -49,53 +49,6 @@ function stickyMainMenu() {
   }
 }
 
-function addBtnToToggleMainMenu() {
-  const mainMenu = document.querySelector('#main-menu')
-  const btn = document.createElement('button')
-  btn.textContent = 'メニューの開閉'
-  btn.classList.add('aw_toggleMainMenu')
-
-  mainMenu.appendChild(btn)
-}
-
-function openMainMenu() {
-  document.querySelector('#main-menu').classList.remove('isMainMenuClose')
-  document.querySelector('#main').classList.remove('isMainMenuClose')
-  document.querySelector('.aw_toggleMainMenu').classList.remove('isMainMenuClose')
-  document.querySelector('#wrapper').classList.remove('isMainMenuClose')
-  document.querySelector('#header').classList.remove('isMainMenuClose')
-}
-
-function closeMainMenu() {
-  document.querySelector('#main-menu').classList.add('isMainMenuClose')
-  document.querySelector('#main').classList.add('isMainMenuClose')
-  document.querySelector('.aw_toggleMainMenu').classList.add('isMainMenuClose')
-  document.querySelector('#wrapper').classList.add('isMainMenuClose')
-  document.querySelector('#header').classList.add('isMainMenuClose')
-}
-
-function toggleMainMenu() {
-  const mainMenu = document.querySelector('#main-menu')
-
-  if(mainMenu.classList.contains('isMainMenuClose')) {
-    openMainMenu()
-  } else {
-    closeMainMenu()
-  }
-}
-
-function initToggleMainMenu() {
-  const mainMenu = document.querySelector('#main-menu')
-  if(!mainMenu) return
-
-  // toggle btnの追加
-  addBtnToToggleMainMenu()
-
-  // 開閉処理
-  const toggleTrigger = document.querySelector('.aw_toggleMainMenu')
-  toggleTrigger.addEventListener('click', toggleMainMenu)
-}
-
 // Sidebarの折りたたみ
 function addBtnToToggleSidebar() {
   const sidebar = document.querySelector('#sidebar')
@@ -179,9 +132,8 @@ window.addEventListener('DOMContentLoaded', () => {
   addFeedbackLink()
 
   /**
-   * Main Menu / Sidebarの開閉機能
+   * Sidebarの開閉機能
    */
-  initToggleMainMenu()
   initToggleSidebar()
 
   // mainMenuがあるかどうか

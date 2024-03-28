@@ -51,29 +51,6 @@
     @extend .BTN_SECONDARY;
   }
 
-  // Main Menuの開閉ボタン
-  .aw_toggleMainMenu {
-    @extend .BTN_TERTIARY_ICON_ONLY_OUTLINED;
-    background-image: url(images/move_left_default.svg);
-    @apply absolute top-[1rem] left-[0.75rem] z-10
-  }
-
-  .aw_toggleMainMenu.isMainMenuClose {
-    background-image: url(images/move_right_default.svg);
-  }
-
-  .lgc-is-fullscreen .aw_toggleMainMenu,
-  .task-kanban-is-fullscreen .aw_toggleMainMenu,
-  .controller-resource_management .aw_toggleMainMenu,
-  .controller-lychee_message_box_my_boxes .aw_toggleMainMenu,
-  .controller-lychee_message_box_informations .aw_toggleMainMenu,
-  .controller-lychee_message_box_system_errors .aw_toggleMainMenu,
-  .controller-time_management .aw_toggleMainMenu,
-  .controller-project_report_overview .aw_toggleMainMenu,
-  .controller-lychee_work_plan .aw_toggleMainMenu {
-    @apply hidden
-  }
-
   // Sidebarの開閉ボタン
   .aw_toggleSidebar {
     @extend .BTN_TERTIARY_ICON_ONLY_OUTLINED;
@@ -214,7 +191,7 @@
 
     background-image: url(images/add_dark.svg);
 
-    @apply bg-no-repeat bg-[length:16px_16px] bg-center
+    @apply mb-2 mx-[18px]
   }
 
   #main-menu li a.new-object:hover,

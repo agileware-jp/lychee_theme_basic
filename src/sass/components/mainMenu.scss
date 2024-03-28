@@ -1,18 +1,14 @@
 @layer components {
   #main-menu {
     height: calc(100vh - 1px);
-    @apply overflow-auto absolute left-0 w-52 bg-primitive-darkGray-600 pt-3 px-2 pb-20 z-[400]
+    @apply overflow-scroll absolute left-0 w-[4.5rem] bg-primitive-darkGray-600 pt-3 px-1 pb-20 z-[400]
   }
 
   #main-menu.aw_fixed_header {
     @apply fixed
   }
 
-  #main-menu.isMainMenuClose {
-    @apply w-[4rem] px-1
-  }
-
-  #main-menu.isMainMenuClose::-webkit-scrollbar {
+  #main-menu::-webkit-scrollbar {
     @apply hidden
   }
 
@@ -20,11 +16,11 @@
     @apply flex flex-col w-full whitespace-nowrap m-0 p-0
   }
 
-  #main-menu ul:not(.menu-children) {
-    @apply mt-9
+  #main-menu li {
+    @apply relative
   }
 
-  #main-menu.isMainMenuClose li:not(:first-child) {
+  #main-menu li:not(:first-child) {
     @apply mt-1
   }
 
@@ -33,24 +29,20 @@
   }
 
   #main-menu > ul > li > a {
-    @apply cursor-pointer text-text-onFill
+    @apply cursor-pointer relative text-text-onFill text-[11px] leading-[1.4] py-2 px-1.5
   }
 
   #main-menu .lychee-icon.lychee-icon:before, #main-menu .lychee-icon.lychee-icon.selected:before {
     content: url(images/lychee_onFill.svg);
   }
 
-  #main-menu.isMainMenuClose > ul > li > a {
-    @apply relative text-[11px] leading-[1.4] py-2.5 px-1
-  }
-
   // メインメニューを閉じているときはlycheeアイコンを調整する
-  #main-menu.isMainMenuClose > ul > li > a.lychee-icon {
+  #main-menu > ul > li > a.lychee-icon {
     @apply relative pl-2
   }
 
-  #main-menu.isMainMenuClose .lychee-icon.lychee-icon:before,
-  #main-menu.isMainMenuClose .lychee-icon.lychee-icon.selected:before {
+  #main-menu .lychee-icon.lychee-icon:before,
+  #main-menu .lychee-icon.lychee-icon.selected:before {
     content: '';
     background-image: url(images/lychee_onFill.svg);
     @apply absolute top-0.5 left-0.5 inline-block w-2 h-2 bg-no-repeat bg-contain
@@ -64,19 +56,6 @@
     @apply bg-primitive-darkGray-700
   }
 
-  .aw_newObjectList {
-    @apply absolute top-[1rem] right-[0.75rem] w-6
-  }
-
-  .isMainMenuClose .aw_newObjectList {
-    @apply hidden
-  }
-
-  #main-menu li:hover ul.menu-children,
-  #main-menu li ul.menu-children.visible {
-    @apply right-0 block w-[11rem]
-  }
-
   #main-menu li a.selected,
   #main-menu li a.selected:hover {
     @apply bg-primitive-darkGray-900
@@ -88,6 +67,11 @@
 
   // main-menu > new-object
   #main-menu .menu-children {
-    @apply hidden absolute w-auto bg-background-primary border border-border-default p-1 rounded-md shadow-lg z-[45]
+    @apply hidden fixed w-auto bg-background-primary border border-border-default p-1 rounded-md shadow-lg z-[1]
+  }
+
+  #main-menu li:hover ul.menu-children,
+  #main-menu li ul.menu-children.visible {
+    @apply left-2 block w-[11rem]
   }
 }
