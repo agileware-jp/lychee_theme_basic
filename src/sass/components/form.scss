@@ -133,6 +133,10 @@
     @apply mt-0
   }
 
+  .attachments_fields input.icon-attachment {
+    @apply pl-4
+  }
+
   .attachments_fields .description {
     @apply mb-2
   }
@@ -214,6 +218,10 @@
     .edit_issue select,
     .edit_issue textarea {
       @apply text-xs py-1.5 pl-2
+    }
+
+    .attachments_fields input.icon-attachment {
+      @apply pl-4
     }
 
     // searchable selectboxを上書き
