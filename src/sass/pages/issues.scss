@@ -37,15 +37,15 @@
     }
 
     div.issue .attributes .attribute {
-      @apply flex items-center mb-1 pl-0
+      @apply mb-1
     }
 
     div.issue .attributes .attribute .label {
-      @apply float-none block w-auto text-sm text-text-default text-left my-0 mr-2 ml-0
+      @apply text-sm text-text-default
     }
 
     div.issue .attribute .value {
-      @apply max-w-none text-sm text-text-default
+      @apply text-sm text-text-default
     }
 
     div.issue .attribute .value a {
