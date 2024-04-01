@@ -191,7 +191,7 @@
 
     background-image: url(images/add_dark.svg);
 
-    @apply mb-2 mx-[18px]
+    @apply block bg-no-repeat bg-[length:16px_16px] bg-center mb-4 ml-3.5
   }
 
   #main-menu li a.new-object:hover,
