@@ -390,10 +390,10 @@
       @apply -mt-0.5 mr-0 p-0
     }
 
-    .tab-content #tab-content-comments_and_journals .comment-properties .add,
-    .tab-content #tab-content-comments_and_journals .comment-edit-properties .add,
-    .tab-content #tab-content-comments_and_journals .comment-properties .cancel,
-    .tab-content #tab-content-comments_and_journals .comment-edit-properties .cancel,
+    .lif-tab-content #tab-content-comments_and_journals .comment-properties .add,
+    .lif-tab-content #tab-content-comments_and_journals .comment-edit-properties .add,
+    .lif-tab-content #tab-content-comments_and_journals .comment-properties .cancel,
+    .lif-tab-content #tab-content-comments_and_journals .comment-edit-properties .cancel,
     .attachment_files .buttons-area button.cancel,
     .attachment_files .buttons-area button.update {
       @apply py-2 px-3
