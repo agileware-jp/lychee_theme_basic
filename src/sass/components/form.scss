@@ -207,34 +207,4 @@
   .select2-container--default.select2-container--default.select2-container--focus .select2-selection--multiple {
     @apply border-text-default
   }
-
-  // 個別系
-  // チケット作成・編集のみフォームサイズを小さくする
-  // .controller-issues {
-  //   .new_issue input:not([type="submit"]),
-  //   .new_issue select,
-  //   .new_issue textarea,
-  //   .edit_issue input:not([type="submit"]),
-  //   .edit_issue select,
-  //   .edit_issue textarea {
-  //     @apply text-xs py-1.5 pl-2
-  //   }
-
-  //   .attachments_fields input.icon-attachment {
-  //     @apply pl-4
-  //   }
-
-  //   // searchable selectboxを上書き
-  //   .select2-container--default.select2-container--default .select2-selection--single {
-  //     @apply h-[30px] text-xs py-1.5 pl-2 pr-8
-  //   }
-
-  //   .select2-container--default.select2-container--default .select2-selection--single .select2-selection__arrow {
-  //     @apply h-[16px]
-  //   }
-
-  //   .select2-container--default.select2-container--default .select2-selection--single .select2-selection__rendered {
-  //     @apply text-xs
-  //   }
-  // }
 }
