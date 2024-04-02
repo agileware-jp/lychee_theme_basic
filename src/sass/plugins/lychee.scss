@@ -811,7 +811,7 @@
       @apply mb-0
     }
 
-    .lif-description .header .left H5 {
+    .lif-description .header .left h5 {
       @apply font-bold
     }
 
@@ -857,25 +857,25 @@
       @apply hidden
     }
 
-    .tab-content .add-file,
+    .lif-tab-content .add-file,
     .attachment_files .add-file {
       @apply border border-background-secondary my-1 hover:border-border-default active:border-border-divider active:bg-background-tertiary
     }
 
-    .tab-content .add-file .label,
+    .lif-tab-content .add-file .label,
     .attachment_files .add-file .label {
       @apply h-auto py-2 px-3 rounded-md
     }
 
-    .tab-content .item .avatar {
+    .lif-tab-content .item .avatar {
       @apply mr-2
     }
 
-    .tab-content #tab-content-comments_and_journals .notify .label {
+    .lif-tab-content #tab-content-comments_and_journals .notify .label {
       @apply h-auto border border-background-secondary py-2 px-3 rounded-md hover:border-border-default active:border-border-divider active:bg-background-secondary
     }
 
-    .tab-content #tab-content-comments_and_journals .controls {
+    .lif-tab-content #tab-content-comments_and_journals .controls {
       @apply mt-4
     }
 
@@ -883,24 +883,26 @@
       @apply mt-0
     }
 
-    .tab-content .item .meta,
-    .tab-content .item .details,
+    .lif-tab-content .item .meta,
+    .lif-tab-content .item .details,
     #tab-content-time_entries .notes > *,
-    .tab-content .item .private-notes .wiki {
+    .lif-tab-content .item .private-notes .wiki {
       width: calc(100% - 32px);
     }
 
-    .tab-content .item .meta .context-menus {
+    .lif-tab-content .item .meta .context-menus {
       @apply mr-1
     }
 
-    .tab-content .item .item-date {
+    .lif-tab-content .item .item-date {
       @apply text-text-caption text-xs mt-1
     }
 
-    .tab-content .total .value {
+    .lif-tab-content .total .value {
       @apply mr-2
     }
+
+    
 
     // context menu
     #popup ul,
