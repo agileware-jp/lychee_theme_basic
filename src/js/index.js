@@ -37,14 +37,24 @@ function stickyMainMenu() {
   if(mainMenu) {
     const topMenuHeightRectBottom = topMenu.getBoundingClientRect().bottom
 
+    // top-menuが見えなくなったとき
     if(topMenuHeightRectBottom <= 0) {
       mainMenu.classList.add('aw_fixed_header')
       mainMenu.style.top = '0px'
+      mainMenu.style.height = '100vh'
     }
 
+    // top-menuが見えているとき
     if(topMenuHeightRectBottom > 0) {
       mainMenu.classList.remove('aw_fixed_header')
       mainMenu.style.top = `${topMenu.offsetHeight}px`
+
+      /**
+       * Note:
+       * main-menuの高さは `100vh - 今見えているtop-menuの高さ` とする必要があるので
+       * スクロール中top-menuが見えているときは、常のその計算結果をmain-menuの高さとして指定する
+       */
+      mainMenu.style.height = `calc(100vh - ${topMenuHeightRectBottom}px)`
     }
   }
 }

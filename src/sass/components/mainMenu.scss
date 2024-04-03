@@ -1,7 +1,11 @@
 @layer components {
   #main-menu {
-    height: calc(100vh - 1px);
+    height: calc(100% - 44px);
     @apply overflow-scroll absolute top-[44px] left-0 w-[3.75rem] bg-primitive-darkGray-600 pt-3 px-1 pb-20 z-[400]
+  }
+
+  #main-menu.aw_fixed_header {
+    height: 100vh;
   }
 
   #main-menu:hover {
