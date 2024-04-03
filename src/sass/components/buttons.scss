@@ -1,42 +1,42 @@
 @layer components {
   .BTN_PRIMARY {
-    @apply cursor-pointer inline-block h-auto bg-product-default border border-product-default text-text-onFill text-sm py-2 px-3 rounded-md shadow hover:bg-product-hover hover:shadow-none active:bg-product-active active:shadow-none
+    @apply cursor-pointer inline-block h-auto bg-product-default border border-product-default text-text-onFill text-xs py-1.5 px-2 rounded-md shadow hover:bg-product-hover hover:shadow-none active:bg-product-active active:shadow-none
   }
 
   .BTN_SECONDARY {
-    @apply cursor-pointer inline-block h-auto bg-background-primary border border-border-default text-text-default text-sm py-2 px-3 rounded-md shadow hover:no-underline hover:bg-background-primary hover:border-border-dark hover:shadow-none active:bg-background-secondary active:shadow-none
+    @apply cursor-pointer inline-block h-auto bg-background-primary border border-border-default text-text-default text-xs py-1.5 px-2 rounded-md shadow hover:no-underline hover:bg-background-primary hover:border-border-dark hover:shadow-none active:bg-background-secondary active:shadow-none
   }
 
   .BTN_SECONDARY_ICON_LEFT {
-    @apply cursor-pointer inline-block h-auto bg-background-primary bg-[0.75rem_center] bg-no-repeat border border-border-default text-text-default text-sm py-2 pl-7 pr-3 rounded-md shadow hover:no-underline hover:bg-background-primary hover:border-border-dark hover:shadow-none active:bg-background-secondary active:shadow-none
+    @apply cursor-pointer inline-block h-auto bg-background-primary bg-[0.75rem_center] bg-no-repeat border border-border-default text-text-default text-xs py-1.5 pl-6 pr-2 rounded-md shadow hover:no-underline hover:bg-background-primary hover:border-border-dark hover:shadow-none active:bg-background-secondary active:shadow-none
   }
 
   .BTN_TERTIARY {
-    @apply cursor-pointer inline-block h-auto bg-background-secondary border border-background-secondary text-text-default text-sm py-2 px-3 rounded-md hover:border-border-default hover:no-underline hover:text-text-default active:bg-background-tertiary
+    @apply cursor-pointer inline-block h-auto bg-background-secondary border border-background-secondary text-text-default text-xs py-1.5 px-2 rounded-md hover:border-border-default hover:no-underline hover:text-text-default active:bg-background-tertiary
   }
 
   .BTN_TERTIARY_ICON_ONLY {
-    @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap w-6 h-6 bg-center align-middle bg-background-secondary border border-background-secondary text-sm p-0 rounded-md hover:border-border-default active:bg-background-tertiary
+    @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap w-6 h-6 bg-center align-middle bg-background-secondary border border-background-secondary text-xs p-0 rounded-md hover:border-border-default active:bg-background-tertiary
   }
 
   .BTN_TERTIARY_ICON_ONLY_OUTLINED {
-    @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap w-6 h-6 bg-center bg-no-repeat align-middle bg-background-primary border border-border-default text-sm p-0 rounded-md hover:bg-background-secondary hover:border-border-default active:bg-background-tertiary
+    @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap w-6 h-6 bg-center bg-no-repeat align-middle bg-background-primary border border-border-default text-xs p-0 rounded-md hover:bg-background-secondary hover:border-border-default active:bg-background-tertiary
   }
 
   .BTN_TERTIARY_ICON_RIGHT {
-    @apply cursor-pointer inline-block h-auto bg-[right_0.75rem_center] bg-background-secondary border border-background-secondary bg-no-repeat text-text-default text-sm py-2 pr-7 pl-3 rounded-md hover:border-border-default hover:no-underline hover:text-text-default active:bg-background-tertiary
+    @apply cursor-pointer inline-block h-auto bg-[right_0.75rem_center] bg-background-secondary border border-background-secondary bg-no-repeat text-text-default text-xs py-1.5 pr-6 pl-2 rounded-md hover:border-border-default hover:no-underline hover:text-text-default active:bg-background-tertiary
   }
 
   .BTN_TERTIARY_ICON_LEFT {
-    @apply cursor-pointer inline-block h-auto bg-[0.75rem_center] bg-background-secondary bg-no-repeat border border-background-secondary text-text-default text-sm py-2 pr-3 pl-7 rounded-md hover:border-border-default hover:no-underline hover:text-text-default active:bg-background-tertiary
+    @apply cursor-pointer inline-block h-auto bg-[0.75rem_center] bg-background-secondary bg-no-repeat border border-background-secondary text-text-default text-xs py-1.5 pr-2 pl-6 rounded-md hover:border-border-default hover:no-underline hover:text-text-default active:bg-background-tertiary
   }
 
   .BTN_LINK {
-    @apply cursor-pointer inline-block h-auto bg-transparent border border-transparent text-text-link text-sm py-2 px-3
+    @apply cursor-pointer inline-block h-auto bg-transparent border border-transparent text-text-link text-xs py-1.5 px-2
   }
 
   .buttons {
-    @apply text-sm
+    @apply text-xs
   }
 
   .buttons * {
@@ -116,7 +116,7 @@
     background-image: url(images/more_dark.svg);
 
     @extend .BTN_TERTIARY_ICON_ONLY;
-    @apply bg-no-repeat w-[38px] h-[38px]
+    @apply bg-no-repeat w-[30px] h-[30px]
   }
 
   // チケット詳細>添付ファイルでのicon-onlyをtertialy buttonに
@@ -142,17 +142,17 @@
   #content > .contextual > a.icon,
   #content > .contextual .drdn.icon,
   p.buttons a.icon {
-    @apply h-auto bg-[8px_center] pr-3 pl-7 py-2
+    @apply h-auto bg-[8px_center] py-1.5 pr-2 pl-6
   }
 
   input[name="follow"] {
     @extend .BTN_SECONDARY;
-    @apply ml-2
+    @apply ml-1.5
   }
 
   input[name="continue"] {
     @extend .BTN_SECONDARY;
-    @apply ml-2
+    @apply ml-1.5
   }
 
   // APIキー表示から戻るときのボタン（ただのaタグなので個別で指定）
@@ -163,7 +163,7 @@
   // journal編集時のキャンセルボタン
   .journal input[type="submit"] + a {
     @extend .BTN_LINK;
-    @apply mt-2 ml-2
+    @apply mt-2 ml-1.5
   }
 
 

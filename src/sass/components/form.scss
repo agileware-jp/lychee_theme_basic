@@ -1,6 +1,6 @@
 @layer components {
   .TEXT_FIELD {
-    @apply border border-border-default text-text-default text-sm my-[1px] py-2 px-3 rounded-md hover:border-border-dark
+    @apply border border-border-default text-text-default text-xs my-[1px] py-1.5 px-2 rounded-md hover:border-border-dark
   }
 
   form {
@@ -184,11 +184,11 @@
   // 詳細度を高めて上書きが必要
   .select2-container--default.select2-container--default .select2-selection--single {
     @extend .TEXT_FIELD;
-    @apply h-[38px] pr-8
+    @apply h-[30px] pr-8
   }
 
   .select2-container--default.select2-container--default .select2-selection--single .select2-selection__arrow {
-    @apply h-[24px]
+    @apply -top-[4px]
   }
 
   .select2-container--default.select2-container--default .select2-selection--single .select2-selection__arrow b {
@@ -201,40 +201,10 @@
 
   .select2-container--default.select2-container--default .select2-selection--single .select2-selection__rendered {
     padding-left: 0 !important;
-    @apply text-sm text-text-default px-0 pt-0
+    @apply text-xs text-text-default px-0 pt-0
   }
 
   .select2-container--default.select2-container--default.select2-container--focus .select2-selection--multiple {
     @apply border-text-default
-  }
-
-  // 個別系
-  // チケット作成・編集のみフォームサイズを小さくする
-  .controller-issues {
-    .new_issue input:not([type="submit"]),
-    .new_issue select,
-    .new_issue textarea,
-    .edit_issue input:not([type="submit"]),
-    .edit_issue select,
-    .edit_issue textarea {
-      @apply text-xs py-1.5 pl-2
-    }
-
-    .attachments_fields input.icon-attachment {
-      @apply pl-4
-    }
-
-    // searchable selectboxを上書き
-    .select2-container--default.select2-container--default .select2-selection--single {
-      @apply h-[30px] text-xs py-1.5 pl-2 pr-8
-    }
-
-    .select2-container--default.select2-container--default .select2-selection--single .select2-selection__arrow {
-      @apply h-[16px]
-    }
-
-    .select2-container--default.select2-container--default .select2-selection--single .select2-selection__rendered {
-      @apply text-xs
-    }
   }
 }
