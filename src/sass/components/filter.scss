@@ -647,7 +647,7 @@
   // 管理→設定→グループ(buttons.scssも参照)
   .controller-groups {
     h2 + form {
-      @apply clear-both text-xs
+      @apply clear-both
     }
 
     h2 + form fieldset {
@@ -657,41 +657,21 @@
     h2 + form fieldset legend {
       @apply text-text-caption text-xs font-bold
     }
-
-    h2 + form fieldset {
-      select {
-        @apply text-xs py-1 pr-6 pl-2 my-0
-      }
-
-      input:not([type="submit"]) {
-        @apply text-xs py-1 px-2 my-0
-      }
-    }
   }
 
   // プロジェクト設定→バージョンのフィルタ
   .controller-projects {
     #tab-content-versions {
       form {
-        @apply clear-both text-xs
+        @apply clear-both
       }
 
       form fieldset {
         @apply pt-2 px-3 pb-3 rounded-md
       }
-  
+
       form fieldset legend {
         @apply text-text-caption text-xs font-bold
-      }
-  
-      form fieldset {
-        select {
-          @apply text-xs py-1 pr-6 pl-2 my-0
-        }
-  
-        input:not([type="submit"]) {
-          @apply text-xs py-1 px-2 my-0
-        }
       }
     }
   }
