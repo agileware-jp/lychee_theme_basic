@@ -338,7 +338,7 @@
     .reflect_critical_path {
       background-image: url(images/refresh_default.svg);
       @extend .BTN_SECONDARY_ICON_LEFT;
-      @apply mt-2
+      @apply bg-[0.5rem_center]
     }
   }
 
