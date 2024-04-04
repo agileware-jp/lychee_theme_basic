@@ -324,6 +324,34 @@
     .lgc-separator__vertical {
       @apply mx-2
     }
+
+    .lgc-download-options {
+      .lgc-download-options-pageSize,
+      .lgc-download-options-orientation,
+      .lgc-download-options-margin,
+      .lgc-download-options-scale,
+      .lgc-download-options-header-left,
+      .lgc-download-options-header-center,
+      .lgc-download-options-header-right,
+      .lgc-download-options-project-name-display,
+      .lgc-download-options-date-label-display {
+        @apply text-xs
+      }
+
+      .lgc-download-options-margin input {
+        @apply w-[3rem]
+      }
+    }
+
+    .lgc-plan {
+      label[for="plan_name"] {
+        @apply text-xs
+      }
+
+      .lgc-plan-list {
+        @apply text-xs
+      }
+    }
   }
 
   .lgc-is-fullscreen #main {
