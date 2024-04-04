@@ -1,20 +1,4 @@
 @layer components {
-  #query_form,
-  body:not(.controller-queries) #query-form,
-  #levm_query_form {
-    select {
-      @apply text-xs py-1 pr-6 pl-2 my-0
-    }
-
-    select[multiple] {
-      @apply px-1
-    }
-
-    input:not([type="checkbox"], [type="radio"], [type="submit"]) {
-      @apply text-xs py-1 px-2 my-0
-    }
-  }
-
   #filters-table {
     @apply w-full
   }
@@ -623,7 +607,7 @@
   // 管理→設定→フィルタ(buttons.scssも参照)
   .controller-admin {
     h2 + form {
-      @apply clear-both text-xs
+      @apply clear-both
     }
 
     h2 + form fieldset {
@@ -634,16 +618,6 @@
       @apply text-text-caption text-xs font-bold
     }
 
-    h2 + form fieldset {
-      select {
-        @apply text-xs py-1 pr-6 pl-2 my-0
-      }
-
-      input:not([type="submit"]) {
-        @apply text-xs py-1 px-2 my-0
-      }
-    }
-
     fieldset #status {
       @apply mr-2
     }
@@ -652,7 +626,7 @@
   // 管理→設定→ユーザー(buttons.scssも参照)
   .controller-users {
     #users_form {
-      @apply clear-both text-xs
+      @apply clear-both
     }
 
     #users_form fieldset {
@@ -661,16 +635,6 @@
 
     #users_form fieldset legend {
       @apply text-text-caption text-xs font-bold
-    }
-
-    #users_form fieldset {
-      select {
-        @apply text-xs py-1 pr-6 pl-2 my-0
-      }
-
-      input:not([type="subtmi"]) {
-        @apply text-xs py-1 px-2 my-0
-      }
     }
 
     fieldset #status,

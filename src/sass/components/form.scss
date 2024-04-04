@@ -30,6 +30,10 @@
     @extend .TEXT_FIELD;
   }
 
+  input[type="date"] {
+    @apply h-[30px]
+  }
+
   textarea {
     @extend .TEXT_FIELD;
   }
