@@ -232,26 +232,21 @@
   // 設定 > ユーザー
   .controller-admin,
   .controller-groups {
-    h2 + form input[type="submit"] {
-      @extend .BTN_PRIMARY;
-      @apply text-xs py-1 px-2 ml-1
-    }
-
     input[type="submit"] + .icon-reload {
       @extend .BTN_SECONDARY_ICON_LEFT;
-      @apply bg-[0.5rem_center] bg-[length:14px_14px] text-xs py-1 pr-2 pl-6 ml-1
+      @apply bg-[0.5rem_center] bg-[length:14px_14px] text-xs py-1.5 pr-2 pl-6 ml-1
     }
   }
 
   .controller-users.action-index {
     h2 + form input[type="submit"] {
       @extend .BTN_PRIMARY;
-      @apply text-xs py-1 px-2 ml-1
+      @apply text-xs py-1.5 px-2 ml-1
     }
 
     input[type="submit"] + .icon-reload {
       @extend .BTN_SECONDARY_ICON_LEFT;
-      @apply bg-[0.5rem_center] bg-[length:14px_14px] text-xs py-1 pr-2 pl-6 ml-1
+      @apply bg-[0.5rem_center] bg-[length:14px_14px] text-xs py-1.5 pr-2 pl-6 ml-1
     }
   }
 
@@ -259,12 +254,12 @@
     #tab-content-versions {
       form input[type="submit"] {
         @extend .BTN_PRIMARY;
-        @apply text-xs py-1 px-2 ml-1
+        @apply text-xs py-1.5 px-2 ml-1
       }
   
       input[type="submit"] + .icon-reload {
         @extend .BTN_SECONDARY_ICON_LEFT;
-        @apply bg-[0.5rem_center] bg-[length:14px_14px] text-xs py-1 pr-2 pl-6 ml-1
+        @apply bg-[0.5rem_center] bg-[length:14px_14px] text-xs py-1.5 pr-2 pl-6 ml-1
       }
     }
 
@@ -279,12 +274,12 @@
 
   .controller-roles {
     #filters form input[type="submit"] {
-      @apply text-xs py-1 px-2
+      @apply text-xs py-1.5 px-2
     }
 
     #filters form .icon-reload {
       @extend .BTN_SECONDARY_ICON_LEFT;
-      @apply bg-[0.5rem_center] bg-[length:14px_14px] text-xs py-1 pr-2 pl-6 ml-1
+      @apply bg-[0.5rem_center] bg-[length:14px_14px] text-xs py-1.5 pr-2 pl-6 ml-1
     }
   }
 
@@ -306,7 +301,7 @@
   .controller-time_management {
     #filters + .buttons .icon-checked {
       @extend .BTN_LINK;
-      @apply bg-[left_center] text-xs pr-2 pl-4 py-1 shadow-none
+      @apply bg-[left_center] text-xs pr-2 pl-4 py-1.5 shadow-none
     }
   }
 
@@ -317,7 +312,7 @@
 
   #lychee_cost_expenses #x_months ~ a {
     @extend .BTN_SECONDARY_ICON_LEFT;
-    @apply bg-[0.5rem_center] bg-[length:14px_14px] text-xs py-1 pr-2 pl-6 ml-1
+    @apply bg-[0.5rem_center] bg-[length:14px_14px] text-xs py-1.5 pr-2 pl-6 ml-1
   }
 
   .lychee_cost_expenses .icon.icon-edit,
@@ -343,7 +338,7 @@
     .reflect_critical_path {
       background-image: url(images/refresh_default.svg);
       @extend .BTN_SECONDARY_ICON_LEFT;
-      @apply mt-2
+      @apply bg-[0.5rem_center]
     }
   }
 
