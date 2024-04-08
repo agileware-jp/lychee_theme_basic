@@ -23,7 +23,7 @@
   }
 
   input[type="checkbox"] {
-    @apply h-auto align-baseline
+    @apply h-auto align-text-bottom
   }
 
   input:not([type="checkbox"], [type="radio"], [type="submit"]) {

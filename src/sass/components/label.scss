@@ -14,7 +14,7 @@
   label.inline {
     margin-left: 0 !important;
 
-    @apply inline-flex items-center w-auto text-sm text-text-default text-left mr-4 mb-0
+    @apply w-auto text-sm text-text-default text-left mr-4 mb-0
   }
 
   .tabular label.inline {
@@ -36,6 +36,9 @@
     @apply mr-1
   }
 
+  .tabular label.inline input[type="checkbox"] {
+    @apply mt-0
+  }
 
   .query-columns + p .inline:first-of-type {
     background-color: #f00;

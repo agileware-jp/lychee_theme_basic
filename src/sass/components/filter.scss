@@ -169,6 +169,21 @@
     }
   }
 
+  .aw_lgcQueries {
+  // Note:lgcのカスタムクエリ作成画面は、bodyに`controller-lgc/queries`と指定されているためcssのみで指定できない。そのためthemeのjsで固有のclass`aw_lgcQueries`を指定している
+    fieldset {
+      @apply mt-4 py-2 px-4 rounded-md
+    }
+
+    fieldset legend {
+      @apply text-xs font-bold
+    }
+
+    .lgc-queryForm-months {
+      @apply w-[3.5rem]
+    }
+  }
+
   // EVM
   .controller-project_evms {
     #levm_query_form fieldset {
