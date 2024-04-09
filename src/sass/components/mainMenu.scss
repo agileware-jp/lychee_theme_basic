@@ -87,10 +87,6 @@
     @apply bg-primitive-darkGray-900
   }
 
-  #main-menu .tabs-buttons {
-    @apply opacity-0
-  }
-
   // main-menu > new-object
   #main-menu .menu-children {
     @apply hidden fixed w-auto bg-background-primary border border-border-default p-1 rounded-md shadow-lg z-[1]
