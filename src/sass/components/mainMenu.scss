@@ -87,10 +87,6 @@
     @apply bg-primitive-darkGray-900
   }
 
-  #main-menu .tabs-buttons {
-    @apply opacity-0
-  }
-
   // main-menu > new-object
   #main-menu ul li:has(.new-object) {
     @apply left-3 w-6 mb-4

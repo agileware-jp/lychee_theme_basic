@@ -1,7 +1,11 @@
-// .tabs-buttons(main menuが見切れる時のページ送りUI)を非表示にする(HTMLのstyle属性でして押されておりテーマcssで上書きできないため)
+// .tabs-buttons(main menuが見切れる時のページ送りUI)を非表示にする
+// Note: HTMLのstyle属性でして押されておりテーマcssで上書きできないため、テーマjsで上書きする
 function hiddenTabsButtons() {
   const tabsButton = document.querySelector('#main-menu .tabs-buttons')
-  if(tabsButton) tabsButton.classList.remove('tabs-buttons')
+  if(tabsButton) {
+    tabsButton.classList.remove('tabs-buttons')
+    tabsButton.style.display = 'none'
+  }
 }
 
 function setMainMenuTop() {
