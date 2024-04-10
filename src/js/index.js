@@ -202,4 +202,13 @@ window.addEventListener('DOMContentLoaded', () => {
   if(newObjectBtn) {
     newObjectBtn.closest('li').classList.add('aw_newObjectList')
   }
+
+
+  /**
+   * LGCのカスタムクエリ作成ページかどうかを判定
+   */
+  const lgcQueriesBodyClasses = document.body.classList
+  if([...lgcQueriesBodyClasses].includes('controller-lgc/queries')) {
+    document.body.classList.add('aw_lgcQueries')
+  }
 })
