@@ -92,12 +92,16 @@
   }
 
   // main-menu > new-object
+  #main-menu ul li:has(.new-object) {
+    @apply left-3 w-6 mb-4
+  }
+
   #main-menu .menu-children {
     @apply hidden fixed w-auto bg-background-primary border border-border-default p-1 rounded-md shadow-lg z-[1]
   }
 
-  #main-menu .new-object:hover + ul.menu-children,
+  #main-menu li:hover ul.menu-children,
   #main-menu li ul.menu-children.visible {
-    @apply left-2 block w-[11rem] -mt-3
+    @apply left-2 block w-[11rem]
   }
 }
