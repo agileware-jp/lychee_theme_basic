@@ -201,10 +201,25 @@ window.addEventListener('DOMContentLoaded', () => {
 
   /**
    * main-menuの新規作成系展開ボタンのクリック領域を調整
+   * .menu-childrenの展開位置を指定
    */
   const newObjectBtn = document.querySelector('.new-object')
   if(newObjectBtn) {
-    newObjectBtn.closest('li').classList.add('aw_newObjectList')
+    // Note: .new-objectの親要素(li)にマウスイベントを設定する
+    //       .new-object自体に設定すると、.new-objectから.menu-childrenにマウスが移動した瞬間にtopがautoになってしまうため、一瞬カクついてしまう。
+    const newObjectWrapper = newObjectBtn.closest('li')
+    newObjectWrapper.classList.add('aw_newObjectList')
+
+    newObjectWrapper.addEventListener('mouseenter', e => {
+      e.target.querySelector('.menu-children').style.top = `${e.target.getBoundingClientRect().bottom}px`
+    })
+
+    newObjectWrapper.addEventListener('mouseleave', e => {
+      // メニューを展開している間はマウスが離れてもtopを変更しない(メニューがおかしな位置に移動する現象が発生するため)
+      if(!e.target.querySelector('.menu-children').classList.contains('visible')) {
+        e.target.querySelector('.menu-children').style.top = `auto`
+      }
+    })
   }
 
 
