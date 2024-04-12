@@ -1,8 +1,4 @@
 @layer components {
-  #principals_for_new_member {
-    @apply mt-4
-  }
-
   #principals_for_new_member input[type="checkbox"] {
     @apply align-middle my-1 mr-2
   }
@@ -12,11 +8,11 @@
   }
 
   #principals {
-    @apply mt-4
+    @apply mt-2
   }
 
   #principals label {
-    @apply flex items-center gap-0.5 text-sm text-text-default px-2
+    @apply px-2
   }
 
   #principals label img,
