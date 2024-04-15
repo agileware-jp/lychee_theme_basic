@@ -184,6 +184,23 @@
     }
   }
 
+  // Kanbanのカスタムクエリ
+  .controller-kanban_queries {
+    fieldset#options,
+    fieldset#filters,
+    fieldset#lychee_issue_board_sorting_form,
+    fieldset#columns {
+      @apply mt-4 py-2 px-4 rounded-md
+    }
+
+    fieldset#options legend,
+    fieldset#filters legend,
+    fieldset#lychee_issue_board_sorting_form legend,
+    fieldset#columns legend {
+      @apply text-xs font-bold
+    }
+  }
+
   // EVM
   .controller-project_evms {
     #levm_query_form fieldset {
@@ -259,6 +276,24 @@
       label + label {
         @apply ml-2
       }
+    }
+  }
+
+  // EVMのカスタムクエリ
+  .controller-levm_queries {
+    fieldset#field_type,
+    fieldset#field_condition {
+      @apply mt-4 py-2 px-4 rounded-md
+    }
+
+    fieldset#field_type legend,
+    fieldset#field_condition legend {
+      @apply text-xs font-bold
+    }
+
+    fieldset#field_condition #levm-target,
+    fieldset#field_condition #levm-milestones {
+      @apply mb-2
     }
   }
 
