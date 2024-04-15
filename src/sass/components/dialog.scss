@@ -1,4 +1,14 @@
 @layer components {
+  // 4.1対応
+  div.modal.ui-dialog {
+    @apply z-[1000]
+  }
+
+  div.modal.ui-dialog + .ui-widget-overlay {
+    @apply z-[999]
+  }
+
+  // 通常css
   div.modal {
     @apply bg-background-primary border-border-divider p-6 rounded-lg z-50
   }
@@ -8,15 +18,19 @@
   }
 
   div.modal p.buttons {
-    @apply text-right mb-0
+    @apply text-right mt-2 mb-0
   }
 
   div.modal .box p {
     @apply my-1.5 mx-0
   }
 
+  div.modal.ui-widget-content {
+    @apply bg-none
+  }
+
   div.modal .ui-widget-header {
-    @apply bg-transparent border-none text-sm font-bold p-0
+    @apply bg-transparent bg-none border-none text-sm text-text-default font-bold p-0
   }
 
   .ui-dialog .ui-dialog-title {
@@ -40,6 +54,20 @@
 
   .ui-dialog .ui-dialog-content {
     @apply mt-4 p-0
+  }
+
+
+  // CSV Export
+  div.modal #csv-export-form p:not([class]) {
+    @apply py-1
+  }
+
+  #csv-export-options fieldset {
+    @apply pt-1 px-3 pb-3
+  }
+
+  div.modal #csv-export-form #csv-export-block-columns label + label {
+    @apply ml-2
   }
 
 
