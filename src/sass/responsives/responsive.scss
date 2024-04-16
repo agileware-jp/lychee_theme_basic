@@ -999,6 +999,17 @@
       @apply pt-0
     }
   }
+
+  .controller-lychee_issue_templates.action-new,
+  .controller-lychee_issue_templates.action-edit {
+    #checklist_for_new {
+      @apply mb-4 pl-0
+    }
+
+    #checklist_for_new > label {
+      @apply w-auto ml-0 pr-0 translate-y-0
+    }
+  }
 }
 
 @media all and (max-width: 599px) {
