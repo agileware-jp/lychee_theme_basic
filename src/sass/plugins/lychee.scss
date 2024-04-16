@@ -39,6 +39,13 @@
     @apply mt-2
   }
 
+  // Lychee Project Dashboardの「コピー」ボタン
+  .controller-lychee_project_dashboards {
+    #content button[type="submit"] + button {
+      @apply ml-1
+    }
+  }
+
 
   // LRM
   .controller-resource_management {

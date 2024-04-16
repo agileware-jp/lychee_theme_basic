@@ -227,6 +227,13 @@
     @apply bg-[left_center] text-xs pr-2 pl-4 py-1 shadow-none
   }
 
+  // Lychee Project Dashboardの「コピー」ボタン
+  .controller-lychee_project_dashboards {
+    #content button[type="submit"] {
+      @apply cursor-pointer bg-product-default text-text-onFill hover:bg-product-hover
+    }
+  }
+
   // 管理→設定のフィルタ(filter.scssも参照)
   // 設定 > プロジェクト
   // 設定 > ユーザー
