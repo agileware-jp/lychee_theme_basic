@@ -61,6 +61,20 @@
     }
   }
 
+  // LRM: 設定→割当て稼働時間の設定
+  .controller-distributed_workloads {
+    #content input[type="submit"] {
+      @apply mt-2
+    }
+  }
+
+  // LRM: 設定→背景色閾値の設定
+  .controller-threshold_settings {
+    #content input[type="submit"] {
+      @apply mt-2
+    }
+  }
+
 
   // LPR 共通
   .controller-project_report_overview {
