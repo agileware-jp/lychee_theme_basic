@@ -358,6 +358,15 @@
     @apply ml-0
   }
 
+  // Lychee EVM
+  .controller-project_evms {
+    // 基準日選択datepickerの年月選択フィールドが4.1.7だと段落落ちしているため対応
+    .ui-datepicker .ui-datepicker-year,
+    .ui-datepicker .ui-datepicker-month {
+      @apply w-[45%] text-sm
+    }
+  }
+
   // Lychee Cost
   .lychee-cost-cash-forecast__unit-description {
     @apply top-4 right-4
