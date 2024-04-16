@@ -2,4 +2,9 @@
   .nodata, .warning {
     @apply border-none bg-status-warningLight text-text-caption text-sm px-3 py-2 rounded-md
   }
+
+  // Wikiなど、コンテンツが存在しないときに表示される.nodata
+  #content h2 + .nodata {
+    @apply clear-both
+  }
 }
