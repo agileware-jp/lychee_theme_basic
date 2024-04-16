@@ -976,6 +976,12 @@
       @apply flex flex-col
     }
   }
+
+  .controller-lrm_queries {
+    #group_keys {
+      @apply w-[90%]
+    }
+  }
 }
 
 @media all and (max-width: 599px) {
