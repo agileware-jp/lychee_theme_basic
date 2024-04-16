@@ -982,6 +982,23 @@
       @apply w-[90%]
     }
   }
+
+  .controller-lychee_licenses.controller-lychee_licenses {
+    #new_registration table,
+    #new_registration table thead,
+    #new_registration table tbody,
+    #new_registration table tr {
+      @apply block
+    }
+
+    #new_registration table td {
+      @apply block px-0
+    }
+
+    #new_registration table td + td {
+      @apply pt-0
+    }
+  }
 }
 
 @media all and (max-width: 599px) {
