@@ -48,10 +48,6 @@
     @apply w-[160px] min-w-[160px] align-middle
   }
 
-  fieldset#filters td.field input[type="checkbox"] {
-    @apply translate-y-0.5
-  }
-
   fieldset#filters td.field label {
     @apply text-xs
   }
@@ -79,6 +75,10 @@
 
   fieldset#options {
     @apply mt-2
+  }
+
+  fieldset#options label.inline input[type="checkbox"] {
+    @apply mr-0
   }
 
   .add-filter label {
