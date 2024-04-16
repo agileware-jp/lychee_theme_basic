@@ -781,6 +781,21 @@
     }
   }
 
+  .controller-lychee_issue_templates.action-new,
+  .controller-lychee_issue_templates.action-edit {
+    #checklist_for_new {
+      @apply min-h-0 py-0 pl-[11rem]
+    }
+
+    #checklist_for_new > label {
+      @apply w-[9rem] text-xs text-text-default -ml-[10rem] py-0 pr-4 pl-0 translate-y-1
+    }
+
+    #checklist_for_new #checklist_wrapper {
+      @apply ml-0
+    }
+  }
+
   // Lychee Project Template
   .controller-projects {
     #new_project .label_base_date_start_date {
