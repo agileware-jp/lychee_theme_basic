@@ -633,6 +633,15 @@
     }
   }
 
+  // Message Box → お知らせ・管理者へのお知らせ
+  .controller-lychee_message_box_informations.controller-lychee_message_box_informations,
+  .controller-lychee_message_box_system_errors.controller-lychee_message_box_system_errors {
+    .details-content p ~ p {
+      @apply my-4
+    }
+  }
+
+
 
   // Lychee ライセンス管理
   .controller-lychee_licenses.controller-lychee_licenses {
