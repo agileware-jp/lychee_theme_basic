@@ -1,43 +1,7 @@
-// @media screen and (min-width: 0px) and (max-width: 1089px) {
-//   #sidebar {
-//     width: 22%;
-//   }
-// }
-
-// @media screen and (min-width: 1090px) and (max-width: 1279px) {
-//   #sidebar {
-//     width: 240px;
-//   }
-// }
-
-// @media screen and (min-width: 1280px) and (max-width: 1599px) {
-//   #sidebar {
-//     width: 280px;
-//   }
-// }
-
-// @media screen and (min-width: 1600px) and (max-width: 1919px) {
-//   #sidebar {
-//     width: 320px;
-//   }
-// }
-
-// @media screen and (min-width: 1920px) and (max-width: 2559px) {
-//   #sidebar {
-//     width: 360px;
-//   }
-// }
-
-// @media screen and (min-width: 2560px) {
-//   #sidebar {
-//     width: 380px;
-//   }
-// }
-
 @layer components {
   // sidebar
   #sidebar {
-    @apply relative flex-shrink-0 order-2 w-[15rem] bg-background-secondary/50 border-l border-border-divider py-3 pr-3 pl-5
+    @apply relative flex-shrink-0 order-2 w-[15rem] bg-background-secondary/50 border-l border-border-divider py-3 pr-3 pl-4
   }
 
   .controller-kanban #sidebar,
@@ -80,7 +44,7 @@
   }
 
   #sidebar input[type="submit"] {
-    @apply mt-2
+    // @apply mt-2
   }
 
   #sidebar #watchers {
@@ -127,7 +91,7 @@
   }
 
   #sidebar ul li:not(:first-child) {
-    @apply mt-2
+    @apply mt-1
   }
 
   #sidebar ul li a {
@@ -144,6 +108,21 @@
 
   #sidebar a.icon-only {
     @apply flex grow-0 overflow-hidden indent-[100%] whitespace-nowrap w-4 h-4 bg-no-repeat bg-[length:16px_16px] ml-1
+  }
+
+  #sidebar p {
+    @apply my-4
+  }
+
+  // 個人設定→リマインダ設定欄
+  .controller-my {
+    #sidebar fieldset.box p {
+      @apply my-0
+    }
+
+    #sidebar fieldset.box p + input[type="submit"] {
+      @apply mt-2
+    }
   }
 
   // adminMenu
