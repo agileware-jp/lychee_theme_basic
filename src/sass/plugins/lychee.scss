@@ -135,8 +135,8 @@
     }
 
     // 各パネルの編集／セッティング／閉じるアイコン用
-    #content span span {
-      @apply ml-1
+    #content span[title="オプション"] {
+      @apply mx-1
     }
 
     // マイルストーンの期間フィールド
