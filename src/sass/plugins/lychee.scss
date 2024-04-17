@@ -379,6 +379,12 @@
     @apply ml-0
   }
 
+  // チケット関連図
+  // 全画面モードのメインメニューエリアに余白ができないようにする
+  .le-fullscreen #main.nosidebar {
+    @apply ml-0
+  }
+
   // Lychee EVM
   .controller-project_evms {
     // 基準日選択datepickerの年月選択フィールドが4.1.7だと段落落ちしているため対応
