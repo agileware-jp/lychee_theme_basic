@@ -3,4 +3,11 @@
   .ui-datepicker select.ui-datepicker-year {
     @apply text-sm
   }
+
+  // チケットセットの関連チケットID入力候補UI
+  .controller-lychee_issue_templates {
+    .ui-autocomplete .ui-menu-item {
+      @apply text-sm px-1.5
+    }
+  }
 }
