@@ -11,6 +11,10 @@
     @apply flex items-center ml-6
   }
 
+  .time_entry .contextual + h4:not(.note-header) {
+    @apply flex items-center ml-6
+  }
+
   .journal .note-header .gravatar {
     @apply mr-1
   }
