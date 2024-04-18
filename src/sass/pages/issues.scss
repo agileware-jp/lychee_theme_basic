@@ -152,6 +152,22 @@
       @apply p-4
     }
 
+
+    // カスタムフィールドカテゴリー
+    #issue-form.edit_issue fieldset[id^="category-"] {
+      @apply pb-0
+    }
+
+    // カスタムフィールドカテゴリーを閉じているとき
+    #issue-form.edit_issue fieldset.collapsible.collapsed[id^="category-"] {
+      @apply mb-0
+    }
+
+    #issue-form.edit_issue fieldset[id^="category-"] .splitcontent {
+      @apply my-0
+    }
+
+
     #attributes .splitcontent {
       @apply my-4
     }
