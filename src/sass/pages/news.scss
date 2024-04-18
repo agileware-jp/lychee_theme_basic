@@ -76,6 +76,10 @@
       @apply bg-background-primary border border-border-divider p-6 rounded-md
     }
 
+    .wiki + .attachments {
+      @apply mt-4
+    }
+
     // show > comment
     #comments {
       @apply mt-4
