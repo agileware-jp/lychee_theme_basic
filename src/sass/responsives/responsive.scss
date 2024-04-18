@@ -975,6 +975,18 @@
     #association_chart_query_form #filters table tr {
       @apply flex flex-col
     }
+
+    .le-header {
+      @apply mb-4
+    }
+
+    #content .le-header h2 {
+      @apply mb-0
+    }
+
+    .le-header-menu {
+      @apply static
+    }
   }
 
   .controller-lrm_queries {
