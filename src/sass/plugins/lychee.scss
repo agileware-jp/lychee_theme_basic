@@ -379,11 +379,51 @@
     @apply ml-0
   }
 
+
   // チケット関連図
+  .controller-association_chart.controller-association_chart {
+    #query_form_content #filters legend + div {
+      @apply pl-0
+    }
+
+    #lac-modal .lac-chart-item-editor div[id^="lac-chart-"]:not(:first-child) {
+      @apply mt-2
+    }
+
+    #lac-modal .lac-chart-item-editor div[id^="lac-chart-"] .required {
+      @apply text-sm
+    }
+
+    #lac-modal #filters {
+      @apply py-2 px-3 rounded-md
+    }
+
+    #lac-modal #filters legend {
+      @apply mb-0 pl-4
+    }
+
+    #lac-modal #query_form_with_buttons .buttons {
+      @apply mt-2
+    }
+
+    #lac-modal .lac-issues-pagination {
+      @apply my-3
+    }
+
+    .lac-relatable-types li {
+      @apply min-h-[42px]
+    }
+
+    .lac-relatable-types li[data-type="precedes"] input[type="number"] {
+      @apply py-1
+    }
+  }
+
   // 全画面モードのメインメニューエリアに余白ができないようにする
   .le-fullscreen #main.nosidebar {
     @apply ml-0
   }
+
 
   // Lychee EVM
   .controller-project_evms {
