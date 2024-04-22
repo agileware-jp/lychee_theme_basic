@@ -3,5 +3,17 @@
     #fields-mapping .splitcontent {
       @apply mt-4
     }
+
+    #saved-items {
+      @apply my-4 ml-6
+    }
+
+    #saved-items li {
+      @apply list-disc
+    }
+
+    #saved-items li:not(:first-child) {
+      @apply list-item mt-2
+    }
   }
 }
