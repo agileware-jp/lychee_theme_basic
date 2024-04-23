@@ -40,8 +40,13 @@
   .controller-custom_field_enumerations {
     /*
     * キーバリューリストの選択肢編集画面
-    * 保存・戻るボタンの装飾
     */
+    // 選択肢
+    #content form:not(#add-element) .box {
+      @apply mb-2
+    }
+
+    // 保存・戻るボタンの装飾 
     #content form:not(#add-element) input[type="submit"] {
       @apply mr-1
     }
@@ -49,6 +54,14 @@
     // Note: ボタンの装飾自体はbuttons.scss
     #content form:not(#add-element) p:has(> input[type="submit"]) a {
       @apply ml-1
+    }
+
+
+    /*
+    * キーバリューリストの「新しい値」エリア
+    */
+    #add-element {
+      @apply mt-6
     }
   }
 }
