@@ -8,10 +8,6 @@
       @apply mt-6
     }
 
-    #content .box p label {
-      // display: flex;
-    }
-
     #content .box p label input[type=radio] {
       @apply mt-2
     }
@@ -38,6 +34,21 @@
     */
     #content .box p label[for="custom_field_is_for_all"] {
       @apply inline-block font-bold
+    }
+  }
+
+  .controller-custom_field_enumerations {
+    /*
+    * キーバリューリストの選択肢編集画面
+    * 保存・戻るボタンの装飾
+    */
+    #content form:not(#add-element) input[type="submit"] {
+      @apply mr-1
+    }
+
+    // Note: ボタンの装飾自体はbuttons.scss
+    #content form:not(#add-element) p:has(> input[type="submit"]) a {
+      @apply ml-1
     }
   }
 }

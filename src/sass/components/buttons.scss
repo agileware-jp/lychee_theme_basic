@@ -304,6 +304,14 @@
     @extend .BTN_LINK;
   }
 
+  // カスタムフィールド→キーバリューリストの選択肢編集画面
+  .controller-custom_field_enumerations {
+    // 戻るボタンの装飾
+    #content form:not(#add-element) p:has(> input[type="submit"]) a {
+      @extend .BTN_SECONDARY;
+    }
+  }
+
   // Time Management
   .controller-time_management {
     #filters + .buttons .icon-checked {
