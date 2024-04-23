@@ -32,7 +32,7 @@
   }
 
   .BTN_LINK {
-    @apply cursor-pointer inline-block h-auto bg-transparent border border-transparent text-text-link text-xs py-1.5 px-2
+    @apply cursor-pointer inline-block h-auto bg-transparent border border-transparent text-text-link text-xs py-1.5 px-2 hover:underline
   }
 
   .buttons {
