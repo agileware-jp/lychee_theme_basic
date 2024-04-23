@@ -52,10 +52,6 @@
     @apply w-[29px] p-0
   }
 
-  table.list td.buttons {
-    @apply text-center
-  }
-
   #issue_tree td.buttons,
   #relations td.buttons {
     @apply w-[82px] p-2
