@@ -32,6 +32,10 @@
     #commit-keywords {
       @apply mb-4
     }
+
+    p label {
+      @apply text-text-default
+    }
   }
 
   .controller-custom_field_categories {
