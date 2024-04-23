@@ -42,6 +42,11 @@
     input#settings_issue_list_default_totals_ + .inline {
       @apply pl-2
     }
+
+    /* 管理→設定→リポジトリ */
+    #tab-content-repositories table th {
+      @apply text-left
+    }
   }
 
   .controller-custom_field_categories {
