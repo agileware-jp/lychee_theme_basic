@@ -194,4 +194,10 @@
     background-position: 136px 50%;
   }
 
+
+  // 管理→トラッカー→サマリー、管理→ロールと権限→権限レポートの表のグループ行
+  table.permissions .group td,
+  table.tracker-summary .group td {
+    @apply bg-background-secondary/50
+  }
 }
