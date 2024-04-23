@@ -130,7 +130,7 @@
 
   // ファイル添付・コメント投稿系
   input[type="file"] {
-    @apply block w-full bg-background-secondary text-sm text-text-default p-2 rounded-md
+    @apply block w-full bg-background-secondary text-xs text-text-default p-2 rounded-md
   }
 
   .box > p > .attachments_form {
