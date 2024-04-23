@@ -36,6 +36,12 @@
     p label {
       @apply text-text-default
     }
+
+    /* 管理→設定→チケットトラッキング */
+    // 表示項目設定の「合計」ラベル
+    input#settings_issue_list_default_totals_ + .inline {
+      @apply pl-2
+    }
   }
 
   .controller-custom_field_categories {
