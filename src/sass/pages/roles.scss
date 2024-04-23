@@ -22,4 +22,9 @@
   #permissions_form input[name="commit"] {
     @apply mt-4
   }
+
+  // 権限レポートの表
+  .controller-roles table.permissions .name {
+    @apply min-w-[200px]
+  }
 }
