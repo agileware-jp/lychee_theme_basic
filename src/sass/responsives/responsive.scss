@@ -1041,6 +1041,18 @@
       @apply w-auto ml-0 pr-0 translate-y-0
     }
   }
+
+  /* Project Report */
+  // プロジェクト設定→レポート
+  .controller-projects {
+    #tab-content-project_report .tabular p {
+      @apply pl-0
+    }
+
+    #tab-content-project_report .tabular label {
+      @apply w-full ml-0
+    }
+  }
 }
 
 @media all and (max-width: 599px) {
