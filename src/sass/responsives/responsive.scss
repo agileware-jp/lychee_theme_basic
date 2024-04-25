@@ -742,6 +742,14 @@
     #tab-content-per_project_lists ul[id^="per_project_enumerations_"] input[type="text"] {
       @apply w-[70%]
     }
+
+    #tab-content-per_project_lists div[id^="possible_values_list_"] > div:not(:first-child) {
+      @apply mt-3
+    }
+
+    #tab-content-per_project_lists div[id^="possible_values_list_"] input[type="text"] {
+      @apply w-[70%]
+    }
   }
 
   /* Gantt charts */
