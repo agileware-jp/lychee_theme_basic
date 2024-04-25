@@ -10,4 +10,12 @@
   .controller-users .splitcontentleft .list {
     @apply mb-6
   }
+
+  .controller-users #user_group_ids {
+    @apply gap-x-6
+  }
+
+  .controller-users #user_group_ids label {
+    @apply inline-block mb-2
+  }
 }
