@@ -22,7 +22,15 @@
   }
 
   .tabular.settings p ~ p {
-    @apply border-t border-border-divider mt-4 pt-4
+    @apply mt-0
+  }
+
+  .tabular.settings p {
+    @apply border-b border-border-divider mb-4 pb-4
+  }
+
+  .tabular.settings p:last-of-type {
+    @apply border-none mb-0 pb-0
   }
 
   .tabular label {
