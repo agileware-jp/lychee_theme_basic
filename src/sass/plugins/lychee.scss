@@ -44,6 +44,12 @@
     #content button[type="submit"] + button {
       @apply ml-1
     }
+
+    #content #root.tailwind input:not([type="checkbox"], [type="radio"]),
+    #content #root.tailwind select,
+    #content #root.tailwind button {
+      @apply h-[38px]
+    }
   }
 
 
@@ -209,6 +215,10 @@
 
     input[name="hours"] {
       @apply w-[3rem]
+    }
+
+    .status-item-relation.status-item--highlight {
+      @apply my-0 mx-[2px]
     }
   }
 
