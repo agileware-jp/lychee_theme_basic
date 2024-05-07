@@ -1,4 +1,14 @@
 @layer components {
+  table#time-report td.hours, table#time-report th.period, table#time-report th.total { text-align: right; padding-right: 0.5em; }
+  table#time-report tbody tr.subtotal { font-style: italic; color:#777;}
+  table#time-report tbody tr.subtotal td.hours { color:#b0b0b0; }
+  table#time-report .hours-dec { font-size: 0.9em; }
+
+  /* theme style */
+  table#time-report tbody tr.total {
+    @apply font-bold bg-background-tertiary border-t-2 border-border-default
+  }
+
   .controller-timelog {
     #query_form .tabs {
       @apply mb-2
