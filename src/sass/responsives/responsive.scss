@@ -1014,6 +1014,25 @@
     }
   }
 
+  .controller-resource_management {
+    #tab-header {
+      @apply flex-col
+    }
+
+    #tab-header-left,
+    #tab-header-right {
+      @apply w-full
+    }
+
+    #tab-header-left #group_keys_form {
+      @apply ml-0
+    }
+
+    #tab-header-right {
+      @apply mt-2
+    }
+  }
+
   .controller-lychee_licenses.controller-lychee_licenses {
     #new_registration table,
     #new_registration table thead,
