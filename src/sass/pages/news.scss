@@ -89,12 +89,20 @@
       @apply font-bold mb-2
     }
 
+    #comments h4 {
+      @apply border-t border-border-divider pt-4
+    }
+
+    #comments .contextual {
+      @apply mt-3
+    }
+
     #comments .wiki {
       @apply mt-1 mb-8 pl-7
     }
 
     #comments .wiki:last-of-type {
-      @apply mb-0
+      @apply border-b border-border-divider mb-0
     }
 
     #add_comment_form .box {
