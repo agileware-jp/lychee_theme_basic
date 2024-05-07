@@ -377,6 +377,11 @@
         @apply text-xs
       }
     }
+
+    // チケットの一括編集
+    .lgc-issueDetail-bulkEdit-issues {
+      @apply list-disc pl-6
+    }
   }
 
   .lgc-is-fullscreen #main {
