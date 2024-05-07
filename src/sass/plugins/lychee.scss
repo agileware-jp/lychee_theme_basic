@@ -463,6 +463,11 @@
     #lychee_cost_expense_amount {
       @apply mr-1
     }
+
+    .new_lychee_cost_expense #lychee_cost_expense_amount,
+    .edit_lychee_cost_expense #lychee_cost_expense_amount {
+      @apply w-auto
+    }
   }
 
   // Cost Group
