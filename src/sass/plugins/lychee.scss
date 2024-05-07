@@ -83,7 +83,8 @@
   }
 
 
-  // LPR 共通
+  /* Lychee Project Report */
+  // LPR共通
   .controller-project_report_overview {
     #main.nosidebar {
       @apply ml-0
@@ -115,6 +116,51 @@
 
     .icon-full-screen-exit {
       background-image: url(images/close_fullscreen_default.svg);
+    }
+  }
+
+  // LPR共通 設定
+  .controller-project_report_settings,
+  .controller-indice_settings,
+  .controller-enabled_report_indice_settings {
+    table.list:not(.odd-even) tbody tr:nth-child(odd) td {
+      @apply bg-background-primary
+    }
+
+    table.list tbody tr:hover > td {
+      background-color: #f6f7f8 !important;
+    }
+  }
+
+  .controller-indice_settings {
+    .contextual + h3 + .contextual {
+      @apply mb-2
+    }
+
+    // 指標の作成・編集
+    .new_indice_setting,
+    .edit_indice_setting {
+      #custom-numerator-issue-filter-wrapper {
+        @apply mb-4
+      }
+
+      #custom-denominator-issue-filter-wrapper select,
+      #custom-denominator-issue-filter-wrapper .select2-container {
+        @apply mt-2
+      }
+
+      p:has(#description-area) {
+        @apply mt-1
+      }
+
+      #partial-area {
+        @apply mt-4
+      }
+
+      #indice-setting-form-thresholds #indice_setting_upper_threshold,
+      #indice-setting-form-thresholds #indice_setting_middle_threshold {
+        @apply my-0.5
+      }
     }
   }
 
@@ -863,25 +909,6 @@
 
     #new_project #project_start_date {
       @apply mt-2
-    }
-  }
-
-  // Lychee Project Report
-  .controller-project_report_settings,
-  .controller-indice_settings,
-  .controller-enabled_report_indice_settings {
-    table.list:not(.odd-even) tbody tr:nth-child(odd) td {
-      @apply bg-background-primary
-    }
-
-    table.list tbody tr:hover > td {
-      background-color: #f6f7f8 !important;
-    }
-  }
-
-  .controller-indice_settings {
-    .contextual + h3 + .contextual {
-      @apply mb-2
     }
   }
 
