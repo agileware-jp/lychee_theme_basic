@@ -39,6 +39,7 @@
   
   #top-menu .lychee-icon.lychee-icon:before {
     content: url(images/lychee_onFill.svg);
+    @apply top-0 w-[16px] h-[16px]
   }
 
   #top-menu .lychee-help {
