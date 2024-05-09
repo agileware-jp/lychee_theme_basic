@@ -989,6 +989,10 @@
       @apply hidden
     }
 
+    .lif-tab-content {
+      height: calc(100vh - 244px);
+    }
+
     .lif-tab-content .add-file,
     .attachment_files .add-file {
       @apply border border-background-secondary my-1 hover:border-border-default active:border-border-divider active:bg-background-tertiary
