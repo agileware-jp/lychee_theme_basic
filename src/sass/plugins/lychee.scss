@@ -447,6 +447,13 @@
     .lgc-issueDetail-bulkEdit-issues {
       @apply list-disc pl-6
     }
+
+    // チケット連続追加のUI
+    .lgc-tree input[type="text"],
+    .lgc-tree select {
+      height: 20px !important;
+      @apply py-0 rounded
+    }
   }
 
   .lgc-is-fullscreen #main {
