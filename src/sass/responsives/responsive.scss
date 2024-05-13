@@ -618,6 +618,10 @@
     background-position: 8px 50%;
   }
 
+  #admin-menu .lychee-icon::before {
+    @apply content-none
+  }
+
   /*----------------------------------------*\
     E) UX ELEMENTS
   \*----------------------------------------*/
@@ -1096,55 +1100,5 @@
     @apply whitespace-nowrap
   }
 }
-
-
-// @container wrapper (max-width: 1250px) {
-//   #top-menu {
-//     @apply text-xs
-//   }
-
-//   #top-menu li {
-//     @apply mr-2.5
-//   }
-
-//   #top-menu li.aw_topMenuHome {
-//     @apply mr-2.5
-//   }
-
-//   #top-menu li.aw_topMenuHelp {
-//     @apply mr-3 pr-3
-//   }
-
-//   #top-menu .home {
-//     @apply w-4 h-4
-//   }
-
-//   #top-menu .lychee-help {
-//     @apply w-4 h-4
-//   }
-
-//   #account {
-//     @apply ml-3
-//   }
-
-//   #account ul li:not(:first-child) {
-//     @apply ml-1
-//   }
-// }
-
-// @container wrapper (max-width: 1000px) {
-//   tr.issue td.subject,
-//   tr.issue td.parent-subject,
-//   tr.issue td.category,
-//   td.assigned_to,
-//   td.last_updated_by,
-//   tr.issue td.string,
-//   tr.issue td.text,
-//   tr.issue td.list,
-//   tr.issue td.relations,
-//   tr.issue td.parent {
-//     @apply whitespace-nowrap
-//   }
-// }
 
 }
