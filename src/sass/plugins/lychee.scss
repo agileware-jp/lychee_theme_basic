@@ -129,6 +129,10 @@
   .controller-project_report_settings,
   .controller-indice_settings,
   .controller-enabled_report_indice_settings {
+    table.list td {
+      @apply text-xs
+    }
+
     table.list:not(.odd-even) tbody tr:nth-child(odd) td {
       @apply bg-background-primary
     }
@@ -938,7 +942,6 @@
       @apply mt-2
     }
   }
-
 
   // Lychee Issue Form
   .lychee-issue-form__container_full.lychee-issue-form__container_full,
