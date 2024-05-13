@@ -25,7 +25,7 @@
 
   // Quick Search
   #quick-search {
-    @apply order-2 flex items-center ml-auto
+    @apply order-2 flex items-center flex-shrink-0 ml-auto
   }
 
   #quick-search form {
