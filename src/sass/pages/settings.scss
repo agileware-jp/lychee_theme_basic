@@ -4,6 +4,10 @@
       @apply bg-background-secondary/50
     }
 
+    .box.settings .box {
+      @apply bg-transparent border-0 px-0 pb-0
+    }
+
     .query-columns {
       @apply mb-4
     }
