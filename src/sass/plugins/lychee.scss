@@ -44,6 +44,12 @@
     #content button[type="submit"] + button {
       @apply ml-1
     }
+
+    #content #root.tailwind input:not([type="checkbox"], [type="radio"]),
+    #content #root.tailwind select,
+    #content #root.tailwind button {
+      @apply h-[38px]
+    }
   }
 
 
@@ -83,7 +89,8 @@
   }
 
 
-  // LPR 共通
+  /* Lychee Project Report */
+  // LPR共通
   .controller-project_report_overview {
     #main.nosidebar {
       @apply ml-0
@@ -115,6 +122,55 @@
 
     .icon-full-screen-exit {
       background-image: url(images/close_fullscreen_default.svg);
+    }
+  }
+
+  // LPR共通 設定
+  .controller-project_report_settings,
+  .controller-indice_settings,
+  .controller-enabled_report_indice_settings {
+    table.list td {
+      @apply text-xs
+    }
+
+    table.list:not(.odd-even) tbody tr:nth-child(odd) td {
+      @apply bg-background-primary
+    }
+
+    table.list tbody tr:hover > td {
+      background-color: #f6f7f8 !important;
+    }
+  }
+
+  .controller-indice_settings {
+    .contextual + h3 + .contextual {
+      @apply mb-2
+    }
+
+    // 指標の作成・編集
+    .new_indice_setting,
+    .edit_indice_setting {
+      #custom-numerator-issue-filter-wrapper {
+        @apply mb-4
+      }
+
+      #custom-denominator-issue-filter-wrapper select,
+      #custom-denominator-issue-filter-wrapper .select2-container {
+        @apply mt-2
+      }
+
+      p:has(#description-area) {
+        @apply mt-1
+      }
+
+      #partial-area {
+        @apply mt-4
+      }
+
+      #indice-setting-form-thresholds #indice_setting_upper_threshold,
+      #indice-setting-form-thresholds #indice_setting_middle_threshold {
+        @apply my-0.5
+      }
     }
   }
 
@@ -209,6 +265,10 @@
 
     input[name="hours"] {
       @apply w-[3rem]
+    }
+
+    .status-item-relation.status-item--highlight {
+      @apply my-0 mx-[2px]
     }
   }
 
@@ -377,10 +437,22 @@
         @apply text-xs
       }
     }
+
+    // チケットの一括編集
+    .lgc-issueDetail-bulkEdit-issues {
+      @apply list-disc pl-6
+    }
   }
 
   .lgc-is-fullscreen #main {
     @apply ml-0
+  }
+
+  // Lychee Gantt Chart 5.0
+  .controller-lychee_gantt_chart.controller-lychee_gantt_chart {
+    ul[class^="lgc-AvailableColumnList-"] li label {
+      @apply gap-[3px]
+    }
   }
 
 
@@ -462,6 +534,11 @@
 
     #lychee_cost_expense_amount {
       @apply mr-1
+    }
+
+    .new_lychee_cost_expense #lychee_cost_expense_amount,
+    .edit_lychee_cost_expense #lychee_cost_expense_amount {
+      @apply w-auto
     }
   }
 
@@ -866,30 +943,6 @@
     }
   }
 
-  // Lychee Project Report
-  .controller-project_report_settings,
-  .controller-indice_settings,
-  .controller-enabled_report_indice_settings {
-    table.list td {
-      @apply text-xs
-    }
-
-    table.list:not(.odd-even) tbody tr:nth-child(odd) td {
-      @apply bg-background-primary
-    }
-
-    table.list tbody tr:hover > td {
-      background-color: #f6f7f8 !important;
-    }
-  }
-
-  .controller-indice_settings {
-    .contextual + h3 + .contextual {
-      @apply mb-2
-    }
-  }
-
-
   // Lychee Issue Form
   .lychee-issue-form__container_full.lychee-issue-form__container_full,
   .lychee-issue-form__container_half.lychee-issue-form__container_half {
@@ -991,6 +1044,10 @@
 
     .fields.attachment_files #file-input {
       @apply hidden
+    }
+
+    .lif-tab-content {
+      height: calc(100vh - 244px);
     }
 
     .lif-tab-content .add-file,

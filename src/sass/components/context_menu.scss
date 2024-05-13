@@ -74,7 +74,10 @@ div#gantt_area .context-menu-selection a { color: #169; }
     @apply block text-xs text-text-default py-1 pl-8 pr-2
   }
 
-  #context-menu li > a.icon {
+  #context-menu li > a[class^="icon"],
+  #context-menu .lgc-icon-magicStick,
+  #context-menu .icon-fav,
+  #context-menu .icon-fav-off {
     background-position: 12px 50%;
   }
 

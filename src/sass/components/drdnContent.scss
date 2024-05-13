@@ -73,8 +73,8 @@
     @apply pl-6
   }
 
-  #project-jump .drdn {
-    @apply inline-block w-[200px]
+  #project-jump.drdn {
+    @apply inline-block max-w-[320px]
   }
 
   #project-jump .drdn-content {
