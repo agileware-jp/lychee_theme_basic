@@ -190,6 +190,10 @@
       @apply ml-3
     }
 
+    #project-report h2[class^="PanelLayout__Title"] {
+      @apply mb-0
+    }
+
     // 各パネルの編集／セッティング／閉じるアイコン用
     #content span[title="オプション"] {
       @apply mx-1
