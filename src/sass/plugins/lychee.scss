@@ -236,6 +236,11 @@
     #content {
       @apply p-4
     }
+
+    // フィルタの構造がRedmine標準と異なるため、個別に対応
+    #filters .values select + span {
+      @apply inline-block
+    }
   }
 
 
