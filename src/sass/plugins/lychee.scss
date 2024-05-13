@@ -190,6 +190,10 @@
       @apply ml-3
     }
 
+    #project-report h2[class^="PanelLayout__Title"] {
+      @apply mb-0
+    }
+
     // バージョンのレポート選択フィールド
     #version_report_link {
       @apply w-[165px]
