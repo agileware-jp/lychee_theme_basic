@@ -241,6 +241,12 @@
     #filters .values select + span {
       @apply inline-block
     }
+
+    // セル上を右クリックで表示される時間入力UI
+    // Note: ライブラリを使っているようで、そのライブラリ固有のclass名を利用する
+    .tippy-content hr {
+      @apply h-[1px] my-3
+    }
   }
 
 
