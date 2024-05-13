@@ -369,6 +369,17 @@
   }
 
   // Lychee Project Report
+  .controller-project_reports.controller-project_reports {
+    .popup-content button:not([class]) {
+      @extend .BTN_SECONDARY;
+      @apply mt-1
+    }
+
+    .popup-content button + button {
+      @apply ml-1
+    }
+  }
+
   .controller-indice_settings {
     #content > .contextual a {
       @apply border-none text-text-link p-0 shadow-none
