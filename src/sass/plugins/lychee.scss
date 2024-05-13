@@ -190,6 +190,11 @@
       @apply ml-3
     }
 
+    // バージョンのレポート選択フィールド
+    #version_report_link {
+      @apply w-[165px]
+    }
+
     // 各パネルの編集／セッティング／閉じるアイコン用
     #content span[title="オプション"] {
       @apply mx-1
