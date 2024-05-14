@@ -574,11 +574,11 @@
     }
 
     #queries legend + select {
-      @apply mt-1 mb-2
+      @apply my-1
     }
 
     #filters legend + div {
-      @apply px-4 pt-1 pb-2
+      @apply px-4
     }
 
     #queries, #filters {
@@ -596,7 +596,7 @@
     }
 
     #filters-table .field {
-      @apply w-[200px] min-w-[200px] text-xs align-middle
+      @apply w-[200px] min-w-[200px] text-xs align-middle pb-0.5
     }
 
     #filters-table .field input[type="checkbox"] {
@@ -604,7 +604,7 @@
     }
 
     #filters-table .operator {
-      @apply w-[130px] min-w-[130px]
+      @apply w-[130px] min-w-[130px] pb-0.5
     }
 
     #filters-table td.operator select {
@@ -613,15 +613,27 @@
 
     #filters-table td.values {
       width: calc(100% - 330px);
-      @apply pl-2
+      @apply pb-0.5 pl-2
     }
 
     #filters-table td.values select {
       @apply min-w-[130px]
     }
 
+    #filters-table td.values select + span {
+      @apply inline-block
+    }
+
+    .add-filter {
+      @apply mb-0
+    }
+
     .add-filter label {
       @apply w-[200px] mr-0.5
+    }
+
+    #filters + .buttons {
+      @apply mt-0.5
     }
   }
 

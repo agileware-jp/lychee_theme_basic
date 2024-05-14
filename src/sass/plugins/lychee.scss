@@ -237,9 +237,17 @@
       @apply p-4
     }
 
-    // フィルタの構造がRedmine標準と異なるため、個別に対応
-    #filters .values select + span {
-      @apply inline-block
+    // フィルタモーダルのpagination
+    .ReactModal__Content h2 {
+      @apply mb-0
+    }
+
+    .ReactModal__Content .pagination {
+      @apply mt-0
+    }
+
+    .ReactModal__Content div:has(> .list) {
+      @apply mb-2
     }
 
     // セル上を右クリックで表示される時間入力UI
