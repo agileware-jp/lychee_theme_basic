@@ -408,6 +408,12 @@
     }
   }
 
+  .controller-project_report_queries {
+    #content > .contextual a {
+      @apply border-none text-text-link p-0 shadow-none
+    }
+  }
+
   // Lychee Issue Form
   .lychee-issue-form__container_full,
   .lychee-issue-form__container_half {
