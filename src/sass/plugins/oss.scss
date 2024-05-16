@@ -261,4 +261,10 @@
   #add_notes #template_issue_notes {
     @apply mb-2
   }
+
+
+  // ツールチップがラベルより下に表示されてしまうので対応
+  a.icon-help:hover .tooltip-area {
+    @apply z-[1]
+  }
 }
