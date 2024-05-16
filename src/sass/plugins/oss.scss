@@ -60,6 +60,11 @@
     }
   }
 
+  // バナーのスタイル変更
+  div.banner.banner {
+    @apply py-[20px]
+  }
+
   // バナーに表示するコンテンツのスタイル
   // NOTE: TailwindCSSのリセットによって消えてしまっているものがあるため（Wikiに合わせる）
   #banner_content {
