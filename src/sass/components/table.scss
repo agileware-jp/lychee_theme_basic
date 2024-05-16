@@ -8,7 +8,7 @@
   table.list:not(.odd-even) tbody tr:nth-child(even),
   .even,
   #issue-changesets div.changeset:nth-child(even) {
-    @apply bg-background-primary
+    @apply bg-background-secondary/50
   }
 
   table.list:not(.odd-even) tbody tr:nth-child(odd):hover,
