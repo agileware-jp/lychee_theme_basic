@@ -1,6 +1,7 @@
 @layer components {
   // OSS対応
-  // Redmine Banner
+
+  /* Redmine Banner */
   // NOTE: メインメニューのサイドバー化の影響で、bannerがメインメニューと重なってしまう
   //       メインメニューのあり／なしでスタイルを変える
   //       プロレポや全画面表示など、見かけ上ではメインメニューが存在しないが、非表示になっているだけのページが存在するので注意
@@ -59,8 +60,102 @@
     }
   }
 
+  // バナーに表示するコンテンツのスタイル
+  // NOTE: TailwindCSSのリセットによって消えてしまっているものがあるため（Wikiに合わせる）
+  #banner_content {
+    h1 {
+      @apply text-text-default text-3xl font-bold mb-4
+    }
 
-  // View Customize
+    h2 {
+      @apply text-text-default text-2xl font-bold mb-4
+    }
+
+    h3 {
+      @apply text-text-default text-lg font-bold mb-2
+    }
+
+    h4 {
+      @apply text-text-default text-base font-bold mb-2
+    }
+
+    h5 {
+      @apply text-sm font-bold text-sm mb-2
+    }
+
+    h6 {
+      @apply text-text-caption text-sm font-bold mb-2
+    }
+
+    ul {
+      @apply list-disc ml-6 my-4
+    }
+
+    ul li:not(:first-child) {
+      @apply mt-2
+    }
+
+    ol {
+      @apply list-decimal ml-6 my-4
+    }
+
+    ol li:not(:first-child) {
+      @apply mt-2
+    }
+
+    li > ul, li > ol {
+      @apply mt-2 mb-0
+    }
+
+    li ul,
+    li ol {
+      @apply ml-4
+    }
+
+
+    table {
+      @apply border border-border-divider mb-4 p-2
+    }
+
+    th {
+      @apply bg-background-secondary border border-border-divider text-text-default text-xs font-bold p-2
+    }
+
+    td {
+      @apply bg-background-primary border border-border-divider text-text-default text-sm p-2
+    }
+
+
+    hr,
+    .controller-issues div.issue hr {
+      @apply block h-[1px] my-4
+    }
+
+
+    pre {
+      @apply bg-background-secondary border border-border-default text-xs mr-2 mb-4 ml-4 p-4 rounded-lg overflow-x-auto overflow-y-hidden
+    }
+
+    *:not(pre)>code {
+      @apply bg-background-secondary border border-border-default text-text-danger mx-0.5 py-0.5 px-1.5 rounded
+    }
+
+    blockquote pre {
+      @apply ml-1.5
+    }
+
+
+    .task-list {
+      @apply list-none ml-0
+    }
+
+    .task-list .task-list {
+      @apply ml-4
+    }
+  }
+
+
+  /* View Customize */
   .controller-view_customizes {
     table.view_customize.box th {
       @apply pl-3
@@ -82,7 +177,7 @@
   }
 
 
-  // Issue Templates
+  /* Issue Templates */
   #orphaned_templates h3.template_tracker {
     @apply mt-4
   }
