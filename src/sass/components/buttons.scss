@@ -220,6 +220,13 @@
     }
   }
 
+  // 管理→プラグイン一覧のプラグイン設定へのリンクをボタンに変更
+  .controller-admin {
+    .plugins .configure a {
+      @extend .BTN_SECONDARY;
+    }
+  }
+
   // Filter
   #query_form p.buttons a.icon,
   #levm_query_form .buttons a.icon {
