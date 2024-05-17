@@ -82,7 +82,7 @@
   }
 
   .wiki h1 {
-    @apply text-text-default text-3xl font-bold mb-4
+    @apply text-text-default text-4xl font-bold mb-4
   }
 
   .wiki h1 ~ h1 {
@@ -90,11 +90,11 @@
   }
 
   .wiki h2 {
-    @apply text-text-default text-2xl font-bold mb-4
+    @apply border-b border-border-default text-text-default text-2xl font-bold mt-9 mb-4 pb-2
   }
 
   .wiki h3 {
-    @apply text-text-default text-lg font-bold mb-2
+    @apply text-text-default text-lg font-bold mt-4 mb-2
   }
 
   .wiki h4 {
