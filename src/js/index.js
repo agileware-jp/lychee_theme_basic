@@ -1,3 +1,6 @@
+import { addDefaultSidebarStyle } from './sidebar'
+addDefaultSidebarStyle()
+
 /* .tabs-buttons(main menuが見切れる時のページ送りUI)を非表示にする */
 // Note: HTMLのstyle属性でして押されておりテーマcssで上書きできないため、テーマjsで上書きする
 function hiddenTabsButtons() {
@@ -66,9 +69,8 @@ function addBtnToToggleSidebar() {
 }
 
 function openSidebar() {
+  document.querySelector('#sidebar')?.classList.add('isSidebarOpen')
   document.querySelector('#sidebar')?.classList.remove('isSidebarClose')
-  document.querySelector('#main')?.classList.remove('isSidebarClose')
-  document.querySelector('.aw_toggleSidebar')?.classList.remove('isSidebarClose')
 
   // sidebarの状態をlocal storageに記録
   localStorage.setItem('isSidebarClose', false)
@@ -76,8 +78,7 @@ function openSidebar() {
 
 function closeSidebar() {
   document.querySelector('#sidebar')?.classList.add('isSidebarClose')
-  document.querySelector('#main')?.classList.add('isSidebarClose')
-  document.querySelector('.aw_toggleSidebar')?.classList.add('isSidebarClose')
+  document.querySelector('#sidebar')?.classList.remove('isSidebarOpen')
 
   // sidebarの状態をlocal storageに記録
   localStorage.setItem('isSidebarClose', true)
