@@ -1,4 +1,6 @@
-import { addDefaultSidebarStyle } from './sidebar'
+import { addDefaultSidebarStyle, initToggleSidebar } from './sidebar'
+
+/* ちらつき防止のため、sidebarの初期スタイルを追加する */
 addDefaultSidebarStyle()
 
 /* .tabs-buttons(main menuが見切れる時のページ送りUI)を非表示にする */
@@ -56,59 +58,6 @@ function stickyMainMenu() {
   }
 }
 
-/*
- * Sidebarの開閉機能
- */
-function addBtnToToggleSidebar() {
-  const sidebar = document.querySelector('#sidebar')
-  const btn = document.createElement('button')
-  btn.textContent = 'サイドバーの開閉'
-  btn.classList.add('aw_toggleSidebar')
-
-  sidebar.appendChild(btn)
-}
-
-function openSidebar() {
-  document.querySelector('#sidebar')?.classList.add('isSidebarOpen')
-  document.querySelector('#sidebar')?.classList.remove('isSidebarClose')
-
-  // sidebarの状態をlocal storageに記録
-  localStorage.setItem('isSidebarClose', false)
-}
-
-function closeSidebar() {
-  document.querySelector('#sidebar')?.classList.add('isSidebarClose')
-  document.querySelector('#sidebar')?.classList.remove('isSidebarOpen')
-
-  // sidebarの状態をlocal storageに記録
-  localStorage.setItem('isSidebarClose', true)
-}
-
-// sidebarの折りたたみ
-function toggleSidebar() {
-  const sidebar = document.querySelector('#sidebar')
-
-  // 切り替え処理
-  if(sidebar.classList.contains('isSidebarClose')) {
-    openSidebar()
-  } else {
-    closeSidebar()
-  }
-}
-
-function initToggleSidebar() {
-  // サイドバーがある"かつ"nosidebarではない
-  const sidebar = document.querySelector('#sidebar')
-  if(!sidebar || sidebar.closest('#main').classList.contains('nosidebar')) return
-
-  // toggle btnの追加
-  addBtnToToggleSidebar()
-
-  // 開閉処理
-  const toggleTrigger = document.querySelector('.aw_toggleSidebar')
-  toggleTrigger.addEventListener('click', toggleSidebar)
-}
-
 // 「ログイン中:」の文字を削除
 function removeLoggedasText() {
   const loggedas = document.querySelector('#loggedas')
@@ -153,16 +102,6 @@ window.addEventListener('DOMContentLoaded', () => {
   if(document.querySelector('#main-menu') !== null) {
     // mainMenuがない場合headerはfull width表示にするため、区別用classを付与しておく
     document.querySelector('#header').classList.add('aw_hasMainMenu')
-  }
-
-  // Sidebarがあるかどうか
-  if(document.getElementById('sidebar') !== null) {
-    // ローカルストレージから開閉状態を復元
-    if(localStorage.getItem('isSidebarClose') === 'true') {
-      closeSidebar()
-    } else {
-      openSidebar()
-    }
   }
 
   // mainMenuのtopプロパティを指定
