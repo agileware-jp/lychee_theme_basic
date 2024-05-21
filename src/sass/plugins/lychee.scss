@@ -1170,4 +1170,39 @@
       @apply bg-background-primary
     }
   }
+
+  .controller-routine_workflows {
+    .contextual + .nodata {
+      @apply clear-both
+    }
+
+    &.action-edit,
+    &.action-new {
+      .splitcontent:has(+ p) {
+        @apply gap-4
+      }
+
+      .splitcontent:has(+ p) .splitcontentright {
+        @apply mb-4 ml-0
+      }
+
+      .attributes {
+        @apply mt-4
+      }
+    }
+
+    &.action-show {
+      div.issue {
+        @apply p-4
+      }
+
+      div.issue p {
+        @apply py-0.5
+      }
+
+      div.issue .attributes {
+        @apply mt-4
+      }
+    }
+  }
 }
