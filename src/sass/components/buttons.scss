@@ -51,6 +51,10 @@
     @extend .BTN_SECONDARY;
   }
 
+  form.tabular table.list + input[type="submit"] {
+    @apply mt-2
+  }
+
   // Sidebarの開閉ボタン
   .aw_toggleSidebar {
     @extend .BTN_TERTIARY_ICON_ONLY_OUTLINED;
