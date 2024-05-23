@@ -739,6 +739,17 @@
     }
   }
 
+  // プロジェクト設定→リポジトリ
+  .controller-repositories.action-banned_committers {
+    fieldset {
+      @apply pt-2 px-3 pb-3 rounded-md
+    }
+  
+    fieldset legend {
+      @apply text-text-caption text-xs font-bold
+    }
+  }
+
   // Association Chart(チケット関連図)
   .controller-association_chart {
     fieldset#filters legend {
