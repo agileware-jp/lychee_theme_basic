@@ -4,15 +4,15 @@
       @apply mt-4
     }
 
-    #saved-items {
+    ul#saved-items {
       @apply my-4 ml-6
     }
 
-    #saved-items li {
+    ul#saved-items li {
       @apply list-disc
     }
 
-    #saved-items li:not(:first-child) {
+    ul#saved-items li:not(:first-child) {
       @apply list-item mt-2
     }
   }
