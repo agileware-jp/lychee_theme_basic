@@ -106,6 +106,14 @@
       @apply mt-6
     }
 
+    div.issue fieldset[id^="category-"] {
+      @apply px-4
+    }
+
+    div.issue fieldset[id^="category-"] legend {
+      @apply -ml-1
+    }
+
     .issues-stat {
       @apply text-xs
     }
