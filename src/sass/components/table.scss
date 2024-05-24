@@ -17,12 +17,12 @@
   table.list:not(.odd-even) tbody tr:nth-child(even):hover,
   .even:hover,
   #issue-changesets div.changeset:nth-child(even):hover {
-    @apply bg-background-secondary/50
+    @apply bg-background-tertiary/50
   }
 
   table.list.issues tbody tr.closed th,
   table.list.issues tbody tr.closed td {
-    @apply bg-background-secondary/50 opacity-50
+    @apply bg-background-secondary/50 opacity-70
   }
 
   table.list,

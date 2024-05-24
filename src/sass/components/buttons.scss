@@ -88,7 +88,7 @@
   }
 
   table.list td.buttons .icon-only {
-    @extend .BTN_TERTIARY_ICON_ONLY;
+    @extend .BTN_TERTIARY_ICON_ONLY_OUTLINED;
     @apply mx-0 ml-1
   }
 
