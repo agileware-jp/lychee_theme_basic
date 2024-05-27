@@ -27,25 +27,6 @@
 */
 
 @media screen and (max-width: 1250px) {
-  #sidebar {
-    @apply w-48
-  }
-
-  #sidebar h3 {
-    @apply text-xs
-  }
-
-  #sidebar ul li:not(:first-child) {
-    @apply mt-1
-  }
-
-  #sidebar ul li a {
-    @apply text-xs
-  }
-
-  .aw_toggleSidebar {
-    @apply right-[11.25rem]
-  }
 }
 
 @media screen and (max-width: 899px)
