@@ -31,11 +31,11 @@
   }
 
   table.list th {
-    @apply bg-background-secondary border-y border-border-divider text-text-default text-xs p-1.5
+    @apply bg-background-secondary border-y border-border-divider text-text-default text-sm p-1.5
   }
 
   .table-list-header {
-    @apply bg-background-secondary text-text-default text-xs p-1.5
+    @apply bg-background-secondary text-text-default text-sm p-1.5
   }
 
   table.list th a,
@@ -44,7 +44,7 @@
   }
 
   table.list td {
-    @apply border-y border-border-divider text-text-default text-xs p-1.5
+    @apply border-y border-border-divider text-text-default text-sm p-1.5
   }
 
   table.list td.checkbox {
@@ -63,7 +63,7 @@
 
   #issue_tree .subject a,
   #relations .subject a {
-    @apply text-xs
+    @apply text-sm
   }
 
 
@@ -83,7 +83,7 @@
   }
 
   table.boards td.last-message {
-    @apply text-xs
+    @apply text-sm
   }
 
   tr.message.sticky td.subject.icon {
@@ -107,7 +107,7 @@
   }
 
   table.permissions td.role {
-    @apply text-xs text-text-caption
+    @apply text-sm text-text-caption
   }
 
 
