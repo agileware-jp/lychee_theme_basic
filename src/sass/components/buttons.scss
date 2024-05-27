@@ -93,7 +93,7 @@
 
   table.list td.buttons .icon-only {
     @extend .BTN_TERTIARY_ICON_ONLY_OUTLINED;
-    @apply mx-0 ml-1
+    @apply w-5 h-5 mx-0 ml-1
   }
 
   table.list td.buttons:after {
