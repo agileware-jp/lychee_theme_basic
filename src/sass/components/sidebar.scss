@@ -1,21 +1,13 @@
 @layer components {
   // sidebar
   #sidebar {
-    @apply relative flex-shrink-0 order-2 w-[15rem] bg-background-secondary/50 border-l border-border-divider py-3 pr-3 pl-4
+    @apply relative flex-shrink-0 order-2 bg-background-secondary/50 border-l border-border-divider py-3
   }
 
   .controller-kanban #sidebar,
   .controller-backlog #sidebar,
   .controller-settings #sidebar {
     position: relative !important
-  }
-
-  #sidebar.isSidebarClose {
-    @apply w-0 pr-0 pl-4
-  }
-
-  #sidebar.isSidebarClose *:not(.aw_toggleSidebar) {
-    @apply hidden
   }
 
   #sidebar h3 {

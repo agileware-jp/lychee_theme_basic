@@ -62,7 +62,7 @@
     @apply absolute top-[1.15rem] right-[14.25rem] z-10
   }
 
-  .aw_toggleSidebar.isSidebarClose {
+  .isSidebarClose .aw_toggleSidebar {
     background-image: url(images/move_left_default.svg);
     @apply right-[0.25rem]
   }

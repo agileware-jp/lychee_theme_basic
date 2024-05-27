@@ -1,4 +1,9 @@
-// .tabs-buttons(main menuが見切れる時のページ送りUI)を非表示にする
+import { addDefaultSidebarStyle, initToggleSidebar } from './sidebar'
+
+/* ちらつき防止のため、sidebarの初期スタイルを追加する */
+addDefaultSidebarStyle()
+
+/* .tabs-buttons(main menuが見切れる時のページ送りUI)を非表示にする */
 // Note: HTMLのstyle属性でして押されておりテーマcssで上書きできないため、テーマjsで上書きする
 function hiddenTabsButtons() {
   const tabsButton = document.querySelector('#main-menu .tabs-buttons')
@@ -17,7 +22,7 @@ function setMainMenuTop() {
   }
 }
 
-// top menuの位置入れ替えのためにclassを付与
+/* top menuの位置入れ替えのためにclassを付与 */
 function repositionTopMenu() {
   const home = document.querySelector('#top-menu ul li .home')
   const lycheeHelp = document.querySelector('#top-menu ul li .lychee-help')
@@ -26,7 +31,7 @@ function repositionTopMenu() {
   if(lycheeHelp) lycheeHelp.closest('li').classList.add('aw_topMenuHelp')
 }
 
-// 活動や検索結果で、各ブロックがdescriptionを持っているかどうか判定
+/* 活動や検索結果で、各ブロックがdescriptionを持っているかどうか判定 */
 function hasDescription(el) {
   // 文字列があるかどうかでチェック
   return el.textContent.length > 0
@@ -51,53 +56,6 @@ function stickyMainMenu() {
       mainMenu.style.top = `${topMenu.offsetHeight}px`
     }
   }
-}
-
-// Sidebarの折りたたみ
-function addBtnToToggleSidebar() {
-  const sidebar = document.querySelector('#sidebar')
-  const btn = document.createElement('button')
-  btn.textContent = 'サイドバーの開閉'
-  btn.classList.add('aw_toggleSidebar')
-
-  sidebar.appendChild(btn)
-}
-
-function openSidebar() {
-  document.querySelector('#sidebar')?.classList.remove('isSidebarClose')
-  document.querySelector('#main')?.classList.remove('isSidebarClose')
-  document.querySelector('.aw_toggleSidebar')?.classList.remove('isSidebarClose')
-}
-
-function closeSidebar() {
-  document.querySelector('#sidebar')?.classList.add('isSidebarClose')
-  document.querySelector('#main')?.classList.add('isSidebarClose')
-  document.querySelector('.aw_toggleSidebar')?.classList.add('isSidebarClose')
-}
-
-// sidebarの折りたたみ
-function toggleSidebar() {
-  const sidebar = document.querySelector('#sidebar')
-
-  // 切り替え処理
-  if(sidebar.classList.contains('isSidebarClose')) {
-    openSidebar()
-  } else {
-    closeSidebar()
-  }
-}
-
-function initToggleSidebar() {
-  // サイドバーがある"かつ"nosidebarではない
-  const sidebar = document.querySelector('#sidebar')
-  if(!sidebar || sidebar.closest('#main').classList.contains('nosidebar')) return
-
-  // toggle btnの追加
-  addBtnToToggleSidebar()
-
-  // 開閉処理
-  const toggleTrigger = document.querySelector('.aw_toggleSidebar')
-  toggleTrigger.addEventListener('click', toggleSidebar)
 }
 
 // 「ログイン中:」の文字を削除
