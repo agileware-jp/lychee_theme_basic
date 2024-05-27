@@ -3,6 +3,11 @@
     @apply mb-6
   }
 
+  // LDAP認証設定時
+  p + #password_fields {
+    @apply mt-4
+  }
+
   .controller-users .splitcontentleft > ul {
     @apply bg-background-secondary mb-6 p-4 rounded-md
   }

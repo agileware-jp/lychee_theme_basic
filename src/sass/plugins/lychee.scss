@@ -128,15 +128,38 @@
   // LPR共通 設定
   .controller-project_report_settings,
   .controller-indice_settings,
-  .controller-enabled_report_indice_settings {
+  .controller-enabled_report_indice_settings,
+  .controller-project_report_active_shared_layouts {
     table.list:not(.odd-even) tbody tr:nth-child(odd) td {
       @apply bg-background-primary
     }
 
-    table.list tbody tr:hover > td {
-      background-color: #f6f7f8 !important;
+    table.list:not(.odd-even) tbody tr:nth-child(odd):hover td {
+      @apply bg-background-tertiary/50
+    }
+
+    table.report_settings tbody tr td:first-child,
+    table.report_settings tbody tr td:nth-child(2),
+    table.report_settings.version_settings tbody tr:nth-child(2n) td:nth-child(3),
+    table.indice-setting tr td:nth-of-type(1) {
+      // bg-background-secondary/50を透過無しで表現したカラーコード
+      background-color: #F8F8F9;
+    }
+
+    table.report_settings tbody tr:hover td:first-child,
+    table.report_settings tbody tr:hover td:nth-child(2),
+    table.report_settings.version_settings tbody tr:nth-child(2n):hover td:nth-child(3),
+    table.indice-setting tr:hover td:nth-of-type(1) {
+      // bg-background-tertialy/50を透過無しで表現したカラーコード
+      background: #E5EEF3;
+    }
+
+    table.report_settings tbody tr:hover > td {
+      // bg-background-tertialy/50を透過無しで表現したカラーコード
+      background: #E5EEF3 !important;
     }
   }
+
 
   .controller-indice_settings {
     .contextual + h3 + .contextual {
@@ -1164,6 +1187,45 @@
   .controller-projects.controller-projects {
     table.list:not(.odd-even) tbody tr:nth-child(odd) td {
       @apply bg-background-primary
+    }
+
+    table.list:not(.odd-even) tbody tr:nth-child(odd):hover td {
+      @apply bg-background-tertiary/50
+    }
+  }
+
+  .controller-routine_workflows {
+    .contextual + .nodata {
+      @apply clear-both
+    }
+
+    &.action-edit,
+    &.action-new {
+      .splitcontent:has(+ p) {
+        @apply gap-4
+      }
+
+      .splitcontent:has(+ p) .splitcontentright {
+        @apply mb-4 ml-0
+      }
+
+      .attributes {
+        @apply mt-4
+      }
+    }
+
+    &.action-show {
+      div.issue {
+        @apply p-4
+      }
+
+      div.issue p {
+        @apply py-0.5
+      }
+
+      div.issue .attributes {
+        @apply mt-4
+      }
     }
   }
 }
