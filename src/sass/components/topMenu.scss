@@ -61,7 +61,7 @@
   }
 
   #account {
-    @apply order-3 ml-6
+    @apply ml-6
   }
 
   .action-login #top-menu,
@@ -160,7 +160,7 @@
   }
 
   #top-menu #loggedas {
-    @apply order-2 text-text-onFill pt-[1px]
+    @apply text-text-onFill pt-[1px]
   }
 
   #top-menu #loggedas a {
@@ -169,11 +169,25 @@
   }
 
   #top-menu > ul {
-    @apply order-1 mr-auto
+    @apply mr-auto
+  }
+
+
+  /* top-menu内の並び順を制御 */
+  #top-menu > ul {
+    @apply order-1
   }
 
   // Lychee Billing
   #top-menu #lychee-billng-global-message#lychee-billng-global-message {
-    @apply order-1
+    @apply order-2
+  }
+
+  #top-menu #loggedas {
+    @apply order-3
+  }
+
+  #account {
+    @apply order-4
   }
 }
