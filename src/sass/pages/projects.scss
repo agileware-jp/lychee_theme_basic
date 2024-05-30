@@ -12,4 +12,12 @@
       @apply inline-block mb-2
     }
   }
+
+  div[id^="tab-content-toyo_"] form.edit_project {
+    @apply inline
+  }
+
+  div[id^="tab-content-toyo_"] form.button_to {
+    @apply inline
+  }
 }
