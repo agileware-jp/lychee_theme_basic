@@ -1,13 +1,13 @@
 @layer components {
   #main-menu {
     height: calc(100vh - 1px);
-    @apply overflow-scroll absolute top-[44px] left-0 w-[3.75rem] bg-primitive-darkGray-600 pt-3 px-1 pb-20 z-[400]
+    @apply overflow-scroll absolute top-[44px] left-0 w-[3.75rem] bg-primitive-darkGray-600 pt-3 px-1 pb-20
   }
 
   #main-menu:hover {
     animation: delay-open 0s forwards;
     animation-delay: 0.25s;
-    @apply shadow-lg
+    @apply shadow-lg z-[9999]
   }
 
   @keyframes delay-open {
