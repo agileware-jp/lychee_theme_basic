@@ -15,15 +15,6 @@
     @apply order-1 mr-2
   }
 
-  #top-menu li.aw_topMenuHelp {
-    @apply order-2 relative mr-4 pr-4
-  }
-
-  #top-menu .aw_topMenuHelp::after {
-    content: "";
-    @apply absolute top-0 right-0 bottom-0 w-[1px] h-[60%] bg-border-divider m-auto
-  }
-
   #top-menu a {
     @apply text-text-onFill
   }
@@ -40,15 +31,6 @@
   #top-menu .lychee-icon.lychee-icon:before {
     content: url(images/lychee_onFill.svg);
     @apply top-0 w-[16px] h-[16px]
-  }
-
-  #top-menu .lychee-help {
-    background-image: url(images/help_onFill.svg);
-    @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap bg-no-repeat bg-[length:22px_22px] w-6 h-6 bg-center align-middle
-  }
-
-  #top-menu .lychee-icon.lychee-help.lychee-help::before {
-    @apply content-none
   }
 
   #top-menu .aw_fbLink {
