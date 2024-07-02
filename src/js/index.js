@@ -25,10 +25,7 @@ function setMainMenuTop() {
 /* top menuの位置入れ替えのためにclassを付与 */
 function repositionTopMenu() {
   const home = document.querySelector('#top-menu ul li .home')
-  const lycheeHelp = document.querySelector('#top-menu ul li .lychee-help')
-
   if(home) home.closest('li').classList.add('aw_topMenuHome')
-  if(lycheeHelp) lycheeHelp.closest('li').classList.add('aw_topMenuHelp')
 }
 
 /* 活動や検索結果で、各ブロックがdescriptionを持っているかどうか判定 */
