@@ -37,11 +37,15 @@
     }
 
     div.issue .attributes .attribute {
-      @apply mb-1
+      @apply mb-2 pl-[150px]
+    }
+
+    div.issue .attributes .attribute::after {
+      @apply content-[''] block clear-both
     }
 
     div.issue .attributes .attribute .label {
-      @apply text-sm text-text-default
+      @apply w-[140px] text-sm text-text-default -ml-[150px]
     }
 
     div.issue .attribute .value {
@@ -178,6 +182,10 @@
 
     #attributes .splitcontent {
       @apply my-4
+    }
+
+    .attributes .splitcontent {
+      @apply gap-8
     }
 
     #issue-form #all_attributes .splitcontentleft {
