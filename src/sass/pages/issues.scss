@@ -211,5 +211,29 @@
     #watchers_inputs {
       @apply overflow-visible -mt-2
     }
+
+
+    // 一括編集
+    #bulk-selection {
+      @apply my-4 ml-6
+    }
+
+    #bulk-selection li {
+      @apply list-disc
+    }
+
+    &.action-bulk_edit {
+      fieldset {
+        @apply pt-2 px-3 pb-3 rounded-md
+      }
+
+      fieldset ~ fieldset {
+        @apply mt-4
+      }
+
+      .splitcontent + .splitcontent {
+        @apply mt-2
+      }
+    }
   }
 }
