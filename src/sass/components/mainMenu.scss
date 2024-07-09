@@ -1,6 +1,6 @@
 @layer components {
   #main-menu {
-    @apply relative w-full bg-background-primary p-3
+    @apply relative w-full bg-background-primary p-2
   }
 
   #main-menu ul {
@@ -16,7 +16,7 @@
   }
 
   #main-menu > ul > li > a {
-    @apply cursor-pointer relative overflow-hidden whitespace-nowrap text-ellipsis min-h-[28px] text-text-default text-xs py-1.5 px-2 rounded-md
+    @apply cursor-pointer relative overflow-hidden whitespace-nowrap text-ellipsis min-h-[32px] text-text-default text-sm py-1.5 px-3 rounded-md
   }
 
   #main-menu > ul > li > a:hover {
