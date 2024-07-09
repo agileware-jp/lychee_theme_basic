@@ -52,8 +52,6 @@
 
   // MessageBox: 未読ありの場合
   #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread {
-    // background-image: url(images/mail_unread_default.svg);
-    background-image: url(images/mail_default.svg);
     @apply bg-no-repeat bg-[length:16px_16px] bg-[left_center] pl-5
   }
 
