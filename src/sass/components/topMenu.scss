@@ -1,18 +1,14 @@
 @layer components {
   #top-menu {
-    @apply flex items-center bg-primitive-darkGray-600 text-xs px-4 py-2
+    @apply fixed top-0 left-0 flex flex-col w-[180px] h-full bg-primitive-darkGray-600 text-xs px-4 py-2
   }
 
   #top-menu ul {
-    @apply flex items-center
+    @apply flex flex-col
   }
 
-  #top-menu li {
-    @apply order-4 mr-4
-  }
-
-  #top-menu li.aw_topMenuHome {
-    @apply order-1 mr-2
+  #top-menu li:not(:first-child) {
+    @apply mt-2
   }
 
   #top-menu a {
@@ -21,16 +17,6 @@
 
   #top-menu a:hover {
     @apply no-underline opacity-60 transition-opacity
-  }
-
-  #top-menu .home {
-    background-image: url(images/home_onFill.svg);
-    @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap bg-no-repeat bg-[length:22px_22px] w-6 h-6 bg-center align-middle
-  }
-  
-  #top-menu .lychee-icon.lychee-icon:before {
-    content: url(images/lychee_onFill.svg);
-    @apply top-0 w-[16px] h-[16px]
   }
 
   #top-menu .aw_fbLink {

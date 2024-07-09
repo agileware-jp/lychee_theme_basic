@@ -13,12 +13,6 @@ function hiddenTabsButtons() {
   }
 }
 
-/* top menuの位置入れ替えのためにclassを付与 */
-function repositionTopMenu() {
-  const home = document.querySelector('#top-menu ul li .home')
-  if(home) home.closest('li').classList.add('aw_topMenuHome')
-}
-
 /* 活動や検索結果で、各ブロックがdescriptionを持っているかどうか判定 */
 function hasDescription(el) {
   // 文字列があるかどうかでチェック
@@ -52,7 +46,6 @@ function addFeedbackLink() {
 window.addEventListener('DOMContentLoaded', () => {
   removeLoggedasText()
   hiddenTabsButtons()
-  repositionTopMenu()
   addFeedbackLink()
 
   /**
