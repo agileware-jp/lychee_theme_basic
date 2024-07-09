@@ -1,18 +1,18 @@
 @layer components {
   #top-menu {
-    @apply fixed top-0 left-0 flex flex-col w-[180px] h-full bg-primitive-darkGray-600 text-xs px-4 py-2
+    @apply fixed top-0 left-0 flex flex-col-reverse w-[180px] h-full bg-background-secondary text-xs p-4
   }
 
-  #top-menu ul {
-    @apply flex flex-col
+  #top-menu > ul {
+    @apply flex flex-col mb-auto
   }
 
   #top-menu li:not(:first-child) {
-    @apply mt-2
+    @apply mt-4
   }
 
   #top-menu a {
-    @apply text-text-onFill
+    @apply text-text-default
   }
 
   #top-menu a:hover {
@@ -20,7 +20,7 @@
   }
 
   #top-menu .aw_fbLink {
-    background-image: url(images/open_in_new_onFill.svg);
+    background-image: url(images/open_in_new_default.svg);
     @apply bg-no-repeat bg-[length:16px_16px] bg-[right_center] pr-5
   }
 
@@ -28,134 +28,64 @@
     @apply underline
   }
 
+
+  /* loggedas */
+  #loggedas .user {
+    background-image: url(images/badge_default.svg);
+    @apply bg-no-repeat bg-[length:16px_16px] bg-[left_center] pl-5
+  }
+
+
+  /* account */
   #account {
-    @apply ml-6
-  }
-
-  .action-login #top-menu,
-  .action-lost_password #top-menu,
-  .action-register #top-menu {
-    @apply justify-end
-  }
-
-  .action-login #account 
-  .action-register #account {
-    @apply ml-0
-  }
-
-  #account ul li {
-    @apply mr-0
-  }
-
-  #account ul li:first-child {
-    @apply ml-0
+    @apply mt-4
   }
 
   #account ul li:not(:first-child) {
-    @apply ml-2
+    @apply mt-4
   }
 
-  #top-menu .my-account, #top-menu .logout {
-    @apply bg-no-repeat pl-4
+  // MessageBox: 未読ありの場合
+  #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread {
+    background-image: url(images/mail_unread_default.svg);
+    @apply bg-no-repeat bg-[length:16px_16px] bg-[left_center] pl-5
   }
 
-  #top-menu .my-account,
-  .flyout-menu .my-account {
-    background-image: url(images/settings_dark.svg);
-    @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap bg-center bg-no-repeat align-middle bg-background-primary border border-border-default text-sm p-0 hover:bg-background-primary hover:border-border-dark hover:shadow-none hover:opacity-100 active:bg-background-secondary active:shadow-none
-  }
-
-  #top-menu .logout,
-  .flyout-menu .logout {
-    background-image: url(images/logout_dark.svg);
-    @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap bg-center bg-no-repeat align-middle bg-background-primary border border-border-default text-sm p-0 hover:bg-background-primary hover:border-border-dark hover:shadow-none hover:opacity-100 active:bg-background-secondary active:shadow-none
-  }
-
-  #top-menu .my-account,
-  #top-menu .logout {
-    @apply w-7 h-7 rounded-md
-  }
-
-  .flyout-menu .my-account,
-  .flyout-menu .logout {
-    @apply w-10 h-10 bg-[length:24px_24px] rounded-lg
-  }
-
-  // Message Box
-  #top-menu .lychee-message-box-icon.lychee-message-box-icon,
-  .flyout-menu .lychee-message-box-icon {
-    background-image: url(images/mail_dark.svg);
-    @apply relative cursor-pointer inline-block overflow-visible indent-[100%] whitespace-nowrap bg-center bg-no-repeat align-middle bg-background-primary border border-border-default text-sm p-0 hover:bg-background-primary hover:border-border-dark hover:shadow-none hover:opacity-100 active:bg-background-secondary active:shadow-none
-  }
-
-  #top-menu .lychee-message-box-icon.lychee-message-box-icon {
-    @apply w-7 h-7 rounded-md
-  }
-
-  .flyout-menu .lychee-message-box-icon {
-    @apply w-10 h-10 bg-[length:24px_24px] rounded-lg
-  }
-
-  #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread::after,
-  .flyout-menu .lychee-message-box-icon.unread::after {
-    @apply content-[''] absolute -top-[5px] -right-[5px] block w-3 h-3 bg-status-danger rounded-full z-10
-  }
-
-  #top-menu .lychee-message-box-icon.lychee-message-box-icon::before,
   #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread::before {
-    @apply content-none m-0
+    content: 'メッセージがあります';
   }
 
-  .flyout-menu .lychee-message-box-icon.lychee-message-box-icon::before,
-  .flyout-menu .lychee-message-box-icon.lychee-message-box-icon.unread::before {
-    @apply content-['']
+  // MessageBox: 未読なしの場合
+  #top-menu .lychee-message-box-icon.lychee-message-box-icon {
+    background-image: url(images/mail_default.svg);
+    @apply bg-no-repeat bg-[length:16px_16px] bg-[left_center] pl-5
   }
 
-
-
-  #top-menu .register {
-    background-image: url(images/person_add_onFill.svg);
-    background-repeat: no-repeat;
-
-    @apply order-2 pl-5
+  #top-menu .lychee-message-box-icon.lychee-message-box-icon::before {
+    content: '未読メッセージなし';
   }
 
+  // 個人設定
+  .my-account {
+    background-image: url(images/settings_default.svg);
+    @apply bg-no-repeat bg-[length:16px_16px] bg-[left_center] pl-5
+  }
+
+  // ログアウト
+  .logout {
+    background-image: url(images/logout_default.svg);
+    @apply bg-no-repeat bg-[length:16px_16px] bg-[left_center] pl-5
+  }
+
+  // ログイン
   #top-menu .login {
-    background-image: url(images/login_onFill.svg);
-    background-repeat: no-repeat;
-
-    @apply order-1 pl-5
+    background-image: url(images/login_default.svg);
+    @apply bg-no-repeat bg-[length:16px_16px] bg-[left_center] pl-5
   }
 
-  #top-menu #loggedas {
-    @apply text-text-onFill pt-[1px]
-  }
-
-  #top-menu #loggedas a {
-    background-image: url(images/person_onFill.svg);
-    @apply bg-no-repeat bg-[left_center] text-text-onFill mt-0.5 pl-5
-  }
-
-  #top-menu > ul {
-    @apply mr-auto
-  }
-
-
-  /* top-menu内の並び順を制御 */
-  #top-menu > ul {
-    @apply order-1
-  }
-
-  // Lychee Billing
-  #top-menu #lychee-billng-global-message#lychee-billng-global-message {
-    @apply order-2
-  }
-
-  #top-menu #loggedas {
-    @apply order-3
-  }
-
-  #account {
-    @apply order-4
+  // 登録する
+  #top-menu .register {
+    background-image: url(images/person_add_default.svg);
+    @apply bg-no-repeat bg-[length:16px_16px] bg-[left_center] pl-5
   }
 }
