@@ -29,9 +29,10 @@ function removeLoggedasText() {
 
 // FBリンク追加
 function addFeedbackLink() {
-  const topMenuNav = document.querySelector('#top-menu > ul')
+  const topMenuNav = document.querySelector('#top-menu #account ul')
   const li = document.createElement('li')
   const a = document.createElement('a')
+  li.classList.add('aw_fbLink_li')
   a.classList.add('aw_fbLink')
   a.setAttribute('href', 'https://support.lychee-redmine.jp/feedback/')
   a.setAttribute('target', '_blank')
