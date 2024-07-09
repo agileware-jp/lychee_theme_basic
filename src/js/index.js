@@ -13,15 +13,6 @@ function hiddenTabsButtons() {
   }
 }
 
-function setMainMenuTop() {
-  const mainMenu = document.querySelector('#main-menu')
-  const topMenu = document.querySelector('#top-menu')
-
-  if(mainMenu) {
-    mainMenu.style.top = `${topMenu.offsetHeight}px`
-  }
-}
-
 /* top menuの位置入れ替えのためにclassを付与 */
 function repositionTopMenu() {
   const home = document.querySelector('#top-menu ul li .home')
@@ -32,27 +23,6 @@ function repositionTopMenu() {
 function hasDescription(el) {
   // 文字列があるかどうかでチェック
   return el.textContent.length > 0
-}
-
-/**
- * Header・MainMenuのSticky Sidebar化
- */
-function stickyMainMenu() {
-  const mainMenu = document.querySelector('#main-menu')
-  const topMenu = document.querySelector('#top-menu')
-  if(mainMenu) {
-    const topMenuHeightRectBottom = topMenu.getBoundingClientRect().bottom
-
-    if(topMenuHeightRectBottom <= 0) {
-      mainMenu.classList.add('aw_fixed_header')
-      mainMenu.style.top = '0px'
-    }
-
-    if(topMenuHeightRectBottom > 0) {
-      mainMenu.classList.remove('aw_fixed_header')
-      mainMenu.style.top = `${topMenu.offsetHeight}px`
-    }
-  }
 }
 
 // 「ログイン中:」の文字を削除
@@ -77,11 +47,6 @@ function addFeedbackLink() {
 }
 
 /**
- * Sticky MainMenu
- */
-window.addEventListener('scroll', stickyMainMenu)
-
-/**
  * その他一般的な処理
  */
 window.addEventListener('DOMContentLoaded', () => {
@@ -94,15 +59,6 @@ window.addEventListener('DOMContentLoaded', () => {
    * Sidebarの開閉機能
    */
   initToggleSidebar()
-
-  // mainMenuがあるかどうか
-  if(document.querySelector('#main-menu') !== null) {
-    // mainMenuがない場合headerはfull width表示にするため、区別用classを付与しておく
-    document.querySelector('#header').classList.add('aw_hasMainMenu')
-  }
-
-  // mainMenuのtopプロパティを指定
-  setMainMenuTop()
 
   /**
    * 活動・検索結果ページ
