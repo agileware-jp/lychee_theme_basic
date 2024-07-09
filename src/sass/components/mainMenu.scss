@@ -1,39 +1,47 @@
 @layer components {
   #main-menu {
-    @apply w-full bg-primitive-darkGray-600 py-3 px-1
+    @apply relative w-full bg-background-primary p-3
   }
 
   #main-menu ul {
     @apply flex w-full whitespace-nowrap m-0 p-0
   }
 
-  #main-menu li {
-    @apply relative
-  }
-
-  #main-menu li:not(:first-child) {
-    @apply mt-1
-  }
-
   #main-menu li a {
     @apply block whitespace-normal break-words text-text-default text-xs no-underline px-3 py-2.5 rounded
   }
 
+  #main-menu > ul > li ~ li {
+    @apply ml-1
+  }
+
   #main-menu > ul > li > a {
-    @apply cursor-pointer relative overflow-hidden whitespace-nowrap text-ellipsis text-text-onFill text-[11px] leading-[1.4] py-2 px-1.5
+    @apply cursor-pointer relative overflow-hidden whitespace-nowrap text-ellipsis min-h-[28px] text-text-default text-xs py-1.5 px-2 rounded-md
+  }
+
+  #main-menu > ul > li > a:hover {
+    @apply bg-background-tertiary
+  }
+
+  #main-menu > ul > li > a.selected {
+    @apply bg-background-tertiary
   }
 
   // main-menu > new-object
   #main-menu ul li:has(.new-object) {
-    @apply left-3 w-6 mb-4
+    @apply flex items-center
   }
 
   #main-menu .menu-children {
-    @apply hidden fixed w-auto bg-background-primary border border-border-default p-1 rounded-md shadow-lg z-[1]
+    @apply hidden fixed w-auto bg-background-primary border border-border-default p-1 rounded-md shadow-lg z-20
   }
 
   #main-menu li:hover ul.menu-children,
   #main-menu li ul.menu-children.visible {
-    @apply left-2 block w-[11rem]
+    @apply block w-[11rem]
+  }
+
+  #main-menu .menu-children a:hover {
+    @apply bg-background-secondary
   }
 }
