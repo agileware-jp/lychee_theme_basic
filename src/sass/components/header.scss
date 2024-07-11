@@ -1,6 +1,6 @@
 @layer components {
   #header {
-    @apply flex flex-row-reverse flex-wrap bg-primitive-darkGray-600 border-b border-border-default text-text-default
+    @apply overflow-hidden flex flex-row-reverse flex-wrap bg-primitive-darkGray-600 border-l border-b border-border-divider text-text-default
   }
 
   #header h1 {

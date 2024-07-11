@@ -1,11 +1,11 @@
 @layer components {
   #wrapper {
     min-height: inherit;
-    @apply overflow-hidden flex flex-col bg-transparent pl-[180px]
+    @apply overflow-hidden flex flex-col bg-background-secondary pl-[180px]
   }
 
   #main {
-    @apply flex grow-[2] flex-row border-l border-border-divider
+    @apply flex grow-[2] flex-row border-l border-r border-border-divider
   }
 
   #main.nosidebar {
@@ -21,7 +21,7 @@
   }
 
   #footer {
-    @apply clear-both w-full bg-background-primary border-t border-border-divider text-text-caption text-xs text-center p-2
+    @apply clear-both w-full bg-background-primary border border-border-divider text-text-caption text-xs text-center p-2
   }
 
   // 見出しとcontextualのfloatによっておかしくなる箇所の調整
