@@ -1,6 +1,12 @@
 @layer components {
+  /* TopMenu */
   #top-menu {
-    @apply fixed top-0 left-0 flex flex-col-reverse w-[180px] h-full bg-background-secondary text-xs p-4
+    @apply fixed top-0 left-0 flex flex-col w-[180px] h-full bg-background-secondary text-xs p-4 shadow-lg z-10
+  }
+
+  // 閉じているとき
+  #top-menu {
+    @apply w-[56px]
   }
 
   #top-menu > ul {
@@ -20,14 +26,38 @@
   }
 
 
+  /* TopMenuの開閉ボタン */
+  .aw_toggleTopMenuWrap {
+    @apply border-b border-border-default mb-4 pb-4
+  }
+
+  .aw_toggleTopMenu {
+    background-image: url(images/menu_dark.svg);
+    @apply block overflow-hidden indent-[100%] whitespace-nowrap w-full bg-no-repeat bg-[length:20px_20px] bg-[center_center] border-none p-0
+  }
+
+  .aw_toggleTopMenu:hover {
+    @apply opacity-60
+  }
+
+
   /* loggedas */
   #loggedas {
     @apply border-t border-border-default mt-4 pt-4
   }
 
+  #loggedas a {
+    @apply min-h-[20px]
+  }
+
   #loggedas .user {
-    background-image: url(images/badge_default.svg);
-    @apply bg-no-repeat bg-[length:16px_16px] bg-[left_center] pl-5
+    background-image: url(images/person_dark.svg);
+    @apply bg-no-repeat bg-[length:20px_20px] bg-[left_center] pl-5
+  }
+
+  // 閉じているとき
+  #loggedas .user {
+    @apply bg-[center_center]
   }
 
 
@@ -40,19 +70,24 @@
     @apply mt-4
   }
 
-  // MessageBox: 未読なしの場合
+  #account ul li a {
+    @apply min-h-[20px]
+  }
+
+
+  /* MessageBox: 未読なしの場合 */
   #top-menu .lychee-message-box-icon.lychee-message-box-icon {
-    background-image: url(images/mail_default.svg);
-    @apply relative bg-no-repeat bg-[length:16px_16px] bg-[left_center] pl-5
+    background-image: url(images/mail_dark.svg);
+    @apply relative bg-no-repeat bg-[length:20px_20px] bg-[left_center] pl-5
   }
 
   #top-menu .lychee-message-box-icon.lychee-message-box-icon::before {
     content: 'メッセージ';
   }
 
-  // MessageBox: 未読ありの場合
+  /* MessageBox: 未読ありの場合 */
   #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread {
-    @apply bg-no-repeat bg-[length:16px_16px] bg-[left_center] pl-5
+    @apply bg-no-repeat bg-[length:20px_20px] bg-[left_center] pl-5
   }
 
   #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread::before {
@@ -65,41 +100,230 @@
     @apply absolute -top-[4px] -right-[8px] block w-[10px] h-[10px] bg-status-danger rounded-full
   }
 
-  // 個人設定
+  /* MessageBox: 閉じているとき */
+  #top-menu .lychee-message-box-icon.lychee-message-box-icon,
+  #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread {
+    @apply bg-[center_center]
+  }
+
+  #top-menu .lychee-message-box-icon.lychee-message-box-icon::before,
+  #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread::before {
+    content: '';
+  }
+
+  #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread::after {
+    @apply -top-[4px] -right-[2px]
+  }
+
+
+  /* 個人設定 */
   .my-account {
-    background-image: url(images/settings_default.svg);
-    @apply bg-no-repeat bg-[length:16px_16px] bg-[left_center] pl-5
+    background-image: url(images/construnction_dark.svg);
+    @apply bg-no-repeat bg-[length:20px_20px] bg-[left_center] pl-5
   }
 
-  // ログアウト
+  // 閉じているとき
+  .my-account {
+    @apply bg-[center_center]
+  }
+
+  /* ログアウト */
   .logout {
-    background-image: url(images/logout_default.svg);
-    @apply bg-no-repeat bg-[length:16px_16px] bg-[left_center] pl-5
+    background-image: url(images/logout_dark.svg);
+    @apply bg-no-repeat bg-[length:20px_20px] bg-[left_center] pl-5
   }
 
-  // ログイン
+  // 閉じているとき
+  .logout {
+    @apply bg-[center_center]
+  }
+
+
+  /* ログイン */
   .login {
-    background-image: url(images/login_default.svg);
-    @apply bg-no-repeat bg-[length:16px_16px] bg-[left_center] pl-5
+    background-image: url(images/login_dark.svg);
+    @apply bg-no-repeat bg-[length:20px_20px] bg-[left_center] pl-5
   }
 
-  // 登録する
+  // 閉じているとき
+  .login {
+    @apply bg-[center_center]
+  }
+
+
+  /* 登録する */
   .register {
-    background-image: url(images/person_add_default.svg);
-    @apply bg-no-repeat bg-[length:16px_16px] bg-[left_center] pl-5
+    background-image: url(images/person_add_dark.svg);
+    @apply bg-no-repeat bg-[length:20px_20px] bg-[left_center] pl-5
   }
 
-  // フィードバックリンク
+  // 閉じているとき
+  .register {
+    @apply bg-[center_center]
+  }
+
+
+  /* フィードバックリンク */
   .aw_fbLink_li {
     @apply border-t border-border-default mt-4 pt-4
   }
 
   .aw_fbLink {
-    background-image: url(images/open_in_new_default.svg);
-    @apply bg-no-repeat bg-[length:16px_16px] bg-[right_center] pr-5
+    background-image: url(images/feedback_dark.svg);
+    @apply bg-no-repeat bg-[length:20px_20px] bg-[left_center] pl-5
   }
 
-  .aw_fbLink:hover {
-    @apply underline
+  // 閉じているとき
+  .aw_fbLink {
+    @apply bg-[center_center]
+  }
+
+  // account 閉じているとき
+  #top-menu #account ul li a:not(.lychee-message-box-icon) {
+    @apply block overflow-hidden indent-[100%] whitespace-nowrap
+  }
+
+  #loggedas .user {
+    @apply block overflow-hidden indent-[100%] whitespace-nowrap
+  }
+
+
+  /* 順番の管理 */
+  #top-menu > ul {
+    @apply order-1
+  }
+
+  #top-menu .login {
+    @apply order-1
+  }
+
+  #top-menu .register {
+    @apply order-2
+  }
+
+  #top-menu #lychee-billng-global-message#lychee-billng-global-message {
+    @apply order-2
+  }
+
+  #top-menu #loggedas {
+    @apply order-3
+  }
+
+  #account {
+    @apply order-4
+  }
+
+
+  /* top-menuのアイコン化管理 */
+  #top-menu > ul > li > a {
+    @apply min-h-[20px]
+  }
+  /* ホーム */
+  #top-menu .home {
+    background-image: url(images/home_default.svg);
+    @apply relative bg-no-repeat bg-[length:20px_20px] bg-[left_center] pl-5
+  }
+
+  // 閉じているとき
+  #top-menu .home {
+    background-image: url(images/home_dark.svg);
+    @apply block overflow-hidden indent-[100%] whitespace-nowrap bg-[center_center]
+  }
+
+
+  /* マイページ */
+  #top-menu .my-page {
+    background-image: url(images/badge_default.svg);
+    @apply relative bg-no-repeat bg-[length:20px_20px] bg-[left_center] pl-5
+  }
+
+  // 閉じているとき
+  #top-menu .my-page {
+    background-image: url(images/badge_dark.svg);
+    @apply block overflow-hidden indent-[100%] whitespace-nowrap bg-[center_center]
+  }
+
+
+  /* プロジェクト */
+  #top-menu .projects {
+    background-image: url(images/widgets_default.svg);
+    @apply relative bg-no-repeat bg-[length:20px_20px] bg-[left_center] pl-5
+  }
+
+  // 閉じているとき
+  #top-menu .projects {
+    background-image: url(images/widgets_dark.svg);
+    @apply block overflow-hidden indent-[100%] whitespace-nowrap bg-[center_center]
+  }
+
+
+  /* lychee系（仮で一括適用） */
+  #top-menu .lychee-icon.lychee-icon {
+    @apply overflow-hidden indent-[100%] whitespace-nowrap relative bg-no-repeat bg-[length:20px_20px] bg-[left_center] pl-5
+  }
+
+  #top-menu .lychee-icon.lychee-icon::before {
+    content: none;
+  }
+
+
+  /* LRM */
+  #top-menu .lychee-icon.resource-management {
+    background-image: url(images/lrm_dark.svg);
+    @apply block bg-[center_center]
+  }
+
+
+  /* 横断LPR */
+  #top-menu .lychee-icon.project-reports {
+    background-image: url(images/lpr_dark.svg);
+    @apply block bg-[center_center]
+  }
+
+
+  /* work_plan: 作業予定 */
+  #top-menu .lychee-icon.lychee-work-plan {
+    background-image: url(images/work_plan_dark.svg);
+    @apply block bg-[center_center]
+  }
+
+
+  /* time_management: 作業実績 */
+  #top-menu .lychee-icon.time-management {
+    background-image: url(images/time_management_dark.svg);
+    @apply block bg-[center_center]
+  }
+
+
+  /* lychee_help */
+  #top-menu .lychee-icon.lychee-help {
+    background-image: url(images/help_dark.svg);
+    @apply block bg-[center_center]
+  }
+
+
+  /* 管理 */
+  #top-menu .administration {
+    background-image: url(images/manage_accounts_default.svg);
+    @apply block relative bg-no-repeat bg-[length:20px_20px] bg-[left_center] pl-5
+  }
+
+  // 閉じているとき
+  #top-menu .administration {
+    background-image: url(images/manage_accounts_dark.svg);
+    @apply block overflow-hidden indent-[100%] whitespace-nowrap bg-[center_center]
+  }
+
+
+  /* おすすめOSS：バナー */
+  #top-menu .redmine-banner {
+    background-image: url(images/campaign_default.svg);
+    @apply block relative bg-no-repeat bg-[length:20px_20px] bg-[left_center] pl-5
+  }
+
+  // 閉じているとき
+  #top-menu .redmine-banner {
+    background-image: url(images/campaign_dark.svg);
+    @apply block overflow-hidden indent-[100%] whitespace-nowrap bg-[center_center]
   }
 }

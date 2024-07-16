@@ -31,10 +31,53 @@ function addFeedbackLink() {
   topMenuNav.appendChild(li)
 }
 
+
+/* topMenuの折りたたみ等 */
+function getTopMenu() {
+  return document.getElementById('top-menu')
+}
+
+function topMenuExists() {
+  return document.getElementById('top-menu') !== null
+}
+
+function isLoggedIn() {
+  return document.getElementById('loggedas') !== null
+}
+
+function addLogoutStyle() {
+  const isLoggedOut = true
+  // ログアウト中は#loggedasが存在しないので、#accountにmargin-top: auto;を適用したい
+  if(!isLoggedIn()) {
+    const account = document.getElementById('account')
+    account.style.marginTop = 'auto'
+  }
+}
+
+function addBtnToToggleTopMenu() {
+  if(!topMenuExists()) return
+
+  const topMenu = getTopMenu()
+
+  // 枠を作成
+  const div = document.createElement('div')
+  div.classList.add('aw_toggleTopMenuWrap')
+
+  // ボタンを作成
+  const btn = document.createElement('button')
+  btn.textContent = 'メニューの開閉'
+  btn.classList.add('aw_toggleTopMenu')
+
+  div.appendChild(btn)
+  topMenu.appendChild(div)
+}
+
 /**
  * その他一般的な処理
  */
 window.addEventListener('DOMContentLoaded', () => {
+  addBtnToToggleTopMenu()
+  addLogoutStyle()
   removeLoggedasText()
   addFeedbackLink()
 

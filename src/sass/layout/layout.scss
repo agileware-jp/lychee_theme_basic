@@ -4,8 +4,12 @@
     @apply overflow-hidden flex flex-col bg-background-secondary pl-[180px]
   }
 
+  #wrapper {
+    @apply pl-[56px]
+  }
+
   #main {
-    @apply flex grow-[2] flex-row border-l border-r border-border-divider
+    @apply flex grow-[2] flex-row
   }
 
   #main.nosidebar {
@@ -21,7 +25,7 @@
   }
 
   #footer {
-    @apply clear-both w-full bg-background-primary border border-border-divider text-text-caption text-xs text-center p-2
+    @apply clear-both w-full bg-background-primary border-t border-border-divider text-text-caption text-xs text-center p-2
   }
 
   // 見出しとcontextualのfloatによっておかしくなる箇所の調整
