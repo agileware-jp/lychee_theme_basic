@@ -33,6 +33,42 @@ function addFeedbackLink() {
 
 
 /* topMenuの折りたたみ等 */
+const topMenuOpenStyle = `
+  #wrapper {
+    margin-left: 180px
+  }
+
+  #top-menu {
+    width: 180px;
+  }
+`
+
+const topMenuCloseStyle = `
+  #wrapper {
+    margin-left: 52px;
+  }
+
+  #top-menu {
+    width: 52px;
+  }
+`
+
+function addDefaultTopMenStyle() {
+  const styleTag = document.createElement('style')
+  const isTopMenuOpen = localStorage.getItem('isTopMenuOpen') === 'true'
+  styleTag.setAttribute('data-style', 'topMenu')
+  styleTag.textContent = isTopMenuOpen ? topMenuOpenStyle : topMenuCloseStyle
+
+  document.head.appendChild(styleTag)
+}
+addDefaultTopMenStyle()
+
+function updateTopMenuStyle() {
+  const styleTag = document.querySelector('style[data-style="topMenu"]')
+  const isTopMenuOpen = localStorage.getItem('isTopMenuOpen') === 'true'
+  styleTag.textContent = isTopMenuOpen ? topMenuOpenStyle : topMenuCloseStyle
+}
+
 function getTopMenu() {
   return document.getElementById('top-menu')
 }
@@ -46,7 +82,6 @@ function isLoggedIn() {
 }
 
 function addLogoutStyle() {
-  const isLoggedOut = true
   // ログアウト中は#loggedasが存在しないので、#accountにmargin-top: auto;を適用したい
   if(!isLoggedIn()) {
     const account = document.getElementById('account')
@@ -61,15 +96,53 @@ function addBtnToToggleTopMenu() {
 
   // 枠を作成
   const div = document.createElement('div')
+  div.style.cssText = `
+    border-bottom: 1px solid #ccd5d9;
+    margin-top: -53px;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+  `
   div.classList.add('aw_toggleTopMenuWrap')
 
   // ボタンを作成
   const btn = document.createElement('button')
-  btn.textContent = 'メニューの開閉'
+  btn.textContent = 'メニューを固定する'
+  btn.style.cssText = `
+    display: block;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: left center;
+    border: 0;
+  `
   btn.classList.add('aw_toggleTopMenu')
+
+  toggleTopMenu(btn)
 
   div.appendChild(btn)
   topMenu.appendChild(div)
+}
+
+function toggleTopMenu(btn) {
+  let isTopMenuOpen = false
+  if(localStorage.getItem('isTopMenuOpen') === 'true') {
+    isTopMenuOpen = true
+  } else {
+    isTopMenuOpen = false
+  }
+
+  btn.addEventListener('click', () => {
+    isTopMenuOpen = !isTopMenuOpen
+
+    if(isTopMenuOpen) {
+      document.body.classList.add('isTopMenuOpen')
+      localStorage.setItem('isTopMenuOpen', true)
+    } else {
+      document.body.classList.remove('isTopMenuOpen')
+      localStorage.setItem('isTopMenuOpen', false)
+    }
+    updateTopMenuStyle()
+  })
 }
 
 /**
@@ -80,6 +153,13 @@ window.addEventListener('DOMContentLoaded', () => {
   addLogoutStyle()
   removeLoggedasText()
   addFeedbackLink()
+
+  // topMenuの復原処理
+  if(localStorage.getItem('isTopMenuOpen') === 'true') {
+    document.body.classList.add('isTopMenuOpen')
+  } else {
+    document.body.classList.remove('isTopMenuOpen')
+  }
 
   /**
    * Sidebarの開閉機能
