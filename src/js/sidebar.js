@@ -96,7 +96,6 @@ function toggleSidebar() {
 }
 
 export function initToggleSidebar() {
-  const sidebar = getSidebar()
   if(sidebarExists()) {
     addBtnToToggleSidebar()
 
