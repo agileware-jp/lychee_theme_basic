@@ -7,6 +7,16 @@ addDefaultTopMenStyle()
 /* ちらつき防止のため、sidebarの初期スタイルを追加する */
 addDefaultSidebarStyle()
 
+/* .tabs-buttons(main menuが見切れる時のページ送りUI)を非表示にする */
+// Note: HTMLのstyle属性でして押されておりテーマcssで上書きできないため、テーマjsで上書きする
+function hiddenTabsButtons() {
+  const tabsButton = document.querySelector('#main-menu .tabs-buttons')
+  if(tabsButton) {
+    tabsButton.classList.remove('tabs-buttons')
+    tabsButton.style.display = 'none'
+  }
+}
+
 /* 活動や検索結果で、各ブロックがdescriptionを持っているかどうか判定 */
 function hasDescription(el) {
   // 文字列があるかどうかでチェック
@@ -40,6 +50,7 @@ function addFeedbackLink() {
  */
 window.addEventListener('DOMContentLoaded', () => {
   removeLoggedasText()
+  hiddenTabsButtons()
   addFeedbackLink()
 
   /**

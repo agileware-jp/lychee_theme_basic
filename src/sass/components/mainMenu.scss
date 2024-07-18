@@ -1,6 +1,31 @@
 @layer components {
   #main-menu {
-    @apply relative w-full bg-background-primary p-2
+    @apply relative w-full bg-background-primary py-1 px-2
+  }
+
+  /* MainMenuのスクロールバー調整 */
+  #main-menu ul:not(.menu-children) {
+    @apply overflow-x-scroll py-1
+  }
+
+  #main-menu ul:not(.menu-children)::-webkit-scrollbar {
+    @apply h-[4px]
+  }
+
+  #main-menu ul:not(.menu-children)::-webkit-scrollbar-thumb {
+    @apply cursor-grab bg-background-dark/20 rounded
+  }
+
+  #main-menu:hover ul:not(.menu-children)::-webkit-scrollbar-thumb {
+    @apply bg-background-dark/50
+  }
+
+  #main-menu ul:not(.menu-children)::-webkit-scrollbar-thumb:active {
+    @apply cursor-grabbing
+  }
+
+  #main-menu ul:not(.menu-children)::-webkit-scrollbar-corner {
+    @apply hidden
   }
 
   #main-menu ul {
