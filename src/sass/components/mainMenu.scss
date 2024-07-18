@@ -8,6 +8,10 @@
     @apply relative flex w-full whitespace-nowrap m-0 pl-8
   }
 
+  #main-menu ul.noScroll {
+    @apply pl-0
+  }
+
   #main-menu li a {
     @apply block whitespace-normal break-words text-text-default text-xs no-underline px-3 py-2.5 rounded
   }
