@@ -3,6 +3,54 @@
     @apply relative w-full bg-background-primary py-1 px-2
   }
 
+  /* MainMenuのスタイル */
+  #main-menu ul:not(.menu-children) {
+    @apply relative flex w-full whitespace-nowrap m-0 pl-8
+  }
+
+  #main-menu li a {
+    @apply block whitespace-normal break-words text-text-default text-xs no-underline px-3 py-2.5 rounded
+  }
+
+  #main-menu > ul > li ~ li {
+    @apply ml-1
+  }
+
+  #main-menu > ul > li > a {
+    @apply cursor-pointer relative overflow-hidden whitespace-nowrap text-ellipsis min-h-[32px] text-text-default text-sm py-1.5 px-3 rounded-md
+  }
+
+  #main-menu > ul > li > a:hover {
+    @apply bg-background-tertiary
+  }
+
+  #main-menu > ul > li > a.selected {
+    @apply bg-background-tertiary
+  }
+
+  /* main-menu > new-object */
+  #main-menu ul li:has(.new-object) {
+    @apply fixed left-[60px] flex items-center z-[1]
+  }
+
+  // mainMenuを固定している場合
+  .isTopMenuOpen #main-menu ul li:has(.new-object) {
+    @apply left-[188px]
+  }
+
+  #main-menu .menu-children {
+    @apply hidden fixed w-auto bg-background-primary border border-border-default p-1 rounded-md shadow-lg z-20
+  }
+
+  #main-menu li:hover ul.menu-children,
+  #main-menu li ul.menu-children.visible {
+    @apply block w-[11rem]
+  }
+
+  #main-menu .menu-children a:hover {
+    @apply bg-background-secondary
+  }
+
   /* MainMenuのスクロールバー調整 */
   // 横スクロールが発生するとき
   #main-menu ul:not(.menu-children) {
@@ -30,54 +78,11 @@
   }
 
   // 横スクロールが発生しないとき
-  #main-menu ul.noScroll  {
+  #main-menu ul.noScroll {
     @apply overflow-x-visible
   }
 
   #main-menu ul.noScroll::-webkit-scrollbar {
     @apply h-0
-  }
-
-  /* MainMenuのスタイル */
-  #main-menu ul {
-    @apply flex w-full whitespace-nowrap m-0 p-0
-  }
-
-  #main-menu li a {
-    @apply block whitespace-normal break-words text-text-default text-xs no-underline px-3 py-2.5 rounded
-  }
-
-  #main-menu > ul > li ~ li {
-    @apply ml-1
-  }
-
-  #main-menu > ul > li > a {
-    @apply cursor-pointer relative overflow-hidden whitespace-nowrap text-ellipsis min-h-[32px] text-text-default text-sm py-1.5 px-3 rounded-md
-  }
-
-  #main-menu > ul > li > a:hover {
-    @apply bg-background-tertiary
-  }
-
-  #main-menu > ul > li > a.selected {
-    @apply bg-background-tertiary
-  }
-
-  // main-menu > new-object
-  #main-menu ul li:has(.new-object) {
-    @apply flex items-center
-  }
-
-  #main-menu .menu-children {
-    @apply hidden fixed w-auto bg-background-primary border border-border-default p-1 rounded-md shadow-lg z-20
-  }
-
-  #main-menu li:hover ul.menu-children,
-  #main-menu li ul.menu-children.visible {
-    @apply block w-[11rem]
-  }
-
-  #main-menu .menu-children a:hover {
-    @apply bg-background-secondary
   }
 }

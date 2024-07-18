@@ -194,7 +194,11 @@
 
     background-image: url(images/add_dark.svg);
 
-    @apply block w-[32px] h-[32px]  bg-no-repeat bg-[length:16px_16px] bg-center
+    @apply block w-[32px] h-[32px] bg-no-repeat bg-[length:16px_16px] bg-center border-border-default shadow
+  }
+
+  #main-menu li a.new-object:has(+ .visible) {
+    @apply bg-background-tertiary
   }
 
   #main-menu li a.new-object:hover,

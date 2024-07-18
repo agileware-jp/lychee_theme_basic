@@ -1,5 +1,5 @@
 import { addDefaultTopMenStyle, initToggleTopMenu } from './topMenu'
-import { addNoScrollClass } from './mainMenu'
+import { addNoScrollClass, saveMainMenuScrollPosition, restoreMainMenuScrollPosition } from './mainMenu'
 import { addDefaultSidebarStyle, initToggleSidebar } from './sidebar'
 
 /* ちらつき防止のため、topMenuの初期スタイルを追加する */
@@ -46,11 +46,17 @@ function addFeedbackLink() {
   topMenuNav.appendChild(li)
 }
 
+
+/**
+ * MainMenuの横スクロールに関する処理
+ */
+window.addEventListener('resize', addNoScrollClass)
+window.addEventListener('beforeunload', saveMainMenuScrollPosition);
+window.addEventListener('load', restoreMainMenuScrollPosition);
+
 /**
  * その他一般的な処理
  */
-window.addEventListener('resize', addNoScrollClass)
-
 window.addEventListener('DOMContentLoaded', () => {
   removeLoggedasText()
   hiddenTabsButtons()
