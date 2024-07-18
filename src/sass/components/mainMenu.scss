@@ -34,7 +34,7 @@
 
   /* main-menu > new-object */
   #main-menu ul li:has(.new-object) {
-    @apply fixed left-[60px] flex items-center z-[1]
+    @apply fixed left-[60px] flex items-center z-[699]
   }
 
   // mainMenuを固定している場合
@@ -43,7 +43,7 @@
   }
 
   #main-menu .menu-children {
-    @apply hidden fixed w-auto bg-background-primary border border-border-default p-1 rounded-md shadow-lg z-20
+    @apply hidden fixed w-auto bg-background-primary border border-border-default p-1 rounded-md shadow-lg
   }
 
   #main-menu li:hover ul.menu-children,
