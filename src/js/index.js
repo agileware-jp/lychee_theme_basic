@@ -1,4 +1,5 @@
 import { addDefaultTopMenStyle, initToggleTopMenu } from './topMenu'
+import { addNoScrollClass } from './mainMenu'
 import { addDefaultSidebarStyle, initToggleSidebar } from './sidebar'
 
 /* ちらつき防止のため、topMenuの初期スタイルを追加する */
@@ -48,6 +49,8 @@ function addFeedbackLink() {
 /**
  * その他一般的な処理
  */
+window.addEventListener('resize', addNoScrollClass)
+
 window.addEventListener('DOMContentLoaded', () => {
   removeLoggedasText()
   hiddenTabsButtons()
@@ -57,6 +60,12 @@ window.addEventListener('DOMContentLoaded', () => {
    * TopMenuの開閉機能
    */
   initToggleTopMenu()
+
+
+  /**
+   * MainMenuの調整
+   */
+  addNoScrollClass()
 
 
   /**
