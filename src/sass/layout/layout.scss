@@ -8,16 +8,8 @@
     @apply flex grow-[2] flex-row
   }
 
-  #main.nosidebar {
-    @apply ml-0
-  }
-
   #content {
     @apply overflow-x-auto grow bg-background-primary p-6 order-1
-  }
-
-  .has-main-menu #content {
-    @apply border-0 pl-6
   }
 
   #footer {

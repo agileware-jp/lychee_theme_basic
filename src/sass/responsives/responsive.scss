@@ -83,14 +83,8 @@
     margin: 0;
   }
 
-  .has-main-menu #main.nosidebar,
-  .has-main-menu #main {
-    @apply border-l-0 ml-0
-  }
-
-  #main.isMainMenuClose,
-  .has-main-menu #main.nosidebar.isMainMenuClose {
-    @apply ml-0
+  #wrapper {
+    margin-left: 0 !important;
   }
 
   /*----------------------------------------*\

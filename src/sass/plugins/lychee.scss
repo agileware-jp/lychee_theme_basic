@@ -55,10 +55,6 @@
 
   // LRM
   .controller-resource_management {
-    #main.nosidebar {
-      @apply ml-0
-    }
-
     .lrm-table .header-row th,
     .lrm-table tbody th {
       border-top: 1px solid gray;
@@ -92,10 +88,6 @@
   /* Lychee Project Report */
   // LPR共通
   .controller-project_report_overview {
-    #main.nosidebar {
-      @apply ml-0
-    }
-
     #setting_buttons a ~ a {
       @apply ml-2
     }
@@ -232,10 +224,6 @@
 
   // Lychee Work Plan
   .controller-lychee_work_plan {
-    #main.nosidebar {
-      @apply ml-0
-    }
-
     #content h2 {
       @apply pr-2
     }
@@ -244,10 +232,6 @@
 
   // Lychee Time Management
   .controller-time_management {
-    #main.nosidebar {
-      @apply ml-0
-    }
-
     main button {
       @apply px-1
     }
@@ -367,10 +351,6 @@
     #backlog.collapsible .box ~ .box fieldset legend + div {
       @apply pl-[14px]
     }
-  }
-
-  .task-kanban-is-fullscreen #main {
-    @apply ml-0
   }
 
   // Lychee Backlog
@@ -498,10 +478,6 @@
     }
   }
 
-  .lgc-is-fullscreen #main {
-    @apply ml-0
-  }
-
   // Lychee Gantt Chart 5.0
   .controller-lychee_gantt_chart.controller-lychee_gantt_chart {
     ul[class^="lgc-AvailableColumnList-"] li label {
@@ -547,11 +523,6 @@
     .lac-relatable-types li[data-type="precedes"] input[type="number"] {
       @apply py-1
     }
-  }
-
-  // 全画面モードのメインメニューエリアに余白ができないようにする
-  .le-fullscreen #main.nosidebar {
-    @apply ml-0
   }
 
 
@@ -777,10 +748,6 @@
       @apply pt-[10px] px-0 pb-0
     }
 
-    #main.nosidebar {
-      @apply ml-0
-    }
-
     .lychee-message-box-types > li.mark_as_read a {
       font-size: 12px;
     }
@@ -865,10 +832,6 @@
 
   // Lychee Billing
   .controller-lychee_billing {
-    #main.nosidebar {
-      @apply ml-0
-    }
-
     #lychee_billing_content ul {
       @apply list-disc mt-2 pl-4
     }
