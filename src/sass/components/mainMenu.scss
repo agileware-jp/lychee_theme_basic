@@ -5,11 +5,7 @@
 
   /* MainMenuのスタイル */
   #main-menu ul:not(.menu-children) {
-    @apply relative flex w-full whitespace-nowrap m-0 pl-8
-  }
-
-  #main-menu ul.noScroll {
-    @apply pl-0
+    @apply relative flex w-full whitespace-nowrap m-0
   }
 
   #main-menu li a {
@@ -34,12 +30,7 @@
 
   /* main-menu > new-object */
   #main-menu ul li:has(.new-object) {
-    @apply fixed left-[60px] flex items-center z-[699]
-  }
-
-  // mainMenuを固定している場合
-  .isTopMenuOpen #main-menu ul li:has(.new-object) {
-    @apply left-[188px]
+    @apply flex items-center z-[699]
   }
 
   #main-menu .menu-children {
