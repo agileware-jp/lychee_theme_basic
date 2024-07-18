@@ -221,10 +221,12 @@
   .isTopMenuOpen #top-menu .lychee-message-box-icon.lychee-message-box-icon::before {
     content: 'メッセージ';
   }
+
   .isTopMenuOpen #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread::before {
     content: 'メッセージがあります';
     @apply font-bold
   }
+
   .isTopMenuOpen #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread::after {
     @apply -right-[8px]
   }
