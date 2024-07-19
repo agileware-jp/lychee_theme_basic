@@ -194,7 +194,7 @@
 
     background-image: url(images/add_dark.svg);
 
-    @apply block w-[32px] h-[32px] bg-no-repeat bg-[length:16px_16px] bg-center border-border-default shadow
+    @apply block w-[32px] h-[32px] bg-no-repeat bg-[length:16px_16px] bg-center border-border-default rounded-[10px] shadow
   }
 
   #main-menu li a.new-object:has(+ .visible) {
