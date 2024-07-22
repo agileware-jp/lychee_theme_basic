@@ -24,14 +24,6 @@ function hasDescription(el) {
   return el.textContent.length > 0
 }
 
-// 「ログイン中:」の文字を削除
-function removeLoggedasText() {
-  const loggedas = document.querySelector('#loggedas')
-  if(!loggedas) return
-
-  loggedas.childNodes[0].textContent = ''
-}
-
 // FBリンク追加
 function addFeedbackLink() {
   const topMenuNav = document.querySelector('#top-menu #account ul')
@@ -42,8 +34,18 @@ function addFeedbackLink() {
   a.setAttribute('href', 'https://support.lychee-redmine.jp/feedback/')
   a.setAttribute('target', '_blank')
   a.textContent = 'フィードバックを送る'
+
+  // ちらつき防止のため、ちらつきが発生するスタイルはあらかじめjsで指定
+  li.style.cssText = `
+    order: 4;
+  `
+
+  a.style.cssText = `
+    padding-left: 1.5rem;
+  `
+
   li.appendChild(a)
-  topMenuNav.appendChild(li)
+  topMenuNav.insertBefore(li, topMenuNav.firstElementChild)
 }
 
 
@@ -58,7 +60,6 @@ window.addEventListener('load', restoreMainMenuScrollPosition);
  * その他一般的な処理
  */
 window.addEventListener('DOMContentLoaded', () => {
-  removeLoggedasText()
   hiddenTabsButtons()
   addFeedbackLink()
 

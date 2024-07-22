@@ -140,7 +140,7 @@
 
   /* loggedas */
   #loggedas {
-    @apply border-t border-border-default mt-4 pt-4
+    @apply block overflow-hidden indent-[100%] whitespace-nowrap border-t border-border-default mt-4
   }
 
   #loggedas a {
@@ -162,11 +162,17 @@
   }
 
   /* account */
-  #account {
-    @apply mt-2
+  #account ul {
+    @apply flex flex-col
   }
 
-  #account ul li:not(:first-child) {
+  #account li {
+    // Note: feedbackリンクはちらつき対策のために#account ulの先頭に追加している
+    //       表示の順番としては最後にしたいので、feedbackリンクのみorderを4、それ以外は1として順番を管理している
+    @apply order-1
+  }
+
+  #account ul li {
     @apply mt-2
   }
 
@@ -280,10 +286,6 @@
 
 
   /* フィードバックリンク */
-  .aw_fbLink_li {
-    @apply border-t border-border-default mt-4 pt-4
-  }
-
   .aw_fbLink {
     background-image: url(images/feedback_dark.svg);
     @apply bg-no-repeat bg-[length:20px_20px] bg-[left_center]
