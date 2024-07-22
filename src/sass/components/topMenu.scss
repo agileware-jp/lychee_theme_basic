@@ -302,6 +302,23 @@
   }
 
 
+  /* Billing */
+  .isBilling #top-menu #lychee-billng-global-message#lychee-billng-global-message {
+    pointer-events: none;
+    @apply fixed bottom-[16px] right-[16px] h-[44px] bg-status-warningLight border border-border-warning font-bold text-border-warning p-3 rounded-lg shadow-lg
+  }
+
+  .isBilling #footer {
+    @apply pb-[44px]
+  }
+
+  // LIF展開中は非表示にしたい
+  // Note: top-menuのz-indexは最大9999なので、LIFより下に配置することがテーマcssだけでは難しいため
+  .isBilling.lychee-issue-form__body_half #top-menu #lychee-billng-global-message#lychee-billng-global-message {
+    @apply hidden
+  }
+
+
   /* 順番の管理 */
   #top-menu > ul {
     @apply order-1

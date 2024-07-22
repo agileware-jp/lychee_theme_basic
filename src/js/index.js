@@ -48,6 +48,14 @@ function addFeedbackLink() {
   topMenuNav.insertBefore(li, topMenuNav.firstElementChild)
 }
 
+function checkTrial() {
+  const billingContainer = document.getElementById('lychee-billng-global-message')
+  if(billingContainer === null) return
+
+  if(billingContainer.textContent !== '') {
+    document.body.classList.add('isBilling')
+  }
+}
 
 /**
  * MainMenuの横スクロールに関する処理
@@ -62,6 +70,8 @@ window.addEventListener('load', restoreMainMenuScrollPosition);
 window.addEventListener('DOMContentLoaded', () => {
   hiddenTabsButtons()
   addFeedbackLink()
+
+  checkTrial()
 
   /**
    * TopMenuの開閉機能
