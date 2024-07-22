@@ -48,6 +48,8 @@ function addFeedbackLink() {
   topMenuNav.insertBefore(li, topMenuNav.firstElementChild)
 }
 
+/* トライアル期間中か判定する */
+// Note: トライアル期間であろうがなかろうが、#lychee-billng-global-messageというdivは常に表示されるようなので、さらにその中にテキストがあるかどうかを判定する必要がある
 function checkTrial() {
   const billingContainer = document.getElementById('lychee-billng-global-message')
   if(billingContainer === null) return
