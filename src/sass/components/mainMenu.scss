@@ -39,7 +39,7 @@
 
   #main-menu li:hover ul.menu-children,
   #main-menu li ul.menu-children.visible {
-    @apply block w-[11rem]
+    @apply block w-[11rem] z-[699]
   }
 
   #main-menu .menu-children a:hover {
