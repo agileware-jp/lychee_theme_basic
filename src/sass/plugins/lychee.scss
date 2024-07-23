@@ -240,6 +240,13 @@
       @apply p-4
     }
 
+    /* モーダルを開いている間はtop-menuをモーダルより下に表示したい */
+    &.ReactModal__Body--open {
+      #top-menu {
+        @apply z-[1]
+      }
+    }
+
     // フィルタモーダルのpagination
     .ReactModal__Content h2 {
       @apply mb-0
