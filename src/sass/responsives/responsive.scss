@@ -334,9 +334,12 @@
 
   .js-project-menu,
   .js-general-menu,
-  .js-sidebar,
-  .js-profile-menu {
+  .js-sidebar {
     @apply block px-2
+  }
+
+  .js-profile-menu {
+    @apply block px-2 pb-2
   }
 
   .flyout-menu__sidebar > form {
@@ -439,10 +442,6 @@
     @apply rounded-md
   }
 
-  .flyout-menu ul li:last-child a {
-    // @apply border-b border-border-onFill/30
-  }
-
   .flyout-menu ul li a:hover {
     @apply bg-background-secondary
   }
@@ -491,6 +490,11 @@
   /* billingのメッセージ */
   .isBilling #wrapper > #lychee-billng-global-message {
     @apply fixed w-full
+  }
+
+  /* fbリンク調整 */
+  .flyout-menu .aw_fbLink {
+    padding-left: 2rem !important;
   }
 
   /* Left flyout search container */
