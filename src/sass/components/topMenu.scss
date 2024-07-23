@@ -303,18 +303,14 @@
 
 
   /* Billing */
-  .isBilling #top-menu #lychee-billng-global-message#lychee-billng-global-message {
-    pointer-events: none;
-    @apply fixed bottom-[16px] right-[16px] h-[44px] bg-status-warningLight border border-border-warning font-bold text-border-warning p-3 rounded-lg shadow-lg
+  // 上部にコピーしたメッセージのスタイル
+  .isBilling #wrapper > #lychee-billng-global-message {
+    background-image: url(images/error_danger.svg);
+    @apply h-[28px] bg-no-repeat bg-[8px_center] bg-[length:16px_16px] bg-status-warningLight text-xs  text-text-default py-1.5 pr-2 pl-7 rounded-md
   }
 
-  .isBilling #footer {
-    @apply pb-[44px]
-  }
-
-  // LIF展開中は非表示にしたい
-  // Note: top-menuのz-indexは最大9999なので、LIFより下に配置することがテーマcssだけでは難しいため
-  .isBilling.lychee-issue-form__body_half #top-menu #lychee-billng-global-message#lychee-billng-global-message {
+  // もともとtop-menuに差し込まれていたものは非表示にしておく
+  #top-menu #lychee-billng-global-message {
     @apply hidden
   }
 

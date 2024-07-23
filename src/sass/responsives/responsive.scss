@@ -104,6 +104,11 @@
     @apply block bg-background-secondary
   }
 
+  /* billingのメッセージが出ている場合はそれを考慮する */
+  .isBilling #header {
+    @apply mt-[28px]
+  }
+
   /* Hide project name on mobile (project name is still visible in select menu) */
   #header h1 {
     display: none !important;
@@ -192,6 +197,10 @@
 
   #main {
     padding: 64px 0 0; /* padding-top equals header height */
+  }
+
+  .isBilling #main {
+    @apply pt-[92px] /* billingのメッセージが出ている場合はそれを考慮する */
   }
 
   #main.nosidebar #content,
@@ -477,6 +486,11 @@
 
   .flyout-menu .lychee-message-box-icon.lychee-message-box-icon.unread {
     background-image: url(images/mail_unread_dark.svg);
+  }
+
+  /* billingのメッセージ */
+  .isBilling #wrapper > #lychee-billng-global-message {
+    @apply fixed w-full
   }
 
   /* Left flyout search container */

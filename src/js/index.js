@@ -1,6 +1,7 @@
 import { addDefaultTopMenStyle, initToggleTopMenu } from './topMenu'
 import { addNoScrollClass, saveMainMenuScrollPosition, restoreMainMenuScrollPosition } from './mainMenu'
 import { addDefaultSidebarStyle, initToggleSidebar } from './sidebar'
+import { waitForBilling, checkTrial, copyBillingContainer } from './billing'
 
 /* ちらつき防止のため、topMenuの初期スタイルを追加する */
 addDefaultTopMenStyle()
@@ -48,17 +49,6 @@ function addFeedbackLink() {
   topMenuNav.insertBefore(li, topMenuNav.firstElementChild)
 }
 
-/* トライアル期間中か判定する */
-// Note: トライアル期間であろうがなかろうが、#lychee-billng-global-messageというdivは常に表示されるようなので、さらにその中にテキストがあるかどうかを判定する必要がある
-function checkTrial() {
-  const billingContainer = document.getElementById('lychee-billng-global-message')
-  if(billingContainer === null) return
-
-  if(billingContainer.textContent !== '') {
-    document.body.classList.add('isBilling')
-  }
-}
-
 /**
  * MainMenuの横スクロールに関する処理
  */
@@ -73,7 +63,10 @@ window.addEventListener('DOMContentLoaded', () => {
   hiddenTabsButtons()
   addFeedbackLink()
 
-  checkTrial()
+  waitForBilling('lychee-billng-global-message', (el) => {
+    checkTrial(el)
+    copyBillingContainer(el)
+  })
 
   /**
    * TopMenuの開閉機能
