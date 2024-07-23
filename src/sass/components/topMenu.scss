@@ -239,7 +239,7 @@
 
 
   /* 個人設定 */
-  .my-account {
+  #top-menu .my-account {
     background-image: url(images/construnction_dark.svg);
     @apply bg-no-repeat bg-[length:20px_20px] bg-[left_center]
   }
@@ -250,7 +250,7 @@
   }
 
   /* ログアウト */
-  .logout {
+  #top-menu .logout {
     background-image: url(images/logout_dark.svg);
     @apply bg-no-repeat bg-[length:20px_20px] bg-[left_center]
   }
@@ -262,7 +262,7 @@
 
 
   /* ログイン */
-  .login {
+  #top-menu .login {
     background-image: url(images/login_dark.svg);
     @apply bg-no-repeat bg-[length:20px_20px] bg-[left_center]
   }
