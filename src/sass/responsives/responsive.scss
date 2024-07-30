@@ -489,7 +489,7 @@
 
   /* billingのメッセージ */
   .isBilling #wrapper > #lychee-billng-global-message {
-    @apply fixed w-full
+    @apply fixed w-full z-[9999]
   }
 
   /* fbリンク調整 */
