@@ -274,7 +274,7 @@
 
 
   /* 登録する */
-  .register {
+  #top-menu .register {
     background-image: url(images/person_add_dark.svg);
     @apply bg-no-repeat bg-[length:20px_20px] bg-[left_center]
   }
@@ -306,7 +306,7 @@
   // 上部にコピーしたメッセージのスタイル
   .isBilling #wrapper > #lychee-billng-global-message {
     background-image: url(images/error_danger.svg);
-    @apply h-[28px] bg-no-repeat bg-[8px_center] bg-[length:16px_16px] bg-status-warningLight text-xs  text-text-default py-1.5 pr-2 pl-7 rounded-md
+    @apply h-[28px] bg-no-repeat bg-[8px_center] bg-[length:16px_16px] bg-status-warningLight text-xs  text-text-default py-1.5 pr-2 pl-7
   }
 
   // もともとtop-menuに差し込まれていたものは非表示にしておく
