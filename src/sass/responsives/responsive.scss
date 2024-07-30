@@ -87,6 +87,11 @@
     margin-left: 0 !important;
   }
 
+  .isBilling #wrapper {
+    /* トライアル表示の考慮 */
+    @apply pb-[28px]
+  }
+
   /*----------------------------------------*\
     B) HEADER & TOP MENUS
   \*----------------------------------------*/
@@ -102,11 +107,6 @@
     position: fixed;
     z-index: 9999;
     @apply block bg-background-secondary
-  }
-
-  /* billingのメッセージが出ている場合はそれを考慮する */
-  .isBilling #header {
-    @apply mt-[28px]
   }
 
   /* Hide project name on mobile (project name is still visible in select menu) */
@@ -197,10 +197,6 @@
 
   #main {
     padding: 64px 0 0; /* padding-top equals header height */
-  }
-
-  .isBilling #main {
-    @apply pt-[92px] /* billingのメッセージが出ている場合はそれを考慮する */
   }
 
   #main.nosidebar #content,
@@ -489,7 +485,7 @@
 
   /* billingのメッセージ */
   .isBilling #wrapper > #lychee-billng-global-message {
-    @apply fixed w-full z-[9999]
+    @apply fixed bottom-0 w-full z-[9999]
   }
 
   /* fbリンク調整 */
