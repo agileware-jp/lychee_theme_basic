@@ -1,7 +1,11 @@
 @layer components {
   /* TopMenu */
   #top-menu {
-    @apply fixed top-0 left-0 flex flex-col w-[52px] h-full bg-background-secondary text-xs leading-5 p-4 z-[699] pt-[69px]
+    @apply overflow-y-auto fixed top-0 left-0 flex flex-col w-[52px] h-full bg-background-secondary text-xs leading-5 p-4 z-[699] pt-[69px]
+  }
+
+  #top-menu::-webkit-scrollbar {
+    @apply hidden
   }
 
   // 閉じているとき
