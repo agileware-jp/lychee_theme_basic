@@ -29,7 +29,6 @@
     @apply no-underline opacity-60 transition-opacity
   }
 
-  // 検証用
   .isTopMenuOpen #top-menu {
     @apply w-[180px]
   }
@@ -62,15 +61,15 @@
 
   /* top-menuのアイコン化管理 */
   #top-menu > ul > li > a {
-    @apply relative block overflow-hidden indent-[100%] whitespace-nowrap bg-no-repeat bg-[length:20px_20px] bg-[left_center] min-h-[20px] py-1
+    @apply relative block overflow-hidden indent-[100%] whitespace-nowrap bg-no-repeat bg-[length:20px_20px] bg-[left_3px] min-h-[20px] py-1
   }
 
   #top-menu:hover > ul > li > a {
-    @apply overflow-visible indent-0 pl-6
+    @apply overflow-visible indent-0 whitespace-normal pl-6
   }
 
   .isTopMenuOpen #top-menu > ul > li > a {
-    @apply overflow-visible indent-0 pl-6
+    @apply overflow-visible indent-0 whitespace-normal pl-6
   }
 
   /* top-menuのlychee系 */
