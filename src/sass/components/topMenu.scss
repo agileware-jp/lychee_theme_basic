@@ -79,65 +79,67 @@
     content: none;
   }
 
+
+  /* その他おすすめOSS */
+  #top-menu > ul a {
+    // Note: OSSで追加されたメニューか判断するすべがないため、デフォルトでOSS用のアイコンを適用しておく
+    //       それ以外を固有アイコンで上書きする
+    background-image: url(images/oss_dark.svg);
+  }
+
   /* ホーム */
-  #top-menu .home {
+  #top-menu > ul a.home {
     background-image: url(images/home_dark.svg);
   }
 
 
   /* マイページ */
-  #top-menu .my-page {
+  #top-menu > ul a.my-page {
     background-image: url(images/badge_dark.svg);
   }
 
 
   /* プロジェクト */
-  #top-menu .projects {
+  #top-menu > ul a.projects {
     background-image: url(images/widgets_dark.svg);
   }
 
 
   /* LRM */
-  #top-menu .lychee-icon.resource-management {
+  #top-menu > ul a.lychee-icon.resource-management {
     background-image: url(images/lrm_dark.svg);
     @apply block bg-[left_center]
   }
 
 
   /* 横断LPR */
-  #top-menu .lychee-icon.project-reports {
+  #top-menu > ul a.lychee-icon.project-reports {
     background-image: url(images/lpr_dark.svg);
     @apply block bg-[left_center]
   }
 
 
   /* work_plan: 作業予定 */
-  #top-menu .lychee-icon.lychee-work-plan {
+  #top-menu > ul a.lychee-icon.lychee-work-plan {
     background-image: url(images/work_plan_dark.svg);
   }
 
 
   /* time_management: 作業実績 */
-  #top-menu .lychee-icon.time-management {
+  #top-menu > ul a.lychee-icon.time-management {
     background-image: url(images/time_management_dark.svg);
   }
 
 
   /* lychee_help */
-  #top-menu .lychee-icon.lychee-help {
+  #top-menu > ul a.lychee-icon.lychee-help {
     background-image: url(images/help_dark.svg);
   }
 
 
   /* 管理 */
-  #top-menu .administration {
+  #top-menu > ul a.administration {
     background-image: url(images/manage_accounts_dark.svg);
-  }
-
-
-  /* おすすめOSS：バナー */
-  #top-menu .redmine-banner {
-    background-image: url(images/campaign_dark.svg);
   }
 
 
