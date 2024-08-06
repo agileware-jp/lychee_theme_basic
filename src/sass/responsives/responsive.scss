@@ -83,14 +83,13 @@
     margin: 0;
   }
 
-  .has-main-menu #main.nosidebar,
-  .has-main-menu #main {
-    @apply border-l-0 ml-0
+  #wrapper {
+    margin-left: 0 !important;
   }
 
-  #main.isMainMenuClose,
-  .has-main-menu #main.nosidebar.isMainMenuClose {
-    @apply ml-0
+  .isBilling #wrapper {
+    /* トライアル表示の考慮 */
+    @apply pb-[28px]
   }
 
   /*----------------------------------------*\
@@ -107,7 +106,7 @@
     // background-color: #628db6;
     position: fixed;
     z-index: 9999;
-    @apply block
+    @apply block bg-background-secondary
   }
 
   /* Hide project name on mobile (project name is still visible in select menu) */
@@ -327,9 +326,12 @@
 
   .js-project-menu,
   .js-general-menu,
-  .js-sidebar,
-  .js-profile-menu {
+  .js-sidebar {
     @apply block px-2
+  }
+
+  .js-profile-menu {
+    @apply block px-2 pb-2
   }
 
   .flyout-menu__sidebar > form {
@@ -428,12 +430,8 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    // border-top: 1px solid rgba(255,255,255,.1);
+    border-top: 1px solid rgba(255,255,255,.1);
     @apply rounded-md
-  }
-
-  .flyout-menu ul li:last-child a {
-    // @apply border-b border-border-onFill/30
   }
 
   .flyout-menu ul li a:hover {
@@ -453,16 +451,64 @@
     @apply hidden
   }
 
-  .flyout-menu .js-profile-menu {
-    @apply block my-4 px-3
+  .flyout-menu .js-profile-menu .aw_fbLink_li {
+    @apply border-none pt-0
   }
 
   .flyout-menu .js-profile-menu ul {
-    @apply flex items-center gap-3
+    @apply flex flex-col
   }
 
-  .flyout-menu .js-profile-menu ul li:not(:first-child) {
-    @apply mt-0
+  .flyout-menu .js-profile-menu ul li a {
+    @apply bg-no-repeat bg-[length:16px_16px] bg-[12px_center] text-text-default py-2 pr-3 pl-8
+  }
+
+  /* アイコン */
+  .flyout-menu .js-profile-menu .login {
+    background-image: url(images/login_dark.svg);
+  }
+
+  .flyout-menu .js-profile-menu .logout {
+    background-image: url(images/logout_dark.svg);
+  }
+
+  .flyout-menu .js-profile-menu .register {
+    background-image: url(images/person_add_dark.svg);
+  }
+
+  .flyout-menu .js-profile-menu .my-account {
+    background-image: url(images/construnction_dark.svg);
+  }
+
+  /* メッセージボックス */
+  .flyout-menu .lychee-message-box-icon.lychee-message-box-icon::before {
+    content: 'メッセージ';
+    @apply pl-0 scale-100
+  }
+
+  // 未読ありの場合
+  .flyout-menu .lychee-message-box-icon.lychee-message-box-icon.unread::before {
+    content: 'メッセージがあります';
+    @apply font-bold
+  }
+
+  .flyout-menu .lychee-message-box-icon.lychee-message-box-icon {
+    background-image: url(images/mail_dark.svg);
+    @apply bg-no-repeat bg-[length:16px_16px] bg-[12px_center] pl-8
+  }
+
+  .flyout-menu .lychee-message-box-icon.lychee-message-box-icon.unread {
+    background-image: url(images/mail_unread_dark.svg);
+  }
+
+  /* billingのメッセージ */
+  .isBilling #wrapper > #lychee-billng-global-message {
+    @apply fixed bottom-0 w-full z-[9999]
+  }
+
+  /* fbリンク調整 */
+  .flyout-menu .aw_fbLink {
+    padding-left: 2rem !important;
   }
 
   /* Left flyout search container */

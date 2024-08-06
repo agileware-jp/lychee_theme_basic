@@ -170,19 +170,18 @@
     @apply mt-2 ml-1.5
   }
 
-
-  // tabs-buttons
+  /* tabs-buttons */
   div.tabs-buttons {
-    @apply top-1/2 flex items-center w-auto h-auto -translate-y-1/2
+    @apply flex top-1/2 right-2 w-auto h-[28px] -translate-y-1/2
   }
 
   button.tab-left, button.tab-right {
-    @extend .BTN_TERTIARY_ICON_ONLY;
-    @apply static;
+    @extend .BTN_PRIMARY;
+    @apply static w-[28px]
   }
 
   button.tab-left.disabled, button.tab-right.disabled {
-    @apply opacity-50 bg-background-secondary
+    @apply opacity-50 bg-product-active
   }
 
   button.tab-right {
@@ -195,7 +194,11 @@
 
     background-image: url(images/add_dark.svg);
 
-    @apply block bg-no-repeat bg-[length:16px_16px] bg-center
+    @apply block w-[32px] h-[32px] bg-no-repeat bg-[length:16px_16px] bg-center border-border-default rounded-[10px] shadow
+  }
+
+  #main-menu li a.new-object:has(+ .visible) {
+    @apply bg-background-tertiary
   }
 
   #main-menu li a.new-object:hover,

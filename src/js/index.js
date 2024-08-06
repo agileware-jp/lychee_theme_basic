@@ -1,4 +1,10 @@
+import { addDefaultTopMenStyle, initToggleTopMenu } from './topMenu'
+import { addNoScrollClass, saveMainMenuScrollPosition, restoreMainMenuScrollPosition } from './mainMenu'
 import { addDefaultSidebarStyle, initToggleSidebar } from './sidebar'
+import { waitForBilling, checkTrial, copyBillingContainer } from './billing'
+
+/* ちらつき防止のため、topMenuの初期スタイルを追加する */
+addDefaultTopMenStyle()
 
 /* ちらつき防止のため、sidebarの初期スタイルを追加する */
 addDefaultSidebarStyle()
@@ -13,96 +19,71 @@ function hiddenTabsButtons() {
   }
 }
 
-function setMainMenuTop() {
-  const mainMenu = document.querySelector('#main-menu')
-  const topMenu = document.querySelector('#top-menu')
-
-  if(mainMenu) {
-    mainMenu.style.top = `${topMenu.offsetHeight}px`
-  }
-}
-
-/* top menuの位置入れ替えのためにclassを付与 */
-function repositionTopMenu() {
-  const home = document.querySelector('#top-menu ul li .home')
-  if(home) home.closest('li').classList.add('aw_topMenuHome')
-}
-
 /* 活動や検索結果で、各ブロックがdescriptionを持っているかどうか判定 */
 function hasDescription(el) {
   // 文字列があるかどうかでチェック
   return el.textContent.length > 0
 }
 
-/**
- * Header・MainMenuのSticky Sidebar化
- */
-function stickyMainMenu() {
-  const mainMenu = document.querySelector('#main-menu')
-  const topMenu = document.querySelector('#top-menu')
-  if(mainMenu) {
-    const topMenuHeightRectBottom = topMenu.getBoundingClientRect().bottom
-
-    if(topMenuHeightRectBottom <= 0) {
-      mainMenu.classList.add('aw_fixed_header')
-      mainMenu.style.top = '0px'
-    }
-
-    if(topMenuHeightRectBottom > 0) {
-      mainMenu.classList.remove('aw_fixed_header')
-      mainMenu.style.top = `${topMenu.offsetHeight}px`
-    }
-  }
-}
-
-// 「ログイン中:」の文字を削除
-function removeLoggedasText() {
-  const loggedas = document.querySelector('#loggedas')
-  if(!loggedas) return
-
-  loggedas.childNodes[0].textContent = ''
-}
-
 // FBリンク追加
 function addFeedbackLink() {
-  const topMenuNav = document.querySelector('#top-menu > ul')
+  const topMenuNav = document.querySelector('#top-menu #account ul')
   const li = document.createElement('li')
   const a = document.createElement('a')
+  li.classList.add('aw_fbLink_li')
   a.classList.add('aw_fbLink')
   a.setAttribute('href', 'https://support.lychee-redmine.jp/feedback/')
   a.setAttribute('target', '_blank')
   a.textContent = 'フィードバックを送る'
+
+  // ちらつき防止のため、ちらつきが発生するスタイルはあらかじめjsで指定
+  li.style.cssText = `
+    order: 4;
+  `
+
+  a.style.cssText = `
+    padding-left: 1.5rem;
+  `
+
   li.appendChild(a)
-  topMenuNav.appendChild(li)
+  topMenuNav.insertBefore(li, topMenuNav.firstElementChild)
 }
 
 /**
- * Sticky MainMenu
+ * MainMenuの横スクロールに関する処理
  */
-window.addEventListener('scroll', stickyMainMenu)
+window.addEventListener('resize', addNoScrollClass)
+window.addEventListener('beforeunload', saveMainMenuScrollPosition);
+window.addEventListener('load', restoreMainMenuScrollPosition);
 
 /**
  * その他一般的な処理
  */
 window.addEventListener('DOMContentLoaded', () => {
-  removeLoggedasText()
   hiddenTabsButtons()
-  repositionTopMenu()
   addFeedbackLink()
+
+  waitForBilling('lychee-billng-global-message', (el) => {
+    checkTrial(el)
+    copyBillingContainer(el)
+  })
+
+  /**
+   * TopMenuの開閉機能
+   */
+  initToggleTopMenu()
+
+
+  /**
+   * MainMenuの調整
+   */
+  addNoScrollClass()
+
 
   /**
    * Sidebarの開閉機能
    */
   initToggleSidebar()
-
-  // mainMenuがあるかどうか
-  if(document.querySelector('#main-menu') !== null) {
-    // mainMenuがない場合headerはfull width表示にするため、区別用classを付与しておく
-    document.querySelector('#header').classList.add('aw_hasMainMenu')
-  }
-
-  // mainMenuのtopプロパティを指定
-  setMainMenuTop()
 
   /**
    * 活動・検索結果ページ

@@ -1,43 +1,39 @@
 @layer components {
   #header {
-    @apply flex items-center bg-background-secondary border-b border-border-default text-text-default py-2 px-4
-  }
-
-  #header.aw_hasMainMenu {
-    @apply pl-[4.75rem]
+    @apply flex flex-row-reverse flex-wrap bg-primitive-darkGray-600 border-b border-border-divider text-text-default
   }
 
   #header h1 {
-    @apply overflow-hidden text-ellipsis whitespace-nowrap text-text-default mb-0
+    @apply overflow-hidden text-ellipsis whitespace-nowrap flex flex-wrap items-center text-text-onFill mr-auto ml-4 my-0 py-2
   }
 
   #header h1 .breadcrumbs {
-    @apply block text-xs text-text-default
+    @apply block w-full text-xs text-text-onFill
   }
 
   #header h1 .current-project {
-    @apply text-sm text-text-default
+    @apply text-sm text-text-onFill
   }
 
   #header a {
-    @apply text-text-default
+    @apply text-text-onFill
   }
 
   // Quick Search
   #quick-search {
-    @apply order-2 flex items-center flex-shrink-0 ml-auto
+    @apply flex items-center flex-shrink-0 my-2 mr-2 ml-auto
   }
 
   #quick-search form {
-    @apply mr-2
+    @apply flex items-center gap-1 mr-2
   }
 
   #quick-search form label {
-    @apply text-text-default
+    @apply text-text-onFill
   }
 
   #quick-search form label a {
-    @apply text-text-default
+    @apply text-text-onFill
   }
 
   #quick-search form input {

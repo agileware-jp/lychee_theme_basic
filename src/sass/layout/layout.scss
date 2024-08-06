@@ -1,31 +1,15 @@
 @layer components {
   #wrapper {
     min-height: inherit;
-    @apply overflow-hidden flex flex-col bg-transparent
+    @apply overflow-hidden flex flex-col bg-background-secondary
   }
 
   #main {
-    @apply flex grow-[2] flex-row border-l border-border-divider
-  }
-
-  .has-main-menu #main {
-    @apply ml-[3.75rem]
-  }
-
-  #main.nosidebar {
-    @apply ml-0
-  }
-
-  .has-main-menu #main.nosidebar {
-    @apply ml-[3.75rem]
+    @apply flex grow-[2] flex-row
   }
 
   #content {
     @apply overflow-x-auto grow bg-background-primary p-6 order-1
-  }
-
-  .has-main-menu #content {
-    @apply border-0 pl-6
   }
 
   #footer {

@@ -1,0 +1,126 @@
+const TOP_MENU_OPEN_STYLE = `
+  #wrapper {
+    margin-left: 180px
+  }
+
+  #top-menu {
+    width: 180px;
+  }
+`
+
+const TOP_MENU_CLOSE_STYLE = `
+  #wrapper {
+    margin-left: 52px;
+  }
+
+  #top-menu {
+    width: 52px;
+  }
+`
+
+const TOGGLE_TOP_MENU_WRAP_STYLE = `
+  border-bottom: 1px solid #ccd5d9;
+  margin-top: -53px;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+`
+
+const TOGGLE_TOP_MENU_BTN_STYLE = `
+  display: block;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: left center;
+  border: 0;
+`
+
+export function addDefaultTopMenStyle() {
+  const styleTag = document.createElement('style')
+  const isTopMenuOpen = localStorage.getItem('isTopMenuOpen') === 'true'
+  styleTag.setAttribute('data-style', 'topMenu')
+  styleTag.textContent = isTopMenuOpen ? TOP_MENU_OPEN_STYLE : TOP_MENU_CLOSE_STYLE
+
+  document.head.appendChild(styleTag)
+}
+
+function updateTopMenuStyle() {
+  const styleTag = document.querySelector('style[data-style="topMenu"]')
+  const isTopMenuOpen = localStorage.getItem('isTopMenuOpen') === 'true'
+  styleTag.textContent = isTopMenuOpen ? TOP_MENU_OPEN_STYLE : TOP_MENU_CLOSE_STYLE
+}
+
+function getTopMenu() {
+  return document.getElementById('top-menu')
+}
+
+function topMenuExists() {
+  return document.getElementById('top-menu') !== null
+}
+
+function isLoggedIn() {
+  return document.getElementById('loggedas') !== null
+}
+
+function addLogoutStyle() {
+  // ログアウト中は#loggedasが存在しないので、#accountにmargin-top: auto;を適用したい
+  if(!isLoggedIn()) {
+    const account = document.getElementById('account')
+    account.style.marginTop = 'auto'
+  }
+}
+
+function addBtnToToggleTopMenu() {
+  if(!topMenuExists()) return
+
+  const topMenu = getTopMenu()
+
+  // 枠を作成
+  const div = document.createElement('div')
+  div.style.cssText = TOGGLE_TOP_MENU_WRAP_STYLE
+  div.classList.add('aw_toggleTopMenuWrap')
+
+  // ボタンを作成
+  const btn = document.createElement('button')
+  btn.textContent = 'メニューを固定する'
+  btn.style.cssText = TOGGLE_TOP_MENU_BTN_STYLE
+  btn.classList.add('aw_toggleTopMenu')
+
+  toggleTopMenu(btn)
+
+  div.appendChild(btn)
+  topMenu.appendChild(div)
+}
+
+function toggleTopMenu(btn) {
+  let isTopMenuOpen = false
+  if(localStorage.getItem('isTopMenuOpen') === 'true') {
+    isTopMenuOpen = true
+  } else {
+    isTopMenuOpen = false
+  }
+
+  btn.addEventListener('click', () => {
+    isTopMenuOpen = !isTopMenuOpen
+
+    if(isTopMenuOpen) {
+      document.body.classList.add('isTopMenuOpen')
+      localStorage.setItem('isTopMenuOpen', true)
+    } else {
+      document.body.classList.remove('isTopMenuOpen')
+      localStorage.setItem('isTopMenuOpen', false)
+    }
+    updateTopMenuStyle()
+  })
+}
+
+export function initToggleTopMenu() {
+  addBtnToToggleTopMenu()
+  addLogoutStyle()
+
+  // topMenuの復原処理
+  if(localStorage.getItem('isTopMenuOpen') === 'true') {
+    document.body.classList.add('isTopMenuOpen')
+  } else {
+    document.body.classList.remove('isTopMenuOpen')
+  }
+}

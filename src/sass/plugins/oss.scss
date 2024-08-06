@@ -5,57 +5,20 @@
   // NOTE: メインメニューのサイドバー化の影響で、bannerがメインメニューと重なってしまう
   //       メインメニューのあり／なしでスタイルを変える
   //       プロレポや全画面表示など、見かけ上ではメインメニューが存在しないが、非表示になっているだけのページが存在するので注意
-  .has-main-menu .global_banner {
-    @apply ml-[3.75rem]
+  #wrapper ~ .global_banner {
+    @apply ml-[52px]
   }
 
-  // メインメニューを非表示にしているLycheeプラグインの画面対応
-  .controller-resource_management .global_banner,
-  .controller-project_report_overview .global_banner,
-  .controller-lychee_work_plan .global_banner,
-  .controller-time_management .global_banner,
-  .controller-lychee_message_box_informations .global_banner,
-  .controller-lychee_message_box_my_boxes .global_banner,
-  .controller-lychee_message_box_system_errors .global_banner,
-  .lgc-is-fullscreen .global_banner,
-  .task-kanban-is-fullscreen .global_banner {
-    @apply ml-0
-  }
-
-  @media screen and (max-width: 1250px) {
-    .has-main-menu .global_banner {
-      @apply ml-[3.75rem]
-    }
-
-    // メインメニューを非表示にしているLycheeプラグインの画面対応
-    .controller-resource_management .global_banner,
-    .controller-project_report_overview .global_banner,
-    .controller-lychee_work_plan .global_banner,
-    .controller-time_management .global_banner,
-    .controller-lychee_message_box_informations .global_banner,
-    .controller-lychee_message_box_my_boxes .global_banner,
-    .controller-lychee_message_box_system_errors .global_banner,
-    .lgc-is-fullscreen .global_banner,
-    .task-kanban-is-fullscreen .global_banner {
-      @apply ml-0
-    }
+  .isTopMenuOpen #wrapper ~ .global_banner {
+    @apply ml-[180px]
   }
 
   @media screen and (max-width: 899px) {
-    .has-main-menu .global_banner {
+    #wrapper ~ .global_banner {
       @apply ml-0
     }
 
-    // メインメニューを非表示にしているLycheeプラグインの画面対応
-    .controller-resource_management .global_banner,
-    .controller-project_report_overview .global_banner,
-    .controller-lychee_work_plan .global_banner,
-    .controller-time_management .global_banner,
-    .controller-lychee_message_box_informations .global_banner,
-    .controller-lychee_message_box_my_boxes .global_banner,
-    .controller-lychee_message_box_system_errors .global_banner,
-    .lgc-is-fullscreen .global_banner,
-    .task-kanban-is-fullscreen .global_banner {
+    .isTopMenuOpen #wrapper ~ .global_banner {
       @apply ml-0
     }
   }
