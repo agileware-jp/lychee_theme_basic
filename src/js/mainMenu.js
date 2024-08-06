@@ -59,3 +59,55 @@ export function restoreMainMenuScrollPosition() {
     mainMenu.scrollLeft = scrollPosition
   }
 }
+
+export function dragScroll() {
+  if(!isMenuExists()) return
+
+  // スクロールが発生する場合
+  const mainMenu = getMainMenu()
+  if(isScrollable(mainMenu)) {
+    const container = document.querySelector('#main-menu > ul');
+    let isDown = false
+    let isDragging = false
+    let startX
+    let scrollLeft
+
+    container.addEventListener('mousedown', (e) => {
+      isDown = true
+      isDragging = false 
+      startX = e.pageX - container.offsetLeft
+      scrollLeft = container.scrollLeft
+      e.preventDefault()
+    });
+
+    container.addEventListener('mouseleave', () => {
+      isDown = false
+      container.classList.remove('active')
+    });
+
+    container.addEventListener('mouseup', (e) => {
+      isDown = false
+      if(isDragging) {
+        e.preventDefault()
+      }
+      isDragging = false
+    });
+
+    container.addEventListener('mousemove', (e) => {
+      if (!isDown) return
+      isDragging = true
+      e.preventDefault()
+      const x = e.pageX - container.offsetLeft
+      container.scrollLeft = scrollLeft - (x - startX)
+    })
+
+    const links = document.querySelectorAll('#main-menu > ul li:not(.aw_newObjectList) a')
+    links.forEach(link => {
+      link.addEventListener('click', (e) => {
+        if (isDragging) {
+          e.preventDefault()
+        }
+      })
+    })
+  }
+}
