@@ -1,4 +1,13 @@
 /**
+ * モバイル用のcssが適用されているか
+ */
+export function isMobile() {
+  const mediaQueryList = window.matchMedia('(max-width: 899px)')
+  return mediaQueryList.matches
+}
+
+
+/**
  * 要素が存在するかどうか
  */
 export function isMainMenuExists() {
@@ -10,7 +19,6 @@ export function isMainMenuExists() {
  * 要素が表示されているかどうか
  */
 export function isHeaderShow() {
-  // console.log(document.getElementById('header').style)
   const header = getHeader()
   if(header === null) return false
   return window.getComputedStyle(header).display !== 'none'

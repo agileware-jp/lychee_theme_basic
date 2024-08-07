@@ -1,4 +1,5 @@
 import {
+  isMobile,
   isMainMenuExists,
   isHeaderShow,
   getWrapper, getHeader, getMainMenu
@@ -66,15 +67,36 @@ function onScroll() {
   }
 }
 
-export function initializeScrollHandler() {
+function addEventListeners() {
+  const mainMenu = getMainMenu()
+  mainMenu.addEventListener('mouseenter', onMouseEnter)
+  mainMenu.addEventListener('mouseleave', onMouseLeave)
+  window.addEventListener('scroll', onScroll)
+}
+
+function removeEventListeners() {
+  const mainMenu = getMainMenu()
+  mainMenu.removeEventListener('mouseenter', onMouseEnter)
+  mainMenu.removeEventListener('mouseleave', onMouseLeave)
+  window.removeEventListener('scroll', onScroll)
+}
+
+function checkAndInitialize() {
   // mainMenuがそもそも存在しないページ（ホームやログアウト中など）は処理を実行したくない
   if(!isMainMenuExists()) return
-  const mainMenu = getMainMenu()
 
   // headerを非表示にしているページ（LRMやLPRなど）も処理を実行したくない
   if(!isHeaderShow()) return
 
-  mainMenu.addEventListener('mouseenter', onMouseEnter);
-  mainMenu.addEventListener('mouseleave', onMouseLeave);
-  window.addEventListener('scroll', onScroll);
+  // スマートフォン用表示かどうかチェック
+  if (isMobile()) {
+    removeEventListeners()
+  } else {
+    addEventListeners()
+  }
+}
+
+export function initializeScrollHandler() {
+  checkAndInitialize()
+  window.addEventListener('resize', checkAndInitialize)
 }
