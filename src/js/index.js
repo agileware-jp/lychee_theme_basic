@@ -1,5 +1,6 @@
 import { addDefaultTopMenStyle, initToggleTopMenu } from './topMenu'
 import { addNoHorizonScrollClass, saveMainMenuHorizonScrollPosition, restoreMainMenuHorizonScrollPosition } from './mainMenu'
+import { initializeScrollHandler } from './mainMenuScrollUp'
 import { addDefaultSidebarStyle, initToggleSidebar } from './sidebar'
 import { waitForBilling, checkTrial, copyBillingContainer } from './billing'
 
@@ -169,68 +170,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
   /**
-   * 検証用：上にちょっとするクロールするとmain-menuを固定表示にしたい
+   * 上にちょっとするクロールするとmain-menuを固定表示にしたい
    */
-  let lastScrollTop = 0
-  let scrollTimer
-  let hideTimer
-  const wrapper = document.getElementById('wrapper')
-  const SCROLL_THRESHOLD = 80 // PJメニューを表示するまでのスクロール量を指定（この場合一度に15px以上スクロールされたらPJメニューを表示する）
-  const CLASS_NAME = 'scrolled-up'
-  const SHOW_DELAY = 200
-  const HIDE_DELAY = 2000
-
-  const mainMenu = document.getElementById('main-menu')
-  let isMouseOverMainMenu = false
-  mainMenu.addEventListener('mouseenter', () => {
-    isMouseOverMainMenu = true
-    clearTimeout(hideTimer)
-    console.log(isMouseOverMainMenu)
-  })
-
-  mainMenu.addEventListener('mouseleave', () => {
-    isMouseOverMainMenu = false
-    console.log(isMouseOverMainMenu)
-    hideTimer = setTimeout(() => {
-      if (!isMouseOverMainMenu) {
-          wrapper.classList.remove(CLASS_NAME);
-      }
-    }, HIDE_DELAY);
-  })
-
-  window.addEventListener('scroll', () => {
-    clearTimeout(scrollTimer)
-    clearTimeout(hideTimer)
-
-    let scrollTop = window.scrollY || document.documentElement.scrollTop
-    const headerHeight = document.getElementById('header').offsetHeight
-
-    // TODO: PJメニューの表示非表示にフェードかけたいので、それ用のclassを付与したい
-    // header部分が隠れたら、アニメーション用のclassを付与
-    // if(scrollTop > headerHeight) {
-    //   mainMenu.classList.add('fade-in')
-    // }
-
-    if(scrollTop > lastScrollTop || scrollTop <= headerHeight) {
-      // 少しでも下にスクロールした場合はPJメニューを非表示に
-      wrapper.classList.remove(CLASS_NAME)
-      lastScrollTop = scrollTop
-    } else {
-      // スクロール後すぐに出すのではなく、一定時間経過後に表示したい
-      scrollTimer = setTimeout(() => {
-        if(lastScrollTop - scrollTop > SCROLL_THRESHOLD) {
-          wrapper.classList.add(CLASS_NAME)
-        }
-
-        // 一定時間操作がなければ非表示にしたい
-        hideTimer = setTimeout(() => {
-          if(!isMouseOverMainMenu) {
-            wrapper.classList.remove(CLASS_NAME)
-          }
-        }, HIDE_DELAY)
-
-        lastScrollTop = scrollTop
-      }, SHOW_DELAY)
-    }
-  })
+  initializeScrollHandler()
 })

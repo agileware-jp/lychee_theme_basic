@@ -1,8 +1,8 @@
-function isMenuExists() {
+function isPJMenuExists() {
   return document.querySelector('#main-menu > ul:not(.menu-children)') !== null
 }
 
-function getMainMenu() {
+function getPJMenu() {
   return document.querySelector('#main-menu > ul:not(.menu-children)')
 }
 
@@ -10,10 +10,15 @@ function isHorizonScrollable(scrollContainer) {
   return scrollContainer.scrollWidth > scrollContainer.clientWidth
 }
 
-export function addNoHorizonScrollClass() {
-  if(!isMenuExists()) return
 
-  const container = getMainMenu()
+/**
+ * PJメニュー横スクロール関連の処理
+ */
+/* 横スクロール用classの付与 */
+export function addNoHorizonScrollClass() {
+  if(!isPJMenuExists()) return
+
+  const container = getPJMenu()
   if(isHorizonScrollable(container)) {
     container.classList.remove('noScroll')
   } else {
@@ -27,10 +32,11 @@ function initHorizonScrollPosition() {
   localStorage.setItem('mainMenuHorizonScrollPosition', 0)
 }
 
+/* 横スクロール位置の記憶 */
 export function saveMainMenuHorizonScrollPosition() {
-  if(!isMenuExists()) return
+  if(!isPJMenuExists()) return
 
-  const mainMenu = getMainMenu()
+  const mainMenu = getPJMenu()
 
   // スクロールが発生しない場合は初期化して終わり
   if(!isHorizonScrollable(mainMenu)) {
@@ -42,10 +48,11 @@ export function saveMainMenuHorizonScrollPosition() {
   localStorage.setItem('mainMenuHorizonScrollPosition', mainMenu.scrollLeft)
 }
 
+/* 横スクロール位置の復原 */
 export function restoreMainMenuHorizonScrollPosition() {
-  if(!isMenuExists()) return
+  if(!isPJMenuExists()) return
 
-  const mainMenu = getMainMenu()
+  const mainMenu = getPJMenu()
 
   // スクロールが発生しない場合は初期化して終わり
   if(!isHorizonScrollable(mainMenu)) {
