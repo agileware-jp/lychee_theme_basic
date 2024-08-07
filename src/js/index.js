@@ -1,5 +1,5 @@
 import { addDefaultTopMenStyle, initToggleTopMenu } from './topMenu'
-import { addNoScrollClass, saveMainMenuScrollPosition, restoreMainMenuScrollPosition } from './mainMenu'
+import { addNoHorizonScrollClass, saveMainMenuHorizonScrollPosition, restoreMainMenuHorizonScrollPosition } from './mainMenu'
 import { addDefaultSidebarStyle, initToggleSidebar } from './sidebar'
 import { waitForBilling, checkTrial, copyBillingContainer } from './billing'
 
@@ -52,9 +52,9 @@ function addFeedbackLink() {
 /**
  * MainMenuの横スクロールに関する処理
  */
-window.addEventListener('resize', addNoScrollClass)
-window.addEventListener('beforeunload', saveMainMenuScrollPosition);
-window.addEventListener('load', restoreMainMenuScrollPosition);
+window.addEventListener('resize', addNoHorizonScrollClass)
+window.addEventListener('beforeunload', saveMainMenuHorizonScrollPosition);
+window.addEventListener('load', restoreMainMenuHorizonScrollPosition);
 
 /**
  * その他一般的な処理
@@ -77,7 +77,7 @@ window.addEventListener('DOMContentLoaded', () => {
   /**
    * MainMenuの調整
    */
-  addNoScrollClass()
+  addNoHorizonScrollClass()
 
 
   /**
