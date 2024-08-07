@@ -195,7 +195,7 @@ window.addEventListener('DOMContentLoaded', () => {
       if (!isMouseOverMainMenu) {
           wrapper.classList.remove(CLASS_NAME);
       }
-  }, HIDE_DELAY);
+    }, HIDE_DELAY);
   })
 
   window.addEventListener('scroll', () => {
