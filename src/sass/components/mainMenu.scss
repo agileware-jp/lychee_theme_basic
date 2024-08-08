@@ -3,6 +3,22 @@
     @apply relative w-full bg-background-primary py-1 px-2
   }
 
+  // topMenuを閉じているとき
+  .scrolled-up #main-menu {
+    width: calc(100% - 52px);
+    @apply fixed top-0 left-[52px] z-[699] border-b border-border-default
+  }
+
+  // topMenuを開いているとき
+  .isTopMenuOpen .scrolled-up #main-menu {
+    width: calc(100% - 180px);
+    @apply left-[180px]
+  }
+
+  #wrapper.scrolled-up {
+    @apply pt-[52px]
+  }
+
   /* MainMenuのスタイル */
   #main-menu ul:not(.menu-children) {
     @apply relative flex w-full whitespace-nowrap m-0
