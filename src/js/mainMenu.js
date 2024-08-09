@@ -66,7 +66,7 @@ export function dragScroll() {
   // スクロールが発生する場合
   const mainMenu = getMainMenu()
   if(isScrollable(mainMenu)) {
-    const container = document.querySelector('#main-menu > ul');
+    const container = document.querySelector('#main-menu');
     let isDown = false
     let isDragging = false
     let startX
