@@ -52,6 +52,11 @@
     @apply overflow-x-scroll py-1
   }
 
+  #main-menu.active,
+  #main-menu.active * {
+    @apply cursor-grabbing
+  }
+
   #main-menu::-webkit-scrollbar {
     @apply h-[4px]
   }
