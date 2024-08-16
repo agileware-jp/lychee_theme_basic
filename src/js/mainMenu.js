@@ -78,13 +78,24 @@ export function showMenuOnTopEdge() {
       header.classList.add('is_pjMenuFixed')
       header.style.height = `${headerDefaultHeight}px`
     } else if(header.classList.contains('is_pjMenuFixed')) {
-      if(!menuWrap.matches(':hvoer')) {
+      if(!menuWrap.matches(':hover')) {
         header.classList.remove('is_pjMenuFixed')
         header.style.height = 'auto'
       }
     }
   })
 
+  // ビューポートからカーソルが出た場合にもPJメニューを表示したい
+  document.addEventListener('mouseleave', (e) => {
+    const PJMenuBottom = menuWrap.getBoundingClientRect().bottom
+    if(PJMenuBottom > 0) return
+    if(e.clientY === null || e.clientY < 0) {
+      header.classList.add('is_pjMenuFixed')
+      header.style.height = `${headerDefaultHeight}px`
+    }
+  })
+
+  // main-menuからカーソルが外れたら非表示にする
   menuWrap.addEventListener('mouseleave', () => {
     if(header.classList.contains('is_pjMenuFixed')) {
       header.classList.remove('is_pjMenuFixed')
