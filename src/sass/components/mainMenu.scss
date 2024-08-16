@@ -3,6 +3,11 @@
     @apply relative w-full bg-background-primary py-1 px-2
   }
 
+  .is_pjMenuFixed #main-menu {
+    width: calc(100% - 180px);
+    @apply fixed z-[1] left-[180px]
+  }
+
   /* MainMenuのスタイル */
   #main-menu ul:not(.menu-children) {
     @apply relative flex w-full whitespace-nowrap m-0

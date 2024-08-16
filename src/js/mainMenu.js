@@ -59,3 +59,36 @@ export function restoreMainMenuScrollPosition() {
     mainMenu.scrollLeft = scrollPosition
   }
 }
+
+export function showMenuOnTopEdge() {
+  if(!isMenuExists()) return
+
+  const EDGE_THRESHOLD = 5 // トップから10pxの高さを判定エリアとする
+
+  // Note: main-menuにfixedを適用すると、その分の高さが引かれてガタガタする。
+  //       固定表示したいのはmain-menuだが、ガタツキにそれに対応できるようにclassは#headerに適用したい
+  const menuWrap = getMainMenu().closest('#main-menu')
+  const header = menuWrap.closest('#header')
+  const headerDefaultHeight = header.offsetHeight
+
+  document.addEventListener('mousemove', (e) => {
+    const PJMenuBottom = menuWrap.getBoundingClientRect().bottom
+
+    if(PJMenuBottom < 0 && e.clientY <= EDGE_THRESHOLD) {
+      header.classList.add('is_pjMenuFixed')
+      header.style.height = `${headerDefaultHeight}px`
+    } else if(header.classList.contains('is_pjMenuFixed')) {
+      if(!menuWrap.matches(':hvoer')) {
+        header.classList.remove('is_pjMenuFixed')
+        header.style.height = 'auto'
+      }
+    }
+  })
+
+  menuWrap.addEventListener('mouseleave', () => {
+    if(header.classList.contains('is_pjMenuFixed')) {
+      header.classList.remove('is_pjMenuFixed')
+      header.style.height = 'auto'
+    }
+  })
+}

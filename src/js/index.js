@@ -1,5 +1,5 @@
 import { addDefaultTopMenStyle, initToggleTopMenu } from './topMenu'
-import { addNoScrollClass, saveMainMenuScrollPosition, restoreMainMenuScrollPosition } from './mainMenu'
+import { addNoScrollClass, saveMainMenuScrollPosition, restoreMainMenuScrollPosition, showMenuOnTopEdge } from './mainMenu'
 import { addDefaultSidebarStyle, initToggleSidebar } from './sidebar'
 import { waitForBilling, checkTrial, copyBillingContainer } from './billing'
 
@@ -60,6 +60,7 @@ window.addEventListener('load', restoreMainMenuScrollPosition);
  * その他一般的な処理
  */
 window.addEventListener('DOMContentLoaded', () => {
+  showMenuOnTopEdge()
   hiddenTabsButtons()
   addFeedbackLink()
 
