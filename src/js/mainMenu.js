@@ -1,17 +1,11 @@
-function isMenuExists() {
-  return document.querySelector('#main-menu > ul:not(.menu-children)') !== null
-}
-
-function getMainMenu() {
-  return document.querySelector('#main-menu > ul:not(.menu-children)')
-}
+import { isMainMenuExists, getMainMenu, isHeaderShow, isMobile } from './utility'
 
 function isScrollable(scrollContainer) {
   return scrollContainer.scrollWidth > scrollContainer.clientWidth
 }
 
 export function addNoScrollClass() {
-  if(!isMenuExists()) return
+  if(!isMainMenuExists()) return
 
   const container = getMainMenu()
   if(isScrollable(container)) {
@@ -28,7 +22,7 @@ function initScrollPosition() {
 }
 
 export function saveMainMenuScrollPosition() {
-  if(!isMenuExists()) return
+  if(!isMainMenuExists()) return
 
   const mainMenu = getMainMenu()
 
@@ -43,7 +37,7 @@ export function saveMainMenuScrollPosition() {
 }
 
 export function restoreMainMenuScrollPosition() {
-  if(!isMenuExists()) return
+  if(!isMainMenuExists()) return
 
   const mainMenu = getMainMenu()
 
@@ -60,46 +54,64 @@ export function restoreMainMenuScrollPosition() {
   }
 }
 
-export function showMenuOnTopEdge() {
-  if(!isMenuExists()) return
+/**
+ * ビューポートの上の方または上端からマウスカーソルがビューポートの外に出た場合にPJメニューが表示されるようにする
+ */
+const CLASS_FIX_PJ_MENU = 'is_pjMenuFixed'
 
-  const EDGE_THRESHOLD = 5 // トップから10pxの高さを判定エリアとする
+function fixPJMenu(header, headerDefaultHeight) {
+  header.classList.add(CLASS_FIX_PJ_MENU)
+  header.style.height = `${headerDefaultHeight}px`
+}
 
-  // Note: main-menuにfixedを適用すると、その分の高さが引かれてガタガタする。
-  //       固定表示したいのはmain-menuだが、ガタツキにそれに対応できるようにclassは#headerに適用したい
+function unfixPJMenu(header) {
+  header.classList.remove(CLASS_FIX_PJ_MENU)
+  header.style.height = 'auto'
+}
+
+function isFixedPJMenu(header) {
+  return header.classList.contains(CLASS_FIX_PJ_MENU)
+}
+
+function documentMouseMove(menuWrap, header) {
+  if(isMobile()) return
+
+  if(isFixedPJMenu(header) && !menuWrap.matches(':hover')) {
+    unfixPJMenu(header)
+  }
+}
+
+function documentMouseLeave(e, menuWrap, header, headerDefaultHeight) {
+  if(isMobile()) return
+  if(menuWrap.getBoundingClientRect().bottom > 0) return
+
+  if(e.clientY === null || e.clientY < 0) {
+    fixPJMenu(header, headerDefaultHeight)
+  }
+}
+
+function menuWrapMouseLeave(header) {
+  if(isMobile()) return
+
+  if(isFixedPJMenu(header)) {
+    unfixPJMenu(header)
+  }
+}
+
+function checkAndInitialize() {
+  if(!isMainMenuExists()) return
+  if(!isHeaderShow()) return
+
   const menuWrap = getMainMenu().closest('#main-menu')
   const header = document.getElementById('header')
-  const headerDefaultHeight = header.offsetHeight
+  const headerDefaultHeight = header.getBoundingClientRect().height
 
-  document.addEventListener('mousemove', (e) => {
-    const PJMenuBottom = menuWrap.getBoundingClientRect().bottom
+  document.addEventListener('mousemove', () => documentMouseMove(menuWrap, header))
+  document.addEventListener('mouseleave', (e) => documentMouseLeave(e, menuWrap, header, headerDefaultHeight))
+  menuWrap.addEventListener('mouseleave', () => menuWrapMouseLeave(header))
+}
 
-    if(PJMenuBottom < 0 && e.clientY <= EDGE_THRESHOLD) {
-      header.classList.add('is_pjMenuFixed')
-      header.style.height = `${headerDefaultHeight}px`
-    } else if(header.classList.contains('is_pjMenuFixed')) {
-      if(!menuWrap.matches(':hover')) {
-        header.classList.remove('is_pjMenuFixed')
-        header.style.height = 'auto'
-      }
-    }
-  })
-
-  // ビューポートからカーソルが出た場合にもPJメニューを表示したい
-  document.addEventListener('mouseleave', (e) => {
-    const PJMenuBottom = menuWrap.getBoundingClientRect().bottom
-    if(PJMenuBottom > 0) return
-    if(e.clientY === null || e.clientY < 0) {
-      header.classList.add('is_pjMenuFixed')
-      header.style.height = `${headerDefaultHeight}px`
-    }
-  })
-
-  // main-menuからカーソルが外れたら非表示にする
-  menuWrap.addEventListener('mouseleave', () => {
-    if(header.classList.contains('is_pjMenuFixed')) {
-      header.classList.remove('is_pjMenuFixed')
-      header.style.height = 'auto'
-    }
-  })
+export function initializeShowMenuTopEdgeHandler() {
+  checkAndInitialize()
+  window.addEventListener('resize', checkAndInitialize)
 }
