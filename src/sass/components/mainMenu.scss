@@ -1,11 +1,26 @@
 @layer components {
+  @keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0)
+    }
+  }
+
   #main-menu {
     @apply relative w-full bg-background-primary py-1 px-2
   }
 
   .is_pjMenuFixed #main-menu {
+    animation: slideDown 0.1s ease-in forwards;
+    width: calc(100% - 52px);
+    @apply fixed z-[1] top-0 left-[52px]
+  }
+
+  .isTopMenuOpen .is_pjMenuFixed #main-menu {
     width: calc(100% - 180px);
-    @apply fixed z-[1] left-[180px]
+    @apply left-[180px]
   }
 
   /* MainMenuのスタイル */

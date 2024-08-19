@@ -68,7 +68,7 @@ export function showMenuOnTopEdge() {
   // Note: main-menuにfixedを適用すると、その分の高さが引かれてガタガタする。
   //       固定表示したいのはmain-menuだが、ガタツキにそれに対応できるようにclassは#headerに適用したい
   const menuWrap = getMainMenu().closest('#main-menu')
-  const header = menuWrap.closest('#header')
+  const header = document.getElementById('header')
   const headerDefaultHeight = header.offsetHeight
 
   document.addEventListener('mousemove', (e) => {
