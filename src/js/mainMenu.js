@@ -58,6 +58,7 @@ export function restoreMainMenuScrollPosition() {
  * ビューポートの上の方または上端からマウスカーソルがビューポートの外に出た場合にPJメニューが表示されるようにする
  */
 const CLASS_FIX_PJ_MENU = 'is_pjMenuFixed'
+const CLASS_SLIDE_UP_PJ_MENU = 'pjMenuSlideUp'
 
 function fixPJMenu(header, headerDefaultHeight) {
   header.classList.add(CLASS_FIX_PJ_MENU)
@@ -65,8 +66,13 @@ function fixPJMenu(header, headerDefaultHeight) {
 }
 
 function unfixPJMenu(header) {
-  header.classList.remove(CLASS_FIX_PJ_MENU)
-  header.style.height = 'auto'
+  header.classList.add(CLASS_SLIDE_UP_PJ_MENU)
+
+  setTimeout(() => {
+    header.classList.remove(CLASS_FIX_PJ_MENU)
+    header.classList.remove(CLASS_SLIDE_UP_PJ_MENU)
+    header.style.height = 'auto'
+  }, 100)
 }
 
 function isFixedPJMenu(header) {

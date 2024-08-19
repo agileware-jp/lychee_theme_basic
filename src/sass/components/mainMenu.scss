@@ -8,6 +8,15 @@
     }
   }
 
+  @keyframes slideUp {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100%);
+    }
+  }
+
   #main-menu {
     @apply relative w-full bg-background-primary py-1 px-2
   }
@@ -21,6 +30,10 @@
   .isTopMenuOpen .is_pjMenuFixed #main-menu {
     width: calc(100% - 180px);
     @apply left-[180px]
+  }
+
+  .pjMenuSlideUp #main-menu {
+    animation: slideUp 0.1s ease-in forwards;
   }
 
   /* MainMenuのスタイル */
