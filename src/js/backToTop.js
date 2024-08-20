@@ -13,7 +13,7 @@ function backToTop() {
 export function createBackToTopBtn() {
   if(!backToTopBtn) {
     backToTopBtn = document.createElement('button')
-    backToTopBtn.classList.add('aw_scrollToTop')
+    backToTopBtn.classList.add('aw_backToTop')
     backToTopBtn.textContent = 'トップへ戻る'
     backToTopBtn.style.display = 'none'
 
