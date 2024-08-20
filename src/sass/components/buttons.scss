@@ -56,7 +56,7 @@
   }
 
   // topへ戻るボタン（LIFよりは下に配置するためのz-index指定）
-  .aw_scrollToTop {
+  .aw_backToTop {
     @extend .BTN_TERTIARY_ICON_ONLY_OUTLINED;
     background-image: url(images/expand_less_dark.svg);
     @apply fixed right-4 bottom-4 z-[499]
