@@ -57,9 +57,9 @@
 
   // topへ戻るボタン（LIFよりは下に配置するためのz-index指定）
   .aw_backToTop {
-    @extend .BTN_TERTIARY_ICON_ONLY_OUTLINED;
-    background-image: url(images/expand_less_dark.svg);
-    @apply fixed right-4 bottom-4 z-[499]
+    // @extend .BTN_PRIMARY;
+    background-image: url(images/arrow_upward_onFill.svg);
+    @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap w-8 h-8 bg-center align-middle bg-background-dark/80 bg-no-repeat border-none p-0 rounded-md fixed right-4 bottom-4 z-[499] hover:bg-background-dark/70 shadow-md
   }
 
   // Sidebarの開閉ボタン
