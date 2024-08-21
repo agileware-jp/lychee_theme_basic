@@ -124,3 +124,16 @@ export function initToggleTopMenu() {
     document.body.classList.remove('isTopMenuOpen')
   }
 }
+
+
+/**
+ * ヘルプメニューの位置を変更する
+ */
+export function moveLycheeHelp() {
+  const lycheeHelp = document.querySelector('.lychee-help').closest('li')
+  const accountMenu = document.querySelector('#account > ul')
+
+  lycheeHelp.classList.add('aw_lycheeHelp_li')
+
+  accountMenu.appendChild(lycheeHelp)
+}

@@ -480,6 +480,11 @@
     background-image: url(images/construnction_dark.svg);
   }
 
+  .flyout-menu .js-profile-menu .lychee-help {
+    background-image: url(images/help_dark.svg);
+    @apply before:content-none
+  }
+
   /* メッセージボックス */
   .flyout-menu .lychee-message-box-icon.lychee-message-box-icon::before {
     content: 'メッセージ';

@@ -1,4 +1,4 @@
-import { addDefaultTopMenStyle, initToggleTopMenu } from './topMenu'
+import { addDefaultTopMenStyle, initToggleTopMenu, moveLycheeHelp } from './topMenu'
 import { addNoScrollClass, saveMainMenuScrollPosition, restoreMainMenuScrollPosition } from './mainMenu'
 import { addDefaultSidebarStyle, initToggleSidebar } from './sidebar'
 import { waitForBilling, checkTrial, copyBillingContainer } from './billing'
@@ -72,6 +72,7 @@ window.addEventListener('DOMContentLoaded', () => {
    * TopMenuの開閉機能
    */
   initToggleTopMenu()
+  moveLycheeHelp()
 
 
   /**
