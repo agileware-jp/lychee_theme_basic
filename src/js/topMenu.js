@@ -113,8 +113,28 @@ function toggleTopMenu(btn) {
   })
 }
 
+function addTopMenuHoverEffect() {
+  const topMenu = getTopMenu()
+  if(!topMenu) return
+
+  const DELAY = 250
+  let hoverTimer
+
+  topMenu.addEventListener('mouseenter', () => {
+    hoverTimer = setTimeout(() => {
+      topMenu.classList.add('aw_topMenuHover')
+    }, DELAY)
+  })
+
+  topMenu.addEventListener('mouseleave', () => {
+    clearTimeout(hoverTimer)
+    topMenu.classList.remove('aw_topMenuHover')
+  })
+}
+
 export function initToggleTopMenu() {
   addBtnToToggleTopMenu()
+  addTopMenuHoverEffect()
   addLogoutStyle()
 
   // topMenuの復原処理

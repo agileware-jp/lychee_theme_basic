@@ -9,7 +9,7 @@
   }
 
   // 閉じているとき
-  #top-menu:hover {
+  #top-menu.aw_topMenuHover {
     @apply w-[180px] z-[9999]
   }
 
@@ -44,7 +44,7 @@
     @apply opacity-60
   }
 
-  #top-menu:hover .aw_toggleTopMenu {
+  #top-menu.aw_topMenuHover .aw_toggleTopMenu {
     background-image: url(images/keep_dark.svg);
     @apply overflow-visible indent-0 pl-1
   }
@@ -54,7 +54,7 @@
   }
 
   // 開いているときにマウスオーバーしても「メニューを固定する」というラベルは表示しない
-  .isTopMenuOpen #top-menu:hover .aw_toggleTopMenu {
+  .isTopMenuOpen #top-menu.aw_topMenuHover .aw_toggleTopMenu {
     @apply overflow-hidden indent-[100%]
   }
 
@@ -64,7 +64,7 @@
     @apply relative block overflow-hidden indent-[100%] whitespace-nowrap bg-no-repeat bg-[length:20px_20px] bg-[left_3px] min-h-[20px] py-1
   }
 
-  #top-menu:hover > ul > li > a {
+  #top-menu.aw_topMenuHover > ul > li > a {
     @apply overflow-visible indent-0 whitespace-normal pl-6
   }
 
@@ -158,7 +158,7 @@
   }
 
   // 開いているとき
-  #top-menu:hover #loggedas .user {
+  #top-menu.aw_topMenuHover #loggedas .user {
     @apply overflow-visible indent-0 pl-6
   }
 
@@ -210,22 +210,22 @@
 
   /* MessageBox: 開いているとき */
   // 未読なし
-  #top-menu:hover .lychee-message-box-icon.lychee-message-box-icon,
-  #top-menu:hover .lychee-message-box-icon.lychee-message-box-icon.unread {
+  #top-menu.aw_topMenuHover .lychee-message-box-icon.lychee-message-box-icon,
+  #top-menu.aw_topMenuHover .lychee-message-box-icon.lychee-message-box-icon.unread {
     @apply bg-[left_center]
   }
 
-  #top-menu:hover .lychee-message-box-icon.lychee-message-box-icon::before {
+  #top-menu.aw_topMenuHover .lychee-message-box-icon.lychee-message-box-icon::before {
     content: 'メッセージ';
   }
 
   // 未読ありの場合
-  #top-menu:hover .lychee-message-box-icon.lychee-message-box-icon.unread::before {
+  #top-menu.aw_topMenuHover .lychee-message-box-icon.lychee-message-box-icon.unread::before {
     content: 'メッセージがあります';
     @apply font-bold
   }
 
-  #top-menu:hover .lychee-message-box-icon.lychee-message-box-icon.unread::after {
+  #top-menu.aw_topMenuHover .lychee-message-box-icon.lychee-message-box-icon.unread::after {
     @apply -right-[8px]
   }
 
@@ -250,7 +250,7 @@
   }
 
   // 開いているとき
-  #top-menu:hover .my-account {
+  #top-menu.aw_topMenuHover .my-account {
     @apply overflow-visible indent-0 pl-6
   }
 
@@ -261,7 +261,7 @@
   }
 
   // 開いているとき
-  #top-menu:hover .logout {
+  #top-menu.aw_topMenuHover .logout {
     @apply overflow-visible indent-0 pl-6
   }
 
@@ -273,7 +273,7 @@
   }
 
   // 開いているとき
-  #top-menu:hover .login {
+  #top-menu.aw_topMenuHover .login {
     @apply overflow-visible indent-0 pl-6
   }
 
@@ -285,7 +285,7 @@
   }
 
   // 開いているとき
-  #top-menu:hover .register {
+  #top-menu.aw_topMenuHover .register {
     @apply overflow-visible indent-0 pl-6
   }
 
@@ -297,7 +297,7 @@
   }
 
   // 閉じているとき
-  #top-menu:hover .aw_fbLink {
+  #top-menu.aw_topMenuHover .aw_fbLink {
     @apply overflow-visible indent-0 pl-6
   }
 
