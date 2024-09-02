@@ -1,5 +1,5 @@
 import { addDefaultTopMenStyle, initToggleTopMenu } from './topMenu'
-import { addNoScrollClass, saveMainMenuScrollPosition, restoreMainMenuScrollPosition } from './mainMenu'
+import { addNoScrollClass, saveMainMenuScrollPosition, restoreMainMenuScrollPosition, dragScroll } from './mainMenu'
 import { addDefaultSidebarStyle, initToggleSidebar } from './sidebar'
 import { waitForBilling, checkTrial, copyBillingContainer } from './billing'
 
@@ -62,6 +62,8 @@ window.addEventListener('load', restoreMainMenuScrollPosition);
 window.addEventListener('DOMContentLoaded', () => {
   hiddenTabsButtons()
   addFeedbackLink()
+
+  dragScroll()
 
   waitForBilling('lychee-billng-global-message', (el) => {
     checkTrial(el)
