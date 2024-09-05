@@ -211,4 +211,24 @@
   .select2-container--default.select2-container--default.select2-container--focus .select2-selection--multiple {
     @apply border-text-default
   }
+
+
+  /* 管理→設定 */
+  .settings input[type="text"],
+  .settings select,
+  .settings textarea {
+    @apply text-[11px] py-1 px-1.5
+  }
+
+  .settings .select2-container--default.select2-container--default .select2-selection--single {
+    @apply text-[11px] h-[26px]
+  }
+
+  .settings .select2-container--default.select2-container--default .select2-selection--single .select2-selection__arrow {
+    @apply -top-[6px]
+  }
+
+  .settings .select2-container--default.select2-container--default .select2-selection--single .select2-selection__rendered {
+    @apply text-[11px] leading-3
+  }
 }

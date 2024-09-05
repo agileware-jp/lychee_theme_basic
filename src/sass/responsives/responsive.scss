@@ -911,9 +911,17 @@
     max-width: 100%;
   }
 
+  [id^="tab-content-"] .box.settings {
+    @apply py-2
+  }
+
   /* tabular forms resets for mobile */
   .tabular p, .tabular.settings p {
     padding-left: 0;
+  }
+
+  [id^="tab-content-"] .tabular.settings.box > p {
+    @apply px-4 hover:bg-transparent
   }
 
   .tabular label, .tabular.settings label {

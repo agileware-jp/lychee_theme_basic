@@ -14,7 +14,7 @@
   }
 
   .tabular.settings p {
-    @apply pl-[18rem]
+    @apply pl-[17rem]
   }
 
   .tabular p ~ p {
@@ -29,6 +29,10 @@
     @apply border-b border-border-divider mb-4 pb-4
   }
 
+  [id^="tab-content-"] .tabular.settings.box > p {
+    @apply border-none mb-0 py-1 hover:bg-background-secondary
+  }
+
   .tabular.settings p:last-of-type {
     @apply border-none mb-0 pb-0
   }
@@ -38,7 +42,7 @@
   }
 
   .tabular.settings label {
-    @apply w-[17rem] text-xs text-text-default text-left -ml-[18rem] translate-y-1
+    @apply w-[15rem] text-[11px] text-text-default text-left -ml-[16rem] translate-y-1
   }
 
   .tabular textarea {

@@ -1,7 +1,19 @@
 @layer components {
   .controller-settings {
-    .box {
+    .tabs:has(+#tab-content-general) {
+      @apply mb-2
+    }
+
+    .box.settings {
       @apply bg-background-secondary/50
+    }
+
+    [id^="tab-content-"] .box.settings {
+      @apply mb-4 py-1.5 px-0
+    }
+
+    [id^="tab-content-"] .box.settings.enabled_scm {
+      @apply px-4
     }
 
     .box.settings .box {
