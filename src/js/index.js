@@ -2,6 +2,7 @@ import { addDefaultTopMenStyle, initToggleTopMenu } from './topMenu'
 import { addNoScrollClass, saveMainMenuScrollPosition, restoreMainMenuScrollPosition } from './mainMenu'
 import { addDefaultSidebarStyle, initToggleSidebar } from './sidebar'
 import { waitForBilling, checkTrial, copyBillingContainer } from './billing'
+import { insertTextMessageBox } from './messageBox'
 
 /* ちらつき防止のため、topMenuの初期スタイルを追加する */
 addDefaultTopMenStyle()
@@ -62,6 +63,7 @@ window.addEventListener('load', restoreMainMenuScrollPosition);
 window.addEventListener('DOMContentLoaded', () => {
   hiddenTabsButtons()
   addFeedbackLink()
+  insertTextMessageBox()
 
   waitForBilling('lychee-billng-global-message', (el) => {
     checkTrial(el)

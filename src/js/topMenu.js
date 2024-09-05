@@ -27,7 +27,6 @@ const TOGGLE_TOP_MENU_WRAP_STYLE = `
 
 const TOGGLE_TOP_MENU_BTN_STYLE = `
   display: block;
-  width: 100%;
   background-repeat: no-repeat;
   background-size: 20px 20px;
   background-position: left center;
@@ -117,7 +116,7 @@ function addTopMenuHoverEffect() {
   const topMenu = getTopMenu()
   if(!topMenu) return
 
-  const DELAY = 250
+  const DELAY = 50
   let hoverTimer
 
   topMenu.addEventListener('mouseenter', () => {

@@ -10,7 +10,7 @@
 
   // 閉じているとき
   #top-menu.aw_topMenuHover {
-    @apply w-[180px] z-[9999]
+    @apply w-[180px] z-[9999] transition-[width]
   }
 
   #top-menu > ul {
@@ -37,7 +37,7 @@
   /* TopMenuの開閉ボタン */
   .aw_toggleTopMenu {
     background-image: url(images/menu_dark.svg);
-    @apply block overflow-hidden indent-[100%] whitespace-nowrap
+    @apply block overflow-hidden indent-[100%] whitespace-nowrap pl-6
   }
 
   .aw_toggleTopMenu:hover {
@@ -46,7 +46,7 @@
 
   #top-menu.aw_topMenuHover .aw_toggleTopMenu {
     background-image: url(images/keep_dark.svg);
-    @apply overflow-visible indent-0 pl-1
+    @apply indent-0
   }
 
   .isTopMenuOpen #top-menu .aw_toggleTopMenu {
@@ -65,7 +65,7 @@
   }
 
   #top-menu.aw_topMenuHover > ul > li > a {
-    @apply overflow-visible indent-0 whitespace-normal pl-6
+    @apply indent-0 pl-6 text-ellipsis
   }
 
   .isTopMenuOpen #top-menu > ul > li > a {
@@ -159,11 +159,11 @@
 
   // 開いているとき
   #top-menu.aw_topMenuHover #loggedas .user {
-    @apply overflow-visible indent-0 pl-6
+    @apply indent-0 pl-6 text-ellipsis
   }
 
   .isTopMenuOpen #top-menu #loggedas .user {
-    @apply overflow-visible indent-0 pl-6
+    @apply indent-0 pl-6
   }
 
   /* account */
@@ -194,17 +194,17 @@
   #top-menu .lychee-message-box-icon.lychee-message-box-icon,
   #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread {
     background-image: url(images/mail_dark.svg);
-    @apply relative bg-no-repeat bg-[length:20px_20px] bg-[left_center] pl-6
+    @apply block overflow-hidden indent-[100%] whitespace-nowrap relative bg-no-repeat bg-[length:20px_20px] bg-[left_center] pl-6
   }
 
   #top-menu .lychee-message-box-icon.lychee-message-box-icon::before,
   #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread::before {
-    content: '';
+    @apply content-none
   }
 
   #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread::after {
     content: '';
-    @apply absolute -top-[2px] right-[1px] block w-[10px] h-[10px] bg-status-danger rounded-full
+    @apply absolute top-[2px] left-[12px] block w-[10px] h-[10px] bg-status-danger rounded-full
   }
 
 
@@ -212,34 +212,16 @@
   // 未読なし
   #top-menu.aw_topMenuHover .lychee-message-box-icon.lychee-message-box-icon,
   #top-menu.aw_topMenuHover .lychee-message-box-icon.lychee-message-box-icon.unread {
-    @apply bg-[left_center]
-  }
-
-  #top-menu.aw_topMenuHover .lychee-message-box-icon.lychee-message-box-icon::before {
-    content: 'メッセージ';
+    @apply indent-0 bg-[left_center] text-ellipsis
   }
 
   // 未読ありの場合
-  #top-menu.aw_topMenuHover .lychee-message-box-icon.lychee-message-box-icon.unread::before {
-    content: 'メッセージがあります';
+  #top-menu.aw_topMenuHover .lychee-message-box-icon.lychee-message-box-icon.unread {
     @apply font-bold
-  }
-
-  #top-menu.aw_topMenuHover .lychee-message-box-icon.lychee-message-box-icon.unread::after {
-    @apply -right-[8px]
-  }
-
-  .isTopMenuOpen #top-menu .lychee-message-box-icon.lychee-message-box-icon::before {
-    content: 'メッセージ';
   }
 
   .isTopMenuOpen #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread::before {
-    content: 'メッセージがあります';
     @apply font-bold
-  }
-
-  .isTopMenuOpen #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread::after {
-    @apply -right-[8px]
   }
 
 
@@ -251,7 +233,7 @@
 
   // 開いているとき
   #top-menu.aw_topMenuHover .my-account {
-    @apply overflow-visible indent-0 pl-6
+    @apply indent-0 pl-6 text-ellipsis
   }
 
   /* ログアウト */
@@ -262,7 +244,7 @@
 
   // 開いているとき
   #top-menu.aw_topMenuHover .logout {
-    @apply overflow-visible indent-0 pl-6
+    @apply indent-0 pl-6 text-ellipsis
   }
 
 
@@ -274,7 +256,7 @@
 
   // 開いているとき
   #top-menu.aw_topMenuHover .login {
-    @apply overflow-visible indent-0 pl-6
+    @apply indent-0 pl-6 text-ellipsis
   }
 
 
@@ -286,7 +268,7 @@
 
   // 開いているとき
   #top-menu.aw_topMenuHover .register {
-    @apply overflow-visible indent-0 pl-6
+    @apply indent-0 pl-6 text-ellipsis
   }
 
 
@@ -298,7 +280,7 @@
 
   // 閉じているとき
   #top-menu.aw_topMenuHover .aw_fbLink {
-    @apply overflow-visible indent-0 pl-6
+    @apply indent-0 pl-6 text-ellipsis
   }
 
   // isTopMenuOpen
