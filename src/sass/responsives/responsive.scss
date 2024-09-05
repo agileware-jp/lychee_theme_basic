@@ -607,14 +607,6 @@
     @apply bg-transparent
   }
 
-  #admin-index #admin-menu {
-    @apply max-w-xs
-  }
-
-  #admin-index #admin-menu ul {
-    @apply columns-1
-  }
-
   #admin-menu {
     padding-left: 0;
   }
