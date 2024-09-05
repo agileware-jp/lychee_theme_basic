@@ -1,0 +1,13 @@
+@layer components {
+  #admin-index {
+    @apply mt-4
+  }
+
+  #admin-index #admin-menu {
+    @apply max-w-4xl
+  }
+
+  #admin-index #admin-menu ul {
+    @apply columns-2 columns-[300px]
+  }
+}
