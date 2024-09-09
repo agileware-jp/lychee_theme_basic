@@ -131,6 +131,10 @@
 
 
   /* lychee_help */
+  #top-menu > ul li:has(a.lychee-help) {
+    @apply order-2
+  }
+
   #top-menu > ul a.lychee-icon.lychee-help {
     background-image: url(images/help_dark.svg);
   }
