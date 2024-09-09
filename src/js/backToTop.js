@@ -3,12 +3,8 @@
  */
 let backToTopBtn = null
 
-function backToTop(speed) {
-  const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-  if (scrollTop > 0) {
-      window.requestAnimationFrame(() => backToTop(speed));
-      window.scrollTo(0, scrollTop - scrollTop / speed);
-  }
+function backToTop() {
+  window.scroll({ top: 0, behavior: "smooth" });
 }
 
 export function createBackToTopBtn() {
@@ -18,7 +14,7 @@ export function createBackToTopBtn() {
     backToTopBtn.textContent = 'トップへ戻る'
     backToTopBtn.style.display = 'none'
 
-    backToTopBtn.addEventListener('click', () => backToTop(2))
+    backToTopBtn.addEventListener('click', () => backToTop())
 
     document.body.appendChild(backToTopBtn)
   }
