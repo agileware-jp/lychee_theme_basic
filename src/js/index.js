@@ -44,7 +44,7 @@ function addFeedbackLink() {
   `
 
   a.style.cssText = `
-    padding-left: 1.5rem;
+    padding-left: 1.75rem;
   `
 
   li.appendChild(a)

@@ -29,7 +29,7 @@ const TOGGLE_TOP_MENU_BTN_STYLE = `
   display: block;
   background-repeat: no-repeat;
   background-size: 20px 20px;
-  background-position: left center;
+  background-position: 4px center;
   border: 0;
 `
 

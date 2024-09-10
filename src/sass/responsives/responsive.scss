@@ -501,6 +501,16 @@
     background-image: url(images/mail_unread_dark.svg);
   }
 
+  /* ヘルプ */
+  .flyout-menu .lychee-help.lychee-help {
+    background-image: url(images/help_dark.svg);
+    @apply bg-no-repeat bg-[length:16px_16px] bg-[12px_center] pl-8
+  }
+
+  .flyout-menu .lychee-help.lychee-help::before {
+    content: none;
+  }
+
   /* billingのメッセージ */
   .isBilling #wrapper > #lychee-billng-global-message {
     @apply fixed bottom-0 w-full z-[9999]
