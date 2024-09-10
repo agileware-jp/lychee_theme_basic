@@ -48,27 +48,32 @@
 
   /* MainMenuのスクロールバー調整 */
   // 横スクロールが発生するとき
-  #main-menu ul:not(.menu-children) {
+  #main-menu {
     @apply overflow-x-scroll py-1
   }
 
-  #main-menu ul:not(.menu-children)::-webkit-scrollbar {
-    @apply h-[4px]
-  }
-
-  #main-menu ul:not(.menu-children)::-webkit-scrollbar-thumb {
-    @apply cursor-grab bg-background-dark/20 rounded
-  }
-
-  #main-menu:hover ul:not(.menu-children)::-webkit-scrollbar-thumb {
-    @apply bg-background-dark/50
-  }
-
-  #main-menu ul:not(.menu-children)::-webkit-scrollbar-thumb:active {
+  #main-menu.active,
+  #main-menu.active * {
     @apply cursor-grabbing
   }
 
-  #main-menu ul:not(.menu-children)::-webkit-scrollbar-corner {
+  #main-menu::-webkit-scrollbar {
+    @apply h-[4px]
+  }
+
+  #main-menu::-webkit-scrollbar-thumb {
+    @apply cursor-grab bg-background-dark/20 rounded
+  }
+
+  #main-menu:hover::-webkit-scrollbar-thumb {
+    @apply bg-background-dark/50
+  }
+
+  #main-menu::-webkit-scrollbar-thumb:active {
+    @apply cursor-grabbing
+  }
+
+  #main-menu::-webkit-scrollbar-corner {
     @apply hidden
   }
 
