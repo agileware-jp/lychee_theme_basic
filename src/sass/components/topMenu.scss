@@ -130,12 +130,6 @@
   }
 
 
-  /* lychee_help */
-  #top-menu > ul a.lychee-icon.lychee-help {
-    background-image: url(images/help_dark.svg);
-  }
-
-
   /* 管理 */
   #top-menu > ul a.administration {
     background-image: url(images/manage_accounts_dark.svg);
@@ -285,6 +279,17 @@
 
   // isTopMenuOpen
   .isTopMenuOpen #top-menu #account ul li a {
+    @apply overflow-visible indent-0 pl-6
+  }
+
+
+  /* lychee_help */
+  #account .lychee-help {
+    background-image: url(images/help_dark.svg);
+    @apply bg-no-repeat bg-[length:20px_20px] bg-[left_center]
+  }
+
+  #top-menu.aw_topMenuHover .lychee-help {
     @apply overflow-visible indent-0 pl-6
   }
 

@@ -1,4 +1,4 @@
-import { addDefaultTopMenStyle, initToggleTopMenu } from './topMenu'
+import { addDefaultTopMenStyle, initToggleTopMenu, moveLycheeHelp } from './topMenu'
 import { addNoScrollClass, saveMainMenuScrollPosition, restoreMainMenuScrollPosition, dragScroll } from './mainMenu'
 import { addDefaultSidebarStyle, initToggleSidebar } from './sidebar'
 import { waitForBilling, checkTrial, copyBillingContainer } from './billing'
@@ -63,6 +63,7 @@ window.addEventListener('load', restoreMainMenuScrollPosition);
  */
 window.addEventListener('scroll', toggleBackToTopBtn)
 window.addEventListener('DOMContentLoaded', () => {
+  moveLycheeHelp()
   createBackToTopBtn()
   hiddenTabsButtons()
   addFeedbackLink()
