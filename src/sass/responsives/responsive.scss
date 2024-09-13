@@ -627,6 +627,10 @@
     @apply content-none
   }
 
+  #admin-index #admin-menu ul {
+    @apply columns-1
+  }
+
   /*----------------------------------------*\
     E) UX ELEMENTS
   \*----------------------------------------*/

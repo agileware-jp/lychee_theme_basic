@@ -3,22 +3,15 @@
     @apply bg-background-secondary mt-4 p-1.5 rounded-lg 
   }
 
-  #admin-index #admin-menu {
-  }
-
   #admin-index #admin-menu ul {
-    @apply grid grid-cols-[repeat(auto-fit,_minmax(220px,_1fr))] gap-1.5
-  }
-
-  #admin-index #admin-menu ul li {
-    @apply min-h-[50px]
+    @apply columns-3 gap-1.5
   }
 
   #admin-index #admin-menu ul li:not(:first-child) {
-    @apply mt-0
+    @apply mt-1.5
   }
 
   #admin-index #admin-menu ul li a {
-    @apply grid items-center h-full bg-background-primary bg-[12px_center] border border-border-divider text-xs pr-3 pl-8 rounded-md shadow-sm hover:bg-background-primary/50 hover:shadow-none
+    @apply grid items-center min-h-[60px] bg-background-primary bg-[12px_center] border border-border-divider text-xs pr-3 pl-8 rounded-md shadow-sm hover:bg-background-primary/50 hover:shadow-none
   }
 }
