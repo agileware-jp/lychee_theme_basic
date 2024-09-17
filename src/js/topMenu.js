@@ -116,12 +116,15 @@ function addTopMenuHoverEffect() {
   const topMenu = getTopMenu()
   if(!topMenu) return
 
-  const DELAY = 50
+  const DELAY = 100
   let hoverTimer
 
   topMenu.addEventListener('mouseenter', () => {
     hoverTimer = setTimeout(() => {
-      topMenu.classList.add('aw_topMenuHover')
+      // メニュー展開固定時にはマウスオーバーアニメーションは不要なので、閉じているときのみ実行
+      if(!document.body.classList.contains('isTopMenuOpen')) {
+        topMenu.classList.add('aw_topMenuHover')
+      }
     }, DELAY)
   })
 
