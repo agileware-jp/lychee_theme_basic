@@ -8,8 +8,13 @@
       @apply bg-background-secondary/50
     }
 
-    [id^="tab-content-"] .box.settings {
-      @apply mb-4 py-1.5 px-0
+    [id^="tab-content-"] .box {
+      @apply bg-background-secondary/50
+    }
+
+    [id^="tab-content-"] .box.settings,
+    [id^="tab-content-"] .box:has(> .settings) {
+      @apply mb-4 py-1.5
     }
 
     [id^="tab-content-"] .box.settings.enabled_scm {

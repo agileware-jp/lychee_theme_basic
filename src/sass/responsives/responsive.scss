@@ -911,20 +911,31 @@
     max-width: 100%;
   }
 
-  [id^="tab-content-"] .box.settings {
-    @apply py-2
+  .controller-settings {
+    [id^="tab-content-"] .box.settings,
+    [id^="tab-content-"] .box:has(> .settings) {
+      @apply py-4
+    }
   }
 
   /* tabular forms resets for mobile */
-  .tabular p, .tabular.settings p {
+  .tabular p, .tabular.settings p, [id^="tab-content-"] .tabular.settings p {
     padding-left: 0;
   }
 
-  [id^="tab-content-"] .tabular.settings.box > p {
-    @apply px-4 hover:bg-transparent
+  [id^="tab-content-"] .tabular.settings > p {
+    @apply border-solid border-b border-border-divider mb-4 pb-4
   }
 
-  .tabular label, .tabular.settings label {
+  [id^="tab-content-"] .tabular.settings > p:last-of-type {
+    @apply border-none mb-0
+  }
+
+  [id^="tab-content-"] .tabular.settings > p:hover::before {
+    @apply content-none
+  }
+
+  .tabular label, .tabular.settings label, [id^="tab-content-"] .tabular.settings label {
     display: block;
     width: 100%;
     margin-left: 0;

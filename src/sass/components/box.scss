@@ -3,15 +3,8 @@
     @apply bg-background-primary border-border-divider mb-6 p-4 rounded-md
   }
 
-  // .box.tabular,
-  // .box.tabular.settings {
-  //   @apply border-transparent px-0
-  // }
-
   .box h3 {
-    font-weight: bold;
-
-    @apply text-sm text-text-default mt-0 mb-2
+    @apply text-sm text-text-default font-bold mt-0 mb-2
   }
 
   // Issues
