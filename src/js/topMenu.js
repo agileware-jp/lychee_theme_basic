@@ -27,10 +27,9 @@ const TOGGLE_TOP_MENU_WRAP_STYLE = `
 
 const TOGGLE_TOP_MENU_BTN_STYLE = `
   display: block;
-  width: 100%;
   background-repeat: no-repeat;
   background-size: 20px 20px;
-  background-position: left center;
+  background-position: 4px center;
   border: 0;
 `
 
@@ -113,8 +112,31 @@ function toggleTopMenu(btn) {
   })
 }
 
+function addTopMenuHoverEffect() {
+  const topMenu = getTopMenu()
+  if(!topMenu) return
+
+  const DELAY = 100
+  let hoverTimer
+
+  topMenu.addEventListener('mouseenter', () => {
+    hoverTimer = setTimeout(() => {
+      // メニュー展開固定時にはマウスオーバーアニメーションは不要なので、閉じているときのみ実行
+      if(!document.body.classList.contains('isTopMenuOpen')) {
+        topMenu.classList.add('aw_topMenuHover')
+      }
+    }, DELAY)
+  })
+
+  topMenu.addEventListener('mouseleave', () => {
+    clearTimeout(hoverTimer)
+    topMenu.classList.remove('aw_topMenuHover')
+  })
+}
+
 export function initToggleTopMenu() {
   addBtnToToggleTopMenu()
+  addTopMenuHoverEffect()
   addLogoutStyle()
 
   // topMenuの復原処理
@@ -123,4 +145,21 @@ export function initToggleTopMenu() {
   } else {
     document.body.classList.remove('isTopMenuOpen')
   }
+}
+
+
+/**
+ * ヘルプメニューの位置を変更する
+ */
+export function moveLycheeHelp() {
+  const lycheeHelp = document.querySelector('.lychee-help')
+  if(lycheeHelp === null) return
+
+  const lycheeHelpWrap = lycheeHelp.closest('li')
+  const accountMenu = document.querySelector('#account > ul')
+
+  lycheeHelpWrap.classList.add('aw_lycheeHelp_li')
+  lycheeHelpWrap.style.order = '5'
+
+  accountMenu.appendChild(lycheeHelpWrap)
 }

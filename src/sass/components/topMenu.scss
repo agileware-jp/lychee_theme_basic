@@ -1,7 +1,7 @@
 @layer components {
   /* TopMenu */
   #top-menu {
-    @apply overflow-y-auto fixed top-0 left-0 flex flex-col w-[52px] h-full bg-background-secondary text-xs leading-5 p-4 z-[699] pt-[69px]
+    @apply overflow-y-auto fixed top-0 left-0 flex flex-col w-[52px] h-full bg-background-secondary text-xs leading-5 p-3 z-[699] pt-[69px]
   }
 
   #top-menu::-webkit-scrollbar {
@@ -9,8 +9,8 @@
   }
 
   // 閉じているとき
-  #top-menu:hover {
-    @apply w-[180px] z-[9999]
+  #top-menu.aw_topMenuHover {
+    @apply w-[180px] z-[9999] transition-[width]
   }
 
   #top-menu > ul {
@@ -37,16 +37,16 @@
   /* TopMenuの開閉ボタン */
   .aw_toggleTopMenu {
     background-image: url(images/menu_dark.svg);
-    @apply block overflow-hidden indent-[100%] whitespace-nowrap
+    @apply block overflow-hidden indent-[100%] whitespace-nowrap pl-7
   }
 
   .aw_toggleTopMenu:hover {
     @apply opacity-60
   }
 
-  #top-menu:hover .aw_toggleTopMenu {
+  #top-menu.aw_topMenuHover .aw_toggleTopMenu {
     background-image: url(images/keep_dark.svg);
-    @apply overflow-visible indent-0 pl-1
+    @apply indent-0
   }
 
   .isTopMenuOpen #top-menu .aw_toggleTopMenu {
@@ -54,22 +54,22 @@
   }
 
   // 開いているときにマウスオーバーしても「メニューを固定する」というラベルは表示しない
-  .isTopMenuOpen #top-menu:hover .aw_toggleTopMenu {
+  .isTopMenuOpen #top-menu.aw_topMenuHover .aw_toggleTopMenu {
     @apply overflow-hidden indent-[100%]
   }
 
 
   /* top-menuのアイコン化管理 */
   #top-menu > ul > li > a {
-    @apply relative block overflow-hidden indent-[100%] whitespace-nowrap bg-no-repeat bg-[length:20px_20px] bg-[left_3px] min-h-[20px] py-1
+    @apply relative block overflow-hidden indent-[100%] whitespace-nowrap bg-no-repeat bg-[length:20px_20px] bg-[4px_3px] min-h-[20px] py-1
   }
 
-  #top-menu:hover > ul > li > a {
-    @apply overflow-visible indent-0 whitespace-normal pl-6
+  #top-menu.aw_topMenuHover > ul > li > a {
+    @apply indent-0 pl-7 text-ellipsis
   }
 
   .isTopMenuOpen #top-menu > ul > li > a {
-    @apply overflow-visible indent-0 whitespace-normal pl-6
+    @apply overflow-visible indent-0 whitespace-normal pl-7
   }
 
   /* top-menuのlychee系 */
@@ -107,14 +107,14 @@
   /* LRM */
   #top-menu > ul a.lychee-icon.resource-management {
     background-image: url(images/lrm_dark.svg);
-    @apply block bg-[left_center]
+    @apply block bg-[4px_center]
   }
 
 
   /* 横断LPR */
   #top-menu > ul a.lychee-icon.project-reports {
     background-image: url(images/lpr_dark.svg);
-    @apply block bg-[left_center]
+    @apply block bg-[4px_center]
   }
 
 
@@ -127,12 +127,6 @@
   /* time_management: 作業実績 */
   #top-menu > ul a.lychee-icon.time-management {
     background-image: url(images/time_management_dark.svg);
-  }
-
-
-  /* lychee_help */
-  #top-menu > ul a.lychee-icon.lychee-help {
-    background-image: url(images/help_dark.svg);
   }
 
 
@@ -154,16 +148,16 @@
 
   #loggedas .user {
     background-image: url(images/person_dark.svg);
-    @apply block overflow-hidden indent-[100%] whitespace-nowrap bg-no-repeat bg-[length:20px_20px] bg-[left_center]
+    @apply block overflow-hidden indent-[100%] whitespace-nowrap bg-no-repeat bg-[length:20px_20px] bg-[4px_center]
   }
 
   // 開いているとき
-  #top-menu:hover #loggedas .user {
-    @apply overflow-visible indent-0 pl-6
+  #top-menu.aw_topMenuHover #loggedas .user {
+    @apply indent-0 pl-7 text-ellipsis
   }
 
   .isTopMenuOpen #top-menu #loggedas .user {
-    @apply overflow-visible indent-0 pl-6
+    @apply indent-0 pl-7
   }
 
   /* account */
@@ -194,116 +188,124 @@
   #top-menu .lychee-message-box-icon.lychee-message-box-icon,
   #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread {
     background-image: url(images/mail_dark.svg);
-    @apply relative bg-no-repeat bg-[length:20px_20px] bg-[left_center] pl-6
+    @apply block overflow-hidden indent-[100%] whitespace-nowrap relative bg-no-repeat bg-[length:20px_20px] bg-[4px_center] pl-7
   }
 
   #top-menu .lychee-message-box-icon.lychee-message-box-icon::before,
   #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread::before {
-    content: '';
+    @apply content-none
   }
 
   #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread::after {
     content: '';
-    @apply absolute -top-[2px] right-[1px] block w-[10px] h-[10px] bg-status-danger rounded-full
+    @apply absolute top-[2px] left-[16px] block w-[10px] h-[10px] bg-status-danger rounded-full
   }
 
 
   /* MessageBox: 開いているとき */
   // 未読なし
-  #top-menu:hover .lychee-message-box-icon.lychee-message-box-icon,
-  #top-menu:hover .lychee-message-box-icon.lychee-message-box-icon.unread {
-    @apply bg-[left_center]
-  }
-
-  #top-menu:hover .lychee-message-box-icon.lychee-message-box-icon::before {
-    content: 'メッセージ';
+  #top-menu.aw_topMenuHover .lychee-message-box-icon.lychee-message-box-icon,
+  #top-menu.aw_topMenuHover .lychee-message-box-icon.lychee-message-box-icon.unread {
+    @apply indent-0 bg-[4px_center] text-ellipsis
   }
 
   // 未読ありの場合
-  #top-menu:hover .lychee-message-box-icon.lychee-message-box-icon.unread::before {
-    content: 'メッセージがあります';
+  #top-menu.aw_topMenuHover .lychee-message-box-icon.lychee-message-box-icon.unread {
     @apply font-bold
   }
 
-  #top-menu:hover .lychee-message-box-icon.lychee-message-box-icon.unread::after {
-    @apply -right-[8px]
-  }
-
-  .isTopMenuOpen #top-menu .lychee-message-box-icon.lychee-message-box-icon::before {
-    content: 'メッセージ';
-  }
-
-  .isTopMenuOpen #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread::before {
-    content: 'メッセージがあります';
+  .isTopMenuOpen #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread {
     @apply font-bold
-  }
-
-  .isTopMenuOpen #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread::after {
-    @apply -right-[8px]
   }
 
 
   /* 個人設定 */
   #top-menu .my-account {
     background-image: url(images/construnction_dark.svg);
-    @apply bg-no-repeat bg-[length:20px_20px] bg-[left_center]
+    @apply bg-no-repeat bg-[length:20px_20px] bg-[4px_center]
   }
 
   // 開いているとき
-  #top-menu:hover .my-account {
-    @apply overflow-visible indent-0 pl-6
+  #top-menu.aw_topMenuHover .my-account {
+    @apply indent-0 pl-7 text-ellipsis
   }
 
   /* ログアウト */
   #top-menu .logout {
     background-image: url(images/logout_dark.svg);
-    @apply bg-no-repeat bg-[length:20px_20px] bg-[left_center]
+    @apply bg-no-repeat bg-[length:20px_20px] bg-[4px_center]
   }
 
   // 開いているとき
-  #top-menu:hover .logout {
-    @apply overflow-visible indent-0 pl-6
+  #top-menu.aw_topMenuHover .logout {
+    @apply indent-0 pl-7 text-ellipsis
   }
 
 
   /* ログイン */
   #top-menu .login {
     background-image: url(images/login_dark.svg);
-    @apply bg-no-repeat bg-[length:20px_20px] bg-[left_center]
+    @apply bg-no-repeat bg-[length:20px_20px] bg-[4px_center]
   }
 
   // 開いているとき
-  #top-menu:hover .login {
-    @apply overflow-visible indent-0 pl-6
+  #top-menu.aw_topMenuHover .login {
+    @apply indent-0 pl-7 text-ellipsis
   }
 
 
   /* 登録する */
   #top-menu .register {
     background-image: url(images/person_add_dark.svg);
-    @apply bg-no-repeat bg-[length:20px_20px] bg-[left_center]
+    @apply bg-no-repeat bg-[length:20px_20px] bg-[4px_center]
   }
 
   // 開いているとき
-  #top-menu:hover .register {
-    @apply overflow-visible indent-0 pl-6
+  #top-menu.aw_topMenuHover .register {
+    @apply indent-0 pl-7 text-ellipsis
   }
 
 
   /* フィードバックリンク */
   .aw_fbLink {
     background-image: url(images/feedback_dark.svg);
-    @apply bg-no-repeat bg-[length:20px_20px] bg-[left_center]
+    @apply bg-no-repeat bg-[length:20px_20px] bg-[4px_center]
   }
 
   // 閉じているとき
-  #top-menu:hover .aw_fbLink {
-    @apply overflow-visible indent-0 pl-6
+  #top-menu.aw_topMenuHover .aw_fbLink {
+    @apply indent-0 pl-7 text-ellipsis
   }
+
+
+  /* lychee_help */
+  #account .lychee-help {
+    background-image: url(images/question_mark_onFill.svg);
+    @apply h-[28px] bg-product-default bg-no-repeat bg-[length:14px_14px] bg-[7px_center] text-text-onFill font-bold rounded-full shadow-md
+  }
+
+  @keyframes mouseover {
+    from {
+      padding-left: 1.75rem;
+    }
+    to {
+      padding-left: 0;
+    }
+  }
+
+  #top-menu.aw_topMenuHover .lychee-help {
+    animation: mouseover 150ms forwards;
+    @apply overflow-visible indent-0 text-center
+  }
+
+  .isTopMenuOpen #top-menu #account ul li .lychee-help {
+    @apply text-center pl-0
+  }
+
 
   // isTopMenuOpen
   .isTopMenuOpen #top-menu #account ul li a {
-    @apply overflow-visible indent-0 pl-6
+    @apply overflow-visible indent-0 pl-7
   }
 
 

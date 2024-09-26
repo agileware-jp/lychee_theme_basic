@@ -1,7 +1,8 @@
-import { addDefaultTopMenStyle, initToggleTopMenu } from './topMenu'
+import { addDefaultTopMenStyle, initToggleTopMenu, moveLycheeHelp } from './topMenu'
 import { addNoScrollClass, saveMainMenuScrollPosition, restoreMainMenuScrollPosition, dragScroll } from './mainMenu'
 import { addDefaultSidebarStyle, initToggleSidebar } from './sidebar'
 import { waitForBilling, checkTrial, copyBillingContainer } from './billing'
+import { insertTextMessageBox } from './messageBox'
 import { createBackToTopBtn, toggleBackToTopBtn } from './backToTop'
 
 /* ちらつき防止のため、topMenuの初期スタイルを追加する */
@@ -43,7 +44,7 @@ function addFeedbackLink() {
   `
 
   a.style.cssText = `
-    padding-left: 1.5rem;
+    padding-left: 1.75rem;
   `
 
   li.appendChild(a)
@@ -62,9 +63,11 @@ window.addEventListener('load', restoreMainMenuScrollPosition);
  */
 window.addEventListener('scroll', toggleBackToTopBtn)
 window.addEventListener('DOMContentLoaded', () => {
+  moveLycheeHelp()
   createBackToTopBtn()
   hiddenTabsButtons()
   addFeedbackLink()
+  insertTextMessageBox()
 
   dragScroll()
 
