@@ -59,14 +59,14 @@
   .aw_backToTop {
     // @extend .BTN_PRIMARY;
     background-image: url(images/arrow_upward_onFill.svg);
-    @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap w-8 h-8 bg-center align-middle bg-background-dark/80 bg-no-repeat border-none p-0 rounded-md fixed right-4 bottom-4 z-[499] hover:bg-background-dark/70 shadow-md
+    @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap w-8 h-8 bg-center align-middle bg-background-dark/80 bg-no-repeat border-none p-0 rounded-lg fixed right-4 bottom-4 z-[499] hover:bg-background-dark/70 shadow-md
   }
 
   // Sidebarの開閉ボタン
   .aw_toggleSidebar {
     @extend .BTN_TERTIARY_ICON_ONLY_OUTLINED;
     background-image: url(images/move_right_default.svg);
-    @apply absolute top-[1.15rem] right-[14.25rem] z-10
+    @apply absolute top-4 right-[14.25rem] z-10
   }
 
   .isSidebarClose .aw_toggleSidebar {

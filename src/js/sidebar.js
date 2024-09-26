@@ -109,5 +109,39 @@ export function initToggleSidebar() {
     } else {
       openSidebar()
     }
+
+    // sidebar開閉ボタンの固定
+    fixedToggleSidebarButton(toggleTrigger)
   }
+}
+
+/**
+ * Sidebarの開閉ボタンをスクロール時に固定する
+ */
+function fixedToggleSidebarButton(toggleButton) {
+  const sidebar = document.getElementById('sidebar')
+
+  const mediaQuery = window.matchMedia('(max-width: 899px)')
+
+  function checkAndExecute() {
+    const fixedPosition = sidebar.getBoundingClientRect().top + window.scrollY
+    if (!mediaQuery.matches) {
+      // PC表示のときはスクロールに応じた処理を追加
+      window.addEventListener('scroll', () => handleScroll(fixedPosition));
+    } else {
+      // スマホ表示のときは処理を削除して初期状態にリセット
+      window.removeEventListener('scroll', () => handleScroll(fixedPosition));
+    }
+  }
+
+  function handleScroll(fixedPosition) {
+    if(window.scrollY < fixedPosition) {
+      toggleButton.style.position = 'absolute'
+    } else {
+      toggleButton.style.position = 'fixed'
+    }
+  }
+
+  checkAndExecute()
+  mediaQuery.addEventListener('change', checkAndExecute)
 }
