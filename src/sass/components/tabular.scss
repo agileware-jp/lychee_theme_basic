@@ -14,7 +14,11 @@
   }
 
   .tabular.settings p {
-    @apply pl-[18rem]
+    @apply pl-[17rem]
+  }
+
+  [id^="tab-content-"] .tabular.settings p {
+    @apply pl-[19rem]
   }
 
   .tabular p ~ p {
@@ -29,16 +33,36 @@
     @apply border-b border-border-divider mb-4 pb-4
   }
 
+  [id^="tab-content-"] .tabular.settings > p {
+    @apply relative border-none mb-0 py-1 z-0 
+  }
+
+  [id^="tab-content-"] .tabular.settings > p:hover::before {
+    content: '';
+    display: block;
+    width: calc(100% + 2rem);
+    height: calc(100% + 2px);
+    @apply absolute top-0 bottom-0 -left-4 h-full -z-[1] bg-background-tertiary/50
+  }
+
   .tabular.settings p:last-of-type {
     @apply border-none mb-0 pb-0
   }
 
-  .tabular label {
+  [id^="tab-content-"] .tabular.settings > p:last-of-type {
+    @apply pb-1
+  }
+
+  .tabular label { 
     @apply w-[9rem] text-xs text-text-default -ml-[10rem] translate-y-1
   }
 
   .tabular.settings label {
-    @apply w-[17rem] text-xs text-text-default text-left -ml-[18rem] translate-y-1
+    @apply w-[15rem] text-xs text-text-default text-left -ml-[16rem] translate-y-1
+  }
+
+  [id^="tab-content-"] .tabular.settings label {
+    @apply w-[18rem] text-[13px] -ml-[19rem] translate-y-0
   }
 
   .tabular textarea {

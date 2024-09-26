@@ -16,8 +16,7 @@
   }
 
   #content .jstTabs.tabs {
-    // margin-bottom: -1px;
-    @apply h-auto mb-2
+    @apply h-auto mb-1.5
   }
 
   #content .jstTabs.tabs ul {
@@ -27,13 +26,6 @@
 
   #content .jstTabs.tabs li {
     @apply h-auto
-  }
-
-  #content .jstTabs.tabs li:before{
-    // content: '';
-    // display: inline-block;
-    // vertical-align: middle;
-    // height: 100%;
   }
 
   #content .jstTabs.tabs li a {
@@ -58,7 +50,7 @@
 
   #content .jstTabs.tabs ul li:nth-child(1) a,
   #content .jstTabs.tabs ul li:nth-child(2) a {
-    @apply px-3 py-1 rounded-md
+    @apply text-[11px] px-2 py-0.5 rounded-md
   }
 
   #content .jstTabs.tabs ul li a.selected {
