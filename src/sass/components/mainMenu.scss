@@ -30,7 +30,7 @@
 
   /* main-menu > new-object */
   #main-menu ul li:has(.new-object) {
-    @apply flex items-center
+    @apply sticky left-0 flex items-center z-[699]
   }
 
   #main-menu .menu-children {
