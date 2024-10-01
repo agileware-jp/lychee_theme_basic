@@ -1,4 +1,4 @@
-function isMenuExists() {
+function isMenuListExists() {
   return document.querySelector('#main-menu > ul:not(.menu-children)') !== null
 }
 
@@ -15,7 +15,7 @@ function isScrollable(scrollContainer) {
 }
 
 export function addScrollableClass() {
-  if(!isMenuExists()) return
+  if(!isMenuListExists()) return
 
   const container = getMainMenuList()
   if(isScrollable(container)) {
@@ -32,7 +32,7 @@ function initScrollPosition() {
 }
 
 export function saveMainMenuScrollPosition() {
-  if(!isMenuExists()) return
+  if(!isMenuListExists()) return
 
   const mainMenu = getMainMenu()
 
@@ -47,7 +47,7 @@ export function saveMainMenuScrollPosition() {
 }
 
 export function restoreMainMenuScrollPosition() {
-  if(!isMenuExists()) return
+  if(!isMenuListExists()) return
 
   const mainMenu = getMainMenu()
 
@@ -65,7 +65,7 @@ export function restoreMainMenuScrollPosition() {
 }
 
 export function dragScroll() {
-  if(!isMenuExists()) return
+  if(!isMenuListExists()) return
 
   // スクロールが発生する場合
   const mainMenu = getMainMenu()
@@ -90,7 +90,7 @@ export function dragScroll() {
     })
 
     function mouseMoveHandler(e) {
-      if (!isDragging) return
+      if(!isDragging) return
       e.preventDefault()
       const x = e.pageX - mainMenu.offsetLeft
       const walk = x - startX
