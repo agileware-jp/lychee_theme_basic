@@ -3,6 +3,10 @@ function isMenuExists() {
 }
 
 function getMainMenu() {
+  return document.getElementById('main-menu')
+}
+
+function getMainMenuList() {
   return document.querySelector('#main-menu > ul:not(.menu-children)')
 }
 
@@ -10,14 +14,14 @@ function isScrollable(scrollContainer) {
   return scrollContainer.scrollWidth > scrollContainer.clientWidth
 }
 
-export function addNoScrollClass() {
+export function addScrollableClass() {
   if(!isMenuExists()) return
 
-  const container = getMainMenu()
+  const container = getMainMenuList()
   if(isScrollable(container)) {
-    container.classList.remove('noScroll')
+    container.closest('#main-menu').classList.add('scrollable')
   } else {
-    container.classList.add('noScroll')
+    container.closest('#main-menu').classList.remove('scrollable')
   }
 }
 
@@ -66,17 +70,16 @@ export function dragScroll() {
   // スクロールが発生する場合
   const mainMenu = getMainMenu()
   if(isScrollable(mainMenu)) {
-    const container = document.querySelector('#main-menu')
     let isDragging = false
     let startX
     let scrollLeft
     let preventClick = false
 
-    container.addEventListener('mousedown', (e) => {
+    mainMenu.addEventListener('mousedown', (e) => {
       if(e.button !== 0) return // 左クリックのみドラッグスクロールしたい
       isDragging = true
-      startX = e.pageX - container.offsetLeft
-      scrollLeft = container.scrollLeft
+      startX = e.pageX - mainMenu.offsetLeft
+      scrollLeft = mainMenu.scrollLeft
 
       document.addEventListener('mousemove', mouseMoveHandler)
       document.addEventListener('mouseup', mouseUpHandler)
@@ -89,26 +92,26 @@ export function dragScroll() {
     function mouseMoveHandler(e) {
       if (!isDragging) return
       e.preventDefault()
-      const x = e.pageX - container.offsetLeft
+      const x = e.pageX - mainMenu.offsetLeft
       const walk = x - startX
-      container.scrollLeft = scrollLeft - walk
+      mainMenu.scrollLeft = scrollLeft - walk
 
       // クリック時の僅かな動きでリンクが無効化されないよう、ある程度スクロールが発生したときに限定する
       if(Math.abs(walk) > 5) {
-        container.classList.add('active')
+        mainMenu.classList.add('active')
         preventClick = true
       }
     }
 
     function mouseUpHandler() {
       isDragging = false
-      container.classList.remove('active')
+      mainMenu.classList.remove('active')
 
       document.removeEventListener('mousemove', mouseMoveHandler)
       document.removeEventListener('mouseup', mouseUpHandler)
     }
 
-    container.addEventListener('click', (e) => {
+    mainMenu.addEventListener('click', (e) => {
       if(preventClick) {
         e.preventDefault()
         preventClick = false
