@@ -59,6 +59,17 @@
   }
 
 
+  /* top-menuの順番管理 */
+  // 「管理」メニューを一番下に固定したい
+  #top-menu > ul li:not(:has(.administration)) {
+    @apply order-1
+  }
+
+  #top-menu > ul li:has(.administration) {
+    @apply order-2
+  }
+
+
   /* top-menuのアイコン化管理 */
   #top-menu > ul > li > a {
     @apply relative block overflow-hidden indent-[100%] whitespace-nowrap bg-no-repeat bg-[length:20px_20px] bg-[4px_3px] min-h-[20px] py-1
