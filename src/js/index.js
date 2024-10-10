@@ -1,5 +1,5 @@
 import { addDefaultTopMenStyle, initToggleTopMenu, moveLycheeHelp } from './topMenu'
-import { addNoScrollClass, saveMainMenuScrollPosition, restoreMainMenuScrollPosition, dragScroll } from './mainMenu'
+import { addScrollableClass, saveMainMenuScrollPosition, restoreMainMenuScrollPosition, dragScroll } from './mainMenu'
 import { addDefaultSidebarStyle, initToggleSidebar } from './sidebar'
 import { waitForBilling, checkTrial, copyBillingContainer } from './billing'
 import { insertTextMessageBox } from './messageBox'
@@ -54,7 +54,7 @@ function addFeedbackLink() {
 /**
  * MainMenuの横スクロールに関する処理
  */
-window.addEventListener('resize', addNoScrollClass)
+window.addEventListener('resize', addScrollableClass)
 window.addEventListener('beforeunload', saveMainMenuScrollPosition);
 window.addEventListener('load', restoreMainMenuScrollPosition);
 
@@ -85,7 +85,7 @@ window.addEventListener('DOMContentLoaded', () => {
   /**
    * MainMenuの調整
    */
-  addNoScrollClass()
+  addScrollableClass()
 
 
   /**

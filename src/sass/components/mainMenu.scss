@@ -47,8 +47,18 @@
   }
 
   /* MainMenuのスクロールバー調整 */
-  // 横スクロールが発生するとき
+
+  // 横スクロールが発生しないとき
   #main-menu {
+    @apply overflow-x-visible
+  }
+
+  #main-menu::-webkit-scrollbar {
+    @apply h-0
+  }
+
+  // 横スクロールが発生するとき
+  #main-menu.scrollable {
     @apply overflow-x-scroll py-1
   }
 
@@ -57,32 +67,23 @@
     @apply cursor-grabbing
   }
 
-  #main-menu::-webkit-scrollbar {
+  #main-menu.scrollable::-webkit-scrollbar {
     @apply h-[4px]
   }
 
-  #main-menu::-webkit-scrollbar-thumb {
+  #main-menu.scrollable::-webkit-scrollbar-thumb {
     @apply cursor-grab bg-background-dark/20 rounded
   }
 
-  #main-menu:hover::-webkit-scrollbar-thumb {
+  #main-menu.scrollable:hover::-webkit-scrollbar-thumb {
     @apply bg-background-dark/50
   }
 
-  #main-menu::-webkit-scrollbar-thumb:active {
+  #main-menu.scrollable::-webkit-scrollbar-thumb:active {
     @apply cursor-grabbing
   }
 
-  #main-menu::-webkit-scrollbar-corner {
+  #main-menu.scrollable::-webkit-scrollbar-corner {
     @apply hidden
-  }
-
-  // 横スクロールが発生しないとき
-  #main-menu ul.noScroll {
-    @apply overflow-x-visible
-  }
-
-  #main-menu ul.noScroll::-webkit-scrollbar {
-    @apply h-0
   }
 }
