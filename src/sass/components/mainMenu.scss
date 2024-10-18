@@ -85,4 +85,19 @@
   #main-menu ul.noScroll::-webkit-scrollbar {
     @apply h-0
   }
+
+
+  /* Lycheeアイコンの差し替え */
+  #main-menu .lychee-icon.lychee-icon:before,
+  #main-menu .lychee-icon.lychee-icon.selected:before,
+  .flyout-menu .lychee-icon.lychee-icon:before,
+  .flyout-menu .lychee-icon.lychee-icon.selected:before {
+    content: '';
+    width: 13px;
+    height: 13px;
+    background-image: url(images/lychee_default.svg);
+    background-size: cover;
+    background-position: center 1px;
+    background-repeat: no-repeat;
+  }
 }
