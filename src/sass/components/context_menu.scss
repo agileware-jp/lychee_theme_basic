@@ -92,13 +92,16 @@ div#gantt_area .context-menu-selection a { color: #169; }
     background-repeat: no-repeat;
   }
 
-  .context-menu-selection.context-menu-selection,
-  .context-menu-selection.context-menu-selection:hover {
-    @apply bg-background-primary text-text-default
+  .context-menu-selection.context-menu-selection {
+    @apply bg-status-info/20 text-text-default
   }
 
   .context-menu-selection.context-menu-selection a,
   .context-menu-selection.context-menu-selection a:hover {
-    @apply text-text-link;
+    @apply text-text-default
+  }
+
+  .context-menu-selection.context-menu-selection:hover {
+    @apply bg-status-info/30
   }
 }
