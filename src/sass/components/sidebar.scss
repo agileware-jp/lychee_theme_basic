@@ -147,6 +147,11 @@
     @apply bg-background-tertiary bg-[left_8px_center]
   }
 
+  #admin-menu .lychee-icon.lychee-icon,
+  #admin-menu .icon-lychee-cost-group {
+    background-image: url(images/lychee_default.svg);
+  }
+
   #admin-menu#admin-menu a.redmine-logs {
     background-image: url(images/overview_default.svg);
   }
