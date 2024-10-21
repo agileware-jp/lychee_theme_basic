@@ -11,7 +11,7 @@
   }
 
   #sidebar h3 {
-    @apply text-text-default text-sm mt-4
+    @apply text-text-default text-[13px] leading-[1.125rem] mt-4
   }
 
 
@@ -32,7 +32,7 @@
   }
 
   #admin-menu a {
-    @apply text-sm
+    @apply text-[13px] leading-[1.125rem]
   }
 
   #sidebar #watchers {
@@ -79,19 +79,23 @@
   }
 
   #sidebar ul li:not(:first-child) {
-    @apply mt-1
+    @apply mt-0.5
   }
 
   #sidebar ul li a {
-    @apply block grow text-sm m-0 px-2 py-1.5 rounded
+    @apply block grow text-[13px] leading-[1.125rem] m-0 px-2 py-1.5 rounded
   }
 
   #sidebar ul li a:hover {
-    @apply bg-background-secondary
+    @apply bg-background-tertiary
   }
 
   #sidebar a.selected {
-    @apply bg-background-tertiary text-text-default
+    @apply bg-background-tertiary text-text-default font-bold
+  }
+
+  #sidebar a.selected:hover {
+    @apply no-underline
   }
 
   #sidebar a.icon-only {
@@ -131,7 +135,7 @@
   }
 
   #admin-menu ul li a {
-    @apply block grow text-sm m-0 pr-2 py-1.5 pl-7 rounded
+    @apply block grow text-[13px] leading-[1.125rem] m-0 pr-2 py-1.5 pl-7 rounded
   }
 
   #admin-menu ul li a:hover {
