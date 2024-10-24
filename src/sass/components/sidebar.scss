@@ -83,7 +83,7 @@
   }
 
   #sidebar ul li a {
-    @apply block grow text-[13px] leading-[1.125rem] m-0 px-2 py-1.5 rounded
+    @apply block grow text-[13px] leading-[1.125rem] m-0 px-2 py-1 rounded
   }
 
   #sidebar ul li a:hover {
@@ -135,7 +135,7 @@
   }
 
   #admin-menu ul li a {
-    @apply block grow text-[13px] leading-[1.125rem] m-0 pr-2 py-1.5 pl-7 rounded
+    @apply block grow text-[13px] leading-[1.125rem] m-0 pr-2 py-1 pl-7 rounded
   }
 
   #admin-menu ul li a:hover {
@@ -153,5 +153,9 @@
 
   #admin-menu#admin-menu a.redmine-logs {
     background-image: url(images/overview_default.svg);
+  }
+
+  #admin-index #admin-menu ul li a {
+    @apply text-sm py-1.5
   }
 }
