@@ -29,6 +29,10 @@ function hasDescription(el) {
 
 // FBリンク追加
 function addFeedbackLink() {
+  // 未ログイン時は表示しない
+  const loggedas = document.getElementById('loggedas')
+  if(!loggedas) return
+
   const topMenuNav = document.querySelector('#top-menu #account ul')
   const li = document.createElement('li')
   const a = document.createElement('a')
