@@ -92,7 +92,11 @@ div#gantt_area .context-menu-selection a { color: #169; }
     background-repeat: no-repeat;
   }
 
-  .context-menu-selection.context-menu-selection {
+  .context-menu-selection.context-menu-selection,
+  table.list:not(.odd-even) tbody tr.context-menu-selection.context-menu-selection:nth-child(odd),
+  table.list:not(.odd-even) tbody tr.context-menu-selection.context-menu-selection:nth-child(even),
+  .odd.context-menu-selection.context-menu-selection,
+  .even.context-menu-selection.context-menu-selection {
     @apply bg-status-info/20 text-text-default
   }
 
@@ -101,7 +105,11 @@ div#gantt_area .context-menu-selection a { color: #169; }
     @apply text-text-default
   }
 
-  .context-menu-selection.context-menu-selection:hover {
+  .context-menu-selection.context-menu-selection:hover,
+  table.list:not(.odd-even) tbody tr.context-menu-selection.context-menu-selection:nth-child(odd):hover,
+  table.list:not(.odd-even) tbody tr.context-menu-selection.context-menu-selection:nth-child(even):hover,
+  .odd.context-menu-selection.context-menu-selection:hover,
+  .even.context-menu-selection.context-menu-selection:hover {
     @apply bg-status-info/30
   }
 }
