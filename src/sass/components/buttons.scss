@@ -55,6 +55,20 @@
     @apply mt-2
   }
 
+  // チケットIDクイックコピーボタン
+  .aw_copyId {
+    @extend .BTN_TERTIARY_ICON_ONLY;
+    background-image: url(images/content_copy_default.svg);
+    transition: background-image 0.2s;
+    @apply relative w-5 h-5 bg-no-repeat bg-[length:12px_12px] mr-1 mt-0.5
+  }
+
+  .aw_copyId.is_copied {
+    background-image: url(images/done_success.svg);
+    transition: background-image 0.1s;
+    @apply bg-[length:16px_16px]
+  }
+
   // topへ戻るボタン（LIFよりは下に配置するためのz-index指定）
   .aw_backToTop {
     // @extend .BTN_PRIMARY;

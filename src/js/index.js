@@ -51,6 +51,40 @@ function addFeedbackLink() {
   topMenuNav.insertBefore(li, topMenuNav.firstElementChild)
 }
 
+// チケットIDのクイックコピー
+function quickCopyIssueId() {
+  const requiredClasses = ['controller-issues', 'action-show']
+  if(!requiredClasses.every(el => document.body.classList.contains(el))) return
+
+  const copyBtn = document.createElement('button')
+  copyBtn.textContent = 'チケットIDをコピー'
+  copyBtn.className = 'aw_copyId'
+  copyBtn.title = 'チケットIDをコピー'
+
+  copyBtn.addEventListener('click', (e) => {
+    const url = window.location.href
+    const pathSegments = new URL(url).pathname.split('/')
+    const issueId = pathSegments[pathSegments.length - 1]
+
+    if(issueId) {
+      navigator.clipboard.writeText(issueId).then(() => {
+        copyBtn.classList.add('is_copied')
+
+        setTimeout(() => {
+          copyBtn.classList.remove('is_copied')
+        }, 1250)
+      }).catch(error => {
+        console.log('チケットIDのコピーに失敗しました', error)
+      })
+    } else {
+      console.log('チケットIDが取得できません')
+    }
+  })
+
+  const issueIdAndTracker = document.querySelector('#content .contextual + h2.inline-flex')
+  issueIdAndTracker.prepend(copyBtn)
+}
+
 /**
  * MainMenuの横スクロールに関する処理
  */
@@ -174,4 +208,6 @@ window.addEventListener('DOMContentLoaded', () => {
   if([...lgcQueriesBodyClasses].includes('controller-lgc/queries')) {
     document.body.classList.add('aw_lgcQueries')
   }
+
+  quickCopyIssueId()
 })
