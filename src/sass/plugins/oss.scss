@@ -142,6 +142,11 @@
     table.view_customize.box tr:last-child td {
       @apply pb-4
     }
+
+    table.view_customize tr.disable td,
+    table.view_customize tr.disabled a {
+      @apply text-text-caption/60
+    }
   }
 
 
