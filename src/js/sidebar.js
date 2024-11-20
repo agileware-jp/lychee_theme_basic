@@ -3,6 +3,7 @@ const sidebarOpenStyle = `
     width: 15rem;
     padding-right: 0.75rem;
     padding-left: 1rem;
+    white-space: normal;
   }
 
   #sidebar.isSidebarClose {
@@ -27,6 +28,7 @@ const sidebarCloseStyle = `
   #sidebar.isSidebarOpen {
     width: 15rem;
     padding-right: 0.75rem;
+    white-space: normal;
   }
 
   #sidebar.isSidebarOpen *:not(.aw_toggleSidebar) {
