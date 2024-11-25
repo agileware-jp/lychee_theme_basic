@@ -7,8 +7,6 @@
   }
 
   /***** Wiki *****/
-  div.wiki table td[align=left], div.wiki table th[align=left] { text-align: left; }
-  div.wiki table td[align=right], div.wiki table th[align=right] { text-align: right; }
   div.wiki .wiki-class-noborder, div.wiki .wiki-class-noborder td, div.wiki .wiki-class-noborder th {border:0;}
 
   div.wiki .external {
@@ -267,4 +265,10 @@
   .controller-wiki.action-date_index #content h3 + ul li:not(:first-child) {
     @apply mt-2
   }
+
+
+  /* Support 6.0 start */
+  div.wiki table td[align=left], div.wiki table th[align=left] { text-align: left; }
+  div.wiki table td[align=right], div.wiki table th[align=right] { text-align: right; }
+  /* Support 6.0 end */
 }
