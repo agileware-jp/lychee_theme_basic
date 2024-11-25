@@ -242,7 +242,6 @@ input, select, textarea, button { color: #333; background-color: #fff; border:1p
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
-  -ms-appearance: none;
   -o-appearance: none;
   appearance: none;
   background-color: #fff;
@@ -1205,14 +1204,6 @@ img {
   border-radius: 3px;
 }
 
-/* Fixes for IE 11 */
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  select::-ms-expand {
-    display: none;
-  }
-  select[multiple=multiple] {padding-right: 0;}
-}
-
 /* tablesort */
 th[role=columnheader]:not(.no-sort) {
 	cursor: pointer;
@@ -1227,7 +1218,6 @@ th[role=columnheader]:not(.no-sort):after {
 	border-color: #404040 transparent;
 	display: none;
 	opacity: 0;
-	-ms-user-select: none;
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	user-select: none;
