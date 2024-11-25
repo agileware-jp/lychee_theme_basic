@@ -150,4 +150,11 @@
   #admin-menu#admin-menu a.redmine-logs {
     background-image: url(images/overview_default.svg);
   }
+
+
+  /* Support 6.0 start */
+  #sidebar-switch-panel {
+    @apply hidden
+  }
+  /* Support 6.0 end */
 }
