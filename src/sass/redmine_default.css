@@ -77,6 +77,7 @@ table.issues td.block_column span {font-weight: bold; display: block; margin-bot
 table.issues td.block_column pre {white-space:normal;}
 
 table.issue-report {table-layout:fixed;}
+table.issue-report tr.total, table.issue-report-detailed tr.total { font-weight: bold; border-top:2px solid #d0d7de;} /* Support 6.0 */
 .issue-report-graph {width: 75%; margin: 2em 0;}
 
 tr.entry { border: 1px solid #f8f8f8; }
