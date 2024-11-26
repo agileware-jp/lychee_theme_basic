@@ -7,6 +7,7 @@
 .mobile-show {display: none;}
 .hidden {display: none;}
 .inline-flex {display: inline-flex;}
+.inline-block {display: inline-block;}
 
 /***** Links *****/
 a, a:link, a:visited{ color: #169; text-decoration: none; }
@@ -975,6 +976,7 @@ button.tab-left.disabled, button.tab-right.disabled {
   border-radius: 2px;
   text-transform: uppercase;
   text-decoration: none;
+  user-select: none;
 }
 .badge-private {
   background: #d22;
