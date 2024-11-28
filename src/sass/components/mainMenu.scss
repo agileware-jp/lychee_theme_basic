@@ -46,8 +46,25 @@
     @apply bg-background-secondary
   }
 
-  /* MainMenuのスクロールバー調整 */
+  /* 設定タブ */
+  #main-menu ul li:has(.settings) {
+    @apply sticky left-9 z-[699]
+  }
 
+  /* 設定タブの位置変更 */
+  #main-menu ul:not(.menu-children) li {
+    @apply order-3
+  }
+
+  #main-menu li:has(a.new-object) {
+    @apply order-1
+  }
+
+  #main-menu li:has(a.settings) {
+    @apply order-2
+  }
+
+  /* MainMenuのスクロールバー調整 */
   // 横スクロールが発生しないとき
   #main-menu {
     @apply overflow-x-visible
