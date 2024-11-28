@@ -46,8 +46,17 @@
     @apply bg-background-secondary
   }
 
-  /* MainMenuのスクロールバー調整 */
+  /* 設定タブを最後に固定配置 */
+  #main-menu ul:not(.menu-children) li {
+    @apply order-1
+  }
 
+  #main-menu ul li:has(a.settings) {
+    // Note: pr-1について→構造上スクロールが発生すると最後の要素が画面右端にくっつく。その回避策としてliの右に余白を設ける
+    @apply order-2 pr-1
+  }
+
+  /* MainMenuのスクロールバー調整 */
   // 横スクロールが発生しないとき
   #main-menu {
     @apply overflow-x-visible
