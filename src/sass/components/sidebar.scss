@@ -72,6 +72,10 @@
     @apply list-none flex items-center m-0 p-0
   }
 
+  #sidebar ul li:has(.icon-clear-query) {
+    @apply gap-1
+  }
+
   ul.flat li {
     list-style-type: none;
     margin: 0px 2px 0px 0px;
@@ -95,7 +99,7 @@
   }
 
   #sidebar a.icon-only {
-    @apply flex grow-0 overflow-hidden indent-[100%] whitespace-nowrap w-4 h-4 bg-no-repeat bg-[length:16px_16px] ml-1
+    @apply flex grow-0 shrink-0 overflow-hidden indent-[100%] whitespace-nowrap w-[26px] h-5 bg-no-repeat bg-center bg-[length:16px_16px]
   }
 
   #sidebar p {
