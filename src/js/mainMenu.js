@@ -119,3 +119,10 @@ export function dragScroll() {
     })
   }
 }
+
+export function addTitleToSettingsButton() {
+  if(!isMenuListExists()) return
+
+  const settings = document.querySelector('#main-menu a.settings')
+  settings.setAttribute('title', '設定')
+}
