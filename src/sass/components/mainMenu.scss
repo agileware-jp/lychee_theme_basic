@@ -8,6 +8,10 @@
     @apply relative flex w-full whitespace-nowrap m-0
   }
 
+  #main-menu ul:not(.menu-children) li:last-child {
+    @apply pr-2
+  }
+
   #main-menu li a {
     @apply block whitespace-normal break-words text-text-default text-xs no-underline px-3 py-2.5 rounded
   }
@@ -48,12 +52,12 @@
 
   /* 設定タブ */
   #main-menu ul li:has(.settings) {
-    @apply sticky left-9 z-[699]
+    @apply sticky right-0 z-[699] ml-auto
   }
 
   /* 設定タブの位置変更 */
   #main-menu ul:not(.menu-children) li {
-    @apply order-3
+    @apply order-2
   }
 
   #main-menu li:has(a.new-object) {
@@ -61,7 +65,7 @@
   }
 
   #main-menu li:has(a.settings) {
-    @apply order-2
+    @apply order-3
   }
 
   /* MainMenuのスクロールバー調整 */
