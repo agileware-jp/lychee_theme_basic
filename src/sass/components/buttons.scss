@@ -196,12 +196,13 @@
   }
 
 
+  /* プロジェクトメニューの「＋」ボタン */
   #main-menu li a.new-object {
     @extend .BTN_TERTIARY_ICON_ONLY;
 
     background-image: url(images/add_dark.svg);
 
-    @apply block w-[32px] h-[32px] bg-no-repeat bg-[length:16px_16px] bg-center border-border-default rounded-[10px] shadow
+    @apply block w-8 h-8 bg-no-repeat bg-[length:16px_16px] bg-center border-border-default rounded-[10px] shadow
   }
 
   #main-menu li a.new-object:has(+ .visible) {
@@ -212,6 +213,27 @@
   #main-menu li a.new-object:active {
     background-image: url(images/add_dark.svg);
   }
+
+
+  /* プロジェクトメニューの「設定」タブ */
+  #main-menu a.settings {
+    @extend .BTN_TERTIARY_ICON_ONLY;
+
+    background-image: url(images/settings_dark.svg);
+
+    @apply block w-8 h-8 bg-no-repeat bg-[length:16px_16px] bg-center border-border-default rounded-[10px] shadow
+  }
+
+  #main-menu a.settings:hover,
+  #main-menu a.settings:active {
+    background-image: url(images/settings_dark.svg);
+    @apply bg-background-tertiary
+  }
+
+  #main-menu a.settings.selected {
+    @apply bg-background-tertiary shadow-none
+  }
+
 
   .search_for_watchers a {
     @extend .BTN_TERTIARY_ICON_LEFT;

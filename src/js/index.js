@@ -1,5 +1,5 @@
 import { addDefaultTopMenStyle, initToggleTopMenu, moveLycheeHelp } from './topMenu'
-import { addScrollableClass, saveMainMenuScrollPosition, restoreMainMenuScrollPosition, dragScroll } from './mainMenu'
+import { addScrollableClass, saveMainMenuScrollPosition, restoreMainMenuScrollPosition, dragScroll, addTitleToSettingsButton } from './mainMenu'
 import { addDefaultSidebarStyle, initToggleSidebar } from './sidebar'
 import { waitForBilling, checkTrial, copyBillingContainer } from './billing'
 import { insertTextMessageBox } from './messageBox'
@@ -68,6 +68,7 @@ window.addEventListener('DOMContentLoaded', () => {
   hiddenTabsButtons()
   addFeedbackLink()
   insertTextMessageBox()
+  addTitleToSettingsButton()
 
   dragScroll()
 
