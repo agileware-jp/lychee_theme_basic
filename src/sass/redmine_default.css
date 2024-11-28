@@ -1005,6 +1005,8 @@ button.tab-left.disabled, button.tab-right.disabled {
   border: 0;
   box-shadow: none;
   white-space: pre-wrap;
+  font-size: 12px;
+  padding: 4px 6px;
 }
 
 
