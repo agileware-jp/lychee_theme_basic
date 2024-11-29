@@ -7,6 +7,13 @@
   }
 
   /***** Wiki *****/
+  // div.wiki {
+  //   font-variant-numeric: proportional-nums;
+  //   & table, & pre, & code, & ol>li::marker {
+  //     font-variant-numeric: tabular-nums;
+  //   }
+  // }
+
   div.wiki .wiki-class-noborder, div.wiki .wiki-class-noborder td, div.wiki .wiki-class-noborder th {border:0;}
 
   div.wiki .external {
