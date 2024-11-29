@@ -43,7 +43,7 @@ table.list, .table-list {
 }
 table.list th, .table-list-header { background-color:#EEEEEE; padding: 4px; white-space:nowrap; font-weight:bold; }
 table.list th.whitespace-normal {white-space: normal;}
-table.list td {text-align:center; vertical-align:middle; padding-right:10px;}
+table.list td {text-align:center; vertical-align:middle;}
 table.list td.id { width: 2%; text-align: center;}
 table.list td.name, table.list td.description, table.list td.subject, table.list td.parent-subject, table.list td.comments, table.list td.roles, table.list td.attachments, table.list td.text,  table.list td.short_description {text-align: left;}
 
@@ -155,7 +155,7 @@ table.plugins span.url { display: block; font-size: 0.9em; }
 
 table.list.enumerations {table-layout: fixed; margin-bottom: 2em;}
 
-tr.group td { padding: 0.8em 0 0.5em 0.3em; border-bottom: 1px solid #ccc; text-align:left; background-color: #fff;}
+tr.group td { padding: 0.8em 0 0.5em 0.3em; border-bottom: 2px solid #d0d7de; text-align:left; background-color: #fff;}
 tr.group span.count {top:-1px;}
 tr.group span.name {font-weight:bold;}
 tr.group span.totals {color: #aaa; font-size: 80%;}
@@ -329,7 +329,7 @@ div.issue .attribute.text_cf .value .wiki p:first-of-type {margin-top: 0;}
 div.issue.overdue .due-date .value { color: #c22; }
 .controller-issues h2.inline-flex {padding-right: 0}
 
-#issue_tree table.issues, #relations table.issues { border: 0; box-shadow: none;}
+#issue_tree table.issues, #relations table.issues { border: 0;}
 #issue_tree td.checkbox, #relations td.checkbox {display:none;}
 #issue_tree td.buttons, #relations td.buttons {padding:0;}
 #issue_tree .issues-stat, #relations .issues-stat {font-size: 80%}
