@@ -23,9 +23,11 @@
   content: "\a0";
 }
 
+/* 6.0 start */
 svg.icon-svg {
-  display: none;
+  @apply hidden
 }
+/* 6.0 end */
 
 .icon-multiple { background-image: url(../../../images/table_multiple.png); }
 .icon-file.text-x-c { background-image: url(../../../images/files/c.png); }
