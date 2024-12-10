@@ -315,6 +315,10 @@
       @apply px-4
     }
 
+    #levm_query_form fieldset legend.icon-expanded + div {
+      @apply mb-2
+    }
+
     .condition ~ .condition {
       @apply mt-2
     }
@@ -351,6 +355,31 @@
       label + label {
         @apply ml-2
       }
+    }
+
+    // カスタムクエリ（EVMでカスタムクエリを作成すると、タイプ・対象UIの外にカスタムクエリ用のUIが追加されるので、専用の対応が必要）
+    #levm_queries {
+      @apply mb-2
+    }
+
+    #levm_queries legend {
+      @apply text-xs font-bold
+    }
+
+    #levm_queries legend.icon {
+      @apply bg-[left_center] text-text-caption mb-2
+    }
+
+    #levm_queries legend + div {
+      @apply px-4
+    }
+
+    #levm_queries legend.icon-expended + div {
+      @apply mb-2
+    }
+
+    #levm_queries .icon-edit {
+      @apply ml-2 mr-1
     }
   }
 
