@@ -1,3 +1,11 @@
+div#roadmap .related-issues { margin-bottom: 1em; }
+div#roadmap .related-issues td.checkbox { display: none; }
+div#roadmap .wiki h1:first-child { display: none; }
+div#roadmap .wiki h1 { font-size: 120%; }
+div#roadmap .wiki h2 { font-size: 110%; }
+div#roadmap h2, div#roadmap h3 {padding-right: 0;}
+.controller-versions.action-show div#roadmap .related-issues {width:70%;}
+
 @layer components {
   div#roadmap {
     @apply mt-4
@@ -20,7 +28,7 @@
   }
 
   div#roadmap .related-issues td.assigned_to {
-    @apply pl-2
+    @apply w-[1px] whitespace-nowrap py-0 pr-0 pl-2
   }
 
   div#roadmap .related-issues td.buttons {

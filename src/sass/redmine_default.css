@@ -197,7 +197,7 @@ td.center {text-align:center;}
 
 #watchers select {width: 95%; display: block;}
 #watchers img.gravatar {margin: 0 4px 2px 0;}
-#users_for_watcher img.gravatar {padding-bottom: 2px; margin-right: 4px;}
+#users_for_watcher img.gravatar {margin-right: 4px;}
 
 span#watchers_inputs {overflow:auto; display:block;}
 span.search_for_watchers {display:block;}
@@ -397,16 +397,6 @@ div.journal span.update-info {color: #666; font-size: 0.9em;}
 
 #history div:target h4.note-header {background-color:#DDEEFF;}
 #history p.nodata {display: none;}
-
-div#roadmap .related-issues { margin-bottom: 1em; }
-div#roadmap .related-issues td.checkbox { display: none; }
-div#roadmap .related-issues td.assigned_to { width:1px; white-space:nowrap; padding: 0; }
-div#roadmap .related-issues td.assigned_to img { padding-left: 4px; padding-right: 4px;}
-div#roadmap .wiki h1:first-child { display: none; }
-div#roadmap .wiki h1 { font-size: 120%; }
-div#roadmap .wiki h2 { font-size: 110%; }
-div#roadmap h2, div#roadmap h3 {padding-right: 0;}
-.controller-versions.action-show div#roadmap .related-issues {width:70%;}
 
 .wiki-update-info {text-align:right; color:#666; font-size:90%;}
 
