@@ -122,7 +122,7 @@ tr.message.sticky td.subject { font-weight: bold; }
 #replies h4 img.gravatar {margin-left:-32px;}
 
 tr.version.closed, tr.version.closed a { color: #999; }
-tr.version td.name { padding-left: 20px; }
+tr.version:not(.shared) td.name { padding-left: 20px; }
 tr.version td.date, tr.version td.status, tr.version td.sharing { text-align: center; white-space:nowrap; }
 
 tr.member td.icon-user, #principals_for_new_member .icon-user {background:transparent;}
