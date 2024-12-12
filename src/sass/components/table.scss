@@ -96,8 +96,13 @@
   tr.message td.subject:has(.icon) {
     background-image: url(images/arrow_right_default.svg);
     background-position: 0.5rem 50%;
+    background-repeat: no-repeat;
 
     @apply pl-7
+  }
+
+  tr.message td.subject .icon {
+    @apply pl-0
   }
 
   tr.message td.subject:not(:has(.icon)) {
