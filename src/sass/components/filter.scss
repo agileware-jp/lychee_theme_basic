@@ -96,39 +96,55 @@
     @apply w-[162px]
   }
 
-  div#filters-table {
+  /*
+   * Note:
+   *   table#filters-table div...の指定について
+   *   側は<table id="filters-table">と、5.x系のHTML、
+   *   内部は<div class="filter"><div class="filed">...</div>と、6.x系のHTML
+   *   となっている箇所があるため、その形式にも対応しておく
+  */
+  div#filters-table
+  table#filters-table {
     @apply flex flex-col gap-2
   }
 
-  div#filters-table .filter {
+  div#filters-table .filter,
+  table#filters-table div.filter {
     @apply flex items-center gap-2
   }
 
-  div#filters-table .field {
+  div#filters-table .field,
+  table#filters-table div.field {
     @apply w-[160px] min-w-[160px] align-middle
   }
 
-  div#filters-table .field label {
+  div#filters-table .field label,
+  table#filters-table div.field label {
     @apply text-xs
   }
 
-  div#filters-table .operator {
+  div#filters-table .operator,
+  table#filters-table div.operator {
     @apply w-[130px] min-w-[130px]
   }
 
-  div#filters-table .operator select {
+  div#filters-table .operator select,
+  table#filters-table div.operator select {
     @apply max-w-none w-full
   }
 
-  div#filters-table .values {
+  div#filters-table .values,
+  table#filters-table div.values {
     width: calc(100% - 290px);
   }
 
-  div#filters-table .values > span {
+  div#filters-table .values > span,
+  table#filters-table div.values > span {
     @apply flex items-center
   }
 
-  div#filters-table .values select {
+  div#filters-table .values select,
+  table#filters-table div.values select {
     @apply min-w-[130px]
   }
   /* 6.0 end */
