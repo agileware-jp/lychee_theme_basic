@@ -103,14 +103,17 @@
    *   内部は<div class="filter"><div class="filed">...</div>と、6.x系のHTML
    *   となっている箇所があるため、その形式にも対応しておく
   */
-  div#filters-table
-  table#filters-table {
+  div#filters-table {
     @apply flex flex-col gap-2
   }
 
   div#filters-table .filter,
   table#filters-table div.filter {
     @apply flex items-center gap-2
+  }
+
+  table#filters-table div.filter ~ div.filter {
+    @apply mt-2
   }
 
   div#filters-table .field,
