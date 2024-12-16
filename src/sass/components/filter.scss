@@ -212,23 +212,21 @@
   }
 
   // LGCはtd#list-definition > divという構造になっていたので特別対応
-  .controller-lgc {
-    td#list-definition > div {
-      @apply flex items-center gap-1
-    }
+  td#list-definition > div {
+    @apply flex flex-wrap items-center gap-1
+  }
 
-    td#list-definition .query-columns {
-      @apply flex flex-col items-start
-    }
+  td#list-definition .query-columns {
+    @apply flex flex-col items-start
+  }
 
-    td#list-definition .buttons {
-      @apply flex flex-col gap-1
-    }
+  td#list-definition .buttons {
+    @apply flex flex-col gap-1
+  }
 
-    td#list-definition .buttons input[type="button"] {
-      font-family: serif;
-      @apply cursor-pointer block bg-background-primary w-7 h-7 border-border-default p-1 rounded-md hover:border-border-dark active:bg-background-secondary
-    }
+  td#list-definition .buttons input[type="button"] {
+    font-family: serif;
+    @apply cursor-pointer block bg-background-primary w-7 h-7 border-border-default p-1 rounded-md hover:border-border-dark active:bg-background-secondary
   }
   /* 6.0 end */
 
