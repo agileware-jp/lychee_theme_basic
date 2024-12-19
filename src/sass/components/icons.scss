@@ -23,6 +23,12 @@
   content: "\a0";
 }
 
+/* 6.0 start */
+svg.icon-svg {
+  display: none;
+}
+/* 6.0 end */
+
 .icon-multiple { background-image: url(../../../images/table_multiple.png); }
 .icon-file.text-x-c { background-image: url(../../../images/files/c.png); }
 .icon-file.text-x-csharp { background-image: url(../../../images/files/csharp.png); }
