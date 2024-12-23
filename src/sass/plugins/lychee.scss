@@ -925,8 +925,10 @@
     }
   }
 
+  // エクスポートのコンテキストメニューを展開したときにグラフが落ちないようにするための対応
+  .controller-root_fever_charts,
   .controller-fever_charts {
-    // エクスポートのコンテキストメニューを展開したときにグラフが落ちないようにするための対応
+    div[id^="project_fever_chart"],
     div[id^="version_fever_chart"] {
       @apply inline-flex;
     }
