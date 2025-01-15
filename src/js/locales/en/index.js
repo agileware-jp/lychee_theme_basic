@@ -1,5 +1,5 @@
 export const en = {
   "unreadMessages": "Unread Messages",
-  "noMessages": "Message",
+  "noMessages": "Messages",
   "sendFeedback": "Send Feedback"
 }
