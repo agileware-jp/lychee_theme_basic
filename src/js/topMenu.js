@@ -1,3 +1,5 @@
+import { t } from './transration'
+
 const TOP_MENU_OPEN_STYLE = `
   #wrapper {
     margin-left: 180px
@@ -162,4 +164,31 @@ export function moveLycheeHelp() {
   lycheeHelpWrap.style.order = '5'
 
   accountMenu.appendChild(lycheeHelpWrap)
+}
+
+
+/**
+ * フィードバック用リンクの追加
+ */
+export function addFeedbackLink() {
+  const topMenuNav = document.querySelector('#top-menu #account ul')
+  const li = document.createElement('li')
+  const a = document.createElement('a')
+  li.classList.add('aw_fbLink_li')
+  a.classList.add('aw_fbLink')
+  a.setAttribute('href', 'https://support.lychee-redmine.jp/feedback/')
+  a.setAttribute('target', '_blank')
+  a.textContent = t('sendFeedback')
+
+  // ちらつき防止のため、ちらつきが発生するスタイルはあらかじめjsで指定
+  li.style.cssText = `
+    order: 4;
+  `
+
+  a.style.cssText = `
+    padding-left: 1.75rem;
+  `
+
+  li.appendChild(a)
+  topMenuNav.insertBefore(li, topMenuNav.firstElementChild)
 }
