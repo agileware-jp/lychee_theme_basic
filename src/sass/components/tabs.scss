@@ -34,4 +34,30 @@
   button.tab-left, button.tab-right {
     @apply bottom-0
   }
+
+  // 操作性向上のために横スクロールに対応
+  #content .tabs ul {
+    @apply overflow-x-scroll min-w-[auto] pr-[74px] pb-1
+  }
+
+  // スクロールバーのスタイル
+  #content .tabs ul::-webkit-scrollbar {
+    @apply h-[4px]
+  }
+
+  #content .tabs ul::-webkit-scrollbar-thumb {
+    @apply cursor-grab bg-background-dark/20 rounded
+  }
+
+  #content .tabs ul:hover::-webkit-scrollbar-thumb {
+    @apply bg-background-dark/50
+  }
+
+  #content .tabs ul::-webkit-scrollbar-thumb:active {
+    @apply cursor-grabbing
+  }
+
+  #content .tabs ul::-webkit-scrollbar-corner {
+    @apply hidden
+  }
 }

@@ -4,6 +4,7 @@ import { addDefaultSidebarStyle, initToggleSidebar } from './sidebar'
 import { waitForBilling, checkTrial, copyBillingContainer } from './billing'
 import { insertTextMessageBox } from './messageBox'
 import { createBackToTopBtn, toggleBackToTopBtn } from './backToTop'
+import { enableTabDragScroll } from './tab'
 
 /* ちらつき防止のため、topMenuの初期スタイルを追加する */
 addDefaultTopMenStyle()
@@ -42,6 +43,7 @@ window.addEventListener('DOMContentLoaded', () => {
   moveLycheeHelp()
   createBackToTopBtn()
   hiddenTabsButtons()
+  enableTabDragScroll()
   addFeedbackLink()
   insertTextMessageBox()
 
