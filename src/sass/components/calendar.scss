@@ -1,5 +1,5 @@
 @layer components {
-  /***** Calendar Before 5.0 *****/
+  /*** Before 5.0 ***/
   table.cal { border-spacing: 0;}
   table.cal thead th {width: 14%; }
   table.cal thead th.week-number {width: auto;}
@@ -11,7 +11,7 @@
   table.cal td.today {background:#ffffdd;}
   table.cal td.today p.day-num {font-weight: bold;}
 
-  /***** Calendar After 5.1 *****/
+  /*** After 5.1 ***/
   ul.cal {
     list-style: none;
     padding: 0;
@@ -46,7 +46,9 @@
 
   ul.cal .calbody .icon {padding-top: 2px; padding-bottom: 3px;}
 
-  /***** Original *****/
+  /*** Lychee Theme Basic Original Style ***/
+  // Note: table.cal → 5.0
+  //       ul.cal → 5.1
   table.cal,
   ul.cal {
     @apply w-full border border-border-divider mt-0 mx-0 mb-2 rounded-none
@@ -72,8 +74,17 @@
     @apply bg-background-secondary text-text-default text-xs
   }
 
+  ul.cal .calbody.this-month /* Support 6.0 */ {
+    @apply bg-background-primary
+  }
+
+  ul.cal .calbody.other-month /* Support 6.0 */ {
+    @apply bg-background-secondary/50
+  }
+
   table.cal td.odd p.day-num,
-  ul.cal .calbody.odd p.day-num {
+  ul.cal .calbody.odd p.day-num,
+  ul.cal .calbody.other-month p.day-num /* Support 6.0 */ {
     @apply text-text-caption
   }
 
