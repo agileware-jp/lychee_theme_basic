@@ -211,6 +211,24 @@
     @apply cursor-pointer block bg-background-primary w-7 h-7 border-border-default p-1 rounded-md hover:border-border-dark active:bg-background-secondary
   }
 
+  // プロジェクト設定>Lycheeカンバンは#list-definitionというidがなかったので、特別対応
+  .controller-projects #tab-content-lychee_kanban .kanban-display-users legend + div {
+    @apply flex flex-wrap items-center gap-1
+  }
+
+  .controller-projects #tab-content-lychee_kanban .kanban-display-users .query-columns {
+    @apply flex flex-col items-start
+  }
+
+  .controller-projects #tab-content-lychee_kanban .kanban-display-users .buttons {
+    @apply flex flex-col gap-1
+  }
+
+  .controller-projects #tab-content-lychee_kanban .kanban-display-users .buttons input[type="button"] {
+    font-family: serif;
+    @apply cursor-pointer block bg-background-primary w-7 h-7 border-border-default p-1 rounded-md hover:border-border-dark active:bg-background-secondary
+  }
+
   // LGCはtd#list-definition > divという構造になっていたので特別対応
   td#list-definition > div {
     @apply flex flex-wrap items-center gap-1
