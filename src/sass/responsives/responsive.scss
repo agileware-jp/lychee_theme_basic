@@ -464,6 +464,12 @@
   }
 
   /* アイコン */
+  .flyout-menu .js-profile-menu a {
+    // Note: ここにメニューを追加するOSSへの対策として、何もない場合はOSSアイコンを追加する
+    //       例）redmine work timeなど
+    background-image: url(images/oss_dark.svg);
+  }
+
   .flyout-menu .js-profile-menu .login {
     background-image: url(images/login_dark.svg);
   }
@@ -517,7 +523,8 @@
   }
 
   /* fbリンク調整 */
-  .flyout-menu .aw_fbLink {
+  .flyout-menu .js-profile-menu .aw_fbLink {
+    background-image: url(images/feedback_dark.svg);
     padding-left: 2rem !important;
   }
 
