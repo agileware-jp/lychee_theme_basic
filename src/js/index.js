@@ -4,6 +4,7 @@ import { addDefaultSidebarStyle, initToggleSidebar } from './sidebar'
 import { waitForBilling, checkTrial, copyBillingContainer } from './billing'
 import { insertTextMessageBox } from './messageBox'
 import { createBackToTopBtn, toggleBackToTopBtn } from './backToTop'
+import { quickCopy } from './utility'
 
 /* ちらつき防止のため、topMenuの初期スタイルを追加する */
 addDefaultTopMenStyle()
@@ -150,4 +151,10 @@ window.addEventListener('DOMContentLoaded', () => {
   if([...lgcQueriesBodyClasses].includes('controller-lgc/queries')) {
     document.body.classList.add('aw_lgcQueries')
   }
+
+
+  /**
+   * チケット詳細ページのみ、IDやチケットタイトル・URLのクイックコピーボタンを追加する
+   */
+  quickCopy()
 })
