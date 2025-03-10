@@ -190,16 +190,28 @@
     @apply min-h-[20px] py-1
   }
 
+  // Note: ここにメニューを追加するOSSへの対策として、何もない場合はOSSアイコンを追加する
+  //       例）redmine work timeなど
+  #account ul li a {
+    background-image: url(images/oss_dark.svg);
+    @apply bg-no-repeat bg-[length:20px_20px] bg-[4px_center]
+  }
+
   // 閉じているとき
   #account ul li a:not(.lychee-message-box-icon) {
     @apply block overflow-hidden indent-[100%] whitespace-nowrap
+  }
+
+  // hoverでメニューが開いているとき
+  #account ul li a:not(.lychee-message-box-icon) {
+    @apply indent-0 pl-7 text-ellipsis
   }
 
   /* MessageBox: 閉じているとき */
   #top-menu .lychee-message-box-icon.lychee-message-box-icon,
   #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread {
     background-image: url(images/mail_dark.svg);
-    @apply block overflow-hidden indent-[100%] whitespace-nowrap relative bg-no-repeat bg-[length:20px_20px] bg-[4px_center] pl-7
+    @apply block overflow-hidden indent-[100%] whitespace-nowrap relative pl-7
   }
 
   #top-menu .lychee-message-box-icon.lychee-message-box-icon::before,
@@ -233,59 +245,26 @@
   /* 個人設定 */
   #top-menu .my-account {
     background-image: url(images/construnction_dark.svg);
-    @apply bg-no-repeat bg-[length:20px_20px] bg-[4px_center]
-  }
-
-  // 開いているとき
-  #top-menu.aw_topMenuHover .my-account {
-    @apply indent-0 pl-7 text-ellipsis
   }
 
   /* ログアウト */
   #top-menu .logout {
     background-image: url(images/logout_dark.svg);
-    @apply bg-no-repeat bg-[length:20px_20px] bg-[4px_center]
   }
-
-  // 開いているとき
-  #top-menu.aw_topMenuHover .logout {
-    @apply indent-0 pl-7 text-ellipsis
-  }
-
 
   /* ログイン */
   #top-menu .login {
     background-image: url(images/login_dark.svg);
-    @apply bg-no-repeat bg-[length:20px_20px] bg-[4px_center]
   }
-
-  // 開いているとき
-  #top-menu.aw_topMenuHover .login {
-    @apply indent-0 pl-7 text-ellipsis
-  }
-
 
   /* 登録する */
   #top-menu .register {
     background-image: url(images/person_add_dark.svg);
-    @apply bg-no-repeat bg-[length:20px_20px] bg-[4px_center]
   }
-
-  // 開いているとき
-  #top-menu.aw_topMenuHover .register {
-    @apply indent-0 pl-7 text-ellipsis
-  }
-
 
   /* フィードバックリンク */
-  .aw_fbLink {
+  #top-menu .aw_fbLink {
     background-image: url(images/feedback_dark.svg);
-    @apply bg-no-repeat bg-[length:20px_20px] bg-[4px_center]
-  }
-
-  // 閉じているとき
-  #top-menu.aw_topMenuHover .aw_fbLink {
-    @apply indent-0 pl-7 text-ellipsis
   }
 
 

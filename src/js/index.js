@@ -1,4 +1,4 @@
-import { addDefaultTopMenStyle, initToggleTopMenu, moveLycheeHelp } from './topMenu'
+import { addDefaultTopMenStyle, initToggleTopMenu, moveLycheeHelp, addFeedbackLink } from './topMenu'
 import { addScrollableClass, saveMainMenuScrollPosition, restoreMainMenuScrollPosition, dragScroll } from './mainMenu'
 import { addDefaultSidebarStyle, initToggleSidebar } from './sidebar'
 import { waitForBilling, checkTrial, copyBillingContainer } from './billing'
@@ -25,30 +25,6 @@ function hiddenTabsButtons() {
 function hasDescription(el) {
   // 文字列があるかどうかでチェック
   return el.textContent.length > 0
-}
-
-// FBリンク追加
-function addFeedbackLink() {
-  const topMenuNav = document.querySelector('#top-menu #account ul')
-  const li = document.createElement('li')
-  const a = document.createElement('a')
-  li.classList.add('aw_fbLink_li')
-  a.classList.add('aw_fbLink')
-  a.setAttribute('href', 'https://support.lychee-redmine.jp/feedback/')
-  a.setAttribute('target', '_blank')
-  a.textContent = 'フィードバックを送る'
-
-  // ちらつき防止のため、ちらつきが発生するスタイルはあらかじめjsで指定
-  li.style.cssText = `
-    order: 4;
-  `
-
-  a.style.cssText = `
-    padding-left: 1.75rem;
-  `
-
-  li.appendChild(a)
-  topMenuNav.insertBefore(li, topMenuNav.firstElementChild)
 }
 
 // チケットIDのクイックコピー

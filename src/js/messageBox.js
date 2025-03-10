@@ -1,3 +1,5 @@
+import { t } from './transration'
+
 export function insertTextMessageBox() {
   // メッセージボックに既読時・未読時の文章を差し込む
   const messageBox = document.querySelector('#top-menu #account .lychee-message-box-icon')
@@ -5,9 +7,9 @@ export function insertTextMessageBox() {
 
   setTimeout(() => {
     if(messageBox.classList.contains('unread')) {
-      messageBox.textContent = 'メッセージがあります'
+      messageBox.textContent = t('unreadMessages')
     } else {
-      messageBox.textContent = 'メッセージ'
+      messageBox.textContent = t('noMessages')
     }
   }, 0)
 }
