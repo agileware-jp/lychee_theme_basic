@@ -246,6 +246,24 @@
     font-family: serif;
     @apply cursor-pointer block bg-background-primary w-7 h-7 border-border-default p-1 rounded-md hover:border-border-dark active:bg-background-secondary
   }
+
+  // LGC5.0はfieldset#list-definitionという構造になっていたので特別対応
+  .plugin-lychee_gantt_chart fieldset#list-definition > div {
+    @apply flex flex-wrap items-center gap-1
+  }
+
+  .plugin-lychee_gantt_chart fieldset#list-definition .query-columns {
+    @apply flex flex-col items-start
+  }
+
+  .plugin-lychee_gantt_chart fieldset#list-definition .buttons {
+    @apply flex flex-col gap-1
+  }
+
+  .plugin-lychee_gantt_chart fieldset#list-definition .buttons input[type="button"] {
+    font-family: serif;
+    @apply cursor-pointer block bg-background-primary w-7 h-7 border-border-default p-1 rounded-md hover:border-border-dark active:bg-background-secondary
+  }
   /* 6.0 end */
 
 
