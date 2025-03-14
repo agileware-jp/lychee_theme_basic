@@ -14,4 +14,9 @@
   td.username .gravatar.gravatar {
     @apply align-middle
   }
+
+  img.gravatar, img.gravatar-child {
+    height: revert-layer;
+    object-fit: cover;
+  }
 }

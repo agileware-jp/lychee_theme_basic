@@ -490,6 +490,11 @@
     ul[class^="lgc-AvailableColumnList-"] li label {
       @apply gap-[3px]
     }
+
+    // 担当者が未設定の場合にアイコンが表示されないため特別対応
+    span[class^="lgc-RedmineIcon-"].icon-issue {
+      @apply inline-block
+    }
   }
 
 
@@ -756,7 +761,7 @@
     }
 
     .lychee-message-box-types > li.mark_as_read a {
-      font-size: 12px;
+      font-size: 0.75rem;
     }
 
     .lychee-message-box-root {

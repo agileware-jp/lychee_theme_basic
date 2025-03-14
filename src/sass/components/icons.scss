@@ -23,6 +23,12 @@
   content: "\a0";
 }
 
+/* 6.0 start */
+svg.icon-svg {
+  display: none;
+}
+/* 6.0 end */
+
 .icon-multiple { background-image: url(../../../images/table_multiple.png); }
 .icon-file.text-x-c { background-image: url(../../../images/files/c.png); }
 .icon-file.text-x-csharp { background-image: url(../../../images/files/csharp.png); }
@@ -41,415 +47,518 @@
 
 
 
-.icon-add {
+.icon-add,
+.icon-add:not(:has(svg)) {
   background-image: url(images/add_circle_default.svg);
 }
 
-.icon-edit {
+.icon-edit,
+.icon-edit:not(:has(svg)) {
   background-image: url(images/edit_default.svg);
 }
 
-.icon-edit.icon-only {
+.icon-edit.icon-only, 
+.icon-edit.icon-only:not(:has(svg)) {
   background-image: url(images/edit_dark.svg);
 }
 
-.lychee_cost_expenses .icon.icon-edit {
+.lychee_cost_expenses .icon.icon-edit,
+.lychee_cost_expenses .icon.icon-edit:not(:has(svg)) {
   background-image: url(images/edit_dark.svg);
 }
 
-.controller-projects .boards .buttons .icon-edit {
+.controller-projects .boards .buttons .icon-edit,
+.controller-projects .boards .buttons .icon-edit:not(:has(svg)) {
   background-image: url(images/edit_dark.svg);
 }
 
-.icon-copy {
+.icon-copy,
+.icon-copy:not(:has(svg)) {
   background-image: url(images/content_copy_default.svg);
 }
 
-.icon-duplicate {
+.icon-duplicate,
+.icon-duplicate:not(:has(svg)) {
   background-image: url(images/library_add_default.svg);
 }
 
-.icon-del {
+.icon-del,
+.icon-del:not(:has(svg)) {
   background-image: url(images/delete_danger.svg);
 }
 
-.icon-move {
+.icon-move,
+.icon-move:not(:has(svg)) {
   background-image: url(images/redo_default.svg);
 }
 
-.icon-save {
+.icon-save,
+.icon-save:not(:has(svg)) {
   background-image: url(images/save_default.svg);
 }
 
-.icon-download {
+.icon-download,
+.icon-download:not(:has(svg)) {
   background-image: url(images/download_default.svg);
 }
 
-.icon-download.icon-only {
+.icon-download.icon-only,
+.icon-download.icon-only:not(:has(svg)) {
   background-image: url(images/download_dark.svg);
 }
 
-.icon-cancel {
+.icon-cancel,
+.icon-cancel:not(:has(svg)) {
   background-image: url(images/cancel_presentation_default.svg);
 }
 
-.icon-folder {
+.icon-folder,
+.icon-folder:not(:has(svg)) {
   background-image: url(images/folder_default.svg);
 }
 
-.open .icon-folder {
+.open .icon-folder,
+.open .icon-folder:not(:has(svg)) {
   background-image: url(images/folder_open_default.svg);
 }
 
-.icon-package {
+.icon-package,
+.icon-package:not(:has(svg)) {
   background-image: url(images/deployed_code_default.svg);
 }
 
-.icon-user {
+.icon-user,
+.icon-user:not(:has(svg)) {
   background-image: url(images/person_default.svg);
 }
 
-.icon-user.my-project {
+.icon-user.my-project,
+.icon-user.my-project:not(:has(svg)) {
   background-image: url(images/person_dark.svg);
 }
 
-.icon-project {
+.icon-project,
+.icon-project:not(:has(svg)) {
   background-image: url(images/widgets_default.svg);
 }
 
-.icon-projects {
+.icon-projects,
+.icon-projects:not(:has(svg)) {
   background-image: url(images/widgets_default.svg);
 }
 
-.icon-help {
+.icon-help,
+.icon-help:not(:has(svg)) {
   background-image: url(images/help_default.svg);
 }
 
-.icon-attachment {
+.icon-attachment,
+.icon-attachment:not(:has(svg)) {
   background-image: url(images/attach_file_default.svg);
 }
 
-.icon-history {
+.icon-history,
+.icon-history:not(:has(svg)) {
   background-image: url(images/history_default.svg);
 }
 
-.icon-time-entry {
+.icon-time-entry,
+.icon-time-entry:not(:has(svg)) {
   background-image: url(images/schedule_default.svg);
 }
 
-.icon-time {
+.icon-time,
+.icon-time:not(:has(svg)) {
   background-image: url(images/schedule_default.svg);
 }
 
-.icon-time-add {
+.icon-time-add,
+.icon-time-add:not(:has(svg)) {
   background-image: url(images/alarm_add_default.svg);
 }
 
-.icon-stats {
+.icon-stats,
+.icon-stats:not(:has(svg)) {
   background-image: url(images/leaderboard_default.svg);
 }
 
-.icon-warning {
+.icon-warning,
+.icon-warning:not(:has(svg)) {
   background-image: url(images/warning_warning.svg);
 }
 
-.icon-error {
+.icon-error,
+.icon-error:not(:has(svg)) {
   background-image: url(images/error_danger.svg);
 }
 
-.icon-fav {
+.icon-fav,
+.icon-fav:not(:has(svg)) {
   background-image: url(images/star_fill_watching.svg);
 }
 
-.icon-fav-off {
+.icon-fav-off,
+.icon-fav-off:not(:has(svg)) {
   background-image: url(images/star_outline_default.svg);
 }
 
-.icon-reload {
+.icon-reload,
+.icon-reload:not(:has(svg)) {
   background-image: url(images/refresh_default.svg);
 }
 
-.icon-lock {
+.icon-lock,
+.icon-lock:not(:has(svg)) {
   background-image: url(images/lock_default.svg);
 }
 
-.icon-locked {
+.icon-locked,
+.icon-locked:not(:has(svg)) {
   background-image: url(images/lock_default.svg);
 }
 
-.icon-unlock {
+.icon-unlock,
+.icon-unlock:not(:has(svg)) {
   background-image: url(images/lock_open_default.svg);
 }
 
-.icon-checked {
+.icon-checked,
+.icon-checked:not(:has(svg)) {
   background-image: url(images/done_success.svg);
 }
 
-.icon-report {
+.icon-report,
+.icon-report:not(:has(svg)) {
   background-image: url(images/description_default.svg);
 }
 
-.icon-comment {
+.icon-comment,
+.icon-comment:not(:has(svg)) {
   background-image: url(images/chat_bubble_default.svg);
 }
 
-.icon-comment.icon-only {
+.icon-comment.icon-only,
+.icon-comment.icon-only:not(:has(svg)) {
   background-image: url(images/chat_bubble_dark.svg);
 }
 
-.icon-comments {
+.icon-comments,
+.icon-comments:not(:has(svg)) {
   background-image: url(images/chat_bubble_default.svg);
 }
 
-.icon-summary {
+.icon-summary,
+.icon-summary:not(:has(svg)) {
   background-image: url(images/flash_on_default.svg);
 }
 
-.icon-server-authentication {
+.icon-server-authentication,
+.icon-server-authentication:not(:has(svg)) {
   background-image: url(images/key_default.svg);
 }
 
-.icon-issue {
+.icon-issue,
+.icon-issue:not(:has(svg)) {
   background-image: url(images/ticket_default.svg);
 }
 
-.icon-zoom-in {
+.icon-zoom-in,
+.icon-zoom-in:not(:has(svg)) {
   background-image: url(images/zoom_in_default.svg);
 }
 
-.icon-zoom-out {
+.icon-zoom-out,
+.icon-zoom-out:not(:has(svg)) {
   background-image: url(images/zoom_out_default.svg);
 }
 
-.icon-magnifier {
+.icon-magnifier,
+.icon-magnifier:not(:has(svg)) {
   background-image: url(images/search_default.svg);
 }
 
-.icon-passwd {
+.icon-passwd,
+.icon-passwd:not(:has(svg)) {
   background-image: url(images/lock_default.svg);
 }
 
-.icon-arrow-right {
+.icon-arrow-right,
+.icon-arrow-right:not(:has(svg)) {
   background-image: url(images/arrow_right_default.svg);
 }
 
-.icon-test {
+.icon-test,
+.icon-test:not(:has(svg)) {
   background-image: url(images/arrow_right_default.svg);
 }
 
-.icon-sticky {
+.icon-sticky,
+.icon-sticky:not(:has(svg)) {
   background-image: url(images/arrow_right_default.svg);
 }
 
-.icon-email {
+.icon-email,
+.icon-email:not(:has(svg)) {
   background-image: url(images/mail_default.svg);
 }
 
-.icon-email-disabled {
+.icon-email-disabled,
+.icon-email-disabled:not(:has(svg)) {
   background-image: url(images/mail_disabled_default.svg);
 }
 
-.icon-email-add {
+.icon-email-add,
+.icon-email-add:not(:has(svg)) {
   background-image: url(images/mail_add_default.svg);
 }
 
-.icon-ok {
+.icon-ok,
+.icon-ok:not(:has(svg)) {
   background-image: url(images/done_success.svg);
 }
 
-.icon-not-ok {
+.icon-not-ok,
+.icon-not-ok:not(:has(svg)) {
   background-image: url(images/close_danger.svg);
 }
 
-.icon-link-break {
+.icon-link-break,
+.icon-link-break:not(:has(svg)) {
   background-image: url(images/link_off_default.svg);
 }
 
-.icon-link-break.icon-only {
+.icon-link-break.icon-only,
+.icon-link-break.icon-only:not(:has(svg)) {
   background-image: url(images/link_off_dark.svg);
 }
 
-.icon-list {
+.icon-list,
+.icon-list:not(:has(svg)) {
   background-image: url(images/format_list_bulleted_default.svg);
 }
 
-.icon-close {
+.icon-close,
+.icon-close:not(:has(svg)) {
   background-image: url(images/close_dark.svg);
 }
 
-.icon-close:hover {
+.icon-close:hover,
+.icon-close:not(:has(svg)):hover {
   background-image: url(images/close_dark.svg);
 }
 
-.icon-settings {
+.icon-settings,
+.icon-settings:not(:has(svg)) {
   background-image: url(images/settings_default.svg);
 }
 
-.icon-settings.icon-only {
+.icon-settings.icon-only,
+.icon-settings.icon-only:not(:has(svg)) {
   background-image: url(images/settings_dark.svg);
 }
 
-.icon-group {
+.icon-group,
+.icon-group:not(:has(svg)) {
   background-image: url(images/groups_3_default.svg);
 }
 
-.icon-groupnonmember {
+.icon-groupnonmember,
+.icon-groupnonmember:not(:has(svg)) {
   background-image: url(images/groups_3_default.svg);
 }
 
-.icon-groupanonymous {
+.icon-groupanonymous,
+.icon-groupanonymous:not(:has(svg)) {
   background-image: url(images/groups_3_default.svg);
 }
 
-.icon-roles {
+.icon-roles,
+.icon-roles:not(:has(svg)) {
   background-image: url(images/encrypted_default.svg);
 }
 
-.icon-issue-edit {
+.icon-issue-edit,
+.icon-issue-edit:not(:has(svg)) {
   background-image: url(images/ticket_edit_default.svg);
 }
 
-.icon-workflows {
+.icon-workflows,
+.icon-workflows:not(:has(svg)) {
   background-image: url(images/flowsheet_default.svg);
 }
 
-.icon-custom-fields {
+.icon-custom-fields,
+.icon-custom-fields:not(:has(svg)) {
   background-image: url(images/design_services_default.svg);
 }
 
-.icon-plugins {
+.icon-plugins,
+.icon-plugins:not(:has(svg)) {
   background-image: url(images/extension_default.svg);
 }
 
-.icon-issue-closed {
+.icon-issue-closed,
+.icon-issue-closed:not(:has(svg)) {
   background-image: url(images/done_success.svg);
 }
 
-.icon-issue-note {
+.icon-issue-note,
+.icon-issue-note:not(:has(svg)) {
   background-image: url(images/summarize_default.svg);
 }
 
-.icon-changeset {
+.icon-changeset,
+.icon-changeset:not(:has(svg)) {
   background-image: url(images/settings_default.svg);
 }
 
-.icon-message {
+.icon-message,
+.icon-message:not(:has(svg)) {
   background-image: url(images/chat_bubble_default.svg);
 }
 
-.icon-reply {
+.icon-reply,
+.icon-reply:not(:has(svg)) {
   background-image: url(images/forum_default.svg);
 }
 
-.icon-actions {
+.icon-actions,
+.icon-actions:not(:has(svg)) {
   background-image: url(images/more_dark.svg);
 }
 
-.icon-sorted-asc {
+.icon-sorted-asc,
+.icon-sorted-asc:not(:has(svg)) {
   background-image: url(images/expand_more_default.svg);
 }
 
 .icon-expended,
-.icon-expanded {
+.icon-expanded,
+.icon-expended:not(:has(svg)),
+.icon-expanded:not(:has(svg)) {
   background-image: url(images/expand_more_default.svg);
 }
 
-.icon-collapsed {
+.icon-collapsed,
+.icon-collapsed:not(:has(svg)) {
   background-image: url(images/chevron_right_default.svg);
 }
 
-.icon-wiki-page {
+.icon-wiki-page,
+.icon-wiki-page:not(:has(svg)) {
   background-image: url(images/article_default.svg);
 }
 
-.icon-document {
+.icon-document,
+.icon-document:not(:has(svg)) {
   background-image: url(images/article_default.svg);
 }
 
-.icon-news {
+.icon-news,
+.icon-news:not(:has(svg)) {
   background-image: url(images/article_default.svg);
 }
 
-.icon-add-bullet {
+.icon-add-bullet,
+.icon-add-bullet:not(:has(svg)) {
   background-image: url(images/add_circle_default.svg);
 }
 
-.icon-shared {
+.icon-shared,
+.icon-shared:not(:has(svg)) {
   background-image: url(images/link_default.svg);
 }
 
-.icon-sort-handle {
+.icon-sort-handle,
+.icon-sort-handle:not(:has(svg)) {
   background-image: url(images/drag_pan_default.svg);
 }
 
-.icon-sort-handle.icon-only {
+.icon-sort-handle.icon-only,
+.icon-sort-handle.icon-only:not(:has(svg)) {
   background-image: url(images/drag_pan_dark.svg);
 }
 
-.icon-bookmark {
+.icon-bookmark,
+.icon-bookmark:not(:has(svg)) {
   background-image: url(images/bookmark_fill_bookmarked.svg);
 }
 
 .icon-bookmark-off,
+.icon-bookmark-off:not(:has(svg)),
 .favorite-project-button.favorite-project-button {
   background-image: url(images/bookmark_outliine_default.svg);
 }
 
 .icon-bookmarked-project,
+.icon-bookmarked-project:not(:has(svg)),
 .favorite-project-button.favorite-project-button.favorited {
   background-image: url(images/bookmark_fill_bookmarked.svg);
 }
 
-.icon-sorted-desc {
+.icon-sorted-desc,
+.icon-sorted-desc:not(:has(svg)) {
   background-image: url(images/expand_less_default.svg);
 }
 
-.icon-toggle-plus {
+.icon-toggle-plus,
+.icon-toggle-plus:not(:has(svg)) {
   background-image: url(images/unfold_more_dark.svg);
 }
 
-.icon-toggle-minus {
+.icon-toggle-minus,
+.icon-toggle-minus:not(:has(svg)) {
   background-image: url(images/unfold_less_dark.svg);
 }
 
-.icon-clear-query {
+.icon-clear-query,
+.icon-clear-query:not(:has(svg)) {
   background-image: url(images/cancel_presentation_danger.svg);
 }
 
-.icon-import {
+.icon-import,
+.icon-import:not(:has(svg)) {
   background-image: url(images/input_default.svg);
 }
 
-.icon-file {
+.icon-file,
+.icon-file:not(:has(svg)) {
   background-image: url(images/description_default.svg);
 }
 
-.icon-file.text-plain {
+.icon-file.text-plain,
+.icon-file.text-plain:not(:has(svg)) {
   background-image: url(images/description_default.svg);
 }
 
-.icon-file.application-zip {
+.icon-file.application-zip,
+.icon-file.application-zip:not(:has(svg)) {
   background-image: url(images/folder_zip_default.svg);
 }
 
-.icon-file.application-gzip {
+.icon-file.application-gzip,
+.icon-file.application-gzip:not(:has(svg)) {
   background-image: url(images/folder_zip_default.svg);
 }
 
-.icon-copy-link {
+.icon-copy-link,
+.icon-copy-link:not(:has(svg)) {
   background-image: url(images/content_copy_default.svg);
 }
 
-.sort-handle.ajax-loading {
+.sort-handle.ajax-loading,
+.sort-handle.ajax-loading:not(:has(svg)) {
   background-image: url(images/spinner_default.gif);
   background-size: 16px;
 }
 
-button.tab-left {
+button.tab-left,
+button.tab-left:not(:has(svg)) {
   background-image: url(images/chevron_left_onFill.svg);
 }
 
-button.tab-right {
+button.tab-right,
+button.tab-right:not(:has(svg)) {
   background-image: url(images/chevron_right_onFill.svg);
 }
 
