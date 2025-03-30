@@ -253,6 +253,10 @@
 
 
   // 索引（名前順）
+  .pages-hierarchy {
+    @apply list-disc ml-6
+  }
+
   .pages-hierarchy li:not(:first-child) {
     @apply mt-2
   }
@@ -262,7 +266,17 @@
   }
 
   // 索引（日付順）
-  .controller-wiki.action-date_index #content h3 + ul li:not(:first-child) {
-    @apply mt-2
+  .controller-wiki.action-date_index {
+    #content ul {
+      @apply list-disc ml-6
+    }
+
+    #content h3 + ul li:not(:first-child) {
+      @apply mt-2
+    }
+
+    #content ul + h3 {
+      @apply mt-6
+    }
   }
 }
