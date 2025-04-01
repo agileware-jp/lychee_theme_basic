@@ -141,6 +141,11 @@
     background-image: url(images/subproject_default.svg);
   }
 
+  // lychee_groupsが入っていない場合
+  table.members .member .icon-group {
+    @apply bg-[6px_50%] pl-6
+  }
+
 
   table.messages td.subject.icon-locked {
     @apply pl-7 bg-[left_0.5rem_center]
