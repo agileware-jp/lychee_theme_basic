@@ -1,7 +1,7 @@
 @layer components {
   // sidebar
   #sidebar {
-    @apply relative flex-shrink-0 order-2 bg-background-secondary/50 border-l border-border-divider py-3
+    @apply relative flex-shrink-0 order-2 bg-background-secondary/50 border-l border-border-divider text-xs py-3
   }
 
   .controller-kanban #sidebar,
@@ -11,12 +11,20 @@
   }
 
   #sidebar h3 {
-    @apply text-text-default text-sm mt-4
+    @apply text-text-default text-xs mt-4
+  }
+
+  #sidebar h4 {
+    @apply text-xs
   }
 
 
   #sidebar div.wiki ul li {
     list-style-type: inherit;
+  }
+
+  #sidebar .contextual {
+    @apply text-xs
   }
 
   #sidebar span.icon-warning {
@@ -29,10 +37,6 @@
 
   #sidebar .query.default {
     @apply font-bold
-  }
-
-  #admin-menu a {
-    @apply text-sm
   }
 
   #sidebar #watchers {
@@ -76,11 +80,11 @@
   }
 
   #sidebar ul li:not(:first-child) {
-    @apply mt-1
+    @apply mt-1.5
   }
 
   #sidebar ul li a {
-    @apply block grow text-sm m-0 px-2 py-1.5 rounded
+    @apply block grow text-xs m-0 px-1 py-0.5 rounded
   }
 
   #sidebar ul li a:hover {
@@ -154,4 +158,16 @@
     @apply hidden
   }
   /* Support 6.0 end */
+
+
+  /* sidebarのadmin-menuは、通常sidebarに合わせて文字サイズ等は小さくしたい */
+  #sidebar #admin-menu ul li a {
+    @apply text-xs
+  }
+
+
+  /* sidebar > admin-menu > チケットセットの選択時の色が、別のスタイルの影響を受けているため上書きする */
+  .controller-lychee_issue_sets #sidebar #admin-menu ul li a.issue-set {
+    @apply bg-background-tertiary
+  }
 }

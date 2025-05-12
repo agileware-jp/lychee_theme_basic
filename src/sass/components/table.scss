@@ -51,6 +51,13 @@
     @apply w-[29px] p-0
   }
 
+  tr.project.closed td,
+  tr.project.archived td,
+  tr.project.closed td a,
+  tr.project.archived td a {
+    @apply text-text-caption/70
+  }
+
   #issue_tree td.buttons,
   #relations td.buttons {
     @apply w-[82px] p-1.5
@@ -150,6 +157,11 @@
   // groups
   #list_organizations#list_organizations tr.organization.idnt td.name {
     background-image: url(images/subproject_default.svg);
+  }
+
+  // lychee_groupsが入っていない場合
+  table.members .member .icon-group {
+    @apply bg-[6px_50%] pl-6
   }
 
 
