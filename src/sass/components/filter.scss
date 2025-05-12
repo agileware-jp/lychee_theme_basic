@@ -7,6 +7,10 @@
     @apply flex items-center w-full mt-2 mb-2
   }
 
+  .add-filter label {
+    @apply inline-block w-[160px] text-xs text-text-caption text-right mr-1.5
+  }
+
   fieldset#filters, fieldset#options {
     @apply text-xs
   }
@@ -82,17 +86,77 @@
     @apply mr-0
   }
 
-  .add-filter label {
-    @apply inline-block w-[160px] text-xs text-text-caption text-right mr-1.5
-  }
-
   fieldset#filters legend + div {
     @apply px-4
   }
 
+  /* 6.0 start */
+  div#filters-table + .add-filter label {
+    // 6.0だと数pxずれるので位置調整のためにサイズを上書き指定
+    @apply w-[162px]
+  }
+
+  /*
+   * Note:
+   *   table#filters-table div...の指定について
+   *   側は<table id="filters-table">と、5.x系のHTML、
+   *   内部は<div class="filter"><div class="filed">...</div>と、6.x系のHTML
+   *   となっている箇所があるため、その形式にも対応しておく
+  */
+  div#filters-table {
+    @apply flex flex-col gap-2
+  }
+
+  div#filters-table .filter,
+  table#filters-table div.filter {
+    @apply flex items-center gap-2
+  }
+
+  table#filters-table div.filter ~ div.filter {
+    @apply mt-2
+  }
+
+  div#filters-table .field,
+  table#filters-table div.field {
+    @apply w-[160px] min-w-[160px] align-middle
+  }
+
+  div#filters-table .field label,
+  table#filters-table div.field label {
+    @apply text-xs
+  }
+
+  div#filters-table .operator,
+  table#filters-table div.operator {
+    @apply w-[130px] min-w-[130px]
+  }
+
+  div#filters-table .operator select,
+  table#filters-table div.operator select {
+    @apply max-w-none w-full
+  }
+
+  div#filters-table .values,
+  table#filters-table div.values {
+    width: calc(100% - 290px);
+  }
+
+  div#filters-table .values > span,
+  table#filters-table div.values > span {
+    @apply flex items-center
+  }
+
+  div#filters-table .values select,
+  table#filters-table div.values select {
+    @apply min-w-[130px]
+  }
+  /* 6.0 end */
+
+
   #query_form_with_buttons .buttons {
     @apply flex-wrap gap-1 mb-2
   }
+
 
   .query-columns {
     @apply flex items-center gap-1
@@ -119,6 +183,89 @@
   .query-columns select {
     @apply min-w-[150px]
   }
+
+  /* 6.0 start */
+  // Note: 5.x以前はtable#list-definition, 6.x以降はdiv#list-definitionなのでそこで区別する
+  div#list-definition > div {
+    @apply flex items-center gap-1
+  }
+
+  div#list-definition > div:not(:first-child) {
+    @apply mt-2
+  }
+
+  div#list-definition .field {
+    @apply w-[120px] px-2
+  }
+
+  div#list-definition .query-columns {
+    @apply flex flex-col items-start
+  }
+
+  div#list-definition .buttons {
+    @apply flex flex-col gap-1
+  }
+
+  div#list-definition .buttons input[type="button"] {
+    font-family: serif;
+    @apply cursor-pointer block bg-background-primary w-7 h-7 border-border-default p-1 rounded-md hover:border-border-dark active:bg-background-secondary
+  }
+
+  // プロジェクト設定>Lycheeカンバンは#list-definitionというidがなかったので、特別対応
+  .controller-projects #tab-content-lychee_kanban .kanban-display-users legend + div {
+    @apply flex flex-wrap items-center gap-1
+  }
+
+  .controller-projects #tab-content-lychee_kanban .kanban-display-users .query-columns {
+    @apply flex flex-col items-start
+  }
+
+  .controller-projects #tab-content-lychee_kanban .kanban-display-users .buttons {
+    @apply flex flex-col gap-1
+  }
+
+  .controller-projects #tab-content-lychee_kanban .kanban-display-users .buttons input[type="button"] {
+    font-family: serif;
+    @apply cursor-pointer block bg-background-primary w-7 h-7 border-border-default p-1 rounded-md hover:border-border-dark active:bg-background-secondary
+  }
+
+  // LGCはtd#list-definition > divという構造になっていたので特別対応
+  td#list-definition > div {
+    @apply flex flex-wrap items-center gap-1
+  }
+
+  td#list-definition .query-columns {
+    @apply flex flex-col items-start
+  }
+
+  td#list-definition .buttons {
+    @apply flex flex-col gap-1
+  }
+
+  td#list-definition .buttons input[type="button"] {
+    font-family: serif;
+    @apply cursor-pointer block bg-background-primary w-7 h-7 border-border-default p-1 rounded-md hover:border-border-dark active:bg-background-secondary
+  }
+
+  // LGC5.0はfieldset#list-definitionという構造になっていたので特別対応
+  .plugin-lychee_gantt_chart fieldset#list-definition > div {
+    @apply flex flex-wrap items-center gap-1
+  }
+
+  .plugin-lychee_gantt_chart fieldset#list-definition .query-columns {
+    @apply flex flex-col items-start
+  }
+
+  .plugin-lychee_gantt_chart fieldset#list-definition .buttons {
+    @apply flex flex-col gap-1
+  }
+
+  .plugin-lychee_gantt_chart fieldset#list-definition .buttons input[type="button"] {
+    font-family: serif;
+    @apply cursor-pointer block bg-background-primary w-7 h-7 border-border-default p-1 rounded-md hover:border-border-dark active:bg-background-secondary
+  }
+  /* 6.0 end */
+
 
   // フィルター内部の細かい調整
   label[for="draw_selected_columns"] {
@@ -241,6 +388,10 @@
       @apply px-4
     }
 
+    #levm_query_form fieldset legend.icon-expanded + div {
+      @apply mb-2
+    }
+
     .condition ~ .condition {
       @apply mt-2
     }
@@ -277,6 +428,31 @@
       label + label {
         @apply ml-2
       }
+    }
+
+    // カスタムクエリ（EVMでカスタムクエリを作成すると、タイプ・対象UIの外にカスタムクエリ用のUIが追加されるので、専用の対応が必要）
+    #levm_queries {
+      @apply mb-2
+    }
+
+    #levm_queries legend {
+      @apply text-xs font-bold
+    }
+
+    #levm_queries legend.icon {
+      @apply bg-[left_center] text-text-caption mb-2
+    }
+
+    #levm_queries legend + div {
+      @apply px-4
+    }
+
+    #levm_queries legend.icon-expended + div {
+      @apply mb-2
+    }
+
+    #levm_queries .icon-edit {
+      @apply ml-2 mr-1
     }
   }
 
@@ -788,8 +964,35 @@
       @apply flex-grow
     }
 
-    .add-filter label {
-      @apply w-auto
+    .add-filter {
+      @apply flex-wrap
     }
+
+    .add-filter label {
+      @apply w-full text-left
+    }
+
+    .query-columns {
+      @apply flex-wrap
+    }
+  
+    /* 6.x start */
+    div#filters-table + .add-filter label {
+      // 6.0だと数pxずれるので位置調整のためにサイズを上書き指定
+      @apply w-full
+    }
+
+    div#list-definition > div {
+      @apply flex-wrap
+    }
+  
+    div#list-definition > div:not(:first-child) {
+      @apply mt-4
+    }
+  
+    div#list-definition .field {
+      @apply w-full px-0
+    }
+    /* 6.0 end */
   }
 }

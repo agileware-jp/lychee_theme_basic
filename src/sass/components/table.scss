@@ -27,7 +27,7 @@
 
   table.list,
   .table-list {
-    @apply bg-background-primary border-border-divider m-0 rounded-none
+    @apply bg-background-primary border border-border-divider m-0 rounded-none
   }
 
   table.list th {
@@ -98,6 +98,24 @@
 
     @apply pl-7
   }
+
+  /* 6.0 start */
+  tr.message td.subject:has(.icon) {
+    background-image: url(images/arrow_right_default.svg);
+    background-position: 0.5rem 50%;
+    background-repeat: no-repeat;
+
+    @apply pl-7
+  }
+
+  tr.message td.subject .icon {
+    @apply pl-0
+  }
+
+  tr.message td.subject:not(:has(.icon)) {
+    @apply pl-7
+  }
+  /* 6.0 end */
 
   table.custom_fields .icon-sort-handle {
     display: inline-block;

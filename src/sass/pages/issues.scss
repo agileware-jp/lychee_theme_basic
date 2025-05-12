@@ -1,9 +1,5 @@
 @layer components {
   .controller-issues {
-    #content > h2 {
-      @apply mb-0
-    }
-
     #content .contextual {
       @apply mb-2
     }

@@ -50,13 +50,6 @@
     background: #000;
     border: 0;
   }
-  
-  * html #sidebar hr {
-    width: 95%;
-    position: relative;
-    left: -6px;
-    color: #ccc;
-  }
 
   #sidebar .contextual {
     @apply mr-4
@@ -158,6 +151,13 @@
   #admin-menu#admin-menu a.redmine-logs {
     background-image: url(images/overview_default.svg);
   }
+
+
+  /* Support 6.0 start */
+  #sidebar-switch-panel {
+    @apply hidden
+  }
+  /* Support 6.0 end */
 
 
   /* sidebarのadmin-menuは、通常sidebarに合わせて文字サイズ等は小さくしたい */
