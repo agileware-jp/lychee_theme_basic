@@ -590,21 +590,6 @@
     }
   }
 
-  // Lychee Issue Sets
-  .controller-lychee_issue_sets.controller-lychee_issue_sets {
-    .issue-sets thead .checkbox + th {
-      @apply text-left
-    }
-
-    .issue-sets .num-issue-templates {
-      @apply w-28
-    }
-
-    .issue-sets .buttons {
-      @apply w-8
-    }
-  }
-
   // Lychee Project Term
   .controller-projects.controller-projects {
     #lychee_project_term_controls {
@@ -628,6 +613,20 @@
   }
 
   // Lychee Issue Sets
+  .controller-lychee_issue_sets.controller-lychee_issue_sets {
+    .issue-sets thead .checkbox + th {
+      @apply text-left
+    }
+
+    .issue-sets .num-issue-templates {
+      @apply w-28
+    }
+
+    .issue-sets .buttons {
+      @apply w-8
+    }
+  }
+
   .controller-lychee_issue_sets {
     .issue-set {
       @apply clear-both bg-status-warningLight border-border-divider mt-4 mb-2 p-4 rounded-md
@@ -667,6 +666,10 @@
         }
       }
     }
+  }
+
+  .controller-issue_forms .edit_lychee_issue_set table.issue-form-table textarea[id^="lychee_issue_set_issue_templates_attributes_"] {
+    @apply resize
   }
 
   .controller-lychee_issue_templates {
