@@ -117,6 +117,10 @@
     @apply w-full
   }
 
+  #lychee_saml_auth_redirect_to_auth_request_box input[type=submit] {
+    @extend .BTN_SECONDARY;
+  }
+
   #content > .contextual > a:not(.task-kanban-icon),
   p.buttons a {
     @extend .BTN_SECONDARY;
