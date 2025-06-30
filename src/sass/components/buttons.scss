@@ -118,7 +118,7 @@
   }
 
   #lychee_saml_auth_redirect_to_auth_request_box input[type=submit] {
-    @extend .BTN_SECONDARY
+    @extend .BTN_SECONDARY;
   }
 
   #content > .contextual > a:not(.task-kanban-icon),
