@@ -1158,6 +1158,28 @@
     }
   }
 
+
+  // Lychee Issue Form 2
+  #lif-embed-close-button {
+    @apply bg-background-primary
+  }
+
+  #lif-embed-close-button:hover {
+    @apply bg-background-secondary
+  }
+
+  .lif-iframe-body {
+    #wrapper {
+      @apply ml-0
+    }
+  }
+
+  @media screen and (max-width: 899px) {
+    .lif-iframe-body #main {
+      @apply pt-0
+    }
+  }
+
   // その他
   .controller-projects.controller-projects {
     table.list:not(.odd-even) tbody tr:nth-child(odd) td {
