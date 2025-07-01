@@ -184,6 +184,17 @@
     @apply min-w-[150px]
   }
 
+  /* オプションのマルチセレクトの高さが失われるバグ対応のため、マルチセレクトの高さを固定する */
+  .query-columns select[multiple] {
+    @apply h-[200px]
+  }
+
+  // カンバン・バックログは他のcssによりheightが上書きされるため、詳細度を高めて対応
+  .controller-kanban.controller-kanban .query-columns select[multiple],
+  .controller-backlog.controller-backlog .query-columns select[multiple] {
+    @apply h-[200px]
+  }
+
   /* 6.0 start */
   // Note: 5.x以前はtable#list-definition, 6.x以降はdiv#list-definitionなのでそこで区別する
   div#list-definition > div {
