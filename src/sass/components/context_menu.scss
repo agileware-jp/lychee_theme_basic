@@ -21,7 +21,7 @@
 }
 #context-menu li>a { width:auto; } /* others */
 #context-menu a.disabled, #context-menu a.disabled:hover {color: #aaa;}
-#context-menu li a.submenu { padding-right:16px; background:url("../images/arrow_right.png") right no-repeat; }
+#context-menu li a.submenu { padding-right:16px; }
 #context-menu li.folder:hover { z-index:40; }
 #context-menu ul ul, #context-menu  li:hover ul ul { display:none; }
 #context-menu li:hover ul, #context-menu li:hover li:hover ul { display:block; }
@@ -64,6 +64,10 @@ div#gantt_area .context-menu-selection a { color: #169; }
 
   #context-menu li.folder > ul {
     @apply left-[172px]
+  }
+
+  #context-menu li.folder .icon-only:has(svg.icon-svg) {
+    @apply hidden
   }
 
   #context-menu.reverse-x li.folder > ul {
