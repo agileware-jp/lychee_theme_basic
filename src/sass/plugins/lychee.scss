@@ -487,11 +487,6 @@
 
   // Lychee Gantt Chart 5
   .controller-lychee_gantt_chart.controller-lychee_gantt_chart {
-    // ガントチャート5のみコンテンツエリア上部の余白が大きいため調整
-    #content {
-      @apply pt-0
-    }
-
     ul[class^="lgc-AvailableColumnList-"] li label {
       @apply gap-[3px]
     }
