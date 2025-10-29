@@ -568,6 +568,14 @@ button.tab-right:not(:has(svg)) {
   background-size: 20px;
 }
 
+// issues
+a.group:has(svg.icon-svg) {
+  background-image: url(images/groups_3_default.svg);
+  background-position: 0% 50%;
+  background-repeat: no-repeat;
+  padding-left: 20px;
+}
+
 /*
 * Plugins
 */
