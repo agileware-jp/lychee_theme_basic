@@ -22,6 +22,11 @@
     width: calc(100% - var(--top-menu-width-open));
   }
 
+  .lif-iframe-body div#sticky-issue-header {
+    left: 0;
+    width: 100%;
+  }
+
   // 特定のジャーナルに直接リンク遷移した際に、Sticky Issue Headerにコンテンツが隠れるのを防ぐ
   .controller-issues.action-show div.wiki a[name],
   .controller-issues.action-show #history div[id^="note-"],

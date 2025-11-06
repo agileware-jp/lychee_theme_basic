@@ -663,6 +663,10 @@
     width: 100%;
   }
 
+  .lif-iframe-body div#sticky-issue-header {
+    top: 0;
+  }
+
   div#activity dl, #search-results {margin-left: 0;}
 
   .version-overview table.progress {width:75%;}
