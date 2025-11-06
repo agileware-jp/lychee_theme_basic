@@ -9,6 +9,7 @@
 * →flexboxみたいなレイアウトとかまで全部Tailwindcssで指定すると後々大変な気がするから
 */
 
+@use './base/variables.scss' as *;
 @use './base/base.scss' as *;
 
 // Layout

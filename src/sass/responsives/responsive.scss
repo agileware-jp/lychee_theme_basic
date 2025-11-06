@@ -651,6 +651,18 @@
     margin: 0;
   }
 
+    // Sticky Issue Header
+  div#sticky-issue-header {
+    top: var(--mobile-header);
+    left: 0;
+    width: 100%;
+  }
+
+  .isTopMenuOpen div#sticky-issue-header {
+    left: 0;
+    width: 100%;
+  }
+
   div#activity dl, #search-results {margin-left: 0;}
 
   .version-overview table.progress {width:75%;}

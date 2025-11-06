@@ -1,4 +1,53 @@
 @layer components {
+  // Sticky Issue Header
+  div#sticky-issue-header {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: var(--top-menu-width-close);
+    right: 0;
+    display: none;
+    width: calc(100% - var(--top-menu-width-close));
+    background-color: var(--bg-primary);
+    border: none;
+    border-bottom: 1px solid var(--border-default);
+    margin-top: 0;
+    padding: 12px;
+    border-radius: 0;
+    z-index: 1000;
+  }
+
+  .isTopMenuOpen div#sticky-issue-header {
+    left: var(--top-menu-width-open);
+    width: calc(100% - var(--top-menu-width-open));
+  }
+
+  // 特定のジャーナルに直接リンク遷移した際に、Sticky Issue Headerにコンテンツが隠れるのを防ぐ
+  .controller-issues.action-show div.wiki a[name],
+  .controller-issues.action-show #history div[id^="note-"],
+  .controller-issues.action-show #history div[id^="change-"],
+  .controller-issues.action-show #update {
+    scroll-margin-top: 65px;
+  }
+
+  div#sticky-issue-header.is-visible {
+    display: flex;
+  }
+
+  div#sticky-issue-header .issue-heading {
+    flex-shrink: 0;
+    white-space: nowrap;
+    margin-right: 8px;
+  }
+
+  div#sticky-issue-header .subject {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex-grow: 1;
+    font-weight: bold;
+  }
+
   .controller-issues {
     #content .contextual {
       @apply mb-2
