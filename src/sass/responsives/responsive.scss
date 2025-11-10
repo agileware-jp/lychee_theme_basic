@@ -731,7 +731,7 @@
   /* mobile表示時の不自然なbox間の余白を削除 */
   // Note: mobile-hiddenにより、PC表示用の「作成」ボタンが非表示になることで、余白が不自然に空いてしまう
   .controller-trackers {
-    .new_tracker .splitcontentleft .box {
+    .new_tracker .splitcontentleft .box:has(+ .mobile-show) {
       margin-bottom: 0;
     }
   }
