@@ -1,28 +1,27 @@
-@layer components {
-  .controller-trackers .projects li {
-    @apply mt-2
+.controller-trackers .projects li {
+  margin-top: 0.5rem;
+}
+
+.controller-trackers .projects.root > li:first-child {
+  margin-top: 0;
+}
+
+/* プロジェクトリストにスクロールバーを表示する */
+.controller-trackers {
+  #tracker_project_ids > ul {
+    margin-right: 0;
   }
 
-  .controller-trackers .projects.root > li:first-child {
-    @apply mt-0
+  #tracker_project_ids > ul::-webkit-scrollbar {
+    width: 6px;
   }
 
-  /* プロジェクトリストにスクロールバーを表示する */
-  .controller-trackers {
-    #tracker_project_ids > ul {
-      @apply mr-0
-    }
+  #tracker_project_ids > ul::-webkit-scrollbar-thumb {
+    background-color: rgba(var(--bg-dark-rgb), 0.5);
+    border-radius: var(--bd-radius-base);
+  }
 
-    #tracker_project_ids > ul::-webkit-scrollbar {
-      @apply w-[6px]
-    }
-
-    #tracker_project_ids>ul::-webkit-scrollbar-thumb {
-      @apply bg-background-dark/50 rounded
-    }
-
-    #tracker_project_ids>ul::-webkit-scrollbar-corner {
-      @apply hidden
-    }
+  #tracker_project_ids > ul::-webkit-scrollbar-corner {
+    display: none;
   }
 }

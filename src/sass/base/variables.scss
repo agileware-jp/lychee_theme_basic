@@ -5,6 +5,9 @@
   --bg-tertiary: #DDE9EE;
   --bg-dark: #002E40;
 
+  /* RGB Colors */
+  --bg-dark-rgb: 0, 46, 64;
+
   --border-default: #CCD5D9;
   --border-dark: #99ABB3;
   --border-divider: #E6EAEC;
@@ -22,6 +25,17 @@
   /* 13px */ --txt-sm: 0.8125rem;
   /* 12px */ --txt-xs: 0.75rem;
   /* 11px */ --txt-xxs : 0.6875rem;
+
+  /* Border Radius */
+  --bd-radius-sm: 2px;
+  --bd-radius-base: 4px;
+  --bd-radius-md: 6px;
+  --bd-radius-lg: 8px;
+  --bd-radius-xl: 12px;
+  --bd-radius-2xl: 16px;
+  --bd-radius-3xl: 24px;
+  --bd-radius-full: 9999px;
+  --bd-radius-none: 0px;
 
   /* Other */
   --top-menu-width-close: 52px;

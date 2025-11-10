@@ -57,7 +57,6 @@
 
   // topへ戻るボタン（LIFよりは下に配置するためのz-index指定）
   .aw_backToTop {
-    // @extend .BTN_PRIMARY;
     background-image: url(images/arrow_upward_onFill.svg);
     @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap w-8 h-8 bg-center align-middle bg-background-dark/80 bg-no-repeat border-none p-0 rounded-lg fixed right-4 bottom-4 z-[499] hover:bg-background-dark/70 shadow-md
   }
@@ -110,6 +109,10 @@
   input[type=submit],
   button[type=submit] {
     @extend .BTN_PRIMARY;
+
+    &.mobile-show {
+      display: none;
+    }
   }
 
   #login-form #login-submit {

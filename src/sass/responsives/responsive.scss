@@ -589,8 +589,21 @@
     E) UX ELEMENTS
   \*----------------------------------------*/
 
-  .mobile-hide {display:none;}
-  .mobile-show {display:initial;}
+  .mobile-hide {display: none;}
+  .mobile-show {display: initial;}
+
+  // 特定のページでsubmitボタンが2つ表示される問題への対応
+  // Note: mobile-show, mobile-hideで表示の制御を行っているが、ボタンスタイルを上書きしたことで、mobile-show, mobile-hiddenよりもボタン側の詳細度が高くなってしまい、mobile-show, mobile-hiddenのスタイルが効かなくなっているページがあるため
+  input[type=submit],
+  button[type=submit] {
+    &.mobile-hide {
+      display: none;
+    }
+
+    &.mobile-show {
+      display: initial;
+    }
+  }
 
   /* Contextual Buttons */
 
@@ -693,25 +706,33 @@
 
   /* Tracker */
   .controller-trackers #tracker_project_ids {
-    @apply mt-4
+    margin-top: 1rem;
   }
 
   /* プロジェクトごとのリスト */
   .controller-projects {
     #tab-content-per_project_lists ul[id^="per_project_enumerations_"] li:not(:first-child) {
-      @apply mt-3
+      margin-top: 0.75rem;
     }
 
     #tab-content-per_project_lists ul[id^="per_project_enumerations_"] input[type="text"] {
-      @apply w-[70%]
+      width: 70%;
     }
 
     #tab-content-per_project_lists div[id^="possible_values_list_"] > div:not(:first-child) {
-      @apply mt-3
+      margin-top: 0.75rem;
     }
 
     #tab-content-per_project_lists div[id^="possible_values_list_"] input[type="text"] {
-      @apply w-[70%]
+      width: 70%;
+    }
+  }
+
+  /* mobile表示時の不自然なbox間の余白を削除 */
+  // Note: mobile-hiddenにより、PC表示用の「作成」ボタンが非表示になることで、余白が不自然に空いてしまう
+  .controller-trackers {
+    .new_tracker .splitcontentleft .box {
+      margin-bottom: 0;
     }
   }
 
