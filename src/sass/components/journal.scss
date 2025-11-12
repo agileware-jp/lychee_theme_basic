@@ -60,4 +60,46 @@
   .journal .jstEditor textarea {
     @apply mb-2
   }
+
+  /*** After 6.1: Journalの構造変更 ***/
+  .journal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .journal-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .journal-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* チケット詳細 */
+  // 6.0以前のレイアウト調整用cssの影響打ち消し（プロフィールアイコン設定時）
+  div.journal .journal-header img.gravatar {
+    margin-left: 0;
+  }
+
+  // 6.0以前のレイアウト調整用cssの影響打ち消し（プロフィール画像未設定時）
+  body.avatars-off div.journal .journal-header span.gravatar {
+    margin-left: 0;
+  }
+
+
+  /* ニュースのコメント */
+  // 6.0以前のコメントUIの影響を打ち消す
+  .controller-news.action-show #comments .journal h4 {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .controller-news.action-show #comments .journal .wiki:last-of-type {
+    border-bottom: none;
+  }
 }

@@ -140,13 +140,24 @@
   // チケット詳細>添付ファイルでのicon-onlyをtertialy buttonに
   .attachments .contextual .icon-only {
     @extend .BTN_TERTIARY_ICON_ONLY;
-    @apply w-6 h-6
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
   // journalのcontextualをtertialy buttonに
   .contextual .journal-actions .icon-only {
     @extend .BTN_TERTIARY_ICON_ONLY;
-    @apply w-6 h-6
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  // 6.1でアイコンがtertiary icon onlyになっていない問題へ対応
+  .journal-header .journal-meta .icon-only.icon-quote,
+  .journal-header .journal-meta .icon-only.icon-edit,
+  .journal-header .journal-meta .icon-only.icon-actions {
+    @extend .BTN_TERTIARY_ICON_ONLY;
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
   // contextual(ページタイトル右のボタン群を個別にカスタマイズする:特定のものだけPrimaryにする)
@@ -226,9 +237,28 @@
   }
 
 
+  // フォーラムのコメントの編集や削除アイコン
   .controller-messages #replies .message.reply .contextual a {
     @extend .BTN_TERTIARY_ICON_ONLY;
-    @apply w-6 h-6
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  // 6.1以降でフォーラムのコメント編集や削除アイコンが見えなくなる問題への対処
+  // Note: .icon-onlyがないため、高さが指定されておらず、見えなくなっている
+  .controller-messages .journal-meta .icon:not(.reaction-button),
+  .controller-messages .journal-meta .icon-only.icon-quote {
+    @extend .BTN_TERTIARY_ICON_ONLY;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+
+  // 6.1ニュースのコメント削除アイコンをフォーラムやジャーナルに合わせる
+  .controller-news .journal-meta .icon-del {
+    @extend .BTN_TERTIARY_ICON_ONLY;
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
   // Issue詳細の子チケット追加など

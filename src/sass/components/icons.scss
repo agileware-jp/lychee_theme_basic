@@ -147,6 +147,16 @@ svg.icon-svg {
   background-image: url(images/widgets_default.svg);
 }
 
+.icon-quote,
+.icon-quote:not(:has(svg)) {
+  background-image: url(images/format_quote_default.svg);
+}
+
+.icon-only.icon-quote,
+.icon-only.icon-quote:not(:has(svg)) {
+  background-image: url(images/format_quote_dark.svg);
+}
+
 .icon-help,
 .icon-help:not(:has(svg)) {
   background-image: url(images/help_default.svg);
@@ -574,6 +584,11 @@ a.group:has(svg.icon-svg) {
   background-position: 0% 50%;
   background-repeat: no-repeat;
   padding-left: 20px;
+}
+
+// フォーラムのコメント
+.controller-messages .journal-meta .icon-edit {
+  background-image: url(images/edit_dark.svg);
 }
 
 /*
