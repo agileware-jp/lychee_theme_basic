@@ -572,13 +572,13 @@ button.tab-right:not(:has(svg)) {
   background-image: url(images/chevron_right_onFill.svg);
 }
 
-// filter toggle icon
+/* filter toggle icon */
 .toggle-multiselect.icon-toggle-plus,
 .toggle-multiselect.icon-toggle-minus {
   background-size: 20px;
 }
 
-// issues
+/* issues */
 a.group:has(svg.icon-svg) {
   background-image: url(images/groups_3_default.svg);
   background-position: 0% 50%;
@@ -586,7 +586,21 @@ a.group:has(svg.icon-svg) {
   padding-left: 20px;
 }
 
-// フォーラムのコメント
+// 6.0のジャーナルのコメント（icon-onlyが外れたことによりアイコンの色がdefaultになったのでその対応）
+.journal .journal-actions .icon-comment {
+  background-image: url(images/chat_bubble_dark.svg);
+}
+
+/* フォーラムコメントの各種アイコンがdarkにならない問題への対応 */
+.controller-messages .reply .contextual .icon-comment {
+  background-image: url(images/chat_bubble_dark.svg);
+}
+
+.controller-messages .reply .contextual .icon-edit {
+  background-image: url(images/edit_dark.svg);
+}
+
+// 6.1からのHTML構造変更に対応
 .controller-messages .journal-meta .icon-edit {
   background-image: url(images/edit_dark.svg);
 }

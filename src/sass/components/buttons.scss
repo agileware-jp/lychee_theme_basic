@@ -145,7 +145,8 @@
   }
 
   // journalのcontextualをtertialy buttonに
-  .contextual .journal-actions .icon-only {
+  .contextual .journal-actions .icon-only,
+  .journal .journal-actions .icon-comment {
     @extend .BTN_TERTIARY_ICON_ONLY;
     width: 1.5rem;
     height: 1.5rem;
