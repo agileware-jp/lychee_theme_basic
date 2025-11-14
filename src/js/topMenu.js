@@ -172,23 +172,36 @@ export function moveLycheeHelp() {
  */
 export function addFeedbackLink() {
   const topMenuNav = document.querySelector('#top-menu #account ul')
+
+  // フィードバックリンクの要素を生成
   const li = document.createElement('li')
   const a = document.createElement('a')
   li.classList.add('aw_fbLink_li')
   a.classList.add('aw_fbLink')
-  a.setAttribute('href', 'https://support.lychee-redmine.jp/feedback/')
+
+  // ベースとなるURL
+  const baseURL = 'https://community.lychee-redmine.jp/projects/lychee-redmine/issues/new'
+
+  // 遷移元のプラグイン名 TODO: pluginにプラグイン名が動的に入るようにする
+  const plugin = 'lgc'
+
+  // クエリパラメータとしてセット
+  const url = new URL(baseURL)
+  url.searchParams.set('plugin', plugin)
+
+  // aタグに情報をセット
+  a.setAttribute('href', url.toString())
   a.setAttribute('target', '_blank')
   a.textContent = t('sendFeedback')
 
   // ちらつき防止のため、ちらつきが発生するスタイルはあらかじめjsで指定
-  li.style.cssText = `
-    order: 4;
-  `
+  li.style.cssText = `order: 4;`
+  a.style.cssText = `padding-left: 1.75rem;`
 
-  a.style.cssText = `
-    padding-left: 1.75rem;
-  `
+  // 別サイトへリンクすることを明示する
+  a.addEventListener('click')
 
+  // フィードバックリンクの追加
   li.appendChild(a)
   topMenuNav.insertBefore(li, topMenuNav.firstElementChild)
 }
