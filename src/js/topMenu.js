@@ -210,6 +210,7 @@ export function addFeedbackLink() {
 
   // プラグイン名が判明している場合は、クエリパラメータとしてセット
   const url = new URL(baseURL)
+  url.searchParams.set('from', 'feedback')
   url.searchParams.set('plugin', currentPlugin === undefined ? 'other' : currentPlugin)
   a.setAttribute('href', url.toString())
 
