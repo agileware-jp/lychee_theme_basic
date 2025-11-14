@@ -171,6 +171,27 @@ export function moveLycheeHelp() {
  * フィードバック用リンクの追加
  */
 export function addFeedbackLink() {
+  // フィードバック先に渡すためのプラグイン一覧を定義
+  const PLUGINS = [
+    'dashboard',
+    'kanban',
+    'backlog',
+    'lychee_gantt',
+    'lgc',
+    'project_evms',
+    'root_fever_charts',
+    'fever_charts',
+    'lychee_cost_expenses',
+    'project_report',
+    'project_reports',
+    'resource_management',
+    'lychee_work_plan',
+    'time_management',
+    'lychee_message_box_my_box',
+    'lychee_message_box_information',
+    'lychee_message_box_system_error',
+  ]
+
   const topMenuNav = document.querySelector('#top-menu #account ul')
 
   // フィードバックリンクの要素を生成
@@ -179,18 +200,24 @@ export function addFeedbackLink() {
   li.classList.add('aw_fbLink_li')
   a.classList.add('aw_fbLink')
 
+
+  // URLのパスにPLUGINSの値が含まれているかチェック（どのプラグインからかを特定する）
+  const path = location.pathname
+  const currentPlugin = PLUGINS.find(plugin => path.includes(plugin))
+
   // ベースとなるURL
   const baseURL = 'https://community.lychee-redmine.jp/projects/lychee-redmine/issues/new'
 
-  // 遷移元のプラグイン名 TODO: pluginにプラグイン名が動的に入るようにする
-  const plugin = 'lgc'
-
-  // クエリパラメータとしてセット
-  const url = new URL(baseURL)
-  url.searchParams.set('plugin', plugin)
+  // プラグイン名が判明している場合は、クエリパラメータとしてセット
+  if(currentPlugin !== undefined) {
+    const url = new URL(baseURL)
+    url.searchParams.set('plugin', currentPlugin)
+    a.setAttribute('href', url.toString())
+  } else {
+    a.setAttribute('href', baseURL)
+  }
 
   // aタグに情報をセット
-  a.setAttribute('href', url.toString())
   a.setAttribute('target', '_blank')
   a.textContent = t('sendFeedback')
 
