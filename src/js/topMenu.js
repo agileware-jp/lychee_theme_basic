@@ -198,9 +198,6 @@ export function addFeedbackLink() {
   li.style.cssText = `order: 4;`
   a.style.cssText = `padding-left: 1.75rem;`
 
-  // 別サイトへリンクすることを明示する
-  a.addEventListener('click')
-
   // フィードバックリンクの追加
   li.appendChild(a)
   topMenuNav.insertBefore(li, topMenuNav.firstElementChild)
