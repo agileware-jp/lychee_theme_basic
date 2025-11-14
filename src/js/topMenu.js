@@ -209,13 +209,9 @@ export function addFeedbackLink() {
   const baseURL = 'http://localhost:3000/projects/lychee-redmine/issues/new'
 
   // プラグイン名が判明している場合は、クエリパラメータとしてセット
-  if(currentPlugin !== undefined) {
-    const url = new URL(baseURL)
-    url.searchParams.set('plugin', currentPlugin)
-    a.setAttribute('href', url.toString())
-  } else {
-    a.setAttribute('href', baseURL)
-  }
+  const url = new URL(baseURL)
+  url.searchParams.set('plugin', currentPlugin === 'undefined' ? 'other' : currentPlugin)
+  a.setAttribute('href', url.toString())
 
   // aタグに情報をセット
   a.setAttribute('target', '_blank')
