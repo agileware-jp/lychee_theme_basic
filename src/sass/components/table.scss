@@ -51,6 +51,32 @@
     @apply w-[29px] p-0
   }
 
+  table.issues td ul {
+    list-style-type: disc;
+    padding-left: 1rem;
+  }
+
+  table.issues td ul ul {
+    list-style-type: circle;
+    padding-left: 1rem;
+  }
+
+  table.issues td ul ul ul {
+    list-style-type: square;
+  }
+
+  table.issues td ol {
+    list-style-type: decimal;
+    padding-left: 1rem;
+  }
+
+  table.issues td ul + ol,
+  table.issues td ul + ul,
+  table.issues td ol + ol,
+  table.issues td ol + ul {
+    margin-top: 0.5rem;
+  }
+
   tr.project.closed td,
   tr.project.archived td,
   tr.project.closed td a,
