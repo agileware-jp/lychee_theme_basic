@@ -1,0 +1,56 @@
+/**
+ * チケット詳細やチケット一覧に表示されるアイコンに関するcss
+ */
+img.gravatar {
+  vertical-align: middle;
+  border-radius: 20%;
+}
+
+div.issue img.gravatar {
+  float: left;
+  margin: 0 12px 6px 0;
+}
+
+div.gravatar-with-child,
+div.avatar-with-child {
+  position: relative;
+}
+
+div.gravatar-with-child > img.gravatar:nth-child(2) {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  border-radius: 20%;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+}
+
+img.gravatar {
+  display: inline-block;
+  border-radius: 9999px;
+}
+
+.gravatar.gravatar,
+.gravatar-child.gravatar-child,
+.avatar-child {
+  border-radius: 9999px;
+}
+
+.avatar-child {
+  background: #00ab9f;
+  color: #fff;
+  text-align: center;
+}
+
+div.gravatar-with-child.gravatar-with-child > img.gravatar:nth-child(2),
+div.avatar-with-child.avatar-with-child > .avatar:nth-child(2) {
+  border-radius: 9999px;
+}
+
+td.username .gravatar.gravatar {
+  vertical-align: middle;
+}
+
+img.gravatar, img.gravatar-child, img.avatar-child {
+  height: revert-layer;
+  object-fit: cover;
+}

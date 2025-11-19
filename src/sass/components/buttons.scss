@@ -57,7 +57,6 @@
 
   // topへ戻るボタン（LIFよりは下に配置するためのz-index指定）
   .aw_backToTop {
-    // @extend .BTN_PRIMARY;
     background-image: url(images/arrow_upward_onFill.svg);
     @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap w-8 h-8 bg-center align-middle bg-background-dark/80 bg-no-repeat border-none p-0 rounded-lg fixed right-4 bottom-4 z-[499] hover:bg-background-dark/70 shadow-md
   }
@@ -110,6 +109,10 @@
   input[type=submit],
   button[type=submit] {
     @extend .BTN_PRIMARY;
+
+    &.mobile-show {
+      display: none;
+    }
   }
 
   #login-form #login-submit {
@@ -137,13 +140,25 @@
   // チケット詳細>添付ファイルでのicon-onlyをtertialy buttonに
   .attachments .contextual .icon-only {
     @extend .BTN_TERTIARY_ICON_ONLY;
-    @apply w-6 h-6
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
   // journalのcontextualをtertialy buttonに
-  .contextual .journal-actions .icon-only {
+  .contextual .journal-actions .icon-only,
+  .journal .journal-actions .icon-comment {
     @extend .BTN_TERTIARY_ICON_ONLY;
-    @apply w-6 h-6
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  // 6.1でアイコンがtertiary icon onlyになっていない問題へ対応
+  .journal-header .journal-meta .icon-only.icon-quote,
+  .journal-header .journal-meta .icon-only.icon-edit,
+  .journal-header .journal-meta .icon-only.icon-actions {
+    @extend .BTN_TERTIARY_ICON_ONLY;
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
   // contextual(ページタイトル右のボタン群を個別にカスタマイズする:特定のものだけPrimaryにする)
@@ -223,9 +238,28 @@
   }
 
 
+  // フォーラムのコメントの編集や削除アイコン
   .controller-messages #replies .message.reply .contextual a {
     @extend .BTN_TERTIARY_ICON_ONLY;
-    @apply w-6 h-6
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  // 6.1以降でフォーラムのコメント編集や削除アイコンが見えなくなる問題への対処
+  // Note: .icon-onlyがないため、高さが指定されておらず、見えなくなっている
+  .controller-messages .journal-meta .icon:not(.reaction-button),
+  .controller-messages .journal-meta .icon-only.icon-quote {
+    @extend .BTN_TERTIARY_ICON_ONLY;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+
+  // 6.1ニュースのコメント削除アイコンをフォーラムやジャーナルに合わせる
+  .controller-news .journal-meta .icon-del {
+    @extend .BTN_TERTIARY_ICON_ONLY;
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
   // Issue詳細の子チケット追加など

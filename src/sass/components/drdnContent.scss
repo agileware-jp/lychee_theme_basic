@@ -56,7 +56,8 @@
   }
 
   .drdn-items > a,
-  .contextual .drdn-items > a.icon {
+  .contextual .drdn-items > a.icon,
+  .journal-actions .drdn-items > a.icon {
     @apply text-sm text-text-default mx-1 py-2 px-3 rounded
   }
 
@@ -69,8 +70,10 @@
     @apply mt-0.5
   }
 
-  .contextual .drdn-items > a.icon {
-    @apply pl-6
+  .contextual .drdn-items > a.icon,
+  .journal-actions .drdn-items > a.icon {
+    background-position-x: 8px;
+    padding-left: 1.5rem;
   }
 
   #project-jump.drdn {
