@@ -295,6 +295,11 @@
 
 
   /* 6.1 */
+  ul.contains-task-list {
+    list-style-type: none;
+    margin-left: 0;
+  }
+
   /***** CommonMark Alerts *****/
   .markdown-alert {
     border-left: 4px solid;
