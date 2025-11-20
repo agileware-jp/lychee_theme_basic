@@ -1001,13 +1001,6 @@ tr.ui-sortable-helper { border:1px solid #e4e4e4; }
 
 /* .contextual>*:not(:first-child), .buttons>.icon:not(:first-child), .contextual .journal-actions>*:not(:first-child) { margin-left: 5px; } */
 
-
-h2 img.gravatar, h3 img.gravatar {margin-right: 4px;}
-h4 img.gravatar {margin: -2px 4px -4px 0;}
-td.username img.gravatar {margin: 0 0.5em 0 0; vertical-align: top;}
-/* Used on 12px Gravatar img tags without the icon background */
-.icon-gravatar {float: left; margin-right: 4px;}
-
 .journal {clear: left;}
 
 h2 img { vertical-align:middle; }
