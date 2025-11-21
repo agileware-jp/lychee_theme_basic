@@ -342,6 +342,11 @@
     }
   }
 
+  .pre-wrapper .copy-pre-content-link.icon-only {
+    @extend .BTN_TERTIARY_ICON_ONLY_OUTLINED;
+    @apply w-5 h-5 mx-0 ml-1
+  }
+
   // ライセンス管理の戻るボタン
   .controller-lychee_licenses {
     input[name="commit"] + a {
