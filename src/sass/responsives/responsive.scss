@@ -791,79 +791,104 @@
     text-align: left;
   }
 
-  #issue_tree table,
-  #relations table {
-    @apply block bg-transparent
+  // Note: 6.1から「関連/子チケットの項目を選択できる」ようになったことで表をスクロール可能にしたので、6.0でそれが発生しないようにnotとhasを使って6.1のみに適用されるように調整
+  #issue_tree:not(:has(.subtasks-wrapper)) table,
+  #relations:not(:has(.relation-issues-wrapper)) table {
+    display: block;
+    background-color: transparent;
   }
 
-  #issue_tree thead,
-  #issue_tree tbody,
-  #relations thead,
-  #relations tbody {
-    @apply block
+  #issue_tree:not(:has(.subtasks-wrapper)) thead,
+  #issue_tree:not(:has(.subtasks-wrapper)) tbody,
+  #relations:not(:has(.relation-issues-wrapper)) thead,
+  #relations:not(:has(.relation-issues-wrapper)) tbody {
+    display: block;
   }
 
-  #issue_tree tr.issue,
-  #relations tr.issue {
-    @apply overflow-hidden box-border flex flex-wrap bg-background-primary border border-border-divider rounded-md
+  #issue_tree:not(:has(.subtasks-wrapper)) tr.issue,
+  #relations:not(:has(.relation-issues-wrapper)) tr.issue {
+    overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-divider);
+    border-radius: var(--bd-radius-md);
   }
 
-  #issue_tree tr.issue ~ tr.issue,
-  #relations tr.issue ~ tr.issue {
-    @apply mt-2
+  #issue_tree:not(:has(.subtasks-wrapper)) tr.issue ~ tr.issue,
+  #relations:not(:has(.relation-issues-wrapper)) tr.issue ~ tr.issue {
+    margin-top: 0.5rem;
   }
 
-  #issue_tree tr.issue td,
-  #relations tr.issue td {
-    @apply box-border border-none
+  #issue_tree:not(:has(.subtasks-wrapper)) tr.issue td,
+  #relations:not(:has(.relation-issues-wrapper)) tr.issue td {
+    box-sizing: border-box;
+    border-style: none;
   }
 
-  #issue_tree .issue > td:not(.checkbox), #relations .issue > td:not(.checkbox) {
-    @apply block text-left
+  #issue_tree:not(:has(.subtasks-wrapper)) .issue > td:not(.checkbox),
+  #relations:not(:has(.relation-issues-wrapper)) .issue > td:not(.checkbox) {
+    display: block;
+    text-align: left;
   }
 
-  #issue_tree .issue > td.subject,
-  #relations .issue > td.subject {
-    @apply order-1 w-4/5 pt-2 pb-0
+  #issue_tree:not(:has(.subtasks-wrapper)) .issue > td.subject,
+  #relations:not(:has(.relation-issues-wrapper)) .issue > td.subject {
+    order: 1;
+    width: 80%;
+    padding-top: 8px;
+    padding-bottom: 0px;
   }
 
-  #issue_tree .issue > td.buttons,
-  #relations .issue > td.buttons {
-    @apply order-2 w-1/5 text-right pt-2 pr-2 pb-0
+  #issue_tree:not(:has(.subtasks-wrapper)) .issue > td.buttons,
+  #relations:not(:has(.relation-issues-wrapper)) .issue > td.buttons {
+    order: 2;
+    width: 20%;
+    text-align: right;
+    padding-top: 8px;
+    padding-right: 8px;
+    padding-bottom: 0px;
   }
 
-  #issue_tree .issue > td:not(.subject, .buttons),
-  #relations .issue > td:not(.subject, .buttons) {
-    @apply order-3 w-1/5 pt-0.5 pb-2
+  #issue_tree:not(:has(.subtasks-wrapper)) .issue > td:not(.subject, .buttons),
+  #relations:not(:has(.relation-issues-wrapper)) .issue > td:not(.subject, .buttons) {
+    order: 3;
+    width: 20%;
+    padding-top: 2px;
+    padding-bottom: 8px;
   }
 
-  #issue_tree .issue > td.status,
-  #relations .issue > td.status {
-    @apply pl-2
+  #issue_tree:not(:has(.subtasks-wrapper)) .issue > td.status,
+  #relations:not(:has(.relation-issues-wrapper)) .issue > td.status {
+    padding-left: 8px;
   }
 
-  #issue_tree .issue > td.done_ratio,
-  #relations .issue > td.done_ratio {
-    @apply flex items-center pr-2
+  #issue_tree:not(:has(.subtasks-wrapper)) .issue > td.done_ratio,
+  #relations:not(:has(.relation-issues-wrapper)) .issue > td.done_ratio {
+    display: flex;
+    align-items: center;
+    padding-right: 8px;
   }
 
-  #issue_tree .issue > td.done_ratio .progress,
-  #relations .issue > td.done_ratio .progress {
-    @apply w-full
+  #issue_tree:not(:has(.subtasks-wrapper)) .issue > td.done_ratio .progress,
+  #relations:not(:has(.relation-issues-wrapper)) .issue > td.done_ratio .progress {
+    width: 100%;
   }
 
-  #issue_tree .issue .buttons a,
-  #relations .issue .buttons a {
-    @apply mx-0
+  #issue_tree:not(:has(.subtasks-wrapper)) .issue .buttons a,
+  #relations:not(:has(.relation-issues-wrapper)) .issue .buttons a {
+    margin-left: 0px;
+    margin-right: 0px;
   }
 
-  #issue_tree .issue .buttons a:not(:first-child),
-  #relations .issue .buttons a:not(:first-child) {
-    @apply ml-2
+  #issue_tree:not(:has(.subtasks-wrapper)) .issue .buttons a:not(:first-child),
+  #relations:not(:has(.relation-issues-wrapper)) .issue .buttons a:not(:first-child) {
+    margin-left: 8px;
   }
 
-  #issue_tree,
-  #relations {
+  #issue_tree:not(:has(.subtasks-wrapper)),
+  #relations:not(:has(.relation-issues-wrapper)) {
     tr.idnt
     tr.idnt td.subject, tr.idnt td.name { padding-left: 24px}
 
@@ -889,7 +914,8 @@
   .controller-settings {
     [id^="tab-content-"] .box.settings,
     [id^="tab-content-"] .box:has(> .settings) {
-      @apply py-4
+      padding-top: 16px;
+      padding-bottom: 16px;
     }
   }
 

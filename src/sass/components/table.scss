@@ -38,7 +38,7 @@ table.list th {
   border-top: 1px solid var(--border-divider);
   border-bottom: 1px solid var(--border-divider);
   color: var(--txt-default);
-  font-size: --txt-md;
+  font-size: var(--txt-md);
   line-height: 1.25rem;
   padding: 6px;
 }
@@ -46,7 +46,7 @@ table.list th {
 .table-list-header {
   background-color: var(--bg-secondary);
   color: var(--txt-default);
-  font-size: --txt-md;
+  font-size: var(--txt-md);
   line-height: 1.25rem;
   padding: 6px;
 }
@@ -60,7 +60,7 @@ table.list td {
   border-top: 1px solid var(--border-divider);
   border-bottom: 1px solid var(--border-divider);
   color: var(--txt-default);
-  font-size: --txt-md;
+  font-size: var(--txt-md);
   line-height: 1.25rem;
   padding: 6px;
 }
@@ -77,15 +77,29 @@ tr.project.archived td a {
   color: rgba(var(--txt-caption), 0.7);
 }
 
-#issue_tree.with-related-issues-table-headers .subtasks-wrapper,
-#relations.with-related-issues-table-headers .relation-issues-wrapper {
+#issue_tree .subtasks-wrapper,
+#relations .relation-issues-wrapper {
   overflow-x: scroll;
+  width: 100%;
+}
+
+#issue_tree .subtasks-wrapper td.subject,
+#issue_tree .subtasks-wrapper td.parent-subject,
+#relations .relation-issues-wrapper td.subject,
+#relations .relation-issues-wrapper td.parent-subject {
+  min-width: 180px;
 }
 
 #issue_tree .subtasks-wrapper thead th,
 #relations .relation-issues-wrapper thead th {
   background-color: transparent;
   border-top: none;
+}
+
+#issue_tree .subtasks-wrapper td.done_ratio td,
+#relations .relation-issues-wrapper td.done_ratio td {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 #issue_tree td.buttons,
