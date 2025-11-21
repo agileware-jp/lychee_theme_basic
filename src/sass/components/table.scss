@@ -77,6 +77,11 @@ tr.project.archived td a {
   color: rgba(var(--txt-caption), 0.7);
 }
 
+td.done_ratio td {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 #issue_tree .subtasks-wrapper,
 #relations .relation-issues-wrapper {
   overflow-x: scroll;
@@ -94,12 +99,6 @@ tr.project.archived td a {
 #relations .relation-issues-wrapper thead th {
   background-color: transparent;
   border-top: none;
-}
-
-#issue_tree .subtasks-wrapper td.done_ratio td,
-#relations .relation-issues-wrapper td.done_ratio td {
-  padding-top: 0;
-  padding-bottom: 0;
 }
 
 #issue_tree td.buttons,
