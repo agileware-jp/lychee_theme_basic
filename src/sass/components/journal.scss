@@ -20,7 +20,21 @@
   }
 
   div.journal ul.details {
-    @apply list-disc bg-background-secondary text-text-default text-sm mt-4 ml-5 mb-0 p-2 pl-7 rounded-md
+    list-style-type: disc;
+    background-color: var(--bg-secondary);
+    color: var(--txt-default);
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
+    margin-top: 1rem;
+    margin-left: 1.25rem;
+    margin-bottom: 0;
+    padding: 8px;
+    padding-left: 28px;
+    border-radius: var(--bd-radius-md);
+  }
+
+  .journals .journal-content {
+    padding-left: 1rem;
   }
 
   ul.revision-info {
@@ -54,7 +68,11 @@
   }
 
   body.avatars-off .journal .wiki {
-    @apply pl-4
+    padding-left: 16px;
+  }
+
+  body.avatars-off .journals .journal .wiki {
+    padding-left: 0;
   }
 
   .journal .jstEditor textarea {
@@ -62,6 +80,24 @@
   }
 
   /*** After 6.1: Journalの構造変更 ***/
+  .journals .journal-details {
+    list-style-type: disc;
+    background-color: var(--bg-secondary);
+    color: var(--txt-default);
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    padding: 8px;
+    padding-left: 28px;
+    border-radius: var(--bd-radius-md);
+  }
+
+  body.avatars-on .journals .journal,
+  body.avatars-off .journals .journal {
+    padding-left: 24px;
+  }
+
   .journal-header {
     display: flex;
     align-items: center;

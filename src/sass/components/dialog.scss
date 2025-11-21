@@ -89,10 +89,22 @@
   html>body #ajax-indicator { position: fixed; }
 
   #ajax-indicator {
-    @apply absolute top-[35%] left-[40%] w-[20%] bg-background-secondary border border-border-default font-bold text-center p-2 z-[100] rounded-md shadow-lg opacity-80
+    position: absolute;
+    top: 35%;
+    left: 40%;
+    width: 20%;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-default);
+    font-weight: bold;
+    text-align: center;
+    padding: 8px;
+    z-index: 100;
+    border-radius: var(--bd-radius-md);
+    opacity: 0.8;
+    box-shadow: var(--shadow-lg);
   }
 
-  #ajax-indicator span {
+  #ajax-indicator > span {
     background-position: 0% 40%;
     background-repeat: no-repeat;
     background-image: url(images/spinner_default.gif);
