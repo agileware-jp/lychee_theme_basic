@@ -2,18 +2,32 @@
   /* Colors */
   // Status
   --status-danger: #CC0000;
-  --status-danger-light: #AF0000;
-  --status-danger-dark: #F6EBEB;
+  --status-danger-dark: #AF0000;
+  --status-danger-light: #F6EBEB;
+
   --status-success: #0B8749;
   --status-success-light: #DAFCEB;
-  --status-info: #CC0000;
-  --status-info-light: #015CC8;
-  --status-info-dark: #D7F2FC;
+
+  --status-info: #015CC8;
+  --status-info-light: #D7F2FC;
+
   --status-warning: #EAB600;
-  --status-warning-light: #755C00;
-  --status-warning-dark: #FFF3C8;
+  --status-warning-dark: #755C00;
+  --status-warning-light: #FFF3C8;
+
   --status-link: #116699;
   --status-link-hover: #C61A1A;
+
+  // Text
+  --txt-default: #002E40,
+  --txt-caption: #66828C,
+  --txt-onFill: #FFFFFF,
+  --txt-danger: #AF0000,
+  --txt-link: #116699,
+
+  // Text RGB
+  --txt-default: 0, 46, 64,
+  --txt-caption: 102, 130, 140,
 
   // Background
   --bg-primary: #FFFFFF;
@@ -22,6 +36,8 @@
   --bg-dark: #002E40;
 
   // Background RGB
+  --bg-secondary-rgb: 240, 242, 243;
+  --bg-tertiary-rgb: 221, 233, 238;
   --bg-dark-rgb: 0, 46, 64;
 
   // Border
