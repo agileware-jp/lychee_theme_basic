@@ -653,7 +653,12 @@ span.required {color: #bb0000;}
 .tabular input.filename {max-width:75% !important;}
 .attachments_fields input.filename {height:1.8em;}
 .attachments_fields .ajax-waiting input.filename {background:url(../../../images/hourglass.png) no-repeat 0px 50%;}
-.attachments_fields .ajax-loading input.filename {background:url(../../../images/loading.gif) no-repeat 0px 50%;}
+.attachments_fields .ajax-loading input.filename {
+  background-image:url(images/spinner_default.gif);
+  background-repeat: no-repeat;
+  background-position: 0px 50%;
+  background-size: 16px;
+}
 .attachments_fields div.ui-progressbar { width: 100px; height:14px; margin: 2px 0 -5px 8px; display: inline-block; }
 
 a.remove-upload:hover {text-decoration:none !important;}
