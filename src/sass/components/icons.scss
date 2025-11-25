@@ -249,6 +249,14 @@ svg.icon-svg {
   background-image: url(images/star_outline_default.svg);
 }
 
+.redmine_6_1 .icon-fav {
+  background-image: url(images/visibility_off_default.svg);
+}
+
+.redmine_6_1 .icon-fav-off {
+  background-image: url(images/visibility_default.svg);
+}
+
 .icon-reload,
 .icon-reload:not(:has(svg)) {
   background-image: url(images/refresh_default.svg);
