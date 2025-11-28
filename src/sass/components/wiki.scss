@@ -191,6 +191,10 @@
     @apply mt-2 ml-4
   }
 
+  .wiki .task-list-item .task-list-item-checkbox + p {
+    display: inline;
+  }
+
 
   .wiki ul.toc {
     @apply float-right max-w-[240px] min-w-[160px] bg-background-secondary border-none ml-4 p-4 rounded-md
