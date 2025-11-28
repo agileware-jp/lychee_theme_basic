@@ -173,23 +173,40 @@
 
 
   .wiki pre {
-    @apply bg-background-secondary border border-border-default text-xs mr-2 mb-4 ml-4 p-4 rounded-lg overflow-x-auto overflow-y-hidden
+    overflow-x: auto;
+    overflow-y: hidden;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-default);
+    font-size: var(--txt-xs);
+    line-height: 1rem;
+    margin-bottom: 1rem;
+    padding: 16px;
+    border-radius: var(--bd-radius-lg);
   }
 
   .wiki .pre-wrapper {
     position: relative;
   }
 
+  .wiki .pre-wrapper pre {
+    width: 100%;
+  }
+
   .pre-wrapper .copy-pre-content-link {
     position: absolute;
-    top: 3px;
-    right: calc(1em + 3px);
+    top: 8px;
+    right: 8px;
     cursor: pointer;
     display: none;
     border-radius: 3px;
     background: #fff;
     border: 1px solid #ccc;
     padding: 0px 3px 3px 3px;
+  }
+
+  // 説明欄だけtop指定がずれるので特別対応
+  .description .pre-wrapper .copy-pre-content-link {
+    top: 16px;
   }
 
   .pre-wrapper .copy-pre-content-link.icon-only {
