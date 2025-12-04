@@ -206,7 +206,8 @@ export function addFeedbackLink() {
   const currentPlugin = PLUGINS.find(plugin => path.includes(plugin))
 
   // ベースとなるURL
-  const baseURL = 'http://localhost:3000/projects/lychee-redmine/issues/new'
+  const baseURL = 'https://community.lychee-redmine.jp/projects/lychee-redmine/issues/new'
+  
 
   // プラグイン名が判明している場合は、クエリパラメータとしてセット
   const url = new URL(baseURL)
