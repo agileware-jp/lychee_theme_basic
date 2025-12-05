@@ -177,7 +177,6 @@ export function addFeedbackLink() {
     'kanban',
     'backlog',
     'lychee_gantt',
-    'lgc',
     'project_evms',
     'root_fever_charts',
     'fever_charts',
@@ -192,6 +191,9 @@ export function addFeedbackLink() {
     'lychee_message_box_system_error',
   ]
 
+  // ベースとなるURL
+  const BASE_URL = 'https://community.lychee-redmine.jp/projects/lychee-redmine/issues/new'
+
   const topMenuNav = document.querySelector('#top-menu #account ul')
 
   // フィードバックリンクの要素を生成
@@ -200,17 +202,12 @@ export function addFeedbackLink() {
   li.classList.add('aw_fbLink_li')
   a.classList.add('aw_fbLink')
 
-
   // URLのパスにPLUGINSの値が含まれているかチェック（どのプラグインからかを特定する）
   const path = location.pathname
   const currentPlugin = PLUGINS.find(plugin => path.includes(plugin))
 
-  // ベースとなるURL
-  const baseURL = 'https://community.lychee-redmine.jp/projects/lychee-redmine/issues/new'
-  
-
   // プラグイン名が判明している場合は、クエリパラメータとしてセット
-  const url = new URL(baseURL)
+  const url = new URL(BASE_URL)
   url.searchParams.set('from', 'feedback')
   url.searchParams.set('plugin', currentPlugin === undefined ? 'other' : currentPlugin)
   a.setAttribute('href', url.toString())
