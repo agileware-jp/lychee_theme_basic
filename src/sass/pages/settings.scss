@@ -1,99 +1,119 @@
 @layer components {
   .controller-settings {
     .tabs:has(+#tab-content-general) {
-      @apply mb-2
+      margin-bottom: 0.5rem;
     }
 
     .box.settings {
-      @apply bg-background-secondary/50
+      background-color: rgba(var(--bg-secondary-rgb), 0.5);
     }
 
     [id^="tab-content-"] .box {
-      @apply bg-background-secondary/50
+      background-color: rgba(var(--bg-secondary-rgb), 0.5);
     }
 
     [id^="tab-content-"] .box.settings,
     [id^="tab-content-"] .box:has(> .settings) {
-      @apply mb-4 py-1.5
+      margin-bottom: 1rem;
+      padding-top: 6px;
+      padding-bottom: 6px;
     }
 
     [id^="tab-content-"] .box.settings.enabled_scm {
-      @apply px-4
+      padding-left: 16px;
+      padding-right: 16px;
     }
 
     .box.settings .box {
-      @apply bg-transparent border-0 px-0 pb-0
+      background-color: transparent;
+      border-width: 0;
+      padding-left: 0;
+      padding-right: 0;
+      padding-bottom: 0;
     }
 
     .query-columns {
-      @apply mb-4
+      margin-bottom: 1rem;
     }
 
     #setting_project_list_display_type_board {
-      @apply -mt-1 ml-2
+      margin-top: -0.25rem;
+      margin-left: 0.5rem;
     }
 
     #setting_project_list_display_type_list {
-      @apply -mt-1 ml-0
+      margin-top: -0.25rem;
+      margin-left: 0;
     }
 
     #message_box_notified_events > legend {
-      @apply float-left mb-2
+      float: left;
+      margin-bottom: 0.5rem;
     }
 
     #message_box_notified_events > legend ~ label {
-      @apply clear-both
+      clear: both;
     }
 
     #notified_events br,
     #message_box_notified_events br {
-      @apply hidden
+      display: none;
     }
 
     #commit-keywords {
-      @apply mb-4
+      margin-bottom: 1rem;
     }
 
     p label {
-      @apply text-text-default
+      color: var(--txt-default);
     }
 
     /* 管理→設定→チケットトラッキング */
     // 表示項目設定の「合計」ラベル
     input#settings_issue_list_default_totals_ + .inline {
-      @apply pl-2
+      padding-left: 8px;
     }
 
     /* 管理→設定→リポジトリ */
     #tab-content-repositories table th {
-      @apply text-left
+      text-align: left;
     }
   }
 
   .controller-custom_field_categories {
     .nodata {
-      @apply clear-both mt-4
+      clear: both;
+      margin-top: 1rem;
     }
   }
 
   .controller-enumerations {
     .nodata {
-      @apply mt-4
+      margin-top: 1rem;
     }
   }
 
   .controller-auth_sources.controller-auth_sources {
     td.buttons a {
-      @apply indent-0 w-auto h-auto bg-transparent bg-[left_center] border-0 py-0 pl-5
+      text-indent: 0;
+      width: auto;
+      height: auto;
+      background-color: transparent;
+      background-position: left center;
+      border-width: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 20px;
     }
 
     td.buttons a:hover,
     td.buttons a:active {
-      @apply bg-transparent border-0
+      background-color: transparent;
+      border-width: 0;
     }
 
     td.buttons .icon-del {
-      @apply ml-2
+      margin-left: 0.5rem;
     }
   }
 }

@@ -1,0 +1,30 @@
+/*
+ * 管理 > アプリケーション 関連の画面
+ */
+// アプリケーションの作成・編集
+.controller-oauth2_applications {
+  #scopes.box {
+    border-style: none;
+    padding: 0;
+  }
+
+  #scopes fieldset {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-divider);
+    padding-right: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    border-radius: var(--bd-radius-md);
+  }
+
+  #scopes fieldset + fieldset {
+    margin-top: 1rem;
+  }
+}
+
+// 登録してあるアプリケーションの名称をクリック > コールバックURLの「認証」ボタンをクリック
+.controller-authorizations.action-new {
+  form {
+    display: inline-block;
+  }
+}
