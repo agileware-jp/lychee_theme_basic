@@ -72,6 +72,7 @@ table.list td.checkbox {
 
 table.issues td ul {
   list-style-type: disc;
+  margin-left: 1rem;
   padding-left: 1rem;
 }
 
@@ -86,6 +87,7 @@ table.issues td ul ul ul {
 
 table.issues td ol {
   list-style-type: decimal;
+  margin-left: 1rem;
   padding-left: 1rem;
 }
 
@@ -94,6 +96,10 @@ table.issues td ul + ul,
 table.issues td ol + ol,
 table.issues td ol + ul {
   margin-top: 0.5rem;
+}
+
+table.issues td pre {
+  margin-bottom: 0.5rem;
 }
 
 tr.project.closed td,
