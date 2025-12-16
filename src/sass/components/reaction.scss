@@ -1,0 +1,66 @@
+/* Reaction styles */
+.reaction {
+  margin-top: -8px;
+}
+
+.reaction-button:hover, .reaction-button:active {
+  text-decoration: none;
+}
+
+.icon.reaction-button {
+  display: flex;
+  align-items: center;
+  padding: 4px 0;
+}
+
+.icon.reaction-button svg {
+  background-image: url(images/thumb_up_outline_dark.svg);
+  background-position: 0% 50%;
+  background-repeat: no-repeat;
+  padding-left: 16px;
+  display: inline-block;
+  width: 0;
+  height: 16px;
+  overflow: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 8px;
+  vertical-align: middle;
+}
+
+.icon.reaction-button.reacted svg {
+  background-image: url(images/thumb_up_onFill.svg);
+}
+
+.reaction-button .icon-label {
+  font-size: var(--txt-md);
+  font-weight: bold;
+  margin-left: 4px;
+}
+
+.reaction-button.readonly {
+  cursor: default;
+}
+
+// チケット詳細はfloatでも正常に見えているので変更しない
+div.issue.details .reaction {
+  float: right;
+  font-size: var(--txt-md);
+  margin-top: 0.5em;
+  margin-left: 10px;
+  clear: right;
+}
+
+// フォーラム（.message）とニュース（.news）のリアクションUIの位置調整
+div.message:has(.reaction),
+div.news:has(.reaction) {
+  position: relative;
+}
+
+div.message .reaction,
+div.news .reaction {
+  position: absolute;
+  right: 0;
+  font-size: var(--txt-md);
+  margin-top: 4px;
+}

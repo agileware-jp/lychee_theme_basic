@@ -150,4 +150,22 @@ window.addEventListener('DOMContentLoaded', () => {
   if([...lgcQueriesBodyClasses].includes('controller-lgc/queries')) {
     document.body.classList.add('aw_lgcQueries')
   }
+
+
+  /**
+   * 6.1対応用（6.1かどうかを判別するclassを追加する）
+   * NOTE: 6.1からウォッチアイコンが変更になったが、icon-favというclass名は6.0から変わらないため、テーマから判別することができない
+   *       判別するためにclass名を追加
+   * TODO: 6.0のサポートが終了したら削除する
+   */
+  // ウォッチボタンの有無を確認
+  const watchBtn = document.querySelector('#content > .contextual .icon-fav') || document.querySelector('#content > .contextual .icon-fav-off')
+  if(watchBtn) {
+    // Redmine6.1以上であるかを確認
+    const reactionBtn = document.querySelector('.reaction-button-wrapper')
+    if(reactionBtn) {
+      // Redmine6.1以上であれば、それがわかる要素を追加する
+      document.querySelector('#content > .contextual').classList.add('redmine_6_1')
+    }
+  }
 })

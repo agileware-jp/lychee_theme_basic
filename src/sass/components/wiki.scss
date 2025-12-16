@@ -1,19 +1,12 @@
 @layer components {
-  div.wiki-page .contextual a {opacity: 0.4}
-  div.wiki-page .contextual a:hover {opacity: 1}
+  div.wiki-page .contextual a { opacity: 0.4 }
+  div.wiki-page .contextual a:hover { opacity: 1 }
 
   div.wiki a:target + h1, div.wiki a:target + h2, div.wiki a:target + h3, div.wiki a:target + h4, div.wiki a:target + h5, div.wiki a:target + h6 {
     background-color:#DDEEFF;
   }
 
   /***** Wiki *****/
-  // div.wiki {
-  //   font-variant-numeric: proportional-nums;
-  //   & table, & pre, & code, & ol>li::marker {
-  //     font-variant-numeric: tabular-nums;
-  //   }
-  // }
-
   div.wiki .wiki-class-noborder, div.wiki .wiki-class-noborder td, div.wiki .wiki-class-noborder th {border:0;}
 
   div.wiki .external {
@@ -69,15 +62,24 @@
   }
 
   .wiki.wiki-page {
-    @apply clear-both bg-background-primary border border-border-divider mt-4 mb-6 p-8 rounded-md
+    clear: both;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-divider);
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 32px;
+    border-radius: var(--bd-radius-md);
   }
 
   .wiki-page + fieldset legend + div {
-    @apply bg-background-secondary/50 mt-2 p-4 rounded-md
+    background-color: rgba(var(--bg-secondary-rgb), 0.5);
+    margin-top: 0.5rem;
+    padding: 16px;
+    border-radius: var(--bd-radius-md);
   }
 
   .wiki-page + fieldset legend + div .box {
-    @apply mb-4
+    margin-bottom: 1rem;
   }
 
   .wiki a {
@@ -85,7 +87,7 @@
   }
 
   .wiki a.new {
-    @apply text-text-danger
+    color: var(--txt-danger);
   }
 
   .wiki h1 {
@@ -171,7 +173,48 @@
 
 
   .wiki pre {
-    @apply bg-background-secondary border border-border-default text-xs mr-2 mb-4 ml-4 p-4 rounded-lg overflow-x-auto overflow-y-hidden
+    overflow-x: auto;
+    overflow-y: hidden;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-default);
+    font-size: var(--txt-xs);
+    line-height: 1rem;
+    margin-bottom: 1rem;
+    padding: 16px;
+    border-radius: var(--bd-radius-lg);
+  }
+
+  .wiki .pre-wrapper {
+    position: relative;
+  }
+
+  .wiki .pre-wrapper pre {
+    width: 100%;
+  }
+
+  .pre-wrapper .copy-pre-content-link {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+    display: none;
+    border-radius: 3px;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 0px 3px 3px 3px;
+  }
+
+  // 説明欄だけtop指定がずれるので特別対応
+  .description .pre-wrapper .copy-pre-content-link {
+    top: 16px;
+  }
+
+  .pre-wrapper .copy-pre-content-link.icon-only {
+    display: none;
+  }
+
+  .pre-wrapper:hover .copy-pre-content-link.icon-only {
+    display: block;
   }
 
   div.wiki *:not(pre)>code, div.wiki>code {
@@ -189,6 +232,10 @@
 
   .wiki .task-list .task-list {
     @apply mt-2 ml-4
+  }
+
+  .wiki .task-list-item .task-list-item-checkbox + p {
+    display: inline;
   }
 
 
@@ -261,29 +308,31 @@
 
   // 索引（名前順）
   .pages-hierarchy {
-    @apply list-disc ml-6
+    list-style-type: disc;
+    margin-left: 1.5rem;
   }
 
   .pages-hierarchy li:not(:first-child) {
-    @apply mt-2
+    margin-top: 0.5rem;
   }
 
   .pages-hierarchy .pages-hierarchy {
-    @apply mt-2
+    margin-top: 0.5rem;
   }
 
   // 索引（日付順）
   .controller-wiki.action-date_index {
     #content ul {
-      @apply list-disc ml-6
+      list-style-type: disc;
+      margin-left: 1.5rem;
     }
 
     #content h3 + ul li:not(:first-child) {
-      @apply mt-2
+      margin-top: 0.5rem;
     }
 
     #content ul + h3 {
-      @apply mt-6
+      margin-top: 1.5rem;
     }
   }
 
@@ -292,4 +341,51 @@
   div.wiki table td[align=left], div.wiki table th[align=left] { text-align: left; }
   div.wiki table td[align=right], div.wiki table th[align=right] { text-align: right; }
   /* Support 6.0 end */
+
+
+  /* 6.1 */
+  ul.contains-task-list {
+    list-style-type: none;
+    margin-left: 0;
+  }
+
+  /***** CommonMark Alerts *****/
+  .markdown-alert {
+    border-left: 4px solid;
+    padding-left: 0.5rem;
+    margin: 1rem 0;
+  }
+
+  .markdown-alert-title {
+    font-weight: bold;
+  }
+
+  .markdown-alert-title.markdown-alert-title {
+    margin-bottom: 0.75rem;
+  }
+
+  .markdown-alert-title svg.icon-svg {
+    display: inline-block;
+  }
+
+  .markdown-alert-tip { border-color: #37b24d; }
+  .markdown-alert-tip .markdown-alert-title { color: #2b8a3e; }
+  .markdown-alert-tip .markdown-alert-title svg { stroke: #2b8a3e; }
+
+  .markdown-alert-important { border-color: #ae3ec9; }
+  .markdown-alert-important .markdown-alert-title { color: #862e9c; }
+  .markdown-alert-important .markdown-alert-title svg {stroke: #862e9c; }
+
+  .markdown-alert-caution { border-color: #f59f00; }
+  .markdown-alert-caution .markdown-alert-title { color: #e67700; }
+  .markdown-alert-caution .markdown-alert-title svg { stroke: #e67700; }
+
+  .markdown-alert-warning { border-color: #f76707; }
+  .markdown-alert-warning .markdown-alert-title { color: #d9480f; }
+  .markdown-alert-warning .markdown-alert-title svg { stroke: #d9480f; }
+
+  .markdown-alert-note { border-color: #4263eb; }
+  .markdown-alert-note .markdown-alert-title { color: #364fc7; }
+  .markdown-alert-note .markdown-alert-title svg { stroke: #364fc7; }
+  /* 6.1 */
 }

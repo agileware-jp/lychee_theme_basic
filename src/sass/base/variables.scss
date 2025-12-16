@@ -1,0 +1,84 @@
+:root {
+  /* Colors */
+  // Status
+  --status-danger: #CC0000;
+  --status-danger-dark: #AF0000;
+  --status-danger-light: #F6EBEB;
+
+  --status-success: #0B8749;
+  --status-success-light: #DAFCEB;
+
+  --status-info: #015CC8;
+  --status-info-light: #D7F2FC;
+
+  --status-warning: #EAB600;
+  --status-warning-dark: #755C00;
+  --status-warning-light: #FFF3C8;
+
+  --status-link: #116699;
+  --status-link-hover: #C61A1A;
+
+  // Text
+  --txt-default: #002E40;
+  --txt-caption: #66828C;
+  --txt-onFill: #FFFFFF;
+  --txt-danger: #AF0000;
+  --txt-link: #116699;
+
+  // Text RGB
+  --txt-default-rgb: 0, 46, 64;
+  --txt-caption-rgb: 102, 130, 140;
+
+  // Background
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F0F2F3;
+  --bg-tertiary: #DDE9EE;
+  --bg-dark: #002E40;
+
+  // Background RGB
+  --bg-secondary-rgb: 240, 242, 243;
+  --bg-tertiary-rgb: 221, 233, 238;
+  --bg-dark-rgb: 0, 46, 64;
+
+  // Border
+  --border-default: #CCD5D9;
+  --border-dark: #99ABB3;
+  --border-divider: #E6EAEC;
+  --border-onFill: #FFFFFF;
+  --border-danger: #AF0000;
+  --border-warning: #755C00;
+
+  /* Text */
+  /* 30px */ --txt-3xl: 1.875rem;
+  /* 24px */ --txt-2xl: 1.5rem;
+  /* 20px */ --txt-xl: 1.25rem;
+  /* 18px */ --txt-lg: 1.125rem;
+  /* 16px */ --txt-base: 1rem;
+  /* 14px */ --txt-md: 0.875rem;
+  /* 13px */ --txt-sm: 0.8125rem;
+  /* 12px */ --txt-xs: 0.75rem;
+  /* 11px */ --txt-xxs : 0.6875rem;
+
+  /* Border Radius */
+  --bd-radius-sm: 2px;
+  --bd-radius-base: 4px;
+  --bd-radius-md: 6px;
+  --bd-radius-lg: 8px;
+  --bd-radius-xl: 12px;
+  --bd-radius-2xl: 16px;
+  --bd-radius-3xl: 24px;
+  --bd-radius-full: 9999px;
+  --bd-radius-none: 0px;
+
+  /* Shadow */
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+
+  /* Other */
+  --top-menu-width-close: 52px;
+  --top-menu-width-open: 180px;
+  --mobile-header: 64px;
+}

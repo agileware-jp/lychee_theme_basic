@@ -1,55 +1,74 @@
-@layer components {
-  table.list:not(.odd-even) tbody tr:nth-child(odd),
-  .odd,
-  #issue-changesets div.changeset:nth-child(odd) {
-    @apply bg-background-primary
-  }
+table.list:not(.odd-even) tbody tr:nth-child(odd),
+.odd,
+#issue-changesets div.changeset:nth-child(odd) {
+  background-color: var(--bg-primary);
+}
 
-  table.list:not(.odd-even) tbody tr:nth-child(even),
-  .even,
-  #issue-changesets div.changeset:nth-child(even) {
-    @apply bg-background-secondary/50
-  }
+table.list:not(.odd-even) tbody tr:nth-child(even),
+.even,
+#issue-changesets div.changeset:nth-child(even) {
+  background-color: rgba(var(--bg-secondary-rgb), 0.5);
+}
 
-  table.list:not(.odd-even) tbody tr:nth-child(odd):hover,
-  .odd:hover,
-  #issue-changesets div.changeset:nth-child(odd):hover,
-  table.list:not(.odd-even) tbody tr:nth-child(even):hover,
-  .even:hover,
-  #issue-changesets div.changeset:nth-child(even):hover {
-    @apply bg-background-tertiary/50
-  }
+table.list:not(.odd-even) tbody tr:nth-child(odd):hover,
+.odd:hover,
+#issue-changesets div.changeset:nth-child(odd):hover,
+table.list:not(.odd-even) tbody tr:nth-child(even):hover,
+.even:hover,
+#issue-changesets div.changeset:nth-child(even):hover {
+  background-color: rgba(var(--bg-tertiary-rgb), 0.5);
+}
 
-  table.list.issues tbody tr.closed th,
-  table.list.issues tbody tr.closed td {
-    @apply bg-background-secondary/50 opacity-70
-  }
+table.list.issues tbody tr.closed th,
+table.list.issues tbody tr.closed td {
+  background-color: rgba(var(--bg-secondary-rgb), 0.5);
+  opacity: 0.7;
+}
 
-  table.list,
-  .table-list {
-    @apply bg-background-primary border border-border-divider m-0 rounded-none
-  }
+table.list,
+.table-list {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-divider);
+  margin: 0px;
+  border-radius: 0px;
+}
 
-  table.list th {
-    @apply bg-background-secondary border-y border-border-divider text-text-default text-sm p-1.5
-  }
+table.list th {
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-divider);
+  border-bottom: 1px solid var(--border-divider);
+  color: var(--txt-default);
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+  padding: 6px;
+}
 
-  .table-list-header {
-    @apply bg-background-secondary text-text-default text-sm p-1.5
-  }
+.table-list-header {
+  background-color: var(--bg-secondary);
+  color: var(--txt-default);
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+  padding: 6px;
+}
 
-  table.list th a,
-  .table-list-header a {
-    @apply text-text-default
-  }
+table.list th a,
+.table-list-header a {
+  color: var(--txt-default);
+}
 
-  table.list td {
-    @apply border-y border-border-divider text-text-default text-sm p-1.5
-  }
+table.list td {
+  border-top: 1px solid var(--border-divider);
+  border-bottom: 1px solid var(--border-divider);
+  color: var(--txt-default);
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+  padding: 6px;
+}
 
-  table.list td.checkbox {
-    @apply w-[29px] p-0
-  }
+table.list td.checkbox {
+  width: 29px;
+  padding: 0px;
+}
 
   table.issues td ul {
     list-style-type: disc;
@@ -77,178 +96,208 @@
     margin-top: 0.5rem;
   }
 
-  tr.project.closed td,
-  tr.project.archived td,
-  tr.project.closed td a,
-  tr.project.archived td a {
-    @apply text-text-caption/70
-  }
+tr.project.closed td,
+tr.project.archived td,
+tr.project.closed td a,
+tr.project.archived td a {
+  color: rgba(var(--txt-caption), 0.7);
+}
 
-  #issue_tree td.buttons,
-  #relations td.buttons {
-    @apply w-[82px] p-1.5
-  }
+td.done_ratio td {
+  padding-top: 0;
+  padding-bottom: 0;
+}
 
-  #issue_tree td.buttons a:last-child,
-  #relations td.buttons a:last-child {
-    @apply ml-2
-  }
+#issue_tree .subtasks-wrapper,
+#relations .relation-issues-wrapper {
+  overflow-x: scroll;
+  width: 100%;
+}
 
-  #issue_tree .subject a,
-  #relations .subject a {
-    @apply text-sm
-  }
+#issue_tree .subtasks-wrapper td.subject,
+#issue_tree .subtasks-wrapper td.parent-subject,
+#relations .relation-issues-wrapper td.subject,
+#relations .relation-issues-wrapper td.parent-subject {
+  min-width: 180px;
+}
 
+#issue_tree .subtasks-wrapper thead th,
+#relations .relation-issues-wrapper thead th {
+  background-color: transparent;
+  border-top: none;
+}
 
-  #issue_tree tr:first-child td,
-  #relations tr:first-child td {
-    @apply border-t border-border-divider
-  }
+#issue_tree td.buttons,
+#relations td.buttons {
+  width: 82px;
+  padding: 6px;
+}
 
-  tr span.expander,
-  .gantt_subjects div > span.expander {
-    @apply pl-4
-  }
+#issue_tree td.buttons a:last-child,
+#relations td.buttons a:last-child {
+  margin-left: 0.5rem;
+}
 
-  table.boards a.board {
-    background-image: url(images/chat_bubble_default.svg);
-    background-size: 14px 14px;
-  }
+#issue_tree .subject a,
+#relations .subject a {
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+}
 
-  table.boards td.last-message {
-    @apply text-sm
-  }
+#issue_tree tr:first-child td,
+#relations tr:first-child td {
+  border-top: 1px solid var(--border-divider);
+}
 
-  tr.message.sticky td.subject.icon {
-    background-position: 0.5rem 50%;
+tr span.expander,
+.gantt_subjects div > span.expander {
+  padding-left: 16px;
+}
 
-    @apply pl-7
-  }
+table.boards a.board {
+  background-image: url(images/chat_bubble_default.svg);
+  background-size: 14px 14px;
+}
 
-  /* 6.0 start */
-  tr.message td.subject:has(.icon) {
-    background-image: url(images/arrow_right_default.svg);
-    background-position: 0.5rem 50%;
-    background-repeat: no-repeat;
+table.boards td.last-message {
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+}
 
-    @apply pl-7
-  }
+tr.message.sticky td.subject.icon {
+  background-position: 0.5rem 50%;
+  padding-left: 28px;
+}
 
-  tr.message td.subject .icon {
-    @apply pl-0
-  }
+/* 6.0 start */
+tr.message td.subject:has(.icon) {
+  background-image: url(images/arrow_right_default.svg);
+  background-position: 0.5rem 50%;
+  background-repeat: no-repeat;
+  padding-left: 28px;
+}
 
-  tr.message td.subject:not(:has(.icon)) {
-    @apply pl-7
-  }
-  /* 6.0 end */
+tr.message td.subject .icon {
+  padding-left: 0;
+}
 
-  table.custom_fields .icon-sort-handle {
-    display: inline-block;
-    width: 28px;
-    height: 28px;
-    background-position: center center;
-    vertical-align: middle;
+tr.message td.subject:not(:has(.icon)) {
+  padding-left: 28px;
+}
+/* 6.0 end */
 
-    @apply bg-background-secondary p-0 rounded-md
-  }
+table.custom_fields .icon-sort-handle {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  background-color: var(--bg-secondary);
+  background-position: center center;
+  vertical-align: middle;
+  padding: 0;
+  border-radius: var(--bd-radius-md);
+}
 
-  .attachments table td {
-    @apply border-none p-1
-  }
+.attachments table td {
+  border-style: none;
+  padding: 4px;
+}
 
-  table.permissions td.role {
-    @apply text-sm text-text-caption
-  }
-
-
-  // filecontent
-  table.filecontent {
-    @apply mt-2
-  }
-
-
-  // transitions
-  table.transitions td.enabled {
-    @apply bg-status-successLight
-  }
-
-
-  // enumerations
-  table.list.enumerations {
-    @apply mt-2 mb-10
-  }
-
-
-  // groups
-  #list_organizations#list_organizations tr.organization.idnt td.name {
-    background-image: url(images/subproject_default.svg);
-  }
-
-  // lychee_groupsが入っていない場合
-  table.members .member .icon-group {
-    @apply bg-[6px_50%] pl-6
-  }
-
-
-  table.messages td.subject.icon-locked {
-    @apply pl-7 bg-[left_0.5rem_center]
-  }
-
-  tr.idnt td.subject, tr.idnt td.name {
-    background: url(images/subproject_default.svg) no-repeat 2px 50%;
-    background-size: 12px;
-  }
-
-  tr.idnt-1 td.subject, tr.idnt-1 td.name {
-    padding-left: 24px;
-    background-position: 8px 50%;
-  }
-
-  tr.idnt-2 td.subject, tr.idnt-2 td.name {
-    padding-left: 40px;
-    background-position: 24px 50%;
-  }
-
-  tr.idnt-3 td.subject, tr.idnt-3 td.name {
-    padding-left: 56px;
-    background-position: 40px 50%;
-  }
-
-  tr.idnt-4 td.subject, tr.idnt-4 td.name {
-    padding-left: 72px;
-    background-position: 56px 50%;
-  }
-
-  tr.idnt-5 td.subject, tr.idnt-5 td.name {
-    padding-left: 88px;
-    background-position: 72px 50%;
-  }
-
-  tr.idnt-6 td.subject, tr.idnt-6 td.name {
-    padding-left: 104px;
-    background-position: 88px 50%;
-  }
-
-  tr.idnt-7 td.subject, tr.idnt-7 td.name {
-    padding-left: 120px;
-    background-position: 104px 50%;
-  }
-
-  tr.idnt-8 td.subject, tr.idnt-8 td.name {
-    padding-left: 136px;
-    background-position: 120px 50%;
-  }
-
-  tr.idnt-9 td.subject, tr.idnt-9 td.name {
-    padding-left: 152px;
-    background-position: 136px 50%;
-  }
+table.permissions td.role {
+  color: var(--txt-caption);
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+}
 
 
-  // 管理→トラッカー→サマリー、管理→ロールと権限→権限レポートの表のグループ行
-  table.permissions .group td,
-  table.tracker-summary .group td {
-    @apply bg-background-secondary/50
-  }
+// filecontent
+table.filecontent {
+  margin-top: 0.5rem;
+}
+
+
+// transitions
+table.transitions td.enabled {
+  background-color: var(--status-success-light);
+}
+
+
+// enumerations
+table.list.enumerations {
+  margin-top: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+
+// groups
+#list_organizations#list_organizations tr.organization.idnt td.name {
+  background-image: url(images/subproject_default.svg);
+}
+
+// lychee_groupsが入っていない場合
+table.members .member .icon-group {
+  background-position: 6px 50%;
+  padding-left: 24px;
+}
+
+
+table.messages td.subject.icon-locked {
+  padding-left: 28px;
+  background-position: left 0.5rem center;
+}
+
+tr.idnt td.subject, tr.idnt td.name {
+  background: url(images/subproject_default.svg) no-repeat 2px 50%;
+  background-size: 12px;
+}
+
+tr.idnt-1 td.subject, tr.idnt-1 td.name {
+  padding-left: 24px;
+  background-position: 8px 50%;
+}
+
+tr.idnt-2 td.subject, tr.idnt-2 td.name {
+  padding-left: 40px;
+  background-position: 24px 50%;
+}
+
+tr.idnt-3 td.subject, tr.idnt-3 td.name {
+  padding-left: 56px;
+  background-position: 40px 50%;
+}
+
+tr.idnt-4 td.subject, tr.idnt-4 td.name {
+  padding-left: 72px;
+  background-position: 56px 50%;
+}
+
+tr.idnt-5 td.subject, tr.idnt-5 td.name {
+  padding-left: 88px;
+  background-position: 72px 50%;
+}
+
+tr.idnt-6 td.subject, tr.idnt-6 td.name {
+  padding-left: 104px;
+  background-position: 88px 50%;
+}
+
+tr.idnt-7 td.subject, tr.idnt-7 td.name {
+  padding-left: 120px;
+  background-position: 104px 50%;
+}
+
+tr.idnt-8 td.subject, tr.idnt-8 td.name {
+  padding-left: 136px;
+  background-position: 120px 50%;
+}
+
+tr.idnt-9 td.subject, tr.idnt-9 td.name {
+  padding-left: 152px;
+  background-position: 136px 50%;
+}
+
+
+// 管理→トラッカー→サマリー、管理→ロールと権限→権限レポートの表のグループ行
+table.permissions .group td,
+table.tracker-summary .group td {
+  background-color: rgba(var(--bg-secondary-rgb), 0.5);
 }

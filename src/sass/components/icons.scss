@@ -25,6 +25,43 @@
 
 /* 6.0 start */
 svg.icon-svg {
+  stroke: #343a40; /* oc-gray-8 */
+  fill: none;
+  stroke-width: 1.5;
+  vertical-align: middle;
+}
+
+svg.icon-svg-filled {
+  fill: #343a40; /* oc-gray-8 */
+  stroke: none;
+}
+
+svg.s20 {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+svg.s18 {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+svg.s16 {
+  width: 1rem;
+  height: 1rem;
+}
+
+svg.s14 {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+svg.s12 {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+svg.icon-svg {
   display: none;
 }
 /* 6.0 end */
@@ -147,6 +184,16 @@ svg.icon-svg {
   background-image: url(images/widgets_default.svg);
 }
 
+.icon-quote,
+.icon-quote:not(:has(svg)) {
+  background-image: url(images/format_quote_default.svg);
+}
+
+.icon-only.icon-quote,
+.icon-only.icon-quote:not(:has(svg)) {
+  background-image: url(images/format_quote_dark.svg);
+}
+
 .icon-help,
 .icon-help:not(:has(svg)) {
   background-image: url(images/help_default.svg);
@@ -200,6 +247,14 @@ svg.icon-svg {
 .icon-fav-off,
 .icon-fav-off:not(:has(svg)) {
   background-image: url(images/star_outline_default.svg);
+}
+
+.redmine_6_1 .icon-fav {
+  background-image: url(images/visibility_off_default.svg);
+}
+
+.redmine_6_1 .icon-fav-off {
+  background-image: url(images/visibility_default.svg);
 }
 
 .icon-reload,
@@ -562,18 +617,43 @@ button.tab-right:not(:has(svg)) {
   background-image: url(images/chevron_right_onFill.svg);
 }
 
-// filter toggle icon
+/* filter toggle icon */
 .toggle-multiselect.icon-toggle-plus,
 .toggle-multiselect.icon-toggle-minus {
   background-size: 20px;
 }
 
-// issues
+/* issues */
 a.group:has(svg.icon-svg) {
   background-image: url(images/groups_3_default.svg);
   background-position: 0% 50%;
   background-repeat: no-repeat;
   padding-left: 20px;
+}
+
+// 6.0のジャーナルのコメント（icon-onlyが外れたことによりアイコンの色がdefaultになったのでその対応）
+.journal .journal-actions .icon-comment {
+  background-image: url(images/chat_bubble_dark.svg);
+}
+
+/* フォーラムコメントの各種アイコンがdarkにならない問題への対応 */
+.controller-messages .reply .contextual .icon-comment {
+  background-image: url(images/chat_bubble_dark.svg);
+}
+
+.controller-messages .reply .contextual .icon-edit {
+  background-image: url(images/edit_dark.svg);
+}
+
+// 6.1からのHTML構造変更に対応
+.controller-messages .journal-meta .icon-edit {
+  background-image: url(images/edit_dark.svg);
+}
+
+// 整形済みテキストのコピーに対応
+.pre-wrapper .copy-pre-content-link {
+  background-image: url(images/content_copy_default.svg);
+  background-size: 12px;
 }
 
 /*
@@ -626,4 +706,17 @@ table.lychee-cost-cash-forecast__table tbody tr th > .tree-expander-expanded.tre
   .sort-handle {
     background-image: url(images/drag_pan_default.svg);
   }
+}
+
+// View Customize
+.icon-view_customize {
+  background-image: url(images/mobile_gear_default.svg);
+}
+
+.icon-view_customize-disable {
+  background-image: url(images/close_danger.svg);
+}
+
+.icon-view_customize-enable {
+  background-image: url(images/done_success.svg);
 }

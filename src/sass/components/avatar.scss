@@ -1,0 +1,180 @@
+/**
+ * チケット詳細やチケット一覧に表示されるアイコンに関するcss
+ */
+h2 img.gravatar, h3 img.gravatar,
+h2 .avatar, h3 .avatar {
+  margin-right: 4px;
+}
+
+h4 img.gravatar,
+h4 .avatar {
+  margin: -2px 4px -4px 0;
+}
+
+td.username img.gravatar {
+  margin: 0 0.5em 0 0;
+  vertical-align: top;
+}
+
+.icon-gravatar {
+  float: left;
+  margin-right: 4px;
+}
+
+div.issue img.gravatar,
+div.issue .avatar {
+  float: left;
+  margin: 0 12px 6px 0;
+}
+
+div.gravatar-with-child,
+div.avatar-with-child {
+  position: relative;
+}
+
+img.gravatar {
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 9999px;
+}
+
+.gravatar.gravatar,
+.gravatar-child.gravatar-child,
+.avatar-child {
+  border-radius: 9999px;
+}
+
+.avatar-child {
+  background: #00ab9f;
+  color: #fff;
+  text-align: center;
+}
+
+div.gravatar-with-child > img.gravatar:nth-child(2),
+div.avatar-with-child.avatar-with-child > .avatar:nth-child(2) {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-radius: 9999px;
+}
+
+td.username .gravatar.gravatar {
+  vertical-align: middle;
+}
+
+img.gravatar, img.gravatar-child, img.avatar-child {
+  height: revert-layer;
+  object-fit: cover;
+}
+
+.avatar {
+  display: inline-flex;
+  height: revert-layer;
+  vertical-align: middle;
+  border-radius: 9999px;
+}
+
+span[role="img"].avatar {
+  display: inline-flex;
+  justify-content: center;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: calc(24px * .4);
+  align-items: center;
+  user-select: none;
+}
+
+.avatar.s13 {
+  block-size: 13px;
+  inline-size: 13px;
+}
+
+span[role="img"].avatar.s13 {
+  font-size: calc(16px * .3);
+}
+
+.avatar.s16 {
+  block-size: 16px;
+  inline-size: 16px;
+}
+
+span[role="img"].avatar.s16 {
+  font-size: calc(16px * .4);
+}
+
+.avatar.s22 {
+  block-size: 22px;
+  inline-size: 22px;
+}
+
+span[role="img"].avatar.s22 {
+  font-size: calc(22px * .4);
+}
+
+.avatar.s24 {
+  block-size: 24px;
+  inline-size: 24px;
+}
+
+span[role="img"].avatar.s24  {
+  font-size: calc(24px * .4);
+}
+
+.avatar.s40 {
+  block-size: 40px;
+  inline-size: 40px;
+}
+
+span[role="img"].avatar.s40  {
+  font-size: calc(40px * .4);
+}
+
+.avatar.s50 {
+  block-size: 50px;
+  inline-size: 50px;
+}
+
+span[role="img"].avatar.s50  {
+  font-size: calc(50px * .4);
+}
+
+.avatar-color-0 {
+  background-color: #f03e3e; /* oc-red-7 */
+  color: #ffffff;
+}
+
+.avatar-color-1 {
+  background-color: #fd7e14; /* oc-orange-6 */
+  color: #ffffff;
+}
+
+.avatar-color-2 {
+  background-color: #ffd43b; /* oc-yellow-4 */
+  color: #000000;
+}
+
+.avatar-color-3 {
+  background-color: #37b24d; /* oc-green-7 */
+  color: #ffffff;
+}
+
+.avatar-color-4 {
+  background-color: #15aabf; /* oc-cyan-6 */
+  color: #ffffff;
+}
+
+.avatar-color-5 {
+  background-color: #1c7ed6; /* oc-blue-7 */
+  color: #ffffff;
+}
+
+.avatar-color-6 {
+  background-color: #ae3ec9; /* oc-grape-7 */
+  color: #ffffff;
+}
+
+.avatar-color-7 {
+  background-color: #e64980; /* oc-pink-6 */
+  color: #ffffff;
+}

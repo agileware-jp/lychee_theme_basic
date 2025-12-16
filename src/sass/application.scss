@@ -9,6 +9,7 @@
 * →flexboxみたいなレイアウトとかまで全部Tailwindcssで指定すると後々大変な気がするから
 */
 
+@use './base/variables.scss' as *;
 @use './base/base.scss' as *;
 
 // Layout
@@ -30,7 +31,7 @@
 @use './components/errorExplanation.scss' as *;
 @use './components/filter.scss' as *;
 @use './components/flash.scss' as *;
-@use './components/gravatar.scss' as *;
+@use './components/avatar.scss' as *;
 @use './components/history.scss' as *;
 @use './components/icons.scss' as *;
 @use './components/issue.scss' as *;
@@ -41,6 +42,7 @@
 @use './components/nodata.scss' as *;
 @use './components/otherFormats.scss' as *;
 @use './components/progress.scss' as *;
+@use './components/reaction.scss' as *;
 @use './components/topMenu.scss' as *;
 @use './components/tabs.scss' as *;
 @use './components/tabular.scss' as *;
