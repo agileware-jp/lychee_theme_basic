@@ -171,24 +171,56 @@ export function moveLycheeHelp() {
  * フィードバック用リンクの追加
  */
 export function addFeedbackLink() {
+  // フィードバック先に渡すためのプラグイン一覧を定義
+  const PLUGINS = [
+    'dashboard',
+    'kanban',
+    'backlog',
+    'lychee_gantt',
+    'project_evms',
+    'root_fever_charts',
+    'fever_charts',
+    'lychee_cost_expenses',
+    'project_report',
+    'project_reports',
+    'resource_management',
+    'lychee_work_plan',
+    'time_management',
+    'lychee_message_box_my_box',
+    'lychee_message_box_information',
+    'lychee_message_box_system_error',
+  ]
+
+  // ベースとなるURL
+  const BASE_URL = 'https://community.lychee-redmine.jp/projects/lychee-redmine/issues/new'
+
   const topMenuNav = document.querySelector('#top-menu #account ul')
+
+  // フィードバックリンクの要素を生成
   const li = document.createElement('li')
   const a = document.createElement('a')
   li.classList.add('aw_fbLink_li')
   a.classList.add('aw_fbLink')
-  a.setAttribute('href', 'https://support.lychee-redmine.jp/feedback/')
+
+  // URLのパスにPLUGINSの値が含まれているかチェック（どのプラグインからかを特定する）
+  const path = location.pathname
+  const currentPlugin = PLUGINS.find(plugin => path.includes(plugin))
+
+  // プラグイン名が判明している場合は、クエリパラメータとしてセット
+  const url = new URL(BASE_URL)
+  url.searchParams.set('from', 'feedback')
+  url.searchParams.set('plugin', currentPlugin === undefined ? 'other' : currentPlugin)
+  a.setAttribute('href', url.toString())
+
+  // aタグに情報をセット
   a.setAttribute('target', '_blank')
   a.textContent = t('sendFeedback')
 
   // ちらつき防止のため、ちらつきが発生するスタイルはあらかじめjsで指定
-  li.style.cssText = `
-    order: 4;
-  `
+  li.style.cssText = `order: 4;`
+  a.style.cssText = `padding-left: 1.75rem;`
 
-  a.style.cssText = `
-    padding-left: 1.75rem;
-  `
-
+  // フィードバックリンクの追加
   li.appendChild(a)
   topMenuNav.insertBefore(li, topMenuNav.firstElementChild)
 }
