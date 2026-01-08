@@ -215,6 +215,12 @@ table.permissions td.role {
 }
 
 
+// versions
+table.versions .shared .name .icon {
+  background-image: url(images/link_default.svg);
+}
+
+
 // filecontent
 table.filecontent {
   margin-top: 0.5rem;
