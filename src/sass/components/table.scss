@@ -150,6 +150,11 @@
   }
 
 
+  // versions
+  table.versions td.icon-shared {
+    @apply pl-7 bg-[8px_50%]
+  }
+
   // filecontent
   table.filecontent {
     @apply mt-2
