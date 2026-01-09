@@ -660,6 +660,12 @@ a.group:has(svg.icon-svg) {
   background-size: 12px;
 }
 
+// 整形済みテキストのコピー後のインタラクション（アイコンがチェックに変わる）に対応
+.pre-wrapper .copy-pre-content-link:has(svg use[href$="#icon--checked"]) {
+  background-image: url(images/done_success.svg);
+}
+
+
 /*
 * Plugins
 */
