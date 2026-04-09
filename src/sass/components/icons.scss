@@ -665,6 +665,13 @@ a.group:has(svg.icon-svg) {
   background-image: url(images/done_success.svg);
 }
 
+// 6.1.2から、利用できる項目-選択された項目の入れ替えUIがsvgに変更されたので、svgをそのまま利用する
+[type="button"].move-right svg, [type="button"].move-left svt {
+  display: block;
+}
+
+// rtl, ltrへの対応
+
 
 /*
 * Plugins
