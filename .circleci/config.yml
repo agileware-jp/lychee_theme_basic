@@ -1,0 +1,26 @@
+version: 2.1
+
+orbs:
+  bamboo: agileware-jp/bamboo@1.1.1
+
+workflows:
+  test:
+    jobs:
+      - bamboo/notify_ci_start:
+          pipeline_number: << pipeline.number >>
+          context:
+            - bamboo
+          filters:
+            branches:
+              only: master
+      - bamboo/notify_ci_end:
+          context:
+            - bamboo
+          filters:
+            branches:
+              only: master
+          # NOTE: 実際の CI ジョブ（rspec, rubocop 等）が追加されたら、
+          # notify_ci_start は requires から外し、追加した CI ジョブを
+          # : terminal 付きで列挙すること。
+          requires:
+            - bamboo/notify_ci_start: terminal
