@@ -217,9 +217,26 @@
     @apply flex flex-col gap-1
   }
 
-  div#list-definition .buttons input[type="button"] {
+  
+
+  div#list-definition .buttons [type="button"] {
     font-family: serif;
-    @apply cursor-pointer block bg-background-primary w-7 h-7 border-border-default p-1 rounded-md hover:border-border-dark active:bg-background-secondary
+    cursor: pointer;
+    display: block;
+    background-color: var(--bg-primary);
+    width: 1.75rem;
+    height: 1.75rem;
+    border: 1px solid var(--border-default);
+    padding: 0.25rem;
+    border-radius: var(--bd-radius-md);
+  }
+
+  div#list-definition .buttons [type="button"]:hover {
+    border: 1px solid var(--border-dark);
+  }
+
+  div#list-definition .buttons [type="button"]:active {
+    background-color: var(--bg-secondary);
   }
 
   // プロジェクト設定>Lycheeカンバンは#list-definitionというidがなかったので、特別対応
@@ -235,9 +252,24 @@
     @apply flex flex-col gap-1
   }
 
-  .controller-projects #tab-content-lychee_kanban .kanban-display-users .buttons input[type="button"] {
+  .controller-projects #tab-content-lychee_kanban .kanban-display-users .buttons [type="button"] {
     font-family: serif;
-    @apply cursor-pointer block bg-background-primary w-7 h-7 border-border-default p-1 rounded-md hover:border-border-dark active:bg-background-secondary
+    cursor: pointer;
+    display: block;
+    background-color: var(--bg-primary);
+    width: 1.75rem;
+    height: 1.75rem;
+    border: 1px solid var(--border-default);
+    padding: 0.25rem;
+    border-radius: var(--bd-radius-md);
+  }
+
+  .controller-projects #tab-content-lychee_kanban .kanban-display-users .buttons [type="button"]:hover {
+    border: 1px solid var(--border-dark);
+  }
+
+  .controller-projects #tab-content-lychee_kanban .kanban-display-users .buttons [type="button"]:active {
+    background-color: var(--bg-secondary);
   }
 
   // LGCはtd#list-definition > divという構造になっていたので特別対応
@@ -253,9 +285,24 @@
     @apply flex flex-col gap-1
   }
 
-  td#list-definition .buttons input[type="button"] {
+  td#list-definition .buttons [type="button"] {
     font-family: serif;
-    @apply cursor-pointer block bg-background-primary w-7 h-7 border-border-default p-1 rounded-md hover:border-border-dark active:bg-background-secondary
+    cursor: pointer;
+    display: block;
+    background-color: var(--bg-primary);
+    width: 1.75rem;
+    height: 1.75rem;
+    border: 1px solid var(--border-default);
+    padding: 0.25rem;
+    border-radius: var(--bd-radius-md);
+  }
+
+  td#list-definition .buttons [type="button"]:hover {
+    border: 1px solid var(--border-dark);
+  }
+
+  td#list-definition .buttons [type="button"]:active {
+    background-color: var(--bg-secondary);
   }
 
   // LGC5.0はfieldset#list-definitionという構造になっていたので特別対応
@@ -271,9 +318,24 @@
     @apply flex flex-col gap-1
   }
 
-  .plugin-lychee_gantt_chart fieldset#list-definition .buttons input[type="button"] {
+  .plugin-lychee_gantt_chart fieldset#list-definition .buttons [type="button"] {
     font-family: serif;
-    @apply cursor-pointer block bg-background-primary w-7 h-7 border-border-default p-1 rounded-md hover:border-border-dark active:bg-background-secondary
+    cursor: pointer;
+    display: block;
+    background-color: var(--bg-primary);
+    width: 1.75rem;
+    height: 1.75rem;
+    border: 1px solid var(--border-default);
+    padding: 0.25rem;
+    border-radius: var(--bd-radius-md);
+  }
+
+  .plugin-lychee_gantt_chart fieldset#list-definition .buttons [type="button"]:hover {
+    border: 1px solid var(--border-dark);
+  }
+
+  .plugin-lychee_gantt_chart fieldset#list-definition .buttons [type="button"]:active {
+    background-color: var(--bg-secondary);
   }
   /* 6.0 end */
 
