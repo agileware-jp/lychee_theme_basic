@@ -66,6 +66,8 @@ function addLogoutStyle() {
   // ログアウト中は#loggedasが存在しないので、#accountにmargin-top: auto;を適用したい
   if(!isLoggedIn()) {
     const account = document.getElementById('account')
+    // LIF iframe等、#accountが描画されないレイアウトでは何もしない
+    if (!account) return
     account.style.marginTop = 'auto'
   }
 }
