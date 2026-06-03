@@ -66,6 +66,8 @@ function addLogoutStyle() {
   // ログアウト中は#loggedasが存在しないので、#accountにmargin-top: auto;を適用したい
   if(!isLoggedIn()) {
     const account = document.getElementById('account')
+    // LIF iframe等、#accountが描画されないレイアウトでは何もしない
+    if (!account) return
     account.style.marginTop = 'auto'
   }
 }
@@ -195,6 +197,8 @@ export function addFeedbackLink() {
   const BASE_URL = 'https://community.lychee-redmine.jp/projects/lychee-redmine/issues/new'
 
   const topMenuNav = document.querySelector('#top-menu #account ul')
+  // LIF iframe等、#top-menu/#accountが描画されないレイアウトでは何もしない
+  if (!topMenuNav) return
 
   // フィードバックリンクの要素を生成
   const li = document.createElement('li')
