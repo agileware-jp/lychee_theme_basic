@@ -147,12 +147,6 @@
     @apply ml-4
   }
 
-  .wiki p + ul,
-  .wiki p + ol {
-    @apply -mt-2
-  }
-
-
   .wiki table {
     @apply border border-border-divider mb-4 p-2
   }
