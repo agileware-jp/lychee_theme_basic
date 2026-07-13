@@ -66,6 +66,11 @@ svg.icon-svg {
 }
 /* 6.0 end */
 
+svg.icon-svg use[href$="#icon--checked"] {
+  stroke: var(--status-success);
+  stroke-width: 2px;
+}
+
 .icon-multiple { background-image: url(../../../images/table_multiple.png); }
 .icon-file.text-x-c { background-image: url(../../../images/files/c.png); }
 .icon-file.text-x-csharp { background-image: url(../../../images/files/csharp.png); }
