@@ -29,6 +29,7 @@ svg.icon-svg {
   fill: none;
   stroke-width: 1.5;
   vertical-align: middle;
+  margin-right: 4px;
 }
 
 svg.icon-svg-filled {
@@ -675,7 +676,14 @@ a.group:has(svg.icon-svg) {
   display: block;
 }
 
-// rtl, ltrへの対応
+// PDFプレビュー
+.pdf-full-view-link .icon-maximize {
+  padding-left: 0;
+}
+
+.pdf-full-view-link .icon-maximize svg {
+  display: inline-block;
+}
 
 
 /*
