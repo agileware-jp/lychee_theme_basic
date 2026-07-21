@@ -107,7 +107,8 @@
 
 
   /* Hide top-menu and main-menu on mobile, because it's placed in our flyout menu */
-  #top-menu,
+  // top-menuは詳細度で負けてモバイル版でも表示されてしまうので、top-menuのみ詳細度を高める
+  #top-menu#top-menu,
   #header #main-menu {
     display: none;
   }
