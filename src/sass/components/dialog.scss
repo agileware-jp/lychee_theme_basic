@@ -1,115 +1,128 @@
-@layer components {
-  div.modal.ui-dialog {
-    @apply z-[1000]
-  }
+div.modal.ui-dialog {
+  z-index: 1000;
+}
 
-  div.modal.ui-dialog + .ui-widget-overlay {
-    @apply z-[999]
-  }
+div.modal.ui-dialog + .ui-widget-overlay {
+  z-index: 999;
+}
 
-  // 通常css
-  div.modal {
-    @apply bg-background-primary border-border-divider p-6 rounded-lg z-50
-  }
+// 通常css
+div.modal {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-divider);
+  padding: 1.5rem;
+  border-radius: var(--bd-radius-lg);
+  z-index: 50;
+}
 
-  div.modal h3.title {
-    @apply hidden
-  }
+div.modal h3.title {
+  display: none;
+}
 
-  div.modal p.buttons {
-    @apply text-right mt-2 mb-0
-  }
+div.modal p.buttons {
+  text-align: right;
+  margin-top: 0.5rem;
+  margin-bottom: 0px;
+}
 
-  div.modal .box p {
-    @apply my-1.5 mx-0
-  }
+div.modal .box p {
+  margin: 0.375rem 0;
+}
 
-  div.modal.ui-widget-content {
-    @apply bg-none
-  }
+div.modal.ui-widget-content {
+  background-image: none;
+}
 
-  div.modal .ui-widget-header {
-    @apply bg-transparent bg-none border-none text-sm text-text-default font-bold p-0
-  }
+div.modal .ui-widget-header {
+  background-color: transparent;
+  background-image: none;
+  border-style: none;
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+  color: var(--txt-default);
+  font-weight: bold;
+  padding: 0;
+}
 
-  .ui-dialog .ui-dialog-title {
-    @apply float-none m-0
-  }
+.ui-dialog .ui-dialog-title {
+  float: none;
+  margin: 0;
+}
 
-  .ui-dialog .ui-dialog-titlebar-close {
-    top: 0;
-    right: 0;
-    width: 24px;
-    height: 24px;
+.ui-dialog .ui-dialog-titlebar-close {
+  top: 0;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  border-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-    @apply border-none m-0 p-0
-  }
+.ui-button .ui-icon.ui-icon-closethick {
+  background-image: url(images/close_dark.svg);
+  background-position: center center;
+  background-size: 24px;
+}
 
-  .ui-button .ui-icon.ui-icon-closethick {
-    background-image: url(images/close_dark.svg);
-    background-position: center center;
-    background-size: 24px;
-  }
-
-  .ui-dialog .ui-dialog-content {
-    @apply mt-4 p-0
-  }
-
-
-  // CSV Export
-  div.modal #csv-export-form p:not([class]) {
-    @apply py-1
-  }
-
-  #csv-export-options fieldset {
-    @apply pt-1 px-3 pb-3
-  }
-
-  div.modal #csv-export-form #csv-export-block-columns label + label {
-    @apply ml-2
-  }
-
-
-  // ウォッチャー追加ダイアログ
-  div.modal #users_for_watcher {
-    @apply mt-4
-  }
-
-  div.modal #users_for_watcher label + label {
-    @apply mt-2
-  }
-
-  div.modal #users_for_watcher label input[type="checkbox"],
-  div.modal #users_for_watcher label .gravatar {
-    @apply mr-1
-  }
+.ui-dialog .ui-dialog-content {
+  margin-top: 1rem;
+  padding: 0;
+}
 
 
-  // Ajax indicator(ロード中に表示されるダイアログ)
-  html>body #ajax-indicator { position: fixed; }
+// CSV Export
+div.modal #csv-export-form p:not([class]) {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
 
-  #ajax-indicator {
-    position: absolute;
-    top: 35%;
-    left: 40%;
-    width: 20%;
-    background-color: var(--bg-secondary);
-    border: 1px solid var(--border-default);
-    font-weight: bold;
-    text-align: center;
-    padding: 8px;
-    z-index: 100;
-    border-radius: var(--bd-radius-md);
-    opacity: 0.8;
-    box-shadow: var(--shadow-lg);
-  }
+#csv-export-options fieldset {
+  padding: 0.25rem 0.75rem 0.75rem 0.75rem;
+}
 
-  #ajax-indicator > span {
-    background-position: 0% 40%;
-    background-repeat: no-repeat;
-    background-image: url(images/spinner_default.gif);
-    background-size: 16px;
-    padding-left: 26px;
-    vertical-align: bottom;
-  }
+div.modal #csv-export-form #csv-export-block-columns label + label {
+  margin-left: 0.5rem;
+}
+
+
+// ウォッチャー追加ダイアログ
+div.modal #users_for_watcher {
+  margin-top: 1rem;
+}
+
+div.modal #users_for_watcher label + label {
+  margin-top: 0.5rem;
+}
+
+div.modal #users_for_watcher label input[type="checkbox"],
+div.modal #users_for_watcher label .gravatar {
+  margin-right: 0.25rem;
+}
+
+
+// Ajax indicator(ロード中に表示されるダイアログ)
+#ajax-indicator {
+  position: fixed;
+  top: 35%;
+  left: 40%;
+  width: 20%;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  font-weight: bold;
+  text-align: center;
+  padding: 8px;
+  z-index: 100;
+  border-radius: var(--bd-radius-md);
+  opacity: 0.8;
+  box-shadow: var(--shadow-lg);
+}
+
+#ajax-indicator > span {
+  background-position: 0% 40%;
+  background-repeat: no-repeat;
+  background-image: url(images/spinner_default.gif);
+  background-size: 16px;
+  padding-left: 26px;
+  vertical-align: bottom;
 }

@@ -8,7 +8,7 @@
 }
 
 #context-menu.reverse-y li.folder>ul, #context-menu li.folder.up>ul { top:auto; bottom:0; }
-#context-menu.reverse-x li.folder ul { left:auto; right:168px; /* IE6 */ }
+#context-menu.reverse-x li.folder ul { left:auto; }
 
 #context-menu.reverse-y li.folder.down>ul {
   position:absolute; top:-2px; bottom: auto; max-height:300px; overflow:hidden; overflow-y: auto;
