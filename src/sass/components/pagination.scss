@@ -2,7 +2,10 @@ span.pagination {
   display: flex;
   align-items: center;
   color: var(--txt-caption);
-  margin-top: 1rem;
+}
+
+.next-prev-links span.pagination {
+  margin-top: 0;
 }
 
 .pagination ul.pages {
