@@ -268,7 +268,7 @@
     #issue_tree .contextual a,
     #relations .contextual a {
       @extend .BTN_TERTIARY;
-      @apply text-xs py-1 px-2
+      @apply bg-[8px_center] text-xs py-1 pr-2 pl-6
     }
   }
 
