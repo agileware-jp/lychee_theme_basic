@@ -1,7 +1,7 @@
 @layer components {
   #wrapper {
     min-height: inherit;
-    @apply overflow-hidden flex flex-col bg-background-secondary
+    @apply overflow-hidden flex flex-col bg-background-secondary relative
   }
 
   #main {
