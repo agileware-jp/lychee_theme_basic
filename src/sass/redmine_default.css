@@ -196,6 +196,7 @@ div.table-list.boards .table-list-cell.name {width: 30%;}
 .query-totals>span:not(:first-child) {margin-left:0.6em;}
 .query-totals .value {font-weight:bold;}
 .controller-timelog .query-totals {margin-top:initial;}
+body.controller-timelog.action-report fieldset#options {display: none;}
 
 td.center {text-align:center;}
 
