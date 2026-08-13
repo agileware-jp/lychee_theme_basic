@@ -149,6 +149,18 @@
     @apply ml-1
   }
 
+  .attachments_fields > span:has(use[href$="#icon--warning"]) input.filename {
+    background-image: url(images/warning_warning.svg);
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    background-size: 16px;
+  }
+
+  .attachments_fields > span > span {
+    color: var(--txt-danger);
+    margin-left: 0.5rem;
+  }
+
   .tabular input.file_selector {
     @apply mt-0
   }
