@@ -1,16 +1,9 @@
 /*
-* Open Color v1.9.1 — Redmineコア app/assets/stylesheets/open-color.css の逐語コピー
-*
-* 【このファイルが必要な理由】
-* コアの application.css は冒頭で `@import url('/open-color.css')` を行い --oc-* を定義するが、
-* 当テーマはその application.css 自体を差し替えるため、この @import 行ごと消えてしまう。
-* 結果、コアの他のCSS（gantt.css / dropdown.css / legacy-icons-compat.css など、
-* テーマが差し替えていないもの）が参照する --oc-* が未定義になる。
-* 未定義の var() を含む宣言は invalid at computed-value time となり、直前のテーマ側の
-* 宣言にフォールバックせず unset になるため、要素が丸ごと不可視になる等の事故が起きる。
-*
-* ここでは全変数を実値で定義して「安全網」とし、ブランドを効かせたい一部のみを
-* 後続の openColor.scss でテーマ色に上書きする。Redmine本体の更新時は本ファイルを再同期すること。
+* Open Color v1.9.1 — Redmineコア app/assets/stylesheets/open-color.css のコピー
+* 
+* Lycheeテーマベーシックはコアcssを置き換えている
+* そのため、コア以外のCSS（gantt.css / dropdown.css / legacy-icons-compat.css など、テーマが差し替えていないもの）が参照するopen-colorが未定義になる。
+* それを防ぐために、コアcssをコピーしておく。
 */
 
 :root {
