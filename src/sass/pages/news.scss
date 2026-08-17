@@ -41,10 +41,10 @@
   }
 
   .news-article .author {
-    @apply text-xs text-text-caption mb-2
+    @apply text-xs text-text-caption mb-2 ml-8
   }
 
-  .avatars-on .news-article .author {
+  .news-article .wiki {
     @apply ml-8
   }
 

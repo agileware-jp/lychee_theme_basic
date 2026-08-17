@@ -67,14 +67,6 @@
     @apply border-2 border-border-divider my-2
   }
 
-  body.avatars-off .journal .wiki {
-    padding-left: 16px;
-  }
-
-  body.avatars-off .journals .journal .wiki {
-    padding-left: 0;
-  }
-
   .journal .jstEditor textarea {
     @apply mb-2
   }
@@ -91,11 +83,6 @@
     padding: 8px;
     padding-left: 28px;
     border-radius: var(--bd-radius-md);
-  }
-
-  body.avatars-on .journals .journal,
-  body.avatars-off .journals .journal {
-    padding-left: 24px;
   }
 
   .journal-header {
@@ -115,18 +102,6 @@
     align-items: center;
     gap: 8px;
   }
-
-  /* チケット詳細 */
-  // 6.0以前のレイアウト調整用cssの影響打ち消し（プロフィールアイコン設定時）
-  div.journal .journal-header img.gravatar {
-    margin-left: 0;
-  }
-
-  // 6.0以前のレイアウト調整用cssの影響打ち消し（プロフィール画像未設定時）
-  body.avatars-off div.journal .journal-header span.gravatar {
-    margin-left: 0;
-  }
-
 
   /* ニュースのコメント */
   // 6.0以前のコメントUIの影響を打ち消す

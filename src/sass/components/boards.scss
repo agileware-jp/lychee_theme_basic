@@ -82,10 +82,6 @@
       @apply clear-both bg-background-primary border border-border-divider mt-4 mb-6 p-8 rounded-md
     }
 
-    .message.reply {
-
-    }
-
     #message-form #message_subject {
       @apply w-full mb-4
     }
@@ -116,14 +112,6 @@
 
     #replies .message.reply + .reply {
       @apply -scroll-mt-48
-    }
-
-    #replies .message.reply .reply-header {
-      @apply pl-8
-    }
-
-    #replies .message.reply .reply-header .gravatar {
-      @apply -ml-8
     }
 
     #replies .message.reply .wiki,
