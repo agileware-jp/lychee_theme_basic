@@ -1,116 +1,137 @@
-@layer components {
-  .journal {
-    @apply bg-background-primary border border-border-divider p-6 rounded-md
-  }
+.journal {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-divider);
+  padding: 1.5rem;
+  border-radius: var(--bd-radius-md);
+}
 
-  .journal + .journal {
-    @apply mt-4
-  }
+.journal + .journal {
+  margin-top: 1rem;
+}
 
-  .journal .note-header {
-    @apply flex items-center ml-6
-  }
+.journal .note-header {
+  display: flex;
+  align-items: center;
+  margin-left: 1.5rem;
+}
 
-  .time_entry .contextual + h4:not(.note-header) {
-    @apply flex items-center ml-6
-  }
+.time_entry .contextual + h4:not(.note-header) {
+  display: flex;
+  align-items: center;
+  margin-left: 1.5rem;
+}
 
-  .journal .note-header .gravatar {
-    @apply mr-1
-  }
+.journal .note-header .gravatar {
+  margin-right: 0.25rem;
+}
 
-  div.journal ul.details {
-    list-style-type: disc;
-    background-color: var(--bg-secondary);
-    color: var(--txt-default);
-    font-size: var(--txt-md);
-    line-height: 1.25rem;
-    margin-top: 1rem;
-    margin-left: 1.25rem;
-    margin-bottom: 0;
-    padding: 8px;
-    padding-left: 28px;
-    border-radius: var(--bd-radius-md);
-  }
+div.journal ul.details {
+  list-style-type: disc;
+  background-color: var(--bg-secondary);
+  color: var(--txt-default);
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+  margin-top: 1rem;
+  margin-left: 1.25rem;
+  margin-bottom: 0;
+  padding: 8px;
+  padding-left: 28px;
+  border-radius: var(--bd-radius-md);
+}
 
-  .journals .journal-content {
-    padding-left: 1rem;
-  }
+.journals .journal-content {
+  padding-left: 1rem;
+}
 
-  ul.revision-info {
-    @apply list-disc bg-background-secondary text-text-default text-sm mt-4 ml-5 p-2 mb-0 pl-7 rounded-md
-  }
+ul.revision-info {
+  list-style-type: disc;
+  background-color: var(--bg-secondary);
+  color: var(--txt-default);
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+  margin-top: 1rem;
+  margin-left: 1.25rem;
+  padding: 0.5rem;
+  margin-bottom: 0px;
+  padding-left: 1.75rem;
+  border-radius: var(--bd-radius-md);
+}
 
-  div.journal ul.details li:not(:first-child),
-  ul.revision-info li:not(:first-child) {
-    @apply mt-1
-  }
+div.journal ul.details li:not(:first-child),
+ul.revision-info li:not(:first-child) {
+  margin-top: 0.25rem /* 4px */;
+}
 
-  .contextual .journal-actions {
-    @apply flex items-center flex-wrap gap-2
-  }
+.contextual .journal-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
 
-  .journal-actions .icon-only,
-  .journal-actions .drdn {
-    @apply m-0
-  }
+.journal-actions .icon-only,
+.journal-actions .drdn {
+  margin: 0;
+}
 
-  .journal .wiki {
-    @apply clear-both mt-2
-  }
+.journal .wiki {
+  clear: both;
+  margin-top: 0.5rem;
+}
 
-  .journal .details + .wiki {
-    @apply mt-4
-  }
+.journal .details + .wiki {
+  margin-top: 1rem;
+}
 
-  .journal .wiki img {
-    @apply border-2 border-border-divider my-2
-  }
+.journal .wiki img {
+  border: 2px solid var(--border-divider);
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
 
-  .journal .jstEditor textarea {
-    @apply mb-2
-  }
+.journal .jstEditor textarea {
+  margin-bottom: 0.5rem /* 8px */;
+}
 
-  /*** After 6.1: Journalの構造変更 ***/
-  .journals .journal-details {
-    list-style-type: disc;
-    background-color: var(--bg-secondary);
-    color: var(--txt-default);
-    font-size: var(--txt-md);
-    line-height: 1.25rem;
-    margin-top: 1rem;
-    margin-bottom: 0;
-    padding: 8px;
-    padding-left: 28px;
-    border-radius: var(--bd-radius-md);
-  }
+/*** After 6.1: Journalの構造変更 ***/
+.journals .journal-details {
+  list-style-type: disc;
+  background-color: var(--bg-secondary);
+  color: var(--txt-default);
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  padding: 8px;
+  padding-left: 28px;
+  border-radius: var(--bd-radius-md);
+}
 
-  .journal-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+.journal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  .journal-actions {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
+.journal-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
-  .journal-meta {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
+.journal-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
-  /* ニュースのコメント */
-  // 6.0以前のコメントUIの影響を打ち消す
-  .controller-news.action-show #comments .journal h4 {
-    border-top: none;
-    padding-top: 0;
-  }
+/* ニュースのコメント */
+// 6.0以前のコメントUIの影響を打ち消す
+.controller-news.action-show #comments .journal h4 {
+  border-top: none;
+  padding-top: 0;
+}
 
-  .controller-news.action-show #comments .journal .wiki:last-of-type {
-    border-bottom: none;
-  }
+.controller-news.action-show #comments .journal .wiki:last-of-type {
+  border-bottom: none;
 }
