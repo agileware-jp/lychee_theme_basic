@@ -1,525 +1,952 @@
-@layer components {
-  .BTN_PRIMARY {
-    @apply cursor-pointer inline-block h-auto bg-product-default border border-product-default text-text-onFill text-xs py-1.5 px-2 rounded-md shadow hover:bg-product-hover hover:shadow-none active:bg-product-active active:shadow-none
+.BTN_PRIMARY {
+  cursor: pointer;
+  display: inline-block;
+  height: auto;
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+  background-color: var(--product-default);
+  border: 1px solid var(--product-default);
+  color: var(--txt-onFill);
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: var(--bd-radius-md);
+  box-shadow: var(--shadow);
+
+  &:hover {
+    background-color: var(--product-hover);
+    box-shadow: var(--shadow-none);
   }
 
-  .BTN_SECONDARY {
-    @apply cursor-pointer inline-block h-auto bg-background-primary border border-border-default text-text-default text-xs py-1.5 px-2 rounded-md shadow hover:no-underline hover:bg-background-primary hover:border-border-dark hover:shadow-none active:bg-background-secondary active:shadow-none
+  &:active {
+    background-color: var(--product-active);
+    box-shadow: var(--shadow-none);
+  }
+}
+
+.BTN_SECONDARY {
+  cursor: pointer;
+  display: inline-block;
+  height: auto;
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-default);
+  color: var(--txt-default);
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: var(--bd-radius-md);
+  box-shadow: var(--shadow);
+
+  &:hover {
+    text-decoration-line: none;
+    background-color: var(--bg-primary);
+    border-color: var(--border-dark);
+    box-shadow: var(--shadow-none);
   }
 
-  .BTN_SECONDARY_ICON_LEFT {
-    @apply cursor-pointer inline-block h-auto bg-background-primary bg-[0.75rem_center] bg-no-repeat border border-border-default text-text-default text-xs py-1.5 pl-6 pr-2 rounded-md shadow hover:no-underline hover:bg-background-primary hover:border-border-dark hover:shadow-none active:bg-background-secondary active:shadow-none
+  &:active {
+    background-color: var(--bg-secondary);
+    box-shadow: var(--shadow-none);
+  }
+}
+
+.BTN_SECONDARY_ICON_LEFT {
+  cursor: pointer;
+  display: inline-block;
+  height: auto;
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+  background-color: var(--bg-primary);
+  background-position: 0.75rem center;
+  background-repeat: no-repeat;
+  border: 1px solid var(--border-default);
+  color: var(--txt-default);
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+  padding-left: 1.5rem;
+  padding-right: 0.5rem;
+  border-radius: var(--bd-radius-md);
+  box-shadow: var(--shadow);
+
+  &:hover {
+    text-decoration-line: none;
+    background-color: var(--bg-primary);
+    border-color: var(--border-dark);
+    box-shadow: var(--shadow-none);
   }
 
-  .BTN_TERTIARY {
-    @apply cursor-pointer inline-block h-auto bg-background-secondary border border-background-secondary text-text-default text-xs py-1.5 px-2 rounded-md hover:border-border-default hover:no-underline hover:text-text-default active:bg-background-tertiary
+  &:active {
+    background-color: var(--bg-secondary);
+    box-shadow: var(--shadow-none);
+  }
+}
+
+.BTN_TERTIARY {
+  cursor: pointer;
+  display: inline-block;
+  height: auto;
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--bg-secondary);
+  color: var(--txt-default);
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: var(--bd-radius-md);
+
+  &:hover {
+    text-decoration-line: none;
+    border-color: var(--border-default);
+    color: var(--txt-default);
   }
 
-  .BTN_TERTIARY_ICON_ONLY {
-    @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap w-6 h-6 bg-center align-middle bg-background-secondary border border-background-secondary text-xs p-0 rounded-md hover:border-border-default active:bg-background-tertiary
+  &:active {
+    background-color: var(--bg-tertiary);
+  }
+}
+
+.BTN_TERTIARY_ICON_ONLY {
+  cursor: pointer;
+  display: inline-block;
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: var(--bg-secondary);
+  background-position: center;
+  border: 1px solid var(--bg-secondary);
+  vertical-align: middle;
+  padding: 0;
+  border-radius: var(--bd-radius-md);
+
+  &:hover {
+    border-color: var(--border-default);
   }
 
-  .BTN_TERTIARY_ICON_ONLY_OUTLINED {
-    @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap w-6 h-6 bg-center bg-no-repeat align-middle bg-background-primary border border-border-default text-xs p-0 rounded-md hover:bg-background-secondary hover:border-border-default active:bg-background-tertiary
+  &:active {
+    background-color: var(--bg-tertiary);
+  }
+}
+
+.BTN_TERTIARY_ICON_ONLY_OUTLINED {
+  cursor: pointer;
+  display: inline-block;
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-default);
+  padding: 0;
+  border-radius: var(--bd-radius-md);
+
+  &:hover {
+    background-color: var(--bg-secondary);
+    border-color: var(--border-default);
   }
 
-  .BTN_TERTIARY_ICON_RIGHT {
-    @apply cursor-pointer inline-block h-auto bg-[right_0.75rem_center] bg-background-secondary border border-background-secondary bg-no-repeat text-text-default text-xs py-1.5 pr-6 pl-2 rounded-md hover:border-border-default hover:no-underline hover:text-text-default active:bg-background-tertiary
+  &:active {
+    background-color: var(--bg-tertiary);
+  }
+}
+
+.BTN_TERTIARY_ICON_RIGHT {
+  cursor: pointer;
+  display: inline-block;
+  height: auto;
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--bg-secondary);
+  color: var(--txt-default);
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+  padding-right: 1.5rem;
+  padding-left: 0.5rem;
+  border-radius: var(--bd-radius-md);
+
+  &:hover {
+    border-color: var(--border-default);
+    text-decoration-line: none;
+    color: var(--txt-default);
   }
 
-  .BTN_TERTIARY_ICON_LEFT {
-    @apply cursor-pointer inline-block h-auto bg-[0.75rem_center] bg-background-secondary bg-no-repeat border border-background-secondary text-text-default text-xs py-1.5 pr-2 pl-6 rounded-md hover:border-border-default hover:no-underline hover:text-text-default active:bg-background-tertiary
+  &:active {
+    background-color: var(--bg-tertiary);
+  }
+}
+
+.BTN_TERTIARY_ICON_LEFT {
+  cursor: pointer;
+  display: inline-block;
+  height: auto;
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+
+  background-position: 0.75rem center;
+  background-repeat: no-repeat;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--bg-secondary);
+  color: var(--txt-default);
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+  padding-right: 0.5rem;
+  padding-left: 1.5rem;
+  border-radius: var(--bd-radius-md);
+
+  &:hover {
+    border-color: var(--border-default);
+    text-decoration-line: none;
+    color: var(--txt-default);
   }
 
-  .BTN_LINK {
-    @apply cursor-pointer inline-block h-auto bg-transparent border border-transparent text-text-link text-xs py-1.5 px-2 hover:underline
+  &:active {
+    background-color: var(--bg-tertiary);
+  }
+}
+
+.BTN_LINK {
+  cursor: pointer;
+  display: inline-block;
+  height: auto;
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: var(--txt-link);
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+
+  &:hover {
+    text-decoration-line: underline;
+  }
+}
+
+.buttons {
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+}
+
+.buttons * {
+  margin: 0;
+}
+
+.aw_cancelBtn {
+  @extend .BTN_LINK;
+}
+
+.aw_secondaryBtn {
+  @extend .BTN_SECONDARY;
+}
+
+form.tabular table.list + input[type="submit"] {
+  margin-top: 0.5rem;
+}
+
+// topへ戻るボタン（LIFよりは下に配置するためのz-index指定）
+.aw_backToTop {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  width: 2rem;
+  height: 2rem;
+  background-image: url(images/arrow_upward_onFill.svg);
+  background-position: center;
+  vertical-align: middle;
+  background-color: rgba(var(--bg-dark-rgb), 0.8);
+  background-repeat: no-repeat;
+  border-style: none;
+  padding: 0;
+  border-radius: var(--bd-radius-lg);
+  z-index: 499;
+
+  &:hover {
+    background-color: rgba(var(--bg-dark-rgb), 0.7);
+    box-shadow: var(--shadow-md);
+  }
+}
+
+// Sidebarの開閉ボタン
+.aw_toggleSidebar {
+  @extend .BTN_TERTIARY_ICON_ONLY_OUTLINED;
+
+  position: absolute;
+  top: 1rem;
+  right: 14.25rem;
+  z-index: 10;
+  background-image: url(images/move_right_default.svg);
+}
+
+.isSidebarClose .aw_toggleSidebar {
+  background-image: url(images/move_left_default.svg);
+  right: 0.25rem;
+}
+
+.lgc-is-fullscreen .aw_toggleSidebar,
+.task-kanban-is-fullscreen .aw_toggleSidebar,
+.controller-resource_management .aw_toggleSidebar {
+  display: none;
+}
+
+// tableタグ要素にも使われており、flexにすることでtableが崩れてしまうのでそれは除外
+.buttons:not(th, td, .table-list-cell) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+// ロール設定ページ
+.controller-roles table.list td.buttons {
+  text-align: right;
+}
+
+table.list td.buttons a, div.buttons a {
+  margin-right: 0;
+}
+
+table.list td.buttons a {
+  margin-left: 0;
+  margin-right: 0;
+  margin-left: 0.25rem;
+}
+
+table.list td.buttons .icon-only {
+  @extend .BTN_TERTIARY_ICON_ONLY_OUTLINED;
+
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-left: 0.25rem;
+}
+
+table.list td.buttons:after {
+  content: none;
+}
+
+input[type=submit],
+button[type=submit] {
+  @extend .BTN_PRIMARY;
+
+  &.mobile-show {
+    display: none;
+  }
+}
+
+#login-form #login-submit {
+  @extend .BTN_PRIMARY;
+
+  width: 100%;
+}
+
+#lychee_saml_auth_redirect_to_auth_request_box input[type=submit] {
+  @extend .BTN_SECONDARY;
+}
+
+#content > .contextual > a:not(.task-kanban-icon),
+p.buttons a {
+  @extend .BTN_SECONDARY;
+
+  display: inline-block;
+}
+
+#content > .contextual .drdn:not(.icon) .drdn-trigger {
+  @extend .BTN_TERTIARY_ICON_ONLY;
+
+  background-image: url(images/more_dark.svg);
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+}
+
+// チケット詳細>添付ファイルでのicon-onlyをtertialy buttonに
+.attachments .contextual .icon-only {
+  @extend .BTN_TERTIARY_ICON_ONLY;
+
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+// journalのcontextualをtertialy buttonに
+.contextual .journal-actions .icon-only,
+.journal .journal-actions .icon-comment {
+  @extend .BTN_TERTIARY_ICON_ONLY;
+
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+// 6.1でアイコンがtertiary icon onlyになっていない問題へ対応
+.journal-header .journal-meta .icon-only.icon-quote,
+.journal-header .journal-meta .icon-only.icon-edit,
+.journal-header .journal-meta .icon-only.icon-actions {
+  @extend .BTN_TERTIARY_ICON_ONLY;
+
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+// contextual(ページタイトル右のボタン群を個別にカスタマイズする:特定のものだけPrimaryにする)
+#content > .contextual > a.icon-add,
+.controller-timelog #content > .contextual > a.icon-time-add {
+  background-color: var(--product-default);
+  background-image: url(images/add_circle_onFill.svg);
+  border-color: var(--product-default);
+  color: var(--txt-onFill);
+
+  &:hover {
+    background-color: var(--product-hover);
   }
 
-  .buttons {
-    @apply text-xs
+  &:active {
+    background-color: var(--product-active);
+  }
+}
+
+#content > .contextual > a.icon,
+#content > .contextual .drdn.icon,
+p.buttons a.icon {
+  height: auto;
+  background-position: 8px center;
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+  padding-right: 0.5rem;
+  padding-left: 1.5rem;
+}
+
+input[name="follow"] {
+  @extend .BTN_SECONDARY;
+
+  margin-left: 0.375rem;
+}
+
+input[name="continue"] {
+  @extend .BTN_SECONDARY;
+
+  margin-left: 0.375rem;
+}
+
+// APIキー表示から戻るときのボタン（ただのaタグなので個別で指定）
+.action-show_api_key #content .box + p a[href="#"] {
+  @extend .BTN_SECONDARY;
+}
+
+// journal編集時のキャンセルボタン
+.journal input[type="submit"] + a {
+  @extend .BTN_LINK;
+
+  margin-top: 0.5rem;
+  margin-left: 0.375rem;
+}
+
+/* tabs-buttons */
+div.tabs-buttons {
+  display: flex;
+  top: 50%;
+  right: 0.5rem;
+  width: auto;
+  height: 28px;
+  transform: translateY(-50%);
+}
+
+button.tab-left, button.tab-right {
+  @extend .BTN_PRIMARY;
+
+  position: static;
+  width: 28px;
+}
+
+button.tab-left.disabled, button.tab-right.disabled {
+  opacity: 0.5;
+  background-color: var(--product-active);
+}
+
+button.tab-right {
+  margin-left: 0.25rem;
+}
+
+
+#main-menu li a.new-object {
+  @extend .BTN_TERTIARY_ICON_ONLY;
+
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-image: url(images/add_dark.svg);
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+  background-position: center;
+  border-color: var(--border-default);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+#main-menu li a.new-object:has(+ .visible) {
+  background-color: var(--bg-tertiary);
+}
+
+#main-menu li a.new-object:hover,
+#main-menu li a.new-object:active {
+  background-image: url(images/add_dark.svg);
+}
+
+.search_for_watchers a {
+  @extend .BTN_TERTIARY_ICON_LEFT;
+
+  margin-top: 1rem;
+  padding-left: 2rem;
+}
+
+
+// フォーラムのコメントの編集や削除アイコン
+.controller-messages #replies .message.reply .contextual a {
+  @extend .BTN_TERTIARY_ICON_ONLY;
+
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+// 6.1以降でフォーラムのコメント編集や削除アイコンが見えなくなる問題への対処
+// Note: .icon-onlyがないため、高さが指定されておらず、見えなくなっている
+.controller-messages .journal-meta .icon:not(.reaction-button),
+.controller-messages .journal-meta .icon-only.icon-quote {
+  @extend .BTN_TERTIARY_ICON_ONLY;
+
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+
+// 6.1ニュースのコメント削除アイコンをフォーラムやジャーナルに合わせる
+.controller-news .journal-meta .icon-del {
+  @extend .BTN_TERTIARY_ICON_ONLY;
+
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+// Issue詳細の子チケット追加など
+.controller-issues {
+  .create-subtasks-from-issue-set .contextual a,
+  #issue_tree .contextual a,
+  #relations .contextual a {
+    @extend .BTN_TERTIARY;
+
+    background-position: 8px center;
+    font-size: var(--txt-xs);
+    line-height: 1rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-right: 0.5rem;
+    padding-left: 1.5rem;
+  }
+}
+
+// Filter
+#query_form p.buttons a.icon,
+#levm_query_form .buttons a.icon {
+  @extend .BTN_LINK;
+
+  background-position: left center;
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+  padding-right: 0.5rem;
+  padding-left: 1rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  box-shadow: var(--shadow-none);
+}
+
+// Lychee Project Dashboardの「コピー」ボタン
+.controller-lychee_project_dashboards {
+  #content button[type="submit"] {
+    cursor: pointer;
+    background-color: var(--product-default);
+    color: var(--txt-onFill);
+
+    &:hover {
+      background-color: var(--product-hover);
+    }
+  }
+}
+
+// 管理→設定のフィルタ(filter.scssも参照)
+// 設定 > プロジェクト
+// 設定 > ユーザー
+.controller-admin,
+.controller-groups {
+  input[type="submit"] + .icon-reload {
+    @extend .BTN_SECONDARY_ICON_LEFT;
+
+    background-position: 0.5rem center;
+    background-size: 14px 14px;
+    font-size: var(--txt-xs);
+    line-height: 1rem;
+    margin-left: 0.25rem;
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
+    padding-right: 0.5rem;
+    padding-left: 1.5rem;
+  }
+}
+
+.controller-users.action-index {
+  h2 + form input[type="submit"] {
+    @extend .BTN_PRIMARY;
+    font-size: var(--txt-xs);
+    line-height: 1rem;
+    margin-left: 0.25rem;
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 
-  .buttons * {
+  input[type="submit"] + .icon-reload {
+    @extend .BTN_SECONDARY_ICON_LEFT;
+    font-size: var(--txt-xs);
+    line-height: 1rem;
+    background-position: 0.5rem center;
+    background-size: 14px 14px;
+    margin-left: 0.25rem;
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
+    padding-right: 0.5rem;
+  }
+}
+
+.controller-projects {
+  #tab-content-versions {
+    form input[type="submit"] {
+      @extend .BTN_PRIMARY;
+
+      font-size: var(--txt-xs);
+      line-height: 1rem;
+      margin-left: 0.25rem;
+      padding-top: 0.375rem;
+      padding-bottom: 0.375rem;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+
+    input[type="submit"] + .icon-reload {
+      @extend .BTN_SECONDARY_ICON_LEFT;
+
+      background-position: 0.5rem center;
+      background-size: 14px 14px;
+      font-size: var(--txt-xs);
+      line-height: 1rem;
+      margin-left: 0.25rem;
+      padding-top: 0.375rem;
+      padding-bottom: 0.375rem;
+      padding-right: 0.5rem;
+      padding-left: 1.5rem;
+    }
+  }
+
+  .boards {
+    .buttons .icon-only,
+    .buttons .icon-edit,
+    .buttons .icon-del {
+      @extend .BTN_TERTIARY_ICON_ONLY;
+    }
+  }
+}
+
+.controller-roles {
+  #filters form input[type="submit"] {
+    font-size: var(--txt-xs);
+    line-height: 1rem;
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  #filters form .icon-reload {
+    @extend .BTN_SECONDARY_ICON_LEFT;
+
+    background-position: 0.5rem center;
+    background-size: 14px 14px;
+    font-size: var(--txt-xs);
+    line-height: 1rem;
+    margin-left: 0.25rem;
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
+    padding-right: 0.5rem;
+    padding-left: 1.5rem;
+  }
+}
+
+.pre-wrapper .copy-pre-content-link.icon-only {
+  @extend .BTN_TERTIARY_ICON_ONLY_OUTLINED;
+
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0;
+  margin-left: 0.25rem;
+}
+
+// ライセンス管理の戻るボタン
+.controller-lychee_licenses {
+  input[name="commit"] + a {
+    @extend .BTN_LINK;
+
+    margin-left: 0.25rem;
+  }
+}
+
+// リポジトリのキャンセルボタン
+// - theme.jsでaw_cancelBtnを適用しているが、バージョン管理システム毎にViewを再レンダリングしているようで、切り替えるとcssが適用されなくなるためこちらで適用する
+#repository-form  input[type="submit"] + a {
+  @extend .BTN_LINK;
+}
+
+// カスタムフィールド→キーバリューリストの選択肢編集画面
+.controller-custom_field_enumerations {
+  // 戻るボタンの装飾
+  #content form:not(#add-element) p:has(> input[type="submit"]) a {
+    @extend .BTN_SECONDARY;
+  }
+}
+
+// Time Management
+.controller-time_management {
+  #filters + .buttons .icon-checked {
+    @extend .BTN_LINK;
+
+    background-position: left center;
+    font-size: var(--txt-xs);
+    line-height: 1rem;
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
+    padding-right: 0.5rem;
+    padding-left: 1rem;
+    box-shadow: var(--shadow-none);
+  }
+}
+
+// Lychee Cost
+#lychee_cost_expenses {
+  margin-top: 1rem;
+}
+
+#lychee_cost_expenses #x_months ~ a {
+  @extend .BTN_SECONDARY_ICON_LEFT;
+
+  background-position: 0.5rem center;
+  background-size: 14px 14px;
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+  margin-left: 0.25rem;
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+  padding-right: 0.5rem;
+  padding-left: 1.5rem;
+}
+
+.lychee_cost_expenses .icon.icon-edit,
+.lychee_cost_expenses .icon.icon-del {
+  @extend .BTN_TERTIARY_ICON_ONLY;
+}
+
+// Lychee Gantt Chart
+.controller-lgc.controller-lgc {
+  .lgc-form-cancelButton {
+    @extend .BTN_SECONDARY;
+
+    font-size: var(--txt-xs);
+    line-height: 1rem;
+  }
+
+  .lgc-issueDetail-submit button.lgc-form-button {
+    @extend .BTN_PRIMARY;
+
+    font-size: var(--txt-xs);
+    line-height: 1rem;
+  }
+
+  .lgc-chart-relatable-dialog button {
+    @extend .BTN_SECONDARY;
+  }
+}
+
+// Lychee Gantt Chart 5.0
+.controller-lychee_gantt_chart.controller-lychee_gantt_chart {
+  div[class^="lgc-RelationTypeSelector"] button[type="button"]:not([class]) {
+    @extend .BTN_SECONDARY;
+  }
+}
+
+// Lychee CCPM
+.controller-projects.controller-projects {
+  .reflect_critical_path {
+    @extend .BTN_SECONDARY_ICON_LEFT;
+
+    background-image: url(images/refresh_default.svg);
+    background-position: 0.5rem center;
+  }
+}
+
+// Lychee Project Report
+.controller-project_reports.controller-project_reports {
+  .popup-content button:not([class]) {
+    @extend .BTN_SECONDARY;
+
+    margin-top: 0.25rem;
+  }
+
+  .popup-content button + button {
+    margin-left: 0.25rem;
+  }
+}
+
+.controller-indice_settings {
+  #content > .contextual a {
+    border-style: none;
+    color: var(--txt-link);
+    padding: 0;
+    box-shadow: var(--shadow-none);
+  }
+
+  #content > .contextual a.icon {
+    padding-left: 1.5rem;
+  }
+
+  #content h3 + .contextual a:not([class]) {
+    @extend .BTN_PRIMARY;
+    background-image: url(images/add_circle_onFill.svg);
+    background-repeat: no-repeat;
+    background-position: 0.7rem center;
+    padding-left: 1.75rem;
+  }
+}
+
+.controller-project_report_settings,
+.controller-project_report_active_shared_layouts,
+.controller-enabled_report_indice_settings {
+  #content > .contextual a {
+    border-style: none;
+    color: var(--txt-link);
+    padding: 0;
+    box-shadow: var(--shadow-none);
+  }
+
+  #content > .contextual a.icon {
+    padding-left: 1.5rem;
+  }
+}
+
+.controller-project_report_queries {
+  #content > .contextual a {
+    border-style: none;
+    color: var(--txt-link);
+    padding: 0;
+    box-shadow: var(--shadow-none);
+  }
+}
+
+// Lychee Issue Form
+.lychee-issue-form__container_full,
+.lychee-issue-form__container_half {
+  button.watch, button.context,
+  button.mini-context {
+    cursor: pointer;
+    display: inline-block;
+    width: 1.5rem /* 24px */;
+    height: 1.5rem /* 24px */;
+    background-position: center;
+    vertical-align: middle;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--bg-secondary);
+    font-size: var(--txt-xs);
+    line-height: 1rem;
+    padding: 0;
+    border-radius: var(--bd-radius-md);
+
+    &:hover {
+      border: 1px solid var(--border-default);
+    }
+
+    &:active {
+      background-color: var(--bg-tertiary);
+    }
+  }
+
+  button.watch svg,
+  #dialog-footer button.context svg,
+  button.mini-context svg {
+    margin-top: -0.125rem;
+    margin-right: 0px;
+    padding: 0px;
+  }
+
+  .lif-tab-content #tab-content-comments_and_journals .comment-properties .add,
+  .lif-tab-content #tab-content-comments_and_journals .comment-edit-properties .add,
+  .lif-tab-content #tab-content-comments_and_journals .comment-properties .cancel,
+  .lif-tab-content #tab-content-comments_and_journals .comment-edit-properties .cancel,
+  .attachment_files .buttons-area button.cancel,
+  .attachment_files .buttons-area button.update {
+    padding: 0.5rem 0.75rem;
+  }
+
+
+  #dialog-footer #create-issue,
+  #dialog-footer #sequential-create-issue {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  #dialog-footer #create-issue {
     margin: 0;
   }
 
-  .aw_cancelBtn {
-    @extend .BTN_LINK;
+  #dialog-footer #sequential-create-issue {
+    margin-left: 0.25rem;
   }
 
-  .aw_secondaryBtn {
-    @extend .BTN_SECONDARY;
+  #tab-buttons button,
+  #tab-buttons button:hover {
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
+    border-radius: var(--bd-radius-md);
   }
 
-  form.tabular table.list + input[type="submit"] {
-    @apply mt-2
+  .popup-ticket-context ul li button,
+  .popup-journal-context ul li button {
+    align-items: center;
   }
 
-  // topへ戻るボタン（LIFよりは下に配置するためのz-index指定）
-  .aw_backToTop {
-    background-image: url(images/arrow_upward_onFill.svg);
-    @apply cursor-pointer inline-block overflow-hidden indent-[100%] whitespace-nowrap w-8 h-8 bg-center align-middle bg-background-dark/80 bg-no-repeat border-none p-0 rounded-lg fixed right-4 bottom-4 z-[499] hover:bg-background-dark/70 shadow-md
-  }
-
-  // Sidebarの開閉ボタン
-  .aw_toggleSidebar {
-    @extend .BTN_TERTIARY_ICON_ONLY_OUTLINED;
-    background-image: url(images/move_right_default.svg);
-    @apply absolute top-4 right-[14.25rem] z-10
-  }
-
-  .isSidebarClose .aw_toggleSidebar {
-    background-image: url(images/move_left_default.svg);
-    @apply right-[0.25rem]
-  }
-
-  .lgc-is-fullscreen .aw_toggleSidebar,
-  .task-kanban-is-fullscreen .aw_toggleSidebar,
-  .controller-resource_management .aw_toggleSidebar {
-    @apply hidden
-  }
-
-  // tableタグ要素にも使われており、flexにすることでtableが崩れてしまうのでそれは除外
-  .buttons:not(th, td, .table-list-cell) {
-    @apply flex flex-wrap items-center gap-2
-  }
-
-  // ロール設定ページ
-  .controller-roles table.list td.buttons {
-    @apply text-right
-  }
-
-  table.list td.buttons a, div.buttons a {
-    @apply mr-0
-  }
-
-  table.list td.buttons a {
-    @apply mx-0 ml-1
-  }
-
-  table.list td.buttons .icon-only {
-    @extend .BTN_TERTIARY_ICON_ONLY_OUTLINED;
-    @apply w-5 h-5 mx-0 ml-1
-  }
-
-  table.list td.buttons:after {
-    content: none;
-  }
-
-  input[type=submit],
-  button[type=submit] {
-    @extend .BTN_PRIMARY;
-
-    &.mobile-show {
-      display: none;
-    }
-  }
-
-  #login-form #login-submit {
-    @extend .BTN_PRIMARY;
-    @apply w-full
-  }
-
-  #lychee_saml_auth_redirect_to_auth_request_box input[type=submit] {
-    @extend .BTN_SECONDARY;
-  }
-
-  #content > .contextual > a:not(.task-kanban-icon),
-  p.buttons a {
-    @extend .BTN_SECONDARY;
-    @apply inline-block
-  }
-
-  #content > .contextual .drdn:not(.icon) .drdn-trigger {
-    background-image: url(images/more_dark.svg);
-
-    @extend .BTN_TERTIARY_ICON_ONLY;
-    @apply bg-no-repeat w-[30px] h-[30px]
-  }
-
-  // チケット詳細>添付ファイルでのicon-onlyをtertialy buttonに
-  .attachments .contextual .icon-only {
-    @extend .BTN_TERTIARY_ICON_ONLY;
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-
-  // journalのcontextualをtertialy buttonに
-  .contextual .journal-actions .icon-only,
-  .journal .journal-actions .icon-comment {
-    @extend .BTN_TERTIARY_ICON_ONLY;
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-
-  // 6.1でアイコンがtertiary icon onlyになっていない問題へ対応
-  .journal-header .journal-meta .icon-only.icon-quote,
-  .journal-header .journal-meta .icon-only.icon-edit,
-  .journal-header .journal-meta .icon-only.icon-actions {
-    @extend .BTN_TERTIARY_ICON_ONLY;
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-
-  // contextual(ページタイトル右のボタン群を個別にカスタマイズする:特定のものだけPrimaryにする)
-  #content > .contextual > a.icon-add,
-  .controller-timelog #content > .contextual > a.icon-time-add {
-    background-image: url(images/add_circle_onFill.svg);
-
-    @apply bg-product-default border-product-default text-text-onFill hover:bg-product-hover active:bg-product-active
-  }
-
-  #content > .contextual > a.icon,
-  #content > .contextual .drdn.icon,
-  p.buttons a.icon {
-    @apply h-auto bg-[8px_center] py-1.5 pr-2 pl-6
-  }
-
-  input[name="follow"] {
-    @extend .BTN_SECONDARY;
-    @apply ml-1.5
-  }
-
-  input[name="continue"] {
-    @extend .BTN_SECONDARY;
-    @apply ml-1.5
-  }
-
-  // APIキー表示から戻るときのボタン（ただのaタグなので個別で指定）
-  .action-show_api_key #content .box + p a[href="#"] {
-    @extend .BTN_SECONDARY;
-  }
-
-  // journal編集時のキャンセルボタン
-  .journal input[type="submit"] + a {
-    @extend .BTN_LINK;
-    @apply mt-2 ml-1.5
-  }
-
-  /* tabs-buttons */
-  div.tabs-buttons {
-    @apply flex top-1/2 right-2 w-auto h-[28px] -translate-y-1/2
-  }
-
-  button.tab-left, button.tab-right {
-    @extend .BTN_PRIMARY;
-    @apply static w-[28px]
-  }
-
-  button.tab-left.disabled, button.tab-right.disabled {
-    @apply opacity-50 bg-product-active
-  }
-
-  button.tab-right {
-    @apply ml-1
-  }
-
-
-  #main-menu li a.new-object {
-    @extend .BTN_TERTIARY_ICON_ONLY;
-
-    background-image: url(images/add_dark.svg);
-
-    @apply block w-[32px] h-[32px] bg-no-repeat bg-[length:16px_16px] bg-center border-border-default rounded-[10px] shadow
-  }
-
-  #main-menu li a.new-object:has(+ .visible) {
-    @apply bg-background-tertiary
-  }
-
-  #main-menu li a.new-object:hover,
-  #main-menu li a.new-object:active {
-    background-image: url(images/add_dark.svg);
-  }
-
-  .search_for_watchers a {
-    @extend .BTN_TERTIARY_ICON_LEFT;
-    @apply mt-4 pl-8
-  }
-
-
-  // フォーラムのコメントの編集や削除アイコン
-  .controller-messages #replies .message.reply .contextual a {
-    @extend .BTN_TERTIARY_ICON_ONLY;
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-
-  // 6.1以降でフォーラムのコメント編集や削除アイコンが見えなくなる問題への対処
-  // Note: .icon-onlyがないため、高さが指定されておらず、見えなくなっている
-  .controller-messages .journal-meta .icon:not(.reaction-button),
-  .controller-messages .journal-meta .icon-only.icon-quote {
-    @extend .BTN_TERTIARY_ICON_ONLY;
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-
-
-  // 6.1ニュースのコメント削除アイコンをフォーラムやジャーナルに合わせる
-  .controller-news .journal-meta .icon-del {
-    @extend .BTN_TERTIARY_ICON_ONLY;
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-
-  // Issue詳細の子チケット追加など
-  .controller-issues {
-    .create-subtasks-from-issue-set .contextual a,
-    #issue_tree .contextual a,
-    #relations .contextual a {
-      @extend .BTN_TERTIARY;
-      @apply bg-[8px_center] text-xs py-1 pr-2 pl-6
-    }
-  }
-
-  // Filter
-  #query_form p.buttons a.icon,
-  #levm_query_form .buttons a.icon {
-    @extend .BTN_LINK;
-    @apply bg-[left_center] text-xs pr-2 pl-4 py-1 shadow-none
-  }
-
-  // Lychee Project Dashboardの「コピー」ボタン
-  .controller-lychee_project_dashboards {
-    #content button[type="submit"] {
-      @apply cursor-pointer bg-product-default text-text-onFill hover:bg-product-hover
-    }
-  }
-
-  // 管理→設定のフィルタ(filter.scssも参照)
-  // 設定 > プロジェクト
-  // 設定 > ユーザー
-  .controller-admin,
-  .controller-groups {
-    input[type="submit"] + .icon-reload {
-      @extend .BTN_SECONDARY_ICON_LEFT;
-      @apply bg-[0.5rem_center] bg-[length:14px_14px] text-xs py-1.5 pr-2 pl-6 ml-1
-    }
-  }
-
-  .controller-users.action-index {
-    h2 + form input[type="submit"] {
-      @extend .BTN_PRIMARY;
-      @apply text-xs py-1.5 px-2 ml-1
-    }
-
-    input[type="submit"] + .icon-reload {
-      @extend .BTN_SECONDARY_ICON_LEFT;
-      @apply bg-[0.5rem_center] bg-[length:14px_14px] text-xs py-1.5 pr-2 pl-6 ml-1
-    }
-  }
-
-  .controller-projects {
-    #tab-content-versions {
-      form input[type="submit"] {
-        @extend .BTN_PRIMARY;
-        @apply text-xs py-1.5 px-2 ml-1
-      }
-  
-      input[type="submit"] + .icon-reload {
-        @extend .BTN_SECONDARY_ICON_LEFT;
-        @apply bg-[0.5rem_center] bg-[length:14px_14px] text-xs py-1.5 pr-2 pl-6 ml-1
-      }
-    }
-
-    .boards {
-      .buttons .icon-only,
-      .buttons .icon-edit,
-      .buttons .icon-del {
-        @extend .BTN_TERTIARY_ICON_ONLY;
-      }
-    }
-  }
-
-  .controller-roles {
-    #filters form input[type="submit"] {
-      @apply text-xs py-1.5 px-2
-    }
-
-    #filters form .icon-reload {
-      @extend .BTN_SECONDARY_ICON_LEFT;
-      @apply bg-[0.5rem_center] bg-[length:14px_14px] text-xs py-1.5 pr-2 pl-6 ml-1
-    }
-  }
-
-  .pre-wrapper .copy-pre-content-link.icon-only {
-    @extend .BTN_TERTIARY_ICON_ONLY_OUTLINED;
-    @apply w-5 h-5 mx-0 ml-1
-  }
-
-  // ライセンス管理の戻るボタン
-  .controller-lychee_licenses {
-    input[name="commit"] + a {
-      @extend .BTN_LINK;
-      @apply ml-1
-    }
-  }
-
-  // リポジトリのキャンセルボタン
-  // - theme.jsでaw_cancelBtnを適用しているが、バージョン管理システム毎にViewを再レンダリングしているようで、切り替えるとcssが適用されなくなるためこちらで適用する
-  #repository-form  input[type="submit"] + a {
-    @extend .BTN_LINK;
-  }
-
-  // カスタムフィールド→キーバリューリストの選択肢編集画面
-  .controller-custom_field_enumerations {
-    // 戻るボタンの装飾
-    #content form:not(#add-element) p:has(> input[type="submit"]) a {
-      @extend .BTN_SECONDARY;
-    }
-  }
-
-  // Time Management
-  .controller-time_management {
-    #filters + .buttons .icon-checked {
-      @extend .BTN_LINK;
-      @apply bg-[left_center] text-xs pr-2 pl-4 py-1.5 shadow-none
-    }
-  }
-
-  // Lychee Cost
-  #lychee_cost_expenses {
-    @apply mt-4
-  }
-
-  #lychee_cost_expenses #x_months ~ a {
-    @extend .BTN_SECONDARY_ICON_LEFT;
-    @apply bg-[0.5rem_center] bg-[length:14px_14px] text-xs py-1.5 pr-2 pl-6 ml-1
-  }
-
-  .lychee_cost_expenses .icon.icon-edit,
-  .lychee_cost_expenses .icon.icon-del {
-    @extend .BTN_TERTIARY_ICON_ONLY;
-  }
-
-  // Lychee Gantt Chart
-  .controller-lgc.controller-lgc {
-    .lgc-form-cancelButton {
-      @extend .BTN_SECONDARY;
-      @apply text-xs
-    }
-
-    .lgc-issueDetail-submit button.lgc-form-button {
-      @extend .BTN_PRIMARY;
-      @apply text-xs
-    }
-
-    .lgc-chart-relatable-dialog button {
-      @extend .BTN_SECONDARY;
-    }
-  }
-
-  // Lychee Gantt Chart 5.0
-  .controller-lychee_gantt_chart.controller-lychee_gantt_chart {
-    div[class^="lgc-RelationTypeSelector"] button[type="button"]:not([class]) {
-      @extend .BTN_SECONDARY;
-    }
-  }
-
-  // Lychee CCPM
-  .controller-projects.controller-projects {
-    .reflect_critical_path {
-      background-image: url(images/refresh_default.svg);
-      @extend .BTN_SECONDARY_ICON_LEFT;
-      @apply bg-[0.5rem_center]
-    }
-  }
-
-  // Lychee Project Report
-  .controller-project_reports.controller-project_reports {
-    .popup-content button:not([class]) {
-      @extend .BTN_SECONDARY;
-      @apply mt-1
-    }
-
-    .popup-content button + button {
-      @apply ml-1
-    }
-  }
-
-  .controller-indice_settings {
-    #content > .contextual a {
-      @apply border-none text-text-link p-0 shadow-none
-    }
-
-    #content > .contextual a.icon {
-      @apply pl-6
-    }
-
-    #content h3 + .contextual a:not([class]) {
-      background-image: url(images/add_circle_onFill.svg);
-      @extend .BTN_PRIMARY;
-      @apply bg-no-repeat pl-7 bg-[0.7rem_center]
-    }
-  }
-
-  .controller-project_report_settings,
-  .controller-project_report_active_shared_layouts,
-  .controller-enabled_report_indice_settings {
-    #content > .contextual a {
-      @apply border-none text-text-link p-0 shadow-none
-    }
-
-    #content > .contextual a.icon {
-      @apply pl-6
-    }
-  }
-
-  .controller-project_report_queries {
-    #content > .contextual a {
-      @apply border-none text-text-link p-0 shadow-none
-    }
-  }
-
-  // Lychee Issue Form
-  .lychee-issue-form__container_full,
-  .lychee-issue-form__container_half {
-    button.watch, button.context,
-    button.mini-context {
-      @apply cursor-pointer inline-block w-6 h-6 bg-center align-middle bg-background-secondary border border-background-secondary text-xs p-0 rounded-md hover:border-border-default active:bg-background-tertiary
-    }
-
-    button.watch svg,
-    #dialog-footer button.context svg,
-    button.mini-context svg {
-      @apply -mt-0.5 mr-0 p-0
-    }
-
-    .lif-tab-content #tab-content-comments_and_journals .comment-properties .add,
-    .lif-tab-content #tab-content-comments_and_journals .comment-edit-properties .add,
-    .lif-tab-content #tab-content-comments_and_journals .comment-properties .cancel,
-    .lif-tab-content #tab-content-comments_and_journals .comment-edit-properties .cancel,
-    .attachment_files .buttons-area button.cancel,
-    .attachment_files .buttons-area button.update {
-      @apply py-2 px-3
-    }
-
-
-    #dialog-footer #create-issue,
-    #dialog-footer #sequential-create-issue {
-      @apply px-3
-    }
-
-    #dialog-footer #create-issue {
-      @apply m-0
-    }
-
-    #dialog-footer #sequential-create-issue {
-      @apply ml-1
-    }
-
-    #tab-buttons button,
-    #tab-buttons button:hover {
-      @apply mx-[1px] py-1.5 px-3 rounded-md
-    }
-
-    .popup-ticket-context ul li button,
-    .popup-journal-context ul li button {
-      @apply items-center
-    }
-
-    #tab-content-time_entries .item .context-menus > form {
-      @apply inline
-    }
+  #tab-content-time_entries .item .context-menus > form {
+    display: inline;
   }
 }

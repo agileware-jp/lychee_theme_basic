@@ -1,6 +1,7 @@
 @layer components {
   #activity {
-    @apply relative pl-4
+    position: relative;
+    padding-left: 1rem;
   }
 
   #activity::before {
@@ -10,12 +11,15 @@
     left: 3px;
     width: 1px;
     height: calc(100% - 8px);
-
-    @apply bg-border-divider
+    background-color: var(--border-divider);
   }
 
   #activity h3 {
-    @apply relative text-sm font-bold mb-2
+    position: relative;
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
   }
 
   #activity h3::before {
@@ -26,26 +30,30 @@
     display: block;
     width: 7px;
     height: 7px;
+    background-color: var(--product-default);
+    border-radius: var(--bd-radius-full);
     transform: translateY(-50%);
-
-    @apply bg-product-default rounded-full
   }
 
   #activity dl + h3 {
-    @apply mt-8
+    margin-top: 2rem;
   }
 
   #activity dt {
-    @apply clear-left border-t border-dotted border-border-divider mt-4 pt-4
+    clear: left;
+    border-top: 1px dotted var(--border-divider);
+    margin-top: 1rem;
+    padding-top: 1rem;
   }
 
   #activity dt:first-child {
-    @apply border-t-0 mt-0
+    border-top-width: 0px;
+    margin-top: 0;
   }
 
   #activity dt.grouped,
   #activity dd.grouped {
-    @apply ml-5
+    margin-left: 1.25rem;
   }
 
   #activity dt.icon {
@@ -53,45 +61,63 @@
   }
 
   #activity dt .gravatar {
-    @apply ml-1
+    margin-left: 0.25rem;
   }
 
   #activity dt .time {
-    @apply text-sm text-text-caption mx-1
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
+    color: var(--txt-caption);
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
   }
 
   #activity dt .project {
-    @apply text-sm text-text-default
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
+    color: var(--txt-default);
   }
 
   #activity span.project:after {
     content: '-';
-
-    @apply py-1
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
   }
 
   #activity dt a {
-    @apply text-sm
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
   }
 
   #activity dd {
-    @apply text-xs mt-2 pl-4
+    font-size: var(--txt-xs);
+    line-height: 1rem;
+    margin-top: 0.5rem;
+    padding-left: 1rem;
   }
 
   #activity dd span.description.aw_has_description {
-    @apply block bg-background-secondary text-xs text-text-caption px-4 py-2 rounded-lg
+    display: block;
+    background-color: var(--bg-secondary);
+    font-size: var(--txt-xs);
+    line-height: 1rem;
+    color: var(--txt-caption);
+    padding: 0.5rem 1rem;
+    border-radius: var(--bd-radius-lg);
   }
 
   #activity .author {
+    display: flex;
     background-image: url(images/person_default.svg);
     background-repeat: no-repeat;
     background-size: 16px;
     background-position: left center;
-
-    @apply flex mt-2 pl-5
+    margin-top: 0.5rem;
+    padding-left: 1.25rem;
   }
 
   #activity .author a {
-    @apply text-sm
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
   }
 }
