@@ -321,6 +321,30 @@
   text-overflow: ellipsis;
 }
 
+/* MessageBox: lychee_message_boxプラグインのicon.cssの打ち消し */
+// Note: プラグインのicon.cssはRedmine7.0の標準テーマ(横並びヘッダー)向けに
+//       #top-menu .profile-menu を display:flex 化し、アバター横へ複製したアイコンを置く。
+//       本テーマの #top-menu は縦アイコンレールなので、そのままでは横並びに崩れる。
+//       アイコンはaccountメニューの一員として扱うため、以下3点で元の構造に戻す。
+
+// 1. .profile-menu の横並び化(display:flex / gap)を打ち消す
+#top-menu > .profile-menu.profile-menu {
+  display: block;
+}
+
+// 2. プラグインが #account の外へ複製したアイコンは使わない
+//    (メニュー名が空のため文字を持たず、::beforeを打ち消す本テーマでは高さ0になり見えない)
+#top-menu > .profile-menu > a.lychee-message-box-icon {
+  display: none;
+}
+
+// 3. プラグインが隠したaccountメニュー内の元アイコンを復活させる
+//    (以降のMessageBoxのスタイル・messageBox.jsの文言差し込みはこちらを前提としている)
+#top-menu .profile-menu .dropdown-content li:has(> .lychee-message-box-icon.lychee-message-box-icon) {
+  display: list-item;
+}
+
+
 /* MessageBox: 閉じているとき */
 #top-menu .lychee-message-box-icon.lychee-message-box-icon,
 #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread {

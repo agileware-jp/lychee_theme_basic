@@ -387,6 +387,11 @@ svg.icon-svg use[href$="#icon--checked"] {
   background-image: url(images/close_danger.svg);
 }
 
+.icon-link-add,
+.icon-link-add:not(:has(svg)) {
+  background-image: url(images/add_circle_default.svg);
+}
+
 .icon-link-break,
 .icon-link-break:not(:has(svg)) {
   background-image: url(images/link_off_default.svg);
