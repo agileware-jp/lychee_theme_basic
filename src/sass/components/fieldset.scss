@@ -1,13 +1,14 @@
-@layer components {
-  fieldset legend {
-    @apply text-sm text-text-default
-  }
+fieldset legend {
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+  color: var(--txt-default);
+}
 
-  fieldset.box.tabular.settings {
-    @apply border-border-divider p-4
-  }
+fieldset.box.tabular.settings {
+  border-color: var(--border-divider);
+  padding: 1rem;
+}
 
-  fieldset.box legend {
-    @apply font-bold
-  }
+fieldset.box legend {
+  font-weight: bold;
 }

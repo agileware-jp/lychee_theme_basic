@@ -1,123 +1,121 @@
-@layer components {
-  #activity {
-    position: relative;
-    padding-left: 1rem;
-  }
+#activity {
+  position: relative;
+  padding-left: 1rem;
+}
 
-  #activity::before {
-    content: '';
-    position: absolute;
-    top: 8px;
-    left: 3px;
-    width: 1px;
-    height: calc(100% - 8px);
-    background-color: var(--border-divider);
-  }
+#activity::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 3px;
+  width: 1px;
+  height: calc(100% - 8px);
+  background-color: var(--border-divider);
+}
 
-  #activity h3 {
-    position: relative;
-    font-size: var(--txt-md);
-    line-height: 1.25rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-  }
+#activity h3 {
+  position: relative;
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
 
-  #activity h3::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: -16px;
-    display: block;
-    width: 7px;
-    height: 7px;
-    background-color: var(--product-default);
-    border-radius: var(--bd-radius-full);
-    transform: translateY(-50%);
-  }
+#activity h3::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -16px;
+  display: block;
+  width: 7px;
+  height: 7px;
+  background-color: var(--product-default);
+  border-radius: var(--bd-radius-full);
+  transform: translateY(-50%);
+}
 
-  #activity dl + h3 {
-    margin-top: 2rem;
-  }
+#activity dl + h3 {
+  margin-top: 2rem;
+}
 
-  #activity dt {
-    clear: left;
-    border-top: 1px dotted var(--border-divider);
-    margin-top: 1rem;
-    padding-top: 1rem;
-  }
+#activity dt {
+  clear: left;
+  border-top: 1px dotted var(--border-divider);
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
 
-  #activity dt:first-child {
-    border-top-width: 0px;
-    margin-top: 0;
-  }
+#activity dt:first-child {
+  border-top-width: 0px;
+  margin-top: 0;
+}
 
-  #activity dt.grouped,
-  #activity dd.grouped {
-    margin-left: 1.25rem;
-  }
+#activity dt.grouped,
+#activity dd.grouped {
+  margin-left: 1.25rem;
+}
 
-  #activity dt.icon {
-    background-position: 0 1.2rem;
-  }
+#activity dt.icon {
+  background-position: 0 1.2rem;
+}
 
-  #activity dt .gravatar {
-    margin-left: 0.25rem;
-  }
+#activity dt .gravatar {
+  margin-left: 0.25rem;
+}
 
-  #activity dt .time {
-    font-size: var(--txt-md);
-    line-height: 1.25rem;
-    color: var(--txt-caption);
-    margin-left: 0.25rem;
-    margin-right: 0.25rem;
-  }
+#activity dt .time {
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+  color: var(--txt-caption);
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
 
-  #activity dt .project {
-    font-size: var(--txt-md);
-    line-height: 1.25rem;
-    color: var(--txt-default);
-  }
+#activity dt .project {
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+  color: var(--txt-default);
+}
 
-  #activity span.project:after {
-    content: '-';
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
-  }
+#activity span.project:after {
+  content: '-';
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
 
-  #activity dt a {
-    font-size: var(--txt-md);
-    line-height: 1.25rem;
-  }
+#activity dt a {
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+}
 
-  #activity dd {
-    font-size: var(--txt-xs);
-    line-height: 1rem;
-    margin-top: 0.5rem;
-    padding-left: 1rem;
-  }
+#activity dd {
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+}
 
-  #activity dd span.description.aw_has_description {
-    display: block;
-    background-color: var(--bg-secondary);
-    font-size: var(--txt-xs);
-    line-height: 1rem;
-    color: var(--txt-caption);
-    padding: 0.5rem 1rem;
-    border-radius: var(--bd-radius-lg);
-  }
+#activity dd span.description.aw_has_description {
+  display: block;
+  background-color: var(--bg-secondary);
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+  color: var(--txt-caption);
+  padding: 0.5rem 1rem;
+  border-radius: var(--bd-radius-lg);
+}
 
-  #activity .author {
-    display: flex;
-    background-image: url(images/person_default.svg);
-    background-repeat: no-repeat;
-    background-size: 16px;
-    background-position: left center;
-    margin-top: 0.5rem;
-    padding-left: 1.25rem;
-  }
+#activity .author {
+  display: flex;
+  background-image: url(images/person_default.svg);
+  background-repeat: no-repeat;
+  background-size: 16px;
+  background-position: left center;
+  margin-top: 0.5rem;
+  padding-left: 1.25rem;
+}
 
-  #activity .author a {
-    font-size: var(--txt-md);
-    line-height: 1.25rem;
-  }
+#activity .author a {
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
 }
