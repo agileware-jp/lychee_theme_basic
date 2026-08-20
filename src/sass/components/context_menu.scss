@@ -37,7 +37,8 @@ div#gantt_area .context-menu-selection a { color: #169; }
 
 
 #context-menu ul {
-  width: 180px;
+  min-width: 180px;
+  max-width: 300px;
   background-color: var(--bg-primary);
   border: 1px solid var(--border-default);
   border-radius: 0.375rem;
@@ -66,31 +67,15 @@ div#gantt_area .context-menu-selection a { color: #169; }
   max-height: 300px;
   overflow: hidden;
   overflow-y: auto;
-  left: 172px;
+  left: calc(100% - 8px);
 }
 
 #context-menu li.folder > ul {
-  left: 172px;
-}
-
-#context-menu li.folder .icon-only:has(svg.icon-svg) {
-  display: none;
-}
-
-#context-menu li.folder ul a.icon {
-  padding-left: 0.5rem;
-}
-
-#context-menu li.folder ul svg.icon-svg {
-  display: inline-block;
-}
-
-#context-menu li.folder ul .icon-label {
-  padding-left: 6px;
+  left: calc(100% - 8px);
 }
 
 #context-menu.reverse-x li.folder > ul {
-  right: 172px;
+  right: calc(100% - 8px);
 }
 
 #context-menu li > a {
