@@ -72,6 +72,35 @@ svg.icon-svg use[href$="#icon--checked"] {
   stroke-width: 2px;
 }
 
+
+// context-menu
+#context-menu li.folder .icon-only:has(svg.icon-svg) {
+  display: none;
+}
+
+#context-menu li.folder ul svg.icon-svg {
+  display: inline-block;
+}
+
+#context-menu li.folder ul a.icon {
+  position: relative;
+}
+
+#context-menu li.folder ul a.icon svg.icon-svg {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  width: 1rem;
+  height: 1rem;
+  margin: 0;
+  transform: translateY(-50%);
+}
+
+#context-menu li.folder ul a[class*="icon-"] svg.icon-svg {
+  display: none;
+}
+
+
 .icon-multiple { background-image: url(../../../images/table_multiple.png); }
 .icon-file.text-x-c { background-image: url(../../../images/files/c.png); }
 .icon-file.text-x-csharp { background-image: url(../../../images/files/csharp.png); }
@@ -609,6 +638,21 @@ svg.icon-svg use[href$="#icon--checked"] {
 .icon-file.application-gzip,
 .icon-file.application-gzip:not(:has(svg)) {
   background-image: url(images/folder_zip_default.svg);
+}
+
+/* 添付ファイル一覧（チケット詳細の「ファイル」セクション等）のファイル名リンクは
+   コアのファイルタイプ別 SVG スプライトアイコンをそのまま表示する */
+.attachments table a.icon-attachment {
+  padding-left: 0;
+  background-image: none;
+}
+
+.attachments table a.icon-attachment svg.icon-svg {
+  display: inline-block;
+  stroke: var(--txt-caption);
+  stroke-width: 1.5;
+  width: 1.125rem;
+  height: 1.125rem;
 }
 
 .icon-copy-link,
