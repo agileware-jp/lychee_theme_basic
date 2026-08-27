@@ -1,3 +1,4 @@
+@layer components {
 #errorExplanation {
   background-image: url(images/error_danger.svg);
   background-repeat: no-repeat;
@@ -12,4 +13,5 @@
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   border-radius: var(--bd-radius-md);
+}
 }

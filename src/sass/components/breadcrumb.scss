@@ -1,3 +1,4 @@
+@layer components {
 .breadcrumb, .breadcrumb a {
   font-size: var(--txt-md);
   line-height: 1.25rem;
@@ -18,4 +19,5 @@
 
 .breadcrumb a:last-child {
   margin-right: 0;
+}
 }

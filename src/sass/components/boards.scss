@@ -1,3 +1,4 @@
+@layer components {
 .controller-projects {
   .table-list {
     margin-top: 0.5rem;
@@ -137,4 +138,5 @@
   #replies + .pagination + p {
     margin-top: 1rem;
   }
+}
 }

@@ -1,25 +1,69 @@
 @layer components {
-  div.flash.notice {
-    background: url(images/done_success.svg) 8px 50% no-repeat;
+div.flash.notice {
+  background-color: var(--bg-primary);
+  background: url(images/done_success.svg) 8px 50% no-repeat;
+  border: 1px solid var(--status-success);
+  color: var(--txt-default);
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+  padding-right: 0.75rem;
+  padding-left: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: var(--bd-radius-md);
+}
 
-    @apply border border-status-success bg-background-primary text-text-default text-sm pr-3 pl-8 py-2 rounded-md
-  }
+div.flash {
+  background-color: var(--bg-secondary);
+  border-width: 1px;
+  border-color: transparent;
+  color: var(--txt-caption);
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: var(--bd-radius-md);
+}
 
-  div.flash {
-    @apply border border-transparent bg-background-secondary text-text-caption text-sm px-3 py-2 rounded-md
-  }
+div.flash.warning {
+  background-color: var(--status-warning-light);
+  background-image: none;
+  border: 1px solid var(--status-warning-light);
+  color: var(--txt-default);
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: var(--bd-radius-md);
+}
 
-  div.flash.warning {
-    @apply border border-status-warningLight bg-status-warningLight bg-none text-text-default text-sm pr-3 px-2 rounded-md
-  }
+.conflict {
+  background-color: var(--status-warning-light);
+  background-image: none;
+  border: var(--status-warning-light);
+  color: var(--txt-default);
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: var(--bd-radius-md);
+}
 
-  .conflict {
-    @apply border border-status-warningLight bg-status-warningLight bg-none text-text-default text-sm pr-3 px-2 rounded-md
-  }
-
-  div.flash.error {
-    background: url(images/error_danger.svg) 8px 50% no-repeat;
-
-    @apply border border-status-danger bg-background-primary text-text-danger text-sm pr-3 pl-8 py-2 rounded-md
-  }
+div.flash.error {
+  background-image: url(images/error_danger.svg);
+  background-position: 8px 50%;
+  background-repeat: no-repeat;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--status-danger);
+  color: var(--txt-danger);
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+  padding-right: 0.75rem;
+  padding-left: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: var(--bd-radius-md);
+}
 }

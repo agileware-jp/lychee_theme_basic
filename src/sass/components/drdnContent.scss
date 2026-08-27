@@ -1,3 +1,4 @@
+@layer components {
 .drdn {
   position: relative;
 }
@@ -179,4 +180,5 @@ div+.drdn-items > strong:first-of-type {
   padding-left: 0;
   padding-right: 0;
   padding-bottom: 0.5rem;
+}
 }

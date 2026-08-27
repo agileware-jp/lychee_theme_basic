@@ -1,3 +1,4 @@
+@layer components {
 .journal {
   background-color: var(--bg-primary);
   border: 1px solid var(--border-divider);
@@ -134,4 +135,5 @@ ul.revision-info li:not(:first-child) {
 
 .controller-news.action-show #comments .journal .wiki:last-of-type {
   border-bottom: none;
+}
 }

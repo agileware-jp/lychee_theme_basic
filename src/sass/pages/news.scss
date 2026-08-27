@@ -1,3 +1,4 @@
+@layer components {
 #edit-news,
 .new_news {
   margin-top: 1rem;
@@ -215,4 +216,5 @@
   font-size: var(--txt-xs);
   line-height: 1rem;
   margin-top: 1rem;
+}
 }

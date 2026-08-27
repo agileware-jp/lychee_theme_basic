@@ -1,13 +1,17 @@
 @layer components {
-  .ui-datepicker select.ui-datepicker-month,
-  .ui-datepicker select.ui-datepicker-year {
-    @apply text-sm
-  }
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year {
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+}
 
-  // チケットセットの関連チケットID入力候補UI
-  .controller-lychee_issue_templates {
-    .ui-autocomplete .ui-menu-item {
-      @apply text-sm px-1.5
-    }
+// チケットセットの関連チケットID入力候補UI
+.controller-lychee_issue_templates {
+  .ui-autocomplete .ui-menu-item {
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
+    padding-left: 0.375rem;
+    padding-right: 0.375rem;
   }
+}
 }

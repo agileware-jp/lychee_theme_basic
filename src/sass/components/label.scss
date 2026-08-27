@@ -1,50 +1,65 @@
 @layer components {
-  // tabularのlabelはtabular側で管理
-  // label.block,
-  // .tabular label.block,
-  #notified_events label,
-  #message_box_notified_events label {
-    @apply flex items-center
-  }
+// tabularのlabelはtabular側で管理
+// label.block,
+// .tabular label.block,
+#notified_events label,
+#message_box_notified_events label {
+  display: flex;
+  align-items: center;
+}
 
-  label.block ~ label.block {
-    @apply mt-2
-  }
+label.block ~ label.block {
+  margin-top: 0.5rem;
+}
 
-  label.inline {
-    margin-left: 0 !important;
+label.inline {
+  width: auto;
+  color: var(--txt-default);
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+  text-align: left;
+  margin-right: 1rem;
+  margin-bottom: 0;
+  margin-left: 0 !important;
+}
 
-    @apply w-auto text-sm text-text-default text-left mr-4 mb-0
-  }
+.tabular label.inline {
+  width: auto;
+}
 
-  .tabular label.inline {
-    @apply w-auto
-  }
+label.floating {
+  display: inline-block;
+  color: var(--txt-default);
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+  text-align: left;
+  margin-top: 0.5rem;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  padding-right: 1rem;
+}
 
-  label.floating {
-    @apply inline-block text-sm text-text-default text-left mt-2 mx-0 mb-0 pr-4
-  }
+#notified_events label,
+#message_box_notified_events label {
+  margin-bottom: 0.5rem;
+}
 
-  #notified_events label,
-  #message_box_notified_events label {
-    @apply mb-2
-  }
+label.floating input,
+label.inline input,
+#notified_events label input {
+  margin-right: 0.25rem;
+}
 
-  label.floating input,
-  label.inline input,
-  #notified_events label input {
-    @apply mr-1
-  }
+.tabular label.inline input[type="checkbox"] {
+  margin-top: 0;
+}
 
-  .tabular label.inline input[type="checkbox"] {
-    @apply mt-0
-  }
+.query-columns + p .inline:first-of-type {
+  background-color: #f00;
+}
 
-  .query-columns + p .inline:first-of-type {
-    background-color: #f00;
-  }
-
-  .query-columns + p .inline:first-of-type {
-    margin-left: 16px !important;
-  }
+.query-columns + p .inline:first-of-type {
+  margin-left: 16px !important;
+}
 }

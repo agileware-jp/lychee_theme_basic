@@ -1,3 +1,4 @@
+@layer components {
 .BTN_PRIMARY {
   cursor: pointer;
   display: inline-block;
@@ -949,4 +950,5 @@ button.tab-right {
   #tab-content-time_entries .item .context-menus > form {
     display: inline;
   }
+}
 }

@@ -1,10 +1,19 @@
 @layer components {
-  .nodata, .warning {
-    @apply border-none bg-status-warningLight text-text-caption text-sm px-3 py-2 rounded-md
-  }
+.nodata, .warning {
+  background-color: var(--status-warning-light);
+  color: var(--txt-caption);
+  border-style: none;
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: var(--bd-radius-md);
+}
 
-  // Wikiなど、コンテンツが存在しないときに表示される.nodata
-  #content h2 + .nodata {
-    @apply clear-both
-  }
+// Wikiなど、コンテンツが存在しないときに表示される.nodata
+#content h2 + .nodata {
+  clear: both;
+}
 }

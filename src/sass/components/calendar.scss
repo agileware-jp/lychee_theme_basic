@@ -1,3 +1,4 @@
+@layer components {
 /*** After 5.1 ***/
 ul.cal {
   list-style: none;
@@ -134,4 +135,5 @@ div.tooltip:hover span.tip .issue {
 div.tooltip:hover span.tip a {
   font-size: var(--txt-md);
   line-height: 1.25rem;
+}
 }
