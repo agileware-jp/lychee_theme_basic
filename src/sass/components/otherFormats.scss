@@ -1,5 +1,8 @@
 @layer components {
-  p.other-formats {
-    @apply text-text-caption text-xs mt-2
-  }
+p.other-formats {
+  color: var(--txt-caption);
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+  margin-top: 0.5rem;
+}
 }

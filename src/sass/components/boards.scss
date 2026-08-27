@@ -1,142 +1,142 @@
 @layer components {
-  .controller-projects {
-    .table-list {
-      @apply mt-2
-    }
-
-    .table-list-row .table-list-cell {
-      @apply p-2
-    }
-
-    .table-list-row {
-      @apply border-t border-border-divider
-    }
-  
-    .table-list-cell.name a {
-      @apply pl-2
-    }
+.controller-projects {
+  .table-list {
+    margin-top: 0.5rem;
   }
 
-  .controller-boards {
-    img.gravatar {
-      @apply m-0 mr-1
-    }
-
-    .board .description {
-      @apply ml-5
-    }
-
-    // TODO: 「返答」ボタンを非表示にして、返信フォームを常時表示にしたいのでテーマjsで調整する
-    .pagination + p {
-      // display: none;
-      display: block;
-
-      @apply my-4
-    }
-
-    #reply .box p:not(:first-child) {
-      @apply mt-4
-    }
-
-    #reply .box label {
-      font-weight: bold;
-
-      @apply text-sm text-text-default
-    }
-
-    #reply .box #message_subject {
-      width: 100%;
-
-      @apply mt-2
-    }
-
-    #reply .box #message_content {
-      @apply w-full
-    }
-
-    // 新規メッセージ
-    #add-message {
-      @apply mb-8
-    }
-
-    #message-form .box {
-      @apply clear-both mt-4
-    }
-
-    #message-form #message_subject {
-      @apply w-full mb-4
-    }
-
-    #message-form #message_locked {
-      @apply ml-2
-    }
-
-    #message-form p ~ p {
-      @apply mt-4
-    }
+  .table-list-row .table-list-cell {
+    padding: 0.5rem;
   }
 
-  // メッセージ編集／リプライ
-  .controller-messages {
-    .message:not(.reply) .wiki {
-      @apply clear-both bg-background-primary border border-border-divider mt-4 mb-6 p-8 rounded-md
-    }
-
-    .message.reply {
-
-    }
-
-    #message-form #message_subject {
-      @apply w-full mb-4
-    }
-
-    #message-form #message_locked {
-      @apply ml-2
-    }
-
-    #message-form p ~ p {
-      @apply mt-4
-    }
-
-    #reply {
-      @apply mt-2
-    }
-
-    #reply #message_subject {
-      @apply w-full
-    }
-
-    #replies .comments + .reply {
-      @apply mt-2
-    }
-
-    #replies .message.reply {
-      @apply bg-background-primary border border-border-divider mt-4 p-6 rounded-md
-    }
-
-    #replies .message.reply + .reply {
-      @apply -scroll-mt-48
-    }
-
-    #replies .message.reply .reply-header {
-      @apply pl-8
-    }
-
-    #replies .message.reply .reply-header .gravatar {
-      @apply -ml-8
-    }
-
-    #replies .message.reply .wiki,
-    #replies .message.reply .attachments {
-      @apply pl-8
-    }
-
-    #replies .message.reply .attachments {
-      @apply mt-4
-    }
-
-    #replies + .pagination + p {
-      @apply mt-4
-    }
+  .table-list-row {
+    border-top: 1px solid var(--border-divider);
   }
+
+  .table-list-cell.name a {
+    padding-left: 0.5rem;
+  }
+}
+
+.controller-boards {
+  img.gravatar {
+    margin: 0px;
+    margin-right: 0.25rem;
+  }
+
+  .board .description {
+    margin-left: 1.25rem;
+  }
+
+  .pagination + p {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  #reply .box p:not(:first-child) {
+    margin-top: 1rem;
+  }
+
+  #reply .box label {
+    font-weight: bold;
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
+    color: var(--txt-default);
+  }
+
+  #reply .box #message_subject {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  #reply .box #message_content {
+    width: 100%;
+  }
+
+  // 新規メッセージ
+  #add-message {
+    margin-bottom: 2rem;
+  }
+
+  #message-form .box {
+    clear: both;
+    margin-top: 1rem;
+  }
+
+  #message-form #message_subject {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  #message-form #message_locked {
+    margin-left: 0.5rem;
+  }
+
+  #message-form p ~ p {
+    margin-top: 1rem;
+  }
+}
+
+// メッセージ編集／リプライ
+.controller-messages {
+  .message:not(.reply) .wiki {
+    clear: both;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-divider);
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 2rem;
+    border-radius: var(--bd-radius-md);
+  }
+
+  #message-form #message_subject {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  #message-form #message_locked {
+    margin-left: 0.5rem;
+  }
+
+  #message-form p ~ p {
+    margin-top: 1rem;
+  }
+
+  #reply {
+    margin-top: 0.5rem;
+  }
+
+  #reply #message_subject {
+    width: 100%;
+  }
+
+  #replies .comments + .reply {
+    margin-top: 0.5rem;
+  }
+
+  #replies .message.reply {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-divider);
+    margin-top: 1rem;
+    padding: 1.5rem;
+    border-radius: var(--bd-radius-md);
+  }
+
+  #replies .message.reply + .reply {
+    scroll-margin-top: -12rem;
+  }
+
+  #replies .message.reply .wiki,
+  #replies .message.reply .attachments {
+    padding-left: 2rem;
+  }
+
+  #replies .message.reply .attachments {
+    margin-top: 1rem;
+  }
+
+  #replies + .pagination + p {
+    margin-top: 1rem;
+  }
+}
 }

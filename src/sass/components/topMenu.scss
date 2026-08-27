@@ -1,339 +1,510 @@
-@layer components {
-  /* TopMenu */
-  #top-menu {
-    @apply overflow-y-auto fixed top-0 left-0 flex flex-col w-[52px] h-full bg-background-secondary text-xs leading-5 p-3 z-[699] pt-[69px]
-  }
-
-  #top-menu::-webkit-scrollbar {
-    @apply hidden
-  }
-
-  // 閉じているとき
-  #top-menu.aw_topMenuHover {
-    @apply w-[180px] z-[9999] transition-[width]
-  }
-
-  #top-menu > ul {
-    @apply flex flex-col mb-auto
-  }
-
-  #top-menu li:not(:first-child) {
-    @apply mt-2
-  }
-
-  #top-menu a {
-    @apply text-text-default
-  }
-
-  #top-menu a:hover {
-    @apply no-underline opacity-60 transition-opacity
-  }
-
-  .isTopMenuOpen #top-menu {
-    @apply w-[180px]
-  }
-
-
-  /* TopMenuの開閉ボタン */
-  .aw_toggleTopMenu {
-    background-image: url(images/menu_dark.svg);
-    @apply block overflow-hidden indent-[100%] whitespace-nowrap pl-7
-  }
-
-  .aw_toggleTopMenu:hover {
-    @apply opacity-60
-  }
-
-  #top-menu.aw_topMenuHover .aw_toggleTopMenu {
-    background-image: url(images/keep_dark.svg);
-    @apply indent-0
-  }
-
-  .isTopMenuOpen #top-menu .aw_toggleTopMenu {
-    background-image: url(images/chevron_left_dark.svg);
-  }
-
-  // 開いているときにマウスオーバーしても「メニューを固定する」というラベルは表示しない
-  .isTopMenuOpen #top-menu.aw_topMenuHover .aw_toggleTopMenu {
-    @apply overflow-hidden indent-[100%]
-  }
-
-
-  /* top-menuの順番管理 */
-  // 「管理」メニューを一番下に固定したい
-  #top-menu > ul li:not(:has(.administration)) {
-    @apply order-1
-  }
-
-  #top-menu > ul li:has(.administration) {
-    @apply order-2
-  }
-
-
-  /* top-menuのアイコン化管理 */
-  #top-menu > ul > li > a {
-    @apply relative block overflow-hidden indent-[100%] whitespace-nowrap bg-no-repeat bg-[length:20px_20px] bg-[4px_3px] min-h-[20px] py-1
-  }
-
-  #top-menu.aw_topMenuHover > ul > li > a {
-    @apply indent-0 pl-7 text-ellipsis
-  }
-
-  .isTopMenuOpen #top-menu > ul > li > a {
-    @apply overflow-visible indent-0 whitespace-normal pl-7
-  }
-
-  /* top-menuのlychee系 */
-  // 独自アイコンを用意するため、lycheeアイコンは非表示にする
-  #top-menu .lychee-icon.lychee-icon::before {
-    content: none;
-  }
-
-
-  /* その他おすすめOSS */
-  #top-menu > ul a {
-    // Note: OSSで追加されたメニューか判断するすべがないため、デフォルトでOSS用のアイコンを適用しておく
-    //       それ以外を固有アイコンで上書きする
-    background-image: url(images/oss_dark.svg);
-  }
-
-  /* ホーム */
-  #top-menu > ul a.home {
-    background-image: url(images/home_dark.svg);
-  }
-
-
-  /* マイページ */
-  #top-menu > ul a.my-page {
-    background-image: url(images/badge_dark.svg);
-  }
-
-
-  /* プロジェクト */
-  #top-menu > ul a.projects {
-    background-image: url(images/widgets_dark.svg);
-  }
-
-
-  /* LRM */
-  #top-menu > ul a.lychee-icon.resource-management {
-    background-image: url(images/lrm_dark.svg);
-    @apply block bg-[4px_center]
-  }
-
-
-  /* 横断LPR */
-  #top-menu > ul a.lychee-icon.project-reports {
-    background-image: url(images/lpr_dark.svg);
-    @apply block bg-[4px_center]
-  }
-
-
-  /* work_plan: 作業予定 */
-  #top-menu > ul a.lychee-icon.lychee-work-plan {
-    background-image: url(images/work_plan_dark.svg);
-  }
-
-
-  /* time_management: 作業実績 */
-  #top-menu > ul a.lychee-icon.time-management {
-    background-image: url(images/time_management_dark.svg);
-  }
-
-
-  /* 管理 */
-  #top-menu > ul a.administration {
-    background-image: url(images/manage_accounts_dark.svg);
-  }
-
-
-
-  /* loggedas */
-  #loggedas {
-    @apply block overflow-hidden indent-[100%] whitespace-nowrap border-t border-border-default mt-4
-  }
-
-  #loggedas a {
-    @apply min-h-[20px] py-1
-  }
-
-  #loggedas .user {
-    background-image: url(images/person_dark.svg);
-    @apply block overflow-hidden indent-[100%] whitespace-nowrap bg-no-repeat bg-[length:20px_20px] bg-[4px_center]
-  }
-
-  // 開いているとき
-  #top-menu.aw_topMenuHover #loggedas .user {
-    @apply indent-0 pl-7 text-ellipsis
-  }
-
-  .isTopMenuOpen #top-menu #loggedas .user {
-    @apply indent-0 pl-7
-  }
-
-  /* account */
-  #account ul {
-    @apply flex flex-col
-  }
-
-  #account li {
-    // Note: feedbackリンクはちらつき対策のために#account ulの先頭に追加している
-    //       表示の順番としては最後にしたいので、feedbackリンクのみorderを4、それ以外は1として順番を管理している
-    @apply order-1
-  }
-
-  #account ul li {
-    @apply mt-2
-  }
-
-  #account ul li a {
-    @apply min-h-[20px] py-1
-  }
-
-  // Note: ここにメニューを追加するOSSへの対策として、何もない場合はOSSアイコンを追加する
-  //       例）redmine work timeなど
-  #account ul li a {
-    background-image: url(images/oss_dark.svg);
-    @apply bg-no-repeat bg-[length:20px_20px] bg-[4px_center]
-  }
-
-  // 閉じているとき
-  #account ul li a:not(.lychee-message-box-icon) {
-    @apply block overflow-hidden indent-[100%] whitespace-nowrap
-  }
-
-  // hoverでメニューが開いているとき
-  #account ul li a:not(.lychee-message-box-icon) {
-    @apply indent-0 pl-7 text-ellipsis
-  }
-
-  /* MessageBox: 閉じているとき */
-  #top-menu .lychee-message-box-icon.lychee-message-box-icon,
-  #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread {
-    background-image: url(images/mail_dark.svg);
-    @apply block overflow-hidden indent-[100%] whitespace-nowrap relative pl-7
-  }
-
-  #top-menu .lychee-message-box-icon.lychee-message-box-icon::before,
-  #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread::before {
-    @apply content-none
-  }
-
-  #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread::after {
-    content: '';
-    @apply absolute top-[2px] left-[16px] block w-[10px] h-[10px] bg-status-danger rounded-full
-  }
-
-
-  /* MessageBox: 開いているとき */
-  // 未読なし
-  #top-menu.aw_topMenuHover .lychee-message-box-icon.lychee-message-box-icon,
-  #top-menu.aw_topMenuHover .lychee-message-box-icon.lychee-message-box-icon.unread {
-    @apply indent-0 bg-[4px_center] text-ellipsis
-  }
-
-  // 未読ありの場合
-  #top-menu.aw_topMenuHover .lychee-message-box-icon.lychee-message-box-icon.unread {
-    @apply font-bold
-  }
-
-  .isTopMenuOpen #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread {
-    @apply font-bold
-  }
-
-
-  /* 個人設定 */
-  #top-menu .my-account {
-    background-image: url(images/construnction_dark.svg);
-  }
-
-  /* ログアウト */
-  #top-menu .logout {
-    background-image: url(images/logout_dark.svg);
-  }
-
-  /* ログイン */
-  #top-menu .login {
-    background-image: url(images/login_dark.svg);
-  }
-
-  /* 登録する */
-  #top-menu .register {
-    background-image: url(images/person_add_dark.svg);
-  }
-
-  /* フィードバックリンク */
-  #top-menu .aw_fbLink {
-    background-image: url(images/feedback_dark.svg);
-  }
-
-
-  /* lychee_help */
-  #account .lychee-help {
-    background-image: url(images/question_mark_dark.svg);
-    @apply h-[28px] bg-[#FDFBE3] bg-no-repeat bg-[length:14px_14px] bg-[7px_center] border border-[#E9E5B4] text-text-default font-bold rounded-full shadow-md
-  }
-
-  @keyframes mouseover {
-    from {
-      padding-left: 1.75rem;
-    }
-    to {
-      padding-left: 0;
-    }
-  }
-
-  #top-menu.aw_topMenuHover .lychee-help {
-    animation: mouseover 150ms forwards;
-    @apply overflow-visible indent-0 text-center
-  }
-
-  .isTopMenuOpen #top-menu #account ul li .lychee-help {
-    @apply text-center pl-0
-  }
-
-
-  // isTopMenuOpen
-  .isTopMenuOpen #top-menu #account ul li a {
-    @apply overflow-visible indent-0 pl-7
-  }
-
-
-  /* Billing */
-  // 上部にコピーしたメッセージのスタイル
-  .isBilling #wrapper > #lychee-billng-global-message {
-    background-image: url(images/error_danger.svg);
-    @apply h-[28px] bg-no-repeat bg-[8px_center] bg-[length:16px_16px] bg-status-warningLight text-xs  text-text-default py-1.5 pr-2 pl-7
-  }
-
-  // もともとtop-menuに差し込まれていたものは非表示にしておく
-  #top-menu #lychee-billng-global-message {
-    @apply hidden
-  }
-
-
-  /* 順番の管理 */
-  #top-menu > ul {
-    @apply order-1
-  }
-
-  #top-menu #lychee-billng-global-message#lychee-billng-global-message {
-    @apply order-2
-  }
-
-  #top-menu #loggedas {
-    @apply order-3
-  }
-
-  #account {
-    @apply order-4
-  }
-
-  #top-menu .login {
-    @apply order-1
-  }
-
-  #top-menu .register {
-    @apply order-2
-  }
+/* TopMenu */
+// Note: Redmine7.0で #top-menu は <nav class="top-menu"> になり、
+//       .general-menu / .profile-menu の2ブロックにネストされた。
+//       ここではそれらを display:contents で透過し、
+//       従来のアイコンレール(閉=52px / 開=180px)を維持する。
+#top-menu {
+  overflow-y: auto;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  flex-direction: column;
+  width: 52px;
+  height: 100%;
+  background-color: var(--bg-secondary);
+  font-size: var(--txt-xs);
+  line-height: 1.25rem;
+  padding: 0.75rem;
+  z-index: 699;
+  padding-top: 69px;
+}
+
+#top-menu::-webkit-scrollbar {
+  display: none;
+}
+
+// 閉じているとき(ホバーで展開)
+#top-menu.aw_topMenuHover {
+  width: 180px;
+  z-index: 9999;
+  transition-property: width;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.isTopMenuOpen #top-menu {
+  width: 180px;
+}
+
+#top-menu a {
+  color: var(--txt-default);
+}
+
+#top-menu a:hover {
+  text-decoration-line: none;
+  opacity: 0.6;
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+// アバターがクリックできるように見えてしまうため、アバターのhover cssをリセット
+#top-menu a:has(.avatar):hover {
+  cursor: default;
+  opacity: 1;
+}
+
+#top-menu > .general-menu {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0%;
+}
+
+// ログイン時のアバタードロップダウンをgrid化し、常時展開状態で並べる。
+#top-menu #account.dropdown {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  width: 100%;
+  min-width: 0px;
+  margin-top: 1rem /* 16px */;
+  padding-top: 0.75rem /* 12px */;
+  border-top: 1px solid var(--border-default);
+}
+
+#top-menu #account .dropdown-content > ul {
+  grid-column: 1 / -1;
+}
+
+#top-menu #account .dropdown-content {
+  display: contents !important;
+}
+
+#top-menu .top-menu__links > ul,
+#top-menu #account .dropdown-content > ul {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0px;
+}
+
+#top-menu li:not(:first-child) {
+  margin-top: 0.5rem;
+}
+
+
+/* TopMenuの開閉ボタン */
+// Note: 先頭への配置は topMenu.js の insertBefore で行う
+.aw_toggleTopMenu {
+  display: block;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  background-image: url(images/menu_dark.svg);
+  padding-left: 1.75rem;
+}
+
+.aw_toggleTopMenu:hover {
+  opacity: 0.6;
+}
+
+#top-menu.aw_topMenuHover .aw_toggleTopMenu {
+  text-indent: 0px;
+  background-image: url(images/keep_dark.svg);
+}
+
+.isTopMenuOpen #top-menu .aw_toggleTopMenu {
+  background-image: url(images/chevron_left_dark.svg);
+}
+
+// 開いているときにマウスオーバーしても「メニューを固定する」というラベルは表示しない
+.isTopMenuOpen #top-menu.aw_topMenuHover .aw_toggleTopMenu {
+  overflow: hidden;
+  text-indent: 100%;
+}
+
+
+/* top-menuの順番管理 */
+// OSSは管理の下に配置されることが多いため、order指定により管理を一番下に固定する
+#top-menu .top-menu__links > ul li:not(:has(.administration)) {
+  order: 1;
+}
+
+#top-menu .top-menu__links > ul li:has(.administration) {
+  order: 2;
+}
+
+
+/* top-menuのアイコン化管理 */
+#top-menu .top-menu__links > ul > li > a {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: 4px 3px;
+  min-height: 20px;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+#top-menu.aw_topMenuHover .top-menu__links ul a {
+  text-indent: 0px;
+  padding-left: 1.75rem;
+  text-overflow: ellipsis;
+}
+
+.isTopMenuOpen #top-menu .top-menu__links ul a {
+  overflow: visible;
+  text-indent: 0px;
+  white-space: normal;
+  padding-left: 1.75rem;
+}
+
+/* top-menuのlychee系 */
+// 独自アイコンを用意するため、lycheeアイコンは非表示にする
+#top-menu .lychee-icon.lychee-icon::before {
+  content: none;
+}
+
+
+/* その他おすすめOSS */
+#top-menu .general-menu a {
+  // Note: OSSで追加されたメニューか判断するすべがないため、デフォルトでOSS用のアイコンを適用しておく
+  //       それ以外を固有アイコンで上書きする
+  background-image: url(images/oss_dark.svg);
+}
+
+/* ホーム */
+#top-menu .general-menu a.home {
+  background-image: url(images/home_dark.svg);
+}
+
+
+/* マイページ */
+#top-menu .general-menu a.my-page {
+  background-image: url(images/badge_dark.svg);
+}
+
+
+/* 完了報告 */
+#top-menu .general-menu a.lychee-my-issues {
+  background-image: url(images/my_issues_dark.svg);
+}
+
+
+/* プロジェクト */
+#top-menu .general-menu a.projects {
+  background-image: url(images/widgets_dark.svg);
+}
+
+
+/* LRM */
+#top-menu .general-menu a.lychee-icon.resource-management {
+  display: block;
+  background-image: url(images/lrm_dark.svg);
+  background-position: 4px center;
+}
+
+
+/* 横断LPR */
+#top-menu .general-menu a.lychee-icon.project-reports {
+  display: block;
+  background-image: url(images/lpr_dark.svg);
+  background-position: 4px center;
+}
+
+
+/* work_plan: 作業予定 */
+#top-menu .general-menu a.lychee-icon.lychee-work-plan {
+  background-image: url(images/work_plan_dark.svg);
+}
+
+
+/* time_management: 作業実績 */
+#top-menu .general-menu a.lychee-icon.time-management {
+  background-image: url(images/time_management_dark.svg);
+}
+
+
+/* 管理 */
+#top-menu .general-menu a.administration {
+  background-image: url(images/manage_accounts_dark.svg);
+}
+
+
+#top-menu #account .dropdown-trigger {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-shrink: 0;
+  min-height: 40px;
+  padding-top: 0.25rem;
+  padding-left: 3px;
+  padding-bottom: 0.25rem;
+}
+
+/* ユーザー名(.user-info): 閉じているときは隠す */
+#top-menu #account .user-info {
+  display: none;
+}
+
+// 開いているとき(ホバー / ピン留め)にユーザー名を表示。
+// flex-1 min-w-0 で残り幅を占有しつつ、はみ出しは ellipsis で省略する。
+#top-menu.aw_topMenuHover #account .user-info,
+.isTopMenuOpen #top-menu #account .user-info {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0%;
+  min-width: 0px;
+  padding-left: 0.5rem;
+}
+
+#top-menu #account .user-info .user-name {
+  overflow: hidden;
+  white-space: nowrap;
+  font-weight: bold;
+  text-overflow: ellipsis;
+}
+
+#top-menu #account .user-info .user-login {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--txt-caption);
+}
+
+/* dropdown-divider(アバターとaccountメニューの間の線)は使わない(アバター行の上線で区切る) */
+#top-menu #account .dropdown-divider {
+  display: none;
+}
+
+/* account */
+#account li {
+  order: 1;
+}
+
+#account ul li {
+  margin-top: 0.5rem;
+}
+
+// Note: Redmine7.0の dropdown.css が .dropdown-content li a に
+//       display:flex / padding-inline:16px を付与するため、
+//       ここで block化・左右paddingの打ち消しを行う(展開時の pl-7 は別ルールで再指定)
+#account ul li a {
+  display: block;
+  padding: 0.25rem 0;
+}
+
+// Note: ここにメニューを追加するOSSへの対策として、何もない場合はOSSアイコンを追加する
+//       例）redmine work timeなど
+#account ul li a {
+  background-image: url(images/oss_dark.svg);
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: 4px center;
+}
+
+// 閉じているとき
+#account ul li a:not(.lychee-message-box-icon) {
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  display: block;
+  width: 100%;
+}
+
+// hoverでメニューが開いているとき
+#top-menu.aw_topMenuHover #account ul li a:not(.lychee-message-box-icon),
+.isTopMenuOpen #top-menu #account ul li a:not(.lychee-message-box-icon) {
+  text-indent: 0px;
+  padding-left: 1.75rem;
+  text-overflow: ellipsis;
+}
+
+/* MessageBox: lychee_message_boxプラグインのicon.cssの打ち消し */
+// Note: プラグインのicon.cssはRedmine7.0の標準テーマ(横並びヘッダー)向けに
+//       #top-menu .profile-menu を display:flex 化し、アバター横へ複製したアイコンを置く。
+//       本テーマの #top-menu は縦アイコンレールなので、そのままでは横並びに崩れる。
+//       アイコンはaccountメニューの一員として扱うため、以下3点で元の構造に戻す。
+
+// 1. .profile-menu の横並び化(display:flex / gap)を打ち消す
+#top-menu > .profile-menu.profile-menu {
+  display: block;
+}
+
+// 2. プラグインが #account の外へ複製したアイコンは使わない
+//    (メニュー名が空のため文字を持たず、::beforeを打ち消す本テーマでは高さ0になり見えない)
+#top-menu > .profile-menu > a.lychee-message-box-icon {
+  display: none;
+}
+
+// 3. プラグインが隠したaccountメニュー内の元アイコンを復活させる
+//    (以降のMessageBoxのスタイル・messageBox.jsの文言差し込みはこちらを前提としている)
+#top-menu .profile-menu .dropdown-content li:has(> .lychee-message-box-icon.lychee-message-box-icon) {
+  display: list-item;
+}
+
+
+/* MessageBox: 閉じているとき */
+#top-menu .lychee-message-box-icon.lychee-message-box-icon,
+#top-menu .lychee-message-box-icon.lychee-message-box-icon.unread {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  background-image: url(images/mail_dark.svg);
+  padding-left: 1.75rem;
+}
+
+#top-menu .lychee-message-box-icon.lychee-message-box-icon::before,
+#top-menu .lychee-message-box-icon.lychee-message-box-icon.unread::before {
+  content: none;
+}
+
+#top-menu .lychee-message-box-icon.lychee-message-box-icon.unread::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 16px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: var(--status-danger);
+  border-radius: 9999px;
+}
+
+
+/* MessageBox: 開いているとき */
+// 未読なし
+#top-menu.aw_topMenuHover .lychee-message-box-icon.lychee-message-box-icon,
+#top-menu.aw_topMenuHover .lychee-message-box-icon.lychee-message-box-icon.unread {
+  text-indent: 0px;
+  background-position: 4px center;
+  text-overflow: ellipsis;
+}
+
+// 未読ありの場合
+#top-menu.aw_topMenuHover .lychee-message-box-icon.lychee-message-box-icon.unread {
+  font-weight: bold;
+}
+
+.isTopMenuOpen #top-menu .lychee-message-box-icon.lychee-message-box-icon.unread {
+  font-weight: bold;
+}
+
+
+/* プロフィール */
+#top-menu .my-profile {
+  background-image: url(images/person_dark.svg);
+}
+
+/* 個人設定 */
+#top-menu .my-account {
+  background-image: url(images/construnction_dark.svg);
+}
+
+/* ログアウト */
+#top-menu .logout {
+  background-image: url(images/logout_dark.svg);
+}
+
+/* ログイン */
+#top-menu .login {
+  background-image: url(images/login_dark.svg);
+}
+
+/* 登録する */
+#top-menu .register {
+  background-image: url(images/person_add_dark.svg);
+}
+
+/* フィードバックリンク */
+#top-menu .aw_fbLink {
+  background-image: url(images/feedback_dark.svg);
+}
+
+
+/* lychee_help */
+#account .lychee-help {
+  background-image: url(images/question_mark_dark.svg);
+  height: 28px;
+  background-color: #FDFBE3;
+  background-repeat: no-repeat;
+  background-size: 14px 14px;
+  background-position: 7px center;
+  border: 1px solid #E9E5B4;
+  color: var(--txt-default);
+  font-weight: bold;
+  border-radius: 9999px;
+  box-shadow: var(--shadow-md);
+}
+
+@keyframes mouseover {
+  from {
+    padding-left: 1.75rem;
+  }
+  to {
+    padding-left: 0;
+  }
+}
+
+#top-menu.aw_topMenuHover .lychee-help {
+  overflow: visible;
+  text-indent: 0px;
+  text-align: center;
+  animation: mouseover 150ms forwards;
+}
+
+.isTopMenuOpen #top-menu #account ul li .lychee-help {
+  text-align: center;
+  padding-left: 0px;
+}
+
+
+// isTopMenuOpen
+.isTopMenuOpen #top-menu #account ul li a {
+  overflow: visible;
+  text-indent: 0px;
+  padding-left: 1.75rem;
+}
+
+
+/* Billing */
+// 上部にコピーしたメッセージのスタイル
+.isBilling #wrapper > #lychee-billng-global-message {
+  height: 28px;
+  background-image: url(images/error_danger.svg);
+  background-repeat: no-repeat;
+  background-position: 8px center;
+  background-size: 16px 16px;
+  background-color: var(--status-warning-light);
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: var(--txt-default);
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+  padding-left: 1.75rem;
+}
+
+// もともとtop-menuに差し込まれていたものは非表示にしておく
+#top-menu #lychee-billng-global-message {
+  display: none;
+}
+
+
+/* 順番の管理 */
+// login/registerの並び(未ログイン時)
+#top-menu .login {
+  order: 1;
+}
+
+#top-menu .register {
+  order: 2;
 }

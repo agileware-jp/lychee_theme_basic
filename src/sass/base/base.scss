@@ -4,11 +4,11 @@ body, table, tbody, thead, tr, th, td {
 
 @layer components {
   html, body {
-    @apply min-h-[100vh]
+    min-height: 100vh;
   }
   
   html {
-    @apply overflow-y-scroll
+    overflow-y: scroll;
   }
 
   body {
@@ -19,66 +19,97 @@ body, table, tbody, thead, tr, th, td {
       "Hiragino Sans",
       Meiryo,
       sans-serif;
-    @apply min-w-[900px] bg-background-primary text-text-default text-sm m-0 p-0
+    min-width: 900px;
+    background-color: var(--bg-secondary);
+    color: var(--txt-default);
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    margin: 0;
+    padding: 0;
   }
 
   p {
-    @apply my-1
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
   }
 
   a {
-    @apply text-text-link
+    color: var(--txt-link);
   }
 
   img, svg, video, canvas, audio, iframe, embed, object {
-    @apply inline-block
+    display: inline-block;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply mb-2 p-0
+    margin-bottom: 0.5rem;
+    padding: 0px;
   }
 
   h2 {
-    @apply text-xl
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 
   #content > h2,
   #add-news > h2,
   #add-document > h2,
   #lgc-queryForm h2 {
-    @apply text-base text-text-default font-bold mt-1 mb-3 p-0
+    font-size: var(--txt-base);
+    line-height: 1.5rem;
+    color: var(--txt-default);
+    font-weight: bold;
+    margin-top: 0.25rem;
+    margin-bottom: 0.75rem;
+    padding: 0;
   }
 
   p.subtitle {
-    @apply text-sm text-text-caption not-italic mt-0 mb-4
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
+    color: var(--txt-caption);
+    font-style: normal;
+    margin-top: 0px;
+    margin-bottom: 1rem;
   }
 
   h2 + p.subtitle {
-    @apply -mt-2
+    margin-top: -0.5rem;
   }
 
   h3 {
-    @apply text-base text-text-default font-bold mb-2
+    font-size: var(--txt-base);
+    line-height: 1.5rem;
+    color: var(--txt-default);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
   }
 
   div.issue div.subject h3 {
-    @apply text-lg
+    font-size: var(--txt-lg);
+    line-height: 1.75rem;
   }
 
   h4 {
-    @apply text-sm
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
   }
 
   .required {
-    @apply text-text-danger
+    color: var(---txt-danger);
   }
 
   em {
-    @apply text-xs text-text-caption
+    font-size: var(--txt-xs);
+    line-height: 1rem;
+    color: var(--txt-caption);
   }
 
   em.info {
-    @apply text-xs text-text-caption mt-2
+    font-size: var(--txt-xs);
+    line-height: 1rem;
+    color: var(--txt-caption);
+    margin-top: 0.5rem;
   }
 
   pre, code {
@@ -86,14 +117,14 @@ body, table, tbody, thead, tr, th, td {
   }
 
   blockquote {
-    @apply border-border-divider border-l-2
+    border-left: 2px solid var(--border-divider);
   }
 
   blockquote blockquote {
-    @apply mt-2
+    margin-top: 0.5rem;
   }
 
   .syntaxhl {
-    @apply bg-background-secondary
+    background-color: var(--bg-secondary);
   }
 }

@@ -1,237 +1,314 @@
 @layer components {
-  .TEXT_FIELD {
-    @apply border border-border-default text-text-default text-xs my-[1px] py-1.5 px-2 rounded-md hover:border-border-dark
+.TEXT_FIELD {
+  border: 1px solid var(--border-default);
+  color: var(--txt-default);
+  font-size: 0.75rem;
+  line-height: 1rem;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: var(--bd-radius-md);
+
+  &:hover {
+    border-color: var(--border-dark);
   }
+}
 
-  form {
-    @apply block
-  }
+form {
+  display: block;
+}
 
-  input, select, textarea {
-    @apply bg-background-primary
-  }
+input, select, textarea {
+  background-color: var(--bg-primary);
+}
 
-  label.block input[type="radio"],
-  .tabular label.block input[type="radio"],
-  label.block input[type="checkbox"],
-  .tabular label.block input[type="checkbox"] {
-    @apply m-0 mr-1
-  }
+label.block input[type="radio"],
+.tabular label.block input[type="radio"],
+label.block input[type="checkbox"],
+.tabular label.block input[type="checkbox"] {
+  margin: 0 0.25rem 0 0;
+}
 
-  input:not([type="checkbox"]), select, button {
-    @apply h-auto
-  }
+input:not([type="checkbox"]), select, button {
+  height: auto;
+}
 
-  input[type="checkbox"] {
-    @apply h-auto align-text-bottom
-  }
+input[type="checkbox"] {
+  height: auto;
+  vertical-align: text-bottom;
+}
 
-  input:not([type="checkbox"], [type="radio"], [type="submit"]) {
-    @extend .TEXT_FIELD;
-  }
+input:not([type="checkbox"], [type="radio"], [type="submit"]) {
+  @extend .TEXT_FIELD;
+}
 
-  input[type="date"] {
-    @apply h-[30px]
-  }
+input[type="date"] {
+  height: 30px;
+}
 
-  textarea {
-    @extend .TEXT_FIELD;
-  }
+textarea {
+  @extend .TEXT_FIELD;
+}
 
-  select {
-    background-image: url(images/expand_more_dark.svg);
-    background-repeat: no-repeat;
-    background-position: right 8px center;
+select {
+  @extend .TEXT_FIELD;
 
-    @extend .TEXT_FIELD;
-    @apply cursor-pointer h-auto pr-8
-  }
+  cursor: pointer;
+  height: auto;
+  background-image: url(images/expand_more_dark.svg);
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  padding-right: 2rem;
+}
 
-  fieldset#filters td.values select[multiple] {
-    @apply p-1
-  }
+fieldset#filters td.values select[multiple] {
+  padding: 0.25rem;
+}
 
-  select[multiple] {
-    @apply p-1
-  }
+select[multiple] {
+  padding: 0.25rem;
+}
 
-  select[multiple] option {
-    @apply py-1 px-2 rounded
-  }
+select[multiple] option {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: var(--bd-radius-md);
+}
 
-  select[multiple] option:not(:first-child) {
-    @apply mt-0.5
-  }
+select[multiple] option:not(:first-child) {
+  margin-top: 0.125rem;
+}
 
-  select[multiple] option:checked,
-  select[multiple]:focus option:checked {
-    @apply bg-background-tertiary
-  }
+select[multiple] option:checked,
+select[multiple]:focus option:checked {
+  background-color: var(--bg-tertiary);
+}
 
-  #quick-search #q {
-    @extend .TEXT_FIELD;
-  }
+#quick-search #q {
+  @extend .TEXT_FIELD;
+}
 
-  .drdn-content .autocomplete {
-    @extend .TEXT_FIELD;
-    @apply w-full h-auto pl-8
-  }
+.drdn-content .autocomplete {
+  @extend .TEXT_FIELD;
+  width: 100%;
+  height: auto;
+  padding-left: 2rem;
+}
 
-  input.autocomplete {
-    background: url(images/search_default.svg) no-repeat left 8px center;
-    padding-left: 2rem !important;
-  }
+input.autocomplete {
+  background: url(images/search_default.svg) no-repeat left 8px center;
+  padding-left: 2rem !important;
+}
 
-  #project-jump .drdn-trigger {
-    background: url(images/expand_more_dark.svg) no-repeat right 8px center;
-    @extend .TEXT_FIELD;
-    @apply inline-block w-full bg-background-primary align-middle m-0 pr-7
-  }
+#project-jump .drdn-trigger {
+  @extend .TEXT_FIELD;
 
-  #project-jump .drdn.expanded .drdn-trigger {
-    background-image: url(images/expand_less_dark.svg);
-  }
+  display: inline-block;
+  width: 100%;
+  background-color: var(--bg-primary);
+  background-image: url(images/expand_more_dark.svg);
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  vertical-align: middle;
+  margin: 0;
+  padding-right: 1.75rem;
+}
 
-  .jstBlock .wiki-preview {
-    @extend .TEXT_FIELD;
-    @apply p-6
-  }
+#project-jump .drdn.expanded .drdn-trigger {
+  background-image: url(images/expand_less_dark.svg);
+}
 
-  #login-form input[type=text],
-  #login-form input[type=password] {
-    @apply block w-full
-  }
+.jstBlock .wiki-preview {
+  @extend .TEXT_FIELD;
 
-  #login-form input[type=text],
-  #login-form input[type=password] {
-    @apply mb-4
-  }
+  padding: 1.5rem;
+}
 
+#login-form input[type=text],
+#login-form input[type=password] {
+  display: block;
+  width: 100%;
+}
 
-  input#months,
-  input#options_milestone_months {
-    @apply w-14
-  }
-
-
-  input#principal_search,
-  input#user_search {
-    @apply w-full
-  }
-
-  #user_login,
-  #user_firstname,
-  #user_lastname,
-  #user_mail,
-  #my_account_form select,
-  #user_form select {
-    @apply w-full
-  }
-
-  // ファイル添付・コメント投稿系
-  input[type="file"] {
-    @apply block w-full bg-background-secondary text-xs text-text-default p-2 rounded-md
-  }
-
-  .box > p > .attachments_form {
-    @apply mt-0
-  }
-
-  .attachments_fields input.icon-attachment {
-    @apply pl-4
-  }
-
-  .attachments_fields .description {
-    @apply mb-2
-  }
-
-  .attachments_fields .remove-upload {
-    @apply ml-1
-  }
-
-  .tabular input.file_selector {
-    @apply mt-0
-  }
-
-  span.search_for_watchers,
-  span.add_attachment {
-    @apply text-xs text-text-caption
-  }
-
-  #issue_estimated_hours,
-  #issue_remaining_estimate {
-    @apply w-20
-  }
-
-  .check_box_group {
-    @extend .TEXT_FIELD;
-    @apply pb-4
-  }
-
-  .check_box_group label {
-    @apply w-auto
-  }
-
-  .check_box_group label + label {
-    @apply mt-2
-  }
-
-  .check_box_group label input[type="checkbox"] {
-    @apply mt-0 mr-1
-  }
-
-  // 個人設定
-  #user_mail_notification {
-    @apply mb-2
-  }
-
-  // 詳細度を高めて上書きが必要
-  .select2-container--default.select2-container--default .select2-selection--single {
-    @extend .TEXT_FIELD;
-    @apply h-[30px] pr-8
-  }
-
-  .select2-container--default.select2-container--default .select2-selection--single .select2-selection__arrow {
-    @apply -top-[4px]
-  }
-
-  .select2-container--default.select2-container--default .select2-selection--single .select2-selection__arrow b {
-    @apply border-none w-auto h-auto left-auto right-2 m-0
-  }
-
-  .select2-container--default.select2-container--default .select2-selection--single .select2-selection__arrow b::after {
-    content: url(images/expand_more_dark.svg);
-  }
-
-  .select2-container--default.select2-container--default .select2-selection--single .select2-selection__rendered {
-    padding-left: 0 !important;
-    @apply text-xs text-text-default px-0 pt-0
-  }
-
-  .select2-container--default.select2-container--default.select2-container--focus .select2-selection--multiple {
-    @apply border-text-default
-  }
+#login-form input[type=text],
+#login-form input[type=password] {
+  margin-bottom: 1rem;
+}
 
 
-  /* 管理→設定 */
-  .settings input[type="text"],
-  .settings textarea {
-    @apply text-[13px] py-1 px-1.5
-  }
+input#months,
+input#options_milestone_months {
+  width: 56px;
+}
 
-  .settings select {
-    @apply text-[13px] py-1 pr-8 pl-1.5
-  }
 
-  .settings .select2-container--default.select2-container--default .select2-selection--single {
-    @apply text-[13px] h-[26px]
-  }
+input#principal_search,
+input#user_search {
+  width: 100%;
+}
 
-  .settings .select2-container--default.select2-container--default .select2-selection--single .select2-selection__arrow {
-    @apply -top-[6px]
-  }
+#user_login,
+#user_firstname,
+#user_lastname,
+#user_mail,
+#my_account_form select,
+#user_form select {
+  width: 100%;
+}
 
-  .settings .select2-container--default.select2-container--default .select2-selection--single .select2-selection__rendered {
-    @apply text-[13px] leading-3
-  }
+// ファイル添付・コメント投稿系
+input[type="file"] {
+  display: block;
+  width: 100%;
+  background-color: var(--bg-secondary);
+  color: var(--txt-default);
+  font-size: 0.75rem;
+  line-height: 1rem;
+  padding: 0.5rem;
+  border-radius: var(--bd-radius-md);
+}
+
+.box > p > .attachments_form {
+  margin-top: 0;
+}
+
+.attachments_fields input.icon-attachment {
+  padding-left: 1rem;
+}
+
+.attachments_fields .description {
+  margin-bottom: 0.5rem;
+}
+
+.attachments_fields .remove-upload {
+  margin-left: 0.25rem;
+}
+
+.attachments_fields > span:has(use[href$="#icon--warning"]) input.filename {
+  background-image: url(images/warning_warning.svg);
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  background-size: 16px;
+}
+
+.attachments_fields > span > span {
+  color: var(--txt-danger);
+  margin-left: 0.5rem;
+}
+
+.tabular input.file_selector {
+  margin-top: 0;
+}
+
+span.search_for_watchers,
+span.add_attachment {
+  color: var(--txt-caption);
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+#issue_estimated_hours,
+#issue_remaining_estimate {
+  width: 5rem;
+}
+
+.check_box_group {
+  @extend .TEXT_FIELD;
+
+  padding-bottom: 1rem;
+}
+
+.check_box_group label {
+  width: auto;
+}
+
+.check_box_group label + label {
+  margin-top: 0.5rem;
+}
+
+.check_box_group label input[type="checkbox"] {
+  margin-top: 0;
+  margin-right: 0.25rem;
+}
+
+// 個人設定
+#user_mail_notification {
+  margin-bottom: 0.5rem;
+}
+
+// 詳細度を高めて上書きが必要
+.select2-container--default.select2-container--default .select2-selection--single {
+  @extend .TEXT_FIELD;
+
+  height: 30px;
+  padding-right: 2rem;
+}
+
+.select2-container--default.select2-container--default .select2-selection--single .select2-selection__arrow {
+  top: -4px;
+}
+
+.select2-container--default.select2-container--default .select2-selection--single .select2-selection__arrow b {
+  width: auto;
+  height: auto;
+  left: auto;
+  right: 0.5rem;
+  border-style: none;
+  margin: 0;
+}
+
+.select2-container--default.select2-container--default .select2-selection--single .select2-selection__arrow b::after {
+  content: url(images/expand_more_dark.svg);
+}
+
+.select2-container--default.select2-container--default .select2-selection--single .select2-selection__rendered {
+  color: var(--txt-default);
+  font-size: 0.75rem;
+  line-height: 1rem;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-left: 0 !important;
+}
+
+.select2-container--default.select2-container--default.select2-container--focus .select2-selection--multiple {
+  border-color: var(--txt-default);
+}
+
+
+/* 管理→設定 */
+.settings input[type="text"],
+.settings textarea {
+  font-size: 13px;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.375rem;
+  padding-right: 0.375rem;
+}
+
+.settings select {
+  font-size: 13px;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-right: 2rem;
+  padding-left: 0.375rem;
+}
+
+.settings .select2-container--default.select2-container--default .select2-selection--single {
+  font-size: 13px;
+  height: 26px;
+}
+
+.settings .select2-container--default.select2-container--default .select2-selection--single .select2-selection__arrow {
+  top: -6px;
+}
+
+.settings .select2-container--default.select2-container--default .select2-selection--single .select2-selection__rendered {
+  font-size: 13px;
+  line-height: 0.75rem;
+}
 }

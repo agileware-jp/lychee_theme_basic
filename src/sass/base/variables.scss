@@ -1,5 +1,12 @@
 :root {
   /* Colors */
+  // Product
+  --product-default: #085A79;
+  --product-hover: #074D69;
+  --product-active: #06425A;
+  --product-lychee: #D7000F;
+
+
   // Status
   --status-danger: #CC0000;
   --status-danger-dark: #AF0000;
@@ -76,9 +83,23 @@
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --shadow-none: none;
 
   /* Other */
   --top-menu-width-close: 52px;
   --top-menu-width-open: 180px;
   --mobile-header: 64px;
+
+
+  /* Primitive */
+  --neutral-black-900: #1D1D1D;
+  --neutral-black-800: #3D3D3D;
+  --neutral-black-700: #5C5C5C;
+  --neutral-black-600: #707070;
+  --neutral-black-500: #989898;
+  --neutral-black-400: #B8B8B8;
+  --neutral-black-300: #DBDBDB;
+  --neutral-black-200: #EAEAEA;
+  --neutral-black-100: #F3F3F3;
+  --neutral-black-50: #F9F9F9;
 }

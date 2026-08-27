@@ -29,6 +29,7 @@ svg.icon-svg {
   fill: none;
   stroke-width: 1.5;
   vertical-align: middle;
+  margin-right: 4px;
 }
 
 svg.icon-svg-filled {
@@ -65,6 +66,40 @@ svg.icon-svg {
   display: none;
 }
 /* 6.0 end */
+
+svg.icon-svg use[href$="#icon--checked"] {
+  stroke: var(--status-success);
+  stroke-width: 2px;
+}
+
+
+// context-menu
+#context-menu li.folder .icon-only:has(svg.icon-svg) {
+  display: none;
+}
+
+#context-menu li.folder ul svg.icon-svg {
+  display: inline-block;
+}
+
+#context-menu li.folder ul a.icon {
+  position: relative;
+}
+
+#context-menu li.folder ul a.icon svg.icon-svg {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  width: 1rem;
+  height: 1rem;
+  margin: 0;
+  transform: translateY(-50%);
+}
+
+#context-menu li.folder ul a[class*="icon-"] svg.icon-svg {
+  display: none;
+}
+
 
 .icon-multiple { background-image: url(../../../images/table_multiple.png); }
 .icon-file.text-x-c { background-image: url(../../../images/files/c.png); }
@@ -381,6 +416,11 @@ svg.icon-svg {
   background-image: url(images/close_danger.svg);
 }
 
+.icon-link-add,
+.icon-link-add:not(:has(svg)) {
+  background-image: url(images/add_circle_default.svg);
+}
+
 .icon-link-break,
 .icon-link-break:not(:has(svg)) {
   background-image: url(images/link_off_default.svg);
@@ -600,6 +640,21 @@ svg.icon-svg {
   background-image: url(images/folder_zip_default.svg);
 }
 
+/* 添付ファイル一覧（チケット詳細の「ファイル」セクション等）のファイル名リンクは
+   コアのファイルタイプ別 SVG スプライトアイコンをそのまま表示する */
+.attachments table a.icon-attachment {
+  padding-left: 0;
+  background-image: none;
+}
+
+.attachments table a.icon-attachment svg.icon-svg {
+  display: inline-block;
+  stroke: var(--txt-caption);
+  stroke-width: 1.5;
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
 .icon-copy-link,
 .icon-copy-link:not(:has(svg)) {
   background-image: url(images/content_copy_default.svg);
@@ -670,7 +725,14 @@ a.group:has(svg.icon-svg) {
   display: block;
 }
 
-// rtl, ltrへの対応
+// PDFプレビュー
+.pdf-full-view-link .icon-maximize {
+  padding-left: 0;
+}
+
+.pdf-full-view-link .icon-maximize svg {
+  display: inline-block;
+}
 
 
 /*

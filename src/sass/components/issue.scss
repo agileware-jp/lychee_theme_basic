@@ -1,5 +1,10 @@
 @layer components {
-  div.issue {
-    @apply bg-status-warningLight border-status-warningLight text-text-default mb-1 p-2 rounded-md
-  }
+div.issue {
+  background-color: var(--status-warning-light);
+  border-color: var(--status-warning-light);
+  color: var(--txt-default);
+  margin-bottom: 0.25rem;
+  padding: 0.5rem;
+  border-radius: var(--bd-radius-md);
+}
 }

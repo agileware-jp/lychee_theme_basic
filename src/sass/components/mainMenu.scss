@@ -1,98 +1,149 @@
 @layer components {
-  #main-menu {
-    @apply relative w-full bg-background-primary py-1 px-2
-  }
+#main-menu {
+  position: relative;
+  width: 100%;
+  background-color: var(--bg-primary);
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
 
-  /* MainMenuのスタイル */
-  #main-menu ul:not(.menu-children) {
-    @apply relative flex w-full whitespace-nowrap m-0
-  }
+/* MainMenuのスタイル */
+#main-menu ul:not(.menu-children) {
+  position: relative;
+  display: flex;
+  width: 100%;
+  white-space: nowrap;
+  margin: 0;
+}
 
-  #main-menu li a {
-    @apply block whitespace-normal break-words text-text-default text-xs no-underline px-3 py-2.5 rounded
-  }
+#main-menu li a {
+  display: block;
+  white-space: normal;
+  overflow-wrap: break-word;
+  color: var(--txt-default);
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+  text-decoration-line: none;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  border-radius: var(--bd-radius-base);
+}
 
-  #main-menu > ul > li ~ li {
-    @apply ml-1
-  }
+#main-menu > ul > li ~ li {
+  margin-left: 0.25rem;
+}
 
-  #main-menu > ul > li > a {
-    @apply cursor-pointer relative overflow-hidden whitespace-nowrap text-ellipsis content-center min-h-[32px] text-text-default py-1.5 px-3 rounded-md
-  }
+#main-menu > ul > li > a {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  align-content: center;
+  min-height: 32px;
+  color: var(--txt-default);
+  padding-top: 0.375rem /* 6px */;
+  padding-bottom: 0.375rem;
+  padding-left: 0.75rem /* 12px */;
+  padding-right: 0.75rem;
+  border-radius: var(--bd-radius-md);
+}
 
-  #main-menu > ul > li > a:hover {
-    @apply bg-background-tertiary
-  }
+#main-menu > ul > li > a:hover {
+  background-color: var(--bg-tertiary);
+}
 
-  #main-menu > ul > li > a.selected {
-    @apply bg-background-tertiary
-  }
+#main-menu > ul > li > a.selected {
+  background-color: var(--bg-tertiary);
+}
 
-  /* main-menu > new-object */
-  #main-menu ul li:has(.new-object) {
-    @apply sticky left-0 flex items-center z-[699]
-  }
+/* main-menu > new-object */
+#main-menu ul li:has(.new-object) {
+  position: sticky;
+  left: 0;
+  display: flex;
+  align-items: center;
+  z-index: 699;
+}
 
-  #main-menu .menu-children {
-    @apply hidden fixed w-auto bg-background-primary border border-border-default p-1 rounded-md shadow-lg
-  }
+#main-menu .menu-children {
+  display: none;
+  position: fixed;
+  width: auto;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-default);
+  padding: 0.25rem;
+  border-radius: var(--bd-radius-md);
+  box-shadow: var(--shadow-lg);
+}
 
-  #main-menu li:hover ul.menu-children,
-  #main-menu li ul.menu-children.visible {
-    @apply block w-[11rem] z-[699]
-  }
+#main-menu li:hover ul.menu-children,
+#main-menu li ul.menu-children.visible {
+  display: block;
+  width: 11rem;
+  z-index: 699;
+}
 
-  #main-menu .menu-children a:hover {
-    @apply bg-background-secondary
-  }
+#main-menu .menu-children a:hover {
+  background-color: var(--bg-secondary);
+}
 
-  /* 設定タブを最後に固定配置 */
-  #main-menu ul:not(.menu-children) li {
-    @apply order-1
-  }
+/* 設定タブを最後に固定配置 */
+#main-menu ul:not(.menu-children) li {
+  order: 1;
+}
 
-  #main-menu ul li:has(a.settings) {
-    // Note: pr-1について→構造上スクロールが発生すると最後の要素が画面右端にくっつく。その回避策としてliの右に余白を設ける
-    @apply order-2 pr-1
-  }
+#main-menu ul li:has(a.settings) {
+  // Note: pr-1について→構造上スクロールが発生すると最後の要素が画面右端にくっつく。その回避策としてliの右に余白を設ける
+  order: 2;
+  padding-right: 0.25rem;
+}
 
-  /* MainMenuのスクロールバー調整 */
-  // 横スクロールが発生しないとき
-  #main-menu {
-    @apply overflow-x-visible
-  }
+/* MainMenuのスクロールバー調整 */
+// 横スクロールが発生しないとき
+#main-menu {
+  overflow-x: visible;
+}
 
-  #main-menu::-webkit-scrollbar {
-    @apply h-0
-  }
+#main-menu::-webkit-scrollbar {
+  height: 0;
+}
 
-  // 横スクロールが発生するとき
-  #main-menu.scrollable {
-    @apply overflow-x-scroll py-1
-  }
+// 横スクロールが発生するとき
+#main-menu.scrollable {
+  overflow-x: scroll;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
 
-  #main-menu.active,
-  #main-menu.active * {
-    @apply cursor-grabbing
-  }
+#main-menu.active,
+#main-menu.active * {
+  cursor: grabbing;
+}
 
-  #main-menu.scrollable::-webkit-scrollbar {
-    @apply h-[4px]
-  }
+#main-menu.scrollable::-webkit-scrollbar {
+  height: 4px;
+}
 
-  #main-menu.scrollable::-webkit-scrollbar-thumb {
-    @apply cursor-grab bg-background-dark/20 rounded
-  }
+#main-menu.scrollable::-webkit-scrollbar-thumb {
+  cursor: grab;
+  background-color: rgba(var(--bg-dark-rgb), 0.2);
+  border-radius: var(--bd-radius-base);
+}
 
-  #main-menu.scrollable:hover::-webkit-scrollbar-thumb {
-    @apply bg-background-dark/50
-  }
+#main-menu.scrollable:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(var(--bg-dark-rgb), 0.5);
+}
 
-  #main-menu.scrollable::-webkit-scrollbar-thumb:active {
-    @apply cursor-grabbing
-  }
+#main-menu.scrollable::-webkit-scrollbar-thumb:active {
+  cursor: grabbing;
+}
 
-  #main-menu.scrollable::-webkit-scrollbar-corner {
-    @apply hidden
-  }
+#main-menu.scrollable::-webkit-scrollbar-corner {
+  display: none;
+}
 }

@@ -8,7 +8,7 @@
 }
 
 #context-menu.reverse-y li.folder>ul, #context-menu li.folder.up>ul { top:auto; bottom:0; }
-#context-menu.reverse-x li.folder ul { left:auto; right:168px; /* IE6 */ }
+#context-menu.reverse-x li.folder ul { left:auto; }
 
 #context-menu.reverse-y li.folder.down>ul {
   position:absolute; top:-2px; bottom: auto; max-height:300px; overflow:hidden; overflow-y: auto;
@@ -35,85 +35,93 @@ div#gantt_area .context-menu-selection { background-color: rgba(80, 122, 170, 0.
 div#gantt_area .context-menu-selection:hover { background-color: rgba(80, 122, 170, 0.48); }
 div#gantt_area .context-menu-selection a { color: #169; }
 
-@layer components {
-  #context-menu ul {
-    @apply w-[180px] bg-background-primary border border-solid border-border-default rounded-md shadow-lg m-0 p-0.5
-  }
 
-  #context-menu li {
-    @apply border-none p-0 rounded
-  }
+#context-menu ul {
+  min-width: 180px;
+  max-width: 300px;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-default);
+  border-radius: 0.375rem;
+  box-shadow: var(--shadow-lg);
+  margin: 0;
+  padding: 0.125rem;
+}
 
-  #context-menu li:hover {
-    @apply bg-background-secondary
-  }
+#context-menu li {
+  border-style: none;
+  padding: 0px;
+  border-radius: 0.25rem;
+}
 
-  #context-menu li:not(:first-child) {
-    @apply mt-0.5
-  }
+#context-menu li:hover {
+  background-color: var(--bg-secondary);
+}
 
-  #context-menu li.folder ul {
-    position:absolute;
-    top:-2px;
-    max-height:300px;
-    overflow:hidden;
-    overflow-y: auto;
+#context-menu li:not(:first-child) {
+  margin-top: 0.125rem;
+}
 
-    @apply left-[172px]
-  }
+#context-menu li.folder ul {
+  position: absolute;
+  top: -2px;
+  max-height: 300px;
+  overflow: hidden;
+  overflow-y: auto;
+  left: calc(100% - 8px);
+}
 
-  #context-menu li.folder > ul {
-    @apply left-[172px]
-  }
+#context-menu li.folder > ul {
+  left: calc(100% - 8px);
+}
 
-  #context-menu li.folder .icon-only:has(svg.icon-svg) {
-    @apply hidden
-  }
+#context-menu.reverse-x li.folder > ul {
+  right: calc(100% - 8px);
+}
 
-  #context-menu.reverse-x li.folder > ul {
-    @apply right-[172px]
-  }
+#context-menu li > a {
+  display: block;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: var(--txt-default);
+  padding: 0.25rem 0.5rem 0.25rem 2rem;
+}
 
-  #context-menu li > a {
-    @apply block text-xs text-text-default py-1 pl-8 pr-2
-  }
+#context-menu li > a[class^="icon"],
+#context-menu .lgc-icon-magicStick,
+#context-menu .icon-fav,
+#context-menu .icon-fav-off {
+  background-position: 12px 50%;
+}
 
-  #context-menu li > a[class^="icon"],
-  #context-menu .lgc-icon-magicStick,
-  #context-menu .icon-fav,
-  #context-menu .icon-fav-off {
-    background-position: 12px 50%;
-  }
+#context-menu li > a.submenu {
+  padding-right: 2rem;
+}
 
-  #context-menu li > a.submenu {
-    @apply pr-8
-  }
+#context-menu li a.submenu {
+  background-image: url(images/chevron_right_default.svg);
+  background-position: right 12px center;
+  background-size: 16px;
+  background-repeat: no-repeat;
+}
 
-  #context-menu li a.submenu {
-    background-image: url(images/chevron_right_default.svg);
-    background-position: right 12px center;
-    background-size: 16px;
-    background-repeat: no-repeat;
-  }
+.context-menu-selection.context-menu-selection,
+table.list:not(.odd-even) tbody tr.context-menu-selection.context-menu-selection:nth-child(odd),
+table.list:not(.odd-even) tbody tr.context-menu-selection.context-menu-selection:nth-child(even),
+.odd.context-menu-selection.context-menu-selection,
+.even.context-menu-selection.context-menu-selection {
+  background-color: rgb(1 92 200 / 0.2);
+  color: var(--txt-default);
+}
 
-  .context-menu-selection.context-menu-selection,
-  table.list:not(.odd-even) tbody tr.context-menu-selection.context-menu-selection:nth-child(odd),
-  table.list:not(.odd-even) tbody tr.context-menu-selection.context-menu-selection:nth-child(even),
-  .odd.context-menu-selection.context-menu-selection,
-  .even.context-menu-selection.context-menu-selection {
-    @apply bg-status-info/20 text-text-default
-  }
+.context-menu-selection.context-menu-selection a,
+.context-menu-selection.context-menu-selection a:hover {
+  color: var(--txt-default);
+}
 
-  .context-menu-selection.context-menu-selection a,
-  .context-menu-selection.context-menu-selection a:hover {
-    @apply text-text-default
-  }
-
-  .context-menu-selection.context-menu-selection:hover,
-  table.list:not(.odd-even) tbody tr.context-menu-selection.context-menu-selection:nth-child(odd):hover,
-  table.list:not(.odd-even) tbody tr.context-menu-selection.context-menu-selection:nth-child(even):hover,
-  .odd.context-menu-selection.context-menu-selection:hover,
-  .even.context-menu-selection.context-menu-selection:hover {
-    @apply bg-status-info/30
-  }
+.context-menu-selection.context-menu-selection:hover,
+table.list:not(.odd-even) tbody tr.context-menu-selection.context-menu-selection:nth-child(odd):hover,
+table.list:not(.odd-even) tbody tr.context-menu-selection.context-menu-selection:nth-child(even):hover,
+.odd.context-menu-selection.context-menu-selection:hover,
+.even.context-menu-selection.context-menu-selection:hover {
+  background-color: rgb(1 92 200 / 0.3);
 }

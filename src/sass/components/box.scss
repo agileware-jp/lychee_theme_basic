@@ -1,44 +1,63 @@
 @layer components {
-  .box, .mypage-box {
-    @apply bg-background-primary border-border-divider mb-6 p-4 rounded-md
-  }
+.box, .mypage-box {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-divider);
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-radius: var(--bd-radius-md);
+}
 
-  .box h3 {
-    @apply text-sm text-text-default font-bold mt-0 mb-2
-  }
+.box h3 {
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+  color: var(--txt-default);
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
 
-  // Issues
-  .edit_issue fieldset {
-    @apply bg-background-primary border-border-divider mb-6 p-4 rounded-md
-  }
+// Issues
+.edit_issue fieldset {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-divider);
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-radius: var(--bd-radius-md);
+}
 
-  .box.issues table.list + p {
-    @apply text-xs mt-2
-  }
+.box.issues table.list + p {
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+  margin-top: 0.5rem;
+}
 
-  // Members
-  .box.members p + p {
-    @apply mt-2
-  }
+// Members
+.box.members p + p {
+  margin-top: 0.5rem;
+}
 
-  .box.members .label {
-    @apply text-text-default
-  }
+.box.members .label {
+  color: var(--txt-default);
+}
 
-  .box.members .label + a ~ a {
-    @apply ml-1
-  }
+.box.members .label + a ~ a {
+  margin-left: 0.25rem;
+}
 
-  // Spent Time
-  .box.spent_time ul {
-    @apply text-sm text-text-default
-  }
+// Spent Time
+.box.spent_time ul {
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+  color: var(--txt-default);
+}
 
-  .box.spent_time ul li:not(:first-child) {
-    @apply mt-1
-  }
+.box.spent_time ul li:not(:first-child) {
+  margin-top: 0.25rem;
+}
 
-  .box.spent_time ul + p {
-    @apply text-xs mt-2
-  }
+.box.spent_time ul + p {
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+  margin-top: 0.5rem;
+}
 }

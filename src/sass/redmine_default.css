@@ -46,6 +46,7 @@ table.list th.whitespace-normal {white-space: normal;}
 table.list td {text-align:center; vertical-align:middle;}
 table.list td.id { width: 2%; text-align: center;}
 table.list td.name, table.list td.description, table.list td.subject, table.list td.parent-subject, table.list td.comments, table.list td.roles, table.list td.attachments, table.list td.text,  table.list td.short_description {text-align: left;}
+table.list td.estimated_hours, table.list td.total_estimated_hours, table.list td.estimated_remaining_hours, table.list td.spent_hours, table.list td.total_spent_hours {text-align: right;}
 
 table.list td.attachments span {display: block; height: 16px;}
 table.list td.attachments span a.icon-download {display: inline-block; visibility: hidden;}
@@ -120,9 +121,7 @@ tr.message td.created_on { white-space: nowrap; }
 tr.message td.last_message { font-size: 80%; white-space: nowrap; }
 tr.message.sticky td.subject { font-weight: bold; }
 
-.avatars-on #replies .message.reply {padding-left: 32px;}
 #replies .reply:target h4.reply-header {background-color:#DDEEFF;}
-#replies h4 img.gravatar {margin-left:-32px;}
 
 tr.version.closed, tr.version.closed a { color: #999; }
 tr.version:not(.shared) td.name { padding-left: 20px; }
@@ -195,6 +194,7 @@ div.table-list.boards .table-list-cell.name {width: 30%;}
 .query-totals>span:not(:first-child) {margin-left:0.6em;}
 .query-totals .value {font-weight:bold;}
 .controller-timelog .query-totals {margin-top:initial;}
+body.controller-timelog.action-report fieldset#options {display: none;}
 
 td.center {text-align:center;}
 
@@ -249,7 +249,7 @@ div.square {
 .splitcontenttop {flex: 2; flex-basis: 100%;}
 
 /* form {display: inline;} */
-input, select, button {vertical-align: middle; margin-top: 1px; margin-bottom: 1px; height: 24px; padding: 0 7px;}
+input, select, button {vertical-align: middle; margin-top: 1px; margin-bottom: 1px; padding: 4px 7px;}
 input, select, textarea, button { color: #333; background-color: #fff; border:1px solid #ccc; border-radius:3px; box-sizing: border-box;}
 select {
   -webkit-appearance: none;
@@ -379,8 +379,6 @@ div.journal.private-notes .wiki {border-left:2px solid #d22; padding-left:4px; m
 div.journal ul.details, ul.revision-info {color:#959595; margin-bottom: 1.5em;}
 div.journal ul.details a, ul.revision-info a {color:#70A7CD;}
 div.journal ul.details a:hover, ul.revision-info a:hover {color:#D14848;}
-.avatars-on div.journal {padding-left:32px;}
-div.journal h4 img.gravatar {margin-left:-32px;}
 div.journal span.update-info {color: #666; font-size: 0.9em;}
 
 #history .tab-content {
@@ -1170,6 +1168,8 @@ img {
   border-radius: 3px;
   /* box-shadow: 0 1px 2px rgba(0,0,0,0.05); */
 }
+
+.pdf-full-view-link { margin: 8px 0; }
 
 /* tablesort */
 th[role=columnheader]:not(.no-sort) {

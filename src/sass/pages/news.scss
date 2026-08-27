@@ -1,166 +1,220 @@
 @layer components {
-  #edit-news,
-  .new_news {
-    @apply mt-4 mb-8
+#edit-news,
+.new_news {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+#comments .comments + p a,
+#comments + p a {
+  background-image: url(images/chat_bubble_default.svg);
+  background-position: left top 1px;
+  background-repeat: no-repeat;
+  padding-left: 1.25rem;
+}
+
+#comments .comments + p {
+  margin-bottom: 1rem;
+}
+
+// index
+.news-article {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-divider);
+  padding: 1.5rem;
+}
+
+.news-article:first-of-type {
+  margin-top: 1rem;
+  border-top-left-radius: var(--bd-radius-md);
+  border-top-right-radius: var(--bd-radius-md);
+}
+
+.news-article:last-of-type {
+  border-bottom-left-radius: var(--bd-radius-md) /* 6px */;
+  border-bottom-right-radius: var(--bd-radius-md) /* 6px */;
+}
+
+.news-article ~ .news-article {
+  border-top-width: 0px;
+}
+
+.news-article header h3 {
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+  color: var(--txt-default);
+}
+
+.news-article header h3 a {
+  font-size: var(--txt-base);
+  line-height: 1.5rem;
+}
+
+.news-article .author {
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+  color: var(--txt-caption);
+  margin-bottom: 0.5rem;
+  margin-left: 2rem;
+}
+
+.news-article .wiki {
+  margin-left: 2rem;
+}
+
+// mypage news index
+#block-news p ~ p {
+  border-top: 1px solid var(--border-divider);
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+}
+
+#block-news .summary {
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+#block-news .author {
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+
+// show
+.controller-news.action-show {
+  #edit-news + p {
+    color: var(--txt-caption);
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 
-  #comments .comments + p a,
-  #comments + p a {
-    background-image: url(images/chat_bubble_default.svg);
-    background-position: left top 1px;
-    @apply bg-no-repeat pl-5
+  #edit-news + p .author {
+    margin-top: 0.5rem /* 8px */;
   }
 
-  #comments .comments + p {
-    @apply mb-4
+  #edit-news + p + .wiki {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-divider);
+    padding: 1.5rem;
+    border-radius: var(--bd-radius-md);
   }
 
-  // index
-  .news-article {
-    @apply bg-background-primary border border-border-divider p-6
+  .wiki + .attachments {
+    margin-top: 1rem /* 16px */;
   }
 
-  .news-article:first-of-type {
-    @apply mt-4 rounded-tl-md rounded-tr-md
+  // show > comment
+  #comments {
+    margin-top: 1rem /* 16px */;
   }
 
-  .news-article:last-of-type {
-    @apply rounded-bl-md rounded-br-md
+  .comments {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
   }
 
-  .news-article ~ .news-article {
-    @apply border-t-0
+  #comments h4 {
+    border-top: 1px solid var(--border-divider);
+    padding-top: 1rem;
   }
 
-  .news-article header h3 {
-    @apply text-sm text-text-default
+  #comments .contextual {
+    margin-top: 0.75rem;
   }
 
-  .news-article header h3 a {
-    @apply text-base
+  #comments .wiki {
+    margin-top: 0.25rem;
+    margin-bottom: 2rem;
+    padding-left: 1.75rem;
   }
 
-  .news-article .author {
-    @apply text-xs text-text-caption mb-2
+  #comments .wiki:last-of-type {
+    border-bottom: 1px solid var(--border-divider);
+    margin-bottom: 0;
   }
 
-  .avatars-on .news-article .author {
-    @apply ml-8
+  #add_comment_form .box {
+    border-style: none;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0;
   }
 
-  // mypage news index
-  #block-news p ~ p {
-    @apply border-t border-border-divider mt-6 pt-6
+  #add_comment_form textarea {
+    width: 100%;
   }
+}
 
-  #block-news .summary {
-    @apply inline-block mt-2
-  }
+// Box news TODO: プロジェクト名とNews名にjsで動的にClassをつける
+.box.news p + p {
+  margin-top: 1.5rem;
+}
 
-  #block-news .author {
-    @apply inline-block mt-2
-  }
+.box.news p > a:nth-child(1):not(:last-child) {
+  display: inline-block;
+  background-color: var(--bg-secondary);
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--bd-radius-md);
+  margin-right: 0.25rem;
+  margin-bottom: 0.5rem;
+}
 
+.box.news p > a:nth-child(1):hover {
+  text-decoration-line: none;
+}
 
-  // show
-  .controller-news.action-show {
-    #edit-news + p {
-      @apply text-text-caption text-sm mt-4 mb-4
-    }
+.box.news p > a:nth-child(1)::after {
+  content: '\A';
+  white-space: pre;
+}
 
-    #edit-news + p .author {
-      @apply mt-2
-    }
+.box.news p > a:nth-child(1) + br {
+  display: none;
+}
 
-    #edit-news + p + .wiki {
-      @apply bg-background-primary border border-border-divider p-6 rounded-md
-    }
+.box.news p > a:nth-child(2) {
+  display: inline-block;
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+  color: var(--txt-default);
+  font-weight: bold;
+}
 
-    .wiki + .attachments {
-      @apply mt-4
-    }
+.box.news .comments {
+  margin-left: 0.5rem;
+}
 
-    // show > comment
-    #comments {
-      @apply mt-4
-    }
+.box.news .summary {
+  display: block;
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+  color: var(--txt-caption);
+  margin-bottom: 0.5rem;
+}
 
-    .comments {
-      @apply font-bold mb-2
-    }
+.box.news .summary + br {
+  display: none;
+}
 
-    #comments h4 {
-      @apply border-t border-border-divider pt-4
-    }
+.box.news .author {
+  display: block;
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+  color: var(--txt-caption);
+}
 
-    #comments .contextual {
-      @apply mt-3
-    }
+.box.news .author abbr {
+  margin-left: 0.25rem;
+}
 
-    #comments .wiki {
-      @apply mt-1 mb-8 pl-7
-    }
-
-    #comments .wiki:last-of-type {
-      @apply border-b border-border-divider mb-0
-    }
-
-    #add_comment_form .box {
-      @apply border-none my-4 p-0
-    }
-
-    #add_comment_form textarea {
-      @apply w-full
-    }
-  }
-
-  // Box news TODO: プロジェクト名とNews名にjsで動的にClassをつける
-  .box.news p + p {
-    @apply mt-6
-  }
-
-  .box.news p > a:nth-child(1):not(:last-child) {
-    @apply inline-block bg-background-secondary text-xs px-2 py-1 rounded-md mr-1 mb-2
-  }
-
-  .box.news p > a:nth-child(1):hover {
-    @apply no-underline
-  }
-
-  .box.news p > a:nth-child(1)::after {
-    content: '\A';
-    @apply whitespace-pre
-  }
-
-  .box.news p > a:nth-child(1) + br {
-    @apply hidden
-  }
-
-  .box.news p > a:nth-child(2) {
-    @apply inline-block text-sm text-text-default font-bold
-  }
-
-  .box.news .comments {
-    @apply ml-2
-  }
-
-  .box.news .summary {
-    @apply block text-sm text-text-caption mb-2
-  }
-
-  .box.news .summary + br {
-    @apply hidden
-  }
-
-  .box.news .author {
-    @apply block text-xs text-text-caption
-  }
-
-  .box.news .author abbr {
-    @apply ml-1
-  }
-
-  .box.news p + a {
-    @apply inline-block text-xs mt-4
-  }
+.box.news p + a {
+  display: inline-block;
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+  margin-top: 1rem;
+}
 }

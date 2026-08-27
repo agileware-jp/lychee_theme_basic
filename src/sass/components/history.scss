@@ -1,13 +1,15 @@
 @layer components {
-  #history {
-    @apply mt-6
-  }
+#history {
+  margin-top: 1.5rem;
+}
 
-  #history .tabs {
-    @apply mb-4
-  }
+#history .tabs {
+  margin-bottom: 1rem;
+}
 
-  #history .tab-content {
-    @apply border-none p-2 rounded-md
-  }
+#history .tab-content {
+  border-style: none;
+  padding: 0.5rem;
+  border-radius: var(--bd-radius-md);
+}
 }

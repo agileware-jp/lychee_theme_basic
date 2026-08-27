@@ -1,46 +1,79 @@
 @layer components {
-  #header {
-    @apply flex flex-row-reverse flex-wrap bg-primitive-darkGray-600 border-b border-border-divider text-text-default
-  }
+#header {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  background-color: var(--neutral-black-800);
+  border-bottom: 1px solid var(--border-divider);
+  color: var(--txt-default);
+}
 
-  #header h1 {
-    @apply overflow-hidden text-ellipsis whitespace-nowrap flex flex-wrap items-center text-text-onFill mr-auto ml-4 my-0 py-2
-  }
+#header h1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  color: var(--txt-onFill);
+  margin-right: auto;
+  margin-left: 1rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
 
-  #header h1 .breadcrumbs {
-    @apply block w-full text-xs text-text-onFill
-  }
+#header h1 .breadcrumbs {
+  display: block;
+  width: 100%;
+  color: var(--txt-onFill);
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+}
 
-  #header h1 .current-project {
-    @apply text-sm text-text-onFill
-  }
+#header h1 .current-project {
+  color: var(--txt-onFill);
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+}
 
-  #header a {
-    @apply text-text-onFill
-  }
+#header a {
+  color: var(--txt-onFill);
+}
 
-  // Quick Search
-  #quick-search {
-    @apply flex items-center flex-shrink-0 my-2 mr-2 ml-auto
-  }
+// Quick Search
+#quick-search {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
+  margin-left: auto;
+}
 
-  #quick-search form {
-    @apply flex items-center gap-1 mr-2
-  }
+#quick-search form {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-right: 0.5rem;
+}
 
-  #quick-search form label {
-    @apply text-text-onFill
-  }
+#quick-search form label {
+  color: var(--txt-onFill);
+}
 
-  #quick-search form label a {
-    @apply text-text-onFill
-  }
+#quick-search form label a {
+  color: var(--txt-onFill);
+}
 
-  #quick-search form input {
-    @apply my-0
-  }
+#quick-search form input {
+  margin-top: 0;
+  margin-bottom: 0;
+}
 
-  #quick-search #q {
-    @apply w-[200px]
-  }
+#quick-search #q {
+  width: 200px;
+}
 }
