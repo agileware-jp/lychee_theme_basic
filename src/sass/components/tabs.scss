@@ -1,37 +1,61 @@
 @layer components {
   #content .tabs {
-    @apply w-full h-[43px]
+    width: 100%;
+    height: 43px;
   }
 
   #content .tabs ul {
-    @apply flex items-center border-0 border-b border-border-divider pl-0
+    display: flex;
+    align-items: center;
+    border-width: 0;
+    border-bottom: 1px solid var(--border-divider);
+    padding-left: 0;
   }
 
   #content .tabs ul li {
-    @apply float-none mr-0 mb-0 rounded-tl-md rounded-tr-md
+    float: none;
+    margin-right: 0;
+    margin-bottom: 0;
+    border-top-left-radius: var(--bd-radius-md);
+    border-top-right-radius: var(--bd-radius-md);
   }
 
   #content .tabs ul li a {
-    @apply border-0 text-sm text-text-default border-b-2 border-transparent font-normal rounded-tl-md rounded-tr-md px-3 py-2
+    border-width: 0;
+    color: var(--txt-default);
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
+    border-bottom: 2px solid transparent;
+    font-weight: 400;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-top-left-radius: var(--bd-radius-md);
+    border-top-right-radius: var(--bd-radius-md);
   }
 
   #content .tabs ul li a:hover {
-    @apply text-text-default bg-background-secondary
+    color: var(--txt-default);
+    background-color: var(--bg-secondary);
   }
 
   #content .tabs ul li a.selected {
-    @apply bg-background-primary border-0 border-b-2 border-product-default font-bold
+    background-color: var(--bg-primary);
+    border-width: 0px;
+    border-bottom: 2px solid var(--product-default);
+    font-weight: bold;
   }
 
   #content .tabs ul li a.selected:hover {
-    @apply bg-background-primary
+    background-color: var(--bg-primary);
   }
 
   div.tabs-buttons {
-    @apply border-0
+    border-width: 0;
   }
 
   button.tab-left, button.tab-right {
-    @apply bottom-0
+    bottom: 0;
   }
 }

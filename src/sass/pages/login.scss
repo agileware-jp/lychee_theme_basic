@@ -1,79 +1,137 @@
 @layer components {
   .action-login {
     #login-form {
-      @apply w-80 bg-background-secondary mt-16 mx-auto mb-8 p-6 rounded-xl
+      width: 20rem;
+      background-color: var(--bg-secondary);
+      margin-top: 4rem;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      border-radius: var(--bd-radius-xl);
     }
 
     #login-form h3 {
-      @apply text-center
+      text-align: center;
     }
 
     #login-form label {
-      @apply block text-sm text-text-default font-bold mb-2
+      display: block;
+      color: var(--txt-default);
+      font-size: var(--txt-md);
+      line-height: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
     }
 
     .lost_password {
-      @apply float-right text-sm text-text-link font-normal
+      float: right;
+      color: var(--txt-link);
+      font-size: var(--txt-md);
+      line-height: 1.25rem;
+      font-weight: 400;
     }
 
     #login-form label[for="password"] {
-      @apply mt-6
+      margin-top: 1.5rem;
     }
 
     #login-form label[for="autologin"] {
-      @apply cursor-pointer flex items-center text-sm text-text-default font-normal
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      color: var(--txt-default);
+      font-size: var(--txt-md);
+      line-height: 1.25rem;
+      font-weight: 400;
     }
 
     #login-form label[for="autologin"] input {
-      @apply mr-1
+      margin-right: 0.25rem;
     }
   }
 
   .action-lost_password {
     h2 {
-      @apply text-lg text-text-default font-bold text-center
+      color: var(--txt-default);
+      font-size: var(--txt-lg);
+      line-height: 1.75rem;
+      font-weight: bold;
+      text-align: center;
     }
 
     h2 + form {
-      @apply block max-w-xs bg-background-secondary border-none text-text-default mt-8 mx-auto p-6 rounded-xl
+      display: block;
+      max-width: 20rem;
+      background-color: var(--bg-secondary);
+      border-style: none;
+      color: var(--txt-default);
+      margin-top: 2rem;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 1.5rem;
+      border-radius: var(--bd-radius-xl);
     }
 
     form .box {
-      @apply bg-transparent border-none m-0 p-0
+      background-color: transparent;
+      border-style: none;
+      margin: 0;
+      padding: 0;
     }
 
     form .tabular p {
-      @apply flex flex-col pl-0
+      display: flex;
+      flex-direction: column;
+      padding-left: 0;
     }
 
     form .tabular label {
-      @apply w-auto text-sm text-left mb-2 ml-0
+      width: auto;
+      font-size: var(--txt-md);
+      line-height: 1.25rem;
+      text-align: left;
+      margin-bottom: 0.5rem;
+      margin-left: 0;
     }
 
     form .tabular input {
-      @apply max-w-none
+      max-width: none;
     }
 
     form .tabular input[type="submit"] {
-      @apply mt-4
+      margin-top: 1rem;
     }
   }
 
   .controller-account.action-register {
     h2 {
-      @apply text-lg text-text-default font-bold text-center
+      font-size: var(--txt-lg);
+      line-height: 1.75rem;
+      color: var(--txt-default);
+      font-weight: bold;
+      text-align: center;
     }
 
     h2 + form {
-      @apply block max-w-2xl text-text-default mt-8 mx-auto
+      display: block;
+      max-width: 42rem;
+      color: var(--txt-default);
+      margin-top: 2rem;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     form .box {
-      @apply bg-background-secondary/50 mb-4
+      background-color: rgba(var(--bg-secondary-rgb), 0.5);
+      margin-bottom: 1rem;
     }
 
     form input[type="submit"] {
-      @apply block w-24 mx-auto
+      display: block;
+      width: 6rem;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 }

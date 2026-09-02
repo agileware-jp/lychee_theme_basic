@@ -1,17 +1,19 @@
 @layer components {
   #activity_scope_form p {
-    @apply mt-4
+    margin-top: 1rem;
   }
 
   #activity_scope_form ul {
-    @apply mt-4
+    margin-top: 1rem;
   }
 
   #activity_scope_form ul li:not(:first-child) {
-    @apply mt-1
+    margin-top: 0.25rem;
   }
 
   #activity_scope_form ul label {
-    @apply text-text-link text-sm
+    color: var(--txt-link);
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
   }
 }

@@ -17,59 +17,78 @@ div#roadmap header:target {
 
 @layer components {
   div#roadmap {
-    @apply mt-4
+    margin-top: 1rem;
   }
 
   div#roadmap .version-article {
-    @apply bg-background-primary border border-border-divider p-6 rounded-md
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-divider);
+    padding: 1.5rem;
+    border-radius: var(--bd-radius-md);
   }
 
   div#roadmap .version-article + .version-article {
-    @apply mt-4
+    margin-top: 1rem;
   }
 
   div#roadmap table.list {
-    @apply mb-0
+    margin-bottom: 0;
   }
 
   div#roadmap table caption {
-    @apply text-sm text-text-default font-bold mt-4
+    color: var(--txt-default);
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
+    font-weight: bold;
+    margin-top: 1rem;
   }
 
   div#roadmap .related-issues td.assigned_to {
-    @apply w-[1px] whitespace-nowrap py-0 pr-0 pl-2
+    width: 1px;
+    white-space: nowrap;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+    padding-left: 0.5rem;
   }
 
   div#roadmap .related-issues td.buttons {
-    @apply text-right
+    text-align: right;
   }
 
 
   div#version-summary {
-    @apply float-right w-[28%] bg-background-primary mb-4 pl-4
+    float: right;
+    width: 28%;
+    background-color: var(--bg-primary);
+    margin-bottom: 1rem;
+    padding-left: 1rem;
   }
 
   div#version-summary fieldset {
-    @apply border-border-divider mb-4 p-4 rounded-md
+    border-color: var(--border-divider);
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: var(--bd-radius-md);
   }
 
   div#version-summary fieldset legend {
-    @apply font-bold
+    font-weight: bold;
   }
 
   div#version-summary fieldset.time-tracking table {
-    @apply w-full
+    width: 100%;
   }
 
   div#version-summary fieldset.time-tracking table td {
-    @apply align-middle
+    vertical-align: middle;
   }
 
   div#version-summary th, div#version-summary td.total-hours {
-    @apply text-right
+    text-align: right;
   }
 
   div#version-summary div#status_by #status_by_select {
-    @apply mr-1
+    margin-right: 0.25rem;
   }
 }

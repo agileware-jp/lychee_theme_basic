@@ -1,7 +1,15 @@
 @layer components {
   // sidebar
   #sidebar {
-    @apply relative flex-shrink-0 order-2 bg-background-secondary/50 border-l border-border-divider text-xs py-3
+    position: relative;
+    flex-shrink: 0;
+    order: 2;
+    background-color: rgba(var(--bg-secondary-rgb), 0.5);
+    border-left: 1px solid var(--border-divider);
+    font-size: var(--txt-xs);
+    line-height: 1rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
   }
 
   .controller-kanban #sidebar,
@@ -11,11 +19,15 @@
   }
 
   #sidebar h3 {
-    @apply text-text-default text-xs mt-4
+    color: var(--txt-default);
+    font-size: var(--txt-xs);
+    line-height: 1rem;
+    margin-top: 1rem;
   }
 
   #sidebar h4 {
-    @apply text-xs
+    font-size: var(--txt-xs);
+    line-height: 1rem;
   }
 
 
@@ -24,23 +36,24 @@
   }
 
   #sidebar .contextual {
-    @apply text-xs
+    font-size: var(--txt-xs);
+    line-height: 1rem;
   }
 
   #sidebar span.icon-warning {
-    @apply ml-1
+    margin-left: 0.25rem;
   }
 
   #main.nosidebar #sidebar {
-    @apply hidden
+    display: none;
   }
 
   #sidebar .query.default {
-    @apply font-bold
+    font-weight: bold;
   }
 
   #sidebar #watchers {
-    @apply mt-4
+    margin-top: 1rem;
   }
 
   #sidebar hr {
@@ -52,12 +65,12 @@
   }
 
   #sidebar .contextual {
-    @apply mr-4
+    margin-right: 1rem;
   }
 
   #sidebar ul,
   ul.flat {
-    @apply m-0
+    margin: 0;
   }
 
   #sidebar div.wiki ul {
@@ -66,11 +79,15 @@
   }
 
   #sidebar ul li {
-    @apply list-none flex items-center m-0 p-0
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
   }
 
   #sidebar ul li:has(.icon-clear-query) {
-    @apply gap-1
+    gap: 0.25rem;
   }
 
   ul.flat li {
@@ -80,72 +97,104 @@
   }
 
   #sidebar ul li:not(:first-child) {
-    @apply mt-1.5
+    margin-top: 0.375rem;
   }
 
   #sidebar ul li a {
-    @apply block grow text-xs m-0 px-1 py-0.5 rounded
+    display: block;
+    flex-grow: 1;
+    font-size: var(--txt-xs);
+    line-height: 1rem;
+    margin: 0;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    padding-top: 0.125rem;
+    padding-bottom: 0.125rem;
+    border-radius: var(--bd-radius-base);
   }
 
   #sidebar ul li a:hover {
-    @apply bg-background-secondary
+    background-color: var(--bg-secondary);
   }
 
   #sidebar a.selected {
-    @apply bg-background-tertiary text-text-default
+    background-color: var(--bg-tertiary);
+    color: var(--txt-default);
   }
 
   #sidebar a.icon-only {
-    @apply flex grow-0 shrink-0 overflow-hidden indent-[100%] whitespace-nowrap w-[26px] h-5 bg-no-repeat bg-center bg-[length:16px_16px]
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    width: 26px;
+    height: 1.25rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px 16px;
   }
 
   #sidebar p {
-    @apply my-4
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 
   // 個人設定→リマインダ設定欄
   .controller-my {
     #sidebar fieldset.box p {
-      @apply my-0
+      margin-top: 0;
+      margin-bottom: 0;
     }
 
     #sidebar fieldset.box p + input[type="submit"] {
-      @apply mt-2
+      margin-top: 0.5rem;
     }
   }
 
   // adminMenu
   #admin-index {
-    @apply mt-4
+    margin-top: 1rem;
   }
 
   #admin-index #admin-menu {
-    @apply max-w-xs
+    max-width: 20rem;
   }
 
   #admin-menu ul {
-    @apply p-0
+    padding: 0;
   }
 
   #admin-menu ul li:not(:first-child) {
-    @apply mt-1
+    margin-top: 0.25rem;
   }
 
   #admin-menu ul li a {
-    @apply block grow text-sm m-0 pr-2 py-1.5 pl-7 rounded
+    display: block;
+    flex-grow: 1;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    margin: 0;
+    padding-right: 0.5rem;
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
+    padding-left: 1.75rem;
+    border-radius: var(--bd-radius-base);
   }
 
   #admin-menu ul li a:hover {
-    @apply bg-background-secondary
+    background-color: var(--bg-secondary);
   }
 
   #admin-menu ul li a,
   #admin-menu ul li a.lychee-icon {
-    @apply bg-[left_8px_center]
+    background-position: left 8px center;
   }
 
   #admin-menu ul li a.selected {
-    @apply bg-background-tertiary bg-[left_8px_center]
+    background-color: var(--bg-tertiary);
+    background-position: left 8px center;
   }
 
   #admin-menu#admin-menu a.redmine-logs {
@@ -155,19 +204,20 @@
 
   /* Support 6.0 start */
   #sidebar-switch-panel {
-    @apply hidden
+    display: none;
   }
   /* Support 6.0 end */
 
 
   /* sidebarのadmin-menuは、通常sidebarに合わせて文字サイズ等は小さくしたい */
   #sidebar #admin-menu ul li a {
-    @apply text-xs
+    font-size: var(--txt-xs);
+    line-height: 1rem;
   }
 
 
   /* sidebar > admin-menu > チケットセットの選択時の色が、別のスタイルの影響を受けているため上書きする */
   .controller-lychee_issue_sets #sidebar #admin-menu ul li a.issue-set {
-    @apply bg-background-tertiary
+    background-color: var(--bg-tertiary);
   }
 }

@@ -6,119 +6,190 @@
   //       メインメニューのあり／なしでスタイルを変える
   //       プロレポや全画面表示など、見かけ上ではメインメニューが存在しないが、非表示になっているだけのページが存在するので注意
   #wrapper ~ .global_banner {
-    @apply ml-[52px]
+    margin-left: 52px;
   }
 
   .isTopMenuOpen #wrapper ~ .global_banner {
-    @apply ml-[180px]
+    margin-left: 180px;
   }
 
   @media screen and (max-width: 899px) {
     #wrapper ~ .global_banner {
-      @apply ml-0
+      margin-left: 0;
     }
 
     .isTopMenuOpen #wrapper ~ .global_banner {
-      @apply ml-0
+      margin-left: 0;
     }
   }
 
   // バナーのスタイル変更
   div.banner.banner {
-    @apply py-[20px]
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 
   // バナーに表示するコンテンツのスタイル
   // NOTE: TailwindCSSのリセットによって消えてしまっているものがあるため（Wikiに合わせる）
   #banner_content {
     h1 {
-      @apply text-text-default text-4xl font-bold mb-4
+      color: var(--txt-default);
+      font-size: 2.25rem /* 36px */;
+      line-height: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
     }
 
     h2 {
-      @apply border-b border-border-default text-text-default text-2xl font-bold mt-9 mb-4 pb-2
+      border-bottom: 1px solid var(--border-default);
+      color: var(--txt-default);
+      font-size: var(--txt-2xl);
+      line-height: 2rem;
+      font-weight: bold;
+      margin-top: 2.25rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
     }
 
     h3 {
-      @apply text-text-default text-lg font-bold mt-4 mb-2
+      color: var(--txt-default);
+      font-size: var(--txt-lg);
+      line-height: 1.75rem;
+      font-weight: bold;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
     }
 
     h4 {
-      @apply text-text-default text-base font-bold mb-2
+      color: var(--txt-default);
+      font-size: var(--txt-base);
+      line-height: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
     }
 
     h5 {
-      @apply text-sm font-bold mb-2
+      font-size: var(--txt-md);
+      line-height: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
     }
 
     h6 {
-      @apply text-text-caption text-sm font-bold mb-2
+      color: var(--txt-caption);
+      font-size: var(--txt-md);
+      line-height: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
     }
 
     ul {
-      @apply list-disc ml-6 my-4
+      list-style-type: disc;
+      margin-left: 1.5rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
     }
 
     ul li:not(:first-child) {
-      @apply mt-2
+      margin-top: 0.5rem;
     }
 
     ol {
-      @apply list-decimal ml-6 my-4
+      list-style-type: decimal;
+      margin-left: 1.5rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
     }
 
     ol li:not(:first-child) {
-      @apply mt-2
+      margin-top: 0.5rem;
     }
 
     li > ul, li > ol {
-      @apply mt-2 mb-0
+      margin-top: 0.5rem;
+      margin-bottom: 0;
     }
 
     li ul,
     li ol {
-      @apply ml-4
+      margin-left: 1rem;
     }
 
 
     table {
-      @apply border border-border-divider mb-4 p-2
+      border: 1px solid var(--border-divider);
+      margin-bottom: 1rem;
+      padding: 0.5rem;
     }
 
     th {
-      @apply bg-background-secondary border border-border-divider text-text-default text-xs font-bold p-2
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-divider);
+      color: var(--txt-default);
+      font-size: var(--txt-xs);
+      line-height: 1rem;
+      font-weight: bold;
+      padding: 0.5rem;
     }
 
     td {
-      @apply bg-background-primary border border-border-divider text-text-default text-sm p-2
+      background-color: var(--bg-primary);
+      border: 1px solid var(--border-divider);
+      color: var(--txt-default);
+      font-size: var(--txt-md);
+      line-height: 1.25rem;
+      padding: 0.5rem;
     }
 
 
     hr,
     .controller-issues div.issue hr {
-      @apply block h-[1px] my-4
+      display: block;
+      height: 1px;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
     }
 
 
     pre {
-      @apply bg-background-secondary border border-border-default text-xs mr-2 mb-4 ml-4 p-4 rounded-lg overflow-x-auto overflow-y-hidden
+      overflow-x: auto;
+      overflow-y: hidden;
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-default);
+      font-size: var(--txt-xs);
+      line-height: 1rem;
+      margin-right: 0.5rem;
+      margin-bottom: 1rem;
+      margin-left: 1rem;
+      padding: 1rem;
+      border-radius: var(--bd-radius-lg);
     }
 
     *:not(pre)>code {
-      @apply bg-background-secondary border border-border-default text-text-danger mx-0.5 py-0.5 px-1.5 rounded
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-default);
+      color: var(--txt-danger);
+      margin-left: 0.125rem;
+      margin-right: 0.125rem;
+      padding-top: 0.125rem;
+      padding-bottom: 0.125rem;
+      padding-left: 0.375rem;
+      padding-right: 0.375rem;
+      border-radius: var(--bd-radius-base);
     }
 
     blockquote pre {
-      @apply ml-1.5
+      margin-left: 0.375rem;
     }
 
 
     .task-list {
-      @apply list-none ml-0
+      list-style-type: none;
+      margin-left: 0;
     }
 
     .task-list .task-list {
-      @apply ml-4
+      margin-left: 1rem;
     }
   }
 
@@ -126,113 +197,123 @@
   /* View Customize */
   .controller-view_customizes {
     table.view_customize.box th {
-      @apply pl-3
+      padding-left: 0.75rem;
     }
 
     table.view_customize.box td {
-      @apply pr-3
+      padding-right: 0.75rem;
     }
 
     table.view_customize.box tr:first-child th,
     table.view_customize.box tr:first-child td {
-      @apply pt-4
+      padding-top: 1rem;
     }
 
     table.view_customize.box tr:last-child th,
     table.view_customize.box tr:last-child td {
-      @apply pb-4
+      padding-bottom: 1rem;
     }
 
     table.view_customize tr.disable td,
     table.view_customize tr.disabled a {
-      @apply text-text-caption/60
+      color: rgb(102 130 140 / 0.6);
     }
   }
 
 
   /* Issue Templates */
   #orphaned_templates h3.template_tracker {
-    @apply mt-4
+    margin-top: 1rem;
   }
 
   #global_issue_template-form .box fieldset.issue,
   #global_note_template-form .box fieldset.issue,
   #issue_template-form .box fieldset.issue {
-    @apply p-2
+    padding: 0.5rem;
   }
 
   #global_issue_template-form #global_issue_template_issue_title + a.icon-help.template-help,
   #issue_template-form #issue_template_issue_title + a.icon-help.template-help {
-    @apply block mt-1
+    display: block;
+    margin-top: 0.25rem;
   }
 
   #global_issue_template-form #global_issue_template_issue_title + a.icon-help.template-help #issue_title_help_area,
   #issue_template-form #issue_template_issue_title +  a.icon-help.template-help #issue_title_help_area {
-    @apply z-[1]
+    z-index: 1;
   }
 
   #global_issue_template-form,
   #global_note_template-form,
   #edit-issue_template {
-    @apply clear-both mt-6
+    clear: both;
+    margin-top: 1.5rem;
   }
 
   #global_issue_template_project_ids.box,
   #global_note_template_project_ids.box {
-    @apply border-0 mb-0 p-0
+    border-width: 0;
+    margin-bottom: 0;
+    padding: 0;
   }
 
   #global_issue_template_project_ids #all_projects legend,
   #global_note_template_project_ids #all_projects legend {
-    @apply mt-2
+    margin-top: 0.5rem;
   }
 
   #edit-note_template {
-    @apply clear-both mt-6
+    clear: both;
+    margin-top: 1.5rem;
   }
 
   .controller-note_templates .contextual.note_templates {
-    @apply mb-1
+    margin-bottom: 0.25rem;
   }
 
   #note_template-form .box fieldset.issue {
-    @apply p-2
+    padding: 0.5rem;
   }
 
   #global_issue_template-form #json_generator,
   #issue_template-form #json_generator {
-    @apply mt-2
+    margin-top: 0.5rem;
   }
 
   #global_issue_template-form #fields_setting_display_area .json-list,
   #issue_template-form #fields_setting_display_area .json-list {
-    @apply my-2
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
   }
 
   #global_issue_template-form #field_information,
   #issue_template-form #field_information {
-    @apply mt-2
+    margin-top: 0.5rem;
   }
 
   // settings
   .controller-issue_templates_settings {
     .template_box {
-      @apply bg-background-primary border-border-divider mb-6 p-4 rounded-md
+      background-color: var(--bg-primary);
+      border-color: var(--border-divider);
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      border-radius: var(--bd-radius-md);
     }
   }
 
   .new_issue #template_area > p,
   .edit_issue #template_area > p {
-    @apply mt-2
+    margin-top: 0.5rem;
   }
 
   #add_notes #template_issue_notes {
-    @apply mb-2
+    margin-bottom: 0.5rem;
   }
 
 
   // ツールチップがラベルより下に表示されてしまうので対応
   a.icon-help:hover .tooltip-area {
-    @apply z-[1]
+    z-index: 1;
   }
 }

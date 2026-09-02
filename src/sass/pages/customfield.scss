@@ -1,23 +1,23 @@
 @layer components {
   .controller-custom_fields {
     #content .box p + p {
-      @apply mt-2
+      margin-top: 0.5rem;
     }
 
     #content .box.tabular p + p {
-      @apply mt-6
+      margin-top: 1.5rem;
     }
 
     #content .box p label input[type=radio] {
-      @apply mt-2
+      margin-top: 0.5rem;
     }
 
     #custom_field_is_for_all {
-      @apply ml-1
+      margin-left: 0.25rem;
     }
 
     #custom_field_tracker_ids input[type="checkbox"]:not(:first-of-type) {
-      @apply ml-2
+      margin-left: 0.5rem;
     }
 
     /*
@@ -25,7 +25,8 @@
     * htmlにstyleを直接指定されており汎用的な上書きができないため、個別で上書き指定する
     */
     #content .box p + p label input[type="radio"] {
-      @apply -mt-1 mr-1
+      margin-top: -0.25rem;
+      margin-right: 0.25rem;
     }
 
     /*
@@ -33,24 +34,26 @@
     * label と input が、親子ではなく兄弟要素になっており、汎用的な上書きができないため、個別で指定している
     */
     #content .box p label[for="custom_field_is_for_all"] {
-      @apply inline-block font-bold
+      display: inline-block;
+      font-weight: bold;
     }
 
     /* プロジェクトリストにスクロールバーを表示する */
     #custom_field_project_ids > ul {
-      @apply mr-0
+      margin-right: 0;
     }
 
     #custom_field_project_ids > ul::-webkit-scrollbar {
-      @apply w-[6px]
+      width: 6px;
     }
 
     #custom_field_project_ids>ul::-webkit-scrollbar-thumb {
-      @apply bg-background-dark/50 rounded
+      background-color: rgba(var(--bg-dark-rgb), 0.5);
+      border-radius: var(--bd-radius-base);
     }
 
     #custom_field_project_ids>ul::-webkit-scrollbar-corner {
-      @apply hidden
+      display: none;
     }
   }
 
@@ -60,17 +63,17 @@
     */
     // 選択肢
     #content form:not(#add-element) .box {
-      @apply mb-2
+      margin-bottom: 0.5rem;
     }
 
     // 保存・戻るボタンの装飾 
     #content form:not(#add-element) input[type="submit"] {
-      @apply mr-1
+      margin-right: 0.25rem;
     }
 
     // Note: ボタンの装飾自体はbuttons.scss
     #content form:not(#add-element) p:has(> input[type="submit"]) a {
-      @apply ml-1
+      margin-left: 0.25rem;
     }
 
 
@@ -78,7 +81,7 @@
     * キーバリューリストの「新しい値」エリア
     */
     #add-element {
-      @apply mt-6
+      margin-top: 1.5rem;
     }
   }
 }

@@ -6,16 +6,19 @@
 
   /* theme style */
   table#time-report tbody tr.total {
-    @apply font-bold bg-background-tertiary border-t-2 border-border-default
+    font-weight: bold;
+    background-color: var(--bg-tertiary);
+    border-top: 2px solid var(--border-default);
   }
 
   .controller-timelog {
     #query_form .tabs {
-      @apply mb-2
+      margin-bottom: 0.5rem;
     }
 
     .total-for-hours .value {
-      @apply text-xl
+      font-size: var(--txt-xl);
+      line-height: 1.75rem;
     }
   }
 }

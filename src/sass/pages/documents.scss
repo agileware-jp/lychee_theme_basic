@@ -1,81 +1,128 @@
 @layer components {
   .controller-documents {
     #new_document {
-      @apply mt-4 mb-8
+      margin-top: 1rem;
+      margin-bottom: 2rem;
     }
 
     .document-group {
-      @apply clear-both bg-background-primary border border-border-divider mb-8 rounded-md
+      clear: both;
+      background-color: var(--bg-primary);
+      border: 1px solid var(--border-divider);
+      margin-bottom: 2rem;
+      border-radius: var(--bd-radius-md);
     }
 
     .document-group:first-child {
-      @apply mt-2
+      margin-top: 0.5rem;
     }
 
     .document-item {
-      @apply p-6
+      padding: 1.5rem;
     }
 
     .document-item:first-of-type {
-      @apply pt-4
+      padding-top: 1rem;
     }
 
     .document-item + .document-item {
-      @apply border-t border-border-divider
+      border-top: 1px solid var(--border-divider);
     }
 
     #document-list .document-group {
-      @apply mb-6
+      margin-bottom: 1.5rem;
     }
 
     #document-list h1 {
-      @apply mb-2
+      margin-bottom: 0.5rem;
     }
 
     .group-name {
-      @apply inline-flex bg-background-secondary text-text-default text-xs font-normal mt-6 ml-4 px-2 py-1 rounded-md
+      display: inline-flex;
+      background-color: var(--bg-secondary);
+      color: var(--txt-default);
+      font-size: var(--txt-xs);
+      line-height: 1rem;
+      font-weight: 400;
+      margin-top: 1.5rem;
+      margin-left: 1rem;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem;
+      border-radius: var(--bd-radius-md);
     }
 
     .title {
-      @apply text-text-link text-sm font-bold mb-2 p-0
+      color: var(--txt-link);
+      font-size: var(--txt-md);
+      line-height: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      padding: 0;
     }
 
     .updated_on {
-      @apply text-text-caption text-sm mb-2 p-0
+      color: var(--txt-caption);
+      font-size: var(--txt-md);
+      line-height: 1.25rem;
+      margin-bottom: 0.5rem;
+      padding: 0;
     }
   }
 
   .controller-documents.action-show {
     #content .wiki {
-      @apply bg-background-primary border border-border-divider mt-4 mb-8 p-6 rounded-md
+      background-color: var(--bg-primary);
+      border: 1px solid var(--border-divider);
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      border-radius: var(--bd-radius-md);
     }
 
     h3 + .attachments {
-      @apply bg-background-primary border border-border-divider mb-2 p-4 rounded-md
+      background-color: var(--bg-primary);
+      border: 1px solid var(--border-divider);
+      margin-bottom: 0.5rem;
+      padding: 1rem;
+      border-radius: var(--bd-radius-md);
     }
 
     h3 + .attachments + p {
-      @apply mb-4
+      margin-bottom: 1rem;
     }
 
     h3 + .attachments + p a {
       background-image: url(images/add_circle_default.svg);
       background-position: left top 1px;
-      @apply bg-no-repeat pl-5
+      background-repeat: no-repeat;
+      padding-left: 1.25rem;
     }
   }
 
   .controller-my {
     .document-item + .document-item {
-      @apply border-t border-border-divider mt-6 pt-6
+      border-top: 1px solid var(--border-divider);
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
     }
 
     .title {
-      @apply text-text-link text-sm font-bold mb-2 p-0
+      color: var(--txt-link);
+      font-size: var(--txt-md);
+      line-height: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      padding: 0;
     }
 
     .updated_on {
-      @apply text-text-caption text-sm mb-2 p-0
+      color: var(--txt-caption);
+      font-size: var(--txt-md);
+      line-height: 1.25rem;
+      margin-bottom: 0.5rem;
+      padding: 0;
     }
   }
 }

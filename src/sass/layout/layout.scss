@@ -1,39 +1,61 @@
 @layer components {
   #wrapper {
+    position: relative;
     min-height: inherit;
-    @apply overflow-hidden flex flex-col bg-background-secondary relative
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-secondary);
   }
 
   #main {
-    @apply flex grow-[2] flex-row
+    display: flex;
+    flex-grow: 2;
+    flex-direction: row;
   }
 
   #content {
-    @apply overflow-x-auto grow bg-background-primary py-4 px-6 order-1
+    overflow-x: auto;
+    flex-grow: 1;
+    background-color: var(--bg-primary);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    order: 1;
   }
 
   #footer {
-    @apply clear-both w-full bg-background-primary border-t border-border-divider text-text-caption text-xs text-center p-2
+    clear: both;
+    width: 100%;
+    background-color: var(--bg-primary);
+    border-top: 1px solid var(--border-divider);
+    color: var(--txt-caption);
+    font-size: var(--txt-xs);
+    line-height: 1rem;
+    text-align: center;
+    padding: 0.5rem;
   }
 
   // 見出しとcontextualのfloatによっておかしくなる箇所の調整
   #query_form {
-    @apply clear-both block
+    clear: both;
+    display: block;
   }
 
   #edit-news + p {
-    @apply clear-both
+    clear: both;
   }
 
   .splitcontent {
-    @apply clear-both
+    clear: both;
   }
 
   .splitcontentleft {
-    @apply mr-3
+    margin-right: 0.75rem;
   }
 
   .splitcontentright {
-    @apply ml-3
+    margin-left: 0.75rem;
   }
 }

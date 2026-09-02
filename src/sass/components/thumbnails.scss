@@ -1,5 +1,8 @@
 @layer components {
   div.thumbnails {
-    @apply mx-0 my-4
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 }

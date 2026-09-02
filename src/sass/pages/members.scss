@@ -1,6 +1,9 @@
 @layer components {
   #principals_for_new_member input[type="checkbox"] {
-    @apply align-middle my-1 mr-2
+    vertical-align: middle;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    margin-right: 0.5rem;
   }
 
   .objects-selection > .projects-selection {
@@ -8,56 +11,64 @@
   }
 
   #principals {
-    @apply mt-2
+    margin-top: 0.5rem;
   }
 
   #principals label {
-    @apply px-2
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 
   #principals label img,
   #principals label .gravatar {
-    @apply inline-block mx-1
+    display: inline-block;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
   }
 
 
   // プロジェクト追加UI
   legend + .projects {
-    @apply mt-2
+    margin-top: 0.5rem;
   }
 
   ul.projects ul.projects {
-    @apply ml-4
+    margin-left: 1rem;
   }
 
   ul.projects.root {
-    @apply -mt-2 mx-2
+    margin-top: -0.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
   }
 
   ul.projects li.root div.archived,
   ul.projects li.child div.archived {
-    @apply text-text-caption
+    color: var(--txt-caption);
   }
 
   ul.projects li {
-    @apply mt-4
+    margin-top: 1rem;
   }
 
   ul.projects label {
-    @apply flex items-start break-all
+    display: flex;
+    align-items: flex-start;
+    word-break: break-all;
   }
 
   ul.projects label input[type="checkbox"] {
-    @apply mt-1 mr-1
+    margin-top: 0.25rem;
+    margin-right: 0.25rem;
   }
 
 
   // ロール追加
   .roles-selection {
-    @apply -mt-2
+    margin-top: -0.5rem;
   }
 
   .roles-selection label {
-    @apply mt-2
+    margin-top: 0.5rem;
   }
 }

@@ -1,13 +1,21 @@
 @layer components {
   .version-overview table.progress {
-    @apply w-4/5 h-3 mt-0.5 mr-1
+    width: 80%;
+    height: 0.75rem;
+    margin-top: 0.125rem;
+    margin-right: 0.25rem;
   }
 
   p.percent {
-    @apply text-sm text-text-default
+    color: var(--txt-default);
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
   }
 
   p.progress-info {
-    @apply text-xs text-text-caption mt-1
+    color: var(--txt-caption);
+    font-size: var(--txt-xs);
+    line-height: 1rem;
+    margin-top: 0.25rem;
   }
 }

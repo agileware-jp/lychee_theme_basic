@@ -1,25 +1,26 @@
 @layer components {
   // Profile Icon
   #attachments_form.lychee_profile_icon.lychee_profile_icon .preview-avatar {
-    @apply mr-2
+    margin-right: 0.5rem;
   }
 
   #attachments_form.lychee_profile_icon.lychee_profile_icon .add_attachment {
-    @apply inline-flex flex-col
+    display: inline-flex;
+    flex-direction: column;
   }
 
   #attachments_form.lychee_profile_icon.lychee_profile_icon .add_attachment input[type="file"] {
-    @apply w-full
+    width: 100%;
   }
 
 
   // Lychee Project View
   #favorite-project-wrapper > h3 {
-    @apply mt-4
+    margin-top: 1rem;
   }
 
   .favorite-project-container {
-    @apply w-full
+    width: 100%;
   }
 
   h3 .tree-expander-expanded, table.favorite-projects tr.project td.name .tree-expander-expanded {
@@ -31,24 +32,30 @@
   }
 
   #favorite-project-wrapper + #query_form h2 {
-    @apply text-base text-text-default font-bold mt-3 mb-2 p-0
+    color: var(--txt-default);
+    font-size: var(--txt-base);
+    line-height: 1.5rem;
+    font-weight: bold;
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
+    padding: 0;
   }
 
   // Lychee Actual Date
   #actual_dates_area {
-    @apply mt-2
+    margin-top: 0.5rem;
   }
 
   // Lychee Project Dashboardの「コピー」ボタン
   .controller-lychee_project_dashboards {
     #content button[type="submit"] + button {
-      @apply ml-1
+      margin-left: 0.25rem;
     }
 
     #content #root.tailwind input:not([type="checkbox"], [type="radio"]),
     #content #root.tailwind select,
     #content #root.tailwind button {
-      @apply h-[38px]
+      height: 38px;
     }
   }
 
@@ -73,14 +80,14 @@
   // LRM: 設定→割当て稼働時間の設定
   .controller-distributed_workloads {
     #content input[type="submit"] {
-      @apply mt-2
+      margin-top: 0.5rem;
     }
   }
 
   // LRM: 設定→背景色閾値の設定
   .controller-threshold_settings {
     #content input[type="submit"] {
-      @apply mt-2
+      margin-top: 0.5rem;
     }
   }
 
@@ -89,19 +96,19 @@
   // LPR共通
   .controller-project_report_overview {
     #setting_buttons a ~ a {
-      @apply ml-2
+      margin-left: 0.5rem;
     }
 
     #project_report_windowed_buttons span ~ span {
-      @apply ml-2
+      margin-left: 0.5rem;
     }
 
     #project_report_full_screen_buttons span ~ span {
-      @apply ml-2
+      margin-left: 0.5rem;
     }
 
     #icon-full-screen {
-      @apply text-text-link
+      color: var(--txt-link);
     }
 
     .icon-setting {
@@ -123,11 +130,11 @@
   .controller-enabled_report_indice_settings,
   .controller-project_report_active_shared_layouts {
     table.list:not(.odd-even) tbody tr:nth-child(odd) td {
-      @apply bg-background-primary
+      background-color: var(--bg-primary);
     }
 
     table.list:not(.odd-even) tbody tr:nth-child(odd):hover td {
-      @apply bg-background-tertiary/50
+      background-color: rgba(var(--bg-tertiary-rgb), 0.5);
     }
 
     table.report_settings tbody tr td:first-child,
@@ -155,32 +162,33 @@
 
   .controller-indice_settings {
     .contextual + h3 + .contextual {
-      @apply mb-2
+      margin-bottom: 0.5rem;
     }
 
     // 指標の作成・編集
     .new_indice_setting,
     .edit_indice_setting {
       #custom-numerator-issue-filter-wrapper {
-        @apply mb-4
+        margin-bottom: 1rem;
       }
 
       #custom-denominator-issue-filter-wrapper select,
       #custom-denominator-issue-filter-wrapper .select2-container {
-        @apply mt-2
+        margin-top: 0.5rem;
       }
 
       p:has(#description-area) {
-        @apply mt-1
+        margin-top: 0.25rem;
       }
 
       #partial-area {
-        @apply mt-4
+        margin-top: 1rem;
       }
 
       #indice-setting-form-thresholds #indice_setting_upper_threshold,
       #indice-setting-form-thresholds #indice_setting_middle_threshold {
-        @apply my-0.5
+        margin-top: 0.125rem;
+        margin-bottom: 0.125rem;
       }
     }
   }
@@ -188,7 +196,7 @@
   // LPR 共通 カスタムクエリの作成
   .controller-project_report_queries {
     #content > h3 {
-      @apply mt-4
+      margin-top: 1rem;
     }
   }
 
@@ -198,26 +206,27 @@
     #project-report a.icon-del,
     #project-report a.icon-copy,
     #project-report a.icon-add {
-      @apply ml-3
+      margin-left: 0.75rem;
     }
 
     #project-report h2[class^="PanelLayout__Title"] {
-      @apply mb-0
+      margin-bottom: 0;
     }
 
     // バージョンのレポート選択フィールド
     #version_report_link {
-      @apply w-[165px]
+      width: 165px;
     }
 
     // 各パネルの編集／セッティング／閉じるアイコン用
     #content span[title="オプション"] {
-      @apply mx-1
+      margin-left: 0.25rem;
+      margin-right: 0.25rem;
     }
 
     // マイルストーンの期間フィールド
     .milestone-months {
-      @apply w-[65px]
+      width: 65px;
     }
   }
 
@@ -225,7 +234,7 @@
   // Lychee Work Plan
   .controller-lychee_work_plan {
     #content h2 {
-      @apply pr-2
+      padding-right: 0.5rem;
     }
   }
 
@@ -233,37 +242,40 @@
   // Lychee Time Management
   .controller-time_management {
     main button {
-      @apply px-1
+      padding-left: 0.25rem;
+      padding-right: 0.25rem;
     }
 
     #content {
-      @apply p-4
+      padding: 1rem;
     }
 
     /* モーダルを開いている間はtop-menuをモーダルより下に表示したい */
     &.ReactModal__Body--open {
       #top-menu {
-        @apply z-[1]
+        z-index: 1;
       }
     }
 
     // フィルタモーダルのpagination
     .ReactModal__Content h2 {
-      @apply mb-0
+      margin-bottom: 0;
     }
 
     .ReactModal__Content .pagination {
-      @apply mt-0
+      margin-top: 0;
     }
 
     .ReactModal__Content div:has(> .list) {
-      @apply mb-2
+      margin-bottom: 0.5rem;
     }
 
     // セル上を右クリックで表示される時間入力UI
     // Note: ライブラリを使っているようで、そのライブラリ固有のclass名を利用する
     .tippy-content hr {
-      @apply h-[1px] my-3
+      height: 1px;
+      margin-top: 0.75rem;
+      margin-bottom: 0.75rem;
     }
   }
 
@@ -276,172 +288,187 @@
   // Lychee Kanban
   .controller-kanban.controller-kanban {
     select, input {
-      @apply h-auto
+      height: auto;
     }
 
     #content .tabs {
-      @apply mb-1
+      margin-bottom: 0.25rem;
     }
 
     .task-kanban-icon-fullscreen__start {
       background-image: url(images/fullscreen_success.svg);
-      @apply mr-4
+      margin-right: 1rem;
     }
 
     .task-kanban-icon-fullscreen__exit {
       background-image: url(images/close_fullscreen_default.svg);
-      @apply mr-4
+      margin-right: 1rem;
     }
 
     #burn_down_type_wrap {
-      @apply static mt-2
+      position: static;
+      margin-top: 0.5rem;
     }
 
     input[name="spent_on"] {
-      @apply w-[7rem]
+      width: 7rem;
     }
 
     input[name="hours"] {
-      @apply w-[3rem]
+      width: 3rem;
     }
 
     .status-item-relation.status-item--highlight {
-      @apply my-0 mx-[2px]
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-left: 2px;
+      margin-right: 2px;
     }
   }
 
   .controller-projects.controller-projects {
     #kanban.collapsible {
-      @apply mb-6
+      margin-bottom: 1.5rem;
     }
 
     #kanban.collapsible > legend, #backlog > legend {
-      @apply mb-4
+      margin-bottom: 1rem;
     }
 
     #kanban.collapsible input[type="checkbox"] {
-      @apply mr-1
+      margin-right: 0.25rem;
     }
 
     #kanban.collapsible input[type="checkbox"] + label {
-      @apply mr-2
+      margin-right: 0.5rem;
     }
 
     #kanban.collapsible .box ~ .box fieldset {
-      @apply mt-4
+      margin-top: 1rem;
     }
 
     #kanban.collapsible .box ~ .box fieldset legend + div {
-      @apply pl-[14px]
+      padding-left: 14px;
     }
 
     #backlog.collapsible table td {
-      @apply pt-3
+      padding-top: 0.75rem;
     }
 
     #backlog.collapsible table tr:first-child td {
-      @apply pt-0
+      padding-top: 0;
     }
 
     #backlog.collapsible input[type="checkbox"] {
-      @apply mr-1
+      margin-right: 0.25rem;
     }
 
     #backlog.collapsible input[type="checkbox"] + label {
-      @apply mr-2
+      margin-right: 0.5rem;
     }
 
     #backlog.collapsible .box ~ .box fieldset {
-      @apply mt-4
+      margin-top: 1rem;
     }
 
     #backlog.collapsible .box ~ .box fieldset legend + div {
-      @apply pl-[14px]
+      padding-left: 14px;
     }
   }
 
   // Lychee Backlog
   .controller-backlog.controller-backlog {
     select, input {
-      @apply h-auto
+      height: auto;
     }
 
     .velocity__container > div {
-      @apply mt-4
+      margin-top: 1rem;
     }
 
     .velocity__container > div input[type="number"] {
-      @apply mt-2
+      margin-top: 0.5rem;
     }
 
     .task-kanban-icon-fullscreen__start {
       background-image: url(images/fullscreen_success.svg);
-      @apply mr-4
+      margin-right: 1rem;
     }
 
     .task-kanban-icon-fullscreen__exit {
       background-image: url(images/close_fullscreen_default.svg);
-      @apply mr-4
+      margin-right: 1rem;
     }
   }
 
   // Lychee Gantt Chart
   .controller-lgc.controller-lgc {
     .lgc-tree {
-      @apply pb-6
+      padding-bottom: 1.5rem;
     }
 
     .lgc-issueDetail-header {
-      @apply h-auto py-2
+      height: auto;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
     }
 
     .lgc-form-fieldset__inlineBlock {
-      @apply mb-1 pt-2 px-3 pb-3 rounded-md
+      margin-bottom: 0.25rem;
+      padding-top: 0.5rem;
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+      padding-bottom: 0.75rem;
+      border-radius: var(--bd-radius-md);
     }
 
     .lgc-form-fieldset__inlineBlock ~ .lgc-form-fieldset__inlineBlock {
-      @apply mr-1
+      margin-right: 0.25rem;
     }
 
     .lgc-form-fieldset__inlineBlock label {
-      @apply inline-flex items-center
+      display: inline-flex;
+      align-items: center;
     }
 
     .lgc-form-fieldset__inlineBlock label input[type="checkbox"] {
-      @apply mr-1
+      margin-right: 0.25rem;
     }
 
     .lgc-queryForm-dateRange {
-      @apply text-xs
+      font-size: var(--txt-xs);
+      line-height: 1rem;
     }
 
     .lgc-queryForm-zoom-selection {
-      @apply mt-4
+      margin-top: 1rem;
     }
 
     .lgc-queryForm-zoom-selection li {
-      @apply text-xs
+      font-size: var(--txt-xs);
+      line-height: 1rem;
     }
 
     .lgc-queryForm-zoom-selection li:not(:first-child) {
-      @apply ml-0
+      margin-left: 0;
     }
 
     .lgc-queryForm-zoom-selection li::before {
-      @apply mr-1.5
+      margin-right: 0.375rem;
     }
 
     .contextual .lgc-popover {
-      @apply ml-0
+      margin-left: 0;
     }
 
     .contextual .lgc-icon-fullscreen__start,
     .contextual .lgc-icon-fullscreen__exit {
-      @apply ml-0
+      margin-left: 0;
     }
 
     .lgc-separator__vertical {
-      @apply mx-2
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
     }
 
     .lgc-download-options {
@@ -454,46 +481,52 @@
       .lgc-download-options-header-right,
       .lgc-download-options-project-name-display,
       .lgc-download-options-date-label-display {
-        @apply text-xs
+        font-size: var(--txt-xs);
+        line-height: 1rem;
       }
 
       .lgc-download-options-margin input {
-        @apply w-[3rem]
+        width: 3rem;
       }
     }
 
     .lgc-plan {
       label[for="plan_name"] {
-        @apply text-xs
+        font-size: var(--txt-xs);
+        line-height: 1rem;
       }
 
       .lgc-plan-list {
-        @apply text-xs
+        font-size: var(--txt-xs);
+        line-height: 1rem;
       }
     }
 
     // チケットの一括編集
     .lgc-issueDetail-bulkEdit-issues {
-      @apply list-disc pl-6
+      list-style-type: disc;
+      padding-left: 1.5rem;
     }
 
     // チケット連続追加のUI
     .lgc-tree input[type="text"],
     .lgc-tree select {
       height: 20px !important;
-      @apply py-0 rounded
+      padding-top: 0;
+      padding-bottom: 0;
+      border-radius: var(--bd-radius-base);
     }
   }
 
   // Lychee Gantt Chart 5
   .controller-lychee_gantt_chart.controller-lychee_gantt_chart {
     ul[class^="lgc-AvailableColumnList-"] li label {
-      @apply gap-[3px]
+      gap: 3px;
     }
 
     // 担当者が未設定の場合にアイコンが表示されないため特別対応
     span[class^="lgc-RedmineIcon-"].icon-issue {
-      @apply inline-block
+      display: inline-block;
     }
   }
 
@@ -501,39 +534,47 @@
   // チケット関連図
   .controller-association_chart.controller-association_chart {
     #query_form_content #filters legend + div {
-      @apply pl-0
+      padding-left: 0;
     }
 
     #lac-modal .lac-chart-item-editor div[id^="lac-chart-"]:not(:first-child) {
-      @apply mt-2
+      margin-top: 0.5rem;
     }
 
     #lac-modal .lac-chart-item-editor div[id^="lac-chart-"] .required {
-      @apply text-sm
+      font-size: var(--txt-md);
+      line-height: 1.25rem;
     }
 
     #lac-modal #filters {
-      @apply py-2 px-3 rounded-md
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+      border-radius: var(--bd-radius-md);
     }
 
     #lac-modal #filters legend {
-      @apply mb-0 pl-4
+      margin-bottom: 0;
+      padding-left: 1rem;
     }
 
     #lac-modal #query_form_with_buttons .buttons {
-      @apply mt-2
+      margin-top: 0.5rem;
     }
 
     #lac-modal .lac-issues-pagination {
-      @apply my-3
+      margin-top: 0.75rem;
+      margin-bottom: 0.75rem;
     }
 
     .lac-relatable-types li {
-      @apply min-h-[42px]
+      min-height: 42px;
     }
 
     .lac-relatable-types li[data-type="precedes"] input[type="number"] {
-      @apply py-1
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem;
     }
   }
 
@@ -543,101 +584,119 @@
     // 基準日選択datepickerの年月選択フィールドが4.1.7だと段落落ちしているため対応
     .ui-datepicker .ui-datepicker-year,
     .ui-datepicker .ui-datepicker-month {
-      @apply w-[45%] text-sm
+      width: 45%;
+      font-size: var(--txt-md);
+      line-height: 1.25rem;
     }
   }
 
   // Lychee Cost
   .lychee-cost-cash-forecast__unit-description {
-    @apply top-4 right-4
+    top: 1rem;
+    right: 1rem;
   }
 
   .controller-lychee_cost_expenses.controller-lychee_cost_expenses {
     #month {
-      @apply mr-1
+      margin-right: 0.25rem;
     }
 
     #x_months {
-      @apply w-[4.5rem] my-1
+      width: 4.5rem;
+      margin-top: 0.25rem;
+      margin-bottom: 0.25rem;
     }
 
     #content .total_amount {
-      @apply text-sm text-left mt-2 mb-2
+      font-size: var(--txt-md);
+      line-height: 1.25rem;
+      text-align: left;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
     }
 
     #content .total_amount .value {
-      @apply text-xl
+      font-size: var(--txt-xl);
+      line-height: 1.75rem;
     }
 
     #lychee_cost_expense_amount {
-      @apply mr-1
+      margin-right: 0.25rem;
     }
 
     .new_lychee_cost_expense #lychee_cost_expense_amount,
     .edit_lychee_cost_expense #lychee_cost_expense_amount {
-      @apply w-auto
+      width: auto;
     }
   }
 
   // Cost Group
   .controller-cost_groups {
     h2 + .autoscroll {
-      @apply clear-both mt-4
+      clear: both;
+      margin-top: 1rem;
     }
 
     h2 + .nodata {
-      @apply clear-both mt-4
+      clear: both;
+      margin-top: 1rem;
     }
   }
 
   // Lychee Project Term
   .controller-projects.controller-projects {
     #lychee_project_term_controls {
-      @apply mt-4
+      margin-top: 1rem;
     }
   }
 
   // Lychee Custom Field
   .issue .attributes fieldset {
-    @apply mt-4
+    margin-top: 1rem;
   }
 
   .issue .attributes fieldset legend + div {
-    @apply mt-2
+    margin-top: 0.5rem;
   }
 
   .controller-custom_field_categories.controller-custom_field_categories {
     .custom-field-categories {
-      @apply mt-4
+      margin-top: 1rem;
     }
   }
 
   // Lychee Issue Sets
   .controller-lychee_issue_sets.controller-lychee_issue_sets {
     .issue-sets thead .checkbox + th {
-      @apply text-left
+      text-align: left;
     }
 
     .issue-sets .num-issue-templates {
-      @apply w-28
+      width: 7rem;
     }
 
     .issue-sets .buttons {
-      @apply w-8
+      width: 2rem;
     }
   }
 
   .controller-lychee_issue_sets {
     .issue-set {
-      @apply clear-both bg-status-warningLight border-border-divider mt-4 mb-2 p-4 rounded-md
+      clear: both;
+      background-color: var(--status-warning-light);
+      border-color: var(--border-divider);
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      padding: 1rem;
+      border-radius: var(--bd-radius-md);
     }
 
     .contextual + h3 {
-      @apply mt-6
+      margin-top: 1.5rem;
     }
 
     .issue-templates {
-      @apply mt-2
+      margin-top: 0.5rem;
     }
 
     // 新規作成・編集
@@ -645,112 +704,148 @@
     .edit_lychee_issue_set {
       .tabular p,
       #projects_issue_sets_attributes {
-        @apply pl-[11rem]
+        padding-left: 11rem;
       }
 
       .tabular label {
-        @apply w-[10rem] -ml-[11rem]
+        width: 10rem;
+        margin-left: -11rem;
       }
 
       #projects_issue_sets_attributes {
         ul {
-          @apply mt-2
+          margin-top: 0.5rem;
         }
 
         ul li {
-          @apply mt-2
+          margin-top: 0.5rem;
         }
 
         ul li label {
-          @apply text-sm
+          font-size: var(--txt-md);
+          line-height: 1.25rem;
         }
       }
     }
   }
 
   .controller-issue_forms .edit_lychee_issue_set table.issue-form-table textarea[id^="lychee_issue_set_issue_templates_attributes_"] {
-    @apply resize
+    resize: both;
   }
 
   .controller-lychee_issue_templates {
     div.issue-template {
-      @apply clear-both bg-background-secondary/20 border border-border-divider rounded-md mt-4 p-6
+      clear: both;
+      background-color: rgba(var(--bg-secondary-rgb), 0.2);
+      border: 1px solid var(--border-divider);
+      border-radius: var(--bd-radius-md);
+      margin-top: 1rem;
+      padding: 1.5rem;
     }
 
     div.issue-template .subject:not(td) {
-      @apply text-lg font-bold
+      font-size: var(--txt-lg);
+      line-height: 1.75rem;
+      font-weight: bold;
     }
 
     div.issue-template .splitcontent .attribute {
-      @apply overflow-hidden min-h-0 mb-2
+      overflow: hidden;
+      min-height: 0;
+      margin-bottom: 0.5rem;
     }
 
     div.issue-template .description {
-      @apply mb-2
+      margin-bottom: 0.5rem;
     }
 
     div.issue-template .issue_template_tree {
-      @apply mb-2
+      margin-bottom: 0.5rem;
     }
 
     #attributes {
-      @apply mt-4
+      margin-top: 1rem;
     }
 
     #attributes + .splitcontent {
-      @apply mt-4
+      margin-top: 1rem;
     }
   }
 
   .controller-issue_forms {
     #content h2 + p + p {
-      @apply mt-4 mb-2
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
     }
 
     .issue-set {
-      @apply bg-status-warningLight border-border-divider mb-2 p-4 rounded-md
+      background-color: var(--status-warning-light);
+      border-color: var(--border-divider);
+      margin-bottom: 0.5rem;
+      padding: 1rem;
+      border-radius: var(--bd-radius-md);
     }
 
     .issue-form-table td {
-      @apply text-xs
+      font-size: var(--txt-xs);
+      line-height: 1rem;
     }
 
     .issue-form-table {
       select {
-        @apply text-xs py-1 pr-6 pl-2 my-0
+        font-size: var(--txt-xs);
+        line-height: 1rem;
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+        padding-right: 1.5rem;
+        padding-left: 0.5rem;
+        margin-top: 0;
+        margin-bottom: 0;
       }
 
       select[multiple] {
-        @apply px-1
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
       }
 
       input:not([type="checkbox"], [type="radio"], [type="submit"]),
       textarea {
-        @apply text-xs py-1 px-2 my-0
+        font-size: var(--txt-xs);
+        line-height: 1rem;
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        margin-top: 0;
+        margin-bottom: 0;
       }
     }
 
     .issue-form-table + p {
-      @apply mt-4
+      margin-top: 1rem;
     }
 
     .issue-form-table + p + p {
-      @apply my-2
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
     }
 
     label[for="fixed_version_id"],
     label[for="title"] {
-      @apply inline-block w-28 font-bold
+      display: inline-block;
+      width: 7rem;
+      font-weight: bold;
     }
 
     #content input[name="commit"] {
-      @apply mt-4
+      margin-top: 1rem;
     }
   }
 
   .controller-projects {
     #issue-set-setting-form input[name="commit"] {
-      @apply my-2
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
     }
   }
 
@@ -760,7 +855,10 @@
   .controller-lychee_message_box_my_boxes.controller-lychee_message_box_my_boxes,
   .controller-lychee_message_box_system_errors.controller-lychee_message_box_system_errors {
     #content {
-      @apply pt-[10px] px-0 pb-0
+      padding-top: 10px;
+      padding-left: 0;
+      padding-right: 0;
+      padding-bottom: 0;
     }
 
     .lychee-message-box-types > li.mark_as_read a {
@@ -768,31 +866,62 @@
     }
 
     .lychee-message-box-root {
-      @apply border-x-0
+      border-left-width: 0;
+      border-right-width: 0;
     }
 
     .lychee-message-box-root.issue_update .balloon {
-      @apply py-2 rounded-xl
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      border-radius: var(--bd-radius-xl);
     }
 
     .lychee-message-box-root.issue_update .balloon .details {
-      @apply text-xs
+      font-size: var(--txt-xs);
+      line-height: 1rem;
     }
 
     .lychee-message-box-root.issue_update .note-all .details {
-      @apply p-4 rounded-lg
+      padding: 1rem;
+      border-radius: var(--bd-radius-lg);
     }
 
     .lychee-message-box-root.issue_update .note-details .details {
-      @apply pl-0
+      padding-left: 0;
     }
 
     .lychee-message-box-root.issue_update .details textarea {
-      @apply h-[38px] border-border-default text-sm py-2 px-3 rounded-md
+      height: 38px;
+      border: 1px solid var(--border-default);
+      font-size: var(--txt-md);
+      line-height: 1.25rem;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+      border-radius: var(--bd-radius-md);
     }
 
     .lychee-message-box-root.issue_update .details input[type="submit"] {
-      @apply h-[38px] text-sm py-2 px-3 rounded-md shadow hover:bg-product-hover hover:shadow-none active:bg-product-active active:shadow-none
+        height: 38px;
+        font-size: var(--txt-md);
+        line-height: 1.25rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+        border-radius: var(--bd-radius-md);
+        box-shadow: var(--shadow);
+
+        &:hover {
+          background-color: var(--product-hover);
+          box-shadow: var(--shadow-none);
+        }
+
+        &:active {
+          background-color: var(--product-active);
+          box-shadow: var(--shadow-none);
+        }
     }
   }
 
@@ -800,7 +929,8 @@
   .controller-lychee_message_box_informations.controller-lychee_message_box_informations,
   .controller-lychee_message_box_system_errors.controller-lychee_message_box_system_errors {
     .details-content p ~ p {
-      @apply my-4
+      margin-top: 1rem;
+      margin-bottom: 1rem;
     }
   }
 
@@ -809,34 +939,38 @@
   // Lychee ライセンス管理
   .controller-lychee_licenses.controller-lychee_licenses {
     #new_registration + hr + a {
-      @apply inline-block mt-2
+      display: inline-block;
+      margin-top: 0.5rem;
     }
 
     #new_registration table td {
-      @apply p-2
+      padding: 0.5rem;
     }
   }
 
   .controller-lychee_modules.controller-lychee_modules {
     .lychee-modules__projects {
-      @apply ml-3
+      margin-left: 0.75rem;
     }
 
     .lychee-modules__projects li {
-      @apply mt-2
+      margin-top: 0.5rem;
     }
 
     table.list.lychee-modules .name {
-      @apply pl-4
+      padding-left: 1rem;
     }
 
     .lychee-modules details {
-      @apply cursor-pointer
+      cursor: pointer;
     }
 
     .lychee-modules details summary {
       background-image: url(images/chevron_right_default.svg);
-      @apply bg-[left_center] bg-no-repeat list-none pl-4
+      background-position: left center;
+      background-repeat: no-repeat;
+      list-style-type: none;
+      padding-left: 1rem;
     }
 
     .lychee-modules details[open] summary {
@@ -848,7 +982,9 @@
   // Lychee Billing
   .controller-lychee_billing {
     #lychee_billing_content ul {
-      @apply list-disc mt-2 pl-4
+      list-style-type: disc;
+      margin-top: 0.5rem;
+      padding-left: 1rem;
     }
   }
 
@@ -856,11 +992,12 @@
   // Lychee Log
   .controller-logs.controller-logs {
     .list td {
-      @apply text-xs
+      font-size: var(--txt-xs);
+      line-height: 1rem;
     }
 
     .list td form {
-      @apply inline
+      display: inline;
     }
   }
 
@@ -868,27 +1005,28 @@
   // Lychee Rest Days 会社休日設定
   .controller-rest_days.controller-rest_days {
     .new_rest_day_csv {
-      @apply mb-4
+      margin-bottom: 1rem;
     }
 
     .new_rest_day_csv input[type="file"] {
-      @apply max-w-none
+      max-width: none;
     }
 
     .new_rest_day_csv input[name="commit"] {
-      @apply mt-2
+      margin-top: 0.5rem;
     }
 
     h4 {
-      @apply mb-2
+      margin-bottom: 0.5rem;
     }
 
     .new_rest_day_csv + div .box {
-      @apply mb-0
+      margin-bottom: 0;
     }
 
     #lychee_rest_day_day {
-      @apply min-w-[110px] mr-4
+      min-width: 110px;
+      margin-right: 1rem;
     }
   }
 
@@ -896,40 +1034,50 @@
   // Lychee SAML
   .controller-auth_source_saml.controller-auth_source_saml {
     .tabular p {
-      @apply pl-[10rem]
+      padding-left: 10rem;
     }
 
     .tabular label {
-      @apply w-[9rem] -ml-[10rem]
+      width: 9rem;
+      margin-left: -10rem;
     }
 
     td.buttons a:hover,
     td.buttons a:active {
-      @apply bg-transparent border-0
+      background-color: transparent;
+      border-width: 0;
     }
 
     td.buttons .icon-del {
-      @apply ml-2
+      margin-left: 0.5rem;
     }
   }
 
   #redirect_to_auth_request_box {
-    @apply mt-4
+    margin-top: 1rem;
   }
 
 
   // Lychee CCPM
   .controller-projects.controller-projects {
     #ccpm_version_settings p {
-      @apply border-solid border-b border-border-divider mt-0 mb-6 pb-6
+      border-bottom: 1px solid var(--border-divider);
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
     }
 
     #ccpm_version_settings legend + p {
-      @apply border-0 mt-0 mb-4 pb-0
+      border-width: 0;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      padding-bottom: 0;
     }
 
     #ccpm_version_settings p:last-child {
-      @apply border-0 mb-0 pb-0
+      border-width: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
     }
   }
 
@@ -938,7 +1086,7 @@
   .controller-fever_charts {
     div[id^="project_fever_chart"],
     div[id^="version_fever_chart"] {
-      @apply inline-flex;
+      display: inline-flex;
     }
   }
 
@@ -946,41 +1094,58 @@
   // Lychee Checklist
   .controller-issues.action-new {
     #checklist_for_new {
-      @apply flex-col
+      flex-direction: column;
     }
 
     #checklist_for_new > label {
-      @apply justify-start  mt-0 mx-0 mb-2 pl-0
+      justify-content: flex-start;
+      margin-top: 0;
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: 0.5rem;
+      padding-left: 0;
     }
 
     #checklist_for_new > #checklist_wrapper {
-      @apply ml-0
+      margin-left: 0;
     }
   }
 
   .controller-lychee_issue_templates.action-new,
   .controller-lychee_issue_templates.action-edit {
     #checklist_for_new {
-      @apply min-h-0 py-0 pl-[11rem]
+      min-height: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 11rem;
     }
 
     #checklist_for_new > label {
-      @apply w-[9rem] text-xs text-text-default -ml-[10rem] py-0 pr-4 pl-0 translate-y-1
+      width: 9rem;
+      color: var(--txt-default);
+      font-size: var(--txt-xs);
+      line-height: 1rem;
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-right: 1rem;
+      padding-left: 0;
+      margin-left: -10rem;
+      transform: translateY(0.25rem);
     }
 
     #checklist_for_new #checklist_wrapper {
-      @apply ml-0
+      margin-left: 0;
     }
   }
 
   // Lychee Project Template
   .controller-projects {
     #new_project .label_base_date_start_date {
-      @apply mr-2
+      margin-right: 0.5rem;
     }
 
     #new_project #project_start_date {
-      @apply mt-2
+      margin-top: 0.5rem;
     }
   }
 
@@ -988,103 +1153,144 @@
   .lychee-issue-form__container_full.lychee-issue-form__container_full,
   .lychee-issue-form__container_half.lychee-issue-form__container_half {
     #dialog-content-column-single {
-      @apply p-3
+      padding: 0.75rem;
     }
 
     #tab-buttons {
-      @apply pb-4
+      padding-bottom: 1rem;
     }
 
     .required {
-      @apply pl-1
+      padding-left: 0.25rem;
     }
 
     #dialog-content-header {
-      @apply box-content h-[102px]
+      box-sizing: content-box;
+      height: 102px;
     }
 
     #lif-issue_subject {
-      @apply border border-transparent text-sm pt-1.5 px-3 rounded-md
+      border-width: 1px;
+      border-color: transparent;
+      font-size: var(--txt-md);
+      line-height: 1.25rem;
+      padding-top: 0.375rem;
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+      border-radius: var(--bd-radius-md);
     }
 
     #dialog-content-header h4 .show,
     .fields .attribute dd .show,
     .lif-description .text .show,
     .date-fields dl dd .issue-item .show {
-      @apply border border-transparent text-sm my-[1px] py-1.5 px-3 rounded-md
+      border-width: 1px;
+      border-color: transparent;
+      font-size: var(--txt-md);
+      line-height: 1.25rem;
+      margin-top: 1px;
+      margin-bottom: 1px;
+      padding-top: 0.375rem;
+      padding-bottom: 0.375rem;
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+      border-radius: var(--bd-radius-md);
     }
 
     #tab-property .show {
-      @apply min-h-[34px]
+      min-height: 34px;
     }
 
     #tab-property .estimated-hours .show,
     #tab-property .remaining-estimate .show,
     #tab-property .done-ratio .show {
-      @apply min-h-0
+      min-height: 0px;
     }
 
     #dialog-content-header h4 {
-      @apply mb-1
+      margin-bottom: 0.25rem;
     }
 
     #dialog-content-header h4 .issue-item {
-      @apply ml-1
+      margin-left: 0.25rem;
     }
 
     #dialog-content-header h4 .show:hover,
     #dialog-content-header h3 .show:hover {
-      @apply bg-background-secondary
+      background-color: var(--bg-secondary);
     }
 
     #dialog-content-header h3 {
-      @apply mb-0
+      margin-bottom: 0;
     }
 
     .lif-description .header .left h5 {
-      @apply font-bold
+      font-weight: bold;
     }
 
     .fields {
-      @apply mt-4
+      margin-top: 1rem;
     }
 
     .fields dl dt {
-      @apply pr-2
+      padding-right: 0.5rem;
     }
 
     .fields .attribute,
     .tab-content-time_entries-form .attribute {
-      @apply mt-1
+      margin-top: 0.25rem;
     }
 
     .fields .attribute dd .edit > select,
     .fields .attribute dd .edit > input {
-      @apply my-0
+      margin-top: 0;
+      margin-bottom: 0;
     }
 
     .date-fields {
-      @apply border-border-divider mt-4 pb-4
+      border-color: var(--border-divider);
+      margin-top: 1rem;
+      padding-bottom: 1rem;
     }
 
     .date-fields .edit input {
-      @apply w-[140px] text-sm py-1.5 px-3 rounded-md
+      width: 140px;
+      font-size: var(--txt-md);
+      line-height: 1.25rem;
+      padding-top: 0.375rem;
+      padding-bottom: 0.375rem;
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+      border-radius: var(--bd-radius-md);
     }
 
     .horizon-fields {
-      @apply flex flex-wrap gap-4 border-border-divider mt-4 pb-4
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      border-color: var(--border-divider);
+      margin-top: 1rem;
+      padding-bottom: 1rem;
     }
 
     .horizon-fields .edit input {
-      @apply text-sm py-1.5 px-3 rounded-md
+      font-size: var(--txt-md);
+      line-height: 1.25rem;
+      padding-top: 0.375rem;
+      padding-bottom: 0.375rem;
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+      border-radius: var(--bd-radius-md);
     }
 
     .fields.attachment_files {
-      @apply border-border-divider mt-4 pb-4
+      border-color: var(--border-divider);
+      margin-top: 1rem;
+      padding-bottom: 1rem;
     }
 
     .fields.attachment_files #file-input {
-      @apply hidden
+      display: none;
     }
 
     .lif-tab-content {
@@ -1093,28 +1299,59 @@
 
     .lif-tab-content .add-file,
     .attachment_files .add-file {
-      @apply border border-background-secondary my-1 hover:border-border-default active:border-border-divider active:bg-background-tertiary
+      border: 1px solid var(--bg-secondary);
+      margin-top: 0.25rem;
+      margin-bottom: 0.25rem;
+
+      &:hover {
+        border-color: var(--border-default);
+      }
+
+      &:active {
+        background-color: var(--bg-tertiary);
+        border-color: var(--border-divider);
+      }
     }
 
     .lif-tab-content .add-file .label,
     .attachment_files .add-file .label {
-      @apply h-auto py-2 px-3 rounded-md
+      height: auto;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+      border-radius: var(--bd-radius-md);
     }
 
     .lif-tab-content .item .avatar {
-      @apply mr-2
+      margin-right: 0.5rem;
     }
 
     .lif-tab-content #tab-content-comments_and_journals .notify .label {
-      @apply h-auto border border-background-secondary py-2 px-3 rounded-md hover:border-border-default active:border-border-divider active:bg-background-secondary
+      height: auto;
+      border: 1px solid var(--bg-secondary);
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+      border-radius: var(--bd-radius-md);
+
+      &:hover {
+        border-color: var(--border-default);
+      }
+
+      &:active {
+        background-color: var(--bg-secondary);
+        border-color: var(--border-divider);
+      }
     }
 
     .lif-tab-content #tab-content-comments_and_journals .controls {
-      @apply mt-4
+      margin-top: 1rem;
     }
 
     .tab-content-time_entries-form .time-entry-form-spent-on {
-      @apply mt-0
+      margin-top: 0;
     }
 
     .lif-tab-content .item .meta,
@@ -1125,15 +1362,18 @@
     }
 
     .lif-tab-content .item .meta .context-menus {
-      @apply mr-1
+      margin-right: 0.25rem;
     }
 
     .lif-tab-content .item .item-date {
-      @apply text-text-caption text-xs mt-1
+      color: var(--txt-caption);
+      font-size: var(--txt-xs);
+      line-height: 1rem;
+      margin-top: 0.25rem;
     }
 
     .lif-tab-content .total .value {
-      @apply mr-2
+      margin-right: 0.5rem;
     }
 
     
@@ -1142,91 +1382,111 @@
     #popup ul,
     .popup-ticket-context ul,
     .popup-journal-context ul {
-      @apply p-1
+      padding: 0.25rem;
     }
 
     #popup ul li,
     .popup-ticket-context ul li,
     .popup-journal-context ul li {
-      @apply p-0
+      padding: 0;
     }
 
     .popup-ticket-context ul li:not(:first-child),
     .popup-journal-context ul li:not(:first-child) {
-      @apply mt-0.5
+      margin-top: 0.125rem;
     }
 
     #popup ul li button,
     .popup-ticket-context ul li button,
     .popup-journal-context ul li button {
-      @apply items-center text-sm mx-0 py-2 px-3 rounded hover:bg-background-secondary hover:font-normal active:bg-background-tertiary
+      align-items: center;
+      font-size: var(--txt-md);
+      line-height: 1.25rem;
+      margin-left: 0px;
+      margin-right: 0;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+      border-radius: var(--bd-radius-base);
+
+      &:hover {
+        background-color: var(--bg-secondary);
+        font-weight: 400;
+      }
+
+      &:active {
+        background-color: var(--bg-tertiary);
+      }
     }
   }
 
 
   // Lychee Issue Form 2
   #lif-embed-close-button {
-    @apply bg-background-primary
+    background-color: var(--bg-primary);
   }
 
   #lif-embed-close-button:hover {
-    @apply bg-background-secondary
+    background-color: var(--bg-secondary);
   }
 
   .lif-iframe-body {
     #wrapper {
-      @apply ml-0
+      margin-left: 0;
     }
   }
 
   @media screen and (max-width: 899px) {
     .lif-iframe-body #main {
-      @apply pt-0
+      padding-top: 0;
     }
   }
 
   // その他
   .controller-projects.controller-projects {
     table.list:not(.odd-even) tbody tr:nth-child(odd) td {
-      @apply bg-background-primary
+      background-color: var(--bg-primary);
     }
 
     table.list:not(.odd-even) tbody tr:nth-child(odd):hover td {
-      @apply bg-background-tertiary/50
+      background-color: rgba(var(--bg-tertiary-rgb), 0.5);
     }
   }
 
   .controller-routine_workflows {
     .contextual + .nodata {
-      @apply clear-both
+      clear: both;
     }
 
     &.action-edit,
     &.action-new {
       .splitcontent:has(+ p) {
-        @apply gap-4
+        gap: 1rem;
       }
 
       .splitcontent:has(+ p) .splitcontentright {
-        @apply mb-4 ml-0
+        margin-bottom: 1rem;
+        margin-left: 0;
       }
 
       .attributes {
-        @apply mt-4
+        margin-top: 1rem;
       }
     }
 
     &.action-show {
       div.issue {
-        @apply p-4
+        padding: 1rem;
       }
 
       div.issue p {
-        @apply py-0.5
+        padding-top: 0.125rem;
+        padding-bottom: 0.125rem;
       }
 
       div.issue .attributes {
-        @apply mt-4
+        margin-top: 1rem;
       }
     }
   }

@@ -1,23 +1,24 @@
 @layer components {
   .controller-projects {
     .name a {
-      @apply mr-1
+      margin-right: 0.25rem;
     }
 
     .list {
-      @apply mb-4
+      margin-bottom: 1rem;
     }
 
     p a.icon-add {
-      @apply inline-block mb-2
+      display: inline-block;
+      margin-bottom: 0.5rem;
     }
   }
 
   div[id^="tab-content-toyo_"] form.edit_project {
-    @apply inline
+    display: inline;
   }
 
   div[id^="tab-content-toyo_"] form.button_to {
-    @apply inline
+    display: inline;
   }
 }

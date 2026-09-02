@@ -1,5 +1,6 @@
 @layer components {
   .new_repository .box + p {
-    @apply flex items-center
+    display: flex;
+    align-items: center;
   }
 }

@@ -1,26 +1,30 @@
 @layer components {
   #password_fields {
-    @apply mb-6
+    margin-bottom: 1.5rem;
   }
 
   // LDAP認証設定時
   p + #password_fields {
-    @apply mt-4
+    margin-top: 1rem;
   }
 
   .controller-users .splitcontentleft > ul {
-    @apply bg-background-secondary mb-6 p-4 rounded-md
+    background-color: var(--bg-secondary);
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: var(--bd-radius-md);
   }
 
   .controller-users .splitcontentleft .list {
-    @apply mb-6
+    margin-bottom: 1.5rem;
   }
 
   .controller-users #user_group_ids {
-    @apply gap-x-6
+    column-gap: 1.5rem;
   }
 
   .controller-users #user_group_ids label {
-    @apply inline-block mb-2
+    display: inline-block;
+    margin-bottom: 0.5rem;
   }
 }

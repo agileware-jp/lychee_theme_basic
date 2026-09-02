@@ -1,15 +1,16 @@
 @layer components {
   .controller-workflows {
     #content form {
-      @apply block mt-2
+      display: block;
+      margin-top: 0.5rem;
     }
 
     table.workflows {
-      @apply mb-6
+      margin-bottom: 1.5rem;
     }
 
     table.workflows + fieldset {
-      @apply mb-6
+      margin-bottom: 1.5rem;
     }
   }
 }

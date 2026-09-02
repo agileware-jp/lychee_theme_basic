@@ -1,7 +1,8 @@
 @layer components {
   .controller-search {
     #search-results {
-      @apply relative pl-4
+      position: relative;
+      padding-left: 1rem;
     }
 
     #search-results::before {
@@ -11,12 +12,15 @@
       left: 3px;
       width: 1px;
       height: calc(100% - 8px);
-
-      @apply bg-border-divider
+      background-color: var(--border-divider);
     }
 
     #search-results h3 {
-      @apply relative text-sm font-bold mb-2 
+      position: relative;
+      font-size: var(--txt-md);
+      line-height: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
     }
 
     #search-results h3::before {
@@ -27,21 +31,25 @@
       display: block;
       width: 7px;
       height: 7px;
+      background-color: var(--product-default);
+      border-radius: var(--bd-radius-full);
       transform: translateY(-50%);
-
-      @apply bg-product-default rounded-full
     }
 
     #search-resulets + h3 {
-      @apply mt-8
+      margin-top: 2rem;
     }
 
     #search-results dt {
-      @apply clear-left border-t border-dotted border-border-divider mt-4 pt-4
+      clear: left;
+      border-top: 1px dotted var(--border-divider);
+      margin-top: 1rem;
+      padding-top: 1rem;
     }
 
     #search-results dt:first-child {
-      @apply border-t-0 mt-0
+      border-top-width: 0;
+      margin-top: 0;
     }
 
     #search-results dt.icon {
@@ -50,42 +58,56 @@
 
     #search-results span.project:after {
       content: '-';
-
-      @apply py-1
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem;
     }
 
     #search-results dd {
-      @apply text-xs my-2 pl-4
+      font-size: var(--txt-xs);
+      line-height: 1rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      padding-left: 1rem;
     }
 
     #search-results dd span.description.aw_has_description {
-      @apply block bg-background-secondary text-xs text-text-caption mb-2 px-4 py-2 rounded-lg
+      display: block;
+      background-color: var(--bg-secondary);
+      font-size: var(--txt-xs);
+      line-height: 1rem;
+      color: var(--txt-caption);
+      margin-bottom: 0.5rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      border-radius: var(--bd-radius-lg);
     }
 
 
 
     #scope {
-      @apply mr-2
+      margin-right: 0.5rem;
     }
 
     input[name="all_words"] + label {
-      @apply mr-2
+      margin-right: 0.5rem;
     }
 
     #search-form {
-      @apply mb-6
+      margin-bottom: 1.5rem;
     }
 
     #search-types label ~ label {
-      @apply ml-2
+      margin-left: 0.5rem;
     }
 
     #options-content p {
-      @apply mt-2
+      margin-top: 0.5rem;
     }
 
     #options-content p label ~ label {
-      @apply ml-2
+      margin-left: 0.5rem;
     }
 
     #search-results-counts {
@@ -95,11 +117,12 @@
     #search-results-counts  li {
       float: left;
       list-style-type: none;
-      @apply ml-4
+      margin-left: 1rem;
     }
 
     #search-results-counts + h3 {
-      @apply text-base
+      font-size: var(--txt-base);
+      line-height: 1.5rem ;
     }
   }
 }

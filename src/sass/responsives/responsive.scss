@@ -76,7 +76,7 @@
 
   .isBilling #wrapper {
     /* トライアル表示の考慮 */
-    @apply pb-[28px]
+    padding-bottom: 28px;
   }
 
   /*----------------------------------------*\
@@ -84,15 +84,16 @@
   \*----------------------------------------*/
 
   #header {
+    display: block;
     width: 100%;
     height: 64px; /* the height of our header on mobile */
     min-height: 0;
+    background-color: var(--bg-secondary);
     margin: 0;
     padding: 0;
     border: none;
     position: fixed;
     z-index: 9999;
-    @apply block bg-background-secondary
   }
 
   /* Hide project name on mobile (project name is still visible in select menu) */
@@ -136,6 +137,7 @@
     padding-right: 72px;
     padding-left: 20px;
   }
+
   #project-jump .drdn-trigger {
     font-weight:bold;
     display:block;
@@ -144,18 +146,38 @@
     background:transparent;
     height:50px;
     border:0;
-
-    @apply text-text-default text-base leading-[40px]
+    color: var(--txt-default);
+    font-size: var(--txt-base);
+    line-height: 40px;
   }
 
   #project-jump .drdn-trigger:before {
+    content: "";
+    cursor: pointer;
     position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    display: block;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
     pointer-events: none;
+    width: 1.5rem;
+    height: 1.5rem;
     background-image: url(images/expand_more_default.svg);
-    @apply content-[''] cursor-pointer left-3 top-1/2 block overflow-hidden indent-[100%] whitespace-nowrap w-6 h-6 bg-no-repeat bg-center bg-[length:24px_24px] align-middle -translate-y-1/2 transition-transform
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px 24px;
+    transform: translateY(-50%);
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
   }
   #project-jump.expanded .drdn-trigger:before {
-    @apply -rotate-180 transition-transform
+    transform: translateY(-50%) rotate(-180deg);
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
   }
 
   #project-jump .drdn-content {
@@ -204,34 +226,28 @@
     flex: auto;
     margin-right: 0;
     margin-left: 0;
-
-    @apply mb-4
+    margin-bottom: 1rem;
   }
 
   /*----------------------------------------*\
     D) TOGGLE BUTTON & FLYOUT MENU
   \*----------------------------------------*/
   .aw_toggleSidebar {
-    @apply hidden
+    display: none;
   }
 
   .mobile-toggle-button {
     font-size: 2.625rem;
     line-height: 64px;
-
     position: relative;
     z-index: 10;
-
     display: block; /* remove display: none; of non-mobile version */
     float: right;
-
     width: 60px;
     height: 64px;
     margin-top: 0;
-
     text-align: center;
-
-    @apply border-l border-border-default
+    border-left: 1px solid var(--border-default);
   }
 
   .mobile-toggle-button:hover,
@@ -241,17 +257,38 @@
 
   .mobile-toggle-button:after {
     background-image: url(images/menu_dark.svg);
-    @apply content-['メニュー'] cursor-pointer block overflow-hidden indent-[100%] whitespace-nowrap w-full h-full bg-no-repeat bg-center bg-[length:24px_24px] align-middle
+    content: "メニュー";
+    cursor: pointer;
+    display: block;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px 24px;
   }
 
   /* search magnifier icon */
   .search-magnifier {
     background: url(images/search_default.svg);
-    @apply inline-block overflow-hidden indent-[100%] whitespace-nowrap w-6 h-6 bg-center bg-no-repeat align-middle
+    display: inline-block;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    vertical-align: middle;
   }
 
   .search-magnifier--flyout {
-    @apply absolute top-4 left-3 z-[1]
+    position: absolute;
+    top: 1rem;
+    left: 0.75rem;
+    z-index: 1;
   }
 
   /* Flyout Menu */
@@ -266,17 +303,30 @@
     height: 100%;
     margin: 0; /* reset margin for themes that define it */
     padding: 0; /* reset padding for themes that define it */
-
-    @apply block bg-background-primary border-l border-border-divider text-text-default shadow-xl
+    border-left: 1px solid var(--border-divider);
+    display: block;
+    background-color: var(--bg-primary);
+    color: var(--txt-default);
+    box-shadow: var(--shadow-xl);
   }
 
   /* avoid zoom on search input focus for ios devices */
   .flyout-menu input[type='text'] {
-    @apply text-base
+    font-size: var(--txt-base);
+    line-height: 1.5rem;
   }
 
   .flyout-menu h3 {
-    @apply uppercase border-t border-border-divider text-text-default text-xs mt-2 pt-4 px-3 pb-1
+    border-top: 1px solid var(--border-divider);
+    text-transform: uppercase;
+    color: var(--txt-default);
+    font-size: var(--txt-xs);
+    line-height: 1rem;
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-bottom: 0.25rem;
   }
 
   .flyout-menu .flyout-menu__avatar {
@@ -287,11 +337,16 @@
   .js-project-menu,
   .js-general-menu,
   .js-sidebar {
-    @apply block px-2
+    display: block;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 
   .js-profile-menu {
-    @apply block px-2 pb-2
+    display: block;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 
   .flyout-menu__sidebar > form {
@@ -303,7 +358,10 @@
   }
 
   .flyout-menu__sidebar > form label {
-    @apply block w-full px-3
+    display: block;
+    width: 100%;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
 
   .flyout-menu__sidebar > form br  br {
@@ -376,7 +434,7 @@
   }
 
   .flyout-menu ul li:not(:first-child) {
-    @apply mt-1
+    margin-top: 0.25rem;
   }
 
   .flyout-menu ul li a {
@@ -385,36 +443,49 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     border-top: 1px solid rgba(255,255,255,.1);
-    @apply rounded-md
+    border-radius: var(--bd-radius-md);
   }
 
   .flyout-menu ul li a:hover {
-    @apply bg-background-secondary
+    background-color: var(--bg-secondary);
   }
 
   .flyout-menu a {
-    @apply text-text-default py-2 px-3
+    color: var(--txt-default);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
 
   .flyout-menu ul li a:hover {
-    @apply no-underline
+    text-decoration-line: none;
   }
 
   .flyout-menu ul li a.new-object,
   .new-object ~ .menu-children {
-    @apply hidden
+    display: none;
   }
 
   .flyout-menu .js-profile-menu .aw_fbLink_li {
-    @apply border-none pt-0
+    border-style: none;
+    padding-top: 0;
   }
 
   .flyout-menu .js-profile-menu ul {
-    @apply flex flex-col
+    display: flex;
+    flex-direction: column;
   }
 
   .flyout-menu .js-profile-menu ul li a {
-    @apply bg-no-repeat bg-[length:16px_16px] bg-[12px_center] text-text-default py-2 pr-3 pl-8
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    background-position: 12px center;
+    color: var(--txt-default);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-right: 0.75rem;
+    padding-left: 2rem;
   }
 
   /* アイコン */
@@ -443,18 +514,22 @@
   /* メッセージボックス */
   .flyout-menu .lychee-message-box-icon.lychee-message-box-icon::before {
     content: none;
-    @apply pl-0 scale-100
+    padding-left: 0;
+    transform: scale(1);
   }
 
   // 未読ありの場合
   .flyout-menu .lychee-message-box-icon.lychee-message-box-icon.unread::before {
     content: none;
-    @apply font-bold
+    font-weight: 700;
   }
 
   .flyout-menu .lychee-message-box-icon.lychee-message-box-icon {
     background-image: url(images/mail_dark.svg);
-    @apply bg-no-repeat bg-[length:16px_16px] bg-[12px_center] pl-8
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    background-position: 12px center;
+    padding-left: 2rem;
   }
 
   .flyout-menu .lychee-message-box-icon.lychee-message-box-icon.unread {
@@ -464,7 +539,10 @@
   /* ヘルプ */
   .flyout-menu .lychee-help.lychee-help {
     background-image: url(images/help_dark.svg);
-    @apply bg-no-repeat bg-[length:16px_16px] bg-[12px_center] pl-8
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    background-position: 12px center;
+    padding-left: 2rem;
   }
 
   .flyout-menu .lychee-help.lychee-help::before {
@@ -473,7 +551,10 @@
 
   /* billingのメッセージ */
   .isBilling #wrapper > #lychee-billng-global-message {
-    @apply fixed bottom-0 w-full z-[9999]
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 9999;
   }
 
   /* fbリンク調整 */
@@ -484,15 +565,18 @@
 
   /* Left flyout search container */
   .flyout-menu__search {
-    @apply p-2
+    padding: 0.5rem;
   }
 
   .flyout-menu__search input[type='text'] {
-    @apply w-full pl-7
+    width: 100%;
+    padding-left: 1.75rem;
   }
 
   .flyout-menu__avatar {
-    @apply flex mx-2
+    display: flex;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
   }
 
   .flyout-menu__avatar img.gravatar {
@@ -504,24 +588,25 @@
   }
 
   .flyout-menu__avatar a {
-    @apply no-underline
+    text-decoration-line: none;
   }
 
   /* avatar */
   .flyout-menu__avatar .user {
-    // padding-left: 15px;
-    // padding-right: 15px;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
     -webkit-flex-grow: 1;
         -ms-flex-grow: 1;
             flex-grow: 1;
-    @apply pt-2 px-3 rounded-md
+    padding-top: 0.5rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    border-radius: var(--bd-radius-md);
   }
 
   .flyout-menu__avatar--no-avatar a.user:hover {
-    @apply bg-background-secondary
+    background-color: var(--bg-secondary);
   }
 
   .flyout-is-active body {
@@ -555,15 +640,18 @@
 
   /* Custom Query */
   .flyout-menu .queries li {
-    @apply flex items-center
+    display: flex;
+    align-items: center;
   }
 
   .flyout-menu .queries li .selected + .icon-only {
-    @apply flex indent-[100%] ml-1
+    display: flex;
+    text-indent: 100%;
+    margin-left: 0.25rem;
   }
 
   .flyout-menu .queries li .selected + .icon-only:hover {
-    @apply bg-transparent
+    background-color: transparent;
   }
 
   #admin-menu {
@@ -583,7 +671,7 @@
   }
 
   #admin-menu .lychee-icon::before {
-    @apply content-none
+    content: none;
   }
 
   /*----------------------------------------*\
@@ -612,12 +700,12 @@
     width: 100%;
     padding-left: 0; /* reset left padding in order to use whole space */
     white-space: normal;
-
-    @apply float-none mb-4
+    float: none;
+    margin-bottom: 1rem;
   }
 
   .controller-issues #content .contextual {
-    @apply mb-2
+    margin-bottom: 0.5rem;
   }
 
   #content>.contextual .drdn-content {
@@ -657,7 +745,7 @@
   \*----------------------------------------*/
   #content h2,
   .controller-issues #content>h2 {
-    @apply mb-4
+    margin-bottom: 1rem;
   }
 
   /* some themes add a margin to login page, remove it on mobile */
@@ -702,7 +790,7 @@
 
   /* New Issue */
   #issue_is_private_wrap {
-    @apply float-none
+    float: none;
   }
 
   /* Tracker */
@@ -926,15 +1014,20 @@
   }
 
   [id^="tab-content-"] .tabular.settings > p {
-    @apply border-solid border-b border-border-divider mb-4 pb-4
+    border-style: solid;
+    border-bottom-width: 1px;
+    border-color: var(--border-divider);
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
   }
 
   [id^="tab-content-"] .tabular.settings > p:last-of-type {
-    @apply border-none mb-0
+    border-style: none;
+    margin-bottom: 0;
   }
 
   [id^="tab-content-"] .tabular.settings > p:hover::before {
-    @apply content-none
+    content: none;
   }
 
   .tabular label, .tabular.settings label, [id^="tab-content-"] .tabular.settings label {
@@ -942,8 +1035,7 @@
     width: 100%;
     margin-left: 0;
     text-align: left;
-
-    @apply mb-2
+    margin-bottom: 0.5rem;
   }
 
   .tabular input, .tabular select, .tabular textarea {
@@ -985,8 +1077,8 @@
 
   ul.cal .calbody {
     min-height: calc(1.2em * 3);
-
-    @apply border-l-0 p-1
+    border-left-width: 0;
+    padding: 0.25rem;
   }
 
   ul.cal .calbody .abbr-day {
@@ -996,8 +1088,10 @@
   ul.cal .week-number {
     text-align: left;
     font-weight: bold;
-
-    @apply bg-background-dark/90 text-text-onFill py-2
+    background-color: rgba(var(--bg-dark-rgb), 0.9);
+    color: var(--txt-onFill);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 
   ul.cal .week-number .label-week {
@@ -1014,48 +1108,49 @@
   \*----------------------------------------*/
   .controller-association_chart {
     #association_chart_query_form #filters table {
-      @apply -ml-5
+      margin-left: -1.25rem;
     }
 
     #association_chart_query_form #filters table tr {
-      @apply flex flex-col
+      display: flex;
+      flex-direction: column;
     }
 
     .le-header {
-      @apply mb-4
+      margin-bottom: 1rem;
     }
 
     #content .le-header h2 {
-      @apply mb-0
+      margin-bottom: 0;
     }
 
     .le-header-menu {
-      @apply static
+      position: static;
     }
   }
 
   .controller-lrm_queries {
     #group_keys {
-      @apply w-[90%]
+      width: 90%;
     }
   }
 
   .controller-resource_management {
     #tab-header {
-      @apply flex-col
+      flex-direction: column;
     }
 
     #tab-header-left,
     #tab-header-right {
-      @apply w-full
+      width: 100%;
     }
 
     #tab-header-left #group_keys_form {
-      @apply ml-0
+      margin-left: 0;
     }
 
     #tab-header-right {
-      @apply mt-2
+      margin-top: 0.5rem;
     }
   }
 
@@ -1064,26 +1159,32 @@
     #new_registration table thead,
     #new_registration table tbody,
     #new_registration table tr {
-      @apply block
+      display: block;
     }
 
     #new_registration table td {
-      @apply block px-0
+      display: block;
+      padding-left: 0;
+      padding-right: 0;
     }
 
     #new_registration table td + td {
-      @apply pt-0
+      padding-top: 0;
     }
   }
 
   .controller-lychee_issue_templates.action-new,
   .controller-lychee_issue_templates.action-edit {
     #checklist_for_new {
-      @apply mb-4 pl-0
+      margin-bottom: 1rem;
+      padding-left: 0;
     }
 
     #checklist_for_new > label {
-      @apply w-auto ml-0 pr-0 translate-y-0
+      width: auto;
+      margin-left: 0;
+      padding-right: 0;
+      transform: translateY(0);
     }
   }
 
@@ -1091,25 +1192,28 @@
   // プロジェクト設定→レポート
   .controller-projects {
     #tab-content-project_report .tabular p {
-      @apply pl-0
+      padding-left: 0;
     }
 
     #tab-content-project_report .tabular label {
-      @apply w-full ml-0
+      width: 100%;
+      margin-left: 0;
     }
   }
 
   /* その他 */
   .flyout-menu #watchers .group-name {
-    @apply mt-0 ml-4 pt-4
+    margin-top: 0;
+    margin-left: 1rem;
+    padding-top: 1rem;
   }
 
   .flyout-menu #watchers .watchers + .group-name {
-    @apply mt-4
+    margin-top: 1rem;
   }
 
   .flyout-menu #watchers .watchers {
-    @apply ml-4
+    margin-left: 1rem;
   }
 }
 
@@ -1132,7 +1236,7 @@
   tr.issue td.list,
   tr.issue td.relations,
   tr.issue td.parent {
-    @apply whitespace-nowrap
+    white-space: nowrap;
   }
 }
 

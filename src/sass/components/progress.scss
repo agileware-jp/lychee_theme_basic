@@ -2,46 +2,49 @@
   table.progress {
     overflow: hidden;
     height: 13px;
-
-    @apply bg-primitive-gray-200 rounded
+    background-color: var(--neutral-black-400);
+    border-radius: var(--bd-radius-base);
   }
 
   table.progress th,
   table.progress td {
-    @apply p-0
+    padding: 0;
   }
 
   table.progress td.todo {
     height: 13px;
-
-    @apply bg-primitive-gray-200 border-none
+    background-color: var(--neutral-black-400);
+    border-style: none;
   }
 
   table.progress td.closed {
     height: 13px;
-
-    @apply bg-status-success border-none
+    background-color: var(--status-success);
+    border-style: none;
   }
 
   table.progress td.done {
     height: 13px;
-
-    @apply bg-status-success/60 border-none
+    background-color: rgb(11 135 73 / 0.6);
+    border-style: none;
   }
 
   div.issue .next-prev-links {
-    @apply text-xs text-text-caption
+    color: var(--txt-caption);
+    font-size: var(--txt-xs);
+    line-height: 1rem;
   }
 
   div.issue .next-prev-links .position {
-    @apply mx-1
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
   }
 
   div.issue .next-prev-links a:first-child {
-    @apply mr-1
+    margin-right: 0.25rem;
   }
 
   div.issue .next-prev-links a:last-child {
-    @apply ml-1
+    margin-left: 0.25rem;
   }
 }
