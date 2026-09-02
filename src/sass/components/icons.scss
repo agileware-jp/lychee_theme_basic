@@ -456,6 +456,7 @@ svg.icon-svg use[href$="#icon--checked"] {
   background-image: url(images/settings_dark.svg);
 }
 
+#list_organizations .icon-group:not(:has(svg)), /* https://github.com/redmine/redmine/blob/7.0.0/app/assets/stylesheets/legacy-icons-compat.css#L96 より高い優先度にするため */
 .icon-group,
 .icon-group:not(:has(svg)) {
   background-image: url(images/groups_3_default.svg);
