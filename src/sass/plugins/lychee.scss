@@ -1,1493 +1,1491 @@
-@layer components {
-  // Profile Icon
-  #attachments_form.lychee_profile_icon.lychee_profile_icon .preview-avatar {
-    margin-right: 0.5rem;
+// Profile Icon
+#attachments_form.lychee_profile_icon.lychee_profile_icon .preview-avatar {
+  margin-right: 0.5rem;
+}
+
+#attachments_form.lychee_profile_icon.lychee_profile_icon .add_attachment {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+#attachments_form.lychee_profile_icon.lychee_profile_icon .add_attachment input[type="file"] {
+  width: 100%;
+}
+
+
+// Lychee Project View
+#favorite-project-wrapper > h3 {
+  margin-top: 1rem;
+}
+
+.favorite-project-container {
+  width: 100%;
+}
+
+h3 .tree-expander-expanded, table.favorite-projects tr.project td.name .tree-expander-expanded {
+  background-image: url(images/expand_more_default.svg);
+}
+
+h3 .tree-expander-collapsed, table.favorite-projects tr.project td.name .tree-expander-collapsed {
+  background-image: url(images/chevron_right_default.svg);
+}
+
+#favorite-project-wrapper + #query_form h2 {
+  color: var(--txt-default);
+  font-size: var(--txt-base);
+  line-height: 1.5rem;
+  font-weight: bold;
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
+  padding: 0;
+}
+
+// Lychee Actual Date
+#actual_dates_area {
+  margin-top: 0.5rem;
+}
+
+// Lychee Project Dashboardの「コピー」ボタン
+.controller-lychee_project_dashboards {
+  #content button[type="submit"] + button {
+    margin-left: 0.25rem;
   }
 
-  #attachments_form.lychee_profile_icon.lychee_profile_icon .add_attachment {
-    display: inline-flex;
-    flex-direction: column;
+  #content #root.tailwind input:not([type="checkbox"], [type="radio"]),
+  #content #root.tailwind select,
+  #content #root.tailwind button {
+    height: 38px;
+  }
+}
+
+
+// LRM
+.controller-resource_management {
+  .lrm-table .header-row th,
+  .lrm-table tbody th {
+    border-top: 1px solid gray;
   }
 
-  #attachments_form.lychee_profile_icon.lychee_profile_icon .add_attachment input[type="file"] {
-    width: 100%;
+  .lrm-table .header-row th:not(:first-child) {
+    border-right: 1px solid gray;
   }
 
+  .lrm-table tbody td {
+    border-top: 1px solid gray;
+    border-right: 1px solid gray;
+  }
+}
 
-  // Lychee Project View
-  #favorite-project-wrapper > h3 {
+// LRM: 設定→割当て稼働時間の設定
+.controller-distributed_workloads {
+  #content input[type="submit"] {
+    margin-top: 0.5rem;
+  }
+}
+
+// LRM: 設定→背景色閾値の設定
+.controller-threshold_settings {
+  #content input[type="submit"] {
+    margin-top: 0.5rem;
+  }
+}
+
+
+/* Lychee Project Report */
+// LPR共通
+.controller-project_report_overview {
+  #setting_buttons a ~ a {
+    margin-left: 0.5rem;
+  }
+
+  #project_report_windowed_buttons span ~ span {
+    margin-left: 0.5rem;
+  }
+
+  #project_report_full_screen_buttons span ~ span {
+    margin-left: 0.5rem;
+  }
+
+  #icon-full-screen {
+    color: var(--txt-link);
+  }
+
+  .icon-setting {
+    background-image: url(images/settings_default.svg);
+  }
+
+  .icon-full-screen-start {
+    background-image: url(images/fullscreen_success.svg);
+  }
+
+  .icon-full-screen-exit {
+    background-image: url(images/close_fullscreen_default.svg);
+  }
+}
+
+// LPR共通 設定
+.controller-project_report_settings,
+.controller-indice_settings,
+.controller-enabled_report_indice_settings,
+.controller-project_report_active_shared_layouts {
+  table.list:not(.odd-even) tbody tr:nth-child(odd) td {
+    background-color: var(--bg-primary);
+  }
+
+  table.list:not(.odd-even) tbody tr:nth-child(odd):hover td {
+    background-color: rgba(var(--bg-tertiary-rgb), 0.5);
+  }
+
+  table.report_settings tbody tr td:first-child,
+  table.report_settings tbody tr td:nth-child(2),
+  table.report_settings.version_settings tbody tr:nth-child(2n) td:nth-child(3),
+  table.indice-setting tr td:nth-of-type(1) {
+    // bg-background-secondary/50を透過無しで表現したカラーコード
+    background-color: #F8F8F9;
+  }
+
+  table.report_settings tbody tr:hover td:first-child,
+  table.report_settings tbody tr:hover td:nth-child(2),
+  table.report_settings.version_settings tbody tr:nth-child(2n):hover td:nth-child(3),
+  table.indice-setting tr:hover td:nth-of-type(1) {
+    // bg-background-tertialy/50を透過無しで表現したカラーコード
+    background: #E5EEF3;
+  }
+
+  table.report_settings tbody tr:hover > td {
+    // bg-background-tertialy/50を透過無しで表現したカラーコード
+    background: #E5EEF3 !important;
+  }
+}
+
+
+.controller-indice_settings {
+  .contextual + h3 + .contextual {
+    margin-bottom: 0.5rem;
+  }
+
+  // 指標の作成・編集
+  .new_indice_setting,
+  .edit_indice_setting {
+    #custom-numerator-issue-filter-wrapper {
+      margin-bottom: 1rem;
+    }
+
+    #custom-denominator-issue-filter-wrapper select,
+    #custom-denominator-issue-filter-wrapper .select2-container {
+      margin-top: 0.5rem;
+    }
+
+    p:has(#description-area) {
+      margin-top: 0.25rem;
+    }
+
+    #partial-area {
+      margin-top: 1rem;
+    }
+
+    #indice-setting-form-thresholds #indice_setting_upper_threshold,
+    #indice-setting-form-thresholds #indice_setting_middle_threshold {
+      margin-top: 0.125rem;
+      margin-bottom: 0.125rem;
+    }
+  }
+}
+
+// LPR 共通 カスタムクエリの作成
+.controller-project_report_queries {
+  #content > h3 {
     margin-top: 1rem;
   }
+}
 
-  .favorite-project-container {
-    width: 100%;
+// LPR 固有
+.controller-project_reports {
+  #project-report a.icon-settings,
+  #project-report a.icon-del,
+  #project-report a.icon-copy,
+  #project-report a.icon-add {
+    margin-left: 0.75rem;
   }
 
-  h3 .tree-expander-expanded, table.favorite-projects tr.project td.name .tree-expander-expanded {
-    background-image: url(images/expand_more_default.svg);
+  #project-report h2[class^="PanelLayout__Title"] {
+    margin-bottom: 0;
   }
 
-  h3 .tree-expander-collapsed, table.favorite-projects tr.project td.name .tree-expander-collapsed {
-    background-image: url(images/chevron_right_default.svg);
+  // バージョンのレポート選択フィールド
+  #version_report_link {
+    width: 165px;
   }
 
-  #favorite-project-wrapper + #query_form h2 {
-    color: var(--txt-default);
-    font-size: var(--txt-base);
-    line-height: 1.5rem;
-    font-weight: bold;
-    margin-top: 0.75rem;
+  // 各パネルの編集／セッティング／閉じるアイコン用
+  #content span[title="オプション"] {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+  }
+
+  // マイルストーンの期間フィールド
+  .milestone-months {
+    width: 65px;
+  }
+}
+
+
+// Lychee Work Plan
+.controller-lychee_work_plan {
+  #content h2 {
+    padding-right: 0.5rem;
+  }
+}
+
+
+// Lychee Time Management
+.controller-time_management {
+  main button {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+
+  #content {
+    padding: 1rem;
+  }
+
+  /* モーダルを開いている間はtop-menuをモーダルより下に表示したい */
+  &.ReactModal__Body--open {
+    #top-menu {
+      z-index: 1;
+    }
+  }
+
+  // フィルタモーダルのpagination
+  .ReactModal__Content h2 {
+    margin-bottom: 0;
+  }
+
+  .ReactModal__Content .pagination {
+    margin-top: 0;
+  }
+
+  .ReactModal__Content div:has(> .list) {
     margin-bottom: 0.5rem;
-    padding: 0;
   }
 
-  // Lychee Actual Date
-  #actual_dates_area {
+  // セル上を右クリックで表示される時間入力UI
+  // Note: ライブラリを使っているようで、そのライブラリ固有のclass名を利用する
+  .tippy-content hr {
+    height: 1px;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+}
+
+
+// Lychee ステータスカラー
+.controller-issue_statuses.controller-issue_statuses.action-index td.name {
+  display: revert;
+}
+
+// Lychee Kanban
+.controller-kanban.controller-kanban {
+  select, input {
+    height: auto;
+  }
+
+  #content .tabs {
+    margin-bottom: 0.25rem;
+  }
+
+  .task-kanban-icon-fullscreen__start {
+    background-image: url(images/fullscreen_success.svg);
+    margin-right: 1rem;
+  }
+
+  .task-kanban-icon-fullscreen__exit {
+    background-image: url(images/close_fullscreen_default.svg);
+    margin-right: 1rem;
+  }
+
+  #burn_down_type_wrap {
+    position: static;
     margin-top: 0.5rem;
   }
 
-  // Lychee Project Dashboardの「コピー」ボタン
-  .controller-lychee_project_dashboards {
-    #content button[type="submit"] + button {
-      margin-left: 0.25rem;
+  input[name="spent_on"] {
+    width: 7rem;
+  }
+
+  input[name="hours"] {
+    width: 3rem;
+  }
+
+  .status-item-relation.status-item--highlight {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+}
+
+.controller-projects.controller-projects {
+  #kanban.collapsible {
+    margin-bottom: 1.5rem;
+  }
+
+  #kanban.collapsible > legend, #backlog > legend {
+    margin-bottom: 1rem;
+  }
+
+  #kanban.collapsible input[type="checkbox"] {
+    margin-right: 0.25rem;
+  }
+
+  #kanban.collapsible input[type="checkbox"] + label {
+    margin-right: 0.5rem;
+  }
+
+  #kanban.collapsible .box ~ .box fieldset {
+    margin-top: 1rem;
+  }
+
+  #kanban.collapsible .box ~ .box fieldset legend + div {
+    padding-left: 14px;
+  }
+
+  #backlog.collapsible table td {
+    padding-top: 0.75rem;
+  }
+
+  #backlog.collapsible table tr:first-child td {
+    padding-top: 0;
+  }
+
+  #backlog.collapsible input[type="checkbox"] {
+    margin-right: 0.25rem;
+  }
+
+  #backlog.collapsible input[type="checkbox"] + label {
+    margin-right: 0.5rem;
+  }
+
+  #backlog.collapsible .box ~ .box fieldset {
+    margin-top: 1rem;
+  }
+
+  #backlog.collapsible .box ~ .box fieldset legend + div {
+    padding-left: 14px;
+  }
+}
+
+// Lychee Backlog
+.controller-backlog.controller-backlog {
+  select, input {
+    height: auto;
+  }
+
+  .velocity__container > div {
+    margin-top: 1rem;
+  }
+
+  .velocity__container > div input[type="number"] {
+    margin-top: 0.5rem;
+  }
+
+  .task-kanban-icon-fullscreen__start {
+    background-image: url(images/fullscreen_success.svg);
+    margin-right: 1rem;
+  }
+
+  .task-kanban-icon-fullscreen__exit {
+    background-image: url(images/close_fullscreen_default.svg);
+    margin-right: 1rem;
+  }
+}
+
+// Lychee Gantt Chart
+.controller-lgc.controller-lgc {
+  .lgc-tree {
+    padding-bottom: 1.5rem;
+  }
+
+  .lgc-issueDetail-header {
+    height: auto;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .lgc-form-fieldset__inlineBlock {
+    margin-bottom: 0.25rem;
+    padding-top: 0.5rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-radius: var(--bd-radius-md);
+  }
+
+  .lgc-form-fieldset__inlineBlock ~ .lgc-form-fieldset__inlineBlock {
+    margin-right: 0.25rem;
+  }
+
+  .lgc-form-fieldset__inlineBlock label {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .lgc-form-fieldset__inlineBlock label input[type="checkbox"] {
+    margin-right: 0.25rem;
+  }
+
+  .lgc-queryForm-dateRange {
+    font-size: var(--txt-xs);
+    line-height: 1rem;
+  }
+
+  .lgc-queryForm-zoom-selection {
+    margin-top: 1rem;
+  }
+
+  .lgc-queryForm-zoom-selection li {
+    font-size: var(--txt-xs);
+    line-height: 1rem;
+  }
+
+  .lgc-queryForm-zoom-selection li:not(:first-child) {
+    margin-left: 0;
+  }
+
+  .lgc-queryForm-zoom-selection li::before {
+    margin-right: 0.375rem;
+  }
+
+  .contextual .lgc-popover {
+    margin-left: 0;
+  }
+
+  .contextual .lgc-icon-fullscreen__start,
+  .contextual .lgc-icon-fullscreen__exit {
+    margin-left: 0;
+  }
+
+  .lgc-separator__vertical {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .lgc-download-options {
+    .lgc-download-options-pageSize,
+    .lgc-download-options-orientation,
+    .lgc-download-options-margin,
+    .lgc-download-options-scale,
+    .lgc-download-options-header-left,
+    .lgc-download-options-header-center,
+    .lgc-download-options-header-right,
+    .lgc-download-options-project-name-display,
+    .lgc-download-options-date-label-display {
+      font-size: var(--txt-xs);
+      line-height: 1rem;
     }
 
-    #content #root.tailwind input:not([type="checkbox"], [type="radio"]),
-    #content #root.tailwind select,
-    #content #root.tailwind button {
-      height: 38px;
+    .lgc-download-options-margin input {
+      width: 3rem;
     }
   }
 
-
-  // LRM
-  .controller-resource_management {
-    .lrm-table .header-row th,
-    .lrm-table tbody th {
-      border-top: 1px solid gray;
+  .lgc-plan {
+    label[for="plan_name"] {
+      font-size: var(--txt-xs);
+      line-height: 1rem;
     }
 
-    .lrm-table .header-row th:not(:first-child) {
-      border-right: 1px solid gray;
-    }
-
-    .lrm-table tbody td {
-      border-top: 1px solid gray;
-      border-right: 1px solid gray;
+    .lgc-plan-list {
+      font-size: var(--txt-xs);
+      line-height: 1rem;
     }
   }
 
-  // LRM: 設定→割当て稼働時間の設定
-  .controller-distributed_workloads {
-    #content input[type="submit"] {
-      margin-top: 0.5rem;
-    }
+  // チケットの一括編集
+  .lgc-issueDetail-bulkEdit-issues {
+    list-style-type: disc;
+    padding-left: 1.5rem;
   }
 
-  // LRM: 設定→背景色閾値の設定
-  .controller-threshold_settings {
-    #content input[type="submit"] {
-      margin-top: 0.5rem;
-    }
+  // チケット連続追加のUI
+  .lgc-tree input[type="text"],
+  .lgc-tree select {
+    height: 20px !important;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-radius: var(--bd-radius-base);
+  }
+}
+
+// Lychee Gantt Chart 5
+.controller-lychee_gantt_chart.controller-lychee_gantt_chart {
+  ul[class^="lgc-AvailableColumnList-"] li label {
+    gap: 3px;
   }
 
+  // 担当者が未設定の場合にアイコンが表示されないため特別対応
+  span[class^="lgc-RedmineIcon-"].icon-issue {
+    display: inline-block;
+  }
+}
 
-  /* Lychee Project Report */
-  // LPR共通
-  .controller-project_report_overview {
-    #setting_buttons a ~ a {
-      margin-left: 0.5rem;
-    }
 
-    #project_report_windowed_buttons span ~ span {
-      margin-left: 0.5rem;
-    }
-
-    #project_report_full_screen_buttons span ~ span {
-      margin-left: 0.5rem;
-    }
-
-    #icon-full-screen {
-      color: var(--txt-link);
-    }
-
-    .icon-setting {
-      background-image: url(images/settings_default.svg);
-    }
-
-    .icon-full-screen-start {
-      background-image: url(images/fullscreen_success.svg);
-    }
-
-    .icon-full-screen-exit {
-      background-image: url(images/close_fullscreen_default.svg);
-    }
+// チケット関連図
+.controller-association_chart.controller-association_chart {
+  #query_form_content #filters legend + div {
+    padding-left: 0;
   }
 
-  // LPR共通 設定
-  .controller-project_report_settings,
-  .controller-indice_settings,
-  .controller-enabled_report_indice_settings,
-  .controller-project_report_active_shared_layouts {
-    table.list:not(.odd-even) tbody tr:nth-child(odd) td {
-      background-color: var(--bg-primary);
-    }
-
-    table.list:not(.odd-even) tbody tr:nth-child(odd):hover td {
-      background-color: rgba(var(--bg-tertiary-rgb), 0.5);
-    }
-
-    table.report_settings tbody tr td:first-child,
-    table.report_settings tbody tr td:nth-child(2),
-    table.report_settings.version_settings tbody tr:nth-child(2n) td:nth-child(3),
-    table.indice-setting tr td:nth-of-type(1) {
-      // bg-background-secondary/50を透過無しで表現したカラーコード
-      background-color: #F8F8F9;
-    }
-
-    table.report_settings tbody tr:hover td:first-child,
-    table.report_settings tbody tr:hover td:nth-child(2),
-    table.report_settings.version_settings tbody tr:nth-child(2n):hover td:nth-child(3),
-    table.indice-setting tr:hover td:nth-of-type(1) {
-      // bg-background-tertialy/50を透過無しで表現したカラーコード
-      background: #E5EEF3;
-    }
-
-    table.report_settings tbody tr:hover > td {
-      // bg-background-tertialy/50を透過無しで表現したカラーコード
-      background: #E5EEF3 !important;
-    }
+  #lac-modal .lac-chart-item-editor div[id^="lac-chart-"]:not(:first-child) {
+    margin-top: 0.5rem;
   }
 
+  #lac-modal .lac-chart-item-editor div[id^="lac-chart-"] .required {
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
+  }
 
-  .controller-indice_settings {
-    .contextual + h3 + .contextual {
-      margin-bottom: 0.5rem;
+  #lac-modal #filters {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    border-radius: var(--bd-radius-md);
+  }
+
+  #lac-modal #filters legend {
+    margin-bottom: 0;
+    padding-left: 1rem;
+  }
+
+  #lac-modal #query_form_with_buttons .buttons {
+    margin-top: 0.5rem;
+  }
+
+  #lac-modal .lac-issues-pagination {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .lac-relatable-types li {
+    min-height: 42px;
+  }
+
+  .lac-relatable-types li[data-type="precedes"] input[type="number"] {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+}
+
+
+// Lychee EVM
+.controller-project_evms {
+  // 基準日選択datepickerの年月選択フィールドが4.1.7だと段落落ちしているため対応
+  .ui-datepicker .ui-datepicker-year,
+  .ui-datepicker .ui-datepicker-month {
+    width: 45%;
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
+  }
+}
+
+// Lychee Cost
+.lychee-cost-cash-forecast__unit-description {
+  top: 1rem;
+  right: 1rem;
+}
+
+.controller-lychee_cost_expenses.controller-lychee_cost_expenses {
+  #month {
+    margin-right: 0.25rem;
+  }
+
+  #x_months {
+    width: 4.5rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
+
+  #content .total_amount {
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
+    text-align: left;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  #content .total_amount .value {
+    font-size: var(--txt-xl);
+    line-height: 1.75rem;
+  }
+
+  #lychee_cost_expense_amount {
+    margin-right: 0.25rem;
+  }
+
+  .new_lychee_cost_expense #lychee_cost_expense_amount,
+  .edit_lychee_cost_expense #lychee_cost_expense_amount {
+    width: auto;
+  }
+}
+
+// Cost Group
+.controller-cost_groups {
+  h2 + .autoscroll {
+    clear: both;
+    margin-top: 1rem;
+  }
+
+  h2 + .nodata {
+    clear: both;
+    margin-top: 1rem;
+  }
+}
+
+// Lychee Project Term
+.controller-projects.controller-projects {
+  #lychee_project_term_controls {
+    margin-top: 1rem;
+  }
+}
+
+// Lychee Custom Field
+.issue .attributes fieldset {
+  margin-top: 1rem;
+}
+
+.issue .attributes fieldset legend + div {
+  margin-top: 0.5rem;
+}
+
+.controller-custom_field_categories.controller-custom_field_categories {
+  .custom-field-categories {
+    margin-top: 1rem;
+  }
+}
+
+// Lychee Issue Sets
+.controller-lychee_issue_sets.controller-lychee_issue_sets {
+  .issue-sets thead .checkbox + th {
+    text-align: left;
+  }
+
+  .issue-sets .num-issue-templates {
+    width: 7rem;
+  }
+
+  .issue-sets .buttons {
+    width: 2rem;
+  }
+}
+
+.controller-lychee_issue_sets {
+  .issue-set {
+    clear: both;
+    background-color: var(--status-warning-light);
+    border-color: var(--border-divider);
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+    border-radius: var(--bd-radius-md);
+  }
+
+  .contextual + h3 {
+    margin-top: 1.5rem;
+  }
+
+  .issue-templates {
+    margin-top: 0.5rem;
+  }
+
+  // 新規作成・編集
+  .new_lychee_issue_set,
+  .edit_lychee_issue_set {
+    .tabular p,
+    #projects_issue_sets_attributes {
+      padding-left: 11rem;
     }
 
-    // 指標の作成・編集
-    .new_indice_setting,
-    .edit_indice_setting {
-      #custom-numerator-issue-filter-wrapper {
-        margin-bottom: 1rem;
-      }
+    .tabular label {
+      width: 10rem;
+      margin-left: -11rem;
+    }
 
-      #custom-denominator-issue-filter-wrapper select,
-      #custom-denominator-issue-filter-wrapper .select2-container {
+    #projects_issue_sets_attributes {
+      ul {
         margin-top: 0.5rem;
       }
 
-      p:has(#description-area) {
-        margin-top: 0.25rem;
+      ul li {
+        margin-top: 0.5rem;
       }
 
-      #partial-area {
-        margin-top: 1rem;
-      }
-
-      #indice-setting-form-thresholds #indice_setting_upper_threshold,
-      #indice-setting-form-thresholds #indice_setting_middle_threshold {
-        margin-top: 0.125rem;
-        margin-bottom: 0.125rem;
+      ul li label {
+        font-size: var(--txt-md);
+        line-height: 1.25rem;
       }
     }
   }
+}
 
-  // LPR 共通 カスタムクエリの作成
-  .controller-project_report_queries {
-    #content > h3 {
-      margin-top: 1rem;
-    }
+.controller-issue_forms .edit_lychee_issue_set table.issue-form-table textarea[id^="lychee_issue_set_issue_templates_attributes_"] {
+  resize: both;
+}
+
+.controller-lychee_issue_templates {
+  div.issue-template {
+    clear: both;
+    background-color: rgba(var(--bg-secondary-rgb), 0.2);
+    border: 1px solid var(--border-divider);
+    border-radius: var(--bd-radius-md);
+    margin-top: 1rem;
+    padding: 1.5rem;
   }
 
-  // LPR 固有
-  .controller-project_reports {
-    #project-report a.icon-settings,
-    #project-report a.icon-del,
-    #project-report a.icon-copy,
-    #project-report a.icon-add {
-      margin-left: 0.75rem;
-    }
+  div.issue-template .subject:not(td) {
+    font-size: var(--txt-lg);
+    line-height: 1.75rem;
+    font-weight: bold;
+  }
 
-    #project-report h2[class^="PanelLayout__Title"] {
+  div.issue-template .splitcontent .attribute {
+    overflow: hidden;
+    min-height: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  div.issue-template .description {
+    margin-bottom: 0.5rem;
+  }
+
+  div.issue-template .issue_template_tree {
+    margin-bottom: 0.5rem;
+  }
+
+  #attributes {
+    margin-top: 1rem;
+  }
+
+  #attributes + .splitcontent {
+    margin-top: 1rem;
+  }
+}
+
+.controller-issue_forms {
+  #content h2 + p + p {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .issue-set {
+    background-color: var(--status-warning-light);
+    border-color: var(--border-divider);
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+    border-radius: var(--bd-radius-md);
+  }
+
+  .issue-form-table td {
+    font-size: var(--txt-xs);
+    line-height: 1rem;
+  }
+
+  .issue-form-table {
+    select {
+      font-size: var(--txt-xs);
+      line-height: 1rem;
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem;
+      padding-right: 1.5rem;
+      padding-left: 0.5rem;
+      margin-top: 0;
       margin-bottom: 0;
     }
 
-    // バージョンのレポート選択フィールド
-    #version_report_link {
-      width: 165px;
-    }
-
-    // 各パネルの編集／セッティング／閉じるアイコン用
-    #content span[title="オプション"] {
-      margin-left: 0.25rem;
-      margin-right: 0.25rem;
-    }
-
-    // マイルストーンの期間フィールド
-    .milestone-months {
-      width: 65px;
-    }
-  }
-
-
-  // Lychee Work Plan
-  .controller-lychee_work_plan {
-    #content h2 {
-      padding-right: 0.5rem;
-    }
-  }
-
-
-  // Lychee Time Management
-  .controller-time_management {
-    main button {
+    select[multiple] {
       padding-left: 0.25rem;
       padding-right: 0.25rem;
     }
 
-    #content {
-      padding: 1rem;
-    }
-
-    /* モーダルを開いている間はtop-menuをモーダルより下に表示したい */
-    &.ReactModal__Body--open {
-      #top-menu {
-        z-index: 1;
-      }
-    }
-
-    // フィルタモーダルのpagination
-    .ReactModal__Content h2 {
-      margin-bottom: 0;
-    }
-
-    .ReactModal__Content .pagination {
-      margin-top: 0;
-    }
-
-    .ReactModal__Content div:has(> .list) {
-      margin-bottom: 0.5rem;
-    }
-
-    // セル上を右クリックで表示される時間入力UI
-    // Note: ライブラリを使っているようで、そのライブラリ固有のclass名を利用する
-    .tippy-content hr {
-      height: 1px;
-      margin-top: 0.75rem;
-      margin-bottom: 0.75rem;
-    }
-  }
-
-
-  // Lychee ステータスカラー
-  .controller-issue_statuses.controller-issue_statuses.action-index td.name {
-    display: revert;
-  }
-
-  // Lychee Kanban
-  .controller-kanban.controller-kanban {
-    select, input {
-      height: auto;
-    }
-
-    #content .tabs {
-      margin-bottom: 0.25rem;
-    }
-
-    .task-kanban-icon-fullscreen__start {
-      background-image: url(images/fullscreen_success.svg);
-      margin-right: 1rem;
-    }
-
-    .task-kanban-icon-fullscreen__exit {
-      background-image: url(images/close_fullscreen_default.svg);
-      margin-right: 1rem;
-    }
-
-    #burn_down_type_wrap {
-      position: static;
-      margin-top: 0.5rem;
-    }
-
-    input[name="spent_on"] {
-      width: 7rem;
-    }
-
-    input[name="hours"] {
-      width: 3rem;
-    }
-
-    .status-item-relation.status-item--highlight {
-      margin-top: 0;
-      margin-bottom: 0;
-      margin-left: 2px;
-      margin-right: 2px;
-    }
-  }
-
-  .controller-projects.controller-projects {
-    #kanban.collapsible {
-      margin-bottom: 1.5rem;
-    }
-
-    #kanban.collapsible > legend, #backlog > legend {
-      margin-bottom: 1rem;
-    }
-
-    #kanban.collapsible input[type="checkbox"] {
-      margin-right: 0.25rem;
-    }
-
-    #kanban.collapsible input[type="checkbox"] + label {
-      margin-right: 0.5rem;
-    }
-
-    #kanban.collapsible .box ~ .box fieldset {
-      margin-top: 1rem;
-    }
-
-    #kanban.collapsible .box ~ .box fieldset legend + div {
-      padding-left: 14px;
-    }
-
-    #backlog.collapsible table td {
-      padding-top: 0.75rem;
-    }
-
-    #backlog.collapsible table tr:first-child td {
-      padding-top: 0;
-    }
-
-    #backlog.collapsible input[type="checkbox"] {
-      margin-right: 0.25rem;
-    }
-
-    #backlog.collapsible input[type="checkbox"] + label {
-      margin-right: 0.5rem;
-    }
-
-    #backlog.collapsible .box ~ .box fieldset {
-      margin-top: 1rem;
-    }
-
-    #backlog.collapsible .box ~ .box fieldset legend + div {
-      padding-left: 14px;
-    }
-  }
-
-  // Lychee Backlog
-  .controller-backlog.controller-backlog {
-    select, input {
-      height: auto;
-    }
-
-    .velocity__container > div {
-      margin-top: 1rem;
-    }
-
-    .velocity__container > div input[type="number"] {
-      margin-top: 0.5rem;
-    }
-
-    .task-kanban-icon-fullscreen__start {
-      background-image: url(images/fullscreen_success.svg);
-      margin-right: 1rem;
-    }
-
-    .task-kanban-icon-fullscreen__exit {
-      background-image: url(images/close_fullscreen_default.svg);
-      margin-right: 1rem;
-    }
-  }
-
-  // Lychee Gantt Chart
-  .controller-lgc.controller-lgc {
-    .lgc-tree {
-      padding-bottom: 1.5rem;
-    }
-
-    .lgc-issueDetail-header {
-      height: auto;
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
-    }
-
-    .lgc-form-fieldset__inlineBlock {
-      margin-bottom: 0.25rem;
-      padding-top: 0.5rem;
-      padding-left: 0.75rem;
-      padding-right: 0.75rem;
-      padding-bottom: 0.75rem;
-      border-radius: var(--bd-radius-md);
-    }
-
-    .lgc-form-fieldset__inlineBlock ~ .lgc-form-fieldset__inlineBlock {
-      margin-right: 0.25rem;
-    }
-
-    .lgc-form-fieldset__inlineBlock label {
-      display: inline-flex;
-      align-items: center;
-    }
-
-    .lgc-form-fieldset__inlineBlock label input[type="checkbox"] {
-      margin-right: 0.25rem;
-    }
-
-    .lgc-queryForm-dateRange {
+    input:not([type="checkbox"], [type="radio"], [type="submit"]),
+    textarea {
       font-size: var(--txt-xs);
       line-height: 1rem;
-    }
-
-    .lgc-queryForm-zoom-selection {
-      margin-top: 1rem;
-    }
-
-    .lgc-queryForm-zoom-selection li {
-      font-size: var(--txt-xs);
-      line-height: 1rem;
-    }
-
-    .lgc-queryForm-zoom-selection li:not(:first-child) {
-      margin-left: 0;
-    }
-
-    .lgc-queryForm-zoom-selection li::before {
-      margin-right: 0.375rem;
-    }
-
-    .contextual .lgc-popover {
-      margin-left: 0;
-    }
-
-    .contextual .lgc-icon-fullscreen__start,
-    .contextual .lgc-icon-fullscreen__exit {
-      margin-left: 0;
-    }
-
-    .lgc-separator__vertical {
-      margin-left: 0.5rem;
-      margin-right: 0.5rem;
-    }
-
-    .lgc-download-options {
-      .lgc-download-options-pageSize,
-      .lgc-download-options-orientation,
-      .lgc-download-options-margin,
-      .lgc-download-options-scale,
-      .lgc-download-options-header-left,
-      .lgc-download-options-header-center,
-      .lgc-download-options-header-right,
-      .lgc-download-options-project-name-display,
-      .lgc-download-options-date-label-display {
-        font-size: var(--txt-xs);
-        line-height: 1rem;
-      }
-
-      .lgc-download-options-margin input {
-        width: 3rem;
-      }
-    }
-
-    .lgc-plan {
-      label[for="plan_name"] {
-        font-size: var(--txt-xs);
-        line-height: 1rem;
-      }
-
-      .lgc-plan-list {
-        font-size: var(--txt-xs);
-        line-height: 1rem;
-      }
-    }
-
-    // チケットの一括編集
-    .lgc-issueDetail-bulkEdit-issues {
-      list-style-type: disc;
-      padding-left: 1.5rem;
-    }
-
-    // チケット連続追加のUI
-    .lgc-tree input[type="text"],
-    .lgc-tree select {
-      height: 20px !important;
-      padding-top: 0;
-      padding-bottom: 0;
-      border-radius: var(--bd-radius-base);
-    }
-  }
-
-  // Lychee Gantt Chart 5
-  .controller-lychee_gantt_chart.controller-lychee_gantt_chart {
-    ul[class^="lgc-AvailableColumnList-"] li label {
-      gap: 3px;
-    }
-
-    // 担当者が未設定の場合にアイコンが表示されないため特別対応
-    span[class^="lgc-RedmineIcon-"].icon-issue {
-      display: inline-block;
-    }
-  }
-
-
-  // チケット関連図
-  .controller-association_chart.controller-association_chart {
-    #query_form_content #filters legend + div {
-      padding-left: 0;
-    }
-
-    #lac-modal .lac-chart-item-editor div[id^="lac-chart-"]:not(:first-child) {
-      margin-top: 0.5rem;
-    }
-
-    #lac-modal .lac-chart-item-editor div[id^="lac-chart-"] .required {
-      font-size: var(--txt-md);
-      line-height: 1.25rem;
-    }
-
-    #lac-modal #filters {
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
-      padding-left: 0.75rem;
-      padding-right: 0.75rem;
-      border-radius: var(--bd-radius-md);
-    }
-
-    #lac-modal #filters legend {
-      margin-bottom: 0;
-      padding-left: 1rem;
-    }
-
-    #lac-modal #query_form_with_buttons .buttons {
-      margin-top: 0.5rem;
-    }
-
-    #lac-modal .lac-issues-pagination {
-      margin-top: 0.75rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .lac-relatable-types li {
-      min-height: 42px;
-    }
-
-    .lac-relatable-types li[data-type="precedes"] input[type="number"] {
       padding-top: 0.25rem;
       padding-bottom: 0.25rem;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      margin-top: 0;
+      margin-bottom: 0;
     }
   }
 
-
-  // Lychee EVM
-  .controller-project_evms {
-    // 基準日選択datepickerの年月選択フィールドが4.1.7だと段落落ちしているため対応
-    .ui-datepicker .ui-datepicker-year,
-    .ui-datepicker .ui-datepicker-month {
-      width: 45%;
-      font-size: var(--txt-md);
-      line-height: 1.25rem;
-    }
-  }
-
-  // Lychee Cost
-  .lychee-cost-cash-forecast__unit-description {
-    top: 1rem;
-    right: 1rem;
-  }
-
-  .controller-lychee_cost_expenses.controller-lychee_cost_expenses {
-    #month {
-      margin-right: 0.25rem;
-    }
-
-    #x_months {
-      width: 4.5rem;
-      margin-top: 0.25rem;
-      margin-bottom: 0.25rem;
-    }
-
-    #content .total_amount {
-      font-size: var(--txt-md);
-      line-height: 1.25rem;
-      text-align: left;
-      margin-top: 0.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    #content .total_amount .value {
-      font-size: var(--txt-xl);
-      line-height: 1.75rem;
-    }
-
-    #lychee_cost_expense_amount {
-      margin-right: 0.25rem;
-    }
-
-    .new_lychee_cost_expense #lychee_cost_expense_amount,
-    .edit_lychee_cost_expense #lychee_cost_expense_amount {
-      width: auto;
-    }
-  }
-
-  // Cost Group
-  .controller-cost_groups {
-    h2 + .autoscroll {
-      clear: both;
-      margin-top: 1rem;
-    }
-
-    h2 + .nodata {
-      clear: both;
-      margin-top: 1rem;
-    }
-  }
-
-  // Lychee Project Term
-  .controller-projects.controller-projects {
-    #lychee_project_term_controls {
-      margin-top: 1rem;
-    }
-  }
-
-  // Lychee Custom Field
-  .issue .attributes fieldset {
+  .issue-form-table + p {
     margin-top: 1rem;
   }
 
-  .issue .attributes fieldset legend + div {
+  .issue-form-table + p + p {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  label[for="fixed_version_id"],
+  label[for="title"] {
+    display: inline-block;
+    width: 7rem;
+    font-weight: bold;
+  }
+
+  #content input[name="commit"] {
+    margin-top: 1rem;
+  }
+}
+
+.controller-projects {
+  #issue-set-setting-form input[name="commit"] {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+
+// Lychee Message Box
+.controller-lychee_message_box_informations.controller-lychee_message_box_informations,
+.controller-lychee_message_box_my_boxes.controller-lychee_message_box_my_boxes,
+.controller-lychee_message_box_system_errors.controller-lychee_message_box_system_errors {
+  #content {
+    padding-top: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+  }
+
+  .lychee-message-box-types > li.mark_as_read a {
+    font-size: 0.75rem;
+  }
+
+  .lychee-message-box-root {
+    border-left-width: 0;
+    border-right-width: 0;
+  }
+
+  .lychee-message-box-root.issue_update .balloon {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: var(--bd-radius-xl);
+  }
+
+  .lychee-message-box-root.issue_update .balloon .details {
+    font-size: var(--txt-xs);
+    line-height: 1rem;
+  }
+
+  .lychee-message-box-root.issue_update .note-all .details {
+    padding: 1rem;
+    border-radius: var(--bd-radius-lg);
+  }
+
+  .lychee-message-box-root.issue_update .note-details .details {
+    padding-left: 0;
+  }
+
+  .lychee-message-box-root.issue_update .details textarea {
+    height: 38px;
+    border: 1px solid var(--border-default);
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    border-radius: var(--bd-radius-md);
+  }
+
+  .lychee-message-box-root.issue_update .details input[type="submit"] {
+      height: 38px;
+      font-size: var(--txt-md);
+      line-height: 1.25rem;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+      border-radius: var(--bd-radius-md);
+      box-shadow: var(--shadow);
+
+      &:hover {
+        background-color: var(--product-hover);
+        box-shadow: var(--shadow-none);
+      }
+
+      &:active {
+        background-color: var(--product-active);
+        box-shadow: var(--shadow-none);
+      }
+  }
+}
+
+// Message Box → お知らせ・管理者へのお知らせ
+.controller-lychee_message_box_informations.controller-lychee_message_box_informations,
+.controller-lychee_message_box_system_errors.controller-lychee_message_box_system_errors {
+  .details-content p ~ p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+
+
+// Lychee ライセンス管理
+.controller-lychee_licenses.controller-lychee_licenses {
+  #new_registration + hr + a {
+    display: inline-block;
     margin-top: 0.5rem;
   }
 
-  .controller-custom_field_categories.controller-custom_field_categories {
-    .custom-field-categories {
-      margin-top: 1rem;
-    }
+  #new_registration table td {
+    padding: 0.5rem;
+  }
+}
+
+.controller-lychee_modules.controller-lychee_modules {
+  .lychee-modules__projects {
+    margin-left: 0.75rem;
   }
 
-  // Lychee Issue Sets
-  .controller-lychee_issue_sets.controller-lychee_issue_sets {
-    .issue-sets thead .checkbox + th {
-      text-align: left;
-    }
-
-    .issue-sets .num-issue-templates {
-      width: 7rem;
-    }
-
-    .issue-sets .buttons {
-      width: 2rem;
-    }
+  .lychee-modules__projects li {
+    margin-top: 0.5rem;
   }
 
-  .controller-lychee_issue_sets {
-    .issue-set {
-      clear: both;
-      background-color: var(--status-warning-light);
-      border-color: var(--border-divider);
-      margin-top: 1rem;
-      margin-bottom: 0.5rem;
-      padding: 1rem;
-      border-radius: var(--bd-radius-md);
-    }
-
-    .contextual + h3 {
-      margin-top: 1.5rem;
-    }
-
-    .issue-templates {
-      margin-top: 0.5rem;
-    }
-
-    // 新規作成・編集
-    .new_lychee_issue_set,
-    .edit_lychee_issue_set {
-      .tabular p,
-      #projects_issue_sets_attributes {
-        padding-left: 11rem;
-      }
-
-      .tabular label {
-        width: 10rem;
-        margin-left: -11rem;
-      }
-
-      #projects_issue_sets_attributes {
-        ul {
-          margin-top: 0.5rem;
-        }
-
-        ul li {
-          margin-top: 0.5rem;
-        }
-
-        ul li label {
-          font-size: var(--txt-md);
-          line-height: 1.25rem;
-        }
-      }
-    }
+  table.list.lychee-modules .name {
+    padding-left: 1rem;
   }
 
-  .controller-issue_forms .edit_lychee_issue_set table.issue-form-table textarea[id^="lychee_issue_set_issue_templates_attributes_"] {
-    resize: both;
+  .lychee-modules details {
+    cursor: pointer;
   }
 
-  .controller-lychee_issue_templates {
-    div.issue-template {
-      clear: both;
-      background-color: rgba(var(--bg-secondary-rgb), 0.2);
-      border: 1px solid var(--border-divider);
-      border-radius: var(--bd-radius-md);
-      margin-top: 1rem;
-      padding: 1.5rem;
-    }
-
-    div.issue-template .subject:not(td) {
-      font-size: var(--txt-lg);
-      line-height: 1.75rem;
-      font-weight: bold;
-    }
-
-    div.issue-template .splitcontent .attribute {
-      overflow: hidden;
-      min-height: 0;
-      margin-bottom: 0.5rem;
-    }
-
-    div.issue-template .description {
-      margin-bottom: 0.5rem;
-    }
-
-    div.issue-template .issue_template_tree {
-      margin-bottom: 0.5rem;
-    }
-
-    #attributes {
-      margin-top: 1rem;
-    }
-
-    #attributes + .splitcontent {
-      margin-top: 1rem;
-    }
+  .lychee-modules details summary {
+    background-image: url(images/chevron_right_default.svg);
+    background-position: left center;
+    background-repeat: no-repeat;
+    list-style-type: none;
+    padding-left: 1rem;
   }
 
-  .controller-issue_forms {
-    #content h2 + p + p {
-      margin-top: 1rem;
-      margin-bottom: 0.5rem;
-    }
+  .lychee-modules details[open] summary {
+    background-image: url(images/expand_more_default.svg);
+  }
+}
 
-    .issue-set {
-      background-color: var(--status-warning-light);
-      border-color: var(--border-divider);
-      margin-bottom: 0.5rem;
-      padding: 1rem;
-      border-radius: var(--bd-radius-md);
-    }
 
-    .issue-form-table td {
-      font-size: var(--txt-xs);
-      line-height: 1rem;
-    }
+// Lychee Billing
+.controller-lychee_billing {
+  #lychee_billing_content ul {
+    list-style-type: disc;
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+  }
+}
 
-    .issue-form-table {
-      select {
-        font-size: var(--txt-xs);
-        line-height: 1rem;
-        padding-top: 0.25rem;
-        padding-bottom: 0.25rem;
-        padding-right: 1.5rem;
-        padding-left: 0.5rem;
-        margin-top: 0;
-        margin-bottom: 0;
-      }
 
-      select[multiple] {
-        padding-left: 0.25rem;
-        padding-right: 0.25rem;
-      }
-
-      input:not([type="checkbox"], [type="radio"], [type="submit"]),
-      textarea {
-        font-size: var(--txt-xs);
-        line-height: 1rem;
-        padding-top: 0.25rem;
-        padding-bottom: 0.25rem;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-        margin-top: 0;
-        margin-bottom: 0;
-      }
-    }
-
-    .issue-form-table + p {
-      margin-top: 1rem;
-    }
-
-    .issue-form-table + p + p {
-      margin-top: 0.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    label[for="fixed_version_id"],
-    label[for="title"] {
-      display: inline-block;
-      width: 7rem;
-      font-weight: bold;
-    }
-
-    #content input[name="commit"] {
-      margin-top: 1rem;
-    }
+// Lychee Log
+.controller-logs.controller-logs {
+  .list td {
+    font-size: var(--txt-xs);
+    line-height: 1rem;
   }
 
-  .controller-projects {
-    #issue-set-setting-form input[name="commit"] {
-      margin-top: 0.5rem;
-      margin-bottom: 0.5rem;
-    }
+  .list td form {
+    display: inline;
+  }
+}
+
+
+// Lychee Rest Days 会社休日設定
+.controller-rest_days.controller-rest_days {
+  .new_rest_day_csv {
+    margin-bottom: 1rem;
   }
 
-
-  // Lychee Message Box
-  .controller-lychee_message_box_informations.controller-lychee_message_box_informations,
-  .controller-lychee_message_box_my_boxes.controller-lychee_message_box_my_boxes,
-  .controller-lychee_message_box_system_errors.controller-lychee_message_box_system_errors {
-    #content {
-      padding-top: 10px;
-      padding-left: 0;
-      padding-right: 0;
-      padding-bottom: 0;
-    }
-
-    .lychee-message-box-types > li.mark_as_read a {
-      font-size: 0.75rem;
-    }
-
-    .lychee-message-box-root {
-      border-left-width: 0;
-      border-right-width: 0;
-    }
-
-    .lychee-message-box-root.issue_update .balloon {
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
-      border-radius: var(--bd-radius-xl);
-    }
-
-    .lychee-message-box-root.issue_update .balloon .details {
-      font-size: var(--txt-xs);
-      line-height: 1rem;
-    }
-
-    .lychee-message-box-root.issue_update .note-all .details {
-      padding: 1rem;
-      border-radius: var(--bd-radius-lg);
-    }
-
-    .lychee-message-box-root.issue_update .note-details .details {
-      padding-left: 0;
-    }
-
-    .lychee-message-box-root.issue_update .details textarea {
-      height: 38px;
-      border: 1px solid var(--border-default);
-      font-size: var(--txt-md);
-      line-height: 1.25rem;
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
-      padding-left: 0.75rem;
-      padding-right: 0.75rem;
-      border-radius: var(--bd-radius-md);
-    }
-
-    .lychee-message-box-root.issue_update .details input[type="submit"] {
-        height: 38px;
-        font-size: var(--txt-md);
-        line-height: 1.25rem;
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-        padding-left: 0.75rem;
-        padding-right: 0.75rem;
-        border-radius: var(--bd-radius-md);
-        box-shadow: var(--shadow);
-
-        &:hover {
-          background-color: var(--product-hover);
-          box-shadow: var(--shadow-none);
-        }
-
-        &:active {
-          background-color: var(--product-active);
-          box-shadow: var(--shadow-none);
-        }
-    }
+  .new_rest_day_csv input[type="file"] {
+    max-width: none;
   }
 
-  // Message Box → お知らせ・管理者へのお知らせ
-  .controller-lychee_message_box_informations.controller-lychee_message_box_informations,
-  .controller-lychee_message_box_system_errors.controller-lychee_message_box_system_errors {
-    .details-content p ~ p {
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-    }
+  .new_rest_day_csv input[name="commit"] {
+    margin-top: 0.5rem;
   }
 
-
-
-  // Lychee ライセンス管理
-  .controller-lychee_licenses.controller-lychee_licenses {
-    #new_registration + hr + a {
-      display: inline-block;
-      margin-top: 0.5rem;
-    }
-
-    #new_registration table td {
-      padding: 0.5rem;
-    }
+  h4 {
+    margin-bottom: 0.5rem;
   }
 
-  .controller-lychee_modules.controller-lychee_modules {
-    .lychee-modules__projects {
-      margin-left: 0.75rem;
-    }
-
-    .lychee-modules__projects li {
-      margin-top: 0.5rem;
-    }
-
-    table.list.lychee-modules .name {
-      padding-left: 1rem;
-    }
-
-    .lychee-modules details {
-      cursor: pointer;
-    }
-
-    .lychee-modules details summary {
-      background-image: url(images/chevron_right_default.svg);
-      background-position: left center;
-      background-repeat: no-repeat;
-      list-style-type: none;
-      padding-left: 1rem;
-    }
-
-    .lychee-modules details[open] summary {
-      background-image: url(images/expand_more_default.svg);
-    }
+  .new_rest_day_csv + div .box {
+    margin-bottom: 0;
   }
 
+  #lychee_rest_day_day {
+    min-width: 110px;
+    margin-right: 1rem;
+  }
+}
 
-  // Lychee Billing
-  .controller-lychee_billing {
-    #lychee_billing_content ul {
-      list-style-type: disc;
-      margin-top: 0.5rem;
-      padding-left: 1rem;
-    }
+
+// Lychee SAML
+.controller-auth_source_saml.controller-auth_source_saml {
+  .tabular p {
+    padding-left: 10rem;
   }
 
-
-  // Lychee Log
-  .controller-logs.controller-logs {
-    .list td {
-      font-size: var(--txt-xs);
-      line-height: 1rem;
-    }
-
-    .list td form {
-      display: inline;
-    }
+  .tabular label {
+    width: 9rem;
+    margin-left: -10rem;
   }
 
-
-  // Lychee Rest Days 会社休日設定
-  .controller-rest_days.controller-rest_days {
-    .new_rest_day_csv {
-      margin-bottom: 1rem;
-    }
-
-    .new_rest_day_csv input[type="file"] {
-      max-width: none;
-    }
-
-    .new_rest_day_csv input[name="commit"] {
-      margin-top: 0.5rem;
-    }
-
-    h4 {
-      margin-bottom: 0.5rem;
-    }
-
-    .new_rest_day_csv + div .box {
-      margin-bottom: 0;
-    }
-
-    #lychee_rest_day_day {
-      min-width: 110px;
-      margin-right: 1rem;
-    }
+  td.buttons a:hover,
+  td.buttons a:active {
+    background-color: transparent;
+    border-width: 0;
   }
 
+  td.buttons .icon-del {
+    margin-left: 0.5rem;
+  }
+}
 
-  // Lychee SAML
-  .controller-auth_source_saml.controller-auth_source_saml {
-    .tabular p {
-      padding-left: 10rem;
-    }
+#redirect_to_auth_request_box {
+  margin-top: 1rem;
+}
 
-    .tabular label {
-      width: 9rem;
-      margin-left: -10rem;
-    }
 
-    td.buttons a:hover,
-    td.buttons a:active {
-      background-color: transparent;
-      border-width: 0;
-    }
-
-    td.buttons .icon-del {
-      margin-left: 0.5rem;
-    }
+// Lychee CCPM
+.controller-projects.controller-projects {
+  #ccpm_version_settings p {
+    border-bottom: 1px solid var(--border-divider);
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
   }
 
-  #redirect_to_auth_request_box {
-    margin-top: 1rem;
+  #ccpm_version_settings legend + p {
+    border-width: 0;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-bottom: 0;
   }
 
+  #ccpm_version_settings p:last-child {
+    border-width: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
 
-  // Lychee CCPM
-  .controller-projects.controller-projects {
-    #ccpm_version_settings p {
-      border-bottom: 1px solid var(--border-divider);
-      margin-top: 0;
-      margin-bottom: 1.5rem;
-      padding-bottom: 1.5rem;
-    }
+// エクスポートのコンテキストメニューを展開したときにグラフが落ちないようにするための対応
+.controller-root_fever_charts,
+.controller-fever_charts {
+  div[id^="project_fever_chart"],
+  div[id^="version_fever_chart"] {
+    display: inline-flex;
+  }
+}
 
-    #ccpm_version_settings legend + p {
-      border-width: 0;
-      margin-top: 0;
-      margin-bottom: 1rem;
-      padding-bottom: 0;
-    }
 
-    #ccpm_version_settings p:last-child {
-      border-width: 0;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
+// Lychee Checklist
+.controller-issues.action-new {
+  #checklist_for_new {
+    flex-direction: column;
   }
 
-  // エクスポートのコンテキストメニューを展開したときにグラフが落ちないようにするための対応
-  .controller-root_fever_charts,
-  .controller-fever_charts {
-    div[id^="project_fever_chart"],
-    div[id^="version_fever_chart"] {
-      display: inline-flex;
-    }
+  #checklist_for_new > label {
+    justify-content: flex-start;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+    padding-left: 0;
   }
 
+  #checklist_for_new > #checklist_wrapper {
+    margin-left: 0;
+  }
+}
 
-  // Lychee Checklist
-  .controller-issues.action-new {
-    #checklist_for_new {
-      flex-direction: column;
-    }
-
-    #checklist_for_new > label {
-      justify-content: flex-start;
-      margin-top: 0;
-      margin-left: 0;
-      margin-right: 0;
-      margin-bottom: 0.5rem;
-      padding-left: 0;
-    }
-
-    #checklist_for_new > #checklist_wrapper {
-      margin-left: 0;
-    }
+.controller-lychee_issue_templates.action-new,
+.controller-lychee_issue_templates.action-edit {
+  #checklist_for_new {
+    min-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 11rem;
   }
 
-  .controller-lychee_issue_templates.action-new,
-  .controller-lychee_issue_templates.action-edit {
-    #checklist_for_new {
-      min-height: 0;
-      padding-top: 0;
-      padding-bottom: 0;
-      padding-left: 11rem;
-    }
-
-    #checklist_for_new > label {
-      width: 9rem;
-      color: var(--txt-default);
-      font-size: var(--txt-xs);
-      line-height: 1rem;
-      padding-top: 0;
-      padding-bottom: 0;
-      padding-right: 1rem;
-      padding-left: 0;
-      margin-left: -10rem;
-      transform: translateY(0.25rem);
-    }
-
-    #checklist_for_new #checklist_wrapper {
-      margin-left: 0;
-    }
+  #checklist_for_new > label {
+    width: 9rem;
+    color: var(--txt-default);
+    font-size: var(--txt-xs);
+    line-height: 1rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 1rem;
+    padding-left: 0;
+    margin-left: -10rem;
+    transform: translateY(0.25rem);
   }
 
-  // Lychee Project Template
-  .controller-projects {
-    #new_project .label_base_date_start_date {
-      margin-right: 0.5rem;
-    }
+  #checklist_for_new #checklist_wrapper {
+    margin-left: 0;
+  }
+}
 
-    #new_project #project_start_date {
-      margin-top: 0.5rem;
-    }
+// Lychee Project Template
+.controller-projects {
+  #new_project .label_base_date_start_date {
+    margin-right: 0.5rem;
   }
 
-  // Lychee Issue Form
-  .lychee-issue-form__container_full.lychee-issue-form__container_full,
-  .lychee-issue-form__container_half.lychee-issue-form__container_half {
-    #dialog-content-column-single {
-      padding: 0.75rem;
-    }
+  #new_project #project_start_date {
+    margin-top: 0.5rem;
+  }
+}
 
-    #tab-buttons {
-      padding-bottom: 1rem;
-    }
-
-    .required {
-      padding-left: 0.25rem;
-    }
-
-    #dialog-content-header {
-      box-sizing: content-box;
-      height: 102px;
-    }
-
-    #lif-issue_subject {
-      border-width: 1px;
-      border-color: transparent;
-      font-size: var(--txt-md);
-      line-height: 1.25rem;
-      padding-top: 0.375rem;
-      padding-left: 0.75rem;
-      padding-right: 0.75rem;
-      border-radius: var(--bd-radius-md);
-    }
-
-    #dialog-content-header h4 .show,
-    .fields .attribute dd .show,
-    .lif-description .text .show,
-    .date-fields dl dd .issue-item .show {
-      border-width: 1px;
-      border-color: transparent;
-      font-size: var(--txt-md);
-      line-height: 1.25rem;
-      margin-top: 1px;
-      margin-bottom: 1px;
-      padding-top: 0.375rem;
-      padding-bottom: 0.375rem;
-      padding-left: 0.75rem;
-      padding-right: 0.75rem;
-      border-radius: var(--bd-radius-md);
-    }
-
-    #tab-property .show {
-      min-height: 34px;
-    }
-
-    #tab-property .estimated-hours .show,
-    #tab-property .remaining-estimate .show,
-    #tab-property .done-ratio .show {
-      min-height: 0px;
-    }
-
-    #dialog-content-header h4 {
-      margin-bottom: 0.25rem;
-    }
-
-    #dialog-content-header h4 .issue-item {
-      margin-left: 0.25rem;
-    }
-
-    #dialog-content-header h4 .show:hover,
-    #dialog-content-header h3 .show:hover {
-      background-color: var(--bg-secondary);
-    }
-
-    #dialog-content-header h3 {
-      margin-bottom: 0;
-    }
-
-    .lif-description .header .left h5 {
-      font-weight: bold;
-    }
-
-    .fields {
-      margin-top: 1rem;
-    }
-
-    .fields dl dt {
-      padding-right: 0.5rem;
-    }
-
-    .fields .attribute,
-    .tab-content-time_entries-form .attribute {
-      margin-top: 0.25rem;
-    }
-
-    .fields .attribute dd .edit > select,
-    .fields .attribute dd .edit > input {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-
-    .date-fields {
-      border-color: var(--border-divider);
-      margin-top: 1rem;
-      padding-bottom: 1rem;
-    }
-
-    .date-fields .edit input {
-      width: 140px;
-      font-size: var(--txt-md);
-      line-height: 1.25rem;
-      padding-top: 0.375rem;
-      padding-bottom: 0.375rem;
-      padding-left: 0.75rem;
-      padding-right: 0.75rem;
-      border-radius: var(--bd-radius-md);
-    }
-
-    .horizon-fields {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      border-color: var(--border-divider);
-      margin-top: 1rem;
-      padding-bottom: 1rem;
-    }
-
-    .horizon-fields .edit input {
-      font-size: var(--txt-md);
-      line-height: 1.25rem;
-      padding-top: 0.375rem;
-      padding-bottom: 0.375rem;
-      padding-left: 0.75rem;
-      padding-right: 0.75rem;
-      border-radius: var(--bd-radius-md);
-    }
-
-    .fields.attachment_files {
-      border-color: var(--border-divider);
-      margin-top: 1rem;
-      padding-bottom: 1rem;
-    }
-
-    .fields.attachment_files #file-input {
-      display: none;
-    }
-
-    .lif-tab-content {
-      height: calc(100vh - 244px);
-    }
-
-    .lif-tab-content .add-file,
-    .attachment_files .add-file {
-      border: 1px solid var(--bg-secondary);
-      margin-top: 0.25rem;
-      margin-bottom: 0.25rem;
-
-      &:hover {
-        border-color: var(--border-default);
-      }
-
-      &:active {
-        background-color: var(--bg-tertiary);
-        border-color: var(--border-divider);
-      }
-    }
-
-    .lif-tab-content .add-file .label,
-    .attachment_files .add-file .label {
-      height: auto;
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
-      padding-left: 0.75rem;
-      padding-right: 0.75rem;
-      border-radius: var(--bd-radius-md);
-    }
-
-    .lif-tab-content .item .avatar {
-      margin-right: 0.5rem;
-    }
-
-    .lif-tab-content #tab-content-comments_and_journals .notify .label {
-      height: auto;
-      border: 1px solid var(--bg-secondary);
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
-      padding-left: 0.75rem;
-      padding-right: 0.75rem;
-      border-radius: var(--bd-radius-md);
-
-      &:hover {
-        border-color: var(--border-default);
-      }
-
-      &:active {
-        background-color: var(--bg-secondary);
-        border-color: var(--border-divider);
-      }
-    }
-
-    .lif-tab-content #tab-content-comments_and_journals .controls {
-      margin-top: 1rem;
-    }
-
-    .tab-content-time_entries-form .time-entry-form-spent-on {
-      margin-top: 0;
-    }
-
-    .lif-tab-content .item .meta,
-    .lif-tab-content .item .details,
-    #tab-content-time_entries .notes > *,
-    .lif-tab-content .item .private-notes .wiki {
-      width: calc(100% - 32px);
-    }
-
-    .lif-tab-content .item .meta .context-menus {
-      margin-right: 0.25rem;
-    }
-
-    .lif-tab-content .item .item-date {
-      color: var(--txt-caption);
-      font-size: var(--txt-xs);
-      line-height: 1rem;
-      margin-top: 0.25rem;
-    }
-
-    .lif-tab-content .total .value {
-      margin-right: 0.5rem;
-    }
-
-    
-
-    // context menu
-    #popup ul,
-    .popup-ticket-context ul,
-    .popup-journal-context ul {
-      padding: 0.25rem;
-    }
-
-    #popup ul li,
-    .popup-ticket-context ul li,
-    .popup-journal-context ul li {
-      padding: 0;
-    }
-
-    .popup-ticket-context ul li:not(:first-child),
-    .popup-journal-context ul li:not(:first-child) {
-      margin-top: 0.125rem;
-    }
-
-    #popup ul li button,
-    .popup-ticket-context ul li button,
-    .popup-journal-context ul li button {
-      align-items: center;
-      font-size: var(--txt-md);
-      line-height: 1.25rem;
-      margin-left: 0px;
-      margin-right: 0;
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
-      padding-left: 0.75rem;
-      padding-right: 0.75rem;
-      border-radius: var(--bd-radius-base);
-
-      &:hover {
-        background-color: var(--bg-secondary);
-        font-weight: 400;
-      }
-
-      &:active {
-        background-color: var(--bg-tertiary);
-      }
-    }
+// Lychee Issue Form
+.lychee-issue-form__container_full.lychee-issue-form__container_full,
+.lychee-issue-form__container_half.lychee-issue-form__container_half {
+  #dialog-content-column-single {
+    padding: 0.75rem;
   }
 
-
-  // Lychee Issue Form 2
-  #lif-embed-close-button {
-    background-color: var(--bg-primary);
+  #tab-buttons {
+    padding-bottom: 1rem;
   }
 
-  #lif-embed-close-button:hover {
+  .required {
+    padding-left: 0.25rem;
+  }
+
+  #dialog-content-header {
+    box-sizing: content-box;
+    height: 102px;
+  }
+
+  #lif-issue_subject {
+    border-width: 1px;
+    border-color: transparent;
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
+    padding-top: 0.375rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    border-radius: var(--bd-radius-md);
+  }
+
+  #dialog-content-header h4 .show,
+  .fields .attribute dd .show,
+  .lif-description .text .show,
+  .date-fields dl dd .issue-item .show {
+    border-width: 1px;
+    border-color: transparent;
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    border-radius: var(--bd-radius-md);
+  }
+
+  #tab-property .show {
+    min-height: 34px;
+  }
+
+  #tab-property .estimated-hours .show,
+  #tab-property .remaining-estimate .show,
+  #tab-property .done-ratio .show {
+    min-height: 0px;
+  }
+
+  #dialog-content-header h4 {
+    margin-bottom: 0.25rem;
+  }
+
+  #dialog-content-header h4 .issue-item {
+    margin-left: 0.25rem;
+  }
+
+  #dialog-content-header h4 .show:hover,
+  #dialog-content-header h3 .show:hover {
     background-color: var(--bg-secondary);
   }
 
-  .lif-iframe-body {
-    #wrapper {
+  #dialog-content-header h3 {
+    margin-bottom: 0;
+  }
+
+  .lif-description .header .left h5 {
+    font-weight: bold;
+  }
+
+  .fields {
+    margin-top: 1rem;
+  }
+
+  .fields dl dt {
+    padding-right: 0.5rem;
+  }
+
+  .fields .attribute,
+  .tab-content-time_entries-form .attribute {
+    margin-top: 0.25rem;
+  }
+
+  .fields .attribute dd .edit > select,
+  .fields .attribute dd .edit > input {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .date-fields {
+    border-color: var(--border-divider);
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .date-fields .edit input {
+    width: 140px;
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    border-radius: var(--bd-radius-md);
+  }
+
+  .horizon-fields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border-color: var(--border-divider);
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .horizon-fields .edit input {
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    border-radius: var(--bd-radius-md);
+  }
+
+  .fields.attachment_files {
+    border-color: var(--border-divider);
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .fields.attachment_files #file-input {
+    display: none;
+  }
+
+  .lif-tab-content {
+    height: calc(100vh - 244px);
+  }
+
+  .lif-tab-content .add-file,
+  .attachment_files .add-file {
+    border: 1px solid var(--bg-secondary);
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+
+    &:hover {
+      border-color: var(--border-default);
+    }
+
+    &:active {
+      background-color: var(--bg-tertiary);
+      border-color: var(--border-divider);
+    }
+  }
+
+  .lif-tab-content .add-file .label,
+  .attachment_files .add-file .label {
+    height: auto;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    border-radius: var(--bd-radius-md);
+  }
+
+  .lif-tab-content .item .avatar {
+    margin-right: 0.5rem;
+  }
+
+  .lif-tab-content #tab-content-comments_and_journals .notify .label {
+    height: auto;
+    border: 1px solid var(--bg-secondary);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    border-radius: var(--bd-radius-md);
+
+    &:hover {
+      border-color: var(--border-default);
+    }
+
+    &:active {
+      background-color: var(--bg-secondary);
+      border-color: var(--border-divider);
+    }
+  }
+
+  .lif-tab-content #tab-content-comments_and_journals .controls {
+    margin-top: 1rem;
+  }
+
+  .tab-content-time_entries-form .time-entry-form-spent-on {
+    margin-top: 0;
+  }
+
+  .lif-tab-content .item .meta,
+  .lif-tab-content .item .details,
+  #tab-content-time_entries .notes > *,
+  .lif-tab-content .item .private-notes .wiki {
+    width: calc(100% - 32px);
+  }
+
+  .lif-tab-content .item .meta .context-menus {
+    margin-right: 0.25rem;
+  }
+
+  .lif-tab-content .item .item-date {
+    color: var(--txt-caption);
+    font-size: var(--txt-xs);
+    line-height: 1rem;
+    margin-top: 0.25rem;
+  }
+
+  .lif-tab-content .total .value {
+    margin-right: 0.5rem;
+  }
+
+  
+
+  // context menu
+  #popup ul,
+  .popup-ticket-context ul,
+  .popup-journal-context ul {
+    padding: 0.25rem;
+  }
+
+  #popup ul li,
+  .popup-ticket-context ul li,
+  .popup-journal-context ul li {
+    padding: 0;
+  }
+
+  .popup-ticket-context ul li:not(:first-child),
+  .popup-journal-context ul li:not(:first-child) {
+    margin-top: 0.125rem;
+  }
+
+  #popup ul li button,
+  .popup-ticket-context ul li button,
+  .popup-journal-context ul li button {
+    align-items: center;
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
+    margin-left: 0px;
+    margin-right: 0;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    border-radius: var(--bd-radius-base);
+
+    &:hover {
+      background-color: var(--bg-secondary);
+      font-weight: 400;
+    }
+
+    &:active {
+      background-color: var(--bg-tertiary);
+    }
+  }
+}
+
+
+// Lychee Issue Form 2
+#lif-embed-close-button {
+  background-color: var(--bg-primary);
+}
+
+#lif-embed-close-button:hover {
+  background-color: var(--bg-secondary);
+}
+
+.lif-iframe-body {
+  #wrapper {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 899px) {
+  .lif-iframe-body #main {
+    padding-top: 0;
+  }
+}
+
+// その他
+.controller-projects.controller-projects {
+  table.list:not(.odd-even) tbody tr:nth-child(odd) td {
+    background-color: var(--bg-primary);
+  }
+
+  table.list:not(.odd-even) tbody tr:nth-child(odd):hover td {
+    background-color: rgba(var(--bg-tertiary-rgb), 0.5);
+  }
+}
+
+.controller-routine_workflows {
+  .contextual + .nodata {
+    clear: both;
+  }
+
+  &.action-edit,
+  &.action-new {
+    .splitcontent:has(+ p) {
+      gap: 1rem;
+    }
+
+    .splitcontent:has(+ p) .splitcontentright {
+      margin-bottom: 1rem;
       margin-left: 0;
     }
-  }
 
-  @media screen and (max-width: 899px) {
-    .lif-iframe-body #main {
-      padding-top: 0;
+    .attributes {
+      margin-top: 1rem;
     }
   }
 
-  // その他
-  .controller-projects.controller-projects {
-    table.list:not(.odd-even) tbody tr:nth-child(odd) td {
-      background-color: var(--bg-primary);
+  &.action-show {
+    div.issue {
+      padding: 1rem;
     }
 
-    table.list:not(.odd-even) tbody tr:nth-child(odd):hover td {
-      background-color: rgba(var(--bg-tertiary-rgb), 0.5);
-    }
-  }
-
-  .controller-routine_workflows {
-    .contextual + .nodata {
-      clear: both;
+    div.issue p {
+      padding-top: 0.125rem;
+      padding-bottom: 0.125rem;
     }
 
-    &.action-edit,
-    &.action-new {
-      .splitcontent:has(+ p) {
-        gap: 1rem;
-      }
-
-      .splitcontent:has(+ p) .splitcontentright {
-        margin-bottom: 1rem;
-        margin-left: 0;
-      }
-
-      .attributes {
-        margin-top: 1rem;
-      }
-    }
-
-    &.action-show {
-      div.issue {
-        padding: 1rem;
-      }
-
-      div.issue p {
-        padding-top: 0.125rem;
-        padding-bottom: 0.125rem;
-      }
-
-      div.issue .attributes {
-        margin-top: 1rem;
-      }
+    div.issue .attributes {
+      margin-top: 1rem;
     }
   }
 }

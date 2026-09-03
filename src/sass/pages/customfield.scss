@@ -1,87 +1,85 @@
-@layer components {
-  .controller-custom_fields {
-    #content .box p + p {
-      margin-top: 0.5rem;
-    }
-
-    #content .box.tabular p + p {
-      margin-top: 1.5rem;
-    }
-
-    #content .box p label input[type=radio] {
-      margin-top: 0.5rem;
-    }
-
-    #custom_field_is_for_all {
-      margin-left: 0.25rem;
-    }
-
-    #custom_field_tracker_ids input[type="checkbox"]:not(:first-of-type) {
-      margin-left: 0.5rem;
-    }
-
-    /*
-    * カスタムフィールド >> 新しいカスタムフィールド の【追加するオブジェクトの選択】のlabel
-    * htmlにstyleを直接指定されており汎用的な上書きができないため、個別で上書き指定する
-    */
-    #content .box p + p label input[type="radio"] {
-      margin-top: -0.25rem;
-      margin-right: 0.25rem;
-    }
-
-    /*
-    * カスタムフィールド新規作成時の「全プロジェクト向け」のチェックUI
-    * label と input が、親子ではなく兄弟要素になっており、汎用的な上書きができないため、個別で指定している
-    */
-    #content .box p label[for="custom_field_is_for_all"] {
-      display: inline-block;
-      font-weight: bold;
-    }
-
-    /* プロジェクトリストにスクロールバーを表示する */
-    #custom_field_project_ids > ul {
-      margin-right: 0;
-    }
-
-    #custom_field_project_ids > ul::-webkit-scrollbar {
-      width: 6px;
-    }
-
-    #custom_field_project_ids>ul::-webkit-scrollbar-thumb {
-      background-color: rgba(var(--bg-dark-rgb), 0.5);
-      border-radius: var(--bd-radius-base);
-    }
-
-    #custom_field_project_ids>ul::-webkit-scrollbar-corner {
-      display: none;
-    }
+.controller-custom_fields {
+  #content .box p + p {
+    margin-top: 0.5rem;
   }
 
-  .controller-custom_field_enumerations {
-    /*
-    * キーバリューリストの選択肢編集画面
-    */
-    // 選択肢
-    #content form:not(#add-element) .box {
-      margin-bottom: 0.5rem;
-    }
+  #content .box.tabular p + p {
+    margin-top: 1.5rem;
+  }
 
-    // 保存・戻るボタンの装飾 
-    #content form:not(#add-element) input[type="submit"] {
-      margin-right: 0.25rem;
-    }
+  #content .box p label input[type=radio] {
+    margin-top: 0.5rem;
+  }
 
-    // Note: ボタンの装飾自体はbuttons.scss
-    #content form:not(#add-element) p:has(> input[type="submit"]) a {
-      margin-left: 0.25rem;
-    }
+  #custom_field_is_for_all {
+    margin-left: 0.25rem;
+  }
+
+  #custom_field_tracker_ids input[type="checkbox"]:not(:first-of-type) {
+    margin-left: 0.5rem;
+  }
+
+  /*
+  * カスタムフィールド >> 新しいカスタムフィールド の【追加するオブジェクトの選択】のlabel
+  * htmlにstyleを直接指定されており汎用的な上書きができないため、個別で上書き指定する
+  */
+  #content .box p + p label input[type="radio"] {
+    margin-top: -0.25rem;
+    margin-right: 0.25rem;
+  }
+
+  /*
+  * カスタムフィールド新規作成時の「全プロジェクト向け」のチェックUI
+  * label と input が、親子ではなく兄弟要素になっており、汎用的な上書きができないため、個別で指定している
+  */
+  #content .box p label[for="custom_field_is_for_all"] {
+    display: inline-block;
+    font-weight: bold;
+  }
+
+  /* プロジェクトリストにスクロールバーを表示する */
+  #custom_field_project_ids > ul {
+    margin-right: 0;
+  }
+
+  #custom_field_project_ids > ul::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  #custom_field_project_ids>ul::-webkit-scrollbar-thumb {
+    background-color: rgba(var(--bg-dark-rgb), 0.5);
+    border-radius: var(--bd-radius-base);
+  }
+
+  #custom_field_project_ids>ul::-webkit-scrollbar-corner {
+    display: none;
+  }
+}
+
+.controller-custom_field_enumerations {
+  /*
+  * キーバリューリストの選択肢編集画面
+  */
+  // 選択肢
+  #content form:not(#add-element) .box {
+    margin-bottom: 0.5rem;
+  }
+
+  // 保存・戻るボタンの装飾 
+  #content form:not(#add-element) input[type="submit"] {
+    margin-right: 0.25rem;
+  }
+
+  // Note: ボタンの装飾自体はbuttons.scss
+  #content form:not(#add-element) p:has(> input[type="submit"]) a {
+    margin-left: 0.25rem;
+  }
 
 
-    /*
-    * キーバリューリストの「新しい値」エリア
-    */
-    #add-element {
-      margin-top: 1.5rem;
-    }
+  /*
+  * キーバリューリストの「新しい値」エリア
+  */
+  #add-element {
+    margin-top: 1.5rem;
   }
 }

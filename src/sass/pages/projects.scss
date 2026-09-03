@@ -1,24 +1,22 @@
-@layer components {
-  .controller-projects {
-    .name a {
-      margin-right: 0.25rem;
-    }
-
-    .list {
-      margin-bottom: 1rem;
-    }
-
-    p a.icon-add {
-      display: inline-block;
-      margin-bottom: 0.5rem;
-    }
+.controller-projects {
+  .name a {
+    margin-right: 0.25rem;
   }
 
-  div[id^="tab-content-toyo_"] form.edit_project {
-    display: inline;
+  .list {
+    margin-bottom: 1rem;
   }
 
-  div[id^="tab-content-toyo_"] form.button_to {
-    display: inline;
+  p a.icon-add {
+    display: inline-block;
+    margin-bottom: 0.5rem;
   }
+}
+
+div[id^="tab-content-toyo_"] form.edit_project {
+  display: inline;
+}
+
+div[id^="tab-content-toyo_"] form.button_to {
+  display: inline;
 }

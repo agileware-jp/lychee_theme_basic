@@ -1,11 +1,9 @@
-@layer components {
-  .controller-files {
-    .filedroplistner p label {
-      margin-bottom: 0.5rem;
-    }
+.controller-files {
+  .filedroplistner p label {
+    margin-bottom: 0.5rem;
+  }
 
-    h2 + .autoscroll {
-      clear: both;
-    }
+  h2 + .autoscroll {
+    clear: both;
   }
 }

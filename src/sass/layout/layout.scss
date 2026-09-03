@@ -1,61 +1,59 @@
-@layer components {
-  #wrapper {
-    position: relative;
-    min-height: inherit;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--bg-secondary);
-  }
+#wrapper {
+  position: relative;
+  min-height: inherit;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-secondary);
+}
 
-  #main {
-    display: flex;
-    flex-grow: 2;
-    flex-direction: row;
-  }
+#main {
+  display: flex;
+  flex-grow: 2;
+  flex-direction: row;
+}
 
-  #content {
-    overflow-x: auto;
-    flex-grow: 1;
-    background-color: var(--bg-primary);
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    order: 1;
-  }
+#content {
+  overflow-x: auto;
+  flex-grow: 1;
+  background-color: var(--bg-primary);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  order: 1;
+}
 
-  #footer {
-    clear: both;
-    width: 100%;
-    background-color: var(--bg-primary);
-    border-top: 1px solid var(--border-divider);
-    color: var(--txt-caption);
-    font-size: var(--txt-xs);
-    line-height: 1rem;
-    text-align: center;
-    padding: 0.5rem;
-  }
+#footer {
+  clear: both;
+  width: 100%;
+  background-color: var(--bg-primary);
+  border-top: 1px solid var(--border-divider);
+  color: var(--txt-caption);
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+  text-align: center;
+  padding: 0.5rem;
+}
 
-  // 見出しとcontextualのfloatによっておかしくなる箇所の調整
-  #query_form {
-    clear: both;
-    display: block;
-  }
+// 見出しとcontextualのfloatによっておかしくなる箇所の調整
+#query_form {
+  clear: both;
+  display: block;
+}
 
-  #edit-news + p {
-    clear: both;
-  }
+#edit-news + p {
+  clear: both;
+}
 
-  .splitcontent {
-    clear: both;
-  }
+.splitcontent {
+  clear: both;
+}
 
-  .splitcontentleft {
-    margin-right: 0.75rem;
-  }
+.splitcontentleft {
+  margin-right: 0.75rem;
+}
 
-  .splitcontentright {
-    margin-left: 0.75rem;
-  }
+.splitcontentright {
+  margin-left: 0.75rem;
 }

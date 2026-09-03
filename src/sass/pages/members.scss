@@ -1,74 +1,72 @@
-@layer components {
-  #principals_for_new_member input[type="checkbox"] {
-    vertical-align: middle;
-    margin-top: 0.25rem;
-    margin-bottom: 0.25rem;
-    margin-right: 0.5rem;
-  }
+#principals_for_new_member input[type="checkbox"] {
+  vertical-align: middle;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  margin-right: 0.5rem;
+}
 
-  .objects-selection > .projects-selection {
-    column-width: auto;
-  }
+.objects-selection > .projects-selection {
+  column-width: auto;
+}
 
-  #principals {
-    margin-top: 0.5rem;
-  }
+#principals {
+  margin-top: 0.5rem;
+}
 
-  #principals label {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
+#principals label {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
 
-  #principals label img,
-  #principals label .gravatar {
-    display: inline-block;
-    margin-left: 0.25rem;
-    margin-right: 0.25rem;
-  }
-
-
-  // プロジェクト追加UI
-  legend + .projects {
-    margin-top: 0.5rem;
-  }
-
-  ul.projects ul.projects {
-    margin-left: 1rem;
-  }
-
-  ul.projects.root {
-    margin-top: -0.5rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-  }
-
-  ul.projects li.root div.archived,
-  ul.projects li.child div.archived {
-    color: var(--txt-caption);
-  }
-
-  ul.projects li {
-    margin-top: 1rem;
-  }
-
-  ul.projects label {
-    display: flex;
-    align-items: flex-start;
-    word-break: break-all;
-  }
-
-  ul.projects label input[type="checkbox"] {
-    margin-top: 0.25rem;
-    margin-right: 0.25rem;
-  }
+#principals label img,
+#principals label .gravatar {
+  display: inline-block;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
 
 
-  // ロール追加
-  .roles-selection {
-    margin-top: -0.5rem;
-  }
+// プロジェクト追加UI
+legend + .projects {
+  margin-top: 0.5rem;
+}
 
-  .roles-selection label {
-    margin-top: 0.5rem;
-  }
+ul.projects ul.projects {
+  margin-left: 1rem;
+}
+
+ul.projects.root {
+  margin-top: -0.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+ul.projects li.root div.archived,
+ul.projects li.child div.archived {
+  color: var(--txt-caption);
+}
+
+ul.projects li {
+  margin-top: 1rem;
+}
+
+ul.projects label {
+  display: flex;
+  align-items: flex-start;
+  word-break: break-all;
+}
+
+ul.projects label input[type="checkbox"] {
+  margin-top: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+
+// ロール追加
+.roles-selection {
+  margin-top: -0.5rem;
+}
+
+.roles-selection label {
+  margin-top: 0.5rem;
 }

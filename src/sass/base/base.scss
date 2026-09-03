@@ -2,129 +2,127 @@ body, table, tbody, thead, tr, th, td {
   box-sizing: content-box;
 }
 
-@layer components {
-  html, body {
-    min-height: 100vh;
-  }
-  
-  html {
-    overflow-y: scroll;
-  }
+html, body {
+  min-height: 100vh;
+}
 
-  body {
-    font-family:
-      "Helvetica Neue",
-      Arial,
-      "Hiragino Kaku Gothic ProN",
-      "Hiragino Sans",
-      Meiryo,
-      sans-serif;
-    min-width: 900px;
-    background-color: var(--bg-secondary);
-    color: var(--txt-default);
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    margin: 0;
-    padding: 0;
-  }
+html {
+  overflow-y: scroll;
+}
 
-  p {
-    margin-top: 0.25rem;
-    margin-bottom: 0.25rem;
-  }
+body {
+  font-family:
+    "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
+  min-width: 900px;
+  background-color: var(--bg-secondary);
+  color: var(--txt-default);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin: 0;
+  padding: 0;
+}
 
-  a {
-    color: var(--txt-link);
-  }
+p {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
 
-  img, svg, video, canvas, audio, iframe, embed, object {
-    display: inline-block;
-  }
+a {
+  color: var(--txt-link);
+}
 
-  h1, h2, h3, h4, h5, h6 {
-    margin-bottom: 0.5rem;
-    padding: 0px;
-  }
+img, svg, video, canvas, audio, iframe, embed, object {
+  display: inline-block;
+}
 
-  h2 {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5rem;
+  padding: 0px;
+}
 
-  #content > h2,
-  #add-news > h2,
-  #add-document > h2,
-  #lgc-queryForm h2 {
-    font-size: var(--txt-base);
-    line-height: 1.5rem;
-    color: var(--txt-default);
-    font-weight: bold;
-    margin-top: 0.25rem;
-    margin-bottom: 0.75rem;
-    padding: 0;
-  }
+h2 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
 
-  p.subtitle {
-    font-size: var(--txt-md);
-    line-height: 1.25rem;
-    color: var(--txt-caption);
-    font-style: normal;
-    margin-top: 0px;
-    margin-bottom: 1rem;
-  }
+#content > h2,
+#add-news > h2,
+#add-document > h2,
+#lgc-queryForm h2 {
+  font-size: var(--txt-base);
+  line-height: 1.5rem;
+  color: var(--txt-default);
+  font-weight: bold;
+  margin-top: 0.25rem;
+  margin-bottom: 0.75rem;
+  padding: 0;
+}
 
-  h2 + p.subtitle {
-    margin-top: -0.5rem;
-  }
+p.subtitle {
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+  color: var(--txt-caption);
+  font-style: normal;
+  margin-top: 0px;
+  margin-bottom: 1rem;
+}
 
-  h3 {
-    font-size: var(--txt-base);
-    line-height: 1.5rem;
-    color: var(--txt-default);
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-  }
+h2 + p.subtitle {
+  margin-top: -0.5rem;
+}
 
-  div.issue div.subject h3 {
-    font-size: var(--txt-lg);
-    line-height: 1.75rem;
-  }
+h3 {
+  font-size: var(--txt-base);
+  line-height: 1.5rem;
+  color: var(--txt-default);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
 
-  h4 {
-    font-size: var(--txt-md);
-    line-height: 1.25rem;
-  }
+div.issue div.subject h3 {
+  font-size: var(--txt-lg);
+  line-height: 1.75rem;
+}
 
-  .required {
-    color: var(---txt-danger);
-  }
+h4 {
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+}
 
-  em {
-    font-size: var(--txt-xs);
-    line-height: 1rem;
-    color: var(--txt-caption);
-  }
+.required {
+  color: var(---txt-danger);
+}
 
-  em.info {
-    font-size: var(--txt-xs);
-    line-height: 1rem;
-    color: var(--txt-caption);
-    margin-top: 0.5rem;
-  }
+em {
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+  color: var(--txt-caption);
+}
 
-  pre, code {
-    font-family: Consolas, Menlo, "Liberation Mono", Courier, monospace;
-  }
+em.info {
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+  color: var(--txt-caption);
+  margin-top: 0.5rem;
+}
 
-  blockquote {
-    border-left: 2px solid var(--border-divider);
-  }
+pre, code {
+  font-family: Consolas, Menlo, "Liberation Mono", Courier, monospace;
+}
 
-  blockquote blockquote {
-    margin-top: 0.5rem;
-  }
+blockquote {
+  border-left: 2px solid var(--border-divider);
+}
 
-  .syntaxhl {
-    background-color: var(--bg-secondary);
-  }
+blockquote blockquote {
+  margin-top: 0.5rem;
+}
+
+.syntaxhl {
+  background-color: var(--bg-secondary);
 }

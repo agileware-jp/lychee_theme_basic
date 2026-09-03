@@ -1,21 +1,19 @@
-@layer components {
-  .version-overview table.progress {
-    width: 80%;
-    height: 0.75rem;
-    margin-top: 0.125rem;
-    margin-right: 0.25rem;
-  }
+.version-overview table.progress {
+  width: 80%;
+  height: 0.75rem;
+  margin-top: 0.125rem;
+  margin-right: 0.25rem;
+}
 
-  p.percent {
-    color: var(--txt-default);
-    font-size: var(--txt-md);
-    line-height: 1.25rem;
-  }
+p.percent {
+  color: var(--txt-default);
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+}
 
-  p.progress-info {
-    color: var(--txt-caption);
-    font-size: var(--txt-xs);
-    line-height: 1rem;
-    margin-top: 0.25rem;
-  }
+p.progress-info {
+  color: var(--txt-caption);
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+  margin-top: 0.25rem;
 }

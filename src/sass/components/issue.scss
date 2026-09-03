@@ -1,4 +1,3 @@
-@layer components {
 div.issue {
   background-color: var(--status-warning-light);
   border-color: var(--status-warning-light);
@@ -6,5 +5,4 @@ div.issue {
   margin-bottom: 0.25rem;
   padding: 0.5rem;
   border-radius: var(--bd-radius-md);
-}
 }

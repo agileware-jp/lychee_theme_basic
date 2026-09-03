@@ -1,128 +1,126 @@
-@layer components {
-  .controller-documents {
-    #new_document {
-      margin-top: 1rem;
-      margin-bottom: 2rem;
-    }
-
-    .document-group {
-      clear: both;
-      background-color: var(--bg-primary);
-      border: 1px solid var(--border-divider);
-      margin-bottom: 2rem;
-      border-radius: var(--bd-radius-md);
-    }
-
-    .document-group:first-child {
-      margin-top: 0.5rem;
-    }
-
-    .document-item {
-      padding: 1.5rem;
-    }
-
-    .document-item:first-of-type {
-      padding-top: 1rem;
-    }
-
-    .document-item + .document-item {
-      border-top: 1px solid var(--border-divider);
-    }
-
-    #document-list .document-group {
-      margin-bottom: 1.5rem;
-    }
-
-    #document-list h1 {
-      margin-bottom: 0.5rem;
-    }
-
-    .group-name {
-      display: inline-flex;
-      background-color: var(--bg-secondary);
-      color: var(--txt-default);
-      font-size: var(--txt-xs);
-      line-height: 1rem;
-      font-weight: 400;
-      margin-top: 1.5rem;
-      margin-left: 1rem;
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
-      padding-top: 0.25rem;
-      padding-bottom: 0.25rem;
-      border-radius: var(--bd-radius-md);
-    }
-
-    .title {
-      color: var(--txt-link);
-      font-size: var(--txt-md);
-      line-height: 1.25rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-      padding: 0;
-    }
-
-    .updated_on {
-      color: var(--txt-caption);
-      font-size: var(--txt-md);
-      line-height: 1.25rem;
-      margin-bottom: 0.5rem;
-      padding: 0;
-    }
+.controller-documents {
+  #new_document {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
   }
 
-  .controller-documents.action-show {
-    #content .wiki {
-      background-color: var(--bg-primary);
-      border: 1px solid var(--border-divider);
-      margin-top: 1rem;
-      margin-bottom: 2rem;
-      padding: 1.5rem;
-      border-radius: var(--bd-radius-md);
-    }
-
-    h3 + .attachments {
-      background-color: var(--bg-primary);
-      border: 1px solid var(--border-divider);
-      margin-bottom: 0.5rem;
-      padding: 1rem;
-      border-radius: var(--bd-radius-md);
-    }
-
-    h3 + .attachments + p {
-      margin-bottom: 1rem;
-    }
-
-    h3 + .attachments + p a {
-      background-image: url(images/add_circle_default.svg);
-      background-position: left top 1px;
-      background-repeat: no-repeat;
-      padding-left: 1.25rem;
-    }
+  .document-group {
+    clear: both;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-divider);
+    margin-bottom: 2rem;
+    border-radius: var(--bd-radius-md);
   }
 
-  .controller-my {
-    .document-item + .document-item {
-      border-top: 1px solid var(--border-divider);
-      margin-top: 1.5rem;
-      padding-top: 1.5rem;
-    }
+  .document-group:first-child {
+    margin-top: 0.5rem;
+  }
 
-    .title {
-      color: var(--txt-link);
-      font-size: var(--txt-md);
-      line-height: 1.25rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-      padding: 0;
-    }
+  .document-item {
+    padding: 1.5rem;
+  }
 
-    .updated_on {
-      color: var(--txt-caption);
-      font-size: var(--txt-md);
-      line-height: 1.25rem;
-      margin-bottom: 0.5rem;
-      padding: 0;
-    }
+  .document-item:first-of-type {
+    padding-top: 1rem;
+  }
+
+  .document-item + .document-item {
+    border-top: 1px solid var(--border-divider);
+  }
+
+  #document-list .document-group {
+    margin-bottom: 1.5rem;
+  }
+
+  #document-list h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  .group-name {
+    display: inline-flex;
+    background-color: var(--bg-secondary);
+    color: var(--txt-default);
+    font-size: var(--txt-xs);
+    line-height: 1rem;
+    font-weight: 400;
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    border-radius: var(--bd-radius-md);
+  }
+
+  .title {
+    color: var(--txt-link);
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    padding: 0;
+  }
+
+  .updated_on {
+    color: var(--txt-caption);
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
+    margin-bottom: 0.5rem;
+    padding: 0;
+  }
+}
+
+.controller-documents.action-show {
+  #content .wiki {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-divider);
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-radius: var(--bd-radius-md);
+  }
+
+  h3 + .attachments {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-divider);
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+    border-radius: var(--bd-radius-md);
+  }
+
+  h3 + .attachments + p {
+    margin-bottom: 1rem;
+  }
+
+  h3 + .attachments + p a {
+    background-image: url(images/add_circle_default.svg);
+    background-position: left top 1px;
+    background-repeat: no-repeat;
+    padding-left: 1.25rem;
+  }
+}
+
+.controller-my {
+  .document-item + .document-item {
+    border-top: 1px solid var(--border-divider);
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+  }
+
+  .title {
+    color: var(--txt-link);
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    padding: 0;
+  }
+
+  .updated_on {
+    color: var(--txt-caption);
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
+    margin-bottom: 0.5rem;
+    padding: 0;
   }
 }

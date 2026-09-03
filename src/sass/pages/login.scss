@@ -1,137 +1,135 @@
-@layer components {
-  .action-login {
-    #login-form {
-      width: 20rem;
-      background-color: var(--bg-secondary);
-      margin-top: 4rem;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 2rem;
-      padding: 1.5rem;
-      border-radius: var(--bd-radius-xl);
-    }
-
-    #login-form h3 {
-      text-align: center;
-    }
-
-    #login-form label {
-      display: block;
-      color: var(--txt-default);
-      font-size: var(--txt-md);
-      line-height: 1.25rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-    }
-
-    .lost_password {
-      float: right;
-      color: var(--txt-link);
-      font-size: var(--txt-md);
-      line-height: 1.25rem;
-      font-weight: 400;
-    }
-
-    #login-form label[for="password"] {
-      margin-top: 1.5rem;
-    }
-
-    #login-form label[for="autologin"] {
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      color: var(--txt-default);
-      font-size: var(--txt-md);
-      line-height: 1.25rem;
-      font-weight: 400;
-    }
-
-    #login-form label[for="autologin"] input {
-      margin-right: 0.25rem;
-    }
+.action-login {
+  #login-form {
+    width: 20rem;
+    background-color: var(--bg-secondary);
+    margin-top: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-radius: var(--bd-radius-xl);
   }
 
-  .action-lost_password {
-    h2 {
-      color: var(--txt-default);
-      font-size: var(--txt-lg);
-      line-height: 1.75rem;
-      font-weight: bold;
-      text-align: center;
-    }
-
-    h2 + form {
-      display: block;
-      max-width: 20rem;
-      background-color: var(--bg-secondary);
-      border-style: none;
-      color: var(--txt-default);
-      margin-top: 2rem;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 1.5rem;
-      border-radius: var(--bd-radius-xl);
-    }
-
-    form .box {
-      background-color: transparent;
-      border-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    form .tabular p {
-      display: flex;
-      flex-direction: column;
-      padding-left: 0;
-    }
-
-    form .tabular label {
-      width: auto;
-      font-size: var(--txt-md);
-      line-height: 1.25rem;
-      text-align: left;
-      margin-bottom: 0.5rem;
-      margin-left: 0;
-    }
-
-    form .tabular input {
-      max-width: none;
-    }
-
-    form .tabular input[type="submit"] {
-      margin-top: 1rem;
-    }
+  #login-form h3 {
+    text-align: center;
   }
 
-  .controller-account.action-register {
-    h2 {
-      font-size: var(--txt-lg);
-      line-height: 1.75rem;
-      color: var(--txt-default);
-      font-weight: bold;
-      text-align: center;
-    }
+  #login-form label {
+    display: block;
+    color: var(--txt-default);
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
 
-    h2 + form {
-      display: block;
-      max-width: 42rem;
-      color: var(--txt-default);
-      margin-top: 2rem;
-      margin-left: auto;
-      margin-right: auto;
-    }
+  .lost_password {
+    float: right;
+    color: var(--txt-link);
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
+    font-weight: 400;
+  }
 
-    form .box {
-      background-color: rgba(var(--bg-secondary-rgb), 0.5);
-      margin-bottom: 1rem;
-    }
+  #login-form label[for="password"] {
+    margin-top: 1.5rem;
+  }
 
-    form input[type="submit"] {
-      display: block;
-      width: 6rem;
-      margin-left: auto;
-      margin-right: auto;
-    }
+  #login-form label[for="autologin"] {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: var(--txt-default);
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
+    font-weight: 400;
+  }
+
+  #login-form label[for="autologin"] input {
+    margin-right: 0.25rem;
+  }
+}
+
+.action-lost_password {
+  h2 {
+    color: var(--txt-default);
+    font-size: var(--txt-lg);
+    line-height: 1.75rem;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  h2 + form {
+    display: block;
+    max-width: 20rem;
+    background-color: var(--bg-secondary);
+    border-style: none;
+    color: var(--txt-default);
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5rem;
+    border-radius: var(--bd-radius-xl);
+  }
+
+  form .box {
+    background-color: transparent;
+    border-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  form .tabular p {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+  }
+
+  form .tabular label {
+    width: auto;
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
+    text-align: left;
+    margin-bottom: 0.5rem;
+    margin-left: 0;
+  }
+
+  form .tabular input {
+    max-width: none;
+  }
+
+  form .tabular input[type="submit"] {
+    margin-top: 1rem;
+  }
+}
+
+.controller-account.action-register {
+  h2 {
+    font-size: var(--txt-lg);
+    line-height: 1.75rem;
+    color: var(--txt-default);
+    font-weight: bold;
+    text-align: center;
+  }
+
+  h2 + form {
+    display: block;
+    max-width: 42rem;
+    color: var(--txt-default);
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  form .box {
+    background-color: rgba(var(--bg-secondary-rgb), 0.5);
+    margin-bottom: 1rem;
+  }
+
+  form input[type="submit"] {
+    display: block;
+    width: 6rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

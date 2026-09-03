@@ -1,22 +1,20 @@
-@layer components {
-  .controller-imports {
-    #fields-mapping .splitcontent {
-      margin-top: 1rem;
-    }
+.controller-imports {
+  #fields-mapping .splitcontent {
+    margin-top: 1rem;
+  }
 
-    ul#saved-items {
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-      margin-left: 1.5rem;
-    }
+  ul#saved-items {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 1.5rem;
+  }
 
-    ul#saved-items li {
-      list-style-type: disc;
-    }
+  ul#saved-items li {
+    list-style-type: disc;
+  }
 
-    ul#saved-items li:not(:first-child) {
-      display: list-item;
-      margin-top: 0.5rem;
-    }
+  ul#saved-items li:not(:first-child) {
+    display: list-item;
+    margin-top: 0.5rem;
   }
 }

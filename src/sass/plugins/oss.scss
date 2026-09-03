@@ -1,319 +1,317 @@
-@layer components {
-  // OSS対応
+// OSS対応
 
-  /* Redmine Banner */
-  // NOTE: メインメニューのサイドバー化の影響で、bannerがメインメニューと重なってしまう
-  //       メインメニューのあり／なしでスタイルを変える
-  //       プロレポや全画面表示など、見かけ上ではメインメニューが存在しないが、非表示になっているだけのページが存在するので注意
+/* Redmine Banner */
+// NOTE: メインメニューのサイドバー化の影響で、bannerがメインメニューと重なってしまう
+//       メインメニューのあり／なしでスタイルを変える
+//       プロレポや全画面表示など、見かけ上ではメインメニューが存在しないが、非表示になっているだけのページが存在するので注意
+#wrapper ~ .global_banner {
+  margin-left: 52px;
+}
+
+.isTopMenuOpen #wrapper ~ .global_banner {
+  margin-left: 180px;
+}
+
+@media screen and (max-width: 899px) {
   #wrapper ~ .global_banner {
-    margin-left: 52px;
+    margin-left: 0;
   }
 
   .isTopMenuOpen #wrapper ~ .global_banner {
-    margin-left: 180px;
+    margin-left: 0;
+  }
+}
+
+// バナーのスタイル変更
+div.banner.banner {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+// バナーに表示するコンテンツのスタイル
+// NOTE: TailwindCSSのリセットによって消えてしまっているものがあるため（Wikiに合わせる）
+#banner_content {
+  h1 {
+    color: var(--txt-default);
+    font-size: 2.25rem /* 36px */;
+    line-height: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
   }
 
-  @media screen and (max-width: 899px) {
-    #wrapper ~ .global_banner {
-      margin-left: 0;
-    }
-
-    .isTopMenuOpen #wrapper ~ .global_banner {
-      margin-left: 0;
-    }
+  h2 {
+    border-bottom: 1px solid var(--border-default);
+    color: var(--txt-default);
+    font-size: var(--txt-2xl);
+    line-height: 2rem;
+    font-weight: bold;
+    margin-top: 2.25rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
   }
 
-  // バナーのスタイル変更
-  div.banner.banner {
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-
-  // バナーに表示するコンテンツのスタイル
-  // NOTE: TailwindCSSのリセットによって消えてしまっているものがあるため（Wikiに合わせる）
-  #banner_content {
-    h1 {
-      color: var(--txt-default);
-      font-size: 2.25rem /* 36px */;
-      line-height: 2.5rem;
-      font-weight: bold;
-      margin-bottom: 1rem;
-    }
-
-    h2 {
-      border-bottom: 1px solid var(--border-default);
-      color: var(--txt-default);
-      font-size: var(--txt-2xl);
-      line-height: 2rem;
-      font-weight: bold;
-      margin-top: 2.25rem;
-      margin-bottom: 1rem;
-      padding-bottom: 0.5rem;
-    }
-
-    h3 {
-      color: var(--txt-default);
-      font-size: var(--txt-lg);
-      line-height: 1.75rem;
-      font-weight: bold;
-      margin-top: 1rem;
-      margin-bottom: 0.5rem;
-    }
-
-    h4 {
-      color: var(--txt-default);
-      font-size: var(--txt-base);
-      line-height: 1.5rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-    }
-
-    h5 {
-      font-size: var(--txt-md);
-      line-height: 1.25rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-    }
-
-    h6 {
-      color: var(--txt-caption);
-      font-size: var(--txt-md);
-      line-height: 1.25rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-    }
-
-    ul {
-      list-style-type: disc;
-      margin-left: 1.5rem;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    ul li:not(:first-child) {
-      margin-top: 0.5rem;
-    }
-
-    ol {
-      list-style-type: decimal;
-      margin-left: 1.5rem;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    ol li:not(:first-child) {
-      margin-top: 0.5rem;
-    }
-
-    li > ul, li > ol {
-      margin-top: 0.5rem;
-      margin-bottom: 0;
-    }
-
-    li ul,
-    li ol {
-      margin-left: 1rem;
-    }
-
-
-    table {
-      border: 1px solid var(--border-divider);
-      margin-bottom: 1rem;
-      padding: 0.5rem;
-    }
-
-    th {
-      background-color: var(--bg-secondary);
-      border: 1px solid var(--border-divider);
-      color: var(--txt-default);
-      font-size: var(--txt-xs);
-      line-height: 1rem;
-      font-weight: bold;
-      padding: 0.5rem;
-    }
-
-    td {
-      background-color: var(--bg-primary);
-      border: 1px solid var(--border-divider);
-      color: var(--txt-default);
-      font-size: var(--txt-md);
-      line-height: 1.25rem;
-      padding: 0.5rem;
-    }
-
-
-    hr,
-    .controller-issues div.issue hr {
-      display: block;
-      height: 1px;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-    }
-
-
-    pre {
-      overflow-x: auto;
-      overflow-y: hidden;
-      background-color: var(--bg-secondary);
-      border: 1px solid var(--border-default);
-      font-size: var(--txt-xs);
-      line-height: 1rem;
-      margin-right: 0.5rem;
-      margin-bottom: 1rem;
-      margin-left: 1rem;
-      padding: 1rem;
-      border-radius: var(--bd-radius-lg);
-    }
-
-    *:not(pre)>code {
-      background-color: var(--bg-secondary);
-      border: 1px solid var(--border-default);
-      color: var(--txt-danger);
-      margin-left: 0.125rem;
-      margin-right: 0.125rem;
-      padding-top: 0.125rem;
-      padding-bottom: 0.125rem;
-      padding-left: 0.375rem;
-      padding-right: 0.375rem;
-      border-radius: var(--bd-radius-base);
-    }
-
-    blockquote pre {
-      margin-left: 0.375rem;
-    }
-
-
-    .task-list {
-      list-style-type: none;
-      margin-left: 0;
-    }
-
-    .task-list .task-list {
-      margin-left: 1rem;
-    }
-  }
-
-
-  /* View Customize */
-  .controller-view_customizes {
-    table.view_customize.box th {
-      padding-left: 0.75rem;
-    }
-
-    table.view_customize.box td {
-      padding-right: 0.75rem;
-    }
-
-    table.view_customize.box tr:first-child th,
-    table.view_customize.box tr:first-child td {
-      padding-top: 1rem;
-    }
-
-    table.view_customize.box tr:last-child th,
-    table.view_customize.box tr:last-child td {
-      padding-bottom: 1rem;
-    }
-
-    table.view_customize tr.disable td,
-    table.view_customize tr.disabled a {
-      color: rgb(102 130 140 / 0.6);
-    }
-  }
-
-
-  /* Issue Templates */
-  #orphaned_templates h3.template_tracker {
+  h3 {
+    color: var(--txt-default);
+    font-size: var(--txt-lg);
+    line-height: 1.75rem;
+    font-weight: bold;
     margin-top: 1rem;
+    margin-bottom: 0.5rem;
   }
 
-  #global_issue_template-form .box fieldset.issue,
-  #global_note_template-form .box fieldset.issue,
-  #issue_template-form .box fieldset.issue {
-    padding: 0.5rem;
+  h4 {
+    color: var(--txt-default);
+    font-size: var(--txt-base);
+    line-height: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
   }
 
-  #global_issue_template-form #global_issue_template_issue_title + a.icon-help.template-help,
-  #issue_template-form #issue_template_issue_title + a.icon-help.template-help {
-    display: block;
-    margin-top: 0.25rem;
+  h5 {
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
   }
 
-  #global_issue_template-form #global_issue_template_issue_title + a.icon-help.template-help #issue_title_help_area,
-  #issue_template-form #issue_template_issue_title +  a.icon-help.template-help #issue_title_help_area {
-    z-index: 1;
+  h6 {
+    color: var(--txt-caption);
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
   }
 
-  #global_issue_template-form,
-  #global_note_template-form,
-  #edit-issue_template {
-    clear: both;
-    margin-top: 1.5rem;
+  ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 
-  #global_issue_template_project_ids.box,
-  #global_note_template_project_ids.box {
-    border-width: 0;
+  ul li:not(:first-child) {
+    margin-top: 0.5rem;
+  }
+
+  ol {
+    list-style-type: decimal;
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  ol li:not(:first-child) {
+    margin-top: 0.5rem;
+  }
+
+  li > ul, li > ol {
+    margin-top: 0.5rem;
     margin-bottom: 0;
-    padding: 0;
   }
 
-  #global_issue_template_project_ids #all_projects legend,
-  #global_note_template_project_ids #all_projects legend {
-    margin-top: 0.5rem;
+  li ul,
+  li ol {
+    margin-left: 1rem;
   }
 
-  #edit-note_template {
-    clear: both;
-    margin-top: 1.5rem;
-  }
 
-  .controller-note_templates .contextual.note_templates {
-    margin-bottom: 0.25rem;
-  }
-
-  #note_template-form .box fieldset.issue {
+  table {
+    border: 1px solid var(--border-divider);
+    margin-bottom: 1rem;
     padding: 0.5rem;
   }
 
-  #global_issue_template-form #json_generator,
-  #issue_template-form #json_generator {
-    margin-top: 0.5rem;
+  th {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-divider);
+    color: var(--txt-default);
+    font-size: var(--txt-xs);
+    line-height: 1rem;
+    font-weight: bold;
+    padding: 0.5rem;
   }
 
-  #global_issue_template-form #fields_setting_display_area .json-list,
-  #issue_template-form #fields_setting_display_area .json-list {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  #global_issue_template-form #field_information,
-  #issue_template-form #field_information {
-    margin-top: 0.5rem;
-  }
-
-  // settings
-  .controller-issue_templates_settings {
-    .template_box {
-      background-color: var(--bg-primary);
-      border-color: var(--border-divider);
-      margin-bottom: 1.5rem;
-      padding: 1rem;
-      border-radius: var(--bd-radius-md);
-    }
-  }
-
-  .new_issue #template_area > p,
-  .edit_issue #template_area > p {
-    margin-top: 0.5rem;
-  }
-
-  #add_notes #template_issue_notes {
-    margin-bottom: 0.5rem;
+  td {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-divider);
+    color: var(--txt-default);
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
+    padding: 0.5rem;
   }
 
 
-  // ツールチップがラベルより下に表示されてしまうので対応
-  a.icon-help:hover .tooltip-area {
-    z-index: 1;
+  hr,
+  .controller-issues div.issue hr {
+    display: block;
+    height: 1px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
+
+
+  pre {
+    overflow-x: auto;
+    overflow-y: hidden;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-default);
+    font-size: var(--txt-xs);
+    line-height: 1rem;
+    margin-right: 0.5rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    padding: 1rem;
+    border-radius: var(--bd-radius-lg);
+  }
+
+  *:not(pre)>code {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-default);
+    color: var(--txt-danger);
+    margin-left: 0.125rem;
+    margin-right: 0.125rem;
+    padding-top: 0.125rem;
+    padding-bottom: 0.125rem;
+    padding-left: 0.375rem;
+    padding-right: 0.375rem;
+    border-radius: var(--bd-radius-base);
+  }
+
+  blockquote pre {
+    margin-left: 0.375rem;
+  }
+
+
+  .task-list {
+    list-style-type: none;
+    margin-left: 0;
+  }
+
+  .task-list .task-list {
+    margin-left: 1rem;
+  }
+}
+
+
+/* View Customize */
+.controller-view_customizes {
+  table.view_customize.box th {
+    padding-left: 0.75rem;
+  }
+
+  table.view_customize.box td {
+    padding-right: 0.75rem;
+  }
+
+  table.view_customize.box tr:first-child th,
+  table.view_customize.box tr:first-child td {
+    padding-top: 1rem;
+  }
+
+  table.view_customize.box tr:last-child th,
+  table.view_customize.box tr:last-child td {
+    padding-bottom: 1rem;
+  }
+
+  table.view_customize tr.disable td,
+  table.view_customize tr.disabled a {
+    color: rgb(102 130 140 / 0.6);
+  }
+}
+
+
+/* Issue Templates */
+#orphaned_templates h3.template_tracker {
+  margin-top: 1rem;
+}
+
+#global_issue_template-form .box fieldset.issue,
+#global_note_template-form .box fieldset.issue,
+#issue_template-form .box fieldset.issue {
+  padding: 0.5rem;
+}
+
+#global_issue_template-form #global_issue_template_issue_title + a.icon-help.template-help,
+#issue_template-form #issue_template_issue_title + a.icon-help.template-help {
+  display: block;
+  margin-top: 0.25rem;
+}
+
+#global_issue_template-form #global_issue_template_issue_title + a.icon-help.template-help #issue_title_help_area,
+#issue_template-form #issue_template_issue_title +  a.icon-help.template-help #issue_title_help_area {
+  z-index: 1;
+}
+
+#global_issue_template-form,
+#global_note_template-form,
+#edit-issue_template {
+  clear: both;
+  margin-top: 1.5rem;
+}
+
+#global_issue_template_project_ids.box,
+#global_note_template_project_ids.box {
+  border-width: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+#global_issue_template_project_ids #all_projects legend,
+#global_note_template_project_ids #all_projects legend {
+  margin-top: 0.5rem;
+}
+
+#edit-note_template {
+  clear: both;
+  margin-top: 1.5rem;
+}
+
+.controller-note_templates .contextual.note_templates {
+  margin-bottom: 0.25rem;
+}
+
+#note_template-form .box fieldset.issue {
+  padding: 0.5rem;
+}
+
+#global_issue_template-form #json_generator,
+#issue_template-form #json_generator {
+  margin-top: 0.5rem;
+}
+
+#global_issue_template-form #fields_setting_display_area .json-list,
+#issue_template-form #fields_setting_display_area .json-list {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#global_issue_template-form #field_information,
+#issue_template-form #field_information {
+  margin-top: 0.5rem;
+}
+
+// settings
+.controller-issue_templates_settings {
+  .template_box {
+    background-color: var(--bg-primary);
+    border-color: var(--border-divider);
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: var(--bd-radius-md);
+  }
+}
+
+.new_issue #template_area > p,
+.edit_issue #template_area > p {
+  margin-top: 0.5rem;
+}
+
+#add_notes #template_issue_notes {
+  margin-bottom: 0.5rem;
+}
+
+
+// ツールチップがラベルより下に表示されてしまうので対応
+a.icon-help:hover .tooltip-area {
+  z-index: 1;
 }

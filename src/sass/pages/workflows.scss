@@ -1,16 +1,14 @@
-@layer components {
-  .controller-workflows {
-    #content form {
-      display: block;
-      margin-top: 0.5rem;
-    }
+.controller-workflows {
+  #content form {
+    display: block;
+    margin-top: 0.5rem;
+  }
 
-    table.workflows {
-      margin-bottom: 1.5rem;
-    }
+  table.workflows {
+    margin-bottom: 1.5rem;
+  }
 
-    table.workflows + fieldset {
-      margin-bottom: 1.5rem;
-    }
+  table.workflows + fieldset {
+    margin-bottom: 1.5rem;
   }
 }

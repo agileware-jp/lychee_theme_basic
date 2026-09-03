@@ -1,30 +1,28 @@
-@layer components {
-  #password_fields {
-    margin-bottom: 1.5rem;
-  }
+#password_fields {
+  margin-bottom: 1.5rem;
+}
 
-  // LDAP認証設定時
-  p + #password_fields {
-    margin-top: 1rem;
-  }
+// LDAP認証設定時
+p + #password_fields {
+  margin-top: 1rem;
+}
 
-  .controller-users .splitcontentleft > ul {
-    background-color: var(--bg-secondary);
-    margin-bottom: 1.5rem;
-    padding: 1rem;
-    border-radius: var(--bd-radius-md);
-  }
+.controller-users .splitcontentleft > ul {
+  background-color: var(--bg-secondary);
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-radius: var(--bd-radius-md);
+}
 
-  .controller-users .splitcontentleft .list {
-    margin-bottom: 1.5rem;
-  }
+.controller-users .splitcontentleft .list {
+  margin-bottom: 1.5rem;
+}
 
-  .controller-users #user_group_ids {
-    column-gap: 1.5rem;
-  }
+.controller-users #user_group_ids {
+  column-gap: 1.5rem;
+}
 
-  .controller-users #user_group_ids label {
-    display: inline-block;
-    margin-bottom: 0.5rem;
-  }
+.controller-users #user_group_ids label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
 }

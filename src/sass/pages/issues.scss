@@ -1,331 +1,329 @@
-@layer components {
-  // Sticky Issue Header
-  div#sticky-issue-header {
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    left: var(--top-menu-width-close);
-    right: 0;
+// Sticky Issue Header
+div#sticky-issue-header {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: var(--top-menu-width-close);
+  right: 0;
+  display: none;
+  width: calc(100% - var(--top-menu-width-close));
+  background-color: var(--bg-primary);
+  border: none;
+  border-bottom: 1px solid var(--border-default);
+  margin-top: 0;
+  padding: 12px;
+  border-radius: 0;
+  z-index: 1000;
+}
+
+.isTopMenuOpen div#sticky-issue-header {
+  left: var(--top-menu-width-open);
+  width: calc(100% - var(--top-menu-width-open));
+}
+
+.lif-iframe-body div#sticky-issue-header {
+  left: 0;
+  width: 100%;
+}
+
+// 特定のジャーナルに直接リンク遷移した際に、Sticky Issue Headerにコンテンツが隠れるのを防ぐ
+.controller-issues.action-show div.wiki a[name],
+.controller-issues.action-show #history div[id^="note-"],
+.controller-issues.action-show #history div[id^="change-"],
+.controller-issues.action-show #update {
+  scroll-margin-top: 65px;
+}
+
+div#sticky-issue-header.is-visible {
+  display: flex;
+}
+
+div#sticky-issue-header .issue-heading {
+  flex-shrink: 0;
+  white-space: nowrap;
+  margin-right: 8px;
+}
+
+div#sticky-issue-header .subject {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-grow: 1;
+  font-weight: bold;
+}
+
+.controller-issues {
+  #content .contextual {
+    margin-bottom: 0.5rem;
+  }
+
+  .new_issue > .box {
+    background-color: rgba(var(--bg-secondary-rgb), 0.5);
+  }
+
+  .autoscroll {
+    margin-top: 0.5rem;
+  }
+
+  div.issue {
+    clear: both;
+    background-color: rgba(var(--bg-secondary-rgb), 0.2);
+    border: 1px solid var(--border-divider);
+    border-radius: var(--bd-radius-md);
+    margin-top: 0.5rem;
+    padding: 1.5rem;
+  }
+
+  div.issue .next-prev-links {
+    float: right;
+  }
+
+  div.issue p.author {
+    color: var(--txt-caption);
+    font-size: var(--txt-xs);
+    line-height: 1rem;
+    margin: 0;
+  }
+
+  div.issue hr {
     display: none;
-    width: calc(100% - var(--top-menu-width-close));
-    background-color: var(--bg-primary);
-    border: none;
-    border-bottom: 1px solid var(--border-default);
-    margin-top: 0;
-    padding: 12px;
-    border-radius: 0;
-    z-index: 1000;
   }
 
-  .isTopMenuOpen div#sticky-issue-header {
-    left: var(--top-menu-width-open);
-    width: calc(100% - var(--top-menu-width-open));
+  div.issue .attributes {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
   }
 
-  .lif-iframe-body div#sticky-issue-header {
-    left: 0;
-    width: 100%;
+  div.issue .attributes .attribute {
+    margin-bottom: 0.25rem;
   }
 
-  // 特定のジャーナルに直接リンク遷移した際に、Sticky Issue Headerにコンテンツが隠れるのを防ぐ
-  .controller-issues.action-show div.wiki a[name],
-  .controller-issues.action-show #history div[id^="note-"],
-  .controller-issues.action-show #history div[id^="change-"],
-  .controller-issues.action-show #update {
-    scroll-margin-top: 65px;
+  div.issue .attributes .attribute .label {
+    color: var(--txt-default);
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
   }
 
-  div#sticky-issue-header.is-visible {
+  div.issue .attribute .value {
+    color: var(--txt-default);
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
+  }
+
+  div.issue .attribute .value a {
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
+  }
+
+  div.issue .attribute.progress .value {
     display: flex;
+    align-items: center;
   }
 
-  div#sticky-issue-header .issue-heading {
-    flex-shrink: 0;
-    white-space: nowrap;
-    margin-right: 8px;
+  div.issue .description {
+    // ファイルの見出しが.attachmentsと兄弟要素になっているため、.attachments側でmt-4を指定できない。そのためこちらでmb-4で対応
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 
-  div#sticky-issue-header .subject {
+  div.issue .description .contextual + p {
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
+  }
+
+  div.issue .description .wiki {
+    color: var(--txt-default);
+    font-size: var(--txt-md);
+    line-height: 1.25rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  div.issue .attachments table {
+    margin-top: 0.5rem;
+  }
+
+  div.issue .create-subtasks-from-issue-set {
     overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    flex-grow: 1;
-    font-weight: bold;
+    margin-top: 1.5rem;
   }
 
-  .controller-issues {
-    #content .contextual {
-      margin-bottom: 0.5rem;
-    }
+  div.issue #issue_tree > .contextual + p,
+  div.issue #relations > .contextual + p {
+    margin-top: 0.75rem;
+  }
 
-    .new_issue > .box {
-      background-color: rgba(var(--bg-secondary-rgb), 0.5);
-    }
+  div.issue #issue_tree {
+    overflow: hidden;
+    margin-top: 1.5rem;
+  }
 
-    .autoscroll {
-      margin-top: 0.5rem;
-    }
+  div.issue #relations {
+    overflow: hidden;
+    margin-top: 1.5rem;
+  }
 
-    div.issue {
-      clear: both;
-      background-color: rgba(var(--bg-secondary-rgb), 0.2);
-      border: 1px solid var(--border-divider);
-      border-radius: var(--bd-radius-md);
-      margin-top: 0.5rem;
-      padding: 1.5rem;
-    }
+  div.issue #relations select {
+    margin-right: 0.5rem;
+  }
 
-    div.issue .next-prev-links {
-      float: right;
-    }
+  div.issue #relations #relation_issue_to_id {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
 
-    div.issue p.author {
-      color: var(--txt-caption);
-      font-size: var(--txt-xs);
-      line-height: 1rem;
-      margin: 0;
-    }
+  div.issue #relations #errorExplanation {
+    clear: both;
+  }
 
-    div.issue hr {
-      display: none;
-    }
+  div.issue #checklist_for_show {
+    margin-top: 1.5rem;
+  }
 
-    div.issue .attributes {
-      margin-top: 2rem;
-      margin-bottom: 1.5rem;
-    }
+  div.issue fieldset[id^="category-"] {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 
-    div.issue .attributes .attribute {
-      margin-bottom: 0.25rem;
-    }
+  div.issue fieldset[id^="category-"] legend {
+    margin-left: -0.25rem;
+  }
 
-    div.issue .attributes .attribute .label {
-      color: var(--txt-default);
-      font-size: var(--txt-md);
-      line-height: 1.25rem;
-    }
+  .issues-stat {
+    font-size: var(--txt-xs);
+    line-height: 1rem;
+  }
 
-    div.issue .attribute .value {
-      color: var(--txt-default);
-      font-size: var(--txt-md);
-      line-height: 1.25rem;
-    }
+  .issues-stat .badge {
+    margin-right: 0.5rem;
+  }
 
-    div.issue .attribute .value a {
-      font-size: var(--txt-md);
-      line-height: 1.25rem;
-    }
+  .issues-stat .open {
+    margin-left: 0.125rem;
+  }
 
-    div.issue .attribute.progress .value {
-      display: flex;
-      align-items: center;
-    }
+  .issues-stat .closed {
+    color: var(--txt-caption);
+    font-size: var(--txt-xs);
+    line-height: 1rem;
+    margin-left: 0.125rem;
+    margin-right: 0.125rem;
+  }
 
-    div.issue .description {
-      // ファイルの見出しが.attachmentsと兄弟要素になっているため、.attachments側でmt-4を指定できない。そのためこちらでmb-4で対応
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-    }
 
-    div.issue .description .contextual + p {
-      font-size: var(--txt-md);
-      line-height: 1.25rem;
-    }
+  // issue edit
+  #update {
+    margin-top: 1.5rem;
+  }
 
-    div.issue .description .wiki {
-      color: var(--txt-default);
-      font-size: var(--txt-md);
-      line-height: 1.25rem;
+  #issue-form {
+    display: block;
+    margin-top: 0.5rem;
+  }
+
+  .edit_issue .box {
+    border-style: none;
+    padding: 0;
+  }
+
+  #issue_is_private_wrap {
+    display: flex;
+    align-items: center;
+  }
+
+  #issue_is_private_wrap input[type="checkbox"] {
+    margin-top: 0.25rem;
+  }
+
+  #issue_is_private_wrap + p {
+    clear: both;
+  }
+
+  #issue-form .box fieldset {
+    padding: 1rem;
+  }
+
+
+  // カスタムフィールドカテゴリー
+  #issue-form.edit_issue fieldset[id^="category-"] {
+    padding-bottom: 0;
+  }
+
+  // カスタムフィールドカテゴリーを閉じているとき
+  #issue-form.edit_issue fieldset.collapsible.collapsed[id^="category-"] {
+    margin-bottom: 0;
+  }
+
+  #issue-form.edit_issue fieldset[id^="category-"] .splitcontent {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+
+  #attributes .splitcontent {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  #issue-form #all_attributes .splitcontentleft {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  #issue-form #all_attributes .splitcontentright {
+    margin-left: 0;
+  }
+
+  #log_time .splitcontent {
+    margin-bottom: 1rem;
+  }
+
+  #issue-form #attachments_form {
+    border-top: 1px solid var(--border-divider);
+    margin-top: 1rem;
+    padding-top: 1rem;
+  }
+
+  #issue-form #watchers_form_container {
+    border-top: 1px solid var(--border-divider);
+    margin-top: 1rem;
+    padding-top: 1rem;
+  }
+
+  #watchers_inputs {
+    overflow: visible;
+    margin-top: -0.5rem;
+  }
+
+
+  // 一括編集
+  #bulk-selection {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 1.5rem;
+  }
+
+  #bulk-selection li {
+    list-style-type: disc;
+  }
+
+  &.action-bulk_edit {
+    fieldset {
       padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
       padding-left: 0.75rem;
       padding-right: 0.75rem;
+      padding-bottom: 0.75rem;
+      border-radius: var(--bd-radius-md);
     }
 
-    div.issue .attachments table {
+    fieldset ~ fieldset {
+      margin-top: 1rem
+    }
+
+    .splitcontent + .splitcontent {
       margin-top: 0.5rem;
-    }
-
-    div.issue .create-subtasks-from-issue-set {
-      overflow: hidden;
-      margin-top: 1.5rem;
-    }
-
-    div.issue #issue_tree > .contextual + p,
-    div.issue #relations > .contextual + p {
-      margin-top: 0.75rem;
-    }
-
-    div.issue #issue_tree {
-      overflow: hidden;
-      margin-top: 1.5rem;
-    }
-
-    div.issue #relations {
-      overflow: hidden;
-      margin-top: 1.5rem;
-    }
-
-    div.issue #relations select {
-      margin-right: 0.5rem;
-    }
-
-    div.issue #relations #relation_issue_to_id {
-      margin-left: 0.5rem;
-      margin-right: 0.5rem;
-    }
-
-    div.issue #relations #errorExplanation {
-      clear: both;
-    }
-
-    div.issue #checklist_for_show {
-      margin-top: 1.5rem;
-    }
-
-    div.issue fieldset[id^="category-"] {
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-
-    div.issue fieldset[id^="category-"] legend {
-      margin-left: -0.25rem;
-    }
-
-    .issues-stat {
-      font-size: var(--txt-xs);
-      line-height: 1rem;
-    }
-
-    .issues-stat .badge {
-      margin-right: 0.5rem;
-    }
-
-    .issues-stat .open {
-      margin-left: 0.125rem;
-    }
-
-    .issues-stat .closed {
-      color: var(--txt-caption);
-      font-size: var(--txt-xs);
-      line-height: 1rem;
-      margin-left: 0.125rem;
-      margin-right: 0.125rem;
-    }
-
-
-    // issue edit
-    #update {
-      margin-top: 1.5rem;
-    }
-
-    #issue-form {
-      display: block;
-      margin-top: 0.5rem;
-    }
-
-    .edit_issue .box {
-      border-style: none;
-      padding: 0;
-    }
-
-    #issue_is_private_wrap {
-      display: flex;
-      align-items: center;
-    }
-
-    #issue_is_private_wrap input[type="checkbox"] {
-      margin-top: 0.25rem;
-    }
-
-    #issue_is_private_wrap + p {
-      clear: both;
-    }
-
-    #issue-form .box fieldset {
-      padding: 1rem;
-    }
-
-
-    // カスタムフィールドカテゴリー
-    #issue-form.edit_issue fieldset[id^="category-"] {
-      padding-bottom: 0;
-    }
-
-    // カスタムフィールドカテゴリーを閉じているとき
-    #issue-form.edit_issue fieldset.collapsible.collapsed[id^="category-"] {
-      margin-bottom: 0;
-    }
-
-    #issue-form.edit_issue fieldset[id^="category-"] .splitcontent {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-
-
-    #attributes .splitcontent {
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    #issue-form #all_attributes .splitcontentleft {
-      margin-right: 0;
-      margin-bottom: 0.5rem;
-    }
-
-    #issue-form #all_attributes .splitcontentright {
-      margin-left: 0;
-    }
-
-    #log_time .splitcontent {
-      margin-bottom: 1rem;
-    }
-
-    #issue-form #attachments_form {
-      border-top: 1px solid var(--border-divider);
-      margin-top: 1rem;
-      padding-top: 1rem;
-    }
-
-    #issue-form #watchers_form_container {
-      border-top: 1px solid var(--border-divider);
-      margin-top: 1rem;
-      padding-top: 1rem;
-    }
-
-    #watchers_inputs {
-      overflow: visible;
-      margin-top: -0.5rem;
-    }
-
-
-    // 一括編集
-    #bulk-selection {
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-      margin-left: 1.5rem;
-    }
-
-    #bulk-selection li {
-      list-style-type: disc;
-    }
-
-    &.action-bulk_edit {
-      fieldset {
-        padding-top: 0.5rem;
-        padding-left: 0.75rem;
-        padding-right: 0.75rem;
-        padding-bottom: 0.75rem;
-        border-radius: var(--bd-radius-md);
-      }
-
-      fieldset ~ fieldset {
-        margin-top: 1rem
-      }
-
-      .splitcontent + .splitcontent {
-        margin-top: 0.5rem;
-      }
     }
   }
 }

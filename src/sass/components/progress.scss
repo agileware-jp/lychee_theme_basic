@@ -1,50 +1,48 @@
-@layer components {
-  table.progress {
-    overflow: hidden;
-    height: 13px;
-    background-color: var(--neutral-black-400);
-    border-radius: var(--bd-radius-base);
-  }
+table.progress {
+  overflow: hidden;
+  height: 13px;
+  background-color: var(--neutral-black-400);
+  border-radius: var(--bd-radius-base);
+}
 
-  table.progress th,
-  table.progress td {
-    padding: 0;
-  }
+table.progress th,
+table.progress td {
+  padding: 0;
+}
 
-  table.progress td.todo {
-    height: 13px;
-    background-color: var(--neutral-black-400);
-    border-style: none;
-  }
+table.progress td.todo {
+  height: 13px;
+  background-color: var(--neutral-black-400);
+  border-style: none;
+}
 
-  table.progress td.closed {
-    height: 13px;
-    background-color: var(--status-success);
-    border-style: none;
-  }
+table.progress td.closed {
+  height: 13px;
+  background-color: var(--status-success);
+  border-style: none;
+}
 
-  table.progress td.done {
-    height: 13px;
-    background-color: rgb(11 135 73 / 0.6);
-    border-style: none;
-  }
+table.progress td.done {
+  height: 13px;
+  background-color: rgb(11 135 73 / 0.6);
+  border-style: none;
+}
 
-  div.issue .next-prev-links {
-    color: var(--txt-caption);
-    font-size: var(--txt-xs);
-    line-height: 1rem;
-  }
+div.issue .next-prev-links {
+  color: var(--txt-caption);
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+}
 
-  div.issue .next-prev-links .position {
-    margin-left: 0.25rem;
-    margin-right: 0.25rem;
-  }
+div.issue .next-prev-links .position {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
 
-  div.issue .next-prev-links a:first-child {
-    margin-right: 0.25rem;
-  }
+div.issue .next-prev-links a:first-child {
+  margin-right: 0.25rem;
+}
 
-  div.issue .next-prev-links a:last-child {
-    margin-left: 0.25rem;
-  }
+div.issue .next-prev-links a:last-child {
+  margin-left: 0.25rem;
 }

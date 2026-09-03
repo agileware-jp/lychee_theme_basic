@@ -1,24 +1,22 @@
-@layer components {
-  table#time-report td.hours, table#time-report th.period, table#time-report th.total { text-align: right; padding-right: 0.5em; }
-  table#time-report tbody tr.subtotal { font-style: italic; color:#777;}
-  table#time-report tbody tr.subtotal td.hours { color:#b0b0b0; }
-  table#time-report .hours-dec { font-size: 0.9em; }
+table#time-report td.hours, table#time-report th.period, table#time-report th.total { text-align: right; padding-right: 0.5em; }
+table#time-report tbody tr.subtotal { font-style: italic; color:#777;}
+table#time-report tbody tr.subtotal td.hours { color:#b0b0b0; }
+table#time-report .hours-dec { font-size: 0.9em; }
 
-  /* theme style */
-  table#time-report tbody tr.total {
-    font-weight: bold;
-    background-color: var(--bg-tertiary);
-    border-top: 2px solid var(--border-default);
+/* theme style */
+table#time-report tbody tr.total {
+  font-weight: bold;
+  background-color: var(--bg-tertiary);
+  border-top: 2px solid var(--border-default);
+}
+
+.controller-timelog {
+  #query_form .tabs {
+    margin-bottom: 0.5rem;
   }
 
-  .controller-timelog {
-    #query_form .tabs {
-      margin-bottom: 0.5rem;
-    }
-
-    .total-for-hours .value {
-      font-size: var(--txt-xl);
-      line-height: 1.75rem;
-    }
+  .total-for-hours .value {
+    font-size: var(--txt-xl);
+    line-height: 1.75rem;
   }
 }

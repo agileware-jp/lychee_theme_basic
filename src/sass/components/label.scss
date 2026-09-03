@@ -1,4 +1,3 @@
-@layer components {
 // tabularのlabelはtabular側で管理
 // label.block,
 // .tabular label.block,
@@ -61,5 +60,4 @@ label.inline input,
 
 .query-columns + p .inline:first-of-type {
   margin-left: 16px !important;
-}
 }

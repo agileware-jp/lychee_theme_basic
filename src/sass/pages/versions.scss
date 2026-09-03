@@ -15,80 +15,78 @@ div#roadmap header:target {
 }
 .controller-versions.action-show div#roadmap .related-issues {width:70%;}
 
-@layer components {
-  div#roadmap {
-    margin-top: 1rem;
-  }
+div#roadmap {
+  margin-top: 1rem;
+}
 
-  div#roadmap .version-article {
-    background-color: var(--bg-primary);
-    border: 1px solid var(--border-divider);
-    padding: 1.5rem;
-    border-radius: var(--bd-radius-md);
-  }
+div#roadmap .version-article {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-divider);
+  padding: 1.5rem;
+  border-radius: var(--bd-radius-md);
+}
 
-  div#roadmap .version-article + .version-article {
-    margin-top: 1rem;
-  }
+div#roadmap .version-article + .version-article {
+  margin-top: 1rem;
+}
 
-  div#roadmap table.list {
-    margin-bottom: 0;
-  }
+div#roadmap table.list {
+  margin-bottom: 0;
+}
 
-  div#roadmap table caption {
-    color: var(--txt-default);
-    font-size: var(--txt-md);
-    line-height: 1.25rem;
-    font-weight: bold;
-    margin-top: 1rem;
-  }
+div#roadmap table caption {
+  color: var(--txt-default);
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
 
-  div#roadmap .related-issues td.assigned_to {
-    width: 1px;
-    white-space: nowrap;
-    padding-top: 0;
-    padding-bottom: 0;
-    padding-right: 0;
-    padding-left: 0.5rem;
-  }
+div#roadmap .related-issues td.assigned_to {
+  width: 1px;
+  white-space: nowrap;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 0;
+  padding-left: 0.5rem;
+}
 
-  div#roadmap .related-issues td.buttons {
-    text-align: right;
-  }
+div#roadmap .related-issues td.buttons {
+  text-align: right;
+}
 
 
-  div#version-summary {
-    float: right;
-    width: 28%;
-    background-color: var(--bg-primary);
-    margin-bottom: 1rem;
-    padding-left: 1rem;
-  }
+div#version-summary {
+  float: right;
+  width: 28%;
+  background-color: var(--bg-primary);
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+}
 
-  div#version-summary fieldset {
-    border-color: var(--border-divider);
-    margin-bottom: 1rem;
-    padding: 1rem;
-    border-radius: var(--bd-radius-md);
-  }
+div#version-summary fieldset {
+  border-color: var(--border-divider);
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: var(--bd-radius-md);
+}
 
-  div#version-summary fieldset legend {
-    font-weight: bold;
-  }
+div#version-summary fieldset legend {
+  font-weight: bold;
+}
 
-  div#version-summary fieldset.time-tracking table {
-    width: 100%;
-  }
+div#version-summary fieldset.time-tracking table {
+  width: 100%;
+}
 
-  div#version-summary fieldset.time-tracking table td {
-    vertical-align: middle;
-  }
+div#version-summary fieldset.time-tracking table td {
+  vertical-align: middle;
+}
 
-  div#version-summary th, div#version-summary td.total-hours {
-    text-align: right;
-  }
+div#version-summary th, div#version-summary td.total-hours {
+  text-align: right;
+}
 
-  div#version-summary div#status_by #status_by_select {
-    margin-right: 0.25rem;
-  }
+div#version-summary div#status_by #status_by_select {
+  margin-right: 0.25rem;
 }

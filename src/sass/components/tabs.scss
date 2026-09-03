@@ -1,61 +1,59 @@
-@layer components {
-  #content .tabs {
-    width: 100%;
-    height: 43px;
-  }
+#content .tabs {
+  width: 100%;
+  height: 43px;
+}
 
-  #content .tabs ul {
-    display: flex;
-    align-items: center;
-    border-width: 0;
-    border-bottom: 1px solid var(--border-divider);
-    padding-left: 0;
-  }
+#content .tabs ul {
+  display: flex;
+  align-items: center;
+  border-width: 0;
+  border-bottom: 1px solid var(--border-divider);
+  padding-left: 0;
+}
 
-  #content .tabs ul li {
-    float: none;
-    margin-right: 0;
-    margin-bottom: 0;
-    border-top-left-radius: var(--bd-radius-md);
-    border-top-right-radius: var(--bd-radius-md);
-  }
+#content .tabs ul li {
+  float: none;
+  margin-right: 0;
+  margin-bottom: 0;
+  border-top-left-radius: var(--bd-radius-md);
+  border-top-right-radius: var(--bd-radius-md);
+}
 
-  #content .tabs ul li a {
-    border-width: 0;
-    color: var(--txt-default);
-    font-size: var(--txt-md);
-    line-height: 1.25rem;
-    border-bottom: 2px solid transparent;
-    font-weight: 400;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    border-top-left-radius: var(--bd-radius-md);
-    border-top-right-radius: var(--bd-radius-md);
-  }
+#content .tabs ul li a {
+  border-width: 0;
+  color: var(--txt-default);
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+  border-bottom: 2px solid transparent;
+  font-weight: 400;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-top-left-radius: var(--bd-radius-md);
+  border-top-right-radius: var(--bd-radius-md);
+}
 
-  #content .tabs ul li a:hover {
-    color: var(--txt-default);
-    background-color: var(--bg-secondary);
-  }
+#content .tabs ul li a:hover {
+  color: var(--txt-default);
+  background-color: var(--bg-secondary);
+}
 
-  #content .tabs ul li a.selected {
-    background-color: var(--bg-primary);
-    border-width: 0px;
-    border-bottom: 2px solid var(--product-default);
-    font-weight: bold;
-  }
+#content .tabs ul li a.selected {
+  background-color: var(--bg-primary);
+  border-width: 0px;
+  border-bottom: 2px solid var(--product-default);
+  font-weight: bold;
+}
 
-  #content .tabs ul li a.selected:hover {
-    background-color: var(--bg-primary);
-  }
+#content .tabs ul li a.selected:hover {
+  background-color: var(--bg-primary);
+}
 
-  div.tabs-buttons {
-    border-width: 0;
-  }
+div.tabs-buttons {
+  border-width: 0;
+}
 
-  button.tab-left, button.tab-right {
-    bottom: 0;
-  }
+button.tab-left, button.tab-right {
+  bottom: 0;
 }

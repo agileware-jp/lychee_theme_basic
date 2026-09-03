@@ -1,4 +1,3 @@
-@layer components {
 .nodata, .warning {
   background-color: var(--status-warning-light);
   color: var(--txt-caption);
@@ -15,5 +14,4 @@
 // Wikiなど、コンテンツが存在しないときに表示される.nodata
 #content h2 + .nodata {
   clear: both;
-}
 }

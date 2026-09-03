@@ -1,19 +1,17 @@
-@layer components {
-  #activity_scope_form p {
-    margin-top: 1rem;
-  }
+#activity_scope_form p {
+  margin-top: 1rem;
+}
 
-  #activity_scope_form ul {
-    margin-top: 1rem;
-  }
+#activity_scope_form ul {
+  margin-top: 1rem;
+}
 
-  #activity_scope_form ul li:not(:first-child) {
-    margin-top: 0.25rem;
-  }
+#activity_scope_form ul li:not(:first-child) {
+  margin-top: 0.25rem;
+}
 
-  #activity_scope_form ul label {
-    color: var(--txt-link);
-    font-size: var(--txt-md);
-    line-height: 1.25rem;
-  }
+#activity_scope_form ul label {
+  color: var(--txt-link);
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
 }

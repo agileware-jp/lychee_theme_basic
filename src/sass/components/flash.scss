@@ -1,4 +1,3 @@
-@layer components {
 div.flash.notice {
   background-color: var(--bg-primary);
   background: url(images/done_success.svg) 8px 50% no-repeat;
@@ -65,5 +64,4 @@ div.flash.error {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   border-radius: var(--bd-radius-md);
-}
 }
