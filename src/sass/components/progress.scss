@@ -32,16 +32,4 @@
   div.issue .next-prev-links {
     @apply text-xs text-text-caption
   }
-
-  div.issue .next-prev-links .position {
-    @apply mx-1
-  }
-
-  div.issue .next-prev-links a:first-child {
-    @apply mr-1
-  }
-
-  div.issue .next-prev-links a:last-child {
-    @apply ml-1
-  }
 }
