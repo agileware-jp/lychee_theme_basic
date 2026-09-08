@@ -33,16 +33,3 @@ div.issue .next-prev-links {
   font-size: var(--txt-xs);
   line-height: 1rem;
 }
-
-div.issue .next-prev-links .position {
-  margin-left: 0.25rem;
-  margin-right: 0.25rem;
-}
-
-div.issue .next-prev-links a:first-child {
-  margin-right: 0.25rem;
-}
-
-div.issue .next-prev-links a:last-child {
-  margin-left: 0.25rem;
-}
