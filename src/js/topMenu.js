@@ -228,3 +228,35 @@ export function addFeedbackLink() {
   li.appendChild(a)
   topMenuNav.insertBefore(li, topMenuNav.firstElementChild)
 }
+
+
+/**
+ * お問い合わせRedmineへのリンクの追加
+ */
+export function addInquiryLink() {
+  const BASE_URL = 'https://support.agileware.jp/my/page'
+
+  const topMenuNav = document.querySelector('#top-menu #account ul')
+  // LIF iframe等、#top-menu/#accountが描画されないレイアウトでは何もしない
+  if (!topMenuNav) return
+
+  // お問い合わせリンクの要素を生成
+  const li = document.createElement('li')
+  const a = document.createElement('a')
+  li.classList.add('aw_inquiryLink_li')
+  a.classList.add('aw_inquiryLink')
+
+  // aタグに情報をセット
+  a.setAttribute('href', BASE_URL)
+  a.setAttribute('target', '_blank')
+  a.textContent = t('inquiry')
+
+  // ちらつき防止のため、ちらつきが発生するスタイルはあらかじめjsで指定
+  li.style.cssText = `order: 4;`
+  a.style.cssText = `padding-left: 1.75rem;`
+
+  // お問い合わせリンクの追加（フィードバックリンクの直上）
+  li.appendChild(a)
+  const feedbackLi = topMenuNav.querySelector('.aw_fbLink_li')
+  topMenuNav.insertBefore(li, feedbackLi === null ? topMenuNav.firstElementChild : feedbackLi)
+}

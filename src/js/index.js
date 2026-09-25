@@ -1,4 +1,4 @@
-import { addDefaultTopMenStyle, initToggleTopMenu, moveLycheeHelp, addFeedbackLink } from './topMenu'
+import { addDefaultTopMenStyle, initToggleTopMenu, moveLycheeHelp, addFeedbackLink, addInquiryLink } from './topMenu'
 import { addScrollableClass, saveMainMenuScrollPosition, restoreMainMenuScrollPosition, dragScroll } from './mainMenu'
 import { addDefaultSidebarStyle, initToggleSidebar } from './sidebar'
 import { waitForBilling, checkTrial, copyBillingContainer } from './billing'
@@ -43,6 +43,7 @@ window.addEventListener('DOMContentLoaded', () => {
   createBackToTopBtn()
   hiddenTabsButtons()
   addFeedbackLink()
+  addInquiryLink()
   insertTextMessageBox()
 
   dragScroll()
