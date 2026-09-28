@@ -48,7 +48,7 @@ jobs:
           fi
           notes=$(gh api "repos/${GITHUB_REPOSITORY}/releases/generate-notes" "${args[@]}" --jq .body)
 
-          template=$(<release_template.txt)
+          template=$(<release_notes_template.md)
           body=${template//%Y/$(TZ=Asia/Tokyo date +%Y)}
           body=${body//%m/$(TZ=Asia/Tokyo date +%m)}
           body=${body//"%{release notes}"/"$notes"}
