@@ -1,0 +1,66 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # リリースノートの範囲を決めるために直前のタグが必要
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+
+      - name: Build
+        run: |
+          npm install
+          npm run build
+
+      - name: Create zip
+        env:
+          TAG: ${{ github.ref_name }}
+        run: |
+          dir=build/lychee-theme_Basic
+          mkdir -p "$dir"
+          echo "$TAG" > "$dir/README.md"
+          cp -r javascripts stylesheets "$dir/"
+          (cd build && zip -r ../lychee-theme_Basic.zip lychee-theme_Basic)
+
+      - name: Generate release notes
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          # 同じ系統（ブランチ）の直前のタグを起点にする
+          args=(-f tag_name="$TAG")
+          if prev=$(git describe --tags --abbrev=0 --match 'v*' "${TAG}^" 2>/dev/null); then
+            args+=(-f previous_tag_name="$prev")
+          fi
+          notes=$(gh api "repos/${GITHUB_REPOSITORY}/releases/generate-notes" "${args[@]}" --jq .body)
+
+          template=$(<release_template.txt)
+          body=${template//%Y/$(TZ=Asia/Tokyo date +%Y)}
+          body=${body//%m/$(TZ=Asia/Tokyo date +%m)}
+          body=${body//"%{release notes}"/"$notes"}
+          printf '%s\n' "$body" > release_notes.md
+
+      - name: Create draft release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          gh release create "$TAG" lychee-theme_Basic.zip \
+            --draft \
+            --verify-tag \
+            --title "$TAG" \
+            --notes-file release_notes.md
