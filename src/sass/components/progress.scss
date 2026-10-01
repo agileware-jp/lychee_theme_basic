@@ -1,47 +1,35 @@
-@layer components {
-  table.progress {
-    overflow: hidden;
-    height: 13px;
+table.progress {
+  overflow: hidden;
+  height: 13px;
+  background-color: var(--neutral-black-400);
+  border-radius: var(--bd-radius-base);
+}
 
-    @apply bg-primitive-gray-200 rounded
-  }
+table.progress th,
+table.progress td {
+  padding: 0;
+}
 
-  table.progress th,
-  table.progress td {
-    @apply p-0
-  }
+table.progress td.todo {
+  height: 13px;
+  background-color: var(--neutral-black-400);
+  border-style: none;
+}
 
-  table.progress td.todo {
-    height: 13px;
+table.progress td.closed {
+  height: 13px;
+  background-color: var(--status-success);
+  border-style: none;
+}
 
-    @apply bg-primitive-gray-200 border-none
-  }
+table.progress td.done {
+  height: 13px;
+  background-color: rgb(11 135 73 / 0.6);
+  border-style: none;
+}
 
-  table.progress td.closed {
-    height: 13px;
-
-    @apply bg-status-success border-none
-  }
-
-  table.progress td.done {
-    height: 13px;
-
-    @apply bg-status-success/60 border-none
-  }
-
-  div.issue .next-prev-links {
-    @apply text-xs text-text-caption
-  }
-
-  div.issue .next-prev-links .position {
-    @apply mx-1
-  }
-
-  div.issue .next-prev-links a:first-child {
-    @apply mr-1
-  }
-
-  div.issue .next-prev-links a:last-child {
-    @apply ml-1
-  }
+div.issue .next-prev-links {
+  color: var(--txt-caption);
+  font-size: var(--txt-xs);
+  line-height: 1rem;
 }

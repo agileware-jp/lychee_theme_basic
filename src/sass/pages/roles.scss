@@ -1,36 +1,34 @@
-@layer components {
-  .controller-roles .edit_role h3 {
-    margin-top: 1.5rem;
-  }
+.controller-roles .edit_role h3 {
+  margin-top: 1.5rem;
+}
 
-  #permissions.box {
-    border-style: none;
-    padding: 0;
-  }
+#permissions.box {
+  border-style: none;
+  padding: 0;
+}
 
-  #permissions fieldset {
-    background-color: var(--bg-primary);
-    border: 1px solid var(--border-divider);
-    padding-left: 1rem;
-    padding-bottom: 1rem;
-    padding-right: 1rem;
-    border-radius: var(--bd-radius-md);
-  }
+#permissions fieldset {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-divider);
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+  border-radius: var(--bd-radius-md);
+}
 
-  #permissions fieldset + fieldset {
-    margin-top: 1rem;
-  }
+#permissions fieldset + fieldset {
+  margin-top: 1rem;
+}
 
-  .manage_members_shown > label:first-of-type {
-    margin-bottom: 8px;
-  }
+.manage_members_shown > label:first-of-type {
+  margin-bottom: 8px;
+}
 
-  #permissions_form input[name="commit"] {
-    margin-top: 1rem;
-  }
+#permissions_form input[name="commit"] {
+  margin-top: 1rem;
+}
 
-  // 権限レポートの表
-  .controller-roles table.permissions .name {
-    min-width: 200px;
-  }
+// 権限レポートの表
+.controller-roles table.permissions .name {
+  min-width: 200px;
 }

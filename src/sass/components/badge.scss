@@ -1,37 +1,83 @@
-@layer components {
-  .badge.badge-status-open {
-    font-weight: normal;
+.badge.badge-status-open {
+  font-weight: normal;
+  background-color: var(--bg-primary);
+  border-color: var(--border-default);
+  color: var(--txt-default);
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+  padding-left: 0.375rem;
+  padding-right: 0.375rem;
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+  border-radius: var(--bd-radius-full);
+}
 
-    @apply bg-background-primary border-border-default text-text-default text-xs px-1.5 py-0.5 rounded-full
-  }
+.badge.badge-status-locked {
+  font-weight: normal;
+  background-color: var(--bg-secondary);
+  color: var(--txt-default);
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+  padding-left: 0.375rem;
+  padding-right: 0.375rem;
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+  border-radius: var(--bd-radius-full);
+  border-style: none;
+}
 
-  .badge.badge-status-locked {
-    font-weight: normal;
+.badge.badge-status-closed {
+  font-weight: normal;
+  background-color: var(--status-success);
+  color: var(--txt-onFill);
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+  padding-left: 0.375rem;
+  padding-right: 0.375rem;
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+  border-radius: var(--bd-radius-full);
+  border-style: none;
+}
 
-    @apply bg-background-secondary border-none text-text-default text-xs px-1.5 py-0.5 rounded-full
-  }
+.badge.badge-private {
+  font-weight: normal;
+  background-color: var(--status-danger);
+  color: var(--txt-onFill);
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+  padding-left: 0.375rem;
+  padding-right: 0.375rem;
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+  border-radius: var(--bd-radius-full);
+  border-style: none;
+}
 
-  .badge.badge-status-closed {
-    font-weight: normal;
+.badge.badge-count {
+  font-weight: normal;
+  background-color: var(--bg-secondary);
+  color: var(--txt-default);
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+  padding-left: 0.375rem;
+  padding-right: 0.375rem;
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+  border-radius: var(--bd-radius-full);
+  border-style: none;
+}
 
-    @apply bg-status-success border-none text-text-onFill text-xs px-1.5 py-0.5 rounded-full
-  }
-
-  .badge.badge-private {
-    font-weight: normal;
-
-    @apply bg-status-danger border-none text-text-onFill text-xs px-1.5 py-0.5 rounded-full
-  }
-
-  .badge.badge-count {
-    font-weight: normal;
-
-    @apply bg-background-secondary border-none text-text-default text-xs px-1.5 py-0.5 rounded-full
-  }
-
-  .badge.badge-issues-count {
-    font-weight: normal;
-
-    @apply bg-background-secondary border-none text-text-default text-xs px-1.5 py-0.5 rounded-full
-  }
+.badge.badge-issues-count {
+  font-weight: normal;
+  background-color: var(--bg-secondary);
+  color: var(--txt-default);
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+  padding-left: 0.375rem;
+  padding-right: 0.375rem;
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+  border-radius: var(--bd-radius-full);
+  border-style: none;
 }

@@ -1,97 +1,121 @@
-@layer components {
-  #activity {
-    @apply relative pl-4
-  }
+#activity {
+  position: relative;
+  padding-left: 1rem;
+}
 
-  #activity::before {
-    content: '';
-    position: absolute;
-    top: 8px;
-    left: 3px;
-    width: 1px;
-    height: calc(100% - 8px);
+#activity::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 3px;
+  width: 1px;
+  height: calc(100% - 8px);
+  background-color: var(--border-divider);
+}
 
-    @apply bg-border-divider
-  }
+#activity h3 {
+  position: relative;
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
 
-  #activity h3 {
-    @apply relative text-sm font-bold mb-2
-  }
+#activity h3::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -16px;
+  display: block;
+  width: 7px;
+  height: 7px;
+  background-color: var(--product-default);
+  border-radius: var(--bd-radius-full);
+  transform: translateY(-50%);
+}
 
-  #activity h3::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: -16px;
-    display: block;
-    width: 7px;
-    height: 7px;
-    transform: translateY(-50%);
+#activity dl + h3 {
+  margin-top: 2rem;
+}
 
-    @apply bg-product-default rounded-full
-  }
+#activity dt {
+  clear: left;
+  border-top: 1px dotted var(--border-divider);
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
 
-  #activity dl + h3 {
-    @apply mt-8
-  }
+#activity dt:first-child {
+  border-top-width: 0px;
+  margin-top: 0;
+}
 
-  #activity dt {
-    @apply clear-left border-t border-dotted border-border-divider mt-4 pt-4
-  }
+#activity dt.grouped,
+#activity dd.grouped {
+  margin-left: 1.25rem;
+}
 
-  #activity dt:first-child {
-    @apply border-t-0 mt-0
-  }
+#activity dt.icon {
+  background-position: 0 1.2rem;
+}
 
-  #activity dt.grouped,
-  #activity dd.grouped {
-    @apply ml-5
-  }
+#activity dt .gravatar {
+  margin-left: 0.25rem;
+}
 
-  #activity dt.icon {
-    background-position: 0 1.2rem;
-  }
+#activity dt .time {
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+  color: var(--txt-caption);
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
 
-  #activity dt .gravatar {
-    @apply ml-1
-  }
+#activity dt .project {
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+  color: var(--txt-default);
+}
 
-  #activity dt .time {
-    @apply text-sm text-text-caption mx-1
-  }
+#activity span.project:after {
+  content: '-';
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
 
-  #activity dt .project {
-    @apply text-sm text-text-default
-  }
+#activity dt a {
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+}
 
-  #activity span.project:after {
-    content: '-';
+#activity dd {
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+}
 
-    @apply py-1
-  }
+#activity dd span.description.aw_has_description {
+  display: block;
+  background-color: var(--bg-secondary);
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+  color: var(--txt-caption);
+  padding: 0.5rem 1rem;
+  border-radius: var(--bd-radius-lg);
+}
 
-  #activity dt a {
-    @apply text-sm
-  }
+#activity .author {
+  display: flex;
+  background-image: url(images/person_default.svg);
+  background-repeat: no-repeat;
+  background-size: 16px;
+  background-position: left center;
+  margin-top: 0.5rem;
+  padding-left: 1.25rem;
+}
 
-  #activity dd {
-    @apply text-xs mt-2 pl-4
-  }
-
-  #activity dd span.description.aw_has_description {
-    @apply block bg-background-secondary text-xs text-text-caption px-4 py-2 rounded-lg
-  }
-
-  #activity .author {
-    background-image: url(images/person_default.svg);
-    background-repeat: no-repeat;
-    background-size: 16px;
-    background-position: left center;
-
-    @apply flex mt-2 pl-5
-  }
-
-  #activity .author a {
-    @apply text-sm
-  }
+#activity .author a {
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
 }

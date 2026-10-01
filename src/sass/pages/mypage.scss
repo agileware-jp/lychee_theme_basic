@@ -1,21 +1,20 @@
-@layer components {
-  #my-page {
-    @apply w-full
-  }
+#my-page {
+  width: 100%;
+}
 
-  #list-top {
-    @apply pt-0
-  }
+#list-top {
+  padding-top: 0;
+}
 
-  .mypage-box h3 {
-    @apply mb-2
-  }
+.mypage-box h3 {
+  margin-bottom: 0.5rem;
+}
 
-  .mypage-box .contextual + .contextual {
-    @apply mr-2
-  }
+.mypage-box .contextual + .contextual {
+  margin-right: 0.5rem;
+}
 
-  #block-issuequery__2 .box {
-    @apply border-none p-0
-  }
+#block-issuequery__2 .box {
+  border-style: none;
+  padding: 0;
 }

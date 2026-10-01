@@ -58,20 +58,6 @@ function topMenuExists() {
   return document.getElementById('top-menu') !== null
 }
 
-function isLoggedIn() {
-  return document.getElementById('loggedas') !== null
-}
-
-function addLogoutStyle() {
-  // ログアウト中は#loggedasが存在しないので、#accountにmargin-top: auto;を適用したい
-  if(!isLoggedIn()) {
-    const account = document.getElementById('account')
-    // LIF iframe等、#accountがそもそも描画されないレイアウトでは何もしない
-    if (!account) return
-    account.style.marginTop = 'auto'
-  }
-}
-
 function addBtnToToggleTopMenu() {
   if(!topMenuExists()) return
 
@@ -91,7 +77,9 @@ function addBtnToToggleTopMenu() {
   toggleTopMenu(btn)
 
   div.appendChild(btn)
-  topMenu.appendChild(div)
+  // Redmine7.0では #top-menu 直下が .general-menu / .profile-menu になり、
+  // 末尾に追加すると最下部へ落ちるため、先頭(pt-[69px]領域)に挿入する
+  topMenu.insertBefore(div, topMenu.firstChild)
 }
 
 function toggleTopMenu(btn) {
@@ -141,7 +129,8 @@ function addTopMenuHoverEffect() {
 export function initToggleTopMenu() {
   addBtnToToggleTopMenu()
   addTopMenuHoverEffect()
-  addLogoutStyle()
+  // Note: Redmine7.0で #loggedas が廃止されたため、旧ログアウト時の下寄せ処理は
+  //       topMenu.scss の .general-menu { flex-1 } によるボトム固定に置き換えた
 
   // topMenuの復原処理
   if(localStorage.getItem('isTopMenuOpen') === 'true') {
@@ -160,7 +149,11 @@ export function moveLycheeHelp() {
   if(lycheeHelp === null) return
 
   const lycheeHelpWrap = lycheeHelp.closest('li')
-  const accountMenu = document.querySelector('#account > ul')
+  // Redmine7.0: ログイン時は #account .dropdown-content ul、未ログイン時は #account ul
+  //             どちらにも当たるよう子孫セレクタで取得する
+  const accountMenu = document.querySelector('#account ul')
+  // #account/ul が描画されないレイアウト(LIF iframe等)では何もしない
+  if (!accountMenu) return
 
   lycheeHelpWrap.classList.add('aw_lycheeHelp_li')
   lycheeHelpWrap.style.order = '5'

@@ -1,121 +1,137 @@
-@layer components {
-  /*** Before 5.0 ***/
-  table.cal { border-spacing: 0;}
-  table.cal thead th {width: 14%; }
-  table.cal thead th.week-number {width: auto;}
-  table.cal tbody tr {height: 100px;}
-  table.cal td .icon {padding-top: 2px; padding-bottom: 3px;}
-  table.cal td { vertical-align: top; }
-  table.cal td.week-number { border:none; }
-  table.cal td p.day-num {font-size: 1.1em; text-align:right;}
-  table.cal td.today {background:#ffffdd;}
-  table.cal td.today p.day-num {font-weight: bold;}
+/*** After 5.1 ***/
+ul.cal {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 2rem repeat(7, 1fr);
+  border-spacing: 0;
+}
 
-  /*** After 5.1 ***/
-  ul.cal {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: 2rem repeat(7, 1fr);
-    border-spacing: 0;
-  }
+ul.cal .calhead {
+  text-align: center;
+}
 
-  ul.cal .calhead {
-    text-align: center;
-  }
+ul.cal .week-number {
+  border:none;
+  text-align: center;
+}
 
-  ul.cal .week-number {
-    border:none;
-    text-align: center;
-  }
+ul.cal .week-number .label-week {
+  display: none;
+}
 
-  ul.cal .week-number .label-week {
-    display: none;
-  }
+ul.cal .calbody {
+  vertical-align: top;
+  min-height: calc(1.2em * 6);
+  padding: 2px;
+}
 
-  ul.cal .calbody {
-    vertical-align: top;
-    min-height: calc(1.2em * 6);
-    padding: 2px;
-  }
+ul.cal .calbody p.day-num {font-size: 1.1em; text-align:right;}
+ul.cal .calbody .abbr-day {display:none}
+ul.cal .calbody.today {background:#ffd;}
+ul.cal .calbody.today p.day-num {font-weight: bold;}
 
-  ul.cal .calbody p.day-num {font-size: 1.1em; text-align:right;}
-  ul.cal .calbody .abbr-day {display:none}
-  ul.cal .calbody.today {background:#ffd;}
-  ul.cal .calbody.today p.day-num {font-weight: bold;}
+ul.cal .calbody .icon {padding-top: 2px; padding-bottom: 3px;}
 
-  ul.cal .calbody .icon {padding-top: 2px; padding-bottom: 3px;}
+/*** Lychee Theme Basic Original Style ***/
+ul.cal {
+  width: 100%;
+  border: 1px solid var(--border-divider);
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0.5rem;
+  border-radius: var(--bd-radius-none);
+}
 
-  /*** Lychee Theme Basic Original Style ***/
-  // Note: table.cal → 5.0
-  //       ul.cal → 5.1
-  table.cal,
-  ul.cal {
-    @apply w-full border border-border-divider mt-0 mx-0 mb-2 rounded-none
-  }
+ul.cal .calhead {
+  background-color: var(--bg-secondary);
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+  color: var(--txt-default);
+  font-weight: normal;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
 
-  table.cal thead th,
-  ul.cal .calhead {
-    @apply bg-background-secondary text-xs text-text-default font-normal px-2 py-1
-  }
+ul.cal .calbody {
+  border-top: 1px solid var(--border-divider);
+  border-left: 1px solid var(--border-divider);
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+}
 
-  table.cal td,
-  ul.cal .calbody {
-    @apply border-t border-l border-border-divider text-xs
-  }
+ul.cal .week-number {
+  background-color: var(--bg-secondary);
+  color: var(--txt-default);
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
 
-  table.cal td.week-number,
-  ul.cal .week-number {
-    @apply bg-background-secondary text-xs text-text-default px-2 py-1
-  }
+ul.cal .calbody.nwday:not(.odd) {
+  background-color: var(--bg-secondary);
+  color: var(--txt-default);
+  font-size: var(--txt-xs);
+  line-height: 1rem;
+}
 
-  table.cal td.nwday:not(.odd),
-  ul.cal .calbody.nwday:not(.odd) {
-    @apply bg-background-secondary text-text-default text-xs
-  }
+ul.cal .calbody.this-month /* Support 6.0 */ {
+  background-color: var(--bg-primary);
+}
 
-  ul.cal .calbody.this-month /* Support 6.0 */ {
-    @apply bg-background-primary
-  }
+ul.cal .calbody.other-month /* Support 6.0 */ {
+background-color: rgba(var(--bg-secondary-rgb), 0.5);
+}
 
-  ul.cal .calbody.other-month /* Support 6.0 */ {
-    @apply bg-background-secondary/50
-  }
+ul.cal .calbody.odd p.day-num,
+ul.cal .calbody.other-month p.day-num /* Support 6.0 */ {
+  color: var(--txt-caption);
+}
 
-  table.cal td.odd p.day-num,
-  ul.cal .calbody.odd p.day-num,
-  ul.cal .calbody.other-month p.day-num /* Support 6.0 */ {
-    @apply text-text-caption
-  }
+.cal .starting a.issue, p.cal.legend .starting {
+  background: url(images/arrow_right_success.svg) no-repeat -1px center;
+  padding-left: 1rem;
+}
 
-  .cal .starting a.issue, p.cal.legend .starting {
-    background: url(images/arrow_right_success.svg) no-repeat -1px center;
-    @apply pl-4
-  }
+.cal .ending a.issue, p.cal.legend .ending {
+  background: url(images/arrow_left_danger.svg) no-repeat -1px center;
+  padding-left: 1rem;
+}
 
-  .cal .ending a.issue, p.cal.legend .ending {
-    background: url(images/arrow_left_danger.svg) no-repeat -1px center;
-    @apply pl-4
-  }
+.cal .starting.ending a.issue, p.cal.legend .starting.ending {
+  background: url(images/bullet_diamond_danger.svg) no-repeat -1px center;
+  padding-left: 1rem;
+}
 
-  .cal .starting.ending a.issue, p.cal.legend .starting.ending {
-    background: url(images/bullet_diamond_danger.svg) no-repeat -1px center;
-    @apply pl-4
-  }
+p.legend.cal {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
 
-  p.legend.cal {
-    @apply flex flex-col gap-1
-  }
+div.tooltip:hover span.tip {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-divider);
+  color: var(--txt-default);
+  font-size: var(--txt-md);
+  line-height: 1.5rem;
+  padding: 1rem;
+  border-radius: var(--bd-radius-md);
+  box-shadow: var(--shadow-xl);
+}
 
-  div.tooltip:hover span.tip {
-    @apply bg-background-primary border border-border-divider text-sm text-text-default leading-6 p-4 rounded-md shadow-xl
-  }
+div.tooltip:hover span.tip .issue {
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
+}
 
-  div.tooltip:hover span.tip .issue {
-    @apply text-sm
-  }
-
-  div.tooltip:hover span.tip a {
-    @apply text-sm
-  }
+div.tooltip:hover span.tip a {
+  font-size: var(--txt-md);
+  line-height: 1.25rem;
 }

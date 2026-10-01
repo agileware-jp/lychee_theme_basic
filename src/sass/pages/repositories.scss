@@ -1,5 +1,4 @@
-@layer components {
-  .new_repository .box + p {
-    @apply flex items-center
-  }
+.new_repository .box + p {
+  display: flex;
+  align-items: center;
 }
