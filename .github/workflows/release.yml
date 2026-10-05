@@ -1,0 +1,51 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+
+      - name: Build
+        run: |
+          npm install
+          npm run build
+
+      - name: Create zip
+        env:
+          TAG: ${{ github.ref_name }}
+        run: |
+          dir=build/lychee-theme_Basic
+          mkdir -p "$dir"
+          echo "$TAG" > "$dir/README.md"
+          cp -r javascripts stylesheets "$dir/"
+          (cd build && zip -r ../lychee-theme_Basic.zip lychee-theme_Basic)
+
+      - name: Create release notes
+        run: |
+          export TZ=Asia/Tokyo
+          sed -e "s/%Y/$(date +%Y)/g" -e "s/%m/$(date +%m)/g" \
+            release_notes_template.md > release_notes.md
+
+      - name: Create draft release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          gh release create "$TAG" lychee-theme_Basic.zip \
+            --draft \
+            --verify-tag \
+            --title "$TAG" \
+            --notes-file release_notes.md
