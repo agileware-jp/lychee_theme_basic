@@ -1,3 +1,9 @@
+.controller-documents.action-index #document-list .document-item > .title > svg.icon-svg,
+.controller-my.action-page #document-list .document-item > .title > svg.icon-svg {
+  display: inline-block;
+  stroke: var(--txt-caption);
+}
+
 .controller-documents {
   #new_document {
     margin-top: 1rem;
