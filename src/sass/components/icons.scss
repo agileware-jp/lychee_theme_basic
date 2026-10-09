@@ -254,6 +254,15 @@ svg.icon-svg use[href$="#icon--checked"] {
   background-image: url(images/help_default.svg);
 }
 
+.controller-admin.action-plugins table.plugins td.version .icon-unknown {
+  padding-left: 0;
+}
+
+.controller-admin.action-plugins table.plugins td.version .icon-unknown > svg.icon-svg {
+  display: inline-block;
+  stroke: var(--txt-caption);
+}
+
 .icon-attachment,
 .icon-attachment:not(:has(svg)) {
   background-image: url(images/attach_file_default.svg);
