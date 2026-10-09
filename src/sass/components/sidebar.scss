@@ -204,15 +204,18 @@ ul.flat li {
   position: relative;
 }
 
-#admin-menu a.icon-webhook svg.icon-svg {
+#admin-menu svg.icon-svg:has(use[href$="#icon--webhook"]) {
   display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  stroke: var(--txt-caption);
+}
+
+#admin-menu a.icon-webhook svg.icon-svg {
   position: absolute;
   top: 50%;
   left: 8px;
-  width: 1rem;
-  height: 1rem;
   margin: 0;
-  stroke: var(--txt-caption);
   transform: translateY(-50%);
 }
 
