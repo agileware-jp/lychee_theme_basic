@@ -200,6 +200,22 @@ ul.flat li {
   background-image: url(images/overview_default.svg);
 }
 
+#admin-menu a.icon-webhook {
+  position: relative;
+}
+
+#admin-menu a.icon-webhook svg.icon-svg {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  width: 1rem;
+  height: 1rem;
+  margin: 0;
+  stroke: var(--txt-caption);
+  transform: translateY(-50%);
+}
+
 
 /* Support 6.0 start */
 #sidebar-switch-panel {
