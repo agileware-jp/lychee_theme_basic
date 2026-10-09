@@ -67,6 +67,22 @@ svg.icon-svg {
 }
 /* 6.0 end */
 
+.controller-my.action-account #content > .contextual > a.icon-webhook {
+  position: relative;
+
+  svg.icon-svg {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    width: 1rem;
+    height: 1rem;
+    margin: 0;
+    stroke: var(--txt-caption);
+    transform: translateY(-50%);
+  }
+}
+
 svg.icon-svg use[href$="#icon--checked"] {
   stroke: var(--status-success);
   stroke-width: 2px;
