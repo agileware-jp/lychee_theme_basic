@@ -774,12 +774,13 @@ label[for="draw_selected_columns"] {
 
   .search-condition-left-area {
     label[for="period"],
-    .apply-buttons-time-series label {
+    .apply-buttons-time-series label,
+    .apply-buttons-workload-unit label {
       font-weight: bold;
       margin-right: 0.5rem;
     }
 
-    .apply-buttons-time-series {
+    .apply-buttons-row {
       margin-top: 0.5rem;
     }
 
